@@ -1,4 +1,4 @@
-# MariaDB Server Documentation
+# Unofficial MariaDB Server Documentation
 
 Documentation on using MariaDB Server.
 
