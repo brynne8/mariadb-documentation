@@ -11,7 +11,7 @@ DAYOFWEEK(date)
 Returns the day of the week index for the date (1 = Sunday, 2 = Monday, ..., 7 =
 Saturday). These index values correspond to the ODBC standard.
 
-This contrasts with [WEEKDAY()](/built-in-functions/date-time-functions/weekday) which follows a different index numbering
+This contrasts with [WEEKDAY()](/built-in-functions/date-time-functions/weekday/) which follows a different index numbering
 (`0` = Monday, `1` = Tuesday, ... `6` = Sunday).
 
 ## Examples

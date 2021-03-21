@@ -8,9 +8,9 @@ HELP search_string
 
 ## Description
 
-The `HELP` command can be used in any MariaDB client, such as the [mysql](/clients-utilities/mysql-client/mysql-command-line-client) command-line client, to get basic syntax help and a short description for most commands and functions.
+The `HELP` command can be used in any MariaDB client, such as the [mysql](/clients-utilities/mysql-client/mysql-command-line-client/) command-line client, to get basic syntax help and a short description for most commands and functions.
 
-If you provide an argument to the `HELP` command, the [mysql](/clients-utilities/mysql-client/mysql-command-line-client) client uses it as a search string to access server-side help. The proper operation of this command requires that the help tables in the `mysql` database be initialized with help topic information.
+If you provide an argument to the `HELP` command, the [mysql](/clients-utilities/mysql-client/mysql-command-line-client/) client uses it as a search string to access server-side help. The proper operation of this command requires that the help tables in the `mysql` database be initialized with help topic information.
 
 If there is no match for the search string, the search fails. Use `HELP contents` to see a list of the help categories:
 

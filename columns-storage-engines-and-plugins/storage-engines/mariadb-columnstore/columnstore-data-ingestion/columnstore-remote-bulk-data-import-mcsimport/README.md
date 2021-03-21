@@ -2,7 +2,7 @@
 
 ## Overview
 
-mcsimport is a high-speed bulk load utility that imports data into ColumnStore tables in a fast and efficient manner utilizing ColumnStore's [Bulk Write SDK](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk). Unlike cpimport, mcsimport was designed to be executed from a remote machine that doesn't necessarily needs to be a [UM](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-user-module) or [PM](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module). mcsimport is further executable from Windows and Linux operating systems.<br>
+mcsimport is a high-speed bulk load utility that imports data into ColumnStore tables in a fast and efficient manner utilizing ColumnStore's [Bulk Write SDK](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk/). Unlike cpimport, mcsimport was designed to be executed from a remote machine that doesn't necessarily needs to be a [UM](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-user-module/) or [PM](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module/). mcsimport is further executable from Windows and Linux operating systems.<br>
 Similar to cpimport, mcsimport accepts as input any flat file that contains a delimiter between fields of data (i.e. columns in a table). The default delimiter is a comma (‘<strong>,</strong>’), but other delimiters such as pipes may also be used. By default mcsimport expects the data values to be in the same order as the create table statement, and a date format of ‘<em>YYYY-MM-DD HH:MM:SS</em>’. But, these settings can be overwritten in a mapping file which allows  customizeable input column to ColumnStore column mappings, the usage of individual input column specific date formats utilizing the [strptime](http://pubs.opengroup.org/onlinepubs/9699919799/functions/strptime.html) format, and the specification of default values for non mapped target columns.
 
 It is important to note that:
@@ -63,7 +63,7 @@ To install mcsimport on Windows 10 you simply have to follow the installation wi
 
 ### ColumnStore server configuration
 
-As mcsimport is using the [Bulk Write SDK](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk) for the injection, all ports required by the ColumnStore Bulk write SDK need to be accessible from the client executing mcsimport at the target ColumnStore server. These are in particular the TCP ports 8616, 8630, and 8800.
+As mcsimport is using the [Bulk Write SDK](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk/) for the injection, all ports required by the ColumnStore Bulk write SDK need to be accessible from the client executing mcsimport at the target ColumnStore server. These are in particular the TCP ports 8616, 8630, and 8800.
 
 ## Syntax
 
@@ -113,7 +113,7 @@ Using this variant the first (#0) csv source column is mapped to the target Colu
 
 ### -c Columnstore.xml
 
-As mcsimport is built upon ColumnStore's  [Bulk Write SDK](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk) it inherits its methods to connect to ColumnStore instances to ingest data. By default mcsimport uses the standard configuration file <em>/usr/local/mariadb/ColumnStore/etc/Columnstore.xml</em> or if set the one defined through the environment variable <em>COLUMNSTORE_INSTALL_DIR</em> to connect to the remote Columnstore instance. Individual configurations can be defined through the command line parameter -c. Instructions on how to prepare Columnstore.xml for remote ingestion can be found [here](/kb/en/columnstore-bulk-write-sdk/#environment-configuration).
+As mcsimport is built upon ColumnStore's  [Bulk Write SDK](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk/) it inherits its methods to connect to ColumnStore instances to ingest data. By default mcsimport uses the standard configuration file <em>/usr/local/mariadb/ColumnStore/etc/Columnstore.xml</em> or if set the one defined through the environment variable <em>COLUMNSTORE_INSTALL_DIR</em> to connect to the remote Columnstore instance. Individual configurations can be defined through the command line parameter -c. Instructions on how to prepare Columnstore.xml for remote ingestion can be found [here](/kb/en/columnstore-bulk-write-sdk/#environment-configuration).
 
 ### -d delimiter
 

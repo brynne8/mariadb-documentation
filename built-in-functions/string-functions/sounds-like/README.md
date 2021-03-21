@@ -8,7 +8,7 @@ expr1 SOUNDS LIKE expr2
 
 ## Description
 
-This is the same as [SOUNDEX](/built-in-functions/string-functions/soundex)(expr1) = SOUNDEX(expr2).
+This is the same as [SOUNDEX](/built-in-functions/string-functions/soundex/)(expr1) = SOUNDEX(expr2).
 
 ## Example
 

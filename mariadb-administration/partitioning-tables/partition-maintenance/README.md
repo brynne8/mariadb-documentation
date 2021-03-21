@@ -18,7 +18,7 @@ Taken from [Rick's RoTs - Rules of Thumb](http://mysql.rjweb.org/doc.php/ricksro
 - PARTITION BY RANGE is the only useful method.
 - SUBPARTITIONs are not useful.
 - The partition field should not be the field first in any key.
-- It is OK to have an [AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment) as the first part of a compound key, or in a non-UNIQUE index.
+- It is OK to have an [AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment/) as the first part of a compound key, or in a non-UNIQUE index.
 
 It is so tempting to believe that PARTITIONing will solve performance problems. But it is so often wrong.
 
@@ -28,7 +28,7 @@ A common fallacy: "Partitioning will make my queries run faster". It won't. Pond
 
 ## Use Cases for PARTITIONing
 
-<strong>Use case #1 -- time series</strong>. Perhaps the most common use case where PARTITIONing shines is in a dataset where "old" data is periodically deleted from the table. RANGE PARTITIONing by day (or other unit of time) lets you do a nearly instantaneous DROP PARTITION plus REORGANIZE PARTITION instead of a much slower DELETE. Much of this blog is focused on this use case. This use case is also discussed in [Big DELETEs](/replication/optimization-and-tuning/query-optimizations/big-deletes)
+<strong>Use case #1 -- time series</strong>. Perhaps the most common use case where PARTITIONing shines is in a dataset where "old" data is periodically deleted from the table. RANGE PARTITIONing by day (or other unit of time) lets you do a nearly instantaneous DROP PARTITION plus REORGANIZE PARTITION instead of a much slower DELETE. Much of this blog is focused on this use case. This use case is also discussed in [Big DELETEs](/replication/optimization-and-tuning/query-optimizations/big-deletes/)
 
 The big win for Case #1: DROP PARTITION is a lot faster than DELETEing a lot of rows.
 
@@ -51,7 +51,7 @@ The big win for Case #3: Improving caching to decrease I/O to speed up operation
 <strong>Use case #4 -- transportable tablespace</strong>. Using EXPORT/IMPORT partition for quickly archiving or importing data. (IMPORTing could be tricky because of the partition key.) See also Transportable Tablespaces for InnoDB Partitions
 That link talks about 5.7, but has a section "But how to do this in 5.6?"
 
-See also [FLUSH TABLES ... FOR EXPORT](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export), which was not supported for Partitioned InnoDB tables until MySQL 5.6.17 / [MariaDB 10.0.8](/kb/en/mariadb-1008-release-notes/).
+See also [FLUSH TABLES ... FOR EXPORT](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export/), which was not supported for Partitioned InnoDB tables until MySQL 5.6.17 / [MariaDB 10.0.8](/kb/en/mariadb-1008-release-notes/).
 
 The big win for Case #4: Quickly moving a partition in between tables (or servers).
 
@@ -61,7 +61,7 @@ Note that almost always, these use cases involve RANGE partitioning, not the oth
 
 ## AUTO_INCREMENT in PARTITION
 
-- For [AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment) to work (in any table), it must be the first field in some index. Period. There are no other requirements on indexing it.
+- For [AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment/) to work (in any table), it must be the first field in some index. Period. There are no other requirements on indexing it.
 - Being the first field in some index lets the engine find the 'next' value when opening the table.
 - AUTO_INCREMENT need not be UNIQUE. What you lose: prevention of explicitly inserting a duplicate id. (This is rarely needed, anyway.)
 

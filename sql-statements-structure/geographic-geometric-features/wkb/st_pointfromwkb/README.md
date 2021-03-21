@@ -9,7 +9,7 @@ PointFromWKB(wkb[,srid])
 
 ## Description
 
-Constructs a [POINT](/sql-statements-structure/geographic-geometric-features/geometry-constructors/point) value using its [WKB](/sql-statements-structure/geographic-geometric-features/wkb/well-known-binary-wkb-format) representation and [SRID](/kb/en/srid/).
+Constructs a [POINT](/sql-statements-structure/geographic-geometric-features/geometry-constructors/point/) value using its [WKB](/sql-statements-structure/geographic-geometric-features/wkb/well-known-binary-wkb-format/) representation and [SRID](/kb/en/srid/).
 
 `ST_PointFromWKB()` and `PointFromWKB()` are synonyms.
 

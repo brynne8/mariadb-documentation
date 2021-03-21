@@ -470,6 +470,6 @@ However, on Linux these tests can fail to locate the JVM library. Before executi
 
 ## Fixing Problem With mysqldump
 
-In some case or some platform, when CONNECT is set up for use with JDBC table types, this causes [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump) with the option --all-databases to fail.
+In some case or some platform, when CONNECT is set up for use with JDBC table types, this causes [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump/) with the option --all-databases to fail.
 
 This was reported by Robert Dyas who found the cause - see the discussion at [MDEV-11238](https://jira.mariadb.org/browse/MDEV-11238).

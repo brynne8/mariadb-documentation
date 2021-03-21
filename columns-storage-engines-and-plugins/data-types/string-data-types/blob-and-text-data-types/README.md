@@ -18,10 +18,10 @@ The `TEXT` types are
 - [TEXT](/kb/en/sql_language-data_types-text/),
 - [MEDIUMTEXT](/kb/en/sql_language-data_types-mediumtext/), and
 - [LONGTEXT](/kb/en/sql_language-data_types-longtext/).
-- [JSON](/columns-storage-engines-and-plugins/data-types/string-data-types/json-data-type) (alias for LONGTEXT)
+- [JSON](/columns-storage-engines-and-plugins/data-types/string-data-types/json-data-type/) (alias for LONGTEXT)
 
 These correspond to the four `BLOB` types and have the same
-maximum lengths and [storage requirements](/columns-storage-engines-and-plugins/data-types/data-type-storage-requirements).
+maximum lengths and [storage requirements](/columns-storage-engines-and-plugins/data-types/data-type-storage-requirements/).
 
 ##### MariaDB starting with [10.2.1](/kb/en/mariadb-1021-release-notes/)
 

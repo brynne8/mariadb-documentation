@@ -1,6 +1,6 @@
 # Installing and Using MariaDB via Docker
 
-Sometimes we want to install a specific version of MariaDB, [MariaDB ColumnStore](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore), or [MaxScale](/kb/en/mariadb-maxscale/) on a certain system, but no packages are available. Or maybe, we simply want to isolate MariaDB from the rest of the system, to be sure that we won't cause any damage.
+Sometimes we want to install a specific version of MariaDB, [MariaDB ColumnStore](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/), or [MaxScale](/kb/en/mariadb-maxscale/) on a certain system, but no packages are available. Or maybe, we simply want to isolate MariaDB from the rest of the system, to be sure that we won't cause any damage.
 
 A virtual machine would certainly serve the scope. However, this means installing a system on the top of another system. It requires a lot of resources.
 
@@ -45,7 +45,7 @@ The easiest way to use MariaDB on Docker is choosing a MariaDB image and creatin
 
 ### Downloading an Image
 
-You can download a MariaDB image for Docker from the [Offical MariaDB Repository](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb), or choose another image that better suits your needs. You can search Docker Hub (the official set of repositories) for an image with this command:
+You can download a MariaDB image for Docker from the [Offical MariaDB Repository](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/), or choose another image that better suits your needs. You can search Docker Hub (the official set of repositories) for an image with this command:
 
 ```sql
  docker search mariadb
@@ -89,7 +89,7 @@ docker run --name mariadbtest -e MYSQL_ROOT_PASSWORD=mypass -d mariadb/server:10
 docker run --name mariadbtest -e MYSQL_ROOT_PASSWORD=mypass -d mariadb/server:10.2
 ```
 
-Optionally, after the image name, we can specify some [options for mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options). For example:
+Optionally, after the image name, we can specify some [options for mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/). For example:
 
 ```sql
 docker run --name mariadbtest -e MYSQL_ROOT_PASSWORD=mypass -d mariadb/server:10.3 --log-bin --binlog-format=MIXED
@@ -230,7 +230,7 @@ apt-get install vim
 
 In some images, no repository is configured by default, so we may need to add them.
 
-Note that if we run [mysqladmin shutdown](/kb/en/mysqladmin/#mysqladmin-commands) or the [SHUTDOWN](/sql-statements-structure/sql-statements/administrative-sql-statements/shutdown) command to stop the container, the container will be deactivated, and we will automatically exit to our system.
+Note that if we run [mysqladmin shutdown](/kb/en/mysqladmin/#mysqladmin-commands) or the [SHUTDOWN](/sql-statements-structure/sql-statements/administrative-sql-statements/shutdown/) command to stop the container, the container will be deactivated, and we will automatically exit to our system.
 
 ### Connecting to MariaDB from Outside the Container
 
@@ -322,7 +322,7 @@ apt-get -y upgrade
 apt-get -y install vim
 ```
 
-Now we are ready to [install MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb) in the way we prefer.
+Now we are ready to [install MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/) in the way we prefer.
 
 ## See Also
 

@@ -1,10 +1,10 @@
 # TokuDB System Variables
 
-TokuDB has been deprecated by its upstream maintainer. It is disabled from [MariaDB 10.5](/kb/en/what-is-mariadb-105/) and has been been removed in [MariaDB 10.6](/kb/en/what-is-mariadb-106/) - [MDEV-19780](https://jira.mariadb.org/browse/MDEV-19780). We recommend [MyRocks](/columns-storage-engines-and-plugins/storage-engines/myrocks) as a long-term migration path.
+TokuDB has been deprecated by its upstream maintainer. It is disabled from [MariaDB 10.5](/kb/en/what-is-mariadb-105/) and has been been removed in [MariaDB 10.6](/kb/en/what-is-mariadb-106/) - [MDEV-19780](https://jira.mariadb.org/browse/MDEV-19780). We recommend [MyRocks](/columns-storage-engines-and-plugins/storage-engines/myrocks/) as a long-term migration path.
 
-This page lists system variables that are related to [TokuDB](/columns-storage-engines-and-plugins/storage-engines/tokudb).
+This page lists system variables that are related to [TokuDB](/columns-storage-engines-and-plugins/storage-engines/tokudb/).
 
-See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables) for a complete list of system variables and instructions on setting them, and [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables) for a complete list of all options, statis variable and system variables in MariaDB.
+See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables/) for a complete list of system variables and instructions on setting them, and [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables/) for a complete list of all options, statis variable and system variables in MariaDB.
 
 ## System Variables
 
@@ -20,7 +20,7 @@ See [Server System Variables](/replication/optimization-and-tuning/system-variab
 
 #### `tokudb_analyze_time`
 
-- <strong>Description:</strong> Time in seconds that [ANALYZE](/sql-statements-structure/sql-statements/table-statements/analyze-table) operations spend on each index when calculating cardinality.  Accurate cardinality helps in particular with the performance of complex queries. If no analyzes are run, cardinality will be 1 for primary indexes, and unknown (NULL) for other types of indexes.
+- <strong>Description:</strong> Time in seconds that [ANALYZE](/sql-statements-structure/sql-statements/table-statements/analyze-table/) operations spend on each index when calculating cardinality.  Accurate cardinality helps in particular with the performance of complex queries. If no analyzes are run, cardinality will be 1 for primary indexes, and unknown (NULL) for other types of indexes.
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
 - <strong>Data Type:</strong> numeric
@@ -305,7 +305,7 @@ MariaDB will reload the plugin with the setting from the configuration file. Set
 
 #### `tokudb_lock_timeout_debug`
 
-- <strong>Description:</strong> When bit zero is set (default `1`), a JSON document describing the most recent lock conflict is reported to [tokudb_last_lock_timeout](#tokudb_last_lock_timeout). When set to `0`, no lock conflicts are reported. When bit one is set, the JSON document is printed to the [error log](/mariadb-administration/server-monitoring-logs/error-log).
+- <strong>Description:</strong> When bit zero is set (default `1`), a JSON document describing the most recent lock conflict is reported to [tokudb_last_lock_timeout](#tokudb_last_lock_timeout). When set to `0`, no lock conflicts are reported. When bit one is set, the JSON document is printed to the [error log](/mariadb-administration/server-monitoring-logs/error-log/).
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
 - <strong>Data Type:</strong> numeric
@@ -369,8 +369,8 @@ MariaDB will reload the plugin with the setting from the configuration file. Set
 
 #### `tokudb_pk_insert_mode`
 
-- <strong>Description:</strong> Mode for primary key inserts using either [REPLACE INTO](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/replace) or [INSERT IGNORE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/ignore) on tables with no secondary index, or where all columns in the secondary index are in the primary key. For example `PRIMARY KEY (a,b,c), key (b,c)`
-<ul start="1"><li>`0`: Fast inserts. [Triggers](/programming-customizing-mariadb/triggers-events/triggers) may not work, and [row-based replication](/mariadb-administration/server-monitoring-logs/binary-log/binary-log-formats) will not work
+- <strong>Description:</strong> Mode for primary key inserts using either [REPLACE INTO](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/replace/) or [INSERT IGNORE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/ignore/) on tables with no secondary index, or where all columns in the secondary index are in the primary key. For example `PRIMARY KEY (a,b,c), key (b,c)`
+<ul start="1"><li>`0`: Fast inserts. [Triggers](/programming-customizing-mariadb/triggers-events/triggers/) may not work, and [row-based replication](/mariadb-administration/server-monitoring-logs/binary-log/binary-log-formats/) will not work
 </li><li>`1`: Fast inserts if no triggers are defined, otherwise inserts may be slow. Row-based replication will not work.
 </li><li>`2`: Slow inserts. Triggers and row-based replication work normally.
 </li></ul>
@@ -416,7 +416,7 @@ MariaDB will reload the plugin with the setting from the configuration file. Set
 
 #### `tokudb_read_status_frequency`
 
-- <strong>Description:</strong> Progress is measured every this many reads for display by [SHOW PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist). Useful to set to `1` to examine slow queries.
+- <strong>Description:</strong> Progress is measured every this many reads for display by [SHOW PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist/). Useful to set to `1` to examine slow queries.
 - <strong>Scope:</strong> Global,
 - <strong>Dynamic:</strong> Yes
 - <strong>Data Type:</strong> numeric
@@ -427,7 +427,7 @@ MariaDB will reload the plugin with the setting from the configuration file. Set
 
 #### `tokudb_row_format`
 
-- <strong>Description:</strong> Compression algorithm used by default to compress data. Can be overridden by a row format specified in the [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table) statement. note that the library can be specified directly, or an alias used, the mapping of which may change in future. Note that in [MariaDB 5.5](/kb/en/what-is-mariadb-55/), and before [MariaDB 10.0.10](/kb/en/mariadb-10010-release-notes/), the compression type did not default to this value. See [TokuDB Differences](/columns-storage-engines-and-plugins/storage-engines/tokudb/tokudb-differences).
+- <strong>Description:</strong> Compression algorithm used by default to compress data. Can be overridden by a row format specified in the [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/) statement. note that the library can be specified directly, or an alias used, the mapping of which may change in future. Note that in [MariaDB 5.5](/kb/en/what-is-mariadb-55/), and before [MariaDB 10.0.10](/kb/en/mariadb-10010-release-notes/), the compression type did not default to this value. See [TokuDB Differences](/columns-storage-engines-and-plugins/storage-engines/tokudb/tokudb-differences/).
 <ul><li>`tokudb_default`, `tokudb_zlib`: Use the zlib library, 
 </li><li>`tokudb_fast`, `tokudb_quicklz`: Use the quicklz library, the lightest compression with low CPU usage,
 </li><li>`tokudb_small`, `tokudb_lzma`: Use the lzma library. the highest compression and highest CPU usage
@@ -518,7 +518,7 @@ MariaDB will reload the plugin with the setting from the configuration file. Set
 
 #### `tokudb_write_status_frequency`
 
-- <strong>Description:</strong> Progress is measured every this many writes for display by [SHOW PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist). Useful to set to `1` to examine slow queries.
+- <strong>Description:</strong> Progress is measured every this many writes for display by [SHOW PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist/). Useful to set to `1` to examine slow queries.
 - <strong>Scope:</strong> Global,
 - <strong>Dynamic:</strong> Yes
 - <strong>Data Type:</strong> `numeric`

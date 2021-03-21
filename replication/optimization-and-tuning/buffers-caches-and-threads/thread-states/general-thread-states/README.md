@@ -1,15 +1,15 @@
 # General Thread States
 
-This article documents the major general thread states. More specific lists related to [delayed inserts](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed), [replication](/replication), the [query cache](/replication/optimization-and-tuning/buffers-caches-and-threads/query-cache) and the [event scheduler](/programming-customizing-mariadb/triggers-events/event-scheduler/events) are listed in:
+This article documents the major general thread states. More specific lists related to [delayed inserts](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed/), [replication](/replication/), the [query cache](/replication/optimization-and-tuning/buffers-caches-and-threads/query-cache/) and the [event scheduler](/programming-customizing-mariadb/triggers-events/event-scheduler/events/) are listed in:
 
-- [Event Scheduler Thread States](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-states/event-scheduler-thread-states)
-- [Query Cache Thread States](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-states/query-cache-thread-states)
-- [Master Thread States](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-states/master-thread-states)
-- [Slave Connection Thread States](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-states/slave-connection-thread-states)
-- [Slave I/O Thread States](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-states/slave-io-thread-states)
-- [Slave SQL Thread States](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-states/slave-sql-thread-states)
+- [Event Scheduler Thread States](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-states/event-scheduler-thread-states/)
+- [Query Cache Thread States](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-states/query-cache-thread-states/)
+- [Master Thread States](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-states/master-thread-states/)
+- [Slave Connection Thread States](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-states/slave-connection-thread-states/)
+- [Slave I/O Thread States](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-states/slave-io-thread-states/)
+- [Slave SQL Thread States](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-states/slave-sql-thread-states/)
 
-These correspond to the `STATE` values listed by the [SHOW PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist) statement or in the [Information Schema PROCESSLIST Table](/kb/en/information-schema-processlist-table/) as well as the `PROCESSLIST_STATE` value listed in the [Performance Schema threads Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table)
+These correspond to the `STATE` values listed by the [SHOW PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist/) statement or in the [Information Schema PROCESSLIST Table](/kb/en/information-schema-processlist-table/) as well as the `PROCESSLIST_STATE` value listed in the [Performance Schema threads Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table/)
 
 <table><tbody><tr><th>Value</th><th>Description</th></tr>
 <tr><td>After create</td><td>The function that created (or tried to create) a table (temporary or non-temporary) has just ended.</td></tr>

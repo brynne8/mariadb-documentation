@@ -12,9 +12,9 @@ Alternatively, multiple external users could have been assigned the same user, a
 
 With roles, managing this is easy. For example, there could be a number of users assigned to a journalist role, with identical privileges. Changing the privileges for all the journalists is a matter of simply changing the role's privileges, while the individual user is still linked with any changes that take place.
 
-Roles are created with the [CREATE ROLE](/sql-statements-structure/sql-statements/account-management-sql-commands/create-role) statement, and dropped with the [DROP ROLE](/sql-statements-structure/sql-statements/account-management-sql-commands/drop-role) statement. Roles are then assigned to a user with an extension to the [GRANT](/kb/en/grant/#roles) statement, while privileges are assigned to a role in the regular way with [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant). Similarly, the [REVOKE](/sql-statements-structure/sql-statements/account-management-sql-commands/revoke) statement can be used to both revoke a role from a user, or revoke a privilege from a role.
+Roles are created with the [CREATE ROLE](/sql-statements-structure/sql-statements/account-management-sql-commands/create-role/) statement, and dropped with the [DROP ROLE](/sql-statements-structure/sql-statements/account-management-sql-commands/drop-role/) statement. Roles are then assigned to a user with an extension to the [GRANT](/kb/en/grant/#roles) statement, while privileges are assigned to a role in the regular way with [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/). Similarly, the [REVOKE](/sql-statements-structure/sql-statements/account-management-sql-commands/revoke/) statement can be used to both revoke a role from a user, or revoke a privilege from a role.
 
-Once a user has connected, he can obtain all  privileges associated with a role by <strong>setting</strong> a role with the [SET ROLE](/sql-statements-structure/sql-statements/account-management-sql-commands/set-role) statement. The [CURRENT_ROLE](/built-in-functions/secondary-functions/information-functions/current_role) function returns the currently set role for the session, if any.
+Once a user has connected, he can obtain all  privileges associated with a role by <strong>setting</strong> a role with the [SET ROLE](/sql-statements-structure/sql-statements/account-management-sql-commands/set-role/) statement. The [CURRENT_ROLE](/built-in-functions/secondary-functions/information-functions/current_role/) function returns the currently set role for the session, if any.
 
 Only roles granted directly to a user can be set, roles granted to other roles cannot. Instead the privileges granted to a role, which is, in turn, granted to another role (grantee), will be immediately available to any user who sets this second grantee role.
 
@@ -22,13 +22,13 @@ Roles were implemented as a GSoC 2013 project by Vicentiu Ciorbaru.
 
 ##### MariaDB starting with [10.1.1](/kb/en/mariadb-1011-release-notes/)
 
-The [SET DEFAULT ROLE](/sql-statements-structure/sql-statements/account-management-sql-commands/set-default-role) statement allows one to set a default role for a user. A default role is automatically enabled when a user connects (an implicit SET ROLE statement is executed immediately after a connection is established).
+The [SET DEFAULT ROLE](/sql-statements-structure/sql-statements/account-management-sql-commands/set-default-role/) statement allows one to set a default role for a user. A default role is automatically enabled when a user connects (an implicit SET ROLE statement is executed immediately after a connection is established).
 
 ## System Tables
 
-Information about roles and who they've been granted to can be found in the [Information Schema APPLICABLE_ROLES table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-applicable_roles-table) as well as the [mysql.ROLES_MAPPING table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlroles_mapping-table).
+Information about roles and who they've been granted to can be found in the [Information Schema APPLICABLE_ROLES table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-applicable_roles-table/) as well as the [mysql.ROLES_MAPPING table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlroles_mapping-table/).
 
-The [Information Schema ENABLED_ROLES table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-enabled_roles-table) shows the enabled roles for the current session.
+The [Information Schema ENABLED_ROLES table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-enabled_roles-table/) shows the enabled roles for the current session.
 
 ## Examples
 

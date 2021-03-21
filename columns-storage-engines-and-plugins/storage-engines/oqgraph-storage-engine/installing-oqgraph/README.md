@@ -4,7 +4,7 @@ The Open Query GRAPH computation engine, or OQGRAPH as the engine itself is call
 
 ## Installation
 
-The OQGRAPH storage engine exists as a separate package in the repositories for [MariaDB 10.0.7](/kb/en/mariadb-1007-release-notes/) and later. On Ubuntu and Debian the package is called `mariadb-oqgraph-engine-10.0` or `mariadb-plugin-oqgraph`. On Red Hat, CentOS, and Fedora the package is called `MariaDB-oqgraph-engine`. To install the plugin, first install the appropriate package and then install the plugin using the [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname) or [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin) commands.
+The OQGRAPH storage engine exists as a separate package in the repositories for [MariaDB 10.0.7](/kb/en/mariadb-1007-release-notes/) and later. On Ubuntu and Debian the package is called `mariadb-oqgraph-engine-10.0` or `mariadb-plugin-oqgraph`. On Red Hat, CentOS, and Fedora the package is called `MariaDB-oqgraph-engine`. To install the plugin, first install the appropriate package and then install the plugin using the [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname/) or [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin/) commands.
 
 ### Debian and Ubuntu
 

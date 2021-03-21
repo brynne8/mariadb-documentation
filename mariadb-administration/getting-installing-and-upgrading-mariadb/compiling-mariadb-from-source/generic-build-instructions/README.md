@@ -1,6 +1,6 @@
 # Generic Build Instructions
 
-The instructions on this page will help you compile [MariaDB](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb) from source.
+The instructions on this page will help you compile [MariaDB](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/) from source.
 Links to more complete instructions for specific platforms can be found on the
 [source](/kb/en/source/) page.
 
@@ -169,5 +169,5 @@ MariaDB builds with `readline`; using an alternative such as `Editline` may resu
 
 ## Post-install Tasks
 
-- [Installing system tables (mysql_install_db)](/mariadb-administration/getting-installing-and-upgrading-mariadb/installing-system-tables-mysql_install_db)
-- [Starting and Stopping MariaDB Automatically](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically)
+- [Installing system tables (mysql_install_db)](/mariadb-administration/getting-installing-and-upgrading-mariadb/installing-system-tables-mysql_install_db/)
+- [Starting and Stopping MariaDB Automatically](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically/)

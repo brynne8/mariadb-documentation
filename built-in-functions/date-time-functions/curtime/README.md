@@ -8,9 +8,9 @@ CURTIME([precision])
 
 ## Description
 
-Returns the current time as a value in 'HH:MM:SS' or HHMMSS.uuuuuu format, depending on whether the function is used in a string or numeric context. The value is expressed in the current [time zone](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones).
+Returns the current time as a value in 'HH:MM:SS' or HHMMSS.uuuuuu format, depending on whether the function is used in a string or numeric context. The value is expressed in the current [time zone](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones/).
 
-The optional <em>precision</em> determines the microsecond precision. See [Microseconds in MariaDB](/built-in-functions/date-time-functions/microseconds-in-mariadb).
+The optional <em>precision</em> determines the microsecond precision. See [Microseconds in MariaDB](/built-in-functions/date-time-functions/microseconds-in-mariadb/).
 
 ## Examples
 
@@ -43,4 +43,4 @@ SELECT CURTIME(2);
 
 ## See Also
 
-- [Microseconds in MariaDB](/built-in-functions/date-time-functions/microseconds-in-mariadb)
+- [Microseconds in MariaDB](/built-in-functions/date-time-functions/microseconds-in-mariadb/)

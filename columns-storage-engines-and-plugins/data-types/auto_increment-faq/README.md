@@ -2,7 +2,7 @@
 
 ## How do I get the last inserted auto_increment value?
 
-Use the [LAST_INSERT_ID()](/built-in-functions/secondary-functions/information-functions/last_insert_id) function:
+Use the [LAST_INSERT_ID()](/built-in-functions/secondary-functions/information-functions/last_insert_id/) function:
 
 ```sql
 SELECT LAST_INSERT_ID();
@@ -10,11 +10,11 @@ SELECT LAST_INSERT_ID();
 
 ## What if someone else inserts before I select my id?
 
-[LAST_INSERT_ID()](/built-in-functions/secondary-functions/information-functions/last_insert_id) is connection specific, so there is no problem from race conditions.
+[LAST_INSERT_ID()](/built-in-functions/secondary-functions/information-functions/last_insert_id/) is connection specific, so there is no problem from race conditions.
 
 ## How do I get the next value to be inserted?
 
-You don't. Insert, then find out what you did with [LAST_INSERT_ID()](/built-in-functions/secondary-functions/information-functions/last_insert_id).
+You don't. Insert, then find out what you did with [LAST_INSERT_ID()](/built-in-functions/secondary-functions/information-functions/last_insert_id/).
 
 ## How do I change what number auto_increment starts with?
 
@@ -25,7 +25,7 @@ or
 `INSERT INTO yourTable (autoField) VALUES (x);` <span>—</span>
 Next insert will contain `x+1` or `MAX(autoField) + 1`, whichever is higher
 
-Issuing [TRUNCATE TABLE](/sql-statements-structure/sql-statements/table-statements/truncate-table) will delete all the rows in the table, and will reset
+Issuing [TRUNCATE TABLE](/sql-statements-structure/sql-statements/table-statements/truncate-table/) will delete all the rows in the table, and will reset
 the auto_increment value to 0 in most cases (some earlier versions mapped
 TRUNCATE to DELETE for InnoDB tables, meaning the auto_increment value would
 not be reset).
@@ -89,7 +89,7 @@ See [AUTO_INCREMENT handling in XtraDB/InnoDB](/kb/en/auto_increment-handling-in
 
 ## General Information To Read
 
-[AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment)
+[AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment/)
 
 ## Manual Notes
 
@@ -121,10 +121,10 @@ SELECT * FROM autoinc_test;
 
 ## See Also
 
-- [AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment)
+- [AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment/)
 - [AUTO_INCREMENT handling in XtraDB/InnoDB](/kb/en/auto_increment-handling-in-xtradbinnodb/)
-- [LAST_INSERT_ID()](/built-in-functions/secondary-functions/information-functions/last_insert_id)
+- [LAST_INSERT_ID()](/built-in-functions/secondary-functions/information-functions/last_insert_id/)
 - [BLACKHOLE and AUTO_INCREMENT](/kb/en/blackhole/#blackhole-and-auto_increment)
-- [Sequences](/sql-statements-structure/sequences) - an alternative to auto_increment available from [MariaDB 10.3](/kb/en/what-is-mariadb-103/)
+- [Sequences](/sql-statements-structure/sequences/) - an alternative to auto_increment available from [MariaDB 10.3](/kb/en/what-is-mariadb-103/)
 
 <em>The initial version of this article was copied, with permission, from [http://hashmysql.org/wiki/Autoincrement_FAQ](http://hashmysql.org/wiki/Autoincrement_FAQ) on 2012-10-05.</em>

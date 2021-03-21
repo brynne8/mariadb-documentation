@@ -8,15 +8,15 @@ CONVERT_TZ(dt,from_tz,to_tz)
 
 ## Description
 
-CONVERT_TZ() converts a datetime value <em>dt</em> from the [time zone](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones) given by <em>from_tz</em> to the time zone given by <em>to_tz</em> and returns the resulting value.
+CONVERT_TZ() converts a datetime value <em>dt</em> from the [time zone](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones/) given by <em>from_tz</em> to the time zone given by <em>to_tz</em> and returns the resulting value.
 
-In order to use named time zones, such as GMT, MET or Africa/Johannesburg, the time_zone tables must be loaded (see [mysql_tzinfo_to_sql](/clients-utilities/mysql_tzinfo_to_sql)).
+In order to use named time zones, such as GMT, MET or Africa/Johannesburg, the time_zone tables must be loaded (see [mysql_tzinfo_to_sql](/clients-utilities/mysql_tzinfo_to_sql/)).
 
 No conversion will take place if the value falls outside of the supported TIMESTAMP range ('1970-01-01 00:00:01' to '2038-01-19 05:14:07' UTC) when converted from <em>from_tz</em> to UTC.
 
 This function returns NULL if the arguments are invalid (or named time zones have not been loaded).
 
-See [time zones](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones) for more information.
+See [time zones](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones/) for more information.
 
 ## Examples
 

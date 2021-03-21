@@ -2,32 +2,32 @@
 
 <strong>Release date:</strong> 17th October 2018
 
-[MariaDB ColumnStore 1.2.0](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore) is an Alpha release of MariaDB ColumnStore. This is the first release of the MariaDB ColumnStore 1.2 series. The MariaDB ColumnStore 1.2 series provides several new features and improvements over the MariaDB ColumnStore 1.1 release.
+[MariaDB ColumnStore 1.2.0](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/) is an Alpha release of MariaDB ColumnStore. This is the first release of the MariaDB ColumnStore 1.2 series. The MariaDB ColumnStore 1.2 series provides several new features and improvements over the MariaDB ColumnStore 1.1 release.
 
 MariaDB ColumnStore 1.2.0 is a <strong><em>[Alpha](/kb/en/release-criteria/)</em></strong> release.
 
 <strong>Do not use <em>alpha</em> releases on production systems!</strong>
 
-For an overview of [MariaDB ColumnStore](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore) see [MariaDB ColumnStore Architectural Overview](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-architectural-overview)
+For an overview of [MariaDB ColumnStore](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/) see [MariaDB ColumnStore Architectural Overview](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-architectural-overview/)
 
 Please provide feedback in [JIRA](https://jira.mariadb.org/browse/MCOL) for anything that is not working as expected so that we can fix it before we make the release available for the larger community.
-For general "how to questions" ask questions [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore) or subscribe to mariadb-columnstore@googlegroups.com
+For general "how to questions" ask questions [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/) or subscribe to mariadb-columnstore@googlegroups.com
 
 ## Notable changes
 
 - [MCOL-1385](https://jira.mariadb.org/browse/MCOL-1385) - The base MariaDB server version is now [10.3.9](/kb/en/mariadb-1039-release-notes/) which include several maintenance and security fixes.
-- [MCOL-392](https://jira.mariadb.org/browse/MCOL-392) - TIME data type is [now  supported](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-sql-structure-and-commands/columnstore-data-types)
-- [MCOL-320](https://jira.mariadb.org/browse/MCOL-320) - TIME and DATETIME data types [now support microseconds](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-sql-structure-and-commands/columnstore-data-types)
+- [MCOL-392](https://jira.mariadb.org/browse/MCOL-392) - TIME data type is [now  supported](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-sql-structure-and-commands/columnstore-data-types/)
+- [MCOL-320](https://jira.mariadb.org/browse/MCOL-320) - TIME and DATETIME data types [now support microseconds](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-sql-structure-and-commands/columnstore-data-types/)
 - [MCOL-497](https://jira.mariadb.org/browse/MCOL-497) - Cross Engine Joins now support SSL connections
 - Improved DDL syntax support
-<ul start="1"><li>[MCOL-497](https://jira.mariadb.org/browse/MCOL-497) - BOOL / BOOLEAN alias for TINYINT [now supported](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-sql-structure-and-commands/columnstore-data-types) - with thanks to community contributor "tntnatbry"
+<ul start="1"><li>[MCOL-497](https://jira.mariadb.org/browse/MCOL-497) - BOOL / BOOLEAN alias for TINYINT [now supported](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-sql-structure-and-commands/columnstore-data-types/) - with thanks to community contributor "tntnatbry"
 </li><li>[MCOL-573](https://jira.mariadb.org/browse/MCOL-573) - Backticks &amp; reserved words now supported
 </li><li>[MCOL-716](https://jira.mariadb.org/browse/MCOL-716) - Non-alphanumeric table/column names now supported
 </li></ul>
 - [MCOL-1201](https://jira.mariadb.org/browse/MCOL-1201) - User Defined Aggregate / Window Functions now support multiple parameters.
-- [MCOL-521](https://jira.mariadb.org/browse/MCOL-521) - [Regression aggregate](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-sql-structure-and-commands/columnstore-distributed-aggregate-functions) and [windows functions](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-sql-structure-and-commands/columnstore-window-functions) are now supported.
-- [MCOL-1577](https://jira.mariadb.org/browse/MCOL-1577) - CREATE TABLE...LIKE [now supported](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-sql-structure-and-commands/columnstore-data-definition-statements/columnstore-create-table)
-- [MCOL-1242](https://jira.mariadb.org/browse/MCOL-1242) - A [remote bulk data import tool](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-remote-bulk-data-import-mcsimport) is now available which allows loading data directly from any server. This tool is included in the MariaDB ColumnStore Tools package
+- [MCOL-521](https://jira.mariadb.org/browse/MCOL-521) - [Regression aggregate](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-sql-structure-and-commands/columnstore-distributed-aggregate-functions/) and [windows functions](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-sql-structure-and-commands/columnstore-window-functions/) are now supported.
+- [MCOL-1577](https://jira.mariadb.org/browse/MCOL-1577) - CREATE TABLE...LIKE [now supported](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-sql-structure-and-commands/columnstore-data-definition-statements/columnstore-create-table/)
+- [MCOL-1242](https://jira.mariadb.org/browse/MCOL-1242) - A [remote bulk data import tool](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-remote-bulk-data-import-mcsimport/) is now available which allows loading data directly from any server. This tool is included in the MariaDB ColumnStore Tools package
 - [MCOL-1281](https://jira.mariadb.org/browse/MCOL-1281) - [Microsoft Windows 10](https://mariadb.com/kb/en/library/columnstore-bulk-write-sdk/#windows-10-installation) support for bulk write SDK
 - Pentaho data adapter is now also available for Windows 10
 
@@ -103,7 +103,7 @@ In addition, all bugs fixed in MariaDB ColumnStore 1.1.6 and earlier are implici
 
 The following procedure outlines upgrading a 1.1.6 ColumnStore install to 1.2.0:
 
-- [1.1.6 GA to 1.2.0 Alpha upgrade procedure](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/mariadb-columnstore-columnstore/mariadb-columnstore-12-upgrades/mariadb-columnstore-software-upgrade-116-ga-to-120-alpha)
+- [1.1.6 GA to 1.2.0 Alpha upgrade procedure](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/mariadb-columnstore-columnstore/mariadb-columnstore-12-upgrades/mariadb-columnstore-software-upgrade-116-ga-to-120-alpha/)
 
 Multi version upgrades generally will work using the same procedure however we can't test every possible permutation so you should test your specific scenario outside of production first if you wish to try this (and this is good practice regardless).
 
@@ -121,7 +121,7 @@ There are a number bugs and known limitations within this version of MariaDB Col
 
 ## Documentation
 
-[MariaDB ColumnStore Documentation](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore)
+[MariaDB ColumnStore Documentation](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/)
 
 ## Packaging
 
@@ -129,7 +129,7 @@ RPM, Debian, and binary packages are provided for the Linux distributions suppor
 
 - The supported OS for the Alpha version are CentOS 6, CentOS 7, Debian 8, Debian 9, RedHat 6, RedHat 7, SUSE 12, Ubuntu 16.04 and Ubuntu 18.04.
 - Packages can be downloaded [here](https://mariadb.com/downloads/mariadb-ax) or can be installed from the [repositories](https://mariadb.com/kb/en/library/installing-mariadb-ax-from-the-package-repositories).
-- An Amazon AWS AMI Image is available for this release, please search for AMI name "MariaDB-ColumnStore-1.2.0". AMI specific installation instructions can be found [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/installing-and-configuring-a-columnstore-system-using-the-amazon-ami).
+- An Amazon AWS AMI Image is available for this release, please search for AMI name "MariaDB-ColumnStore-1.2.0". AMI specific installation instructions can be found [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/installing-and-configuring-a-columnstore-system-using-the-amazon-ami/).
 - Certified to run in Google Cloud Environment in the GA OSs.
 
 ## Source code

@@ -60,4 +60,4 @@ SELECT RPAD('',0),RPAD_ORACLE('',0);
 
 ## See Also
 
-- [LPAD](/built-in-functions/string-functions/lpad) - Left-padding instead of right-padding.
+- [LPAD](/built-in-functions/string-functions/lpad/) - Left-padding instead of right-padding.

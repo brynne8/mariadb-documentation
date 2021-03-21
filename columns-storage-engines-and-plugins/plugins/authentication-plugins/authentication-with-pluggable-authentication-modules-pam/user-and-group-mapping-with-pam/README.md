@@ -1,6 +1,6 @@
 # User and Group Mapping with PAM
 
-Even when using the [pam](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam) authentication plugin, the authenticating PAM user account still needs to exist in MariaDB, and the account needs to have privileges in the database. Creating these MariaDB accounts and making sure the privileges are correct can be a lot of work. To decrease the amount of work involved, some users would like to be able to map a PAM user to a different MariaDB user. For example, let’s say that `alice` and `bob` are both DBAs. It would be nice if each of them could log into MariaDB with their own PAM username and password, while MariaDB sees both of them as the same `dba` user. That way, there is only one MariaDB account to keep track of.
+Even when using the [pam](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam/) authentication plugin, the authenticating PAM user account still needs to exist in MariaDB, and the account needs to have privileges in the database. Creating these MariaDB accounts and making sure the privileges are correct can be a lot of work. To decrease the amount of work involved, some users would like to be able to map a PAM user to a different MariaDB user. For example, let’s say that `alice` and `bob` are both DBAs. It would be nice if each of them could log into MariaDB with their own PAM username and password, while MariaDB sees both of them as the same `dba` user. That way, there is only one MariaDB account to keep track of.
 
 Although most PAM modules usually do not do things like this, PAM supports the ability to change the user name in the process of authentication.The MariaDB `pam` authentication plugin fully supports this feature of PAM.
 
@@ -10,7 +10,7 @@ Rather than building user and group mapping into the `pam` authentication plugin
 
 ### Lack of Support for MySQL/Percona Group Mapping Syntax
 
-Unlike MariaDB, MySQL and Percona implemented group mapping in their PAM authentication plugins. If you've read through [MySQL's PAM authentication documentation on group mapping](https://dev.mysql.com/doc/refman/8.0/en/pam-pluggable-authentication.html#pam-authentication-unix-with-proxy) or [Percona's PAM authentication documentation on group mapping](https://www.percona.com/doc/percona-server/8.0/management/pam_plugin.html#supplementary-groups-support), you've probably seen syntax where the group mappings are provided in the [CREATE USER](/sql-statements-structure/sql-statements/account-management-sql-commands/create-user) statement like this:
+Unlike MariaDB, MySQL and Percona implemented group mapping in their PAM authentication plugins. If you've read through [MySQL's PAM authentication documentation on group mapping](https://dev.mysql.com/doc/refman/8.0/en/pam-pluggable-authentication.html#pam-authentication-unix-with-proxy) or [Percona's PAM authentication documentation on group mapping](https://www.percona.com/doc/percona-server/8.0/management/pam_plugin.html#supplementary-groups-support), you've probably seen syntax where the group mappings are provided in the [CREATE USER](/sql-statements-structure/sql-statements/account-management-sql-commands/create-user/) statement like this:
 
 ```sql
 CREATE USER ''@''
@@ -30,13 +30,13 @@ The `pam_user_map` PAM module is not currently packaged or built by MariaDB, so 
 
 Before the module can be compiled from source, you may need to install some dependencies.
 
-On RHEL, CentOS, and other similar Linux distributions that use [RPM packages](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm), you need to install `gcc` and `pam-devel`. For example:
+On RHEL, CentOS, and other similar Linux distributions that use [RPM packages](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/), you need to install `gcc` and `pam-devel`. For example:
 
 ```sql
 sudo yum install gcc pam-devel
 ```
 
-On Debian, Ubuntu, and other similar Linux distributions that use [DEB packages](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files), you need to install `gcc` and `libpam0g-dev`. For example:
+On Debian, Ubuntu, and other similar Linux distributions that use [DEB packages](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files/), you need to install `gcc` and `libpam0g-dev`. For example:
 
 ```sql
 sudo apt-get install gcc libpam0g-dev
@@ -91,7 +91,7 @@ account required pam_unix.so audit
 
 ## Creating Users
 
-With user and group mapping, creating users is done similar to how it is [normally done with the `pam` authentication plugin](/kb/en/authentication-plugin-pam/#creating-users). However, one major difference is that you will need to [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant) the <a undefined>PROXY</a> privilege on the mapped user to the original user.
+With user and group mapping, creating users is done similar to how it is [normally done with the `pam` authentication plugin](/kb/en/authentication-plugin-pam/#creating-users). However, one major difference is that you will need to [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/) the <a undefined>PROXY</a> privilege on the mapped user to the original user.
 
 For example, if you have the following configured in `/etc/security/user_map.conf`:
 
@@ -120,7 +120,7 @@ Also note that you might not be able to create the `''@'%'` anonymous account by
 
 ## Verifying that Mapping is Occurring
 
-In case any user mapping is performed, the original user name is returned by the SQL function [USER()](/built-in-functions/secondary-functions/information-functions/user), while the authenticated user name is returned by the SQL function [CURRENT_USER()](/built-in-functions/secondary-functions/information-functions/current_user). The latter actually defines what privileges are available to a connected user.
+In case any user mapping is performed, the original user name is returned by the SQL function [USER()](/built-in-functions/secondary-functions/information-functions/user/), while the authenticated user name is returned by the SQL function [CURRENT_USER()](/built-in-functions/secondary-functions/information-functions/current_user/). The latter actually defines what privileges are available to a connected user.
 
 For example, if we have the following configured:
 
@@ -150,7 +150,7 @@ MariaDB [(none)]> SELECT USER(), CURRENT_USER();
 1 row in set (0.000 sec)
 ```
 
-We can verify that our `foo` PAM user was properly mapped to the `bar` MariaDB user by looking at the return value of [CURRENT_USER()](/built-in-functions/secondary-functions/information-functions/current_user).
+We can verify that our `foo` PAM user was properly mapped to the `bar` MariaDB user by looking at the return value of [CURRENT_USER()](/built-in-functions/secondary-functions/information-functions/current_user/).
 
 ## Logging
 
@@ -237,8 +237,8 @@ See [MDEV-17315](https://jira.mariadb.org/browse/MDEV-17315) for more informatio
 
 You may find the following PAM and user mapping-related tutorials helpful:
 
-- [Configuring PAM Authentication and User Mapping with Unix Authentication](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/configuring-pam-authentication-and-user-mapping-with-unix-authentication)
-- [Configuring PAM Authentication and User Mapping with LDAP Authentication](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/configuring-pam-authentication-and-user-mapping-with-ldap-authentication)
+- [Configuring PAM Authentication and User Mapping with Unix Authentication](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/configuring-pam-authentication-and-user-mapping-with-unix-authentication/)
+- [Configuring PAM Authentication and User Mapping with LDAP Authentication](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/configuring-pam-authentication-and-user-mapping-with-ldap-authentication/)
 
 ## See Also
 

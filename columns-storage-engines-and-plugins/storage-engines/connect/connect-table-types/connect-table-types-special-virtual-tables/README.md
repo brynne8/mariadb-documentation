@@ -1,6 +1,6 @@
 # CONNECT Table Types - Special "Virtual" Tables
 
-The special table types supported by CONNECT are the Virtual table type ([VIR](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-table-types-vir) - introduced in [MariaDB 10.0.15](/kb/en/mariadb-10015-release-notes/)), Directory Listing table type (DIR), the Windows Management Instrumentation Table Type (WMI), and the “Mac Address” type (MAC).
+The special table types supported by CONNECT are the Virtual table type ([VIR](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-table-types-vir/) - introduced in [MariaDB 10.0.15](/kb/en/mariadb-10015-release-notes/)), Directory Listing table type (DIR), the Windows Management Instrumentation Table Type (WMI), and the “Mac Address” type (MAC).
 
 These tables are “virtual tables”, meaning they have no physical data but rather produce result data using specific algorithms. Note that this is close to what Views are, so they could be regarded as special views.
 
@@ -226,7 +226,7 @@ This syntax must be strictly respected. The text has the format:
 yyyymmddHHMMSS.mmmmmmsUUU
 ```
 
-It is: year, month, day, hour, minute, second, millisecond, and signed minute deviation from [UTC](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time). This format is locale-independent so you can write a query that runs on any machine.
+It is: year, month, day, hour, minute, second, millisecond, and signed minute deviation from [UTC](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time/). This format is locale-independent so you can write a query that runs on any machine.
 
 <strong>Note 1:</strong> The WMI table type is available only in Windows versions of CONNECT.
 

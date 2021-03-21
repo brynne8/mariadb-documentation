@@ -9,7 +9,7 @@ MultiPolygonFromText(wkt[,srid])
 
 ## Description
 
-Constructs a [MULTIPOLYGON](/sql-statements-structure/geographic-geometric-features/geometry-constructors/multipolygon) value using its [WKT](/sql-statements-structure/geographic-geometric-features/wkt/wkt-definition) representation and [SRID](/kb/en/srid/).
+Constructs a [MULTIPOLYGON](/sql-statements-structure/geographic-geometric-features/geometry-constructors/multipolygon/) value using its [WKT](/sql-statements-structure/geographic-geometric-features/wkt/wkt-definition/) representation and [SRID](/kb/en/srid/).
 
 `MPolyFromText()` and `MultiPolygonFromText()` are synonyms.
 

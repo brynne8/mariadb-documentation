@@ -9,7 +9,7 @@ This lists the different naming conventions enforced by the column store, compar
 
 ## Reserved words
 
-In addition to MariaDB Server [reserved words](/sql-statements-structure/sql-language-structure/reserved-words), ColumnStore has additional reserved words that cannot be used as table names, column names or user defined variables, functions or stored procedure names.
+In addition to MariaDB Server [reserved words](/sql-statements-structure/sql-language-structure/reserved-words/), ColumnStore has additional reserved words that cannot be used as table names, column names or user defined variables, functions or stored procedure names.
 
 <table><tbody><tr><th>Keyword</th></tr>
 <tr><td>ACTION</td></tr>

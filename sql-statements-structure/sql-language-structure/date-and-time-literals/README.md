@@ -4,7 +4,7 @@
 
 ##### MariaDB starting with [10.0](/kb/en/what-is-mariadb-100/)
 
-[MariaDB 10.0](/kb/en/what-is-mariadb-100/) supports the SQL standard and ODBC syntaxes for [DATE](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/date), [TIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/time) and [TIMESTAMP](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/timestamp) literals.
+[MariaDB 10.0](/kb/en/what-is-mariadb-100/) supports the SQL standard and ODBC syntaxes for [DATE](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/date/), [TIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/time/) and [TIMESTAMP](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/timestamp/) literals.
 
 SQL standard syntax:
 
@@ -18,7 +18,7 @@ ODBC syntax:
 - {t 'string'}
 - {ts 'string'}
 
-The timestamp literals are treated as [DATETIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/datetime) literals, because in MariaDB the reange of `DATETIME` is closer to the `TIMESTAMP` range in the SQL standard.
+The timestamp literals are treated as [DATETIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/datetime/) literals, because in MariaDB the reange of `DATETIME` is closer to the `TIMESTAMP` range in the SQL standard.
 
 `string` is a string in a proper format, as explained below.
 
@@ -89,11 +89,11 @@ The year part in `DATE` and `DATETIME` literals is determined as follows:
 123000.123456
 ```
 
-See [Microseconds in MariaDB](/built-in-functions/date-time-functions/microseconds-in-mariadb) for details.
+See [Microseconds in MariaDB](/built-in-functions/date-time-functions/microseconds-in-mariadb/) for details.
 
 ## Date and time literals and the `SQL_MODE`
 
-Unless the [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode) `NO_ZERO_DATE` flag is set, some special values are allowed: the `'0000-00-00'` `DATE`, the `'00:00:00'` `TIME`, and the `0000-00-00 00:00:00` `DATETIME`.
+Unless the [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode/) `NO_ZERO_DATE` flag is set, some special values are allowed: the `'0000-00-00'` `DATE`, the `'00:00:00'` `TIME`, and the `0000-00-00 00:00:00` `DATETIME`.
 
 If the `ALLOW_INVALID_DATES` flag is set, the invalid dates (for example, 30th February) are allowed. If not, if the `NO_ZERO_DATE` is set, an error is produced; otherwise, a zero-date is returned.
 
@@ -101,4 +101,4 @@ Unless the `NO_ZERO_IN_DATE` flag is set, each subpart of a date or time value (
 
 ## See also
 
-- [Date and time units](/built-in-functions/date-time-functions/date-and-time-units)
+- [Date and time units](/built-in-functions/date-time-functions/date-and-time-units/)

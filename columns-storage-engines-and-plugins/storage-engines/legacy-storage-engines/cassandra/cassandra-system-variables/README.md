@@ -2,7 +2,7 @@
 
 CassandraSE is no longer actively being developed and has been removed in [MariaDB 10.6](/kb/en/what-is-mariadb-106/). See [MDEV-23024](https://jira.mariadb.org/browse/MDEV-23024).
 
-This page documents system variables related to the [Cassandra storage engine](/columns-storage-engines-and-plugins/storage-engines/legacy-storage-engines/cassandra). See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables) for a complete list of system variables and instructions on setting them.
+This page documents system variables related to the [Cassandra storage engine](/columns-storage-engines-and-plugins/storage-engines/legacy-storage-engines/cassandra/). See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables/) for a complete list of system variables and instructions on setting them.
 
 #### `cassandra_default_thrift_host`
 

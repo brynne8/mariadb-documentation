@@ -10,7 +10,7 @@ LOAD TABLE tbl_name FROM MASTER
 
 This feature has been removed from recent versions of MariaDB.
 
-Since the current implementation of <code class="highlight fixed" style="white-space:pre-wrap">[LOAD DATA FROM MASTER](/replication/standard-replication/obsolete-replication-information/load-data-from-master-removed)</code>
+Since the current implementation of <code class="highlight fixed" style="white-space:pre-wrap">[LOAD DATA FROM MASTER](/replication/standard-replication/obsolete-replication-information/load-data-from-master-removed/)</code>
 and <code class="highlight fixed" style="white-space:pre-wrap">LOAD TABLE FROM MASTER</code> is very limited, these statements
 are deprecated in versions 4.1 of MySQL and above. We will introduce a more
 advanced technique (called "online backup") in a future version. That technique
@@ -18,9 +18,9 @@ will have the additional advantage of working with more storage engines.
 
 For MariaDB and MySQL 5.1 and earlier, the recommended alternative solution to
 using <code class="highlight fixed" style="white-space:pre-wrap">LOAD DATA FROM MASTER</code> or
- <code class="highlight fixed" style="white-space:pre-wrap">LOAD TABLE FROM MASTER</code> is using [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump) or [mysqlhotcopy](/clients-utilities/backup-restore-and-import-clients/mysqlhotcopy).
+ <code class="highlight fixed" style="white-space:pre-wrap">LOAD TABLE FROM MASTER</code> is using [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump/) or [mysqlhotcopy](/clients-utilities/backup-restore-and-import-clients/mysqlhotcopy/).
 The latter requires Perl and two Perl modules (DBI and DBD:mysql) and works for
-[MyISAM](/kb/en/myisam/) and [ARCHIVE](/columns-storage-engines-and-plugins/storage-engines/archive) tables only. With mysqldump, you can create SQL dumps on the
+[MyISAM](/kb/en/myisam/) and [ARCHIVE](/columns-storage-engines-and-plugins/storage-engines/archive/) tables only. With mysqldump, you can create SQL dumps on the
 master and pipe (or copy) these to a mysql client on the slave. This has the
 advantage of working for all storage engines, but can be quite slow, since it
 works using <code class="highlight fixed" style="white-space:pre-wrap">SELECT</code>.

@@ -20,7 +20,7 @@ It contains the following columns:
 <tr><td><code>PLUGIN_AUTH_VERSION</code></td><td>Plugin's version as determined by the plugin author. An example would be '0.99 beta 1'.</td></tr>
 </tbody></table>
 
-It provides a superset of the information shown by the [SHOW PLUGINS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-plugins) statement. For specific information about storage engines (a particular type of plugins), see the [information_schema.ENGINES](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-engines-table) table and the [SHOW ENGINES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engines) statement.
+It provides a superset of the information shown by the [SHOW PLUGINS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-plugins/) statement. For specific information about storage engines (a particular type of plugins), see the [information_schema.ENGINES](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-engines-table/) table and the [SHOW ENGINES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engines/) statement.
 
 This table provides a subset of the Information Schema [information_schema.ALL_PLUGINS](/kb/en/information-schema-all_plugins-table/) table, which contains all available plugins, installed or not.
 
@@ -29,7 +29,7 @@ The table is not a standard Information Schema table, and is a MariaDB extension
 #### Examples
 
 The easiest way to get basic information on plugins is with
-[SHOW PLUGINS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-plugins):
+[SHOW PLUGINS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-plugins/):
 
 ```sql
 SHOW PLUGINS;
@@ -89,7 +89,7 @@ WHERE PLUGIN_NAME LIKE 'tokudb';
 Empty set
 ```
 
-The equivalent [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) query would be:
+The equivalent [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) query would be:
 
 ```sql
 SELECT PLUGIN_NAME, PLUGIN_STATUS, 
@@ -97,7 +97,7 @@ PLUGIN_TYPE, PLUGIN_LIBRARY, PLUGIN_LICENSE
 FROM INFORMATION_SCHEMA.PLUGINS;
 ```
 
-Other [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) queries can be used to see additional information. For example:
+Other [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) queries can be used to see additional information. For example:
 
 ```sql
 SELECT PLUGIN_NAME, PLUGIN_DESCRIPTION, 
@@ -194,10 +194,10 @@ LOAD_OPTION: FORCE
 
 ## See Also
 
-- [List of Plugins](/columns-storage-engines-and-plugins/plugins/information-on-plugins/list-of-plugins)
-- [Plugin Overview](/columns-storage-engines-and-plugins/plugins/plugin-overview)
-- [SHOW PLUGINS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-plugins)
-- [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin)
-- [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname)
-- [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin)
-- [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname)
+- [List of Plugins](/columns-storage-engines-and-plugins/plugins/information-on-plugins/list-of-plugins/)
+- [Plugin Overview](/columns-storage-engines-and-plugins/plugins/plugin-overview/)
+- [SHOW PLUGINS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-plugins/)
+- [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin/)
+- [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname/)
+- [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin/)
+- [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname/)

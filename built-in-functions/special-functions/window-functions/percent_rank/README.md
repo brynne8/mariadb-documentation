@@ -2,7 +2,7 @@
 
 ##### MariaDB starting with [10.2](/kb/en/what-is-mariadb-102/)
 
-The PERCENT_RANK() function was first introduced with [window functions](/built-in-functions/special-functions/window-functions) in [MariaDB 10.2.0](/kb/en/mariadb-1020-release-notes/).
+The PERCENT_RANK() function was first introduced with [window functions](/built-in-functions/special-functions/window-functions/) in [MariaDB 10.2.0](/kb/en/mariadb-1020-release-notes/).
 
 ## Syntax
 
@@ -15,7 +15,7 @@ PERCENT_RANK() OVER (
 
 ## Description
 
-PERCENT_RANK() is a [window function](/built-in-functions/special-functions/window-functions) that returns the relative percent rank of a given row. The following formula is used to calculate the percent rank:
+PERCENT_RANK() is a [window function](/built-in-functions/special-functions/window-functions/) that returns the relative percent rank of a given row. The following formula is used to calculate the percent rank:
 
 ```sql
 (rank - 1) / (number of rows in the window or partition - 1)
@@ -105,4 +105,4 @@ from t1;
 
 ## See Also
 
-- [CUME_DIST()](/built-in-functions/special-functions/window-functions/cume_dist)
+- [CUME_DIST()](/built-in-functions/special-functions/window-functions/cume_dist/)

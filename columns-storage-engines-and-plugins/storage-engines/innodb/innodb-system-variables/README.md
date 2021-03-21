@@ -1,14 +1,14 @@
 # InnoDB System Variables
 
-This page documents system variables related to the [XtraDB/InnoDB storage engine](/columns-storage-engines-and-plugins/storage-engines/innodb). For options that are not system variables, see [InnoDB Options](/kb/en/mysqld-options/#innodb-options).
+This page documents system variables related to the [XtraDB/InnoDB storage engine](/columns-storage-engines-and-plugins/storage-engines/innodb/). For options that are not system variables, see [InnoDB Options](/kb/en/mysqld-options/#innodb-options).
 
-See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables) for a complete list of system variables and instructions on setting them.
+See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables/) for a complete list of system variables and instructions on setting them.
 
-Also see the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables).
+Also see the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables/).
 
 #### `have_innodb`
 
-- <strong>Description:</strong> If the server supports [InnoDB tables](/columns-storage-engines-and-plugins/storage-engines/innodb), will be set to `YES`, otherwise will be set to `NO`. Removed in [MariaDB 10.0](/kb/en/what-is-mariadb-100/), use the [Information Schema PLUGINS](/kb/en/information-schema-plugins-table/) table or [SHOW ENGINES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engines) instead.
+- <strong>Description:</strong> If the server supports [InnoDB tables](/columns-storage-engines-and-plugins/storage-engines/innodb/), will be set to `YES`, otherwise will be set to `NO`. Removed in [MariaDB 10.0](/kb/en/what-is-mariadb-100/), use the [Information Schema PLUGINS](/kb/en/information-schema-plugins-table/) table or [SHOW ENGINES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engines/) instead.
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
 - <strong>Removed:</strong> [MariaDB 10.0](/kb/en/what-is-mariadb-100/)
@@ -45,7 +45,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `innodb_adaptive_flushing`
 
-- <strong>Description:</strong> If set to `1`, the default, the server will dynamically adjust the flush rate of dirty pages in the [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) buffer pool. This assists to reduce brief bursts of I/O activity.
+- <strong>Description:</strong> If set to `1`, the default, the server will dynamically adjust the flush rate of dirty pages in the [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) buffer pool. This assists to reduce brief bursts of I/O activity.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-adaptive-flushing=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -56,7 +56,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `innodb_adaptive_flushing_lwm`
 
-- <strong>Description:</strong> Adaptive flushing is enabled when this this low water mark percentage of the [InnoDB redo log](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-redo-log) capacity is reached.
+- <strong>Description:</strong> Adaptive flushing is enabled when this this low water mark percentage of the [InnoDB redo log](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-redo-log/) capacity is reached.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-adaptive-flushing-lwm=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -69,7 +69,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `innodb_adaptive_flushing_method`
 
-- <strong>Description:</strong> Determines the method of flushing dirty blocks from the InnoDB [buffer pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool). If set to `native` or `0`, the original InnoDB method is used. The maximum checkpoint age is determined by the total length of all transaction log files. When the checkpoint age reaches the maximum checkpoint age, blocks are flushed. This can cause lag if there are many updates per second and many blocks with an almost identical age need to be flushed. If set to `estimate` or `1`, the default, the oldest modified age will be compared with the maximum age capacity. If it's more than 1/4 of this age, blocks are flushed every second. The number of blocks flushed is determined by the number of modified blocks, the LSN progress speed and the average age of all modified blocks. It's therefore independent of the [innodb_io_capacity](#innodb_io_capacity) for the 1-second loop, but not entirely so for the 10-second loop. If set to `keep_average` or `2`, designed specifically for SSD cards, a shorter loop cycle is used in an attempt to keep the I/O rate constant.  Removed in [MariaDB 10.0](/kb/en/what-is-mariadb-100/)/XtraDB 5.6 and replaced with InnoDB flushing method from MySQL 5.6.
+- <strong>Description:</strong> Determines the method of flushing dirty blocks from the InnoDB [buffer pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool/). If set to `native` or `0`, the original InnoDB method is used. The maximum checkpoint age is determined by the total length of all transaction log files. When the checkpoint age reaches the maximum checkpoint age, blocks are flushed. This can cause lag if there are many updates per second and many blocks with an almost identical age need to be flushed. If set to `estimate` or `1`, the default, the oldest modified age will be compared with the maximum age capacity. If it's more than 1/4 of this age, blocks are flushed every second. The number of blocks flushed is determined by the number of modified blocks, the LSN progress speed and the average age of all modified blocks. It's therefore independent of the [innodb_io_capacity](#innodb_io_capacity) for the 1-second loop, but not entirely so for the 10-second loop. If set to `keep_average` or `2`, designed specifically for SSD cards, a shorter loop cycle is used in an attempt to keep the I/O rate constant.  Removed in [MariaDB 10.0](/kb/en/what-is-mariadb-100/)/XtraDB 5.6 and replaced with InnoDB flushing method from MySQL 5.6.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">innodb-adaptive-flushing-method=value</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -82,7 +82,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `innodb_adaptive_hash_index`
 
-- <strong>Description:</strong> If set to `1`, the default until [MariaDB 10.5](/kb/en/what-is-mariadb-105/), the [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) hash index is enabled. Based on performance testing ([MDEV-17492](https://jira.mariadb.org/browse/MDEV-17492)), the InnoDB adaptive hash index helps performance in mostly read-only workloads, and could slow down performance in other environments, especially [DROP TABLE](/sql-statements-structure/sql-statements/data-definition/drop/drop-table), [TRUNCATE TABLE](/sql-statements-structure/sql-statements/table-statements/truncate-table), [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table), or [DROP INDEX](/sql-statements-structure/sql-statements/data-definition/drop/drop-index) operations.
+- <strong>Description:</strong> If set to `1`, the default until [MariaDB 10.5](/kb/en/what-is-mariadb-105/), the [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) hash index is enabled. Based on performance testing ([MDEV-17492](https://jira.mariadb.org/browse/MDEV-17492)), the InnoDB adaptive hash index helps performance in mostly read-only workloads, and could slow down performance in other environments, especially [DROP TABLE](/sql-statements-structure/sql-statements/data-definition/drop/drop-table/), [TRUNCATE TABLE](/sql-statements-structure/sql-statements/table-statements/truncate-table/), [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/), or [DROP INDEX](/sql-statements-structure/sql-statements/data-definition/drop/drop-index/) operations.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-adaptive-hash-index=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -136,7 +136,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `innodb_additional_mem_pool_size`
 
-- <strong>Description:</strong> Size in bytes of the [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) memory pool used for storing information about internal data structures. Defaults to 8MB, if your application has many tables and a large structure, and this is exceeded, operating system memory will be allocated and warning messages written to the error log, in which case you should increase this value. Deprecated in [MariaDB 10.0](/kb/en/what-is-mariadb-100/) and removed in [MariaDB 10.2](/kb/en/what-is-mariadb-102/) along with InnoDB's internal memory allocator.
+- <strong>Description:</strong> Size in bytes of the [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) memory pool used for storing information about internal data structures. Defaults to 8MB, if your application has many tables and a large structure, and this is exceeded, operating system memory will be allocated and warning messages written to the error log, in which case you should increase this value. Deprecated in [MariaDB 10.0](/kb/en/what-is-mariadb-100/) and removed in [MariaDB 10.2](/kb/en/what-is-mariadb-102/) along with InnoDB's internal memory allocator.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-additional-mem-pool-size=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -236,7 +236,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `innodb_autoinc_lock_mode`
 
-- <strong>Description:</strong> The lock mode that is used when generating [AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment) values for InnoDB tables. 
+- <strong>Description:</strong> The lock mode that is used when generating [AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment/) values for InnoDB tables. 
 <ul start="1"><li>Valid values are:
 <ul start="1"><li>`0` is the traditional lock mode.
 </li><li>`1` is the consecutive lock mode.
@@ -258,7 +258,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `innodb_background_scrub_data_check_interval`
 
-- <strong>Description:</strong> Check if spaces needs scrubbing every [innodb_background_scrub_data_check_interval](#innodb_background_scrub_data_check_interval) seconds. See [Data Scrubbing](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-data-scrubbing). Deprecated and ignored from [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/).
+- <strong>Description:</strong> Check if spaces needs scrubbing every [innodb_background_scrub_data_check_interval](#innodb_background_scrub_data_check_interval) seconds. See [Data Scrubbing](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-data-scrubbing/). Deprecated and ignored from [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-background-scrub-data-check-interval=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -273,7 +273,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `innodb_background_scrub_data_compressed`
 
-- <strong>Description:</strong> Enable scrubbing of compressed data by background threads (same as encryption_threads). See [Data Scrubbing](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-data-scrubbing). Deprecated and ignored from [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/).
+- <strong>Description:</strong> Enable scrubbing of compressed data by background threads (same as encryption_threads). See [Data Scrubbing](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-data-scrubbing/). Deprecated and ignored from [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-background-scrub-data-compressed={0|1}</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -287,7 +287,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `innodb_background_scrub_data_interval`
 
-- <strong>Description:</strong> Scrub spaces that were last scrubbed longer than this number of seconds ago. See [Data Scrubbing](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-data-scrubbing). Deprecated and ignored from [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/).
+- <strong>Description:</strong> Scrub spaces that were last scrubbed longer than this number of seconds ago. See [Data Scrubbing](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-data-scrubbing/). Deprecated and ignored from [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-background-scrub-data-interval=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -302,7 +302,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `innodb_background_scrub_data_uncompressed`
 
-- <strong>Description:</strong> Enable scrubbing of uncompressed data by background threads (same as encryption_threads). See [Data Scrubbing](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-data-scrubbing). Deprecated and ignored from [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/).
+- <strong>Description:</strong> Enable scrubbing of uncompressed data by background threads (same as encryption_threads). See [Data Scrubbing](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-data-scrubbing/). Deprecated and ignored from [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-background-scrub-data-uncompressed={0|1}</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -341,7 +341,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `innodb_buffer_pool_chunk_size`
 
-- <strong>Description:</strong> Chunk size used for dynamically resizing the [buffer pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool). Note that changing this setting can change the size of the buffer pool. When [large-pages](/kb/en/server-system-variables/#large_pages) is used this value is effectively rounded up to the next multiple of [large-page-size](/kb/en/server-system-variables/#large_page_size). See [Setting Innodb Buffer Pool Size Dynamically](/replication/optimization-and-tuning/system-variables/setting-innodb-buffer-pool-size-dynamically).
+- <strong>Description:</strong> Chunk size used for dynamically resizing the [buffer pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool/). Note that changing this setting can change the size of the buffer pool. When [large-pages](/kb/en/server-system-variables/#large_pages) is used this value is effectively rounded up to the next multiple of [large-page-size](/kb/en/server-system-variables/#large_page_size). See [Setting Innodb Buffer Pool Size Dynamically](/replication/optimization-and-tuning/system-variables/setting-innodb-buffer-pool-size-dynamically/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-buffer-pool-chunk-size=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -354,7 +354,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `innodb_buffer_pool_dump_at_shutdown`
 
-- <strong>Description:</strong> Whether to record pages cached in the [buffer pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool) on server shutdown, which reduces the length of the warmup the next time the server starts. The related [innodb_buffer_pool_load_at_startup](#innodb_buffer_pool_load_at_startup) specifies whether the buffer pool is automatically warmed up at startup.
+- <strong>Description:</strong> Whether to record pages cached in the [buffer pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool/) on server shutdown, which reduces the length of the warmup the next time the server starts. The related [innodb_buffer_pool_load_at_startup](#innodb_buffer_pool_load_at_startup) specifies whether the buffer pool is automatically warmed up at startup.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-buffer-pool-dump-at-shutdown=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -369,7 +369,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `innodb_buffer_pool_dump_now`
 
-- <strong>Description:</strong> Immediately records pages stored in the [buffer pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool). The related [innodb_buffer_pool_load_now](#innodb_buffer_pool_load_now) does the reverse, and will immediately warm up the buffer pool.
+- <strong>Description:</strong> Immediately records pages stored in the [buffer pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool/). The related [innodb_buffer_pool_load_now](#innodb_buffer_pool_load_now) does the reverse, and will immediately warm up the buffer pool.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-buffer-pool-dump-now=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -381,7 +381,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `innodb_buffer_pool_dump_pct`
 
-- <strong>Description:</strong> Dump only the hottest N% of each [buffer pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool), defaults to 100 until [MariaDB 10.2.1](/kb/en/mariadb-1021-release-notes/). Since [MariaDB 10.2.2](/kb/en/mariadb-1022-release-notes/), defaults to 25% along with the changes to  [innodb_buffer_pool_dump_at_shutdown](#innodb_buffer_pool_dump_at_shutdown) and [innodb_buffer_pool_load_at_startup](#innodb_buffer_pool_load_at_startup).
+- <strong>Description:</strong> Dump only the hottest N% of each [buffer pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool/), defaults to 100 until [MariaDB 10.2.1](/kb/en/mariadb-1021-release-notes/). Since [MariaDB 10.2.2](/kb/en/mariadb-1022-release-notes/), defaults to 25% along with the changes to  [innodb_buffer_pool_dump_at_shutdown](#innodb_buffer_pool_dump_at_shutdown) and [innodb_buffer_pool_load_at_startup](#innodb_buffer_pool_load_at_startup).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-buffer-pool-dump-pct=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -409,7 +409,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `innodb_buffer_pool_filename`
 
-- <strong>Description:</strong> The file that holds the [buffer pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool) list of page numbers set by [innodb_buffer_pool_dump_at_shutdown](#innodb_buffer_pool_dump_at_shutdown) and [innodb_buffer_pool_dump_now](#innodb_buffer_pool_dump_now).
+- <strong>Description:</strong> The file that holds the [buffer pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool/) list of page numbers set by [innodb_buffer_pool_dump_at_shutdown](#innodb_buffer_pool_dump_at_shutdown) and [innodb_buffer_pool_dump_now](#innodb_buffer_pool_dump_now).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-buffer-pool-filename=file</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -421,7 +421,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `innodb_buffer_pool_instances`
 
-- <strong>Description:</strong> If [innodb_buffer_pool_size](#innodb_buffer_pool_size) is set to more than 1GB, innodb_buffer_pool_instances divides the [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) buffer pool into this many instances. The default was 1 in [MariaDB 5.5](/kb/en/what-is-mariadb-55/), but for large systems with buffer pools of many gigabytes, many instances can help reduce contention concurrency. The default is 8 in MariaDB 10 (except on Windows 32-bit, where it varies according to [innodb_buffer_pool_size](#innodb_buffer_pool_size), or from [MariaDB 10.2.2](/kb/en/mariadb-1022-release-notes/), where it is set to 1 if [innodb_buffer_pool_size](#innodb_buffer_pool_size) &lt; 1GB). Each instance manages its own data structures and takes an equal portion of the total buffer pool size, so for example if innodb_buffer_pool_size is 4GB and innodb_buffer_pool_instances is set to 4, each instance will be 1GB. Each instance should ideally be at least 1GB in size. Deprecated and ignored from [MariaDB 10.5.1](/kb/en/mariadb-1051-release-notes/), as the original reasons for for splitting the buffer pool have mostly gone away.
+- <strong>Description:</strong> If [innodb_buffer_pool_size](#innodb_buffer_pool_size) is set to more than 1GB, innodb_buffer_pool_instances divides the [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) buffer pool into this many instances. The default was 1 in [MariaDB 5.5](/kb/en/what-is-mariadb-55/), but for large systems with buffer pools of many gigabytes, many instances can help reduce contention concurrency. The default is 8 in MariaDB 10 (except on Windows 32-bit, where it varies according to [innodb_buffer_pool_size](#innodb_buffer_pool_size), or from [MariaDB 10.2.2](/kb/en/mariadb-1022-release-notes/), where it is set to 1 if [innodb_buffer_pool_size](#innodb_buffer_pool_size) &lt; 1GB). Each instance manages its own data structures and takes an equal portion of the total buffer pool size, so for example if innodb_buffer_pool_size is 4GB and innodb_buffer_pool_instances is set to 4, each instance will be 1GB. Each instance should ideally be at least 1GB in size. Deprecated and ignored from [MariaDB 10.5.1](/kb/en/mariadb-1051-release-notes/), as the original reasons for for splitting the buffer pool have mostly gone away.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-buffer-pool-instances=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -434,7 +434,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `innodb_buffer_pool_load_abort`
 
-- <strong>Description:</strong> Aborts the process of restoring [buffer pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool) contents started by [innodb_buffer_pool_load_at_startup](#innodb_buffer_pool_load_at_startup) or [innodb_buffer_pool_load_now](#innodb_buffer_pool_load_now).
+- <strong>Description:</strong> Aborts the process of restoring [buffer pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool/) contents started by [innodb_buffer_pool_load_at_startup](#innodb_buffer_pool_load_at_startup) or [innodb_buffer_pool_load_now](#innodb_buffer_pool_load_now).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-buffer-pool-load-abort=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -446,7 +446,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `innodb_buffer_pool_load_at_startup`
 
-- <strong>Description:</strong> Specifies whether the [buffer pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool) is automatically warmed up when the server starts by loading the pages held earlier. The related [innodb_buffer_pool_dump_at_shutdown](#innodb_buffer_pool_dump_at_shutdown) specifies whether pages are saved at shutdown.
+- <strong>Description:</strong> Specifies whether the [buffer pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool/) is automatically warmed up when the server starts by loading the pages held earlier. The related [innodb_buffer_pool_dump_at_shutdown](#innodb_buffer_pool_dump_at_shutdown) specifies whether pages are saved at shutdown.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-buffer-pool-load-at-startup=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -461,7 +461,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `innodb_buffer_pool_load_now`
 
-- <strong>Description:</strong> Immediately warms up the [buffer pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool) by loading the stored data pages. The related [innodb_buffer_pool_dump_now](#innodb_buffer_pool_dump_now) does the reverse, and immediately records pages stored in the buffer pool.
+- <strong>Description:</strong> Immediately warms up the [buffer pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool/) by loading the stored data pages. The related [innodb_buffer_pool_dump_now](#innodb_buffer_pool_dump_now) does the reverse, and immediately records pages stored in the buffer pool.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-buffer-pool-load-now=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -499,7 +499,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `innodb_buffer_pool_restore_at_startup`
 
-- <strong>Description:</strong> Time in seconds between automatic buffer pool dumps. If set to a non-zero value, XtraDB will also perform an automatic restore of the [buffer pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool) at startup. If set to `0`, automatic dumps are not performed, nor automatic restores on startup. Replaced by [innodb_buffer_pool_load_at_startup](#innodb_buffer_pool_load_at_startup) in [MariaDB 10.0](/kb/en/what-is-mariadb-100/).
+- <strong>Description:</strong> Time in seconds between automatic buffer pool dumps. If set to a non-zero value, XtraDB will also perform an automatic restore of the [buffer pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool/) at startup. If set to `0`, automatic dumps are not performed, nor automatic restores on startup. Replaced by [innodb_buffer_pool_load_at_startup](#innodb_buffer_pool_load_at_startup) in [MariaDB 10.0](/kb/en/what-is-mariadb-100/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">innodb-buffer-pool-restore-at-startup</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -537,7 +537,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `innodb_buffer_pool_size`
 
-- <strong>Description:</strong> InnoDB buffer pool size in bytes. The primary value to adjust on a database server with entirely/primarily [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables, can be set up to 80% of the total memory in these environments. See the [InnoDB Buffer Pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool) for more on setting this variable, and also [Setting Innodb Buffer Pool Size Dynamically](/replication/optimization-and-tuning/system-variables/setting-innodb-buffer-pool-size-dynamically) if doing so dynamically.
+- <strong>Description:</strong> InnoDB buffer pool size in bytes. The primary value to adjust on a database server with entirely/primarily [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables, can be set up to 80% of the total memory in these environments. See the [InnoDB Buffer Pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool/) for more on setting this variable, and also [Setting Innodb Buffer Pool Size Dynamically](/replication/optimization-and-tuning/system-variables/setting-innodb-buffer-pool-size-dynamically/) if doing so dynamically.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-buffer-pool-size=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes (&gt;= [MariaDB 10.2.2](/kb/en/mariadb-1022-release-notes/)), No (&lt;= [MariaDB 10.2.1](/kb/en/mariadb-1021-release-notes/))
@@ -560,7 +560,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `innodb_change_buffer_max_size`
 
-- <strong>Description:</strong> Maximum size of the [InnoDB Change Buffer](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-change-buffering) as a percentage of the total buffer pool. The default is 25%, and this can be increased up to 50% for servers with high write activity, and lowered down to 0 for servers used exclusively for reporting.
+- <strong>Description:</strong> Maximum size of the [InnoDB Change Buffer](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-change-buffering/) as a percentage of the total buffer pool. The default is 25%, and this can be increased up to 50% for servers with high write activity, and lowered down to 0 for servers used exclusively for reporting.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-change-buffer-max-size=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -573,7 +573,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `innodb_change_buffering`
 
-- <strong>Description:</strong> Sets how [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) change buffering is performed. See [InnoDB Change Buffering](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-change-buffering) for details on the settings.
+- <strong>Description:</strong> Sets how [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) change buffering is performed. See [InnoDB Change Buffering](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-change-buffering/) for details on the settings.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-change-buffering=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -585,7 +585,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `innodb_change_buffering_debug`
 
-- <strong>Description:</strong> If set to `1`, an [InnoDB Change Buffering](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-change-buffering) debug flag is set. `1` forces all changes to the change buffer, while `2` causes a crash at merge. `0`, the default, indicates no flag is set. Only available in debug builds.
+- <strong>Description:</strong> If set to `1`, an [InnoDB Change Buffering](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-change-buffering/) debug flag is set. `1` forces all changes to the change buffer, while `2` causes a crash at merge. `0`, the default, indicates no flag is set. Only available in debug builds.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-change-buffering-debug=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -611,9 +611,9 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 #### `innodb_checksum_algorithm`
 
 - <strong>Description:</strong> Specifies how the InnoDB tablespace checksum is generated and verified.
-<ul start="1"><li>`innodb`: Backwards compatible with earlier versions (&lt;= [MariaDB 5.5](/kb/en/what-is-mariadb-55/)). Deprecated in [MariaDB 10.3.29](/kb/en/mariadb-10329-release-notes/), [MariaDB 10.4.19](/kb/en/mariadb-10419-release-notes/), [MariaDB 10.5.10](/kb/en/mariadb-10510-release-notes/) and removed in [MariaDB 10.6](/kb/en/what-is-mariadb-106/). If really needed, data files can still be converted with [innochecksum](/clients-utilities/innochecksum).
+<ul start="1"><li>`innodb`: Backwards compatible with earlier versions (&lt;= [MariaDB 5.5](/kb/en/what-is-mariadb-55/)). Deprecated in [MariaDB 10.3.29](/kb/en/mariadb-10329-release-notes/), [MariaDB 10.4.19](/kb/en/mariadb-10419-release-notes/), [MariaDB 10.5.10](/kb/en/mariadb-10510-release-notes/) and removed in [MariaDB 10.6](/kb/en/what-is-mariadb-106/). If really needed, data files can still be converted with [innochecksum](/clients-utilities/innochecksum/).
 </li><li>`crc32`: A newer, faster algorithm, but incompatible with earlier versions. Tablespace blocks will be converted to the new format over time, meaning that a mix of checksums may be present.
-</li><li>`full_crc32` and `strict_full_crc32`: From [MariaDB 10.4.3](/kb/en/mariadb-1043-release-notes/). Permits encryption to be supported over a [SPATIAL INDEX](/sql-statements-structure/geographic-geometric-features/spatial-index), which `crc32` does not support. Newly-created data files will carry a flag that indicates that all pages of the file will use a full CRC-32C checksum over the entire page contents (excluding the bytes where the checksum is stored, at the very end of the page). Such files will always use that checksum, no matter what parameter `innodb_checksum_algorithm` is assigned to. Even if `innodb_checksum_algorithm` is modified later, the same checksum will continue to be used. A special flag will be set in the FSP_SPACE_FLAGS in the first data page to indicate the new format of checksum and encryption/page_compressed. ROW_FORMAT=COMPRESSED tables will only use the old format.
+</li><li>`full_crc32` and `strict_full_crc32`: From [MariaDB 10.4.3](/kb/en/mariadb-1043-release-notes/). Permits encryption to be supported over a [SPATIAL INDEX](/sql-statements-structure/geographic-geometric-features/spatial-index/), which `crc32` does not support. Newly-created data files will carry a flag that indicates that all pages of the file will use a full CRC-32C checksum over the entire page contents (excluding the bytes where the checksum is stored, at the very end of the page). Such files will always use that checksum, no matter what parameter `innodb_checksum_algorithm` is assigned to. Even if `innodb_checksum_algorithm` is modified later, the same checksum will continue to be used. A special flag will be set in the FSP_SPACE_FLAGS in the first data page to indicate the new format of checksum and encryption/page_compressed. ROW_FORMAT=COMPRESSED tables will only use the old format.
 These tables do not support new features, such as larger innodb_page_size or instant ADD/DROP COLUMN. Also cleans up the MariaDB tablespace flags - flags are reserved to store the page_compressed compression algorithm, and to store the compressed payload length, so that checksum can be computed over the compressed (and possibly encrypted) stream and can be validated without decrypting or decompressing the page. In the full_crc32 format, there no longer are separate before-encryption and after-encryption checksums for pages. The single checksum is computed on the page contents that is written to the file.See [MDEV-12026](https://jira.mariadb.org/browse/MDEV-12026) for details.
 </li><li>`none`: Writes a constant rather than calculate a checksum. Deprecated in [MariaDB 10.3.29](/kb/en/mariadb-10329-release-notes/), [MariaDB 10.4.19](/kb/en/mariadb-10419-release-notes/), [MariaDB 10.5.10](/kb/en/mariadb-10510-release-notes/) and removed in [MariaDB 10.6](/kb/en/what-is-mariadb-106/) as was mostly used to disable the original, slow, page checksum for benchmarketing purposes.
 </li><li>`strict_crc32`, `strict_innodb` and `strict_none`: The options are the same as the regular options, but InnoDB will halt if it comes across a mix of checksum values. These are faster, as both new and old checksum values are not required, but can only be used when setting up tablespaces for the first time.
@@ -638,7 +638,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_checksums`
 
-- <strong>Description:</strong> By default, [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) performs checksum validation on all pages read from disk, which provides extra fault tolerance. You would usually want this set to `1` in production environments, although setting it to `0` can provide marginal performance improvements. Deprecated and functionality replaced by [innodb_checksum_algorithm](#innodb_checksum_algorithm) in [MariaDB 10.0](/kb/en/what-is-mariadb-100/), and should be removed to avoid conflicts. `ON` is equivalent to <code class="fixed" style="white-space:pre-wrap">--innodb_checksum_algorithm=innodb</code> and `OFF` to <code class="fixed" style="white-space:pre-wrap">--innodb_checksum_algorithm=none</code>.
+- <strong>Description:</strong> By default, [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) performs checksum validation on all pages read from disk, which provides extra fault tolerance. You would usually want this set to `1` in production environments, although setting it to `0` can provide marginal performance improvements. Deprecated and functionality replaced by [innodb_checksum_algorithm](#innodb_checksum_algorithm) in [MariaDB 10.0](/kb/en/what-is-mariadb-100/), and should be removed to avoid conflicts. `ON` is equivalent to <code class="fixed" style="white-space:pre-wrap">--innodb_checksum_algorithm=innodb</code> and `OFF` to <code class="fixed" style="white-space:pre-wrap">--innodb_checksum_algorithm=none</code>.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-checksums</code>, <code class="fixed" style="white-space:pre-wrap">--skip-innodb-checksums</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -698,7 +698,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_compression_algorithm`
 
-- <strong>Description:</strong> Compression algorithm used for [InnoDB page compression](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-page-compression). The supported values are:
+- <strong>Description:</strong> Compression algorithm used for [InnoDB page compression](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-page-compression/). The supported values are:
 <ul><li>`none`: Pages are not compressed.
 </li><li>`zlib`: Pages are compressed using the bundled <a undefined>zlib</a> compression algorithm.
 </li><li>`lz4`: Pages are compressed using the <a undefined>lz4</a> compression algorithm.
@@ -721,7 +721,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_compression_default`
 
-- <strong>Description:</strong> Whether or not [InnoDB page compression](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-page-compression) is enabled by default for new tables.
+- <strong>Description:</strong> Whether or not [InnoDB page compression](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-page-compression/) is enabled by default for new tables.
 <ul start="1"><li>The default value is `OFF`, which means new tables are not compressed.
 </li><li>See [InnoDB Page Compression: Enabling InnoDB Page Compression by Default](/kb/en/innodb-page-compression/#enabling-innodb-page-compression-by-default) for more information.
 </li></ul>
@@ -736,7 +736,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_compression_failure_threshold_pct`
 
-- <strong>Description:</strong> Specifies the percentage cutoff for expensive compression failures during updates to a table that uses [InnoDB page compression](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-page-compression), after which free space is added to each new compressed page, dynamically adjusted up to the level set by [innodb_compression_pad_pct_max](#innodb_compression_pad_pct_max). Zero disables checking of compression efficiency and adjusting padding.
+- <strong>Description:</strong> Specifies the percentage cutoff for expensive compression failures during updates to a table that uses [InnoDB page compression](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-page-compression/), after which free space is added to each new compressed page, dynamically adjusted up to the level set by [innodb_compression_pad_pct_max](#innodb_compression_pad_pct_max). Zero disables checking of compression efficiency and adjusting padding.
 <ul start="1"><li>See [InnoDB Page Compression: Configuring the Failure Threshold and Padding](/kb/en/innodb-page-compression/#configuring-the-failure-threshold-and-padding) for more information.
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-compression-failure-threshold-pct=#</code>
@@ -751,7 +751,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_compression_level`
 
-- <strong>Description:</strong> Specifies the default level of compression for tables that use [InnoDB page compression](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-page-compression).
+- <strong>Description:</strong> Specifies the default level of compression for tables that use [InnoDB page compression](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-page-compression/).
 <ul start="1"><li>Only a subset of InnoDB page compression algorithms support compression levels. If an InnoDB page compression algorithm does not support compression levels, then the compression level value is ignored.
 </li><li>The compression level can be set to any value between `1` and `9`. The default compression level is `6`. The range goes from the fastest to the most compact, which means that `1` is the fastest and `9` is the most compact.
 </li><li>See [InnoDB Page Compression: Configuring the Default Compression Level](/kb/en/innodb-page-compression/#configuring-the-default-compression-level) for more information.
@@ -768,7 +768,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_compression_pad_pct_max`
 
-- <strong>Description:</strong> The maximum percentage of reserved free space within each compressed page for tables that use [InnoDB page compression](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-page-compression). Reserved free space is used when the page's data is reorganized and might be recompressed. Only used when [innodb_compression_failure_threshold_pct](#innodb_compression_failure_threshold_pct) is not zero, and the rate of compression failures exceeds its setting.
+- <strong>Description:</strong> The maximum percentage of reserved free space within each compressed page for tables that use [InnoDB page compression](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-page-compression/). Reserved free space is used when the page's data is reorganized and might be recompressed. Only used when [innodb_compression_failure_threshold_pct](#innodb_compression_failure_threshold_pct) is not zero, and the rate of compression failures exceeds its setting.
 <ul start="1"><li>See [InnoDB Page Compression: Configuring the Failure Threshold and Padding](/kb/en/innodb-page-compression/#configuring-the-failure-threshold-and-padding) for more information.
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-compression-pad-pct-max=#</code>
@@ -783,7 +783,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_concurrency_tickets`
 
-- <strong>Description:</strong> Number of times a newly-entered thread can enter and leave [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) until it is again subject to the limitations of [innodb_thread_concurrency](#innodb_thread_concurrency) and may possibly be queued. Deprecated and ignored from [MariaDB 10.5.5](/kb/en/mariadb-1055-release-notes/).
+- <strong>Description:</strong> Number of times a newly-entered thread can enter and leave [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) until it is again subject to the limitations of [innodb_thread_concurrency](#innodb_thread_concurrency) and may possibly be queued. Deprecated and ignored from [MariaDB 10.5.5](/kb/en/mariadb-1055-release-notes/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-concurrency-tickets=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -825,7 +825,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_data_file_path`
 
-- <strong>Description:</strong> Individual [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) data files, paths and sizes. The value of [innodb_data_home_dir](#innodb_data_home_dir) is joined to each path specified by innodb_data_file_path to get the full directory path. If innodb_data_home_dir is an empty string, absolute paths can be specified here. A file size is specified with K for kilobytes, M for megabytes and G for gigabytes, and whether or not to autoextend the data file is also specified.
+- <strong>Description:</strong> Individual [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) data files, paths and sizes. The value of [innodb_data_home_dir](#innodb_data_home_dir) is joined to each path specified by innodb_data_file_path to get the full directory path. If innodb_data_home_dir is an empty string, absolute paths can be specified here. A file size is specified with K for kilobytes, M for megabytes and G for gigabytes, and whether or not to autoextend the data file is also specified.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-data-file-path=name</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -836,7 +836,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_data_home_dir`
 
-- <strong>Description:</strong> Directory path for all [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) data files in the shared tablespace (assuming [innodb_file_per_table](#innodb_file_per_table) is not enabled). File-specific information can be added in [innodb_data_file_path](#innodb_data_file_path), as well as absolute paths if innodb_data_home_dir is set to an empty string.
+- <strong>Description:</strong> Directory path for all [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) data files in the shared tablespace (assuming [innodb_file_per_table](#innodb_file_per_table) is not enabled). File-specific information can be added in [innodb_data_file_path](#innodb_data_file_path), as well as absolute paths if innodb_data_home_dir is set to an empty string.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-data-home-dir=path</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -890,7 +890,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_default_row_format`
 
-- <strong>Description:</strong> Specifies the default [row format](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-row-formats-overview) to be used for InnoDB tables. The compressed row format cannot be set as the default.
+- <strong>Description:</strong> Specifies the default [row format](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-row-formats-overview/) to be used for InnoDB tables. The compressed row format cannot be set as the default.
 <ul start="1"><li>See [InnoDB Row Formats Overview: Default Row Format](/kb/en/innodb-row-formats-overview/#default-row-format) for more information.
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-default-row-format=value</code>
@@ -905,7 +905,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_defragment`
 
-- <strong>Description:</strong> When set to `1` (the default is `0`), InnoDB defragmentation is enabled. When set to FALSE, all existing defragmentation will be paused and new defragmentation commands will fail. Paused defragmentation commands will resume when this variable is set to true again. See [Defragmenting InnoDB Tablespaces](/replication/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces).
+- <strong>Description:</strong> When set to `1` (the default is `0`), InnoDB defragmentation is enabled. When set to FALSE, all existing defragmentation will be paused and new defragmentation commands will fail. Paused defragmentation commands will resume when this variable is set to true again. See [Defragmenting InnoDB Tablespaces](/replication/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-defragment=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -917,7 +917,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_defragment_fill_factor`
 
-- <strong>Description:</strong>. Indicates how full defragmentation should fill a page. Together with [innodb_defragment_fill_factor_n_recs](#innodb_defragment_fill_factor_n_recs) ensures defragmentation won’t pack the page too full and cause page split on the next insert on every page. The variable indicating more defragmentation gain is the one effective. See [Defragmenting InnoDB Tablespaces](/replication/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces).
+- <strong>Description:</strong>. Indicates how full defragmentation should fill a page. Together with [innodb_defragment_fill_factor_n_recs](#innodb_defragment_fill_factor_n_recs) ensures defragmentation won’t pack the page too full and cause page split on the next insert on every page. The variable indicating more defragmentation gain is the one effective. See [Defragmenting InnoDB Tablespaces](/replication/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-defragment-fill-factor=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -930,7 +930,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_defragment_fill_factor_n_recs`
 
-- <strong>Description:</strong> Number of records of space that defragmentation should leave on the page. This variable, together with [innodb_defragment_fill_factor](#innodb_defragment_fill_factor), is introduced so defragmentation won't pack the page too full and cause page split on the next insert on every page. The variable indicating more defragmentation gain is the one effective. See [Defragmenting InnoDB Tablespaces](/replication/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces).
+- <strong>Description:</strong> Number of records of space that defragmentation should leave on the page. This variable, together with [innodb_defragment_fill_factor](#innodb_defragment_fill_factor), is introduced so defragmentation won't pack the page too full and cause page split on the next insert on every page. The variable indicating more defragmentation gain is the one effective. See [Defragmenting InnoDB Tablespaces](/replication/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-defragment-fill-factor-n-recs=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -943,7 +943,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_defragment_frequency`
 
-- <strong>Description:</strong> Maximum times per second for defragmenting a single index. This controls the number of times the defragmentation thread can request X_LOCK on an index. The defragmentation thread will check whether 1/defragment_frequency (s) has passed since it last worked on this index, and put the index back in the queue if not enough time has passed. The actual frequency can only be lower than this given number. See [Defragmenting InnoDB Tablespaces](/replication/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces).
+- <strong>Description:</strong> Maximum times per second for defragmenting a single index. This controls the number of times the defragmentation thread can request X_LOCK on an index. The defragmentation thread will check whether 1/defragment_frequency (s) has passed since it last worked on this index, and put the index back in the queue if not enough time has passed. The actual frequency can only be lower than this given number. See [Defragmenting InnoDB Tablespaces](/replication/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-defragment-frequency=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -956,7 +956,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_defragment_n_pages`
 
-- <strong>Description:</strong> Number of pages considered at once when merging multiple pages to defragment. See [Defragmenting InnoDB Tablespaces](/replication/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces).
+- <strong>Description:</strong> Number of pages considered at once when merging multiple pages to defragment. See [Defragmenting InnoDB Tablespaces](/replication/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-defragment-n-pages=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -969,7 +969,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_defragment_stats_accuracy`
 
-- <strong>Description:</strong> Number of defragment stats changes there are before the stats are written to persistent storage. Defaults to zero, meaning disable defragment stats tracking. See [Defragmenting InnoDB Tablespaces](/replication/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces).
+- <strong>Description:</strong> Number of defragment stats changes there are before the stats are written to persistent storage. Defaults to zero, meaning disable defragment stats tracking. See [Defragmenting InnoDB Tablespaces](/replication/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-defragment-stats-accuracy=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -1020,7 +1020,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_doublewrite`
 
-- <strong>Description:</strong> If set to `1`, the default, to improve fault tolerance [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) first stores data to a [doublewrite buffer](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-doublewrite-buffer) before writing it to data file. Disabling will provide a marginal peformance improvement.
+- <strong>Description:</strong> If set to `1`, the default, to improve fault tolerance [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) first stores data to a [doublewrite buffer](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-doublewrite-buffer/) before writing it to data file. Disabling will provide a marginal peformance improvement.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-doublewrite</code>, <code class="fixed" style="white-space:pre-wrap">--skip-innodb-doublewrite</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -1065,7 +1065,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_enable_unsafe_group_commit`
 
-- <strong>Description:</strong> Unneeded after XtraDB 1.0.5. If set to `0`, the default, InnoDB will keep transactions between the transaction log and [binary log](/mariadb-administration/server-monitoring-logs/binary-log)s in the same order. Safer, but slower. If set to `1`, transactions can be group-committed, but there is no guarantee of the order being kept, and a small risk of the two logs getting out of sync. In write-intensive environments, can lead to a significant improvement in performance.
+- <strong>Description:</strong> Unneeded after XtraDB 1.0.5. If set to `0`, the default, InnoDB will keep transactions between the transaction log and [binary log](/mariadb-administration/server-monitoring-logs/binary-log/)s in the same order. Safer, but slower. If set to `1`, transactions can be group-committed, but there is no guarantee of the order being kept, and a small risk of the two logs getting out of sync. In write-intensive environments, can lead to a significant improvement in performance.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-enable-unsafe-group-commit</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -1078,7 +1078,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_encrypt_log`
 
-- <strong>Description:</strong> Enables encryption of the [InnoDB redo log](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-redo-log). This also enables encryption of some temporary files created internally by InnoDB, such as those used for merge sorts and row logs.
+- <strong>Description:</strong> Enables encryption of the [InnoDB redo log](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-redo-log/). This also enables encryption of some temporary files created internally by InnoDB, such as those used for merge sorts and row logs.
 <ul start="1"><li>See [Data-at-Rest Encryption](/kb/en/data-at-rest-encryption/) and [InnoDB / XtraDB Enabling Encryption: Enabling Encryption for Redo Log](/kb/en/innodb-enabling-encryption/#enabling-encryption-for-the-redo-log) for more information.
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-encrypt-log</code>
@@ -1110,7 +1110,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_encrypt_temporary_tables`
 
-- <strong>Description:</strong> Enables automatic encryption of the InnoDB [temporary tablespace](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-tablespaces/innodb-temporary-tablespaces).
+- <strong>Description:</strong> Enables automatic encryption of the InnoDB [temporary tablespace](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-tablespaces/innodb-temporary-tablespaces/).
 <ul start="1"><li>See [Data-at-Rest Encryption](/kb/en/data-at-rest-encryption/) and [InnoDB / XtraDB Enabling Encryption: Enabling Encryption for Temporary Tablespaces](/kb/en/innodb-enabling-encryption/#enabling-encryption-for-temporary-tablespaces) for more information. 
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-encrypt-temporary-tables=value</code>
@@ -1155,7 +1155,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_encryption_threads`
 
-- <strong>Description:</strong> Number of background encryption threads threads performing background key rotation and [scrubbing](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-data-scrubbing). When setting up encryption, this variable must be set to a non-zero value. Otherwise, when you enable encryption through [innodb_encrypt_tables](#innodb_encrypt_tables) MariaDB won't be able to automatically encrypt any unencrypted tables. Recommended never be set higher than 255.
+- <strong>Description:</strong> Number of background encryption threads threads performing background key rotation and [scrubbing](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-data-scrubbing/). When setting up encryption, this variable must be set to a non-zero value. Otherwise, when you enable encryption through [innodb_encrypt_tables](#innodb_encrypt_tables) MariaDB won't be able to automatically encrypt any unencrypted tables. Recommended never be set higher than 255.
 <ul start="1"><li>See [Data-at-Rest Encryption](/kb/en/data-at-rest-encryption/) and [InnoDB Background Encryption Threads](/kb/en/innodb-background-encryption-threads/) for more information.
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-encryption-threads=#</code>
@@ -1198,7 +1198,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_fake_changes`
 
-- <strong>Description:</strong> From [MariaDB 5.5](/kb/en/what-is-mariadb-55/) until [MariaDB 10.1](/kb/en/what-is-mariadb-101/), XtraDB-only option that enables the fake changes feature. In [replication](/replication), setting up or restarting a slave can cause a replication reads to perform more slowly, as MariaDB is single-threaded and needs to read the data before it can execute the queries. This can be speeded up by prefetching threads to warm the server, replaying the statements and then rolling back at commit. This however has an overhead from locking rows only then to undo changes at rollback. Fake changes attempts to reduce this overhead by reading the rows for INSERT, UPDATE and DELETE statements but not updating them. The rollback is then very fast with little or nothing to do. Added as a deprecated and ignored option in [MariaDB 10.2.6](/kb/en/mariadb-1026-release-notes/) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades. Not present in [MariaDB 10.3](/kb/en/what-is-mariadb-103/) and beyond.
+- <strong>Description:</strong> From [MariaDB 5.5](/kb/en/what-is-mariadb-55/) until [MariaDB 10.1](/kb/en/what-is-mariadb-101/), XtraDB-only option that enables the fake changes feature. In [replication](/replication/), setting up or restarting a slave can cause a replication reads to perform more slowly, as MariaDB is single-threaded and needs to read the data before it can execute the queries. This can be speeded up by prefetching threads to warm the server, replaying the statements and then rolling back at commit. This however has an overhead from locking rows only then to undo changes at rollback. Fake changes attempts to reduce this overhead by reading the rows for INSERT, UPDATE and DELETE statements but not updating them. The rollback is then very fast with little or nothing to do. Added as a deprecated and ignored option in [MariaDB 10.2.6](/kb/en/mariadb-1026-release-notes/) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades. Not present in [MariaDB 10.3](/kb/en/what-is-mariadb-103/) and beyond.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-fake-changes={0|1}</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -1225,7 +1225,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 - <strong>Description:</strong> The shutdown mode. 
 <ul start="1"><li>`0` -  InnoDB performs a slow shutdown, including full purge (before [MariaDB 10.3.6](/kb/en/mariadb-1036-release-notes/), not always, due to [MDEV-13603](https://jira.mariadb.org/browse/MDEV-13603)) and change buffer merge. Can be very slow, even taking hours in extreme cases.
-</li><li>`1` - the default, [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) performs a fast shutdown, not performing a full purge or an insert buffer merge. 
+</li><li>`1` - the default, [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) performs a fast shutdown, not performing a full purge or an insert buffer merge. 
 </li><li>`2`, the [InnoDB redo log](/kb/en/xtradbinnodb-redo-log/) is flushed and a cold shutdown takes place, similar to a crash. The resulting startup then performs crash recovery. Extremely fast, in cases of emergency, but risks corruption. Not suitable for upgrades between major versions!
 </li><li>`3` (from [MariaDB 10.3.6](/kb/en/mariadb-1036-release-notes/)) - active transactions will not be rolled back, but all changed pages will be written to data files. The active transactions will be rolled back by a background thread on a subsequent startup.  The fastest option that will not involve [InnoDB redo log](/kb/en/xtradbinnodb-redo-log/) apply on subsequent startup. See [MDEV-15832](https://jira.mariadb.org/browse/MDEV-15832).
 </li></ul>
@@ -1253,7 +1253,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_file_format`
 
-- <strong>Description:</strong> File format for new [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables. Can either be `Antelope`, the default and the original format, or `Barracuda`, which supports [compression](/kb/en/compression/). Note that this value is also used when a table is re-created with an [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) which requires a table copy. See [XtraDB/InnoDB File Format](/kb/en/xtradbinnodb-file-format/) for more on the file formats. Removed in 10.3.1 and restored as a deprecated and unused variable in 10.4.3 for compatibility purposes.
+- <strong>Description:</strong> File format for new [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables. Can either be `Antelope`, the default and the original format, or `Barracuda`, which supports [compression](/kb/en/compression/). Note that this value is also used when a table is re-created with an [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) which requires a table copy. See [XtraDB/InnoDB File Format](/kb/en/xtradbinnodb-file-format/) for more on the file formats. Removed in 10.3.1 and restored as a deprecated and unused variable in 10.4.3 for compatibility purposes.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-file-format=value</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -1272,7 +1272,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_file_format_check`
 
-- <strong>Description:</strong> If set to `1`, the default, [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) checks the shared tablespace file format tag. If this is higher than the current version supported by XtraDB/InnoDB (for example Barracuda when only Antelope is supported), XtraDB/InnoDB will will not start. If it the value is not higher, XtraDB/InnoDB starts correctly and the [innodb_file_format_max](#innodb_file_format_max) value is set to this value. If innodb_file_format_check is set to `0`, no checking is performed. See [XtraDB/InnoDB File Format](/kb/en/xtradbinnodb-file-format/) for more on the file formats.
+- <strong>Description:</strong> If set to `1`, the default, [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) checks the shared tablespace file format tag. If this is higher than the current version supported by XtraDB/InnoDB (for example Barracuda when only Antelope is supported), XtraDB/InnoDB will will not start. If it the value is not higher, XtraDB/InnoDB starts correctly and the [innodb_file_format_max](#innodb_file_format_max) value is set to this value. If innodb_file_format_check is set to `0`, no checking is performed. See [XtraDB/InnoDB File Format](/kb/en/xtradbinnodb-file-format/) for more on the file formats.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-file-format-check=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -1285,7 +1285,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_file_format_max`
 
-- <strong>Description:</strong> The highest [XtraDB/InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) file format. This is set to the value of the file format tag in the shared tablespace on startup (see [innodb_file_format_check](#innodb_file_format_check)). If the server later creates a higher table format, innodb_file_format_max is set to that value. See [XtraDB/InnoDB File Format](/kb/en/xtradbinnodb-file-format/) for more on the file formats.
+- <strong>Description:</strong> The highest [XtraDB/InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) file format. This is set to the value of the file format tag in the shared tablespace on startup (see [innodb_file_format_check](#innodb_file_format_check)). If the server later creates a higher table format, innodb_file_format_max is set to that value. See [XtraDB/InnoDB File Format](/kb/en/xtradbinnodb-file-format/) for more on the file formats.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-file-format-max=value</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -1299,7 +1299,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_file_per_table`
 
-- <strong>Description:</strong> If set to `ON`, then new [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables are created with their own [InnoDB file-per-table tablespaces](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces). If set to `OFF`, then new tables are created in the [InnoDB system tablespace](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces) instead. [Page compression](/kb/en/compression/) is only available with file-per-table tablespaces. Note that this value is also used when a table is re-created with an [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) which requires a table copy.
+- <strong>Description:</strong> If set to `ON`, then new [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables are created with their own [InnoDB file-per-table tablespaces](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces/). If set to `OFF`, then new tables are created in the [InnoDB system tablespace](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces/) instead. [Page compression](/kb/en/compression/) is only available with file-per-table tablespaces. Note that this value is also used when a table is re-created with an [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) which requires a table copy.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-file-per-table</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -1339,7 +1339,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 <ul start="1"><li>`1` The default, the log buffer is written to the [InnoDB redo log](/kb/en/xtradbinnodb-redo-log/) file and a flush to disk performed after each transaction. This is required for full ACID compliance. 
 </li><li>`0` Nothing is done on commit; rather the log buffer is written and flushed to the [InnoDB redo log](/kb/en/xtradbinnodb-redo-log/) once a second. This gives better performance, but a server crash can erase the last second of transactions. 
 </li><li>`2` The log buffer is written to the [InnoDB redo log](/kb/en/xtradbinnodb-redo-log/) after each commit, but flushing takes place once a second. Performance is slightly better, but a OS or power outage can cause the last second's transactions to be lost. 
-</li><li>`3` (from [MariaDB 10.0](/kb/en/what-is-mariadb-100/)) Emulates [MariaDB 5.5](/kb/en/what-is-mariadb-55/) [group commit](/mariadb-administration/server-monitoring-logs/binary-log/group-commit-for-the-binary-log) (3 syncs per group commit). See [Binlog group commit and innodb_flush_log_at_trx_commit](/kb/en/binlog-group-commit-and-innodb_flush_log_at_trx_commit/).
+</li><li>`3` (from [MariaDB 10.0](/kb/en/what-is-mariadb-100/)) Emulates [MariaDB 5.5](/kb/en/what-is-mariadb-55/) [group commit](/mariadb-administration/server-monitoring-logs/binary-log/group-commit-for-the-binary-log/) (3 syncs per group commit). See [Binlog group commit and innodb_flush_log_at_trx_commit](/kb/en/binlog-group-commit-and-innodb_flush_log_at_trx_commit/).
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-flush-log-at-trx-commit[=#]</code>
 - <strong>Scope:</strong> Global
@@ -1352,7 +1352,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_flush_method`
 
-- <strong>Description:</strong> [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) flushing method. Windows always uses async_unbuffered and this variable then has no effect. On Unix, before [MariaDB 10.6.0](/kb/en/mariadb-1060-release-notes/), by default fsync() is used to flush data and logs. Adjusting this variable can give performance improvements, but behavior differs widely on different filesystems, and changing from the default has caused problems in some situations, so test and benchmark carefully before adjusting. In MariaDB, Windows recognises and correctly handles the Unix methods, but if none are specified it uses own default - unbuffered write (analog of O_DIRECT) + syncs (e.g FileFlushBuffers()) for all files.
+- <strong>Description:</strong> [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) flushing method. Windows always uses async_unbuffered and this variable then has no effect. On Unix, before [MariaDB 10.6.0](/kb/en/mariadb-1060-release-notes/), by default fsync() is used to flush data and logs. Adjusting this variable can give performance improvements, but behavior differs widely on different filesystems, and changing from the default has caused problems in some situations, so test and benchmark carefully before adjusting. In MariaDB, Windows recognises and correctly handles the Unix methods, but if none are specified it uses own default - unbuffered write (analog of O_DIRECT) + syncs (e.g FileFlushBuffers()) for all files.
 <ul start="1"><li>`O_DSYNC` - O_DSYNC is used to open and flush logs, and fsync() to flush the data files.
 </li><li>`O_DIRECT` - O_DIRECT or directio(), is used to open data files, and fsync() to flush data and logs. Default on Unix from [MariaDB 10.6.0](/kb/en/mariadb-1060-release-notes/).
 </li><li>`fsync`  - Default on Unix until [MariaDB 10.5](/kb/en/what-is-mariadb-105/). Can be specified directly, but if the variable is unset on Unix, fsync() will be used by default.
@@ -1435,7 +1435,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_force_load_corrupted`
 
-- <strong>Description:</strong> Set to `0` by default, if set to `1`, [XtraDB/InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) will be permitted to load tables marked as corrupt. Only use this to recover data you can't recover any other way, or in troubleshooting. Always restore to `0` when the returning to regular use.
+- <strong>Description:</strong> Set to `0` by default, if set to `1`, [XtraDB/InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) will be permitted to load tables marked as corrupt. Only use this to recover data you can't recover any other way, or in troubleshooting. Always restore to `0` when the returning to regular use.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-force-load-corrupted</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -1458,7 +1458,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_force_recovery`
 
-- <strong>Description:</strong> [XtraDB/InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) crash recovery mode. `0` is the default. The other modes are for recovery purposes only, and no data can be changed while another mode is active. Some queries relying on indexes are also blocked. See [XtraDB/InnoDB Recovery Modes](/kb/en/xtradbinnodb-recovery-modes/) for more on mode specifics.
+- <strong>Description:</strong> [XtraDB/InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) crash recovery mode. `0` is the default. The other modes are for recovery purposes only, and no data can be changed while another mode is active. Some queries relying on indexes are also blocked. See [XtraDB/InnoDB Recovery Modes](/kb/en/xtradbinnodb-recovery-modes/) for more on mode specifics.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-force-recovery=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -1494,7 +1494,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_ft_aux_table`
 
-- <strong>Description:</strong> Diagnostic variable intended only to be set at runtime. It specifies the qualified name (for example `test/ft_innodb`) of an InnoDB table that has a [FULLTEXT index](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes), and after being set the INFORMATION_SCHEMA tables [INNODB_FT_INDEX_TABLE](/kb/en/information-schema-innodb_ft_index_table-table/), [INNODB_FT_INDEX_CACHE](/kb/en/information-schema-innodb_ft_index_cache-table/), INNODB_FT_CONFIG, [INNODB_FT_DELETED](/kb/en/information-schema-innodb_ft_deleted-table/), and [INNODB_FT_BEING_DELETED](/kb/en/information-schema-innodb_ft_being_deleted-table/) will contain search index information for the specified table.
+- <strong>Description:</strong> Diagnostic variable intended only to be set at runtime. It specifies the qualified name (for example `test/ft_innodb`) of an InnoDB table that has a [FULLTEXT index](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/), and after being set the INFORMATION_SCHEMA tables [INNODB_FT_INDEX_TABLE](/kb/en/information-schema-innodb_ft_index_table-table/), [INNODB_FT_INDEX_CACHE](/kb/en/information-schema-innodb_ft_index_cache-table/), INNODB_FT_CONFIG, [INNODB_FT_DELETED](/kb/en/information-schema-innodb_ft_deleted-table/), and [INNODB_FT_BEING_DELETED](/kb/en/information-schema-innodb_ft_being_deleted-table/) will contain search index information for the specified table.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-ft-aux-table=value</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -1505,7 +1505,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_ft_cache_size`
 
-- <strong>Description:</strong> Cache size available for a parsed document while creating an InnoDB [FULLTEXT index](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes).
+- <strong>Description:</strong> Cache size available for a parsed document while creating an InnoDB [FULLTEXT index](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-ft-cache-size=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -1517,7 +1517,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_ft_enable_diag_print`
 
-- <strong>Description:</strong> If set to `1`, additional [full-text](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes) search diagnostic output is enabled.
+- <strong>Description:</strong> If set to `1`, additional [full-text](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) search diagnostic output is enabled.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-ft-enable-diag-print=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -1529,7 +1529,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_ft_enable_stopword`
 
-- <strong>Description:</strong> If set to `1`, the default, a set of [stopwords](/kb/en/stopwords/) is associated with an InnoDB [FULLTEXT index](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes) when it is created. The stopword list comes from the table set by the session variable [innodb_ft_user_stopword_table](#innodb_ft_user_stopword_table), if set, otherwise the global variable [innodb_ft_server_stopword_table](#innodb_ft_server_stopword_table), if that is set, or the [built-in list](/kb/en/stopwords/) if neither variable is set.
+- <strong>Description:</strong> If set to `1`, the default, a set of [stopwords](/kb/en/stopwords/) is associated with an InnoDB [FULLTEXT index](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) when it is created. The stopword list comes from the table set by the session variable [innodb_ft_user_stopword_table](#innodb_ft_user_stopword_table), if set, otherwise the global variable [innodb_ft_server_stopword_table](#innodb_ft_server_stopword_table), if that is set, or the [built-in list](/kb/en/stopwords/) if neither variable is set.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-ft-enable-stopword=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -1541,7 +1541,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_ft_max_token_size`
 
-- <strong>Description:</strong> Maximum length of words stored in an InnoDB [FULLTEXT index](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes). A larger limit will increase the size of the index, slowing down queries, but permit longer words to be searched for. In most normal situations, longer words are unlikely search terms.
+- <strong>Description:</strong> Maximum length of words stored in an InnoDB [FULLTEXT index](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/). A larger limit will increase the size of the index, slowing down queries, but permit longer words to be searched for. In most normal situations, longer words are unlikely search terms.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-ft-max-token-size=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -1554,7 +1554,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_ft_min_token_size`
 
-- <strong>Description:</strong> Minimum length of words stored in an InnoDB [FULLTEXT index](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes). A smaller limit will increase the size of the index, slowing down queries, but permit shorter words to be searched for. For data stored in a Chinese, Japanese or Korean [character set](/kb/en/data-types-character-sets-and-collations/), a value of 1 should be specified to preserve functionality.
+- <strong>Description:</strong> Minimum length of words stored in an InnoDB [FULLTEXT index](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/). A smaller limit will increase the size of the index, slowing down queries, but permit shorter words to be searched for. For data stored in a Chinese, Japanese or Korean [character set](/kb/en/data-types-character-sets-and-collations/), a value of 1 should be specified to preserve functionality.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-ft-min-token-size=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -1567,7 +1567,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_ft_num_word_optimize`
 
-- <strong>Description:</strong>  Number of words processed during each [OPTIMIZE TABLE](/replication/optimization-and-tuning/optimizing-tables/optimize-table) on an InnoDB [FULLTEXT index](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes). To ensure all changes are incorporated, multiple OPTIMIZE TABLE statements could be run in case of a substantial change to the index.
+- <strong>Description:</strong>  Number of words processed during each [OPTIMIZE TABLE](/replication/optimization-and-tuning/optimizing-tables/optimize-table/) on an InnoDB [FULLTEXT index](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/). To ensure all changes are incorporated, multiple OPTIMIZE TABLE statements could be run in case of a substantial change to the index.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-ft-num-word-optimize=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -1579,7 +1579,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_ft_result_cache_limit`
 
-- <strong>Description:</strong> Limit in bytes of the InnoDB [FULLTEXT index](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes) query result cache per fulltext query. The latter stages of the full-text search are handled in memory, and limiting this prevents excess memory usage. If the limit is exceeded, the query returns an error.
+- <strong>Description:</strong> Limit in bytes of the InnoDB [FULLTEXT index](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) query result cache per fulltext query. The latter stages of the full-text search are handled in memory, and limiting this prevents excess memory usage. If the limit is exceeded, the query returns an error.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-ft-result-cache-limit=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -1593,7 +1593,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_ft_server_stopword_table`
 
-- <strong>Description:</strong> Table name containing a list of stopwords to ignore when creating an InnoDB [FULLTEXT index](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes), in the format db_name/table_name. The specified table must exist before this option is set, and must be an InnoDB table with a single column, a [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar) named VALUE. See also [innodb_ft_enable_stopword](#innodb_ft_enable_stopword).
+- <strong>Description:</strong> Table name containing a list of stopwords to ignore when creating an InnoDB [FULLTEXT index](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/), in the format db_name/table_name. The specified table must exist before this option is set, and must be an InnoDB table with a single column, a [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar/) named VALUE. See also [innodb_ft_enable_stopword](#innodb_ft_enable_stopword).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-ft-server-stopword-table=db_name/table_name</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -1605,7 +1605,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_ft_sort_pll_degree`
 
-- <strong>Description:</strong>  Number of parallel threads used when building an InnoDB [FULLTEXT index](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes). See also [innodb_sort_buffer_size](#innodb_sort_buffer_size).
+- <strong>Description:</strong>  Number of parallel threads used when building an InnoDB [FULLTEXT index](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/). See also [innodb_sort_buffer_size](#innodb_sort_buffer_size).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-ft-sort-pll-degree=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -1618,7 +1618,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_ft_total_cache_size`
 
-- <strong>Description:</strong>Total memory allocated for the cache for all InnoDB [FULLTEXT index](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes) tables. A force sync is triggered if this limit is exceeded.
+- <strong>Description:</strong>Total memory allocated for the cache for all InnoDB [FULLTEXT index](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) tables. A force sync is triggered if this limit is exceeded.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-ft-total-cache-size=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -1631,7 +1631,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_ft_user_stopword_table`
 
-- <strong>Description:</strong> Table name containing a list of stopwords to ignore when creating an InnoDB [FULLTEXT index](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes), in the format db_name/table_name. The specified table must exist before this option is set, and must be an InnoDB table with a single column, a [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar) named VALUE. See also [innodb_ft_enable_stopword](#innodb_ft_enable_stopword).
+- <strong>Description:</strong> Table name containing a list of stopwords to ignore when creating an InnoDB [FULLTEXT index](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/), in the format db_name/table_name. The specified table must exist before this option is set, and must be an InnoDB table with a single column, a [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar/) named VALUE. See also [innodb_ft_enable_stopword](#innodb_ft_enable_stopword).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-ft-user-stopword-table=db_name/table_name</code>
 - <strong>Scope:</strong> Session
 - <strong>Dynamic:</strong> Yes
@@ -1824,8 +1824,8 @@ add/drop/reorder of columns.
 
 #### `innodb_large_prefix`
 
-- <strong>Description:</strong> If set to `1`, tables that use specific [row formats](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-row-formats-overview) are permitted to have index key prefixes up to 3072 bytes (for 16k pages, [smaller otherwise](/kb/en/innodb-limitations/#page-sizes)). If not set, the limit is 767 bytes.
-<ul start="1"><li>This applies to the [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format) and [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format) row formats.
+- <strong>Description:</strong> If set to `1`, tables that use specific [row formats](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-row-formats-overview/) are permitted to have index key prefixes up to 3072 bytes (for 16k pages, [smaller otherwise](/kb/en/innodb-limitations/#page-sizes)). If not set, the limit is 767 bytes.
+<ul start="1"><li>This applies to the [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format/) and [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format/) row formats.
 </li><li>Removed in 10.3.1 and restored as a deprecated and unused variable in 10.4.3 for compatibility purposes.
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-large-prefix</code>
@@ -1845,7 +1845,7 @@ add/drop/reorder of columns.
 
 #### `innodb_lazy_drop_table`
 
-- <strong>Description:</strong> Deprecated and removed in XtraDB 5.6. [DROP TABLE](/sql-statements-structure/sql-statements/data-definition/drop/drop-table) processing can take a long time when [innodb_file_per_table](#innodb_file_per_table) is set to 1 and there's a large [buffer pool](/kb/en/xtradbinnodb-memory-buffer/). If `innodb_lazy_drop_table` is set to `1` (`0` is default), XtraDB attempts to optimize [DROP TABLE](/sql-statements-structure/sql-statements/data-definition/drop/drop-table) processing by deferring the dropping of related pages from the [buffer pool](/kb/en/xtradbinnodb-memory-buffer/) until there is time, only initially marking them.
+- <strong>Description:</strong> Deprecated and removed in XtraDB 5.6. [DROP TABLE](/sql-statements-structure/sql-statements/data-definition/drop/drop-table/) processing can take a long time when [innodb_file_per_table](#innodb_file_per_table) is set to 1 and there's a large [buffer pool](/kb/en/xtradbinnodb-memory-buffer/). If `innodb_lazy_drop_table` is set to `1` (`0` is default), XtraDB attempts to optimize [DROP TABLE](/sql-statements-structure/sql-statements/data-definition/drop/drop-table/) processing by deferring the dropping of related pages from the [buffer pool](/kb/en/xtradbinnodb-memory-buffer/) until there is time, only initially marking them.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">innodb-lazy-drop-table={0|1}</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -1873,7 +1873,7 @@ add/drop/reorder of columns.
 
 #### `innodb_lock_wait_timeout`
 
-- <strong>Description:</strong> Time in seconds that an InnoDB transaction waits for an InnoDB row lock (not table lock) before giving up with the error <code class="fixed" style="white-space:pre-wrap">ERROR 1205 (HY000): Lock wait timeout exceeded; try restarting transaction</code>. When this occurs, the statement (not transaction) is rolled back. The whole transaction can be rolled back if the [innodb_rollback_on_timeout](#innodb_rollback_on_timeout) option is used. Increase this for data warehousing applications or where other long-running operations are common, or decrease for OLTP and other highly interactive applications. This setting does not apply to deadlocks, which InnoDB detects immediately, rolling back a deadlocked transaction. `0` (from [MariaDB 10.3.0](/kb/en/mariadb-1030-release-notes/)) means no wait. See [WAIT and NOWAIT](/sql-statements-structure/sql-statements/transactions/wait-and-nowait).
+- <strong>Description:</strong> Time in seconds that an InnoDB transaction waits for an InnoDB row lock (not table lock) before giving up with the error <code class="fixed" style="white-space:pre-wrap">ERROR 1205 (HY000): Lock wait timeout exceeded; try restarting transaction</code>. When this occurs, the statement (not transaction) is rolled back. The whole transaction can be rolled back if the [innodb_rollback_on_timeout](#innodb_rollback_on_timeout) option is used. Increase this for data warehousing applications or where other long-running operations are common, or decrease for OLTP and other highly interactive applications. This setting does not apply to deadlocks, which InnoDB detects immediately, rolling back a deadlocked transaction. `0` (from [MariaDB 10.3.0](/kb/en/mariadb-1030-release-notes/)) means no wait. See [WAIT and NOWAIT](/sql-statements-structure/sql-statements/transactions/wait-and-nowait/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-lock-wait-timeout=#</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -1914,7 +1914,7 @@ add/drop/reorder of columns.
 
 #### `innodb_log_arch_dir`
 
-- <strong>Description:</strong> The directory for [XtraDB redo log](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-redo-log) archiving. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](/kb/en/mariadb-1026-release-notes/) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
+- <strong>Description:</strong> The directory for [XtraDB redo log](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-redo-log/) archiving. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](/kb/en/mariadb-1026-release-notes/) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-log-arch-dir=name</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -2038,7 +2038,7 @@ add/drop/reorder of columns.
 
 #### `innodb_log_file_size`
 
-- <strong>Description:</strong> Size in bytes of each [InnoDB redo log](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-redo-log) file in the log group. The combined size can be no more than 512GB. Larger values mean less disk I/O due to less flushing checkpoint activity, but also slower recovery from a crash. In [MariaDB 10.5](/kb/en/what-is-mariadb-105/), crash recovery has been improved and shouldn't run out of memory, so the default has been increased. It can safely be set higher to reduce checkpoint flushing, even larger than [innodb_buffer_pool_size](#innodb_buffer_pool_size).
+- <strong>Description:</strong> Size in bytes of each [InnoDB redo log](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-redo-log/) file in the log group. The combined size can be no more than 512GB. Larger values mean less disk I/O due to less flushing checkpoint activity, but also slower recovery from a crash. In [MariaDB 10.5](/kb/en/what-is-mariadb-105/), crash recovery has been improved and shouldn't run out of memory, so the default has been increased. It can safely be set higher to reduce checkpoint flushing, even larger than [innodb_buffer_pool_size](#innodb_buffer_pool_size).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-log-file-size=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -2074,7 +2074,7 @@ add/drop/reorder of columns.
 
 #### `innodb_log_optimize_ddl`
 
-- <strong>Description:</strong> Whether [InnoDB redo log](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-redo-log) activity should be reduced when natively creating indexes or rebuilding tables. Reduced logging requires additional page flushing and interferes with [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup). Enabling this may slow down backup and cause delay due to page flushing. Deprecated and ignored from [MariaDB 10.5.1](/kb/en/mariadb-1051-release-notes/). Deprecated (but not ignored) from [MariaDB 10.4.16](/kb/en/mariadb-10416-release-notes/), [MariaDB 10.3.26](/kb/en/mariadb-10326-release-notes/) and [MariaDB 10.2.35](/kb/en/mariadb-10235-release-notes/).
+- <strong>Description:</strong> Whether [InnoDB redo log](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-redo-log/) activity should be reduced when natively creating indexes or rebuilding tables. Reduced logging requires additional page flushing and interferes with [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/). Enabling this may slow down backup and cause delay due to page flushing. Deprecated and ignored from [MariaDB 10.5.1](/kb/en/mariadb-1051-release-notes/). Deprecated (but not ignored) from [MariaDB 10.4.16](/kb/en/mariadb-10416-release-notes/), [MariaDB 10.3.26](/kb/en/mariadb-10326-release-notes/) and [MariaDB 10.2.35](/kb/en/mariadb-10235-release-notes/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-log-optimize-ddl={0|1}</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -2118,7 +2118,7 @@ add/drop/reorder of columns.
 #### `innodb_lru_scan_depth`
 
 - <strong>Description:</strong> Specifies how far down the buffer pool least-recently used (LRU) list the cleaning thread should look for dirty pages to flush. This process is performed once a second. In an I/O intensive-workload, can be increased if there is spare I/O capacity, or decreased if in a write-intensive workload with little spare I/O capacity.
-<ul start="1"><li>See [InnoDB Page Flushing](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-page-flushing) for more information.
+<ul start="1"><li>See [InnoDB Page Flushing](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-page-flushing/) for more information.
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-lru-scan-depth=#</code>
 - <strong>Scope:</strong> Global
@@ -2166,7 +2166,7 @@ add/drop/reorder of columns.
 #### `innodb_max_dirty_pages_pct`
 
 - <strong>Description:</strong> Maximum percentage of unwritten (dirty) pages in the buffer pool.
-<ul start="1"><li>See [InnoDB Page Flushing](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-page-flushing) for more information.
+<ul start="1"><li>See [InnoDB Page Flushing](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-page-flushing/) for more information.
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-max-dirty-pages-pct=#</code>
 - <strong>Scope:</strong> Global
@@ -2183,7 +2183,7 @@ add/drop/reorder of columns.
 #### `innodb_max_dirty_pages_pct_lwm`
 
 - <strong>Description:</strong> Low water mark percentage of dirty pages that will enable preflushing to lower the dirty page ratio. The value 0 (default) means 'refer to [innodb_max_dirty_pages_pct](#innodb_max_dirty_pages_pct)'.
-<ul start="1"><li>See [InnoDB Page Flushing](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-page-flushing) for more information.
+<ul start="1"><li>See [InnoDB Page Flushing](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-page-flushing/) for more information.
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-max-dirty-pages-pct-lwm=#</code>
 - <strong>Scope:</strong> Global
@@ -2392,7 +2392,7 @@ add/drop/reorder of columns.
 
 #### `innodb_optimize_fulltext_only`
 
-- <strong>Description:</strong> When set to `1` (`0` is default), [OPTIMIZE TABLE](/replication/optimization-and-tuning/optimizing-tables/optimize-table) will only process InnoDB [FULLTEXT index](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes) data. Only intended for use during fulltext index maintenance.
+- <strong>Description:</strong> When set to `1` (`0` is default), [OPTIMIZE TABLE](/replication/optimization-and-tuning/optimizing-tables/optimize-table/) will only process InnoDB [FULLTEXT index](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) data. Only intended for use during fulltext index maintenance.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-optimize-fulltext-only=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -2424,8 +2424,8 @@ add/drop/reorder of columns.
 - <strong>Description:</strong> Specifies the page size in bytes for all InnoDB tablespaces. The default, `16k`, is suitable for most uses.
 <ul start="1"><li>A smaller InnoDB page size might work more effectively in a situation with many small writes (OLTP), or with SSD storage, which usually has smaller block sizes.
 </li><li>A larger InnoDB page size can provide a larger [maximum row size](/kb/en/innodb-row-formats-overview/#maximum-row-size).
-</li><li>InnoDB's page size can be as large as `64k` for tables using the following [row formats](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-row-formats-overview): [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format), [COMPACT](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compact-row-format), and [REDUNDANT](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-redundant-row-format).
-</li><li>InnoDB's page size must still be `16k` or less for tables using the [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format) row format.
+</li><li>InnoDB's page size can be as large as `64k` for tables using the following [row formats](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-row-formats-overview/): [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format/), [COMPACT](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compact-row-format/), and [REDUNDANT](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-redundant-row-format/).
+</li><li>InnoDB's page size must still be `16k` or less for tables using the [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format/) row format.
 </li><li>This system variable's value cannot be changed after the `datadir` has been initialized. InnoDB's page size is set when a MariaDB instance starts, and it remains constant afterwards.
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-page-size=#</code>
@@ -2457,7 +2457,7 @@ add/drop/reorder of columns.
 
 #### `innodb_print_all_deadlocks`
 
-- <strong>Description:</strong> If set to `1` (`0` is default), all XtraDB/InnoDB transaction deadlock information is written to the [error log](/mariadb-administration/server-monitoring-logs/error-log).
+- <strong>Description:</strong> If set to `1` (`0` is default), all XtraDB/InnoDB transaction deadlock information is written to the [error log](/mariadb-administration/server-monitoring-logs/error-log/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-print-all-deadlocks=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -2569,7 +2569,7 @@ add/drop/reorder of columns.
 
 #### `innodb_read_only_compressed`
 
-- <strong>Description:</strong> If set (the default), [ROW_FORMAT=COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format) tables will be read-only.
+- <strong>Description:</strong> If set (the default), [ROW_FORMAT=COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format/) tables will be read-only.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-read-only-compressed</code>, <code class="fixed" style="white-space:pre-wrap">--skip-innodb-read-only-compressed</code>
 - <strong>Scope:</strong>
 - <strong>Dynamic:</strong>
@@ -2644,7 +2644,7 @@ add/drop/reorder of columns.
 
 #### `innodb_safe_truncate`
 
-- <strong>Description:</strong> Use a backup-safe [TRUNCATE TABLE](/sql-statements-structure/sql-statements/table-statements/truncate-table) implementation and crash-safe rename operations inside InnoDB. This is not compatible with hot backup tools other than [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/mariabackup-overview). Users who need to use such tools may set this to `OFF`.
+- <strong>Description:</strong> Use a backup-safe [TRUNCATE TABLE](/sql-statements-structure/sql-statements/table-statements/truncate-table/) implementation and crash-safe rename operations inside InnoDB. This is not compatible with hot backup tools other than [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/mariabackup-overview/). Users who need to use such tools may set this to `OFF`.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-safe-truncate={0|1}</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -2715,7 +2715,7 @@ add/drop/reorder of columns.
 
 #### `innodb_show_locks_held`
 
-- <strong>Description:</strong> Specifies the number of locks held for each InnoDB transaction to be displayed in [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine) output. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](/kb/en/mariadb-1026-release-notes/) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
+- <strong>Description:</strong> Specifies the number of locks held for each InnoDB transaction to be displayed in [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine/) output. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](/kb/en/mariadb-1026-release-notes/) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">innodb-show-locks-held=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -2729,7 +2729,7 @@ add/drop/reorder of columns.
 
 #### `innodb_show_verbose_locks`
 
-- <strong>Description:</strong> If set to `1`, and [innodb_status_output_locks](#innodb_status_output_locks) is also ON, the traditional InnoDB behavior is followed and locked records will be shown in [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output. If set to `0`, the default, only high-level information about the lock is shown. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](/kb/en/mariadb-1026-release-notes/) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
+- <strong>Description:</strong> If set to `1`, and [innodb_status_output_locks](#innodb_status_output_locks) is also ON, the traditional InnoDB behavior is followed and locked records will be shown in [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output. If set to `0`, the default, only high-level information about the lock is shown. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](/kb/en/mariadb-1026-release-notes/) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">innodb-show-verbose-locks=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -2756,7 +2756,7 @@ add/drop/reorder of columns.
 
 #### `innodb_sort_buffer_size`
 
-- <strong>Description:</strong> Size of the sort buffers used for sorting data when an InnoDB index is created, as well as the amount by which the temporary log file is extended during online DDL operations to record concurrent writes. Before [MariaDB 10.0](/kb/en/what-is-mariadb-100/), this was not configurable and the current default setting of 1MB was fixed. The larger the setting, the fewer merge phases are required between buffers while sorting. When a [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table) or [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) creates a new index, three buffers of this size are allocated, as well as pointers for the rows in the buffer.
+- <strong>Description:</strong> Size of the sort buffers used for sorting data when an InnoDB index is created, as well as the amount by which the temporary log file is extended during online DDL operations to record concurrent writes. Before [MariaDB 10.0](/kb/en/what-is-mariadb-100/), this was not configurable and the current default setting of 1MB was fixed. The larger the setting, the fewer merge phases are required between buffers while sorting. When a [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/) or [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) creates a new index, three buffers of this size are allocated, as well as pointers for the rows in the buffer.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-sort-buffer-size=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -2781,7 +2781,7 @@ add/drop/reorder of columns.
 
 #### `innodb_stats_auto_recalc`
 
-- <strong>Description:</strong> If set to `1` (the default), persistent statistics are automatically recalculated when the table changes significantly (more than 10% of the rows). Affects tables created or altered with STATS_PERSISTENT=1 (see [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table)), or when [innodb_stats_persistent](#innodb_stats_persistent) is enabled. [innodb_stats_persistent_sample_pages](#innodb_stats_persistent_sample_pages) determines how much data to sample when recalculating. See [InnoDB Persistent Statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics).
+- <strong>Description:</strong> If set to `1` (the default), persistent statistics are automatically recalculated when the table changes significantly (more than 10% of the rows). Affects tables created or altered with STATS_PERSISTENT=1 (see [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/)), or when [innodb_stats_persistent](#innodb_stats_persistent) is enabled. [innodb_stats_persistent_sample_pages](#innodb_stats_persistent_sample_pages) determines how much data to sample when recalculating. See [InnoDB Persistent Statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-stats-auto-recalc=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -2793,7 +2793,7 @@ add/drop/reorder of columns.
 
 #### `innodb_stats_auto_update`
 
-- <strong>Description:</strong> If set to `0` (`1` is default), index statistics will not be automatically calculated except when an [ANALYZE TABLE](/sql-statements-structure/sql-statements/table-statements/analyze-table) is run, or the table is first opened. Replaced by [innodb_stats_auto_recalc](#innodb_stats_auto_recalc) in [MariaDB 10.0](/kb/en/what-is-mariadb-100/)/XtraDB 5.6.
+- <strong>Description:</strong> If set to `0` (`1` is default), index statistics will not be automatically calculated except when an [ANALYZE TABLE](/sql-statements-structure/sql-statements/table-statements/analyze-table/) is run, or the table is first opened. Replaced by [innodb_stats_auto_recalc](#innodb_stats_auto_recalc) in [MariaDB 10.0](/kb/en/what-is-mariadb-100/)/XtraDB 5.6.
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
 - <strong>Data Type:</strong> `boolean`
@@ -2815,7 +2815,7 @@ add/drop/reorder of columns.
 
 #### `innodb_stats_method`
 
-- <strong>Description:</strong> Determines how NULLs are treated for XtraDB/InnoDB index statistics purposes. If set to `nulls_equal`, the default, all NULL index values are treated as a single group. This is usually fine, but if you have large numbers of NULLs the average group size is slanted higher, and the optimizer may miss using the index for ref accesses when it would be useful. If set to `nulls_unequal`, the opposite approach is taken, with each NULL forming its own group of one. Conversely, the average group size is slanted lower, and the optimizer may use the index for ref accesses when not suitable. Setting to `nulls_ignored` ignores NULLs altogether from index group calculations. See also [Index Statistics](/replication/optimization-and-tuning/optimization-and-indexes/index-statistics), [aria_stats_method](/kb/en/aria-server-system-variables/#aria_stats_method) and [myisam_stats_method](/kb/en/myisam-server-system-variables/#myisam_stats_method).
+- <strong>Description:</strong> Determines how NULLs are treated for XtraDB/InnoDB index statistics purposes. If set to `nulls_equal`, the default, all NULL index values are treated as a single group. This is usually fine, but if you have large numbers of NULLs the average group size is slanted higher, and the optimizer may miss using the index for ref accesses when it would be useful. If set to `nulls_unequal`, the opposite approach is taken, with each NULL forming its own group of one. Conversely, the average group size is slanted lower, and the optimizer may use the index for ref accesses when not suitable. Setting to `nulls_ignored` ignores NULLs altogether from index group calculations. See also [Index Statistics](/replication/optimization-and-tuning/optimization-and-indexes/index-statistics/), [aria_stats_method](/kb/en/aria-server-system-variables/#aria_stats_method) and [myisam_stats_method](/kb/en/myisam-server-system-variables/#myisam_stats_method).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-stats-method=name</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -2840,7 +2840,7 @@ add/drop/reorder of columns.
 
 #### `innodb_stats_on_metadata`
 
-- <strong>Description:</strong> If set to `1`, the default, XtraDB/InnoDB updates statistics when accessing the INFORMATION_SCHEMA.TABLES or INFORMATION_SCHEMA.STATISTICS tables, and when running metadata statements such as [SHOW INDEX](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-index) or [SHOW TABLE STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-table-status). If set to `0`, statistics are not updated at those times, which can reduce the access time for large schemas, as well as make execution plans more stable.
+- <strong>Description:</strong> If set to `1`, the default, XtraDB/InnoDB updates statistics when accessing the INFORMATION_SCHEMA.TABLES or INFORMATION_SCHEMA.STATISTICS tables, and when running metadata statements such as [SHOW INDEX](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-index/) or [SHOW TABLE STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-table-status/). If set to `0`, statistics are not updated at those times, which can reduce the access time for large schemas, as well as make execution plans more stable.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-stats-on-metadata</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -2851,7 +2851,7 @@ add/drop/reorder of columns.
 
 #### `innodb_stats_persistent`
 
-- <strong>Description:</strong> [ANALYZE TABLE](/sql-statements-structure/sql-statements/table-statements/analyze-table) produces index statistics, and this setting determines whether they will be stored on disk, or be required to be recalculated more frequently, such as when the server restarts. This information is stored for each table, and can be set with the STATS_PERSISTENT clause when creating or altering tables (see [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table)). See [InnoDB Persistent Statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics).
+- <strong>Description:</strong> [ANALYZE TABLE](/sql-statements-structure/sql-statements/table-statements/analyze-table/) produces index statistics, and this setting determines whether they will be stored on disk, or be required to be recalculated more frequently, such as when the server restarts. This information is stored for each table, and can be set with the STATS_PERSISTENT clause when creating or altering tables (see [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/)). See [InnoDB Persistent Statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-stats-persistent=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -2863,7 +2863,7 @@ add/drop/reorder of columns.
 
 #### `innodb_stats_persistent_sample_pages`
 
-- <strong>Description:</strong> Number of index pages sampled when estimating cardinality and statistics for indexed columns. Increasing this value will increases index statistics accuracy, but use more I/O resources when running [ANALYZE TABLE](/sql-statements-structure/sql-statements/table-statements/analyze-table). See [InnoDB Persistent Statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics).
+- <strong>Description:</strong> Number of index pages sampled when estimating cardinality and statistics for indexed columns. Increasing this value will increases index statistics accuracy, but use more I/O resources when running [ANALYZE TABLE](/sql-statements-structure/sql-statements/table-statements/analyze-table/). See [InnoDB Persistent Statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-stats-persistent-sample-pages=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -2878,7 +2878,7 @@ add/drop/reorder of columns.
 - <strong>Description:</strong> Gives control over the index distribution statistics by determining the number of index pages to sample. Higher values produce more disk I/O, but, especially for large tables, produce more accurate statistics and therefore make more effective use of the query optimizer. Lower values than the default are not recommended, as the statistics can be quite inaccurate.
 <ul start="1"><li>If <a undefined>innodb_stats_traditional</a> is enabled, then the exact number of pages configured by this system variable will be sampled for statistics.
 </li><li>If <a undefined>innodb_stats_traditional</a> is disabled, then the number of pages to sample for statistics is calculated using a logarithmic algorithm, so the exact number can change depending on the size of the table. This means that more samples may be used for larger tables.
-</li><li>If [persistent statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics) are enabled, then the <a undefined>innodb_stats_persistent_sample_pages</a> system variable applies instead. [persistent statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics) are enabled with the <a undefined>innodb_stats_persistent</a> system variable.
+</li><li>If [persistent statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics/) are enabled, then the <a undefined>innodb_stats_persistent_sample_pages</a> system variable applies instead. [persistent statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics/) are enabled with the <a undefined>innodb_stats_persistent</a> system variable.
 </li><li>In [MariaDB 10.0](/kb/en/what-is-mariadb-100/) and later, this system variable has been <strong>deprecated</strong>. In those versions, the <a undefined>innodb_stats_transient_sample_pages</a> system variable should be used instead.
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-stats-sample-pages=#</code>
@@ -2897,7 +2897,7 @@ add/drop/reorder of columns.
 - <strong>Description:</strong> This system variable affects how the number of pages to sample for transient statistics is determined. In [MariaDB 5.5](/kb/en/what-is-mariadb-55/), this system variable affects how the <a undefined>innodb_stats_sample_pages</a> system variable is used. In [MariaDB 10.0](/kb/en/what-is-mariadb-100/) and later, this system variable affects how the <a undefined>innodb_stats_transient_sample_pages</a> is used.
 <ul start="1"><li>If <a undefined>innodb_stats_traditional</a> is enabled, then the exact number of pages configured by the system variable will be sampled for statistics.
 </li><li>If <a undefined>innodb_stats_traditional</a> is disabled, then the number of pages to sample for statistics is calculated using a logarithmic algorithm, so the exact number can change depending on the size of the table. This means that more samples may be used for larger tables.
-</li><li>This system variable does not affect the calculation of [persistent statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics).
+</li><li>This system variable does not affect the calculation of [persistent statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics/).
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-stats-traditional=#</code>
 - <strong>Scope:</strong> Global
@@ -2912,7 +2912,7 @@ add/drop/reorder of columns.
 - <strong>Description:</strong> Gives control over the index distribution statistics by determining the number of index pages to sample. Higher values produce more disk I/O, but, especially for large tables, produce more accurate statistics and therefore make more effective use of the query optimizer. Lower values than the default are not recommended, as the statistics can be quite inaccurate.
 <ul start="1"><li>If <a undefined>innodb_stats_traditional</a> is enabled, then the exact number of pages configured by this system variable will be sampled for statistics.
 </li><li>If <a undefined>innodb_stats_traditional</a> is disabled, then the number of pages to sample for statistics is calculated using a logarithmic algorithm, so the exact number can change depending on the size of the table. This means that more samples may be used for larger tables.
-</li><li>If [persistent statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics) are enabled, then the <a undefined>innodb_stats_persistent_sample_pages</a> system variable applies instead. [persistent statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics) are enabled with the <a undefined>innodb_stats_persistent</a> system variable.
+</li><li>If [persistent statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics/) are enabled, then the <a undefined>innodb_stats_persistent_sample_pages</a> system variable applies instead. [persistent statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics/) are enabled with the <a undefined>innodb_stats_persistent</a> system variable.
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-stats-transient-sample-pages=#</code>
 - <strong>Scope:</strong> Global
@@ -2926,7 +2926,7 @@ add/drop/reorder of columns.
 
 #### `innodb_stats_update_need_lock`
 
-- <strong>Description:</strong> Setting to `0` (`1` is default) may help reduce contention of the `&amp;dict_operation_lock`, but also disables the <em>Data_free</em> option in [SHOW TABLE STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-table-status). This Percona XtraDB variable has not been ported to XtraDB 5.6.
+- <strong>Description:</strong> Setting to `0` (`1` is default) may help reduce contention of the `&amp;dict_operation_lock`, but also disables the <em>Data_free</em> option in [SHOW TABLE STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-table-status/). This Percona XtraDB variable has not been ported to XtraDB 5.6.
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
 - <strong>Data Type:</strong> `boolean`
@@ -2937,7 +2937,7 @@ add/drop/reorder of columns.
 
 #### `innodb_status_output`
 
-- <strong>Description:</strong> Enable [InnoDB monitor](/kb/en/xtradbinnodb-monitors/) output to the [error log](/mariadb-administration/server-monitoring-logs/error-log).
+- <strong>Description:</strong> Enable [InnoDB monitor](/kb/en/xtradbinnodb-monitors/) output to the [error log](/mariadb-administration/server-monitoring-logs/error-log/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-status-output={0|1}</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -2949,7 +2949,7 @@ add/drop/reorder of columns.
 
 #### `innodb_status_output_locks`
 
-- <strong>Description:</strong> Enable [InnoDB lock monitor](/columns-storage-engines-and-plugins/storage-engines/innodb/xtradb-innodb-monitors) output to the [error log](/mariadb-administration/server-monitoring-logs/error-log) and [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status). Also requires [innodb_status_output=ON](#innodb_status_output) to enable output to the error log.
+- <strong>Description:</strong> Enable [InnoDB lock monitor](/columns-storage-engines-and-plugins/storage-engines/innodb/xtradb-innodb-monitors/) output to the [error log](/mariadb-administration/server-monitoring-logs/error-log/) and [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/). Also requires [innodb_status_output=ON](#innodb_status_output) to enable output to the error log.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-status-output-locks={0|1}</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -2975,7 +2975,7 @@ add/drop/reorder of columns.
 
 #### `innodb_support_xa`
 
-- <strong>Description:</strong> If set to `1`, the default, [XA transactions](/sql-statements-structure/sql-statements/transactions/xa-transactions) are supported. XA support ensures data is written to the [binary log](/mariadb-administration/server-monitoring-logs/binary-log) in the same order to the actual database, which is critical for [replication](/replication) and disaster recovery, but comes at a small performance cost. If your database is set up to only permit one thread to change data (for example, on a replication slave with only the replication thread writing), it is safe to turn this option off. Removed in [MariaDB 10.3](/kb/en/what-is-mariadb-103/), XA transactions are always supported.
+- <strong>Description:</strong> If set to `1`, the default, [XA transactions](/sql-statements-structure/sql-statements/transactions/xa-transactions/) are supported. XA support ensures data is written to the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) in the same order to the actual database, which is critical for [replication](/replication/) and disaster recovery, but comes at a small performance cost. If your database is set up to only permit one thread to change data (for example, on a replication slave with only the replication thread writing), it is safe to turn this option off. Removed in [MariaDB 10.3](/kb/en/what-is-mariadb-103/), XA transactions are always supported.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-support-xa</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -3140,7 +3140,7 @@ add/drop/reorder of columns.
 
 #### `innodb_undo_logs`
 
-- <strong>Description:</strong> Specifies the number of rollback segments that XtraDB/InnoDB will use within a transaction (or the number of active [undo logs](/kb/en/undo-log/)). By default set to the maximum, `128`, it can be reduced to avoid allocating unneeded rollback segments. See the [Innodb_available_undo_logs](/kb/en/xtradbinnodb-server-status-variables/#innodb_available_undo_logs) status variable for the number of undo logs available. See also [innodb_undo_directory](#innodb_undo_directory) and [innodb_undo_tablespaces](#innodb_undo_tablespaces). Replaces [innodb_rollback_segments](#innodb_rollback_segments) in [MariaDB 10.0](/kb/en/what-is-mariadb-100/). The [Information Schema XTRADB_RSEG Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-xtradb-tables/information-schema-xtradb_rseg-table) contains information about the XtraDB rollback segments. Deprecated and ignored in [MariaDB 10.5.0](/kb/en/mariadb-1050-release-notes/), as it always makes sense to use the maximum number of rollback segments.
+- <strong>Description:</strong> Specifies the number of rollback segments that XtraDB/InnoDB will use within a transaction (or the number of active [undo logs](/kb/en/undo-log/)). By default set to the maximum, `128`, it can be reduced to avoid allocating unneeded rollback segments. See the [Innodb_available_undo_logs](/kb/en/xtradbinnodb-server-status-variables/#innodb_available_undo_logs) status variable for the number of undo logs available. See also [innodb_undo_directory](#innodb_undo_directory) and [innodb_undo_tablespaces](#innodb_undo_tablespaces). Replaces [innodb_rollback_segments](#innodb_rollback_segments) in [MariaDB 10.0](/kb/en/what-is-mariadb-100/). The [Information Schema XTRADB_RSEG Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-xtradb-tables/information-schema-xtradb_rseg-table/) contains information about the XtraDB rollback segments. Deprecated and ignored in [MariaDB 10.5.0](/kb/en/mariadb-1050-release-notes/), as it always makes sense to use the maximum number of rollback segments.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-undo-logs=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -3168,7 +3168,7 @@ add/drop/reorder of columns.
 
 #### `innodb_use_atomic_writes`
 
-- <strong>Description:</strong> Implement atomic writes on supported SSD devices. See [atomic write support](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/atomic-write-support) for other variables affected when this is set.
+- <strong>Description:</strong> Implement atomic writes on supported SSD devices. See [atomic write support](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/atomic-write-support/) for other variables affected when this is set.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">innodb-use-atomic-writes={0|1}</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -3276,7 +3276,7 @@ For more information, see Fusion.
 
 #### `innodb_use_sys_stats_table`
 
-- <strong>Description:</strong> If set to `1` (`0` is default), XtraDB will use the SYS_STATS system table for extra table index statistics. When a table is opened for the first time, statistics will then be loaded from SYS_STATS instead of sampling the index pages. Statistics are designed to be maintained only by running an [ANALYZE TABLE](/sql-statements-structure/sql-statements/table-statements/analyze-table). Replaced by MySQL 5.6's Persistent Optimizer Statistics.
+- <strong>Description:</strong> If set to `1` (`0` is default), XtraDB will use the SYS_STATS system table for extra table index statistics. When a table is opened for the first time, statistics will then be loaded from SYS_STATS instead of sampling the index pages. Statistics are designed to be maintained only by running an [ANALYZE TABLE](/sql-statements-structure/sql-statements/table-statements/analyze-table/). Replaced by MySQL 5.6's Persistent Optimizer Statistics.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">innodb-use-sys-stats-table={0|1}</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No

@@ -2,7 +2,7 @@
 
 ## Min/Max optimization without GROUP BY
 
-MariaDB and MySQL can optimize the [MIN()](/built-in-functions/aggregate-functions/min) and [MAX()](/built-in-functions/aggregate-functions/max) functions to be a single row lookup in the following cases:
+MariaDB and MySQL can optimize the [MIN()](/built-in-functions/aggregate-functions/min/) and [MAX()](/built-in-functions/aggregate-functions/max/) functions to be a single row lookup in the following cases:
 
 - There is only one table used in the <code class="fixed" style="white-space:pre-wrap">SELECT</code>.
 - You only have constants, <code class="fixed" style="white-space:pre-wrap">MIN()</code> and <code class="fixed" style="white-space:pre-wrap">MAX()</code> in the <code class="fixed" style="white-space:pre-wrap">SELECT</code> part.
@@ -49,7 +49,7 @@ Loose scan is possible in the following cases:
 - The only aggregated functions in the <code class="fixed" style="white-space:pre-wrap">SELECT</code> part are <code class="fixed" style="white-space:pre-wrap">MIN()</code> and <code class="fixed" style="white-space:pre-wrap">MAX()</code> functions and all of them using the same column which is the next index part after the used <code class="fixed" style="white-space:pre-wrap">GROUP BY</code> columns.
 - Partial indexed columns cannot be used (like only indexing 10 characters of a <code class="fixed" style="white-space:pre-wrap">VARCHAR(20)</code> column).
 
-Loose scan will apply for your query if [<code class="fixed" style="white-space:pre-wrap">EXPLAIN</code>](/sql-statements-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain) shows `Using index for group-by` in the `Extra` column.
+Loose scan will apply for your query if [<code class="fixed" style="white-space:pre-wrap">EXPLAIN</code>](/sql-statements-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain/) shows `Using index for group-by` in the `Extra` column.
 In this case the optimizer will do only one extra row fetch to calculate the value for <code class="fixed" style="white-space:pre-wrap">MIN()</code> or <code class="fixed" style="white-space:pre-wrap">MAX()</code> for every unique key prefix.
 
 The following examples assume that the table `t1` has an index on `(a,b,c)`.
@@ -60,6 +60,6 @@ SELECT a, b, MIN(c),MAX(c) FROM t1 GROUP BY a,b
 
 ## See also
 
-- [MIN()](/built-in-functions/aggregate-functions/min)
-- [MAX()](/built-in-functions/aggregate-functions/max)
+- [MIN()](/built-in-functions/aggregate-functions/min/)
+- [MAX()](/built-in-functions/aggregate-functions/max/)
 - [MySQL manual on loose index scans](http://dev.mysql.com/doc/refman/5.7/en/group-by-optimization.html)

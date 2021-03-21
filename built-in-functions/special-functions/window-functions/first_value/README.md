@@ -2,7 +2,7 @@
 
 ##### MariaDB starting with [10.2.2](/kb/en/mariadb-1022-release-notes/)
 
-The FIRST_VALUE() function was first introduced with other [window functions](/built-in-functions/special-functions/window-functions) in [MariaDB 10.2](/kb/en/what-is-mariadb-102/).
+The FIRST_VALUE() function was first introduced with other [window functions](/built-in-functions/special-functions/window-functions/) in [MariaDB 10.2](/kb/en/what-is-mariadb-102/).
 
 ## Syntax
 
@@ -99,4 +99,4 @@ FROM t1;
 
 ## See Also
 
-- [LAST_VALUE](/built-in-functions/secondary-functions/information-functions/last_value)
+- [LAST_VALUE](/built-in-functions/secondary-functions/information-functions/last_value/)

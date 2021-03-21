@@ -12,13 +12,13 @@ SHA2(str,hash_len)
 
 ## Description
 
-Given a string <em>`str`</em>, calculates an SHA-2 checksum, which is considered more cryptographically secure than its [SHA-1](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/sha1) equivalent. The SHA-2 family includes SHA-224, SHA-256, SHA-384, and SHA-512, and the <em>`hash_len`</em> must correspond to one of these, i.e. 224, 256, 384 or 512. 0 is equivalent to 256.
+Given a string <em>`str`</em>, calculates an SHA-2 checksum, which is considered more cryptographically secure than its [SHA-1](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/sha1/) equivalent. The SHA-2 family includes SHA-224, SHA-256, SHA-384, and SHA-512, and the <em>`hash_len`</em> must correspond to one of these, i.e. 224, 256, 384 or 512. 0 is equivalent to 256.
 
 The return value is a nonbinary string in the connection [character set and collation](/kb/en/data-types-character-sets-and-collations/), determined by the values of the [character_set_connection](/kb/en/server-system-variables/#character_set_connection) and [collation_connection](/kb/en/server-system-variables/#collation_connection) system variables.
 
 NULL is returned if the hash length is not valid, or the string `str` is NULL.
 
-SHA2 will only work if MariaDB was has been configured with [TLS support](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview).
+SHA2 will only work if MariaDB was has been configured with [TLS support](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview/).
 
 ## Examples
 

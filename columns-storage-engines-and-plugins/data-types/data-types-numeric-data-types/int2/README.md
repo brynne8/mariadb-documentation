@@ -1,6 +1,6 @@
 # INT2
 
-`INT2` is a synonym for [SMALLINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/smallint).
+`INT2` is a synonym for [SMALLINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/smallint/).
 
 ```sql
 CREATE TABLE t1 (x INT2);

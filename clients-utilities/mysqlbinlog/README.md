@@ -8,7 +8,7 @@ From [MariaDB 10.4.6](/kb/en/mariadb-1046-release-notes/), `mariadb-binlog` is a
 
 From [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/), `mariadb-binlog` is the name of the tool, with `mysqlbinlog` a symlink .
 
-`mysqlbinlog` is a utility included with MariaDB for processing [binary log](/mariadb-administration/server-monitoring-logs/binary-log) and [relay log](/mariadb-administration/server-monitoring-logs/binary-log/relay-log) files.
+`mysqlbinlog` is a utility included with MariaDB for processing [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) and [relay log](/mariadb-administration/server-monitoring-logs/binary-log/relay-log/) files.
 
 The MariaDB server's binary log is a set of files containing "events" which
 represent modifications to the contents of a MariaDB database. These events are

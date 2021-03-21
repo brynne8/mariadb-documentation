@@ -1,6 +1,6 @@
 # HandlerSocket Client Libraries
 
-In order to make use of the [HandlerSocket](/sql-statements-structure/nosql/handlersocket) plugin in your
+In order to make use of the [HandlerSocket](/sql-statements-structure/nosql/handlersocket/) plugin in your
 applications, you will need to use the appropriate client library. The
 following client libraries are available:
 

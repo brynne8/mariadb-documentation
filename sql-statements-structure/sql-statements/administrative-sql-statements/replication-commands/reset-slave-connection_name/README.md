@@ -10,10 +10,10 @@ RESET SLAVE ["connection_name"] [ALL]
 
 ## Description
 
-RESET SLAVE makes the slave forget its [replication](/replication) position in the
-master's [binary log](/mariadb-administration/server-monitoring-logs/binary-log). This statement is meant to be used for a clean
+RESET SLAVE makes the slave forget its [replication](/replication/) position in the
+master's [binary log](/mariadb-administration/server-monitoring-logs/binary-log/). This statement is meant to be used for a clean
 start. It deletes the master.info and relay-log.info files, all the
-[relay log](/mariadb-administration/server-monitoring-logs/binary-log/relay-log) files, and starts a new relay log file. To use RESET SLAVE,
+[relay log](/mariadb-administration/server-monitoring-logs/binary-log/relay-log/) files, and starts a new relay log file. To use RESET SLAVE,
 the slave replication threads must be stopped (use [STOP SLAVE](/kb/en/stop-slave/) if
 necessary).
 
@@ -36,7 +36,7 @@ The <code class="highlight fixed" style="white-space:pre-wrap">ALL</code> also r
 
 ##### MariaDB starting with [10.0](/kb/en/what-is-mariadb-100/)
 
-The `connection_name` option was added as part of [multi-source replication](/replication/standard-replication/multi-source-replication) added in [MariaDB 10.0](/kb/en/what-is-mariadb-100/)
+The `connection_name` option was added as part of [multi-source replication](/replication/standard-replication/multi-source-replication/) added in [MariaDB 10.0](/kb/en/what-is-mariadb-100/)
 
 If there is only one nameless master, or the default master (as specified by the [default_master_connection](/kb/en/replication-and-binary-log-server-system-variables/#default_master_connection) system variable) is intended, `connection_name` can be omitted. If provided, the `RESET SLAVE` statement will apply to the specified master. `connection_name` is case-insensitive.
 

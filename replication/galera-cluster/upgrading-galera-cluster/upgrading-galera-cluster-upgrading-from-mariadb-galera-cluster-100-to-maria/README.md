@@ -20,7 +20,7 @@ First, before you get started:
 </li><li>If you are running an older MariaDB Galera Cluster 10.0 release that still uses Galera 2 (i.e. Galera wsrep provider versions 25.2.x), then it is recommended to first upgrade to the latest MariaDB Galera Cluster 10.0 release that uses Galera 3 (i.e. Galera wsrep provider versions 25.3.x).
 </li><li>See [What is MariaDB Galera Cluster?: Galera wsrep provider Versions](/kb/en/what-is-mariadb-galera-cluster/#galera-wsrep-provider-versions) for information on which MariaDB releases uses which Galera wsrep provider versions.
 </li></ol>
-3 Ideally, you want to have a large enough gcache to avoid a [State Snapshot Transfer (SST)](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts) during the rolling upgrade. The gcache size can be configured by setting <a undefined>gcache.size</a>  For example: <br>
+3 Ideally, you want to have a large enough gcache to avoid a [State Snapshot Transfer (SST)](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts/) during the rolling upgrade. The gcache size can be configured by setting <a undefined>gcache.size</a>  For example: <br>
 <code class="fixed" style="white-space:pre-wrap">wsrep_provider_options="gcache.size=2G"</code>
 
 Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [Percona XtraBackup](/kb/en/backup-restore-and-import-clients-percona-xtrabackup/).
@@ -49,14 +49,14 @@ Then, for each node, perform the following steps:
 </li><li>On RHEL, CentOS, Fedora, and other similar Linux distributions, see [Installing MariaDB Packages with YUM](/kb/en/yum/#installing-mariadb-packages-with-yum) for more information.
 </li><li>On SLES, OpenSUSE, and other similar Linux distributions, see [Installing MariaDB Packages with ZYpp](/kb/en/installing-mariadb-with-zypper/#installing-mariadb-packages-with-zypp) for more information.
 </li></ul>
-7 Make any desired changes to configuration options in [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files), such as `my.cnf`. This includes removing any system variables or options that are no longer supported.
+7 Make any desired changes to configuration options in [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/), such as `my.cnf`. This includes removing any system variables or options that are no longer supported.
 <ul start="1"><li>It is important to note that a new option is needed for Galera to be active in [MariaDB 10.1](/kb/en/what-is-mariadb-101/): you must set <a undefined>wsrep_on=ON</a>.
 </li></ul>
 8 On Linux distributions that use `systemd` you may need to increase the service startup timeout as the default timeout of 90 seconds may not be sufficient. See [Systemd: Configuring the Systemd Service Timeout](/kb/en/systemd/#configuring-the-systemd-service-timeout) for more information.
 9 [Start MariaDB](/kb/en/starting-and-stopping-mariadb-starting-and-stopping-mariadb/).
-10 Run [mysql_upgrade](/sql-statements-structure/sql-statements/table-statements/mysql_upgrade) with the `--skip-write-binlog` option.
+10 Run [mysql_upgrade](/sql-statements-structure/sql-statements/table-statements/mysql_upgrade/) with the `--skip-write-binlog` option.
 <ul start="1"><li>`mysql_upgrade` does two things:
-<ol start="1"><li>Ensures that the system tables in the [mysq](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables)l database are fully compatible with the new version.
+<ol start="1"><li>Ensures that the system tables in the [mysq](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/)l database are fully compatible with the new version.
 </li><li>Does a very quick check of all tables and marks them as compatible with the new version of MariaDB .
 </li></ol>
 </li></ul>

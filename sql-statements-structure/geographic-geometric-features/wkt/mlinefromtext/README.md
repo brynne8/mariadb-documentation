@@ -9,7 +9,7 @@ MultiLineStringFromText(wkt[,srid])
 
 ## Description
 
-Constructs a [MULTILINESTRING](/sql-statements-structure/geographic-geometric-features/geometry-constructors/multilinestring) value using its [WKT](/sql-statements-structure/geographic-geometric-features/wkt/wkt-definition) representation and [SRID](/kb/en/srid/).
+Constructs a [MULTILINESTRING](/sql-statements-structure/geographic-geometric-features/geometry-constructors/multilinestring/) value using its [WKT](/sql-statements-structure/geographic-geometric-features/wkt/wkt-definition/) representation and [SRID](/kb/en/srid/).
 
 `MLineFromText()` and `MultiLineStringFromText()` are synonyms.
 

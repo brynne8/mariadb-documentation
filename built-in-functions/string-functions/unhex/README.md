@@ -8,7 +8,7 @@ UNHEX(str)
 
 ## Description
 
-Performs the inverse operation of [HEX](/built-in-functions/string-functions/hex)(str). That is, it interprets
+Performs the inverse operation of [HEX](/built-in-functions/string-functions/hex/)(str). That is, it interprets
 each pair of hexadecimal digits in the argument as a number and
 converts it to the character represented by the number. The resulting
 characters are returned as a binary string.
@@ -56,6 +56,6 @@ SELECT HEX(UNHEX('1267'));
 
 ## See Also
 
-- [Hexadecimal literals](/sql-statements-structure/sql-language-structure/hexadecimal-literals)
-- [HEX()](/built-in-functions/string-functions/hex)
-- [CONV()](/built-in-functions/numeric-functions/conv)
+- [Hexadecimal literals](/sql-statements-structure/sql-language-structure/hexadecimal-literals/)
+- [HEX()](/built-in-functions/string-functions/hex/)
+- [CONV()](/built-in-functions/numeric-functions/conv/)

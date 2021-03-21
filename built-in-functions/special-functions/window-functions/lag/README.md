@@ -2,7 +2,7 @@
 
 ##### MariaDB starting with [10.2.2](/kb/en/mariadb-1022-release-notes/)
 
-The LAG() function was first introduced with other [window functions](/built-in-functions/special-functions/window-functions) in [MariaDB 10.2](/kb/en/what-is-mariadb-102/).
+The LAG() function was first introduced with other [window functions](/built-in-functions/special-functions/window-functions/) in [MariaDB 10.2](/kb/en/what-is-mariadb-102/).
 
 ## Syntax
 
@@ -61,4 +61,4 @@ FROM t1;
 
 ## See Also
 
-- [LEAD](/built-in-functions/special-functions/window-functions/lead)  - Window function to access a following row
+- [LEAD](/built-in-functions/special-functions/window-functions/lead/)  - Window function to access a following row

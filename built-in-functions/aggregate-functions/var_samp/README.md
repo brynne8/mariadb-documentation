@@ -10,15 +10,15 @@ VAR_SAMP(expr)
 
 Returns the sample variance of <em>`expr`</em>. That is, the denominator is the number of rows minus one.
 
-It is an [aggregate function](/built-in-functions/aggregate-functions), and so can be used with the [GROUP BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/group-by) clause.
+It is an [aggregate function](/built-in-functions/aggregate-functions/), and so can be used with the [GROUP BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/group-by/) clause.
 
-From [MariaDB 10.2.2](/kb/en/mariadb-1022-release-notes/), VAR_SAMP() can be used as a [window function](/built-in-functions/special-functions/window-functions).
+From [MariaDB 10.2.2](/kb/en/mariadb-1022-release-notes/), VAR_SAMP() can be used as a [window function](/built-in-functions/special-functions/window-functions/).
 
 VAR_SAMP() returns `NULL` if there were no matching rows.
 
 ## Examples
 
-As an [aggregate function](/built-in-functions/aggregate-functions):
+As an [aggregate function](/built-in-functions/aggregate-functions/):
 
 ```sql
 CREATE OR REPLACE TABLE stats (category VARCHAR(2), x INT);
@@ -37,7 +37,7 @@ SELECT category, STDDEV_POP(x), STDDEV_SAMP(x), VAR_POP(x)
 +----------+---------------+----------------+------------+
 ```
 
-As a [window function](/built-in-functions/special-functions/window-functions):
+As a [window function](/built-in-functions/special-functions/window-functions/):
 
 ```sql
 CREATE OR REPLACE TABLE student_test (name CHAR(10), test CHAR(10), score TINYINT);
@@ -65,5 +65,5 @@ SELECT name, test, score, VAR_SAMP(score)
 
 ## See Also
 
-- [VAR_POP](/built-in-functions/aggregate-functions/var_pop) (variance)
-- [STDDEV_POP](/built-in-functions/aggregate-functions/stddev_pop) (population standard deviation)
+- [VAR_POP](/built-in-functions/aggregate-functions/var_pop/) (variance)
+- [STDDEV_POP](/built-in-functions/aggregate-functions/stddev_pop/) (population standard deviation)

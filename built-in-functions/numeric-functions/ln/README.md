@@ -11,7 +11,7 @@ LN(X)
 Returns the natural logarithm of X; that is, the base-e logarithm of X.
 If X is less than or equal to 0, or `NULL`, then NULL is returned.
 
-The inverse of this function is [EXP()](/built-in-functions/numeric-functions/exp).
+The inverse of this function is [EXP()](/built-in-functions/numeric-functions/exp/).
 
 ## Examples
 

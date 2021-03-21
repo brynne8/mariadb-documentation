@@ -46,5 +46,5 @@ SHOW CONTRIBUTORS;
 ## See Also
 
 - [Log of MariaDB contributors](/kb/en/log-of-mariadb-contributions/).
-- [SHOW AUTHORS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-authors) list the authors of MariaDB (including documentation, QA etc).
+- [SHOW AUTHORS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-authors/) list the authors of MariaDB (including documentation, QA etc).
 - [MariaDB Foundation page on contributing financially](https://mariadb.org/donate/)

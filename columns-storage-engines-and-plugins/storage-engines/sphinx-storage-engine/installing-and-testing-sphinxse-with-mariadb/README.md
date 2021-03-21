@@ -1,6 +1,6 @@
 # Installing and Testing SphinxSE with MariaDB
 
-To use [SphinxSE](/columns-storage-engines-and-plugins/storage-engines/sphinx-storage-engine) with MariaDB you need to first [download and install Sphinx](/columns-storage-engines-and-plugins/storage-engines/sphinx-storage-engine/installing-sphinx).
+To use [SphinxSE](/columns-storage-engines-and-plugins/storage-engines/sphinx-storage-engine/) with MariaDB you need to first [download and install Sphinx](/columns-storage-engines-and-plugins/storage-engines/sphinx-storage-engine/installing-sphinx/).
 
 Complete Sphinx documentation is available on the [Sphinx website](http://sphinxsearch.com/docs/).
 

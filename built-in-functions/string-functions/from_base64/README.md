@@ -14,7 +14,7 @@ FROM_BASE64(str)
 
 Decodes the given base-64 encode string, returning the result as a binary string.  Returns `NULL` if the given string is `NULL` or if it's invalid.
 
-It is the reverse of the [TO_BASE64](/built-in-functions/string-functions/to_base64) function.
+It is the reverse of the [TO_BASE64](/built-in-functions/string-functions/to_base64/) function.
 
 There are numerous methods to base-64 encode a string.  MariaDB uses the following:
 

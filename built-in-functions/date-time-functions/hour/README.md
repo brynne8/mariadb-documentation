@@ -32,7 +32,7 @@ SELECT HOUR('272:59:59');
 +-------------------+
 ```
 
-Difference between [EXTRACT (HOUR FROM ...)](/built-in-functions/date-time-functions/extract) (&gt;= [MariaDB 10.0.7](/kb/en/mariadb-1007-release-notes/) and [MariaDB 5.5.35](/kb/en/mariadb-5535-release-notes/)) and `HOUR`:
+Difference between [EXTRACT (HOUR FROM ...)](/built-in-functions/date-time-functions/extract/) (&gt;= [MariaDB 10.0.7](/kb/en/mariadb-1007-release-notes/) and [MariaDB 5.5.35](/kb/en/mariadb-5535-release-notes/)) and `HOUR`:
 
 ```sql
 SELECT EXTRACT(HOUR FROM '26:30:00'), HOUR('26:30:00');
@@ -45,6 +45,6 @@ SELECT EXTRACT(HOUR FROM '26:30:00'), HOUR('26:30:00');
 
 ## See Also
 
-- [Date and Time Units](/built-in-functions/date-time-functions/date-and-time-units)
-- [Date and Time Literals](/sql-statements-structure/sql-language-structure/date-and-time-literals)
-- [EXTRACT()](/built-in-functions/date-time-functions/extract)
+- [Date and Time Units](/built-in-functions/date-time-functions/date-and-time-units/)
+- [Date and Time Literals](/sql-statements-structure/sql-language-structure/date-and-time-literals/)
+- [EXTRACT()](/built-in-functions/date-time-functions/extract/)

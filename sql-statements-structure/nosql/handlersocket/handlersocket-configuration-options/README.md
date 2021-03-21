@@ -1,8 +1,8 @@
 # HandlerSocket Configuration Options
 
-The [HandlerSocket](/sql-statements-structure/nosql/handlersocket) plugin has the following options.
+The [HandlerSocket](/sql-statements-structure/nosql/handlersocket/) plugin has the following options.
 
-See also the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables).
+See also the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables/).
 
 Add the options to the [mysqld] section of your my.cnf file.
 

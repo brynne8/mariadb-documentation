@@ -11,12 +11,12 @@ SHOW [FULL] {COLUMNS | FIELDS} FROM tbl_name [FROM db_name]
 
 <code class="highlight fixed" style="white-space:pre-wrap">SHOW COLUMNS</code> displays information about the columns in a
 given table. It also works for views. The <code class="highlight fixed" style="white-space:pre-wrap">LIKE</code> clause, if
-present on its own, indicates which column names to match. The <code class="highlight fixed" style="white-space:pre-wrap">WHERE</code> and <code class="highlight fixed" style="white-space:pre-wrap">LIKE</code> clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](/sql-statements-structure/sql-statements/administrative-sql-statements/show/extended-show).
+present on its own, indicates which column names to match. The <code class="highlight fixed" style="white-space:pre-wrap">WHERE</code> and <code class="highlight fixed" style="white-space:pre-wrap">LIKE</code> clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](/sql-statements-structure/sql-statements/administrative-sql-statements/show/extended-show/).
 
 If the data types differ from what you expect them to be based on a
 <code class="highlight fixed" style="white-space:pre-wrap">CREATE TABLE</code> statement, note that MariaDB sometimes changes
 data types when you create or alter a table. The conditions under which this
-occurs are described in the [Silent Column Changes](/sql-statements-structure/sql-statements/data-definition/create/silent-column-changes) article.
+occurs are described in the [Silent Column Changes](/sql-statements-structure/sql-statements/data-definition/create/silent-column-changes/) article.
 
 The <code class="highlight fixed" style="white-space:pre-wrap">FULL</code> keyword causes the output to include the column
 collation and comments, as well as the privileges you have for each column.
@@ -86,7 +86,7 @@ value is displayed only if you use the <code class="highlight fixed" style="whit
 only if you use the <code class="highlight fixed" style="white-space:pre-wrap">FULL</code> keyword.
 
 <code class="highlight fixed" style="white-space:pre-wrap">SHOW FIELDS</code> is a synonym for
-<code class="highlight fixed" style="white-space:pre-wrap">SHOW COLUMNS</code>. Also [DESCRIBE](/sql-statements-structure/sql-statements/administrative-sql-statements/describe) and [EXPLAIN](/sql-statements-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain) can be used as shortcuts.
+<code class="highlight fixed" style="white-space:pre-wrap">SHOW COLUMNS</code>. Also [DESCRIBE](/sql-statements-structure/sql-statements/administrative-sql-statements/describe/) and [EXPLAIN](/sql-statements-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain/) can be used as shortcuts.
 
 You can also list a table's columns with:
 
@@ -94,11 +94,11 @@ You can also list a table's columns with:
 mysqlshow db_name tbl_name
 ```
 
-See the [mysqlshow](/clients-utilities/mysqlshow) command for more details.
+See the [mysqlshow](/clients-utilities/mysqlshow/) command for more details.
 
-The [DESCRIBE](/sql-statements-structure/sql-statements/administrative-sql-statements/describe) statement provides information similar to `SHOW COLUMNS`. The <a undefined>information_schema.COLUMNS</a> table provides similar, but more complete, information.
+The [DESCRIBE](/sql-statements-structure/sql-statements/administrative-sql-statements/describe/) statement provides information similar to `SHOW COLUMNS`. The <a undefined>information_schema.COLUMNS</a> table provides similar, but more complete, information.
 
-The [SHOW CREATE TABLE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-table), [SHOW TABLE STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-table-status), and [SHOW INDEX](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-index) statements also provide information about tables.
+The [SHOW CREATE TABLE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-table/), [SHOW TABLE STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-table-status/), and [SHOW INDEX](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-index/) statements also provide information about tables.
 
 ## Examples
 
@@ -131,10 +131,10 @@ SHOW COLUMNS FROM employees WHERE Type LIKE 'Varchar%';
 
 ## See Also
 
-- [DESCRIBE](/sql-statements-structure/sql-statements/administrative-sql-statements/describe)
-- [mysqlshow](/clients-utilities/mysqlshow)
-- [SHOW CREATE TABLE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-table)
-- [SHOW TABLE STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-table-status)
-- [SHOW INDEX](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-index)
-- [Extended SHOW](/sql-statements-structure/sql-statements/administrative-sql-statements/show/extended-show)
-- [Silent Column Changes](/sql-statements-structure/sql-statements/data-definition/create/silent-column-changes)
+- [DESCRIBE](/sql-statements-structure/sql-statements/administrative-sql-statements/describe/)
+- [mysqlshow](/clients-utilities/mysqlshow/)
+- [SHOW CREATE TABLE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-table/)
+- [SHOW TABLE STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-table-status/)
+- [SHOW INDEX](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-index/)
+- [Extended SHOW](/sql-statements-structure/sql-statements/administrative-sql-statements/show/extended-show/)
+- [Silent Column Changes](/sql-statements-structure/sql-statements/data-definition/create/silent-column-changes/)

@@ -8,7 +8,7 @@ AES_ENCRYPT(str,key_str)
 
 ## Description
 
-`AES_ENCRYPT()` and [AES_DECRYPT()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/aes_decrypt) allow encryption and decryption of
+`AES_ENCRYPT()` and [AES_DECRYPT()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/aes_decrypt/) allow encryption and decryption of
 data using the official AES (Advanced Encryption Standard) algorithm,
 previously known as "Rijndael." Encoding with a 128-bit key length is
 used, but you can extend it up to 256 bits by modifying the source. We

@@ -1,6 +1,6 @@
 # Spider Table System Variables
 
-The following variables are only available in the `COMMENT` clause of the [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table) statement when the [Spider](/columns-storage-engines-and-plugins/storage-engines/spider) storage engine has been installed. Global variables can be overloaded at the table level using the DSN parameter. These variables are listed on the [Spider System Variables](/columns-storage-engines-and-plugins/storage-engines/spider/spider-server-system-variables) page.
+The following variables are only available in the `COMMENT` clause of the [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/) statement when the [Spider](/columns-storage-engines-and-plugins/storage-engines/spider/) storage engine has been installed. Global variables can be overloaded at the table level using the DSN parameter. These variables are listed on the [Spider System Variables](/columns-storage-engines-and-plugins/storage-engines/spider/spider-server-system-variables/) page.
 
 #### `access_balances`
 
@@ -54,7 +54,7 @@ The following variables are only available in the `COMMENT` clause of the [CREAT
 
 #### `idx000`
 
-- <strong>Description:</strong> When using an index on Spider tables for searching, Spider uses this hint to search the remote table.  The remote table index is related to the Spider table index by this hint.  The number represented by `000` is the index ID, which is the number of the index shown by the [SHOW CREATE TABLE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-table) statement.  `000` is the Primary Key.  For instance, `idx000 "force index(PRIMARY)"` (in abbreviated format `idx000 "f PRIMARY"`). 
+- <strong>Description:</strong> When using an index on Spider tables for searching, Spider uses this hint to search the remote table.  The remote table index is related to the Spider table index by this hint.  The number represented by `000` is the index ID, which is the number of the index shown by the [SHOW CREATE TABLE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-table/) statement.  `000` is the Primary Key.  For instance, `idx000 "force index(PRIMARY)"` (in abbreviated format `idx000 "f PRIMARY"`). 
 <ul start="1"><li>`f` force index
 </li><li>`u` use index 
 </li><li>`ig` ignore index 
@@ -63,7 +63,7 @@ The following variables are only available in the `COMMENT` clause of the [CREAT
 
 #### `internal_delayed`
 
-- <strong>Description:</strong> Whether to transmit existence of delay to remote servers when executing an [INSERT DELAYED](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed) statement on local server.
+- <strong>Description:</strong> Whether to transmit existence of delay to remote servers when executing an [INSERT DELAYED](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed/) statement on local server.
 <ul start="1"><li>`0` Doesn't transmit.
 </li><li>`1` Transmits.
 </li></ul>
@@ -142,7 +142,7 @@ The following variables are only available in the `COMMENT` clause of the [CREAT
 
 #### `query_cache`
 
-- <strong>Description:</strong> Passes the option for the [Query Cache](/replication/optimization-and-tuning/buffers-caches-and-threads/query-cache) when issuing [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) statements to the remote server.
+- <strong>Description:</strong> Passes the option for the [Query Cache](/replication/optimization-and-tuning/buffers-caches-and-threads/query-cache/) when issuing [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) statements to the remote server.
 <ul start="1"><li>`0` No option passed.
 </li><li>`1` Passes the <a undefined>SQL_CACHE</a> option. 
 </li><li>`2` Passes the <a undefined>SQL_NO_CACHE</a> option. 
@@ -164,7 +164,7 @@ The following variables are only available in the `COMMENT` clause of the [CREAT
 
 #### `server`
 
-- <strong>Description:</strong> Server name.  Used when generating connection information with [CREATE SERVER](/sql-statements-structure/sql-statements/data-definition/create/create-server) statements.
+- <strong>Description:</strong> Server name.  Used when generating connection information with [CREATE SERVER](/sql-statements-structure/sql-statements/data-definition/create/create-server/) statements.
 - <strong>Default Table Value:</strong> `none`
 - <strong>DSN Parameter Name:</strong> `srv`
 
@@ -194,7 +194,7 @@ The following variables are only available in the `COMMENT` clause of the [CREAT
 
 #### `ssl_cipher`
 
-- <strong>Description:</strong> List of allowed ciphers to use with [TLS encryption](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview).
+- <strong>Description:</strong> List of allowed ciphers to use with [TLS encryption](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview/).
 - <strong>Default Table Value:</strong> `none`
 - <strong>DSN Parameter Name:</strong> `sch`
 

@@ -82,7 +82,7 @@ Note the line with `id=2`: select_type is `LATERAL DERIVED`.  And table customer
 
 Lateral Derived is enabled by default, the optimizer will make a cost-based decision whether the optimization should be used.
 
-If you need to disable the optimization, it has an [optimizer_switch](/replication/optimization-and-tuning/query-optimizations/optimizer-switch) flag. It can be disabled like so:
+If you need to disable the optimization, it has an [optimizer_switch](/replication/optimization-and-tuning/query-optimizations/optimizer-switch/) flag. It can be disabled like so:
 
 ```sql
 set optimizer_switch='split_materialized=off'

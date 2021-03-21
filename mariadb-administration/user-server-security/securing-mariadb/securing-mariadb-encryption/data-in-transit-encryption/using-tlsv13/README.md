@@ -10,4 +10,4 @@ See this [OpenSSL blog post](https://www.openssl.org/blog/blog/2018/02/08/tlsv1.
 
 ### See Also
 
-- [Secure Connections Overview](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview)
+- [Secure Connections Overview](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview/)

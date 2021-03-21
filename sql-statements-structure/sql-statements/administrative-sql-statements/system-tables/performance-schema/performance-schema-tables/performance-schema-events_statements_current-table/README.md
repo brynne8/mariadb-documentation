@@ -2,7 +2,7 @@
 
 ##### MariaDB starting with [10.0](/kb/en/what-is-mariadb-100/)
 
-The events_statements_current table, along with many other new [Performance Schema tables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/list-of-performance-schema-tables), was added in [MariaDB 10.0](/kb/en/what-is-mariadb-100/)
+The events_statements_current table, along with many other new [Performance Schema tables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/list-of-performance-schema-tables/), was added in [MariaDB 10.0](/kb/en/what-is-mariadb-100/)
 
 The `events_statements_current` table contains current statement events, with each row being a record of a thread and its most recent statement event.
 
@@ -53,4 +53,4 @@ The table contains the following columns:
 
 It is possible to empty this table with a `TRUNCATE TABLE` statement.
 
-The related tables, [events_statements_history](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_history-table) and [events_statements_history_long](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_history_long-table) derive their values from the current events table.
+The related tables, [events_statements_history](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_history-table/) and [events_statements_history_long](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_history_long-table/) derive their values from the current events table.

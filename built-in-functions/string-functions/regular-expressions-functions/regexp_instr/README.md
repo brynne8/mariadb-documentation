@@ -12,7 +12,7 @@ REGEXP_INSTR(subject, pattern)
 
 Returns the position of the first occurrence of the regular expression `pattern` in the string `subject`, or 0 if pattern was not found.
 
-The positions start with 1 and are measured in characters (i.e. not in bytes), which is important for multi-byte character sets. You can cast a multi-byte character set to [BINARY](/columns-storage-engines-and-plugins/data-types/string-data-types/binary) to get offsets in bytes.
+The positions start with 1 and are measured in characters (i.e. not in bytes), which is important for multi-byte character sets. You can cast a multi-byte character set to [BINARY](/columns-storage-engines-and-plugins/data-types/string-data-types/binary/) to get offsets in bytes.
 
 The function follows the case sensitivity rules of the effective [collation](/kb/en/data-types-character-sets-and-collations/). Matching is performed case insensitively for case insensitive collations, and case sensitively for case sensitive collations and for binary data.
 

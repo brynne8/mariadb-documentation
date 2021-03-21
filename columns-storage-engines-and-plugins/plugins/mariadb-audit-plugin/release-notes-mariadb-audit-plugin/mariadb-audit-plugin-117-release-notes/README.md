@@ -6,7 +6,7 @@ This is a <strong><em>[Stable](/kb/en/release-criteria/) (GA)</em></strong> rele
 
 ## Important Notices
 
-- The [Audit Plugin](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin) is included by default from versions 5.5.37 and 10.0.10.
+- The [Audit Plugin](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/) is included by default from versions 5.5.37 and 10.0.10.
 - The MariaDB Audit Plugin works for MariaDB, MySQL and Percona Server. For MySQL and Percona Server it has to be downloaded separately from [SkySQL's site](http://www.skysql.com/downloads/mariadb-audit-plugin)
 
 ## Download

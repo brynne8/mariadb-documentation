@@ -8,7 +8,7 @@ MID(str,pos,len)
 
 ## Description
 
-MID(str,pos,len) is a synonym for [SUBSTRING(str,pos,len)](/built-in-functions/string-functions/substring).
+MID(str,pos,len) is a synonym for [SUBSTRING(str,pos,len)](/built-in-functions/string-functions/substring/).
 
 ## Examples
 

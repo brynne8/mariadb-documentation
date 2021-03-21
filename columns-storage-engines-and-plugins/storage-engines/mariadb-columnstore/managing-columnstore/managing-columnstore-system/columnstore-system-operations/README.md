@@ -147,7 +147,7 @@ mcsadmin alterSystem-disablemodule PM2, PM3
 
 The modules PM2 and PM3 will be stopped and disabled.
 
-_Note_: Disabling a module may result in data loss if the data is local to the [PM](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module). If the data is SAN mounted, the dbroots would need to be moved to other PMs. Please see “Moving DBRoots” of this guide for more information on moving DBRoots.
+_Note_: Disabling a module may result in data loss if the data is local to the [PM](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module/). If the data is SAN mounted, the dbroots would need to be moved to other PMs. Please see “Moving DBRoots” of this guide for more information on moving DBRoots.
 
 ### Enabling System Modules
 
@@ -163,7 +163,7 @@ The modules PM2 and PM3 will be enabled and started.
 
 ### Switch Parent OAM Module
 
-Parent OAM Module is the Performance Module that monitors the overall system including all the [UM](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-user-module) and [PM](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module) nodes and their status, as well as handles PM node failover. In a running system with more than 1 PM node there will be 2 Parent OAM Modules - an Active Parent and a Standby Parent.
+Parent OAM Module is the Performance Module that monitors the overall system including all the [UM](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-user-module/) and [PM](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module/) nodes and their status, as well as handles PM node failover. In a running system with more than 1 PM node there will be 2 Parent OAM Modules - an Active Parent and a Standby Parent.
 
 To switch a module to the Standby Parent, use <em>switchParentOAMModule</em> in [mcsadmin](/kb/en/mariadb-columnstore-administrative-console/), or simply use [mcsadmin](/kb/en/mariadb-columnstore-administrative-console/) <em>switchParentOAMModule</em> from the operating system prompt.
 The Standby Parent OAM Module will become active.

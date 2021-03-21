@@ -40,9 +40,9 @@ condition_property_name:
   | CURSOR_NAME
 ```
 
-The [diagnostics area](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/diagnostics-area) contains information about the errors, warnings and notes which were produced by the last SQL statement. If that statement didn't produce any warnings, the diagnostics area contains information about the last executed statement which involved a table. The GET DIAGNOSTICS statement copies the requested information from the diagnostics area to the specified variables. It is possible to use both user variables or [local variables](/programming-customizing-mariadb/programmatic-compound-statements/declare-variable).
+The [diagnostics area](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/diagnostics-area/) contains information about the errors, warnings and notes which were produced by the last SQL statement. If that statement didn't produce any warnings, the diagnostics area contains information about the last executed statement which involved a table. The GET DIAGNOSTICS statement copies the requested information from the diagnostics area to the specified variables. It is possible to use both user variables or [local variables](/programming-customizing-mariadb/programmatic-compound-statements/declare-variable/).
 
-To use GET DIAGNOSTICS, it is important to know how the diagnostics area is structured. It has two sub-areas: the statement information area and the error conditions information area. For details, please refer to the [diagnostics area](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/diagnostics-area) page.
+To use GET DIAGNOSTICS, it is important to know how the diagnostics area is structured. It has two sub-areas: the statement information area and the error conditions information area. For details, please refer to the [diagnostics area](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/diagnostics-area/) page.
 
 Each single GET DIAGNOSTICS command can read information from the statement information area or from a single error condition. This means that, if you have two warnings and you want to know the number of warnings, and read both the warnings, you need to issue GET DIAGNOSTICS three times.
 
@@ -54,9 +54,9 @@ If GET DIAGNOSTICS produces an error condition (because the command is properly 
 
 To read information from a condition, the CONDITION keyword must be specified and it must be followed by the condition number. This number can be specified as a constant value or as a variable. The first condition's index is 1. If the error condition does not exist, the variables will not change their value and a 1758 error will be produced ("Invalid condition number").
 
-The condition properties that can be read with GET DIAGNOSTICS are the same that can be set with SIGNAL and RESIGNAL statements. They are explained in the [diagnostics area](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/diagnostics-area) page. However, there is one more property: RETURNED_SQLSTATE, which indicates the condition's [SQLSTATE](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate).
+The condition properties that can be read with GET DIAGNOSTICS are the same that can be set with SIGNAL and RESIGNAL statements. They are explained in the [diagnostics area](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/diagnostics-area/) page. However, there is one more property: RETURNED_SQLSTATE, which indicates the condition's [SQLSTATE](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate/).
 
-For a list of SQLSTATE values and MariaDB error codes, see [MariaDB Error Codes](/sql-statements-structure/sql-language-structure/mariadb-error-codes).
+For a list of SQLSTATE values and MariaDB error codes, see [MariaDB Error Codes](/sql-statements-structure/sql-language-structure/mariadb-error-codes/).
 
 The type for all the condition properties is VARCHAR(64), except for MYSQL_ERRNO, whose valid range is 1 to 65534.
 
@@ -104,4 +104,4 @@ SELECT @sqlstate, @errno, @text;
 
 ## See Also
 
-- [Diagnostics Area](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/diagnostics-area)
+- [Diagnostics Area](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/diagnostics-area/)

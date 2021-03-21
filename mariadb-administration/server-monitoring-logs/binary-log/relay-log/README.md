@@ -1,8 +1,8 @@
 # Relay Log
 
-The relay log is a set of log files created by a replica during [replication](/replication/standard-replication).
+The relay log is a set of log files created by a replica during [replication](/replication/standard-replication/).
 
-It's the same format as the [binary log](/mariadb-administration/server-monitoring-logs/binary-log), containing a record of events that affect the data or structure; thus, [mysqlbinlog](/clients-utilities/mysqlbinlog) can be used to display its contents. It consists of a set of relay log files and an index file containing a list of all relay log files.
+It's the same format as the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/), containing a record of events that affect the data or structure; thus, [mysqlbinlog](/clients-utilities/mysqlbinlog/) can be used to display its contents. It consists of a set of relay log files and an index file containing a list of all relay log files.
 
 Events are read from the primary's binary log and written to the replica's relay log. They are then performed on the replica. Old relay log files are automatically removed once they are no longer needed.
 
@@ -11,7 +11,7 @@ Events are read from the primary's binary log and written to the replica's relay
 New relay log files are created by the replica at the following times:
 
 - when the IO thread starts
-- when the logs are flushed, with [FLUSH LOGS](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush) or [mysqladmin flush-logs](/clients-utilities/mysqladmin).
+- when the logs are flushed, with [FLUSH LOGS](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/) or [mysqladmin flush-logs](/clients-utilities/mysqladmin/).
 - when the maximum size, determined by the [max_relay_log_size](/kb/en/replication-and-binary-log-server-system-variables/#max_relay_log_size) system variable, has been reached
 
 ## Relay Log Names
@@ -31,7 +31,7 @@ shell> mv NEW_relay_log_name.index OLD_relay_log_name.index
 
 ## Viewing Relay Logs
 
-The [SHOW RELAYLOG EVENTS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-relaylog-events) shows events in the relay log, and, since relay log files are the same format as binary log files, they can be read with the [mysqlbinlog](/clients-utilities/mysqlbinlog) utility.
+The [SHOW RELAYLOG EVENTS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-relaylog-events/) shows events in the relay log, and, since relay log files are the same format as binary log files, they can be read with the [mysqlbinlog](/clients-utilities/mysqlbinlog/) utility.
 
 ## Removing Old Relay Logs
 

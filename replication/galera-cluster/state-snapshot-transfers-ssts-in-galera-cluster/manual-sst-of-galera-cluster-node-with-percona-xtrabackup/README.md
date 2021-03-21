@@ -1,14 +1,14 @@
 # Manual SST of Galera Cluster Node With Percona XtraBackup
 
-Mariabackup should be used instead of XtraBackup on all supported releases. See [manual SST with Mariabackup](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/manual-sst-of-galera-cluster-node-with-mariabackup).
+Mariabackup should be used instead of XtraBackup on all supported releases. See [manual SST with Mariabackup](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/manual-sst-of-galera-cluster-node-with-mariabackup/).
 
-In [MariaDB 10.1](/kb/en/what-is-mariadb-101/) and later, [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup) is the recommended backup method to use instead of Percona XtraBackup.
+In [MariaDB 10.1](/kb/en/what-is-mariadb-101/) and later, [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/) is the recommended backup method to use instead of Percona XtraBackup.
 
 In [MariaDB 10.3](/kb/en/what-is-mariadb-103/), Percona XtraBackup is <strong>not supported</strong>. See [Percona XtraBackup Overview: Compatibility with MariaDB](/kb/en/percona-xtrabackup-overview/#compatibility-with-mariadb) for more information.
 
 In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), Percona XtraBackup is only <strong>partially supported</strong>. See [Percona XtraBackup Overview: Compatibility with MariaDB](/kb/en/percona-xtrabackup-overview/#compatibility-with-mariadb) for more information.
 
-Sometimes it can be helpful to perform a "manual SST" when Galera's [normal SSTs](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts) fail. This can be especially useful when the cluster's <a undefined>datadir</a> is very large, since a normal SST can take a long time to fail in that case.
+Sometimes it can be helpful to perform a "manual SST" when Galera's [normal SSTs](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts/) fail. This can be especially useful when the cluster's <a undefined>datadir</a> is very large, since a normal SST can take a long time to fail in that case.
 
 A manual SST essentially consists of taking a backup of the donor, loading the backup on the joiner, and then manually editing the cluster state on the joiner node. This page will show how to perform this process with [Percona XtraBackup](/kb/en/backup-restore-and-import-clients-percona-xtrabackup/).
 
@@ -37,7 +37,7 @@ innobackupex --user=$DB_USER --password=$DB_USER_PASS --galera-info --no-timesta
 
 - Verify that the MariaDB Server process is stopped on the joiner node. This will depend on your [service manager](/kb/en/starting-and-stopping-mariadb-starting-and-stopping-mariadb/).
 
-For example, on [systemd](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd) systems, you can execute::
+For example, on [systemd](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd/) systems, you can execute::
 
 ```sql
 systemctl status mariadb
@@ -126,13 +126,13 @@ chown -R mysql:mysql $MYSQL_DATADIR/
 
 - Start the MariaDB Server process on the joiner node. This will depend on your [service manager](/kb/en/starting-and-stopping-mariadb-starting-and-stopping-mariadb/).
 
-For example, on [systemd](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd) systems, you can execute::
+For example, on [systemd](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd/) systems, you can execute::
 
 ```sql
 systemctl start mariadb
 ```
 
-- Watch the MariaDB [error log](/mariadb-administration/server-monitoring-logs/error-log) on the joiner node and verify that the node does not need to perform a [normal SSTs](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts) due to the manual SST.
+- Watch the MariaDB [error log](/mariadb-administration/server-monitoring-logs/error-log/) on the joiner node and verify that the node does not need to perform a [normal SSTs](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts/) due to the manual SST.
 
 ```sql
 tail -f /var/log/mysql/mysqld.log

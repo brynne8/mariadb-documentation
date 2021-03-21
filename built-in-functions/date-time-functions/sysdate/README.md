@@ -12,17 +12,17 @@ Returns the current date and time as a value in 'YYYY-MM-DD HH:MM:SS'
 or YYYYMMDDHHMMSS.uuuuuu format, depending on whether the function is
 used in a string or numeric context.
 
-The optional <em>precision</em> determines the microsecond precision. See [Microseconds in MariaDB](/built-in-functions/date-time-functions/microseconds-in-mariadb).
+The optional <em>precision</em> determines the microsecond precision. See [Microseconds in MariaDB](/built-in-functions/date-time-functions/microseconds-in-mariadb/).
 
 SYSDATE() returns the time at which it executes. This differs from the
-behavior for [NOW()](/built-in-functions/date-time-functions/now), which returns a constant time that indicates the
+behavior for [NOW()](/built-in-functions/date-time-functions/now/), which returns a constant time that indicates the
 time at which the statement began to execute. (Within a stored routine
 or trigger, NOW() returns the time at which the routine or triggering
 statement began to execute.)
 
-In addition, changing the [timestamp system variable](/kb/en/server-system-variables/#timestamp) with a [SET](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set) `timestamp` statement affects the value returned by
+In addition, changing the [timestamp system variable](/kb/en/server-system-variables/#timestamp) with a [SET](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set/) `timestamp` statement affects the value returned by
 NOW() but not by SYSDATE(). This means that timestamp settings in the
-[binary log](/mariadb-administration/server-monitoring-logs/binary-log) have no effect on invocations of SYSDATE().
+[binary log](/mariadb-administration/server-monitoring-logs/binary-log/) have no effect on invocations of SYSDATE().
 
 Because SYSDATE() can return different values even within the same
 statement, and is not affected by SET TIMESTAMP, it is
@@ -63,5 +63,5 @@ SELECT SYSDATE(4);
 
 ## See Also
 
-- [Microseconds in MariaDB](/built-in-functions/date-time-functions/microseconds-in-mariadb)
+- [Microseconds in MariaDB](/built-in-functions/date-time-functions/microseconds-in-mariadb/)
 - [timestamp server system variable](/kb/en/server-system-variables/#timestamp)

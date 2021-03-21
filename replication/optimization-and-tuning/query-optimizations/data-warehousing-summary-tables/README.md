@@ -2,7 +2,7 @@
 
 ## Preface
 
-This document discusses the creation and maintenance of "Summary Tables". It is a companion to the document on [Data Warehousing Techniques](/replication/optimization-and-tuning/query-optimizations/data-warehousing-techniques).
+This document discusses the creation and maintenance of "Summary Tables". It is a companion to the document on [Data Warehousing Techniques](/replication/optimization-and-tuning/query-optimizations/data-warehousing-techniques/).
 
 The basic terminology ("Fact Table", "[Normalization](/kb/en/database-normalization/)", etc) is covered in that document.
 
@@ -137,7 +137,7 @@ This case is clean and simple -- until you get to endcases. How will you handle 
 
 Case 2: (foo, dy) is a non-UNIQUE INDEX.
 
-This case is clean and simple, but it can clutter the summary table because multiple rows can occur for a given (foo, dy) pair. The report will always have to [SUM()](/built-in-functions/aggregate-functions/sum) up values because it cannot assume there is only one row, even when it is reporting on a single `foo` for a single `dy`. This forced-SUM is not really bad -- you should do it anyway; that way all your reports are written with one pattern.
+This case is clean and simple, but it can clutter the summary table because multiple rows can occur for a given (foo, dy) pair. The report will always have to [SUM()](/built-in-functions/aggregate-functions/sum/) up values because it cannot assume there is only one row, even when it is reporting on a single `foo` for a single `dy`. This forced-SUM is not really bad -- you should do it anyway; that way all your reports are written with one pattern.
 
 Case 3: PRIMARY KEY (foo, dy) and summarization can happen anytime.
 

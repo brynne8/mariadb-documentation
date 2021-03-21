@@ -2,7 +2,7 @@
 
 ##### MariaDB starting with [10.2](/kb/en/what-is-mariadb-102/)
 
-The NTILE() function was first introduced with [window functions](/built-in-functions/special-functions/window-functions) in [MariaDB 10.2.0](/kb/en/mariadb-1020-release-notes/).
+The NTILE() function was first introduced with [window functions](/built-in-functions/special-functions/window-functions/) in [MariaDB 10.2.0](/kb/en/mariadb-1020-release-notes/).
 
 ## Syntax
 
@@ -15,7 +15,7 @@ NTILE (expr) OVER (
 
 ## Description
 
-NTILE() is a [window function](/built-in-functions/special-functions/window-functions) that returns an integer indicating which group a given row falls into. The number of groups is specified in the argument (<em>expr</em>), starting at one. Ordered rows in the partition are divided into the specified number of groups with as equal a size as possible.
+NTILE() is a [window function](/built-in-functions/special-functions/window-functions/) that returns an integer indicating which group a given row falls into. The number of groups is specified in the argument (<em>expr</em>), starting at one. Ordered rows in the partition are divided into the specified number of groups with as equal a size as possible.
 
 ## Examples
 

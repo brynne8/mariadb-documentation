@@ -24,7 +24,7 @@ The four main external table types – odbc, jdbc, mongo and mysql – are speci
 
 The way this works is by establishing a connection to the external data source and by sending it an SQL statement (or its equivalent using API functions for MONGO) enabling it to execute the original query. To enhance performance, it is necessary to have the remote data source do the maximum processing. This is needed in particular to reduce the amount of data returned by the data source.
 
-This is why, for SELECT queries, CONNECT uses the [cond_push](/columns-storage-engines-and-plugins/storage-engines/connect/using-connect/using-connect-condition-pushdown) MariaDB feature to retrieve the maximum of the where clause of the original query that can be added to the query sent to the data source. This is automatic and does not require anything to be done by the user.
+This is why, for SELECT queries, CONNECT uses the [cond_push](/columns-storage-engines-and-plugins/storage-engines/connect/using-connect/using-connect-condition-pushdown/) MariaDB feature to retrieve the maximum of the where clause of the original query that can be added to the query sent to the data source. This is automatic and does not require anything to be done by the user.
 
 However, more can be done. In addition to accessing a remote table, CONNECT offers the possibility to specify what the remote server must do. This is done by specifying it as a view in the srcdef option. For example:
 

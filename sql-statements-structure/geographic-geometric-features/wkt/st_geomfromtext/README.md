@@ -11,7 +11,7 @@ GeometryFromText(wkt[,srid])
 
 ## Description
 
-Constructs a geometry value of any type using its [WKT](/sql-statements-structure/geographic-geometric-features/wkt/wkt-definition) representation and [SRID](/kb/en/srid/).
+Constructs a geometry value of any type using its [WKT](/sql-statements-structure/geographic-geometric-features/wkt/wkt-definition/) representation and [SRID](/kb/en/srid/).
 
 `GeomFromText()`, `GeometryFromText()`, `ST_GeomFromText()` and `ST_GeometryFromText()` are all synonyms.
 

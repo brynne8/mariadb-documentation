@@ -13,7 +13,7 @@ It contains the following columns:
 <tr><td><code>SORTLEN</code></td><td>Sort length, used for determining the memory used to sort strings in this collation.</td></tr>
 </tbody></table>
 
-The [SHOW COLLATION](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-collation) statement returns the same results and both can be reduced in a similar way. For example, the following two statements return the same results:
+The [SHOW COLLATION](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-collation/) statement returns the same results and both can be reduced in a similar way. For example, the following two statements return the same results:
 
 ```sql
 SHOW COLLATION WHERE Charset LIKE 'utf8';
@@ -65,5 +65,5 @@ SELECT * FROM information_schema.COLLATIONS;
 
 ## See Also
 
-- [Setting Character Sets and Collations](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/setting-character-sets-and-collations) - specifying the character set at the server, database, table and column levels
-- [Supported Character Sets and Collations](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/supported-character-sets-and-collations) - full list of supported characters sets and collations.
+- [Setting Character Sets and Collations](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/setting-character-sets-and-collations/) - specifying the character set at the server, database, table and column levels
+- [Supported Character Sets and Collations](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/supported-character-sets-and-collations/) - full list of supported characters sets and collations.

@@ -1,6 +1,6 @@
 # System Variables Added in MariaDB 5.5
 
-This is a list of [system variables](/replication/optimization-and-tuning/system-variables/server-system-variables) that were added in the [MariaDB 5.5](/kb/en/what-is-mariadb-55/) series.
+This is a list of [system variables](/replication/optimization-and-tuning/system-variables/server-system-variables/) that were added in the [MariaDB 5.5](/kb/en/what-is-mariadb-55/) series.
 
 The list excludes variables related to non-default storage engines and plugins that can be added to [MariaDB 5.5](/kb/en/what-is-mariadb-55/):
 
@@ -26,5 +26,5 @@ The list excludes variables related to non-default storage engines and plugins t
 
 ## See also
 
-- [System Variables Added in MariaDB 10.0](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-100)
-- [Upgrading from MariaDB 5.3 to MariaDB 5.5](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-from-mariadb-55-to-mariadb-100)
+- [System Variables Added in MariaDB 10.0](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-100/)
+- [Upgrading from MariaDB 5.3 to MariaDB 5.5](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-from-mariadb-55-to-mariadb-100/)

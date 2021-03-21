@@ -1,8 +1,8 @@
 # Server Locale
 
-The [lc_time_names](/kb/en/server-system-variables/#lc_time_names) server system variable sets the language used by the date and time functions [DAYNAME()](/built-in-functions/date-time-functions/dayname), [MONTHNAME()](/built-in-functions/date-time-functions/monthname) and [DATE_FORMAT()](/built-in-functions/date-time-functions/date_format).
+The [lc_time_names](/kb/en/server-system-variables/#lc_time_names) server system variable sets the language used by the date and time functions [DAYNAME()](/built-in-functions/date-time-functions/dayname/), [MONTHNAME()](/built-in-functions/date-time-functions/monthname/) and [DATE_FORMAT()](/built-in-functions/date-time-functions/date_format/).
 
-The list of the locales supported by the current MariaDB installation can be obtained via the [LOCALES](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/locales-plugin) plugin, available since [MariaDB 10.0.4](/kb/en/mariadb-1004-release-notes/).
+The list of the locales supported by the current MariaDB installation can be obtained via the [LOCALES](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/locales-plugin/) plugin, available since [MariaDB 10.0.4](/kb/en/mariadb-1004-release-notes/).
 
 MariaDB supports the following locale values:
 

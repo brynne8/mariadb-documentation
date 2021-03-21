@@ -27,6 +27,6 @@ When using index hints (USE, FORCE or IGNORE INDEX), the index name value can al
 
 ## See Also
 
-- [Index Hints: How to Force Query Plans](/replication/optimization-and-tuning/query-optimizations/index-hints-how-to-force-query-plans) for more details
-- [USE INDEX](/replication/optimization-and-tuning/query-optimizations/use-index)
-- [IGNORE INDEX](/replication/optimization-and-tuning/query-optimizations/ignore-index)
+- [Index Hints: How to Force Query Plans](/replication/optimization-and-tuning/query-optimizations/index-hints-how-to-force-query-plans/) for more details
+- [USE INDEX](/replication/optimization-and-tuning/query-optimizations/use-index/)
+- [IGNORE INDEX](/replication/optimization-and-tuning/query-optimizations/ignore-index/)

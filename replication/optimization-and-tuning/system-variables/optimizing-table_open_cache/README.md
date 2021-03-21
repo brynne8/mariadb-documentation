@@ -49,13 +49,13 @@ show global status like 'open_tables';
 +---------------+-------+
 ```
 
-The open table cache can be emptied with [FLUSH TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush) or with the `flush-tables` or `refresh` [mysqladmin](/clients-utilities/mysqladmin) commands.
+The open table cache can be emptied with [FLUSH TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/) or with the `flush-tables` or `refresh` [mysqladmin](/clients-utilities/mysqladmin/) commands.
 
 ## Automatic Creation of New Table Open Cache Instances
 
 In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, MariaDB Server can create multiple instances of the table open cache. It initially creates just a single instance. However, whenever it detects contention on the existing instances, it will automatically create a new instance. When the number of instances has been increased due to contention, it does not decrease again.
 
-When MariaDB Server creates a new instance, it prints a message like the following to the [error log](/mariadb-administration/server-monitoring-logs/error-log):
+When MariaDB Server creates a new instance, it prints a message like the following to the [error log](/mariadb-administration/server-monitoring-logs/error-log/):
 
 ```sql
 [Note] Detected table cache mutex contention at instance 1: 25% waits. Additional 

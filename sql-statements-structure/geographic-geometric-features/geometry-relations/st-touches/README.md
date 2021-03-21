@@ -12,7 +12,7 @@ Returns `1` or `0` to indicate whether geometry <em>`g1`</em> spatially touches 
 but the boundary of one of the geometries intersects either the boundary or the
 interior of the other.
 
-ST_TOUCHES() uses object shapes, while [TOUCHES()](/sql-statements-structure/geographic-geometric-features/geometry-relations/touches), based on the original MySQL implementation, uses object bounding rectangles.
+ST_TOUCHES() uses object shapes, while [TOUCHES()](/sql-statements-structure/geographic-geometric-features/geometry-relations/touches/), based on the original MySQL implementation, uses object bounding rectangles.
 
 ## Examples
 

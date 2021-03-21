@@ -2,7 +2,7 @@
 
 ##### MariaDB starting with [5.3](/kb/en/what-is-mariadb-53/)
 
-The [Dynamic columns](/sql-statements-structure/nosql/dynamic-columns) feature was introduced in [MariaDB 5.3](/kb/en/what-is-mariadb-53/).
+The [Dynamic columns](/sql-statements-structure/nosql/dynamic-columns/) feature was introduced in [MariaDB 5.3](/kb/en/what-is-mariadb-53/).
 
 ## Syntax
 
@@ -13,7 +13,7 @@ COLUMN_CREATE(column_name, value [as type], [column_name, value [as type]]...);
 
 ## Description
 
-Returns a [dynamic columns](/sql-statements-structure/nosql/dynamic-columns) blob that stores the specified columns with values.
+Returns a [dynamic columns](/sql-statements-structure/nosql/dynamic-columns/) blob that stores the specified columns with values.
 
 The return value is suitable for
 

@@ -9,12 +9,12 @@ expr REGEXP pat, expr RLIKE pat
 ## Description
 
 Performs a pattern match of a string expression `expr` against a pattern
-`pat`. The pattern can be an extended regular expression. See [Regular Expressions Overview](/built-in-functions/string-functions/regular-expressions-functions/regular-expressions-overview) for details on the syntax for
+`pat`. The pattern can be an extended regular expression. See [Regular Expressions Overview](/built-in-functions/string-functions/regular-expressions-functions/regular-expressions-overview/) for details on the syntax for
 regular expressions (but see also [PCRE Regular Expressions](/kb/en/pcre-regular-expressions/) for syntax introduced in [MariaDB 10.0.5](/kb/en/mariadb-1005-release-notes/)).
 
 Returns `1` if `expr` matches `pat` or `0` if it doesn't match. If either `expr` or `pat` are NULL, the result is NULL.
 
-The negative form [NOT REGEXP](/built-in-functions/string-functions/not-regexp) also exists, as an alias for `NOT (string REGEXP pattern)`. RLIKE and NOT RLIKE are synonyms for REGEXP and NOT REGEXP, originally provided for mSQL compatibility.
+The negative form [NOT REGEXP](/built-in-functions/string-functions/not-regexp/) also exists, as an alias for `NOT (string REGEXP pattern)`. RLIKE and NOT RLIKE are synonyms for REGEXP and NOT REGEXP, originally provided for mSQL compatibility.
 
 The pattern need not be a literal string. For example, it can be
 specified as a string expression or table column.

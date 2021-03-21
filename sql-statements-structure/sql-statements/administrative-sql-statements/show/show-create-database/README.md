@@ -8,7 +8,7 @@ SHOW CREATE {DATABASE | SCHEMA} db_name
 
 ## Description
 
-Shows the [CREATE DATABASE](/sql-statements-structure/sql-statements/data-definition/create/create-database) statement that
+Shows the [CREATE DATABASE](/sql-statements-structure/sql-statements/data-definition/create/create-database/) statement that
 creates the given database. `SHOW CREATE SCHEMA` is a synonym
 for `SHOW CREATE DATABASE`. `SHOW CREATE DATABASE` quotes database names according to the value of the [sql_quote_show_create](/kb/en/server-system-variables/#sql_quote_show_create) server system variable.
 
@@ -54,6 +54,6 @@ SHOW CREATE DATABASE p;
 
 ## See Also
 
-- [CREATE DATABASE](/sql-statements-structure/sql-statements/data-definition/create/create-database)
-- [ALTER DATABASE](/sql-statements-structure/sql-statements/data-definition/alter/alter-database)
+- [CREATE DATABASE](/sql-statements-structure/sql-statements/data-definition/create/create-database/)
+- [ALTER DATABASE](/sql-statements-structure/sql-statements/data-definition/alter/alter-database/)
 - [Character Sets and Collations](/kb/en/character-sets-and-collations/)

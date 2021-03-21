@@ -2,7 +2,7 @@
 
 ##### MariaDB starting with [10.5.4](/kb/en/mariadb-1054-release-notes/)
 
-The [Information Schema](/kb/en/information_schema/) `SPIDER_WRAPPER_PROTOCOLS` table is installed along with the [Spider](/columns-storage-engines-and-plugins/storage-engines/spider) storage engine from [MariaDB 10.5.4](/kb/en/mariadb-1054-release-notes/).
+The [Information Schema](/kb/en/information_schema/) `SPIDER_WRAPPER_PROTOCOLS` table is installed along with the [Spider](/columns-storage-engines-and-plugins/storage-engines/spider/) storage engine from [MariaDB 10.5.4](/kb/en/mariadb-1054-release-notes/).
 
 It contains the following columns:
 

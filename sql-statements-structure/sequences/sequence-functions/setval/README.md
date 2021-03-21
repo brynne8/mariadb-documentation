@@ -26,7 +26,7 @@ If `round` is not used, it's assumed to be 0.
 
 `next_value` must be an integer literal.
 
-For `SEQUENCE` tables defined with `CYCLE` (see [CREATE SEQUENCE](/sql-statements-structure/sequences/create-sequence)) one should use both `next_value` and `round` to define the next value. In this case the
+For `SEQUENCE` tables defined with `CYCLE` (see [CREATE SEQUENCE](/sql-statements-structure/sequences/create-sequence/)) one should use both `next_value` and `round` to define the next value. In this case the
 current sequence value is defined to be `round`, `next_value`.
 
 The result returned by `SETVAL()` is `next_value` or NULL if the given `next_value` and `round`  is smaller than the current value.
@@ -34,7 +34,7 @@ The result returned by `SETVAL()` is `next_value` or NULL if the given `next_val
 `SETVAL()` will not set the `SEQUENCE` value to a something that is less than
 its current value. This is needed to ensure that `SETVAL()`
 is replication safe.  If you want to set the SEQUENCE to a smaller number
-use [ALTER SEQUENCE](/sql-statements-structure/sequences/alter-sequence).
+use [ALTER SEQUENCE](/sql-statements-structure/sequences/alter-sequence/).
 
 If `CYCLE` is used, first `round` and then `next_value` are compared
 to see if the value is bigger than the current value.
@@ -44,7 +44,7 @@ slaves that a `SEQUENCE` has changed value.  The slave may get
 `SETVAL()` statements out of order, but this is ok as only the
 biggest one will have an effect.
 
-`SETVAL` requires the [INSERT privilege](/sql-statements-structure/sql-statements/account-management-sql-commands/grant).
+`SETVAL` requires the [INSERT privilege](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/).
 
 ## Examples
 
@@ -157,8 +157,8 @@ SELECT NEXTVAL(s1);
 
 ## See Also
 
-- [Sequence Overview](/sql-statements-structure/sequences/sequence-overview)
-- [ALTER SEQUENCE](/sql-statements-structure/sequences/alter-sequence)
-- [CREATE SEQUENCE](/sql-statements-structure/sequences/create-sequence)
-- [NEXT VALUE FOR](/sql-statements-structure/sequences/sequence-functions/next-value-for-sequence_name)
-- [PREVIOUS VALUE FOR](/sql-statements-structure/sequences/sequence-functions/previous-value-for-sequence_name)
+- [Sequence Overview](/sql-statements-structure/sequences/sequence-overview/)
+- [ALTER SEQUENCE](/sql-statements-structure/sequences/alter-sequence/)
+- [CREATE SEQUENCE](/sql-statements-structure/sequences/create-sequence/)
+- [NEXT VALUE FOR](/sql-statements-structure/sequences/sequence-functions/next-value-for-sequence_name/)
+- [PREVIOUS VALUE FOR](/sql-statements-structure/sequences/sequence-functions/previous-value-for-sequence_name/)

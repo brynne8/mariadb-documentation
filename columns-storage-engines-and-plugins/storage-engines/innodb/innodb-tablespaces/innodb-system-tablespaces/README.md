@@ -2,7 +2,7 @@
 
 When InnoDB needs to store general information relating to the system as a whole, rather than a specific table, the specific file it writes to is the system tablespace.  By default, this is the `ibdata1` file located in the data directory, (as defined by either the <a undefined>datadir</a> or <a undefined>innodb_data_home_dir</a> system variables).  InnoDB uses the system tablespace to store the data dictionary, change buffer, and undo logs.
 
-You can define the system tablespace filename or filenames, size and other options by setting the <a undefined>innodb_data_file_path</a> system variable. This system variable can be specified as a command-line argument to [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options) or it can be specified in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files). For example:
+You can define the system tablespace filename or filenames, size and other options by setting the <a undefined>innodb_data_file_path</a> system variable. This system variable can be specified as a command-line argument to [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/) or it can be specified in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/). For example:
 
 ```sql
 [mariadb]
@@ -101,4 +101,4 @@ InnoDB creates some system tables within the InnoDB System Tablespace:
 - `SYS_ZIP_DICT`
 - `SYS_ZIP_DICT_COLS`
 
-These tables cannot be queried. However, you might see references to them in some places, such as in the <a undefined>INNODB_SYS_TABLES</a> table in the [information_schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables) database.
+These tables cannot be queried. However, you might see references to them in some places, such as in the <a undefined>INNODB_SYS_TABLES</a> table in the [information_schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/) database.

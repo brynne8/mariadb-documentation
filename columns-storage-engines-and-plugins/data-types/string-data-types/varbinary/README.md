@@ -12,9 +12,9 @@ The VARBINARY type is similar to the [VARCHAR](/kb/en/sql_language-data_types-va
 
 It contains no [character set](/kb/en/data-types-character-sets-and-collations/), and comparison and sorting are based on the numeric value of the bytes.
 
-If the maximum length is exceeded, and [SQL strict mode](/mariadb-administration/variables-and-modes/sql-mode) is not enabled , the extra characters will be dropped with a warning. If strict mode is enabled, an error will occur.
+If the maximum length is exceeded, and [SQL strict mode](/mariadb-administration/variables-and-modes/sql-mode/) is not enabled , the extra characters will be dropped with a warning. If strict mode is enabled, an error will occur.
 
-Unlike [BINARY](/columns-storage-engines-and-plugins/data-types/string-data-types/binary) values, VARBINARYs are not right-padded when inserting.
+Unlike [BINARY](/columns-storage-engines-and-plugins/data-types/string-data-types/binary/) values, VARBINARYs are not right-padded when inserting.
 
 ### Oracle Mode
 
@@ -63,7 +63,7 @@ SELECT * FROM varbins ORDER BY a;
 +------+
 ```
 
-Using [CAST](/built-in-functions/string-functions/cast) to sort as a [CHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/char) instead:
+Using [CAST](/built-in-functions/string-functions/cast/) to sort as a [CHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/char/) instead:
 
 ```sql
 SELECT * FROM varbins ORDER BY CAST(a AS CHAR);
@@ -79,6 +79,6 @@ SELECT * FROM varbins ORDER BY CAST(a AS CHAR);
 
 ## See Also
 
-- [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar)
-- [Data Type Storage Requirements](/columns-storage-engines-and-plugins/data-types/data-type-storage-requirements)
+- [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar/)
+- [Data Type Storage Requirements](/columns-storage-engines-and-plugins/data-types/data-type-storage-requirements/)
 - [Oracle mode from MariaDB 10.3](/kb/en/sql_modeoracle-from-mariadb-103/#synonyms-for-basic-sql-types)

@@ -3,13 +3,13 @@
 ##### MariaDB starting with [10.0.5](/kb/en/mariadb-1005-release-notes/)
 
 The `session_account_connect_attrs:` table was added in [MariaDB 10.0](/kb/en/what-is-mariadb-100/) (along with many other new
-[Performance Schema tables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/list-of-performance-schema-tables)).
+[Performance Schema tables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/list-of-performance-schema-tables/)).
 
 ## Description
 
 The `session_account_connect_attrs` table shows connection attributes for the current session.
 
-In [MariaDB 10.0.5](/kb/en/mariadb-1005-release-notes/), applications can pass key/value connection attributes to the server when a connection is made. The [session_connect_attrs](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-session_connect_attrs-table) and `session_account_connect_attrs` tables provide access to this information, for all sessions and the current session respectively.
+In [MariaDB 10.0.5](/kb/en/mariadb-1005-release-notes/), applications can pass key/value connection attributes to the server when a connection is made. The [session_connect_attrs](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-session_connect_attrs-table/) and `session_account_connect_attrs` tables provide access to this information, for all sessions and the current session respectively.
 
 The C API functions [mysql_options()](/kb/en/mysql_options/) and [mysql_optionsv()](/kb/en/mysql_optionsv/) are used for passing connection attributes to the server.
 

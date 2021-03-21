@@ -131,4 +131,4 @@ SELECT YEAR(y),YEAR(y2) FROM y2;
 
 ## See Also
 
-- [YEAR() function](/built-in-functions/date-time-functions/year)
+- [YEAR() function](/built-in-functions/date-time-functions/year/)

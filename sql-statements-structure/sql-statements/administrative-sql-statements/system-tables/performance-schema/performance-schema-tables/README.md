@@ -1,6 +1,6 @@
 # Performance Schema Tables
 
-Tables that are part of the [MariaDB Performance Schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema), a feature for monitoring the performance of your MariaDB server.
+Tables that are part of the [MariaDB Performance Schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/), a feature for monitoring the performance of your MariaDB server.
 
 - [List of Performance Schema Tables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/list-of-performance-schema-tables/) — List and short description of all performance_schema tables
 - [Performance Schema accounts Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-accounts-table/) — Account connection information.

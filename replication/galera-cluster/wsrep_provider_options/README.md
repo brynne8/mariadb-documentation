@@ -262,7 +262,7 @@ Note that before Galera 3, the `repl` tag was named `replicator`.
 - <strong>Description:</strong> Whether or not gcache recovery takes place when the node starts up. If it is possible to recover gcache, the node can then provide IST to other joining nodes, which assists when the whole cluster is restarted.
 - <strong>Dynamic:</strong> No
 - <strong>Default:</strong> `no`
-- <strong>Introduced:</strong> [MariaDB 10.1.20](/kb/en/mariadb-10120-release-notes/), [MariaDB Galera 10.0.29](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10029-release-notes), [MariaDB Galera 5.5.54](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5554-release-notes)
+- <strong>Introduced:</strong> [MariaDB 10.1.20](/kb/en/mariadb-10120-release-notes/), [MariaDB Galera 10.0.29](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10029-release-notes/), [MariaDB Galera 5.5.54](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5554-release-notes/)
 
 ---
 
@@ -428,7 +428,7 @@ Note that before Galera 3, the `repl` tag was named `replicator`.
 - <strong>Description:</strong>
 - <strong>Dynamic:</strong> No
 - <strong>Default:</strong> Empty string
-- <strong>Introduced:</strong> [MariaDB 10.1.17](/kb/en/mariadb-10117-release-notes/), [MariaDB Galera 10.0.27](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10027-release-notes), [MariaDB Galera 5.5.51](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5551-release-notes)
+- <strong>Introduced:</strong> [MariaDB 10.1.17](/kb/en/mariadb-10117-release-notes/), [MariaDB Galera 10.0.27](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10027-release-notes/), [MariaDB Galera 5.5.51](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5551-release-notes/)
 
 ---
 

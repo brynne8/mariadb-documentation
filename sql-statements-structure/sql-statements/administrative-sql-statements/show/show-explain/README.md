@@ -12,14 +12,14 @@ SHOW EXPLAIN FOR <thread_id>;
 
 ## Description
 
-The `SHOW EXPLAIN` command allows one to get an [EXPLAIN](/sql-statements-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain) (that is, a
+The `SHOW EXPLAIN` command allows one to get an [EXPLAIN](/sql-statements-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain/) (that is, a
 description of a query plan) of a query running in a certain thread.
 
 ```sql
 SHOW EXPLAIN FOR <thread_id>;
 ```
 
-will produce an `EXPLAIN` output for the query that thread number `thread_id` is running. The thread id can be obtained with [SHOW PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist).
+will produce an `EXPLAIN` output for the query that thread number `thread_id` is running. The thread id can be obtained with [SHOW PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist/).
 
 ```sql
 SHOW EXPLAIN FOR 1;
@@ -93,5 +93,5 @@ running `SHOW PROCESSLIST` would.
 
 ## See Also
 
-- [EXPLAIN ANALYZE](/sql-statements-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain-analyze), which will perform a query and outputs enhanced `EXPLAIN` results.
-- It is also possible to [save EXPLAIN into the slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log/explain-in-the-slow-query-log).
+- [EXPLAIN ANALYZE](/sql-statements-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain-analyze/), which will perform a query and outputs enhanced `EXPLAIN` results.
+- It is also possible to [save EXPLAIN into the slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log/explain-in-the-slow-query-log/).

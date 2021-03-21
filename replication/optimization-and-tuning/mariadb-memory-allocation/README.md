@@ -11,7 +11,7 @@ Rule of thumb for tuning:
 - Start with released copy of my.cnf / my.ini.
 - Change [key_buffer_size](/kb/en/myisam-system-variables/#key_buffer_size) and [innodb_buffer_pool_size](/kb/en/innodb-system-variables/#innodb_buffer_pool_size) according to engine usage and RAM.
 - Slow queries can usually be 'fixed' via indexes, schema changes, or SELECT changes, not by tuning.
-- Don't get carried away with the [query cache](/replication/optimization-and-tuning/buffers-caches-and-threads/query-cache) until you understand what it can and cannot do.
+- Don't get carried away with the [query cache](/replication/optimization-and-tuning/buffers-caches-and-threads/query-cache/) until you understand what it can and cannot do.
 - Don't change anything else unless you run into trouble (eg, max connections).
 - Be sure the changes are under the [mysqld] section, not some other section.
 
@@ -103,7 +103,7 @@ From [MariaDB 5.5](/kb/en/what-is-mariadb-55/), multiple buffer pools are permit
 
 This will set the main cache settings to the minimum; it could be important to systems with lots of other processes and/or RAM is 2GB or smaller.
 
-Do [SHOW TABLE STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-table-status) for all the tables in all the databases.
+Do [SHOW TABLE STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-table-status/) for all the tables in all the databases.
 
 Add up Index_length for all the MyISAM tables. Set [key_buffer_size](/kb/en/myisam-system-variables/#key_buffer_size) no larger than that size.
 
@@ -210,7 +210,7 @@ In *nix, ulimit tells you what the file limit is. The maximum value is in the te
 
 (This paragraph is in disputed.) On the other side, the table cache is (was) inefficiently implemented -- lookups were done with a linear scan. Hence, setting table_cache in the thousands could actually slow down mysql. (Benchmarks have shown this.)
 
-You can see how well your system is performing via [SHOW GLOBAL STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-status); and computing the opens/second via [Opened_files](/kb/en/server-status-variables/#opened_files) / [Uptime](/kb/en/server-status-variables/#uptime) If this is more than, say, 5, [table_open_cache](/kb/en/server-system-variables/#table_open_cache) should be increased. If it is less than, say, 1, you might get improvement by decreasing [table_open_cache](/kb/en/server-system-variables/#table_open_cache).
+You can see how well your system is performing via [SHOW GLOBAL STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-status/); and computing the opens/second via [Opened_files](/kb/en/server-status-variables/#opened_files) / [Uptime](/kb/en/server-status-variables/#uptime) If this is more than, say, 5, [table_open_cache](/kb/en/server-system-variables/#table_open_cache) should be increased. If it is less than, say, 1, you might get improvement by decreasing [table_open_cache](/kb/en/server-system-variables/#table_open_cache).
 
 From [MariaDB 10.1](/kb/en/what-is-mariadb-101/), [table_open_cache](/kb/en/server-system-variables/#table_open_cache) defaults to 2000.
 
@@ -218,7 +218,7 @@ From [MariaDB 10.1](/kb/en/what-is-mariadb-101/), [table_open_cache](/kb/en/serv
 
 Short answer: [query_cache_type](/kb/en/server-system-variables/#query_cache_type) = OFF and [query_cache_size](/kb/en/server-system-variables/#query_cache_size) = 0
 
-The [Query Cache](/replication/optimization-and-tuning/buffers-caches-and-threads/query-cache) (QC) is effectively a hash mapping SELECT statements to resultsets.
+The [Query Cache](/replication/optimization-and-tuning/buffers-caches-and-threads/query-cache/) (QC) is effectively a hash mapping SELECT statements to resultsets.
 
 Long answer... There are many aspects of the "Query cache"; many are negative.
 
@@ -256,7 +256,7 @@ It is the number of extra processes to hang onto. It does not restrict the numbe
 
 ## Binary Logs
 
-If you have turned on [binary logging](/mariadb-administration/server-monitoring-logs/binary-log) (via [log_bin](/kb/en/replication-and-binary-log-system-variables/#log_bin)) for replication and/or point-in-time recovery, the system will create binary logs forever. That is, they can slowly fill up the disk. Suggest setting [expire_logs_days](/kb/en/replication-and-binary-log-system-variables/#expire_logs_days) = 14 to keep only 14 days' worth of logs.
+If you have turned on [binary logging](/mariadb-administration/server-monitoring-logs/binary-log/) (via [log_bin](/kb/en/replication-and-binary-log-system-variables/#log_bin)) for replication and/or point-in-time recovery, the system will create binary logs forever. That is, they can slowly fill up the disk. Suggest setting [expire_logs_days](/kb/en/replication-and-binary-log-system-variables/#expire_logs_days) = 14 to keep only 14 days' worth of logs.
 
 ## Swappiness
 
@@ -326,7 +326,7 @@ Jumbo Pages? Turn off.
 
 ## ENGINE=MEMORY
 
-The [Memory Storage Engine](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/memory-storage-engine) is a little-used alternative to [MyISAM](/kb/en/myisam/) and [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb). The data is not persistent, so it has limited uses. The size of a MEMORY table is limited to [max_heap_table_size](/kb/en/server-system-variables/#max_heap_table_size), which defaults to 16MB. I mention it in case you have changed the value to something huge; this would stealing from other possible uses of RAM.
+The [Memory Storage Engine](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/memory-storage-engine/) is a little-used alternative to [MyISAM](/kb/en/myisam/) and [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/). The data is not persistent, so it has limited uses. The size of a MEMORY table is limited to [max_heap_table_size](/kb/en/server-system-variables/#max_heap_table_size), which defaults to 16MB. I mention it in case you have changed the value to something huge; this would stealing from other possible uses of RAM.
 
 ## How to Set Variables
 
@@ -392,7 +392,7 @@ The tips in this document apply to MySQL, MariaDB, and Percona.
 
 ## See Also
 
-- [Configuring MariaDB for Optimal Performance](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/configuring-mariadb-for-optimal-performance)
+- [Configuring MariaDB for Optimal Performance](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/configuring-mariadb-for-optimal-performance/)
 - More in-depth: Tocker's tuning for 5.6
 - Irfan's InnoDB performance optimization basics (redux)
 - 10 MySQL settings to tune after installation

@@ -10,7 +10,7 @@ ST_CONTAINS(g1,g2)
 
 Returns `1` or `0` to indicate whether a geometry `g1` completely contains geometry `g2`.
 
-ST_CONTAINS() uses object shapes, while [CONTAINS()](/sql-statements-structure/geographic-geometric-features/geometry-relations/contains), based on the original MySQL implementation, uses object bounding rectangles.
+ST_CONTAINS() uses object shapes, while [CONTAINS()](/sql-statements-structure/geographic-geometric-features/geometry-relations/contains/), based on the original MySQL implementation, uses object bounding rectangles.
 
 ST_CONTAINS tests the opposite relationship to [ST_WITHIN()](/kb/en/st_within/).
 

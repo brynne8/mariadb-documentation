@@ -32,7 +32,7 @@ my_print_defaults [OPTIONS] [groups]
 my_print_defaults --defaults-file=example.cnf client client-server mysql
 ```
 
-[mysqlcheck](/sql-statements-structure/sql-statements/table-statements/mysqlcheck) reads from the [mysqlcheck] and [client] sections, so the following would display the mysqlcheck options.
+[mysqlcheck](/sql-statements-structure/sql-statements/table-statements/mysqlcheck/) reads from the [mysqlcheck] and [client] sections, so the following would display the mysqlcheck options.
 
 ```sql
 my_print_defaults mysqlcheck client

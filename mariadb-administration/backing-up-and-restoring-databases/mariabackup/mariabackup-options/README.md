@@ -20,7 +20,7 @@ Once the backup is ready, you can use the <a undefined>--copy-back</a> or the <a
 
 ### `--apply-log-only`
 
-If this option is used when preparing a backup, then only the redo log apply stage will be performed, and other stages of crash recovery will be ignored. This option is used with [incremental backups](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/incremental-backup-and-restore-with-mariabackup).
+If this option is used when preparing a backup, then only the redo log apply stage will be performed, and other stages of crash recovery will be ignored. This option is used with [incremental backups](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/incremental-backup-and-restore-with-mariabackup/).
 
 This option is only supported in [MariaDB 10.1](/kb/en/what-is-mariadb-101/). In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, this option is not needed or supported.
 
@@ -82,7 +82,7 @@ $ mariabackup --close-files --prepare
 ### `--compress`
 
 Defines the compression algorithm for backup files. Deprecated. It is recommended to backup to stream (stdout), and use a 3rd party compression library to compress the stream, as described in 
-[Using Encryption and Compression Tools With Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/using-encryption-and-compression-tools-with-mariabackup).
+[Using Encryption and Compression Tools With Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/using-encryption-and-compression-tools-with-mariabackup/).
 
 ```sql
 --compress[=compression_algorithm]
@@ -180,7 +180,7 @@ $ mariabackup --backup \
 
 In cases where you want to back up most databases on a server or tables on a database, but not all, you can set the specific databases or tables you don't want to back up using the <a undefined>--databases-exclude</a> option.
 
-If a backup is a [partial backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/partial-backup-and-restore-with-mariabackup), then Mariabackup will record that detail in the <a undefined>xtrabackup_info</a> file.
+If a backup is a [partial backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/partial-backup-and-restore-with-mariabackup/), then Mariabackup will record that detail in the <a undefined>xtrabackup_info</a> file.
 
 In `innobackupex` mode, which can be enabled with the <a undefined>--innobackupex</a> option, the `--databases` option can be used as described above, or it can be used to refer to a file, just as the <a undefined>--databases-file</a> option can in the normal mode.
 
@@ -202,7 +202,7 @@ $ mariabackup --backup \
 
 To include databases in the backup, see the <a undefined>--databases</a> option option
 
-If a backup is a [partial backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/partial-backup-and-restore-with-mariabackup), then Mariabackup will record that detail in the <a undefined>xtrabackup_info</a> file.
+If a backup is a [partial backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/partial-backup-and-restore-with-mariabackup/), then Mariabackup will record that detail in the <a undefined>xtrabackup_info</a> file.
 
 ### `--databases-file`
 
@@ -231,7 +231,7 @@ example2.table2
 $ mariabackup --backup --databases-file=main-backup
 ```
 
-If a backup is a [partial backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/partial-backup-and-restore-with-mariabackup), then Mariabackup will record that detail in the <a undefined>xtrabackup_info</a> file.
+If a backup is a [partial backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/partial-backup-and-restore-with-mariabackup/), then Mariabackup will record that detail in the <a undefined>xtrabackup_info</a> file.
 
 ### `-h, --datadir`
 
@@ -254,7 +254,7 @@ This is a debug-only option used by the Xtrabackup test suite.
 ### `--decompress`
 
 Defines whether you want to decompress previously compressed backup files. Deprecated. It is recommended to backup to stream (stdout), and use a 3rd party compression library to compress the stream, as described in 
-[Using Encryption and Compression Tools With Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/using-encryption-and-compression-tools-with-mariabackup).
+[Using Encryption and Compression Tools With Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/using-encryption-and-compression-tools-with-mariabackup/).
 
 When you run Mariabackup with the <a undefined>--compress</a> option, it compresses the subsequent backup files, using the QuickLZ algorithm by default, (which is currently the only available compression algorithm).  Using this option, Mariabackup decompresses the compressed files from a previous backup.
 
@@ -280,13 +280,13 @@ Defines the debug sync point.  This option is only used by the Mariabackup test 
 
 ### `--defaults-extra-file`
 
-Defines the path to an extra default [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files).
+Defines the path to an extra default [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/).
 
 ```sql
 --defaults-extra-file=/path/to/config
 ```
 
-Using this option, you can define an extra default [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) for Mariabackup.  Unlike <a undefined>--defaults-file</a>, this file is read after the default [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) are read, allowing you to only overwrite the existing defaults.
+Using this option, you can define an extra default [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) for Mariabackup.  Unlike <a undefined>--defaults-file</a>, this file is read after the default [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) are read, allowing you to only overwrite the existing defaults.
 
 ```sql
 $ mariabackup --backup \
@@ -296,13 +296,13 @@ $ mariabackup --backup \
 
 ### `--defaults-file`
 
-Defines the path to the default [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files).
+Defines the path to the default [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/).
 
 ```sql
 --defaults-file=/path/to/config
 ```
 
-Using this option, you can define a default [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) for Mariabackup.  Unlike the <a undefined>--defaults-extra-file</a> option, when this option is provided, it completely replaces all default [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files).
+Using this option, you can define a default [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) for Mariabackup.  Unlike the <a undefined>--defaults-extra-file</a> option, when this option is provided, it completely replaces all default [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/).
 
 ```sql
 $ mariabackup --backup \
@@ -311,13 +311,13 @@ $ mariabackup --backup \
 
 ### `--defaults-group`
 
-Defines the [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) to read in the [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files).
+Defines the [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) to read in the [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/).
 
 ```sql
 --defaults-group="name"
 ```
 
-In situations where you find yourself using certain Mariabackup options consistently every time you call it, you can set the options in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files).  The `--defaults-group` option defines what option group Mariabackup reads for its options.
+In situations where you find yourself using certain Mariabackup options consistently every time you call it, you can set the options in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/).  The `--defaults-group` option defines what option group Mariabackup reads for its options.
 
 Options you define from the command-line can be set in the configuration file using minor formatting changes.  For instance, if you find yourself perform compression operations frequently, you might set <a undefined>--compress-threads</a> and <a undefined>--compress-chunk-size</a> options in this way:
 
@@ -345,7 +345,7 @@ This option was added in [MariaDB 10.2.22](/kb/en/mariadb-10222-release-notes/),
 
 ### `--export`
 
-If this option is provided during the `--prepare` stage, then it tells Mariabackup to create `.cfg` files for each [InnoDB file-per-table tablespace](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces). These `.cfg` files are used to [import transportable tablespaces](/kb/en/innodb-file-per-table-tablespaces/#copying-transportable-tablespaces) in the process of [restoring partial backups](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/partial-backup-and-restore-with-mariabackup) and [restoring individual tables and partitions](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/restoring-individual-tables-and-partitions-with-mariabackup). .
+If this option is provided during the `--prepare` stage, then it tells Mariabackup to create `.cfg` files for each [InnoDB file-per-table tablespace](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces/). These `.cfg` files are used to [import transportable tablespaces](/kb/en/innodb-file-per-table-tablespaces/#copying-transportable-tablespaces) in the process of [restoring partial backups](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/partial-backup-and-restore-with-mariabackup/) and [restoring individual tables and partitions](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/restoring-individual-tables-and-partitions-with-mariabackup/). .
 
 ```sql
 $ mariabackup --prepare --export
@@ -353,7 +353,7 @@ $ mariabackup --prepare --export
 
 ##### MariaDB until [10.2.8](/kb/en/mariadb-1028-release-notes/)
 
-In [MariaDB 10.2.8](/kb/en/mariadb-1028-release-notes/) and before, Mariabackup did not support the <a undefined>--export</a> option. See [MDEV-13466](https://jira.mariadb.org/browse/MDEV-13466) about that. In earlier versions of MariaDB, this means that Mariabackup could not create `.cfg` files for [InnoDB file-per-table tablespaces](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces) during the `--prepare` stage. You can still [import file-per-table tablespaces](/kb/en/innodb-file-per-table-tablespaces/#copying-transportable-tablespaces) without the `.cfg` files in many cases, so it may still be possible in those versions to [restore partial backups](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/partial-backup-and-restore-with-mariabackup) or to [restore individual tables and partitions](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/restoring-individual-tables-and-partitions-with-mariabackup) with just the `.ibd` files. If you have a [full backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/full-backup-and-restore-with-mariabackup) and you need to create `.cfg` files for [InnoDB file-per-table tablespaces](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces), then you can do so by preparing the backup as usual without the `--export` option, and then restoring the backup, and then starting the server. At that point, you can use the server's built-in features to [copy the transportable tablespaces](/kb/en/innodb-file-per-table-tablespaces/#copying-transportable-tablespaces).
+In [MariaDB 10.2.8](/kb/en/mariadb-1028-release-notes/) and before, Mariabackup did not support the <a undefined>--export</a> option. See [MDEV-13466](https://jira.mariadb.org/browse/MDEV-13466) about that. In earlier versions of MariaDB, this means that Mariabackup could not create `.cfg` files for [InnoDB file-per-table tablespaces](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces/) during the `--prepare` stage. You can still [import file-per-table tablespaces](/kb/en/innodb-file-per-table-tablespaces/#copying-transportable-tablespaces) without the `.cfg` files in many cases, so it may still be possible in those versions to [restore partial backups](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/partial-backup-and-restore-with-mariabackup/) or to [restore individual tables and partitions](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/restoring-individual-tables-and-partitions-with-mariabackup/) with just the `.ibd` files. If you have a [full backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/full-backup-and-restore-with-mariabackup/) and you need to create `.cfg` files for [InnoDB file-per-table tablespaces](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces/), then you can do so by preparing the backup as usual without the `--export` option, and then restoring the backup, and then starting the server. At that point, you can use the server's built-in features to [copy the transportable tablespaces](/kb/en/innodb-file-per-table-tablespaces/#copying-transportable-tablespaces).
 
 ### `--extra-lsndir`
 
@@ -397,7 +397,7 @@ The `--ftwrl-wait-query-type` option supports the following query types.  The de
 <tr><td><code>UPDATE</code></td><td>Waits until <code><a href="/kb/en/update/">UPDATE</a></code> statements complete before issuing the global lock</td></tr>
 </tbody></table>
 
-When Mariabackup runs, it issues a global lock to prevent data from changing during the backup process.  When it encounters a statement in the process of executing, it waits until the statement is finished before issuing the global lock. Using this option, you can modify this default behavior to ensure that it waits only for certain query types, such as for [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) and [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update) statements.
+When Mariabackup runs, it issues a global lock to prevent data from changing during the backup process.  When it encounters a statement in the process of executing, it waits until the statement is finished before issuing the global lock. Using this option, you can modify this default behavior to ensure that it waits only for certain query types, such as for [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) and [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/) statements.
 
 ```sql
 $ mariabackup --backup  \
@@ -509,7 +509,7 @@ $ mariabackup --innobackupex --backup --incremental \
      --target-dir=/data/backups
 ```
 
-If a backup is a [incremental backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/incremental-backup-and-restore-with-mariabackup), then Mariabackup will record that detail in the <a undefined>xtrabackup_info</a> file.
+If a backup is a [incremental backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/incremental-backup-and-restore-with-mariabackup/), then Mariabackup will record that detail in the <a undefined>xtrabackup_info</a> file.
 
 ### `--incremental-basedir`
 
@@ -527,7 +527,7 @@ $ mariabackup --backup \
      --target-dir=/data/backups
 ```
 
-If a backup is a [incremental backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/incremental-backup-and-restore-with-mariabackup), then Mariabackup will record that detail in the <a undefined>xtrabackup_info</a> file.
+If a backup is a [incremental backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/incremental-backup-and-restore-with-mariabackup/), then Mariabackup will record that detail in the <a undefined>xtrabackup_info</a> file.
 
 ### `--incremental-dir`
 
@@ -544,7 +544,7 @@ $ mariabackup --prepare \
       --increment-dir=backups/
 ```
 
-If a backup is a [incremental backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/incremental-backup-and-restore-with-mariabackup), then Mariabackup will record that detail in the <a undefined>xtrabackup_info</a> file.
+If a backup is a [incremental backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/incremental-backup-and-restore-with-mariabackup/), then Mariabackup will record that detail in the <a undefined>xtrabackup_info</a> file.
 
 ### `--incremental-force-scan`
 
@@ -619,13 +619,13 @@ $ mariabackup --innobackupex
 In `innobackupex` mode, Mariabackup has the following differences:
 
 - To prepare a backup, the <a undefined>--apply-log</a> option is used instead of the <a undefined>--prepare</a> option.
-- To create an [incremental backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/incremental-backup-and-restore-with-mariabackup), the <a undefined>--incremental</a> option is supported.
+- To create an [incremental backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/incremental-backup-and-restore-with-mariabackup/), the <a undefined>--incremental</a> option is supported.
 - The <a undefined>--no-timestamp</a> option is supported.
-- To create a [partial backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/partial-backup-and-restore-with-mariabackup), the <a undefined>--include</a> option is used instead of the <a undefined>--tables</a> option.
-- To create a [partial backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/partial-backup-and-restore-with-mariabackup), the <a undefined>--databases</a> option can still be used, but it's behavior changes slightly.
+- To create a [partial backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/partial-backup-and-restore-with-mariabackup/), the <a undefined>--include</a> option is used instead of the <a undefined>--tables</a> option.
+- To create a [partial backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/partial-backup-and-restore-with-mariabackup/), the <a undefined>--databases</a> option can still be used, but it's behavior changes slightly.
 - The <a undefined>--target-dir</a> option is not used to specify the backup directory. The backup directory should instead be specified as a standalone argument.
 
-The primary purpose of `innobackupex` mode is to allow scripts and tools to more easily migrate to Mariabackup if they were originally designed to use the `innobackupex` utility that is included with [Percona XtraBackup](/mariadb-administration/backing-up-and-restoring-databases/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview). It is not recommended to use this mode in new scripts, since it is not guaranteed to be supported forever. See [MDEV-20552](https://jira.mariadb.org/browse/MDEV-20552) for more information.
+The primary purpose of `innobackupex` mode is to allow scripts and tools to more easily migrate to Mariabackup if they were originally designed to use the `innobackupex` utility that is included with [Percona XtraBackup](/mariadb-administration/backing-up-and-restoring-databases/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview/). It is not recommended to use this mode in new scripts, since it is not guaranteed to be supported forever. See [MDEV-20552](https://jira.mariadb.org/browse/MDEV-20552) for more information.
 
 ### `--innodb`
 
@@ -977,7 +977,7 @@ Defines the query type the utility can kill to unblock the global lock.
 --kill-long-query-type=ALL | UPDATE | SELECT
 ```
 
-When Mariabackup encounters a query that sets a global lock, it can kill the query in order to free up MariaDB Server for the backup.  Using this option, you can choose the types of query it kills: [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select), [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update), or both set with `ALL`.  The default is `ALL`.
+When Mariabackup encounters a query that sets a global lock, it can kill the query in order to free up MariaDB Server for the backup.  Using this option, you can choose the types of query it kills: [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/), [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/), or both set with `ALL`.  The default is `ALL`.
 
 ```sql
 $ mariabackup --backup \
@@ -1304,11 +1304,11 @@ $ mariabackup --backup --skip-secure-auth
 
 Prints the binary log position and the name of the master server.
 
-If the server is a [replication slave](/replication), then this option causes Mariabackup to print the hostname of the slave's replication master and the [binary log](/mariadb-administration/server-monitoring-logs/binary-log) file and position of the [slave's SQL thread](/kb/en/replication-threads/#slave-sql-thread) to `stdout`.
+If the server is a [replication slave](/replication/), then this option causes Mariabackup to print the hostname of the slave's replication master and the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) file and position of the [slave's SQL thread](/kb/en/replication-threads/#slave-sql-thread) to `stdout`.
 
-This option also causes Mariabackup to record this information as a [CHANGE MASTER](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to) command that can be used to set up a new server as a slave of the original server's master after the backup has been restored. This information will be written to to the <a undefined>xtrabackup_slave_info</a> file.
+This option also causes Mariabackup to record this information as a [CHANGE MASTER](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to/) command that can be used to set up a new server as a slave of the original server's master after the backup has been restored. This information will be written to to the <a undefined>xtrabackup_slave_info</a> file.
 
-Mariabackup does <strong>not</strong> check if [GTIDs](/replication/standard-replication/gtid) are being used in replication. It takes a shortcut and assumes that if the <a undefined>gtid_slave_pos</a> system variable is non-empty, then it writes the [CHANGE MASTER](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to) command with the <a undefined>MASTER_USE_GTID</a> option set to `slave_pos`. Otherwise, it writes the [CHANGE MASTER](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to) command with the <a undefined>MASTER_LOG_FILE</a> and <a undefined>MASTER_LOG_POS</a> options using the master's [binary log](/mariadb-administration/server-monitoring-logs/binary-log) file and position. See [MDEV-19264](https://jira.mariadb.org/browse/MDEV-19264) for more information.
+Mariabackup does <strong>not</strong> check if [GTIDs](/replication/standard-replication/gtid/) are being used in replication. It takes a shortcut and assumes that if the <a undefined>gtid_slave_pos</a> system variable is non-empty, then it writes the [CHANGE MASTER](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to/) command with the <a undefined>MASTER_USE_GTID</a> option set to `slave_pos`. Otherwise, it writes the [CHANGE MASTER](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to/) command with the <a undefined>MASTER_LOG_FILE</a> and <a undefined>MASTER_LOG_POS</a> options using the master's [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) file and position. See [MDEV-19264](https://jira.mariadb.org/browse/MDEV-19264) for more information.
 
 ```sql
 $ mariabackup --slave-info
@@ -1331,7 +1331,7 @@ $ mariabackup --backup \
 
 ### `--ssl`
 
-Enables [TLS](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption). By using this option, you can explicitly configure Mariabackup to to encrypt its connection with [TLS](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption) when communicating with the server. You may find this useful when performing backups in environments where security is extra important or when operating over an insecure network.
+Enables [TLS](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/). By using this option, you can explicitly configure Mariabackup to to encrypt its connection with [TLS](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/) when communicating with the server. You may find this useful when performing backups in environments where security is extra important or when operating over an insecure network.
 
 TLS is also enabled even without setting this option when certain other TLS options are set. For example, see the descriptions of the following options:
 
@@ -1343,7 +1343,7 @@ TLS is also enabled even without setting this option when certain other TLS opti
 
 ### `--ssl-ca`
 
-Defines a path to a PEM file that should contain one or more X509 certificates for trusted Certificate Authorities (CAs) to use for [TLS](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption). This option requires that you use the absolute path, not a relative path. For example:
+Defines a path to a PEM file that should contain one or more X509 certificates for trusted Certificate Authorities (CAs) to use for [TLS](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/). This option requires that you use the absolute path, not a relative path. For example:
 
 ```sql
 --ssl-ca=/etc/my.cnf.d/certificates/ca.pem
@@ -1364,7 +1364,7 @@ This option implies the <a undefined>--ssl</a> option.
 
 ### `--ssl-capath`
 
-Defines a path to a directory that contains one or more PEM files that should each contain one X509 certificate for a trusted Certificate Authority (CA) to use for [TLS](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption). This option requires that you use the absolute path, not a relative path. For example:
+Defines a path to a directory that contains one or more PEM files that should each contain one X509 certificate for a trusted Certificate Authority (CA) to use for [TLS](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/). This option requires that you use the absolute path, not a relative path. For example:
 
 ```sql
 --ssl-capath=/etc/my.cnf.d/certificates/ca/
@@ -1388,7 +1388,7 @@ This option implies the <a undefined>--ssl</a> option.
 
 ### `--ssl-cert`
 
-Defines a path to the X509 certificate file to use for [TLS](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption). This option requires that you use the absolute path, not a relative path. For example:
+Defines a path to the X509 certificate file to use for [TLS](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/). This option requires that you use the absolute path, not a relative path. For example:
 
 ```sql
 --ssl-cert=/etc/my.cnf.d/certificates/client-cert.pem
@@ -1407,7 +1407,7 @@ This option implies the <a undefined>--ssl</a> option.
 
 ### `--ssl-cipher`
 
-Defines the list of permitted ciphers or cipher suites to use for [TLS](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption). For example:
+Defines the list of permitted ciphers or cipher suites to use for [TLS](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/). For example:
 
 ```sql
 --ssl-cipher=name
@@ -1429,7 +1429,7 @@ This option implies the <a undefined>--ssl</a> option.
 
 ### `--ssl-crl`
 
-Defines a path to a PEM file that should contain one or more revoked X509 certificates to use for [TLS](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption). This option requires that you use the absolute path, not a relative path. For example:
+Defines a path to a PEM file that should contain one or more revoked X509 certificates to use for [TLS](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/). This option requires that you use the absolute path, not a relative path. For example:
 
 ```sql
 --ssl-crl=/etc/my.cnf.d/certificates/crl.pem
@@ -1447,11 +1447,11 @@ $ mariabackup --backup \
 
 See [Secure Connections Overview: Certificate Revocation Lists (CRLs)](/kb/en/secure-connections-overview/#certificate-revocation-lists-crls) for more information.
 
-This option is only supported if Mariabackup was built with OpenSSL. If Mariabackup was built with yaSSL, then this option is not supported. See [TLS and Cryptography Libraries Used by MariaDB](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/tls-and-cryptography-libraries-used-by-mariadb) for more information about which libraries are used on which platforms.
+This option is only supported if Mariabackup was built with OpenSSL. If Mariabackup was built with yaSSL, then this option is not supported. See [TLS and Cryptography Libraries Used by MariaDB](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/tls-and-cryptography-libraries-used-by-mariadb/) for more information about which libraries are used on which platforms.
 
 ### `--ssl-crlpath`
 
-Defines a path to a directory that contains one or more PEM files that should each contain one revoked X509 certificate to use for [TLS](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption). This option requires that you use the absolute path, not a relative path. For example:
+Defines a path to a directory that contains one or more PEM files that should each contain one revoked X509 certificate to use for [TLS](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/). This option requires that you use the absolute path, not a relative path. For example:
 
 ```sql
 --ssl-crlpath=/etc/my.cnf.d/certificates/crl/
@@ -1471,11 +1471,11 @@ The directory specified by this option needs to be run through the <a undefined>
 
 See [Secure Connections Overview: Certificate Revocation Lists (CRLs)](/kb/en/secure-connections-overview/#certificate-revocation-lists-crls) for more information.
 
-This option is only supported if Mariabackup was built with OpenSSL. If Mariabackup was built with yaSSL, then this option is not supported. See [TLS and Cryptography Libraries Used by MariaDB](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/tls-and-cryptography-libraries-used-by-mariadb) for more information about which libraries are used on which platforms.
+This option is only supported if Mariabackup was built with OpenSSL. If Mariabackup was built with yaSSL, then this option is not supported. See [TLS and Cryptography Libraries Used by MariaDB](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/tls-and-cryptography-libraries-used-by-mariadb/) for more information about which libraries are used on which platforms.
 
 ### `--ssl-key`
 
-Defines a path to a private key file to use for [TLS](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption). This option requires that you use the absolute path, not a relative path. For example:
+Defines a path to a private key file to use for [TLS](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/). This option requires that you use the absolute path, not a relative path. For example:
 
 ```sql
 --ssl-key=/etc/my.cnf.d/certificates/client-key.pem
@@ -1545,7 +1545,7 @@ $ mariabackup --backup \
      --tables-exclude=nodes_tmp
 ```
 
-If a backup is a [partial backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/partial-backup-and-restore-with-mariabackup), then Mariabackup will record that detail in the <a undefined>xtrabackup_info</a> file.
+If a backup is a [partial backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/partial-backup-and-restore-with-mariabackup/), then Mariabackup will record that detail in the <a undefined>xtrabackup_info</a> file.
 
 ### `--tables-exclude`
 
@@ -1564,7 +1564,7 @@ $ mariabackup --backup \
      --tables-exclude=nodes_tmp
 ```
 
-If a backup is a [partial backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/partial-backup-and-restore-with-mariabackup), then Mariabackup will record that detail in the <a undefined>xtrabackup_info</a> file.
+If a backup is a [partial backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/partial-backup-and-restore-with-mariabackup/), then Mariabackup will record that detail in the <a undefined>xtrabackup_info</a> file.
 
 ### `--tables-file`
 
@@ -1582,7 +1582,7 @@ $ mariabackup --backup \
      --tables-file=/etc/mysql/backup-file
 ```
 
-If a backup is a [partial backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/partial-backup-and-restore-with-mariabackup), then Mariabackup will record that detail in the <a undefined>xtrabackup_info</a> file.
+If a backup is a [partial backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/partial-backup-and-restore-with-mariabackup/), then Mariabackup will record that detail in the <a undefined>xtrabackup_info</a> file.
 
 ### `--target-dir`
 

@@ -1,6 +1,6 @@
 # mysql.slow_log Table
 
-The `mysql.slow_log` table stores the contents of the [Slow Query Log](/mariadb-administration/server-monitoring-logs/slow-query-log) if slow logging is active and the output is being written to table (see [Writing logs into tables](/mariadb-administration/server-monitoring-logs/writing-logs-into-tables)).
+The `mysql.slow_log` table stores the contents of the [Slow Query Log](/mariadb-administration/server-monitoring-logs/slow-query-log/) if slow logging is active and the output is being written to table (see [Writing logs into tables](/mariadb-administration/server-monitoring-logs/writing-logs-into-tables/)).
 
 It contains the following fields:
 

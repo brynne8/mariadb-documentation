@@ -1,8 +1,8 @@
 # Mroonga System Variables
 
-This page documents system variables related to the [Mroonga storage engine](/columns-storage-engines-and-plugins/storage-engines/mroonga). See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables) for a complete list of system variables and instructions on setting them.
+This page documents system variables related to the [Mroonga storage engine](/columns-storage-engines-and-plugins/storage-engines/mroonga/). See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables/) for a complete list of system variables and instructions on setting them.
 
-See also the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables).
+See also the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables/).
 
 #### `mroonga_action_on_fulltext_query_error`
 
@@ -97,7 +97,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `mroonga_enable_operations_recording`
 
-- <strong>Description:</strong> Whether recording operations for recovery to the Groonga database is enabled (default) or not. Requires reopening the database with [FLUSH TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush) after changing the variable.
+- <strong>Description:</strong> Whether recording operations for recovery to the Groonga database is enabled (default) or not. Requires reopening the database with [FLUSH TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/) after changing the variable.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--mroonga-enable-operations-recording={0|1}</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes

@@ -84,7 +84,7 @@ Other unrecognized options will be passed on to the server.
 
 ### Option Files
 
-In addition to reading options from the command-line, `mysql_secure_installation` can also read options from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files). If an unknown option is provided to `mysql_secure_installation` in an option file, then it is ignored.
+In addition to reading options from the command-line, `mysql_secure_installation` can also read options from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/). If an unknown option is provided to `mysql_secure_installation` in an option file, then it is ignored.
 
 The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
 
@@ -98,7 +98,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 #### Option Groups
 
-`mysql_secure_installation` reads options from the following [option groups](/kb/en/configuring-mariadb-with-option-files/#option-groups) from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files):
+`mysql_secure_installation` reads options from the following [option groups](/kb/en/configuring-mariadb-with-option-files/#option-groups) from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/):
 
 <table><tbody><tr><th>Group</th><th>Description</th></tr>
 <tr><td><code>[client]</code></td><td>&nbsp;Options read by all MariaDB and MySQL <a href="/kb/en/clients-utilities/">client programs</a>, which includes both MariaDB and MySQL clients. For example, <code>mysqldump</code>.</td></tr>

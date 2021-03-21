@@ -1,6 +1,6 @@
 # aria_read_log
 
-<strong>aria_read_log</strong> is a tool for displaying and applying log records from an [Aria](/columns-storage-engines-and-plugins/storage-engines/aria) transaction log.
+<strong>aria_read_log</strong> is a tool for displaying and applying log records from an [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/) transaction log.
 
 Note: Aria is compiled without -DIDENTICAL_PAGES_AFTER_RECOVERY
 which means that the table files are not byte-to-byte identical to

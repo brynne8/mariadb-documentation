@@ -113,13 +113,13 @@ When an attribute is set, it will be stored with the table definition and shown 
 </code> to set its value to a <code class="fixed" style="white-space:pre-wrap"><span class="k">DEFAULT</span>
 </code>.
 
-The values of unknown attributes or attributes with the illegal values cause an error by default. But with [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) one can change the storage engine and some previously valid attributes may become unknown — to the new engine. They are not removed automatically, though, because the table might be altered back to the first engine, and these attributes will be valid again. Still [SHOW CREATE TABLE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-table) will comment these unknown attributes out in the output, otherwise they would make a generated [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table) statement invalid.
+The values of unknown attributes or attributes with the illegal values cause an error by default. But with [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) one can change the storage engine and some previously valid attributes may become unknown — to the new engine. They are not removed automatically, though, because the table might be altered back to the first engine, and these attributes will be valid again. Still [SHOW CREATE TABLE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-table/) will comment these unknown attributes out in the output, otherwise they would make a generated [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/) statement invalid.
 
 With the <code class="fixed" style="white-space:pre-wrap"><span class="n">IGNORE_BAD_TABLE_OPTIONS</span>
-</code> [sql mode](/kb/en/sql_mode/) this behavior changes. Unknown attributes do not cause an error, they only result in a warning. And [SHOW CREATE TABLE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-table) will not comment them out. This mode is implicitly enabled in the replication slave thread.
+</code> [sql mode](/kb/en/sql_mode/) this behavior changes. Unknown attributes do not cause an error, they only result in a warning. And [SHOW CREATE TABLE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-table/) will not comment them out. This mode is implicitly enabled in the replication slave thread.
 
 ## See Also
 
 - [Writing Plugins for MariaDB](/kb/en/writing-plugins-for-mariadb/)
-- [Storage Engines](/columns-storage-engines-and-plugins/storage-engines)
+- [Storage Engines](/columns-storage-engines-and-plugins/storage-engines/)
 - [Storage Engine Development](/kb/en/storage-engine-development/)

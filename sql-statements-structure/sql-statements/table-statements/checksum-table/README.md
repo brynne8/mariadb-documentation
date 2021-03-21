@@ -15,8 +15,8 @@ and slave).
 With <code class="fixed" style="white-space:pre-wrap">QUICK</code>, the live table checksum is reported if it is
 available, or <code class="fixed" style="white-space:pre-wrap">NULL</code> otherwise. This is very fast. A live
 checksum is enabled by specifying the <code class="fixed" style="white-space:pre-wrap">CHECKSUM=1</code> table
-option when you [create the table](/sql-statements-structure/sql-statements/data-definition/create/create-table); currently, this is supported
-only for [Aria](/columns-storage-engines-and-plugins/storage-engines/aria) and [MyISAM](/kb/en/myisam/) tables.
+option when you [create the table](/sql-statements-structure/sql-statements/data-definition/create/create-table/); currently, this is supported
+only for [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/) and [MyISAM](/kb/en/myisam/) tables.
 
 With <code class="fixed" style="white-space:pre-wrap">EXTENDED</code>, the entire table is read row by row and the
 checksum is calculated. This can be very slow for large tables.

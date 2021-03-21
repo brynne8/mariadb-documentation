@@ -4,7 +4,7 @@
 single table using several index scans. The results of the scans are then
 merged.
 
-When using [EXPLAIN](/sql-statements-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain), if `index_merge` is the plan chosen by the
+When using [EXPLAIN](/sql-statements-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain/), if `index_merge` is the plan chosen by the
 optimizer, it will show up in the "type" column. For example:
 
 ```sql

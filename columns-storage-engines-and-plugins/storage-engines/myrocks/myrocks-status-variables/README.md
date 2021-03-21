@@ -1,8 +1,8 @@
 # MyRocks Status Variables
 
-This page documents status variables related to the [MyRocks](/columns-storage-engines-and-plugins/storage-engines/myrocks) storage engine. See [Server Status Variables](/replication/optimization-and-tuning/system-variables/server-status-variables) for a complete list of status variables that can be viewed with [SHOW STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-status).
+This page documents status variables related to the [MyRocks](/columns-storage-engines-and-plugins/storage-engines/myrocks/) storage engine. See [Server Status Variables](/replication/optimization-and-tuning/system-variables/server-status-variables/) for a complete list of status variables that can be viewed with [SHOW STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-status/).
 
-See also the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables).
+See also the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables/).
 
 #### `Rocksdb_block_cache_add`
 
@@ -291,7 +291,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Rocksdb_covered_secondary_key_lookups`
 
-- <strong>Description:</strong> Incremented when avoiding reading a record via a keyread. This indicates lookups that were performed via a secondary index containing a field that is only a prefix of the [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar) column, and that could return all requested fields directly from the secondary index.
+- <strong>Description:</strong> Incremented when avoiding reading a record via a keyread. This indicates lookups that were performed via a secondary index containing a field that is only a prefix of the [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar/) column, and that could return all requested fields directly from the secondary index.
 - <strong>Scope:</strong> Global, Session
 - <strong>Data Type:</strong> `numeric`
 

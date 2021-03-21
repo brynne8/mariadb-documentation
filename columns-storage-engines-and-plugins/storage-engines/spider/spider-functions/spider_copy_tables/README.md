@@ -9,7 +9,7 @@ SPIDER_COPY_TABLES(spider_table_name,
 
 ## Description
 
-A [UDF](/programming-customizing-mariadb/user-defined-functions) installed with the [Spider Storage Engine](/columns-storage-engines-and-plugins/storage-engines/spider), this function copies table data from `source_link_id` to `destination_link_id_list`. The service does not need to be stopped in order to copy.
+A [UDF](/programming-customizing-mariadb/user-defined-functions/) installed with the [Spider Storage Engine](/columns-storage-engines-and-plugins/storage-engines/spider/), this function copies table data from `source_link_id` to `destination_link_id_list`. The service does not need to be stopped in order to copy.
 
 If the Spider table is partitioned, the name must be of the format `table_name#P#partition_name`. The partition name can be viewed in the `mysql.spider_tables` table, for example:
 

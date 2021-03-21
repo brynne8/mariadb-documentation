@@ -1,6 +1,6 @@
 # CONNECT - NoSQL Table Types
 
-They are based on files that do not match the relational format but often represent hierarchical data. CONNECT can handle [JSON](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-json-table-type), [INI-CFG](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-ini-table-type), [XML](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-xml-table-type), and some HTML files.
+They are based on files that do not match the relational format but often represent hierarchical data. CONNECT can handle [JSON](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-json-table-type/), [INI-CFG](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-ini-table-type/), [XML](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-xml-table-type/), and some HTML files.
 
 The way it is done is different from what MySQL or PostgreSQL does. In addition to including in a table some column values of a specific data format (JSON, XML) to be handled by specific functions, CONNECT can directly use JSON, XML or INI files that are produced by other applications, and this is the table definition that describes where and how the contained information must be retrieved.
 

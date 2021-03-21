@@ -1,6 +1,6 @@
 # Information Schema SPIDER_ALLOC_MEM Table
 
-The [Information Schema](/kb/en/information_schema/) `SPIDER_ALLOC_MEM` table is installed along with the [Spider](/columns-storage-engines-and-plugins/storage-engines/spider) storage engine. It shows information about Spider's memory usage.
+The [Information Schema](/kb/en/information_schema/) `SPIDER_ALLOC_MEM` table is installed along with the [Spider](/columns-storage-engines-and-plugins/storage-engines/spider/) storage engine. It shows information about Spider's memory usage.
 
 It contains the following columns:
 

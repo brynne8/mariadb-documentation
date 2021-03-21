@@ -10,7 +10,7 @@ SEC_TO_TIME(seconds)
 
 Returns the seconds argument, converted to hours, minutes, and
 seconds, as a TIME value. The range of the result is constrained to
-that of the [TIME data type](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/time). A warning occurs if the argument
+that of the [TIME data type](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/time/). A warning occurs if the argument
 corresponds to a value outside that range.
 
 The time will be returned in the format `hh:mm:ss`, or `hhmmss` if used in a numeric calculation.

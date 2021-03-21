@@ -1,7 +1,7 @@
 # Using CONNECT - Partitioning and Sharding
 
 CONNECT supports the MySQL/MariaDB partition specification. It is done similar to the way
-[MyISAM](/kb/en/myisam/) or [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) do by using the PARTITION engine that must be enabled for this to work. This type of partitioning is sometimes referred as “horizontal partitioning”.
+[MyISAM](/kb/en/myisam/) or [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) do by using the PARTITION engine that must be enabled for this to work. This type of partitioning is sometimes referred as “horizontal partitioning”.
 
 Partitioning enables you to distribute portions of individual tables across a file system according to
 rules which you can set largely as needed. In effect, different portions of a table are stored as separate

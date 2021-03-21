@@ -1,6 +1,6 @@
 # INT8
 
-`INT8` is a synonym for [BIGINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/bigint).
+`INT8` is a synonym for [BIGINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/bigint/).
 
 ```sql
 CREATE TABLE t1 (x INT8);

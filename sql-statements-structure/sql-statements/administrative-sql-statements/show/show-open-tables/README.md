@@ -20,7 +20,7 @@ clause, if present, restricts the tables shown to those present in the
 <code class="highlight fixed" style="white-space:pre-wrap">db_name</code> database.
 
 The <code class="highlight fixed" style="white-space:pre-wrap">LIKE</code> clause, if
-present on its own, indicates which table names to match. The <code class="highlight fixed" style="white-space:pre-wrap">WHERE</code> and <code class="highlight fixed" style="white-space:pre-wrap">LIKE</code> clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](/sql-statements-structure/sql-statements/administrative-sql-statements/show/extended-show).
+present on its own, indicates which table names to match. The <code class="highlight fixed" style="white-space:pre-wrap">WHERE</code> and <code class="highlight fixed" style="white-space:pre-wrap">LIKE</code> clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](/sql-statements-structure/sql-statements/administrative-sql-statements/show/extended-show/).
 
 The following information is returned:
 

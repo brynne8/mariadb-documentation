@@ -21,8 +21,8 @@ It is recommended to make a [backup](/kb/en/backing-up-and-restoring/) of all th
 In most cases, `mysql_upgrade` should just take a few seconds.  The main work of `mysql_upgrade` is to:
 
 - Update the system tables in the `mysql` database to the latest version (normally just add new fields to a few tables).
-- Check that all tables are up to date (runs [CHECK TABLE table_name FOR UPGRADE](/kb/en/sql-commands-check-table/)). For tables that are not up to date, runs [ALTER TABLE table_name FORCE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) on the table to update it. A table is not up to date if:
-<ul start="1"><li>The table uses an index for which there has been a [collation](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets) change (rare)
+- Check that all tables are up to date (runs [CHECK TABLE table_name FOR UPGRADE](/kb/en/sql-commands-check-table/)). For tables that are not up to date, runs [ALTER TABLE table_name FORCE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) on the table to update it. A table is not up to date if:
+<ul start="1"><li>The table uses an index for which there has been a [collation](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/) change (rare)
 </li><li>A format change in the storage engine requires an update (very rare)
 </li></ul>
 
@@ -35,7 +35,7 @@ mysql_upgrade [--force] [--user=# --password
   --verbose] OTHER_OPTIONS]
 ```
 
-`mysql_upgrade` is mainly a framework to call [mysqlcheck](/sql-statements-structure/sql-statements/table-statements/mysqlcheck). `mysql_upgrade` works by doing the following operations:
+`mysql_upgrade` is mainly a framework to call [mysqlcheck](/sql-statements-structure/sql-statements/table-statements/mysqlcheck/). `mysql_upgrade` works by doing the following operations:
 
 ```sql
 # Find out path to datadir
@@ -46,7 +46,7 @@ mysqlcheck --no-defaults --all-databases --fix-db-names --fix-table-names
 mysqlcheck --no-defaults --check-upgrade --all-databases --auto-repair
 ```
 
-The connect options given to `mysql_upgrade` are passed along to [mysqlcheck](/sql-statements-structure/sql-statements/table-statements/mysqlcheck) and [mysql](/clients-utilities/mysql-client/mysql-command-line-client).
+The connect options given to `mysql_upgrade` are passed along to [mysqlcheck](/sql-statements-structure/sql-statements/table-statements/mysqlcheck/) and [mysql](/clients-utilities/mysql-client/mysql-command-line-client/).
 
 The `mysql_fix_privilege_tables` script is not actually called; it's included as part of `mysql_upgrade`
 
@@ -100,7 +100,7 @@ mysql_upgrade --verbose --verbose other-options
 
 ### Option Files
 
-In addition to reading options from the command-line, `mysql_upgrade` can also read options from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files). If an unknown option is provided to `mysql_upgrade` in an option file, then it is ignored.
+In addition to reading options from the command-line, `mysql_upgrade` can also read options from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/). If an unknown option is provided to `mysql_upgrade` in an option file, then it is ignored.
 
 The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
 
@@ -116,7 +116,7 @@ In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, `mysql_upgrade` is lin
 
 #### Option Groups
 
-`mysql_upgrade` reads options from the following [option groups](/kb/en/configuring-mariadb-with-option-files/#option-groups) from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files):
+`mysql_upgrade` reads options from the following [option groups](/kb/en/configuring-mariadb-with-option-files/#option-groups) from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/):
 
 <table><tbody><tr><th>Group</th><th>Description</th></tr>
 <tr><td><code>[mysql_upgrade]</code></td><td>&nbsp;Options read by <code>mysql_upgrade</code>, which includes both MariaDB Server and MySQL Server.</td></tr>
@@ -130,11 +130,11 @@ In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, `mysql_upgrade` is lin
 
 This is as of [MariaDB 5.1.50](/kb/en/mariadb-5150-release-notes/):
 
-- MariaDB will convert long [table names](/sql-statements-structure/sql-language-structure/identifier-names) properly.
-- MariaDB will convert [InnoDB](/kb/en/xtradb-and-innodb/) tables (no need to do a dump/restore or [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table)).
+- MariaDB will convert long [table names](/sql-statements-structure/sql-language-structure/identifier-names/) properly.
+- MariaDB will convert [InnoDB](/kb/en/xtradb-and-innodb/) tables (no need to do a dump/restore or [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/)).
 - MariaDB will convert old archive tables to the new 5.1 format.
 - "mysql_upgrade --verbose" will run "mysqlcheck --verbose" so that you get more information of what is happening.  Running with 3 times --verbose will in [MariaDB 10.0](/kb/en/what-is-mariadb-100/) print out all CHECK, RENAME and ALTER TABLE commands executed.
-- The [mysql.event table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlevent-table) is upgraded live; no need to restart the server to use events if the event table has changed ([MariaDB 10.0.22](/kb/en/mariadb-10022-release-notes/) and [MariaDB 10.1.9](/kb/en/mariadb-1019-release-notes/)).
+- The [mysql.event table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlevent-table/) is upgraded live; no need to restart the server to use events if the event table has changed ([MariaDB 10.0.22](/kb/en/mariadb-10022-release-notes/) and [MariaDB 10.1.9](/kb/en/mariadb-1019-release-notes/)).
 - More descriptive output.
 
 ## Speeding Up mysql_upgrade
@@ -154,18 +154,18 @@ If you are 100% sure this applies to you, you can just run `mysql_upgrade` with 
 
 ## Symptoms of Not Having Run mysql_upgrade When It Was Needed
 
-- Errors in the [error log](/mariadb-administration/server-monitoring-logs/error-log) that some system tables don't have all needed columns.
+- Errors in the [error log](/mariadb-administration/server-monitoring-logs/error-log/) that some system tables don't have all needed columns.
 - Updates or searches may not find the record they are attempting to update or search for.
-- [CHECKSUM TABLE](/sql-statements-structure/sql-statements/table-statements/checksum-table) may report the wrong checksum for [MyISAM](/kb/en/myisam/) or [Aria](/columns-storage-engines-and-plugins/storage-engines/aria) tables.
+- [CHECKSUM TABLE](/sql-statements-structure/sql-statements/table-statements/checksum-table/) may report the wrong checksum for [MyISAM](/kb/en/myisam/) or [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/) tables.
 
-To fix issues like this, run `mysql_upgrade`, [mysqlcheck](/sql-statements-structure/sql-statements/table-statements/mysqlcheck),  [CHECK TABLE](/kb/en/sql-commands-check-table/) and if needed [REPAIR TABLE](/sql-statements-structure/sql-statements/table-statements/repair-table) on the wrong table.
+To fix issues like this, run `mysql_upgrade`, [mysqlcheck](/sql-statements-structure/sql-statements/table-statements/mysqlcheck/),  [CHECK TABLE](/kb/en/sql-commands-check-table/) and if needed [REPAIR TABLE](/sql-statements-structure/sql-statements/table-statements/repair-table/) on the wrong table.
 
 ## Other Uses
 
-- `mysql_upgrade` will re-create any missing tables in the [mysql database](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables).  It will not touch any data in existing tables.
+- `mysql_upgrade` will re-create any missing tables in the [mysql database](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/).  It will not touch any data in existing tables.
 
 ## See Also
 
-- [mysqlcheck](/sql-statements-structure/sql-statements/table-statements/mysqlcheck)
+- [mysqlcheck](/sql-statements-structure/sql-statements/table-statements/mysqlcheck/)
 - [CHECK TABLE](/kb/en/sql-commands-check-table/)
-- [REPAIR TABLE](/sql-statements-structure/sql-statements/table-statements/repair-table)
+- [REPAIR TABLE](/sql-statements-structure/sql-statements/table-statements/repair-table/)

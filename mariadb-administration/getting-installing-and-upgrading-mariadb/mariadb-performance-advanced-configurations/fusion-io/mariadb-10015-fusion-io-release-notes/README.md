@@ -4,18 +4,18 @@
 
 <strong><em>Unreleased</em></strong> means there are no official packages or
 binaries available for download which contain the features. If you want to try out any of the new features described here you will
-need to [get](/kb/en/getting-the-mariadb-source-code/) and [compile](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source) the
+need to [get](/kb/en/getting-the-mariadb-source-code/) and [compile](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/) the
 code yourself.
 
 [Download](http://ftp.osuosl.org/pub/mariadb/mariadb-10.0.15-fusion-io/)
-[Release Notes](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/fusion-io/mariadb-10015-fusion-io-release-notes)
-[Changelog](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/fusion-io/mariadb-10015-fusion-io-changelog)
-[Fusion-io Introduction](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/fusion-io/fusion-io-introduction)
+[Release Notes](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/fusion-io/mariadb-10015-fusion-io-release-notes/)
+[Changelog](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/fusion-io/mariadb-10015-fusion-io-changelog/)
+[Fusion-io Introduction](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/fusion-io/fusion-io-introduction/)
 
 <strong>Release date:</strong>  12 Dec 2014
 
 <strong>For an overview of [MariaDB 10.0](/kb/en/what-is-mariadb-100/) Fusion-io see the
-[Fusion-io Introduction](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/fusion-io/fusion-io-introduction) page.</strong>
+[Fusion-io Introduction](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/fusion-io/fusion-io-introduction/) page.</strong>
 
 Thanks, and enjoy MariaDB!
 
@@ -45,5 +45,5 @@ Be notified of new MariaDB Server releases automatically by [subscribing](https:
 <br><br>
 MariaDB may already be included in your favorite OS distribution. More
 information can be found on the
-[Distributions which Include MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/distributions-which-include-mariadb)
+[Distributions which Include MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/distributions-which-include-mariadb/)
 page.

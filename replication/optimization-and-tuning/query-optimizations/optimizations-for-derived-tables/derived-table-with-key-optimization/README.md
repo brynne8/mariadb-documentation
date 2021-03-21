@@ -60,4 +60,4 @@ set optimizer_switch='derived_with_keys=off'
 
 - [Optimizing Subqueries in the FROM Clause](http://dev.mysql.com/doc/refman/5.6/en/from-clause-subquery-optimization.html) in MySQL 5.6 manual
 - [What is MariaDB 5.3](/kb/en/what-is-mariadb-53/)
-- [Subquery Optimizations Map](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/subquery-optimizations-map)
+- [Subquery Optimizations Map](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/subquery-optimizations-map/)

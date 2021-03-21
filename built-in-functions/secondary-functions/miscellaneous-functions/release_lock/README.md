@@ -8,18 +8,18 @@ RELEASE_LOCK(str)
 
 ## Description
 
-Releases the lock named by the string `str` that was obtained with [GET_LOCK()](/built-in-functions/secondary-functions/miscellaneous-functions/get_lock). Returns 1 if the lock was released, 0 if the lock was not established by this thread (in which case the lock is not
+Releases the lock named by the string `str` that was obtained with [GET_LOCK()](/built-in-functions/secondary-functions/miscellaneous-functions/get_lock/). Returns 1 if the lock was released, 0 if the lock was not established by this thread (in which case the lock is not
 released), and `NULL` if the named lock did not exist. The lock does not exist if it was never obtained by a call to `GET_LOCK()` or if it has previously been released.
 
 ##### MariaDB until [10.0.1](/kb/en/mariadb-1001-release-notes/)
 
-Before 10.0.2, [GET_LOCK()](/built-in-functions/secondary-functions/miscellaneous-functions/get_lock) released the existing lock, if any. Since 10.0.2 this does not happen, because multiple locks are allowed.
+Before 10.0.2, [GET_LOCK()](/built-in-functions/secondary-functions/miscellaneous-functions/get_lock/) released the existing lock, if any. Since 10.0.2 this does not happen, because multiple locks are allowed.
 
 `str` is case insensitive. If `str` is an empty string or `NULL`, `RELEASE_LOCK()` returns `NULL` and does nothing.
 
 Statements using the RELEASE_LOCK() function are not [safe for replication](/kb/en/unsafe-statements-for-replication/).
 
-The [DO statement](/sql-statements-structure/sql-statements/stored-routine-statements/do) is convenient to use with `RELEASE_LOCK()`.
+The [DO statement](/sql-statements-structure/sql-statements/stored-routine-statements/do/) is convenient to use with `RELEASE_LOCK()`.
 
 ## Examples
 
@@ -107,7 +107,7 @@ Empty set (0.000 sec)
 
 ## See Also
 
-- [GET_LOCK](/built-in-functions/secondary-functions/miscellaneous-functions/get_lock)
-- [IS_FREE_LOCK](/built-in-functions/secondary-functions/miscellaneous-functions/is_free_lock)
-- [IS_USED_LOCK](/built-in-functions/secondary-functions/miscellaneous-functions/is_used_lock)
-- [RELEASE_ALL_LOCKS](/built-in-functions/secondary-functions/miscellaneous-functions/release_all_locks)
+- [GET_LOCK](/built-in-functions/secondary-functions/miscellaneous-functions/get_lock/)
+- [IS_FREE_LOCK](/built-in-functions/secondary-functions/miscellaneous-functions/is_free_lock/)
+- [IS_USED_LOCK](/built-in-functions/secondary-functions/miscellaneous-functions/is_used_lock/)
+- [RELEASE_ALL_LOCKS](/built-in-functions/secondary-functions/miscellaneous-functions/release_all_locks/)

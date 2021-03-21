@@ -3,7 +3,7 @@
 This article describes how to download the RPM files and install them using the
 `rpm` command.
 
-It is highly recommended to [Install MariaDB with yum](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum) where possible.
+It is highly recommended to [Install MariaDB with yum](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum/) where possible.
 
 Navigate to [http://downloads.mariadb.org](http://downloads.mariadb.org) and choose
 the desired database version and then select the RPMs that match your Linux distribution and architecture.
@@ -21,9 +21,9 @@ MariaDB-test-5.2.5-99.el5.x86_64.rpm
 ```
 
 For a standard server installation you will need to download at least
-the <em>client</em>, <em>shared</em>, and <em>server</em> RPM files. See [About the MariaDB RPM Files](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/about-the-mariadb-rpm-files) for more information about what is included in each RPM package.
+the <em>client</em>, <em>shared</em>, and <em>server</em> RPM files. See [About the MariaDB RPM Files](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/about-the-mariadb-rpm-files/) for more information about what is included in each RPM package.
 
-After downloading the MariaDB RPM files, you might want to check their signatures.  See  [Checking MariaDB RPM Package Signatures](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/checking-mariadb-rpm-package-signatures) for more information about checking signatures.
+After downloading the MariaDB RPM files, you might want to check their signatures.  See  [Checking MariaDB RPM Package Signatures](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/checking-mariadb-rpm-package-signatures/) for more information about checking signatures.
 
 ```sql
 rpm --checksig $(find . -name '*.rpm')
@@ -99,4 +99,4 @@ cursor.
 
 - [Installing MariaDB with yum](/kb/en/installing-mariadb-with-yum/)
 - [Troubleshooting MariaDB Installs on RedHat/CentOS](/kb/en/troubleshooting-mariadb-installs-on-redhatcentos/)
-- [Checking MariaDB RPM Package Signatures](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/checking-mariadb-rpm-package-signatures)
+- [Checking MariaDB RPM Package Signatures](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/checking-mariadb-rpm-package-signatures/)

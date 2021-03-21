@@ -17,7 +17,7 @@ position `pos`. Returns 0 if `substr` is not in `str`.
 
 If any argument is `NULL`, returns `NULL.`
 
-[INSTR()](/built-in-functions/string-functions/instr) is a synonym of `LOCATE()` without the third argument.
+[INSTR()](/built-in-functions/string-functions/instr/) is a synonym of `LOCATE()` without the third argument.
 
 ## Examples
 
@@ -46,5 +46,5 @@ SELECT LOCATE('bar', 'foobarbar', 5);
 
 ## See Also
 
-- [INSTR()](/built-in-functions/string-functions/instr) ; Returns the position of a string withing a string
-- [SUBSTRING_INDEX()](/built-in-functions/string-functions/substring_index) ; Returns the substring from string before count occurrences of a delimiter
+- [INSTR()](/built-in-functions/string-functions/instr/) ; Returns the position of a string withing a string
+- [SUBSTRING_INDEX()](/built-in-functions/string-functions/substring_index/) ; Returns the substring from string before count occurrences of a delimiter

@@ -8,7 +8,7 @@ cmake -DCONNECT_WITH_MONGO=ON
 
 Such a version will not be rated GA (stable) anymore.
 
-Starting with CONNECT version 1.06.005 (see [versions](/columns-storage-engines-and-plugins/storage-engines/connect)) the MONGO table type will be also available with binary distributions supporting JDBC. However, this version of CONNECT being rated as GA (stable), the MONGO table type will be disabled for MariaDB versions 10.0 and 10.1, not being thoroughly tested yet. It is still possible to enable it, for testing or use at user’s risk, when compiling MariaDB from source with the option: `CONNECT_WITH_MONGO ON`.
+Starting with CONNECT version 1.06.005 (see [versions](/columns-storage-engines-and-plugins/storage-engines/connect/)) the MONGO table type will be also available with binary distributions supporting JDBC. However, this version of CONNECT being rated as GA (stable), the MONGO table type will be disabled for MariaDB versions 10.0 and 10.1, not being thoroughly tested yet. It is still possible to enable it, for testing or use at user’s risk, when compiling MariaDB from source with the option: `CONNECT_WITH_MONGO ON`.
 
 Classified as a&nbsp;NoSQL&nbsp;database program, MongoDB uses&nbsp;JSON-like documents (BSON) grouped in collections. The MONGO type is used to directly access MongoDB collections as tables.
 
@@ -34,7 +34,7 @@ When possible, this is the preferred means of access because it does not require
 
 #### Using the Mongo Java Driver
 
-This is possible with all distributions including JDBC support when using with a [MariaDB 10.2](/kb/en/what-is-mariadb-102/) or [MariaDB 10.3](/kb/en/what-is-mariadb-103/) binary distribution, or compiling from source. With a binary distribution that does not enable the MONGO table type, it is possible to access MongoDB using an OEM module. See [CONNECT OEM Table Example](/columns-storage-engines-and-plugins/storage-engines/connect/connect-oem-table-example) for details. The only additional things to do are:
+This is possible with all distributions including JDBC support when using with a [MariaDB 10.2](/kb/en/what-is-mariadb-102/) or [MariaDB 10.3](/kb/en/what-is-mariadb-103/) binary distribution, or compiling from source. With a binary distribution that does not enable the MONGO table type, it is possible to access MongoDB using an OEM module. See [CONNECT OEM Table Example](/columns-storage-engines-and-plugins/storage-engines/connect/connect-oem-table-example/) for details. The only additional things to do are:
 
 1 Install the MongoDB Java Driver by downloading its jar file. Several versions are available. If possible use the latest version 3 one.
 2 Add the path to it in the CLASSPATH environment variable or in the connect_class_path variable. This is like what is done to declare JDBC drivers.
@@ -96,7 +96,7 @@ CREATE TABLE `resto` (
 
 ### Fixing Problems With mysqldump
 
-In some case or some platforms, when CONNECT is set up for use with JDBC table types, this causes [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump) with the --all-databases option to fail.
+In some case or some platforms, when CONNECT is set up for use with JDBC table types, this causes [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump/) with the --all-databases option to fail.
 
 This was reported by Robert Dyas who found the cause of it and how to fix it (see [MDEV-11238](https://jira.mariadb.org/browse/MDEV-11238)).
 

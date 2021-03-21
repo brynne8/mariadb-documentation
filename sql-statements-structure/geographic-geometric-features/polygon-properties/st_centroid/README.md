@@ -9,7 +9,7 @@ Centroid(mpoly)
 
 ## Description
 
-Returns a point reflecting the mathematical centroid (geometric center) for the [MultiPolygon](/sql-statements-structure/geographic-geometric-features/geometry-constructors/multipolygon) <em>mpoly</em>. The resulting point will not necessarily be on the MultiPolygon.
+Returns a point reflecting the mathematical centroid (geometric center) for the [MultiPolygon](/sql-statements-structure/geographic-geometric-features/geometry-constructors/multipolygon/) <em>mpoly</em>. The resulting point will not necessarily be on the MultiPolygon.
 
 `ST_Centroid()` and `Centroid()` are synonyms.
 

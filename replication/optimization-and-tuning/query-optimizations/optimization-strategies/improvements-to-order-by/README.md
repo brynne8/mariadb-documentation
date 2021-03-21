@@ -2,11 +2,11 @@
 
 ##### MariaDB starting with [10.1](/kb/en/what-is-mariadb-101/)
 
-[MariaDB 10.1](/kb/en/what-is-mariadb-101/) includes several improvements to the [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by) optimizer.
+[MariaDB 10.1](/kb/en/what-is-mariadb-101/) includes several improvements to the [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by/) optimizer.
 
 The fixes were made as a response to complaints by MariaDB customers, so they fix real-world optimization problems.  The fixes are a bit hard to describe (as the `ORDER BY` optimizer is complicated), but here's a short description:
 
-The [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by) optimizer in [MariaDB 10.1](/kb/en/what-is-mariadb-101/):
+The [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by/) optimizer in [MariaDB 10.1](/kb/en/what-is-mariadb-101/):
 
 - Doesn’t make stupid choices when several multi-part keys and potential range accesses are present ([MDEV-6402](https://jira.mariadb.org/browse/MDEV-6402)).
 <ul start="1"><li>This also fixes [MySQL Bug#12113](http://bugs.mysql.com/bug.php?id=12113).
@@ -21,7 +21,7 @@ The [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/select
 
 Starting from [MariaDB 10.1.15](/kb/en/mariadb-10115-release-notes/)
 
-- The [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by) optimizer takes multiple-equalities into account ([MDEV-8989](https://jira.mariadb.org/browse/MDEV-8989)). This optimization is not enabled by default in [MariaDB 10.1](/kb/en/what-is-mariadb-101/). You need to explicitly switch it ON by setting the [optimizer_switch](/replication/optimization-and-tuning/query-optimizations/optimizer-switch) system variable, as follows:
+- The [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by/) optimizer takes multiple-equalities into account ([MDEV-8989](https://jira.mariadb.org/browse/MDEV-8989)). This optimization is not enabled by default in [MariaDB 10.1](/kb/en/what-is-mariadb-101/). You need to explicitly switch it ON by setting the [optimizer_switch](/replication/optimization-and-tuning/query-optimizations/optimizer-switch/) system variable, as follows:
 
 ```sql
 optimizer_switch='orderby_uses_equalities=on'

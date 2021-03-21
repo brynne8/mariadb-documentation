@@ -28,7 +28,7 @@ ENGINE=OQGRAPH
 data_table='oq_backing' origid='origid' destid='destid';
 ```
 
-Prior to [MariaDB 10.1.2](/kb/en/mariadb-1012-release-notes/), the [CREATE](/sql-statements-structure/sql-statements/data-definition/create/create-table) statement must match the format below - any difference will result in an error.
+Prior to [MariaDB 10.1.2](/kb/en/mariadb-1012-release-notes/), the [CREATE](/sql-statements-structure/sql-statements/data-definition/create/create-table/) statement must match the format below - any difference will result in an error.
 
 ```sql
 CREATE TABLE oq_graph (
@@ -101,7 +101,7 @@ SELECT * FROM oq_graph WHERE latch='dijkstras' AND origid=6 AND destid=1;
 Empty set (0.00 sec)
 ```
 
-Using the [GROUP_CONCAT](/built-in-functions/aggregate-functions/group_concat) function can produce more readable results, for example:
+Using the [GROUP_CONCAT](/built-in-functions/aggregate-functions/group_concat/) function can produce more readable results, for example:
 
 ```sql
 SELECT GROUP_CONCAT(linkid ORDER BY seq) AS path FROM oq_graph 
@@ -202,4 +202,4 @@ The use of integer latches is controlled using the [oqgraph_allow_create_integer
 
 ## See Also
 
-- [OQGRAPH Overview](/columns-storage-engines-and-plugins/storage-engines/oqgraph-storage-engine/oqgraph-overview)
+- [OQGRAPH Overview](/columns-storage-engines-and-plugins/storage-engines/oqgraph-storage-engine/oqgraph-overview/)

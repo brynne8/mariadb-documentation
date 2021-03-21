@@ -117,7 +117,7 @@ It also upgrades the format of the tables if upgrading from an earlier version.
 
 ### Configure the Server
 
-In order to connect the Spider node to the data nodes, you need to issue a [CREATE SERVER](/sql-statements-structure/sql-statements/data-definition/create/create-server) statement for each data node.  You can then use the server definition in creating the Spider table.
+In order to connect the Spider node to the data nodes, you need to issue a [CREATE SERVER](/sql-statements-structure/sql-statements/data-definition/create/create-server/) statement for each data node.  You can then use the server definition in creating the Spider table.
 
 ```sql
 CREATE SERVER dataNode1 FOREIGN DATA WRAPPER mysql
@@ -129,7 +129,7 @@ OPTIONS (
    PORT 3306);
 ```
 
-In the event that you need to modify or replace this server after setting up the Spider table, remember to issue a [FLUSH](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush) statement to update the server definition.
+In the event that you need to modify or replace this server after setting up the Spider table, remember to issue a [FLUSH](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/) statement to update the server definition.
 
 ```sql
 FLUSH TABLES;

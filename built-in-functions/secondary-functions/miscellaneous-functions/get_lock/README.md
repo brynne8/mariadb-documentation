@@ -8,11 +8,11 @@ GET_LOCK(str,timeout)
 
 ## Description
 
-Tries to obtain a lock with a name given by the string `str`, using a timeout of `timeout` seconds. Returns `1` if the lock was obtained successfully, `0` if the attempt timed out (for example, because another client has previously locked the name), or  `NULL` if an error occurred (such as running out of memory or the thread was killed with [mysqladmin](/clients-utilities/mysqladmin) kill).
+Tries to obtain a lock with a name given by the string `str`, using a timeout of `timeout` seconds. Returns `1` if the lock was obtained successfully, `0` if the attempt timed out (for example, because another client has previously locked the name), or  `NULL` if an error occurred (such as running out of memory or the thread was killed with [mysqladmin](/clients-utilities/mysqladmin/) kill).
 
-A lock is released with [RELEASE_LOCK()](/built-in-functions/secondary-functions/miscellaneous-functions/release_lock), when the connection terminates (either normally or abnormally), or before [MariaDB 10.0.2](/kb/en/mariadb-1002-release-notes/), when the connection executes another `GET_LOCK` statement. From [MariaDB 10.0.2](/kb/en/mariadb-1002-release-notes/), a connection can hold multiple locks at the same time, so a lock that is no longer needed needs to be explicitly released.
+A lock is released with [RELEASE_LOCK()](/built-in-functions/secondary-functions/miscellaneous-functions/release_lock/), when the connection terminates (either normally or abnormally), or before [MariaDB 10.0.2](/kb/en/mariadb-1002-release-notes/), when the connection executes another `GET_LOCK` statement. From [MariaDB 10.0.2](/kb/en/mariadb-1002-release-notes/), a connection can hold multiple locks at the same time, so a lock that is no longer needed needs to be explicitly released.
 
-The [IS_FREE_LOCK](/built-in-functions/secondary-functions/miscellaneous-functions/is_free_lock) function returns whether a specified lock a free or not, and the [IS_USED_LOCK](/built-in-functions/secondary-functions/miscellaneous-functions/is_used_lock) whether the function is in use or not.
+The [IS_FREE_LOCK](/built-in-functions/secondary-functions/miscellaneous-functions/is_free_lock/) function returns whether a specified lock a free or not, and the [IS_USED_LOCK](/built-in-functions/secondary-functions/miscellaneous-functions/is_used_lock/) whether the function is in use or not.
 
 Locks obtained with `GET_LOCK()` do not interact with transactions. That is, committing a transaction does not release any such locks obtained during the transaction.
 
@@ -24,7 +24,7 @@ If the [metadata_lock_info](/kb/en/metadata-lock-info/) plugin is installed, loc
 
 This function can be used to implement application locks or to simulate record locks. Names are locked on a server-wide basis. If a name has been locked by one client, `GET_LOCK()` blocks any request by another client for a lock with the same name. This allows clients that agree on a given lock name to use the name to perform cooperative advisory locking. But be aware that it also allows a client that is not among the set of cooperating clients to lock a name, either inadvertently or deliberately, and thus prevent any of the cooperating clients from locking that name. One way to reduce the likelihood of this is to use lock names that are database-specific or application-specific. For example, use lock names of the form `db_name.str` or `app_name.str`.
 
-Statements using the `GET_LOCK` function are [not safe for statement-based replication](/replication/standard-replication/unsafe-statements-for-statement-based-replication).
+Statements using the `GET_LOCK` function are [not safe for statement-based replication](/replication/standard-replication/unsafe-statements-for-statement-based-replication/).
 
 The patch to permit multiple locks was [contributed by Konstantin "Kostja" Osipov](http://kostja-osipov.livejournal.com/46410.html) ([MDEV-3917](https://jira.mariadb.org/browse/MDEV-3917)).
 
@@ -221,7 +221,7 @@ ERROR 1213 (40001): Deadlock found when trying to get lock; try restarting trans
 
 ## See Also
 
-- [RELEASE_LOCK](/built-in-functions/secondary-functions/miscellaneous-functions/release_lock)
-- [IS_FREE_LOCK](/built-in-functions/secondary-functions/miscellaneous-functions/is_free_lock)
-- [IS_USED_LOCK](/built-in-functions/secondary-functions/miscellaneous-functions/is_used_lock)
-- [RELEASE_ALL_LOCKS](/built-in-functions/secondary-functions/miscellaneous-functions/release_all_locks)
+- [RELEASE_LOCK](/built-in-functions/secondary-functions/miscellaneous-functions/release_lock/)
+- [IS_FREE_LOCK](/built-in-functions/secondary-functions/miscellaneous-functions/is_free_lock/)
+- [IS_USED_LOCK](/built-in-functions/secondary-functions/miscellaneous-functions/is_used_lock/)
+- [RELEASE_ALL_LOCKS](/built-in-functions/secondary-functions/miscellaneous-functions/release_all_locks/)

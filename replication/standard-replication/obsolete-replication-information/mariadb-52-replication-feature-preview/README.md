@@ -131,7 +131,7 @@ a fully non-blocking backup which can be used to provision a new slave.
 between transactions involving more than one storage engine (currently XTraDB
 and PBXT support this).
 
-### [Annotation of row-based replication events with the original SQL statement](/clients-utilities/mysqlbinlog/annotate_rows_log_event)
+### [Annotation of row-based replication events with the original SQL statement](/clients-utilities/mysqlbinlog/annotate_rows_log_event/)
 
 When using row-based replication, the binary log does not contain SQL
 statements, only discrete single-row insert/update/delete <em>events</em>. This can
@@ -143,7 +143,7 @@ This feature adds an option to include the original SQL statement as a
 comment in the binary log (and shown in mysqlbinlog output) for row-based
 replication events.
 
-### [Row-based replication for tables with no primary key](/replication/standard-replication/row-based-replication-with-no-primary-key)
+### [Row-based replication for tables with no primary key](/replication/standard-replication/row-based-replication-with-no-primary-key/)
 
 This feature can improve the performance of row-based replication on tables
 that do not have a primary key (or other unique key), but which do have another

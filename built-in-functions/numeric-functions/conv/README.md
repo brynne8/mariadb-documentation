@@ -20,7 +20,7 @@ integer or a string. The minimum base is 2 and the maximum base is 36. If
 Otherwise, <em>`N`</em> is treated as unsigned. `CONV()` works with 64-bit
 precision.
 
-Some shortcuts for this function are also available: [BIN()](/built-in-functions/string-functions/bin), [OCT()](/built-in-functions/numeric-functions/oct), [HEX()](/built-in-functions/string-functions/hex), [UNHEX()](/built-in-functions/string-functions/unhex). Also, MariaDB allows [binary](/sql-statements-structure/sql-language-structure/binary-literals) literal values and [hexadecimal](/sql-statements-structure/sql-language-structure/hexadecimal-literals) literal values.
+Some shortcuts for this function are also available: [BIN()](/built-in-functions/string-functions/bin/), [OCT()](/built-in-functions/numeric-functions/oct/), [HEX()](/built-in-functions/string-functions/hex/), [UNHEX()](/built-in-functions/string-functions/unhex/). Also, MariaDB allows [binary](/sql-statements-structure/sql-language-structure/binary-literals/) literal values and [hexadecimal](/sql-statements-structure/sql-language-structure/hexadecimal-literals/) literal values.
 
 ## Examples
 

@@ -2,7 +2,7 @@
 
 ##### MariaDB starting with [10.0](/kb/en/what-is-mariadb-100/)
 
-The `events_stages_summary_by_host_by_event_name` table was added in [MariaDB 10.0](/kb/en/what-is-mariadb-100/) (along with many other new [Performance Schema tables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/list-of-performance-schema-tables)).
+The `events_stages_summary_by_host_by_event_name` table was added in [MariaDB 10.0](/kb/en/what-is-mariadb-100/) (along with many other new [Performance Schema tables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/list-of-performance-schema-tables/)).
 
 The table lists stage events, summarized by host and event name.
 

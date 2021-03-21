@@ -16,7 +16,7 @@ In [MariaDB 10.3.2](/kb/en/mariadb-1032-release-notes/) and later, InnoDB suppor
 
 See [InnoDB Online DDL Operations with ALGORITHM=INSTANT: ALTER TABLE ... ADD COLUMN](/kb/en/innodb-online-ddl-operations-with-algorithminstant/#alter-table-add-column) for more information.
 
-This applies to <a undefined>ALTER TABLE ... ADD COLUMN</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... ADD COLUMN</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... DROP COLUMN`
 
@@ -24,11 +24,11 @@ In [MariaDB 10.4](/kb/en/what-is-mariadb-104/) and later, InnoDB supports droppi
 
 See [InnoDB Online DDL Operations with ALGORITHM=INSTANT: ALTER TABLE ... DROP COLUMN](/kb/en/innodb-online-ddl-operations-with-algorithminstant/#alter-table-drop-column) for more information.
 
-This applies to <a undefined>ALTER TABLE ... DROP COLUMN</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... DROP COLUMN</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... MODIFY COLUMN`
 
-This applies to <a undefined>ALTER TABLE ... MODIFY COLUMN</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... MODIFY COLUMN</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 #### Reordering Columns
 
@@ -68,25 +68,25 @@ ERROR 1845 (0A000): ALGORITHM=NOCOPY is not supported for this operation. Try AL
 
 #### Adding a New `ENUM` Option
 
-InnoDB supports adding a new [ENUM](/columns-storage-engines-and-plugins/data-types/string-data-types/enum) option to a column with <a undefined>ALGORITHM</a> set to `NOCOPY` in the cases where the operation supports having the <a undefined>ALGORITHM</a> clause set to `INSTANT`.
+InnoDB supports adding a new [ENUM](/columns-storage-engines-and-plugins/data-types/string-data-types/enum/) option to a column with <a undefined>ALGORITHM</a> set to `NOCOPY` in the cases where the operation supports having the <a undefined>ALGORITHM</a> clause set to `INSTANT`.
 
 See [InnoDB Online DDL Operations with ALGORITHM=INSTANT: Adding a New ENUM Option](/kb/en/innodb-online-ddl-operations-with-algorithminstant/#adding-a-new-enum-option) for more information.
 
 #### Adding a New `SET` Option
 
-InnoDB supports adding a new [SET](/columns-storage-engines-and-plugins/data-types/string-data-types/set-data-type) option to a column with <a undefined>ALGORITHM</a> set to `NOCOPY` in the cases where the operation supports having the <a undefined>ALGORITHM</a> clause set to `INSTANT`.
+InnoDB supports adding a new [SET](/columns-storage-engines-and-plugins/data-types/string-data-types/set-data-type/) option to a column with <a undefined>ALGORITHM</a> set to `NOCOPY` in the cases where the operation supports having the <a undefined>ALGORITHM</a> clause set to `INSTANT`.
 
 See [InnoDB Online DDL Operations with ALGORITHM=INSTANT: Adding a New SET Option](/kb/en/innodb-online-ddl-operations-with-algorithminstant/#adding-a-new-set-option) for more information.
 
 #### Removing System Versioning from a Column
 
-In [MariaDB 10.3.8](/kb/en/mariadb-1038-release-notes/) and later, InnoDB supports removing [system versioning](/sql-statements-structure/temporal-tables/system-versioned-tables) from a column with <a undefined>ALGORITHM</a> set to `NOCOPY` in the cases where the operation supports having the <a undefined>ALGORITHM</a> clause set to `INSTANT`.
+In [MariaDB 10.3.8](/kb/en/mariadb-1038-release-notes/) and later, InnoDB supports removing [system versioning](/sql-statements-structure/temporal-tables/system-versioned-tables/) from a column with <a undefined>ALGORITHM</a> set to `NOCOPY` in the cases where the operation supports having the <a undefined>ALGORITHM</a> clause set to `INSTANT`.
 
 See [InnoDB Online DDL Operations with ALGORITHM=INSTANT: Removing System Versioning from a Column](/kb/en/innodb-online-ddl-operations-with-algorithminstant/#removing-system-versioning-from-a-column) for more information.
 
 ### `ALTER TABLE ... ALTER COLUMN`
 
-This applies to <a undefined>ALTER TABLE ... ALTER COLUMN</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... ALTER COLUMN</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 #### Setting a Column's Default Value
 
@@ -106,7 +106,7 @@ InnoDB supports renaming a column with <a undefined>ALGORITHM</a> set to `NOCOPY
 
 See [InnoDB Online DDL Operations with ALGORITHM=INSTANT: ALTER TABLE ... CHANGE COLUMN](/kb/en/innodb-online-ddl-operations-with-algorithminstant/#alter-table-change-column) for more information.
 
-This applies to <a undefined>ALTER TABLE ... CHANGE COLUMN</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... CHANGE COLUMN</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ## Index Operations
 
@@ -129,7 +129,7 @@ ALTER TABLE tab ADD PRIMARY KEY (a);
 ERROR 1845 (0A000): ALGORITHM=NOCOPY is not supported for this operation. Try ALGORITHM=INPLACE
 ```
 
-This applies to <a undefined>ALTER TABLE ... ADD PRIMARY KEY</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... ADD PRIMARY KEY</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... DROP PRIMARY KEY`
 
@@ -149,11 +149,11 @@ ALTER TABLE tab DROP PRIMARY KEY;
 ERROR 1846 (0A000): ALGORITHM=NOCOPY is not supported. Reason: Dropping a primary key is not allowed without also adding a new primary key. Try ALGORITHM=COPY
 ```
 
-This applies to <a undefined>ALTER TABLE ... DROP PRIMARY KEY</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... DROP PRIMARY KEY</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... ADD INDEX` and `CREATE INDEX`
 
-This applies to <a undefined>ALTER TABLE ... ADD INDEX</a> and [CREATE INDEX](/sql-statements-structure/sql-statements/data-definition/create/create-index) for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... ADD INDEX</a> and [CREATE INDEX](/sql-statements-structure/sql-statements/data-definition/create/create-index/) for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 #### Adding a Plain Index
 
@@ -191,13 +191,13 @@ Query OK, 0 rows affected (0.009 sec)
 
 #### Adding a Fulltext Index
 
-InnoDB supports adding a [FULLTEXT](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes) index to a table with <a undefined>ALGORITHM</a> set to `NOCOPY`.
+InnoDB supports adding a [FULLTEXT](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) index to a table with <a undefined>ALGORITHM</a> set to `NOCOPY`.
 
 However, there are some limitations, such as:
 
-- Adding a [FULLTEXT](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes) index to a table that does not have a user-defined `FTS_DOC_ID` column will require the table to be rebuilt once. When the table is rebuilt, the system adds a hidden `FTS_DOC_ID` column. This initial operation will have to be performed with <a undefined>ALGORITHM</a> set to `INPLACE`.From that point forward, adding additional [FULLTEXT](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes) indexes to the same table will not require the table to be rebuilt, and <a undefined>ALGORITHM</a> can be set to `NOCOPY`.
+- Adding a [FULLTEXT](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) index to a table that does not have a user-defined `FTS_DOC_ID` column will require the table to be rebuilt once. When the table is rebuilt, the system adds a hidden `FTS_DOC_ID` column. This initial operation will have to be performed with <a undefined>ALGORITHM</a> set to `INPLACE`.From that point forward, adding additional [FULLTEXT](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) indexes to the same table will not require the table to be rebuilt, and <a undefined>ALGORITHM</a> can be set to `NOCOPY`.
 
-- Only one [FULLTEXT](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes) index may be added at a time when <a undefined>ALGORITHM</a> is set to `NOCOPY`.
+- Only one [FULLTEXT](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) index may be added at a time when <a undefined>ALGORITHM</a> is set to `NOCOPY`.
 
 This operation supports a read-only locking strategy. This strategy can be explicitly chosen by setting the <a undefined>LOCK</a> clause to `SHARED`. When this strategy is used, read-only concurrent DML is permitted.
 
@@ -237,7 +237,7 @@ CREATE FULLTEXT INDEX c_index ON tab (c);
 Query OK, 0 rows affected (0.016 sec)
 ```
 
-But this second command fails, because only one [FULLTEXT](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes) index can be added at a time:
+But this second command fails, because only one [FULLTEXT](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) index can be added at a time:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
@@ -258,7 +258,7 @@ ERROR 1846 (0A000): ALGORITHM=NOCOPY is not supported. Reason: InnoDB presently 
 
 #### Adding a Spatial Index
 
-InnoDB supports adding a [SPATIAL](/sql-statements-structure/geographic-geometric-features/spatial-index) index to a table with <a undefined>ALGORITHM</a> set to `NOCOPY`.
+InnoDB supports adding a [SPATIAL](/sql-statements-structure/geographic-geometric-features/spatial-index/) index to a table with <a undefined>ALGORITHM</a> set to `NOCOPY`.
 
 This operation supports a read-only locking strategy. This strategy can be explicitly chosen by setting the <a undefined>LOCK</a> clause to `SHARED`. When this strategy is used, read-only concurrent DML is permitted.
 
@@ -296,7 +296,7 @@ InnoDB supports dropping indexes from a table with <a undefined>ALGORITHM</a> se
 
 See [InnoDB Online DDL Operations with ALGORITHM=INSTANT: ALTER TABLE ... DROP INDEX and DROP INDEX](/kb/en/innodb-online-ddl-operations-with-algorithminstant/#alter-table-drop-index-and-drop-index) for more information.
 
-This applies to <a undefined>ALTER TABLE ... DROP INDEX</a> and [DROP INDEX](/sql-statements-structure/sql-statements/data-definition/drop/drop-index) for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... DROP INDEX</a> and [DROP INDEX](/sql-statements-structure/sql-statements/data-definition/drop/drop-index/) for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... ADD FOREIGN KEY`
 
@@ -345,7 +345,7 @@ ALTER TABLE tab1 ADD FOREIGN KEY tab2_fk (d) REFERENCES tab2 (a);
 Query OK, 0 rows affected (0.011 sec)
 ```
 
-This applies to <a undefined>ALTER TABLE ... ADD FOREIGN KEY</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... ADD FOREIGN KEY</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... DROP FOREIGN KEY`
 
@@ -353,17 +353,17 @@ InnoDB supports dropping foreign key constraints from a table with <a undefined>
 
 See [InnoDB Online DDL Operations with ALGORITHM=INSTANT: ALTER TABLE ... DROP FOREIGN KEY](/kb/en/innodb-online-ddl-operations-with-algorithminstant/#alter-table-drop-foreign-key) for more information.
 
-This applies to <a undefined>ALTER TABLE ... DROP FOREIGN KEY</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... DROP FOREIGN KEY</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ## Table Operations
 
 ### `ALTER TABLE ... AUTO_INCREMENT=...`
 
-InnoDB supports changing a table's [AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment) value with <a undefined>ALGORITHM</a> set to `NOCOPY` in the cases where the operation supports having the <a undefined>ALGORITHM</a> clause set to `INSTANT`.
+InnoDB supports changing a table's [AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment/) value with <a undefined>ALGORITHM</a> set to `NOCOPY` in the cases where the operation supports having the <a undefined>ALGORITHM</a> clause set to `INSTANT`.
 
 See [InnoDB Online DDL Operations with ALGORITHM=INSTANT: ALTER TABLE ... AUTO_INCREMENT=...](/kb/en/innodb-online-ddl-operations-with-algorithminstant/#alter-table-auto_increment) for more information.
 
-This applies to <a undefined>ALTER TABLE ... AUTO_INCREMENT=...</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... AUTO_INCREMENT=...</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... ROW_FORMAT=...`
 
@@ -383,7 +383,7 @@ ALTER TABLE tab ROW_FORMAT=COMPRESSED;
 ERROR 1846 (0A000): ALGORITHM=NOCOPY is not supported. Reason: Changing table options requires the table to be rebuilt. Try ALGORITHM=INPLACE
 ```
 
-This applies to <a undefined>ALTER TABLE ... ROW_FORMAT=...</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... ROW_FORMAT=...</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... KEY_BLOCK_SIZE=...`
 
@@ -404,7 +404,7 @@ ALTER TABLE tab KEY_BLOCK_SIZE=2;
 ERROR 1846 (0A000): ALGORITHM=NOCOPY is not supported. Reason: Changing table options requires the table to be rebuilt. Try ALGORITHM=INPLACE
 ```
 
-This applies to <a undefined>KEY_BLOCK_SIZE=...</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>KEY_BLOCK_SIZE=...</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... PAGE_COMPRESSED=1` and `ALTER TABLE ... PAGE_COMPRESSION_LEVEL=...`
 
@@ -416,11 +416,11 @@ In these versions, InnoDB also supports changing a table's <a undefined>PAGE_COM
 
 See [InnoDB Online DDL Operations with ALGORITHM=INSTANT: ALTER TABLE ... PAGE_COMPRESSED=1 and ALTER TABLE ... PAGE_COMPRESSION_LEVEL=...](/kb/en/innodb-online-ddl-operations-with-algorithminstant/#alter-table-page_compressed1-and-alter-table-page_compression_level) for more information.
 
-This applies to <a undefined>ALTER TABLE ... PAGE_COMPRESSED=...</a> and <a undefined>ALTER TABLE ... PAGE_COMPRESSION_LEVEL=...</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... PAGE_COMPRESSED=...</a> and <a undefined>ALTER TABLE ... PAGE_COMPRESSION_LEVEL=...</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... DROP SYSTEM VERSIONING`
 
-InnoDB does <strong>not</strong> support dropping [system versioning](/sql-statements-structure/temporal-tables/system-versioned-tables) from a table with <a undefined>ALGORITHM</a> set to `NOCOPY`.
+InnoDB does <strong>not</strong> support dropping [system versioning](/sql-statements-structure/temporal-tables/system-versioned-tables/) from a table with <a undefined>ALGORITHM</a> set to `NOCOPY`.
 
 For example:
 
@@ -436,7 +436,7 @@ ALTER TABLE tab DROP SYSTEM VERSIONING;
 ERROR 1845 (0A000): ALGORITHM=NOCOPY is not supported for this operation. Try ALGORITHM=INPLACE
 ```
 
-This applies to <a undefined>ALTER TABLE ... DROP SYSTEM VERSIONING</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... DROP SYSTEM VERSIONING</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... DROP CONSTRAINT`
 
@@ -444,7 +444,7 @@ In [MariaDB 10.3.6](/kb/en/mariadb-1036-release-notes/) and later, InnoDB suppor
 
 See [InnoDB Online DDL Operations with ALGORITHM=INSTANT: ALTER TABLE ... DROP CONSTRAINT](/kb/en/innodb-online-ddl-operations-with-algorithminstant/#alter-table-drop-constraint) for more information.
 
-This applies to <a undefined>ALTER TABLE ... DROP CONSTRAINT</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... DROP CONSTRAINT</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... FORCE`
 
@@ -464,7 +464,7 @@ ALTER TABLE tab FORCE;
 ERROR 1845 (0A000): ALGORITHM=NOCOPY is not supported for this operation. Try ALGORITHM=INPLACE
 ```
 
-This applies to <a undefined>ALTER TABLE ... FORCE</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... FORCE</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... ENGINE=InnoDB`
 
@@ -484,7 +484,7 @@ ALTER TABLE tab ENGINE=InnoDB;
 ERROR 1845 (0A000): ALGORITHM=NOCOPY is not supported for this operation. Try ALGORITHM=INPLACE
 ```
 
-This applies to <a undefined>ALTER TABLE ... ENGINE=InnoDB</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... ENGINE=InnoDB</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `OPTIMIZE TABLE ...`
 
@@ -520,7 +520,7 @@ OPTIMIZE TABLE tab;
 3 rows in set, 1 warning (0.002 sec)
 ```
 
-This applies to [OPTIMIZE TABLE](/replication/optimization-and-tuning/optimizing-tables/optimize-table) for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to [OPTIMIZE TABLE](/replication/optimization-and-tuning/optimizing-tables/optimize-table/) for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... RENAME TO` and `RENAME TABLE ...`
 
@@ -528,12 +528,12 @@ InnoDB supports renaming a table with <a undefined>ALGORITHM</a> set to `NOCOPY`
 
 See [InnoDB Online DDL Operations with ALGORITHM=INSTANT: ALTER TABLE ... RENAME TO and RENAME TABLE ...](/kb/en/innodb-online-ddl-operations-with-algorithminstant/#alter-table-rename-to-and-rename-table) for more information.
 
-This applies to <a undefined>ALTER TABLE ... RENAME TO</a> and [RENAME TABLE](/sql-statements-structure/sql-statements/data-definition/rename-table) for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... RENAME TO</a> and [RENAME TABLE](/sql-statements-structure/sql-statements/data-definition/rename-table/) for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ## Limitations
 
 ### Limitations Related to Generated (Virtual and Persistent/Stored) Columns
 
-[Generated columns](/sql-statements-structure/sql-statements/data-definition/create/generated-columns) do not currently support online DDL for all of the same operations that are supported for "real" columns.
+[Generated columns](/sql-statements-structure/sql-statements/data-definition/create/generated-columns/) do not currently support online DDL for all of the same operations that are supported for "real" columns.
 
 See [Generated (Virtual and Persistent/Stored) Columns: Statement Support](/kb/en/generated-columns/#statement-support) for more information on the limitations.

@@ -7,7 +7,7 @@ The diagnostics area contains information about the error conditions which were 
 The statement information area contains the following data:
 
 - NUMBER is the number of conditions which are present in the diagnostics area.
-- ROW_COUNT has the same value as the [ROW_COUNT()](/built-in-functions/secondary-functions/information-functions/row_count) function for the statement that produced the conditions.
+- ROW_COUNT has the same value as the [ROW_COUNT()](/built-in-functions/secondary-functions/information-functions/row_count/) function for the statement that produced the conditions.
 
 ## Condition Information
 
@@ -39,9 +39,9 @@ These properties can never be set to NULL. If they are empty, the empty string i
 
 The most common ones have a value for all built-in errors, and can be read both via SQL and via the API:
 
-RETURNED_SQLSTATE is the SQLSTATE of the condition. It is a five characters code, composed by a class (first two characters) and a subclass (last three characters). For more information about this property, refer to the [SQLSTATE](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate) page.
+RETURNED_SQLSTATE is the SQLSTATE of the condition. It is a five characters code, composed by a class (first two characters) and a subclass (last three characters). For more information about this property, refer to the [SQLSTATE](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate/) page.
 
-MYSQL_ERRNO is the error code. Each built-in condition has a unique numeric code. 0 indicates success, but it cannot be explicitly set or read via SQL. For a list of built-in error codes, refer to [MariaDB Error Codes](/sql-statements-structure/sql-language-structure/mariadb-error-codes). The API function to read it is mysql_errno().
+MYSQL_ERRNO is the error code. Each built-in condition has a unique numeric code. 0 indicates success, but it cannot be explicitly set or read via SQL. For a list of built-in error codes, refer to [MariaDB Error Codes](/sql-statements-structure/sql-language-structure/mariadb-error-codes/). The API function to read it is mysql_errno().
 
 MESSAGE_TEXT is a descriptive, human-readable message. For built-in errors, parsing this string is the only way to get more information about the error. For example, parsing a message like "Table 'tab1' already exists", a program can find out that the missing table is tab1. The API function to read it is mysql_error().
 
@@ -90,28 +90,28 @@ The maximum number of conditions that can be in the diagnostics area is <a undef
 
 The following statements explicitly add conditions to the diagnostics area:
 
-- [SIGNAL](/programming-customizing-mariadb/programmatic-compound-statements/signal): produces a custom error.
-- [RESIGNAL](/programming-customizing-mariadb/programmatic-compound-statements/resignal): after an error is produced, generates a modified version of that error.
+- [SIGNAL](/programming-customizing-mariadb/programmatic-compound-statements/signal/): produces a custom error.
+- [RESIGNAL](/programming-customizing-mariadb/programmatic-compound-statements/resignal/): after an error is produced, generates a modified version of that error.
 
 The following statements read contents from the diagnostics area:
 
-- [GET DIAGNOSTICS](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/get-diagnostics) is the only way to read all information
-- [SHOW WARNINGS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-warnings) shows a summary of errors, warnings and notes
-- [SHOW ERRORS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-errors) shows a summary of errors
+- [GET DIAGNOSTICS](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/get-diagnostics/) is the only way to read all information
+- [SHOW WARNINGS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-warnings/) shows a summary of errors, warnings and notes
+- [SHOW ERRORS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-errors/) shows a summary of errors
 
-[DECLARE HANDLER](/programming-customizing-mariadb/programmatic-compound-statements/declare-handler) can be used to handle error conditions within stored programs.
+[DECLARE HANDLER](/programming-customizing-mariadb/programmatic-compound-statements/declare-handler/) can be used to handle error conditions within stored programs.
 
-[DECLARE CONDITION](/programming-customizing-mariadb/programmatic-compound-statements/declare-condition) can be used to associate an SQLSTATE or an error code to a name. That name can be referenced in DECLARE HANDLER, SIGNAL and RESIGNAL statements.
+[DECLARE CONDITION](/programming-customizing-mariadb/programmatic-compound-statements/declare-condition/) can be used to associate an SQLSTATE or an error code to a name. That name can be referenced in DECLARE HANDLER, SIGNAL and RESIGNAL statements.
 
-All these statements can also be executed inside a stored routine. However, only SHOW WARNINGS and SHOW ERRORS can be executed as a prepared statement. After an [EXECUTE](/sql-statements-structure/sql-statements/prepared-statements/execute-statement) statement, the diagnostics area contains information about the prepared statement, if it produces error conditions.
+All these statements can also be executed inside a stored routine. However, only SHOW WARNINGS and SHOW ERRORS can be executed as a prepared statement. After an [EXECUTE](/sql-statements-structure/sql-statements/prepared-statements/execute-statement/) statement, the diagnostics area contains information about the prepared statement, if it produces error conditions.
 
 ## See Also
 
-- [RESIGNAL](/programming-customizing-mariadb/programmatic-compound-statements/resignal)
-- [SIGNAL](/programming-customizing-mariadb/programmatic-compound-statements/signal)
-- [HANDLER](/sql-statements-structure/nosql/handler)
-- [GET DIAGNOSTICS](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/get-diagnostics)
-- [SHOW WARNINGS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-warnings)
-- [SHOW ERRORS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-errors)
-- [DECLARE HANDLER](/programming-customizing-mariadb/programmatic-compound-statements/declare-handler)
-- [MariaDB Error Codes](/sql-statements-structure/sql-language-structure/mariadb-error-codes)
+- [RESIGNAL](/programming-customizing-mariadb/programmatic-compound-statements/resignal/)
+- [SIGNAL](/programming-customizing-mariadb/programmatic-compound-statements/signal/)
+- [HANDLER](/sql-statements-structure/nosql/handler/)
+- [GET DIAGNOSTICS](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/get-diagnostics/)
+- [SHOW WARNINGS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-warnings/)
+- [SHOW ERRORS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-errors/)
+- [DECLARE HANDLER](/programming-customizing-mariadb/programmatic-compound-statements/declare-handler/)
+- [MariaDB Error Codes](/sql-statements-structure/sql-language-structure/mariadb-error-codes/)

@@ -16,7 +16,7 @@ If a column has been set to ZEROFILL, all values will be prepended by zeros so t
 
 <strong>Note:</strong> If the ZEROFILL attribute has been specified, the column will automatically become UNSIGNED.
 
-For more details on the attributes, see [Numeric Data Type Overview](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/numeric-data-type-overview).
+For more details on the attributes, see [Numeric Data Type Overview](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/numeric-data-type-overview/).
 
 `SERIAL` is an alias for:
 
@@ -91,8 +91,8 @@ SELECT * FROM bigints;
 
 ## See Also
 
-- [Numeric Data Type Overview](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/numeric-data-type-overview)
-- [TINYINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/tinyint)
-- [SMALLINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/smallint)
-- [MEDIUMINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/mediumint)
-- [INTEGER](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int)
+- [Numeric Data Type Overview](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/numeric-data-type-overview/)
+- [TINYINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/tinyint/)
+- [SMALLINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/smallint/)
+- [MEDIUMINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/mediumint/)
+- [INTEGER](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int/)

@@ -14,7 +14,7 @@ JSON_MERGE_PATCH(json_doc, json_doc[, json_doc] ...)
 
 Merges the given JSON documents, returning the merged result, or NULL if any argument is NULL.
 
-`JSON_MERGE_PATCH` is an RFC 7396-compliant replacement for [JSON_MERGE](/built-in-functions/special-functions/json-functions/json_merge), which has been deprecated.
+`JSON_MERGE_PATCH` is an RFC 7396-compliant replacement for [JSON_MERGE](/built-in-functions/special-functions/json-functions/json_merge/), which has been deprecated.
 
 ## Example
 

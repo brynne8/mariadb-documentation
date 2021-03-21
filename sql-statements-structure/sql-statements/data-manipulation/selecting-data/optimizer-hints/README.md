@@ -2,7 +2,7 @@
 
 ## Optimizer hints
 
-There are some options available in [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) to affect the execution plan.  These are known as optimizer hints.
+There are some options available in [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) to affect the execution plan.  These are known as optimizer hints.
 
 #### HIGH PRIORITY
 
@@ -26,7 +26,7 @@ If the [query_cache_type](/kb/en/server-system-variables/#query_cache_type) syst
 
 #### SQL_CALC_FOUND_ROWS
 
-`SQL_CALC_FOUND_ROWS` is only applied when using the `LIMIT` clause. If this option is used, MariaDB will count how many rows would match the query, without the `LIMIT` clause. That number can be retrieved in the next query, using [FOUND_ROWS()](/built-in-functions/secondary-functions/information-functions/found_rows).
+`SQL_CALC_FOUND_ROWS` is only applied when using the `LIMIT` clause. If this option is used, MariaDB will count how many rows would match the query, without the `LIMIT` clause. That number can be retrieved in the next query, using [FOUND_ROWS()](/built-in-functions/secondary-functions/information-functions/found_rows/).
 
 #### USE/FORCE/IGNORE INDEX
 

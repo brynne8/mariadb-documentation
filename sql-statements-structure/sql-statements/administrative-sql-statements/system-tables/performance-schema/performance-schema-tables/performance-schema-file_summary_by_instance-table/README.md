@@ -1,6 +1,6 @@
 # Performance Schema file_summary_by_instance Table
 
-The [Performance Schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema) `file_summary_by_instance` table contains file events summarized by instance. As of [MariaDB 10.0](/kb/en/what-is-mariadb-100/), it contains the following columns:
+The [Performance Schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/) `file_summary_by_instance` table contains file events summarized by instance. As of [MariaDB 10.0](/kb/en/what-is-mariadb-100/), it contains the following columns:
 
 <table><tbody><tr><th>Column</th><th>Description</th></tr>
 <tr><td><code>FILE_NAME</code></td><td>File name.</td></tr>
@@ -34,7 +34,7 @@ Before MariaDB 10, the table contained only the `FILE_NAME`, `EVENT_NAME`, `COUN
 
 I/O operations can be avoided by caching, in which case they will not be recorded in this table.
 
-You can [TRUNCATE](/sql-statements-structure/sql-statements/table-statements/truncate-table) the table, which will reset all counters to zero.
+You can [TRUNCATE](/sql-statements-structure/sql-statements/table-statements/truncate-table/) the table, which will reset all counters to zero.
 
 ## Example
 

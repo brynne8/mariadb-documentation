@@ -2,12 +2,12 @@
 
 <strong>Release date:</strong> 23rd July 2019
 
-[MariaDB ColumnStore 1.2.5](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore) is a GA release of MariaDB ColumnStore. The MariaDB ColumnStore 1.2 series provides several new features and improvements over the MariaDB ColumnStore 1.1 release.
+[MariaDB ColumnStore 1.2.5](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/) is a GA release of MariaDB ColumnStore. The MariaDB ColumnStore 1.2 series provides several new features and improvements over the MariaDB ColumnStore 1.1 release.
 
-For an overview of [MariaDB ColumnStore](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore) see [MariaDB ColumnStore Architectural Overview](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-architectural-overview)
+For an overview of [MariaDB ColumnStore](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/) see [MariaDB ColumnStore Architectural Overview](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-architectural-overview/)
 
 Please provide feedback in [JIRA](https://jira.mariadb.org/browse/MCOL) for anything that is not working as expected so that we can fix it before we make the release available for the larger community.
-For general "how to questions" ask questions [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore) or subscribe to mariadb-columnstore@googlegroups.com
+For general "how to questions" ask questions [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/) or subscribe to mariadb-columnstore@googlegroups.com
 
 ## Notable changes
 
@@ -44,11 +44,11 @@ In addition, all bugs fixed in MariaDB ColumnStore 1.2.4 and earlier are implici
 
 The following procedure outlines upgrading a 1.1.7 ColumnStore install to 1.2.5:
 
-- [1.1.7 GA to 1.2.5 GA upgrade procedure](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/mariadb-columnstore-columnstore/mariadb-columnstore-12-upgrades/mariadb-columnstore-software-upgrade-117-ga-to-125-ga)
+- [1.1.7 GA to 1.2.5 GA upgrade procedure](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/mariadb-columnstore-columnstore/mariadb-columnstore-12-upgrades/mariadb-columnstore-software-upgrade-117-ga-to-125-ga/)
 
 The following procedure outlines upgrading a 1.2.x ColumnStore install to 1.2.5:
 
-- [1.2.x GA to 1.2.5 GA upgrade procedure](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/mariadb-columnstore-columnstore/mariadb-columnstore-12-upgrades/mariadb-columnstore-software-upgrade-12x-ga-to-125-ga)
+- [1.2.x GA to 1.2.5 GA upgrade procedure](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/mariadb-columnstore-columnstore/mariadb-columnstore-12-upgrades/mariadb-columnstore-software-upgrade-12x-ga-to-125-ga/)
 
 Multi version upgrades generally will work using the same procedure however we can't test every possible permutation so you should test your specific scenario outside of production first if you wish to try this (and this is good practice regardless).
 
@@ -60,7 +60,7 @@ There are a number bugs and known limitations within this version of MariaDB Col
 
 ## Documentation
 
-[MariaDB ColumnStore Documentation](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore)
+[MariaDB ColumnStore Documentation](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/)
 
 ## Packaging
 
@@ -68,7 +68,7 @@ RPM, Debian, and binary packages are provided for the Linux distributions suppor
 
 - The supported OS for the GA version are CentOS 6, CentOS 7, Debian 8, Debian 9, RedHat 6, RedHat 7, SUSE 12, Ubuntu 16.04 and Ubuntu 18.04.
 - Packages can be downloaded [here](https://mariadb.com/downloads/mariadb-ax) or can be installed from the [repositories](https://mariadb.com/kb/en/library/installing-mariadb-ax-from-the-package-repositories).
-- An Amazon AWS AMI Image is available for this release, please search for AMI name "MariaDB-ColumnStore-1.2.5". AMI specific installation instructions can be found [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/installing-and-configuring-a-columnstore-system-using-the-amazon-ami).
+- An Amazon AWS AMI Image is available for this release, please search for AMI name "MariaDB-ColumnStore-1.2.5". AMI specific installation instructions can be found [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/installing-and-configuring-a-columnstore-system-using-the-amazon-ami/).
 - Certified to run in Google Cloud Environment in the GA OSs.
 
 ## Source code

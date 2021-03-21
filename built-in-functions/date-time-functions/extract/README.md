@@ -8,9 +8,9 @@ EXTRACT(unit FROM date)
 
 ## Description
 
-The EXTRACT() function extracts the required unit from the date. See [Date and Time Units](/built-in-functions/date-time-functions/date-and-time-units) for a complete list of permitted units.
+The EXTRACT() function extracts the required unit from the date. See [Date and Time Units](/built-in-functions/date-time-functions/date-and-time-units/) for a complete list of permitted units.
 
-In [MariaDB 10.0.7](/kb/en/mariadb-1007-release-notes/) and [MariaDB 5.5.35](/kb/en/mariadb-5535-release-notes/), `EXTRACT (HOUR FROM ...)` was changed to return a value from 0 to 23, adhering to the SQL standard. Until [MariaDB 10.0.6](/kb/en/mariadb-1006-release-notes/) and [MariaDB 5.5.34](/kb/en/mariadb-5534-release-notes/), and in all versions of MySQL at least as of MySQL 5.7, it could return a value &gt; 23. [HOUR()](/built-in-functions/date-time-functions/hour) is not a standard function, so continues to adhere to the old behaviour inherited from MySQL.
+In [MariaDB 10.0.7](/kb/en/mariadb-1007-release-notes/) and [MariaDB 5.5.35](/kb/en/mariadb-5535-release-notes/), `EXTRACT (HOUR FROM ...)` was changed to return a value from 0 to 23, adhering to the SQL standard. Until [MariaDB 10.0.6](/kb/en/mariadb-1006-release-notes/) and [MariaDB 5.5.34](/kb/en/mariadb-5534-release-notes/), and in all versions of MySQL at least as of MySQL 5.7, it could return a value &gt; 23. [HOUR()](/built-in-functions/date-time-functions/hour/) is not a standard function, so continues to adhere to the old behaviour inherited from MySQL.
 
 ## Examples
 
@@ -57,6 +57,6 @@ SELECT EXTRACT(HOUR FROM '26:30:00'), HOUR('26:30:00');
 
 ## See Also
 
-- [Date and Time Units](/built-in-functions/date-time-functions/date-and-time-units)
-- [Date and Time Literals](/sql-statements-structure/sql-language-structure/date-and-time-literals)
-- [HOUR()](/built-in-functions/date-time-functions/hour)
+- [Date and Time Units](/built-in-functions/date-time-functions/date-and-time-units/)
+- [Date and Time Literals](/sql-statements-structure/sql-language-structure/date-and-time-literals/)
+- [HOUR()](/built-in-functions/date-time-functions/hour/)

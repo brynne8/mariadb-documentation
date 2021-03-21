@@ -4,7 +4,7 @@
 
 From [MariaDB 10.4.6](/kb/en/mariadb-1046-release-notes/), `mariadb-hotcopy` is a symlink to `mysqlhotcopy`, the deprecated backup script.
 
-See [mysqlhotcopy](/clients-utilities/backup-restore-and-import-clients/mysqlhotcopy) for details.
+See [mysqlhotcopy](/clients-utilities/backup-restore-and-import-clients/mysqlhotcopy/) for details.
 
 ##### MariaDB starting with [10.5.2](/kb/en/mariadb-1052-release-notes/)
 

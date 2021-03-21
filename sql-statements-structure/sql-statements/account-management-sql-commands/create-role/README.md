@@ -2,7 +2,7 @@
 
 ##### MariaDB starting with [10.0.5](/kb/en/mariadb-1005-release-notes/)
 
-[Roles](/mariadb-administration/user-server-security/user-account-management/roles) were introduced in [MariaDB 10.0.5](/kb/en/mariadb-1005-release-notes/).
+[Roles](/mariadb-administration/user-server-security/user-account-management/roles/) were introduced in [MariaDB 10.0.5](/kb/en/mariadb-1005-release-notes/).
 
 ## Syntax
 
@@ -14,18 +14,18 @@ CREATE [OR REPLACE] ROLE [IF NOT EXISTS] role
 
 ## Description
 
-The `CREATE ROLE` statement creates one or more MariaDB [roles](/mariadb-administration/user-server-security/user-account-management/roles). To
+The `CREATE ROLE` statement creates one or more MariaDB [roles](/mariadb-administration/user-server-security/user-account-management/roles/). To
 use it, you must have the global [CREATE USER](/kb/en/grant/#create-user)
 privilege or the [INSERT](/kb/en/grant/#table-privileges) privilege for the mysql
 database. For each account, `CREATE ROLE` creates a new row in the
 [mysql.user](/kb/en/mysqluser-table/) table that has no privileges, and with the
 corresponding `is_role` field set to `Y`. It also creates a record in the
-[mysql.roles_mapping](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlroles_mapping-table) table.
+[mysql.roles_mapping](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlroles_mapping-table/) table.
 
 If any of the specified roles already exist, `ERROR 1396 (HY000)` results. If
 an error occurs, `CREATE ROLE` will still create the roles that do not result
 in an error. The maximum length for a role is 128 characters. Role names can be
-quoted, as explained in the [Identifier names](/sql-statements-structure/sql-language-structure/identifier-names) page. Only
+quoted, as explained in the [Identifier names](/sql-statements-structure/sql-language-structure/identifier-names/) page. Only
 one error is produced for all roles which have not been created:
 
 ```sql
@@ -35,11 +35,11 @@ ERROR 1396 (HY000): Operation CREATE ROLE failed for 'a','b','c'
 Failed `CREATE` or `DROP` operations, for both users and roles, produce the
 same error code.
 
-`PUBLIC` and `NONE` are reserved, and cannot be used as role names. `NONE` is used to [unset a role](/sql-statements-structure/sql-statements/account-management-sql-commands/set-role) and `PUBLIC` has a special use in other systems, such as Oracle, so is reserved for compatibility purposes.
+`PUBLIC` and `NONE` are reserved, and cannot be used as role names. `NONE` is used to [unset a role](/sql-statements-structure/sql-statements/account-management-sql-commands/set-role/) and `PUBLIC` has a special use in other systems, such as Oracle, so is reserved for compatibility purposes.
 
-Before [MariaDB 10.1.13](/kb/en/mariadb-10113-release-notes/), the `CREATE ROLE` statement was not permitted in [prepared statements](/sql-statements-structure/sql-statements/prepared-statements).
+Before [MariaDB 10.1.13](/kb/en/mariadb-10113-release-notes/), the `CREATE ROLE` statement was not permitted in [prepared statements](/sql-statements-structure/sql-statements/prepared-statements/).
 
-For valid identifiers to use as role names, see [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names).
+For valid identifiers to use as role names, see [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names/).
 
 #### WITH ADMIN
 
@@ -126,6 +126,6 @@ SHOW WARNINGS;
 
 ## See Also
 
-- [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names)
+- [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names/)
 - [Roles Overview](/kb/en/roles-overview/)
-- [DROP ROLE](/sql-statements-structure/sql-statements/account-management-sql-commands/drop-role)
+- [DROP ROLE](/sql-statements-structure/sql-statements/account-management-sql-commands/drop-role/)

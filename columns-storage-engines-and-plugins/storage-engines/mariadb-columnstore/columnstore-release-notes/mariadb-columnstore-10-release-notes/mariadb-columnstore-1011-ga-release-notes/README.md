@@ -2,14 +2,14 @@
 
 <strong>Release date:</strong> 18th August 2017
 
-[MariaDB ColumnStore 1.0.11](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore) is a maintenance GA release of MariaDB ColumnStore. This release of MariaDB ColumnStore provides improvements over the previous 1.0.10 GA release.
+[MariaDB ColumnStore 1.0.11](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/) is a maintenance GA release of MariaDB ColumnStore. This release of MariaDB ColumnStore provides improvements over the previous 1.0.10 GA release.
 
 MariaDB ColumnStore 1.0.11 is a <strong><em>[GA](/kb/en/release-criteria/)</em></strong> release.
 
-For an overview of [MariaDB ColumnStore](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore) see [MariaDB ColumnStore Architectural Overview](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-architectural-overview)
+For an overview of [MariaDB ColumnStore](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/) see [MariaDB ColumnStore Architectural Overview](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-architectural-overview/)
 
 Please provide feedback in [JIRA](https://jira.mariadb.org/browse/MCOL) for anything that is not working as expected so that we can fix it before we make the release available for the larger community.
-For general "how to questions" ask questions [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore) or subscribe to mariadb-columnstore@googlegroups.com
+For general "how to questions" ask questions [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/) or subscribe to mariadb-columnstore@googlegroups.com
 
 ## Notable changes
 
@@ -37,7 +37,7 @@ For general "how to questions" ask questions [here](/columns-storage-engines-and
 
 Multi version upgrades are not supported, please upgrade versions prior to 1.0.10 before upgrading to 1.0.11:
 
-- [1.0.10 GA to 1.0.11 upgrade procedure](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/mariadb-columnstore-columnstore/mariadb-columnstore-10-upgrades/mariadb-columnstore-software-upgrade-1010-to-1011)
+- [1.0.10 GA to 1.0.11 upgrade procedure](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/mariadb-columnstore-columnstore/mariadb-columnstore-10-upgrades/mariadb-columnstore-software-upgrade-1010-to-1011/)
 
 ## Known issues and limitations
 
@@ -54,7 +54,7 @@ There are a number bugs and known limitations within this version of MariaDB Col
 - [MCOL-463](https://jira.mariadb.org/browse/MCOL-463) : gluster storage option in installer fails with an error. The installer option to install optimized for gluster storage will fail with an error. Manually set up gluster volumes can be used with the 'External' storage option.
 - [MCOL-540](https://jira.mariadb.org/browse/MCOL-540) : In a non root Ubuntu install with local query enabled, the PM servers crash and restart on table creation.
 - [MCOL-892](https://jira.mariadb.org/browse/MCOL-892) : 1.0.11 upgrade failed when base directory is nfs mounted
-- The current logging default generates full verbose debug logs. This can be controlled by making logging configuration changes as described [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/columnstore-system-monitoring-configuration).
+- The current logging default generates full verbose debug logs. This can be controlled by making logging configuration changes as described [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/columnstore-system-monitoring-configuration/).
 - While Millisecond and Microsecond storage is supported for datetime, time and timestamp columns, at this time the query results cannot return millisecond and microseconds.
 - UTF-8 Limitation
 <ul start="1"><li>UTF-8 must be declared at the table level if the instance has been set up with a UTF-8 profile. Tables created with a non-matching character set will yield indeterminate results. 
@@ -65,7 +65,7 @@ There are a number bugs and known limitations within this version of MariaDB Col
 
 ## Documentation
 
-[MariaDB ColumnStore Documentation](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore)
+[MariaDB ColumnStore Documentation](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/)
 
 ## Packaging
 
@@ -73,7 +73,7 @@ RPM, Debian, and binary packages are provided for the Linux distributions suppor
 
 - The supported OS for the GA version are CentOS 6, CentOS 7, Debian 8.6, Debian 9.1, RedHat 6, RedHat 7, SUSE 12, and Ubuntu 16.0.4.
 - Packages can be downloaded [here](https://mariadb.com/downloads/columnstore)
-- An Amazon AWS AMI Image is available for this release, please search for AMI name "MariaDB-ColumnStore-1.0.11". AMI specific installation instructions can be found [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/installing-and-configuring-a-columnstore-system-using-the-amazon-ami).
+- An Amazon AWS AMI Image is available for this release, please search for AMI name "MariaDB-ColumnStore-1.0.11". AMI specific installation instructions can be found [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/installing-and-configuring-a-columnstore-system-using-the-amazon-ami/).
 - Certified to run in Google Cloud Environment in the GA OSs.
 
 ## Source code

@@ -9,7 +9,7 @@ MultiLineStringFromWKB(wkb[,srid])
 
 ## Description
 
-Constructs a [MULTILINESTRING](/sql-statements-structure/geographic-geometric-features/geometry-constructors/multilinestring) value using its [WKB](/sql-statements-structure/geographic-geometric-features/wkb/well-known-binary-wkb-format)  representation and [SRID](/kb/en/srid/).
+Constructs a [MULTILINESTRING](/sql-statements-structure/geographic-geometric-features/geometry-constructors/multilinestring/) value using its [WKB](/sql-statements-structure/geographic-geometric-features/wkb/well-known-binary-wkb-format/)  representation and [SRID](/kb/en/srid/).
 
 `MLineFromWKB()` and `MultiLineStringFromWKB()` are synonyms.
 

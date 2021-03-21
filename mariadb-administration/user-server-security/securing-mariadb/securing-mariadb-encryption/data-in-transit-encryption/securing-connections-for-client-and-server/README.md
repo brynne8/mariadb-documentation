@@ -4,9 +4,9 @@ By default, MariaDB transmits data between the server and clients without encryp
 
 To mitigate this concern, MariaDB allows you to encrypt data in transit between the server and clients using the Transport Layer Security (TLS) protocol. TLS was formerly known as Secure Socket Layer (SSL), but strictly speaking the SSL protocol is a predecessor to TLS and, that version of the protocol is now considered insecure. The documentation still uses the term SSL often and for compatibility reasons TLS-related server system and status variables still use the prefix `ssl_`, but internally, MariaDB only supports its secure successors.
 
-In order to secure connections between the server and client, you need to ensure that your server was compiled with TLS support. See [Secure Connections Overview](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview) to determine how to check whether a server was compiled with TLS support.
+In order to secure connections between the server and client, you need to ensure that your server was compiled with TLS support. See [Secure Connections Overview](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview/) to determine how to check whether a server was compiled with TLS support.
 
-You also need an X509 certificate, a private key, and the Certificate Authority (CA) chain to verify the X509 certificate for the server. If you want to use two-way TLS, then you will also an X509 certificate, a private key, and the Certificate Authority (CA) chain to verify the X509 certificate for the client. If you want to use self-signed certificates that are created with OpenSSL, then see [Certificate Creation with OpenSSL](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/certificate-creation-with-openssl) for information on how to create those.
+You also need an X509 certificate, a private key, and the Certificate Authority (CA) chain to verify the X509 certificate for the server. If you want to use two-way TLS, then you will also an X509 certificate, a private key, and the Certificate Authority (CA) chain to verify the X509 certificate for the client. If you want to use self-signed certificates that are created with OpenSSL, then see [Certificate Creation with OpenSSL](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/certificate-creation-with-openssl/) for information on how to create those.
 
 ## Enabling TLS
 
@@ -19,7 +19,7 @@ In order to enable TLS on a MariaDB server that was compiled with TLS support, t
 - You need to set the path to the certificate authority (CA) chain that can verify the server's certificate by setting either the <a undefined>ssl_ca</a> or the <a undefined>ssl_capath</a> system variables.
 - If you want to restrict the server to certain ciphers, then you also need to set the <a undefined>ssl_cipher</a> system variable.
 
-For example, to set these variables for the server, add the system variables to a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files):
+For example, to set these variables for the server, add the system variables to a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/):
 
 ```sql
 [mariadb]
@@ -49,15 +49,15 @@ SHOW VARIABLES LIKE 'have_ssl';
 
 The `FLUSH SSL` command was first added in [MariaDB 10.4](/kb/en/what-is-mariadb-104/).
 
-In [MariaDB 10.4](/kb/en/what-is-mariadb-104/) and later, the `FLUSH SSL` command can be used to dynamically reinitialize the server's [TLS](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption) context.
+In [MariaDB 10.4](/kb/en/what-is-mariadb-104/) and later, the `FLUSH SSL` command can be used to dynamically reinitialize the server's [TLS](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/) context.
 
 See <a undefined>FLUSH SSL</a> for more information.
 
 ### Enabling TLS for MariaDB Clients
 
-Different [clients and utilities](/clients-utilities) may use different methods to enable TLS.
+Different [clients and utilities](/clients-utilities/) may use different methods to enable TLS.
 
-For many of the standard [clients and utilities](/clients-utilities) that come bundled with MariaDB, you can enable two-way TLS by adding the same options that were set for the server to a relevant client [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files). For example:
+For many of the standard [clients and utilities](/clients-utilities/) that come bundled with MariaDB, you can enable two-way TLS by adding the same options that were set for the server to a relevant client [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/). For example:
 
 ```sql
 [client-mariadb]
@@ -69,11 +69,11 @@ ssl_ca = /etc/my.cnf.d/certificates/ca.pem
 
 The specific options that you would need to set would depend on whether you want one-way TLS or two-way TLS, and whether you want to verify the server certificate.
 
-The same options may also enable TLS on non-standard [clients and utilities](/clients-utilities) that are linked with either [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html) or [MariaDB Connector/C](/kb/en/mariadb-connector-c/).
+The same options may also enable TLS on non-standard [clients and utilities](/clients-utilities/) that are linked with either [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html) or [MariaDB Connector/C](/kb/en/mariadb-connector-c/).
 
 #### Enabling Two-Way TLS for MariaDB Clients
 
-Two-way TLS means that both the client and server provide a private key and an X509 certificate. It is called "two-way" TLS because both the client and server can be authenticated. For example, to specify these options in a relevant client [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files), you could set the following:
+Two-way TLS means that both the client and server provide a private key and an X509 certificate. It is called "two-way" TLS because both the client and server can be authenticated. For example, to specify these options in a relevant client [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/), you could set the following:
 
 ```sql
 [client-mariadb]
@@ -84,7 +84,7 @@ ssl_ca = /etc/my.cnf.d/certificates/ca.pem
 ssl-verify-server-cert
 ```
 
-Or if you wanted to specify them on the command-line with the [mysql](/clients-utilities/mysql-client/mysql-command-line-client) client, then you could execute something like this:
+Or if you wanted to specify them on the command-line with the [mysql](/clients-utilities/mysql-client/mysql-command-line-client/) client, then you could execute something like this:
 
 ```sql
 $ mysql -u myuser -p -h myserver.mydomain.com \
@@ -100,7 +100,7 @@ Two-way SSL is required for an account if the `REQUIRE X509`, `REQUIRE SUBJECT`,
 
 ##### Enabling One-Way TLS for MariaDB Clients with Server Certificate Verification
 
-One-way TLS means that only the server provides a private key and an X509 certificate. When TLS is used without a client certificate, it is called "one-way" TLS, because only the server can be authenticated, so authentication is only possible in one direction. However, encryption is still possible in both directions. [Server certificate verification](/kb/en/secure-connections-overview/#server-certificate-verification) means that the client verifies that the certificate belongs to the server. For example, to specify these options in a a relevant client [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files), you could set the following:
+One-way TLS means that only the server provides a private key and an X509 certificate. When TLS is used without a client certificate, it is called "one-way" TLS, because only the server can be authenticated, so authentication is only possible in one direction. However, encryption is still possible in both directions. [Server certificate verification](/kb/en/secure-connections-overview/#server-certificate-verification) means that the client verifies that the certificate belongs to the server. For example, to specify these options in a a relevant client [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/), you could set the following:
 
 ```sql
 [client-mariadb]
@@ -109,7 +109,7 @@ ssl_ca = /etc/my.cnf.d/certificates/ca.pem
 ssl-verify-server-cert
 ```
 
-Or if you wanted to specify them on the command-line with the [mysql](/clients-utilities/mysql-client/mysql-command-line-client) client, then you could execute something like this:
+Or if you wanted to specify them on the command-line with the [mysql](/clients-utilities/mysql-client/mysql-command-line-client/) client, then you could execute something like this:
 
 ```sql
 $ mysql -u myuser -p -h myserver.mydomain.com \
@@ -119,7 +119,7 @@ $ mysql -u myuser -p -h myserver.mydomain.com \
 
 ##### Enabling One-Way TLS for MariaDB Clients without Server Certificate Verification
 
-One-way TLS means that only the server provides a private key and an X509 certificate. When TLS is used without a client certificate, it is called "one-way" TLS, because only the server can be authenticated, so authentication is only possible in one direction. However, encryption is still possible in both directions. For example, to specify these options in a a relevant client [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files), you could set the following:
+One-way TLS means that only the server provides a private key and an X509 certificate. When TLS is used without a client certificate, it is called "one-way" TLS, because only the server can be authenticated, so authentication is only possible in one direction. However, encryption is still possible in both directions. For example, to specify these options in a a relevant client [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/), you could set the following:
 
 ```sql
 [client-mariadb]
@@ -127,7 +127,7 @@ One-way TLS means that only the server provides a private key and an X509 certif
 ssl
 ```
 
-Or if you wanted to specify them on the command-line with the [mysql](/clients-utilities/mysql-client/mysql-command-line-client) client, then you could execute something like this:
+Or if you wanted to specify them on the command-line with the [mysql](/clients-utilities/mysql-client/mysql-command-line-client/) client, then you could execute something like this:
 
 ```sql
 $ mysql -u myuser -p -h myserver.mydomain.com \
@@ -166,7 +166,7 @@ From [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/), the [require_secure_t
 
 ### Requiring TLS for Specific User Accounts
 
-You can set certain TLS-related restrictions for specific user accounts. For instance, you might use this with user accounts that require access to sensitive data while sending it across networks that you do not control. These restrictions can be enabled for a user account with the [CREATE USER](/sql-statements-structure/sql-statements/account-management-sql-commands/create-user), [ALTER USER](/sql-statements-structure/sql-statements/account-management-sql-commands/alter-user), or [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant) statements. For example:
+You can set certain TLS-related restrictions for specific user accounts. For instance, you might use this with user accounts that require access to sensitive data while sending it across networks that you do not control. These restrictions can be enabled for a user account with the [CREATE USER](/sql-statements-structure/sql-statements/account-management-sql-commands/create-user/), [ALTER USER](/sql-statements-structure/sql-statements/account-management-sql-commands/alter-user/), or [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/) statements. For example:
 
 - A user account must connect via TLS if the user account is defined with the `REQUIRE SSL` clause.
 

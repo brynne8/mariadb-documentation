@@ -12,13 +12,13 @@ SHOW TRIGGERS [FROM db_name]
 <code class="highlight fixed" style="white-space:pre-wrap">SHOW TRIGGERS</code> lists the triggers currently defined for
 tables in a database (the default database unless a <code class="highlight fixed" style="white-space:pre-wrap">FROM</code>
 clause is given).  This statement requires the
-<code class="highlight fixed" style="white-space:pre-wrap">[TRIGGER](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-privileges)</code> privilege (prior to MySQL
+<code class="highlight fixed" style="white-space:pre-wrap">[TRIGGER](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-privileges/)</code> privilege (prior to MySQL
 5.1.22, it required the <code class="highlight fixed" style="white-space:pre-wrap">SUPER</code> privilege).
 
 The <code class="highlight fixed" style="white-space:pre-wrap">LIKE</code> clause, if present on its own, indicates which table names to
-match and causes the statement to display triggers for those tables. The <code class="highlight fixed" style="white-space:pre-wrap">WHERE</code> and <code class="highlight fixed" style="white-space:pre-wrap">LIKE</code> clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](/sql-statements-structure/sql-statements/administrative-sql-statements/show/extended-show).
+match and causes the statement to display triggers for those tables. The <code class="highlight fixed" style="white-space:pre-wrap">WHERE</code> and <code class="highlight fixed" style="white-space:pre-wrap">LIKE</code> clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](/sql-statements-structure/sql-statements/administrative-sql-statements/show/extended-show/).
 
-Similar information is stored in the [information_schema.TRIGGERS](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-triggers-table) table.
+Similar information is stored in the [information_schema.TRIGGERS](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-triggers-table/) table.
 
 ##### MariaDB starting with [10.2.3](/kb/en/mariadb-1023-release-notes/)
 
@@ -26,7 +26,7 @@ If there are multiple triggers for the same action, then the triggers are shown 
 
 ## Examples
 
-For the trigger defined at [Trigger Overview](/programming-customizing-mariadb/triggers-events/triggers/trigger-overview):
+For the trigger defined at [Trigger Overview](/programming-customizing-mariadb/triggers-events/triggers/trigger-overview/):
 
 ```sql
 SHOW triggers Like 'animals' \G
@@ -102,9 +102,9 @@ Old triggers created before MySQL 5.7 and [MariaDB 10.2.3](/kb/en/mariadb-1023-r
 
 ## See also
 
-- [Trigger Overview](/programming-customizing-mariadb/triggers-events/triggers/trigger-overview)
-- [CREATE TRIGGER](/programming-customizing-mariadb/triggers-events/triggers/create-trigger)
-- [DROP TRIGGER](/sql-statements-structure/sql-statements/data-definition/drop/drop-trigger)
-- [information_schema.TRIGGERS](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-triggers-table) table
-- [SHOW CREATE TRIGGER](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-trigger)
-- [Trigger Limitations](/programming-customizing-mariadb/triggers-events/triggers/trigger-limitations)
+- [Trigger Overview](/programming-customizing-mariadb/triggers-events/triggers/trigger-overview/)
+- [CREATE TRIGGER](/programming-customizing-mariadb/triggers-events/triggers/create-trigger/)
+- [DROP TRIGGER](/sql-statements-structure/sql-statements/data-definition/drop/drop-trigger/)
+- [information_schema.TRIGGERS](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-triggers-table/) table
+- [SHOW CREATE TRIGGER](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-trigger/)
+- [Trigger Limitations](/programming-customizing-mariadb/triggers-events/triggers/trigger-limitations/)

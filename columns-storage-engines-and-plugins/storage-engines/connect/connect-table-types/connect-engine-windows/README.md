@@ -18,4 +18,4 @@ For CONNECT:
 
 For plugins in general:
 
-[https://mariadb.com/kb/en/install-plugin/](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin)
+[https://mariadb.com/kb/en/install-plugin/](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin/)

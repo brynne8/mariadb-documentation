@@ -1,6 +1,6 @@
 # Performance Schema file_summary_by_event_name Table
 
-The [Performance Schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema) `file_summary_by_event_name` table contains file events summarized by event name. As of [MariaDB 10.0](/kb/en/what-is-mariadb-100/), it contains the following columns:
+The [Performance Schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/) `file_summary_by_event_name` table contains file events summarized by event name. As of [MariaDB 10.0](/kb/en/what-is-mariadb-100/), it contains the following columns:
 
 <table><tbody><tr><th>Column</th><th>Description</th></tr>
 <tr><td><code>EVENT_NAME</code></td><td>Event name.</td></tr>
@@ -32,7 +32,7 @@ Before MariaDB 10, the table contained only the `EVENT_NAME`, `COUNT_READ`, `COU
 
 I/O operations can be avoided by caching, in which case they will not be recorded in this table.
 
-You can [TRUNCATE](/sql-statements-structure/sql-statements/table-statements/truncate-table) the table, which will reset all counters to zero.
+You can [TRUNCATE](/sql-statements-structure/sql-statements/table-statements/truncate-table/) the table, which will reset all counters to zero.
 
 ## Example
 

@@ -11,7 +11,7 @@ AsWKB(g)
 
 ## Description
 
-Converts a value in internal geometry format to its [WKB](/sql-statements-structure/geographic-geometric-features/wkb/well-known-binary-wkb-format) representation and returns the binary result.
+Converts a value in internal geometry format to its [WKB](/sql-statements-structure/geographic-geometric-features/wkb/well-known-binary-wkb-format/) representation and returns the binary result.
 
 `ST_AsBinary()`, `AsBinary()`, `ST_AsWKB()` and `AsWKB()` are synonyms,
 

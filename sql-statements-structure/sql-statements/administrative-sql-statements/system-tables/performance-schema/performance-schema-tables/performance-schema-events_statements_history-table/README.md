@@ -2,7 +2,7 @@
 
 The `events_statements_history` table by default contains the ten most recent completed statement events per thread. This number can be adjusted by setting the [performance_schema_events_statements_history_size](/kb/en/performance-schema-system-variables/#performance_schema_events_statements_history_size) system variable when the server starts up.
 
-The table structure is identical to the [events_statements_current](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_current-table) table structure, and contains the following columns:
+The table structure is identical to the [events_statements_current](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_current-table/) table structure, and contains the following columns:
 
 The table contains the following columns:
 
@@ -51,4 +51,4 @@ The table contains the following columns:
 
 It is possible to empty this table with a `TRUNCATE TABLE` statement.
 
-[events_statements_current](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_current-table) and [events_statements_history_long](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_history_long-table) are related tables.
+[events_statements_current](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_current-table/) and [events_statements_history_long](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_history_long-table/) are related tables.

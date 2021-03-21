@@ -28,7 +28,7 @@ You can install MariaDB ColumnStore packages for Single-Server installs and for 
 
 Before install, make sure you go through the preparation guide to complete the system setup before installs the packages
 
-[https://mariadb.com/kb/en/library/preparing-for-columnstore-installation-11x/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-11x/preparing-for-columnstore-installation-11x)
+[https://mariadb.com/kb/en/library/preparing-for-columnstore-installation-11x/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-11x/preparing-for-columnstore-installation-11x/)
 
 NOTE: the Release is shown as x.x.x-x. replace that will the matching version that is downloaded. Example 1.1.3-1.
 
@@ -212,7 +212,7 @@ Follow the instructions for installing MariaDB Columnstore RPMs
 
 Follow the instructions for installing MariaDB Columnstore API RPM
 
-[https://mariadb.com/kb/en/library/columnstore-bulk-write-sdk/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk)
+[https://mariadb.com/kb/en/library/columnstore-bulk-write-sdk/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk/)
 
 ### MariaDB ColumnStore Tools
 
@@ -246,7 +246,7 @@ Additional information on the Java Connector:
 
 How to Install on the Data Adapters:
 
-[https://mariadb.com/kb/en/library/columnstore-streaming-data-adapters/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-streaming-data-adapters)
+[https://mariadb.com/kb/en/library/columnstore-streaming-data-adapters/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-streaming-data-adapters/)
 
 ### MariaDB MaxScale
 
@@ -298,7 +298,7 @@ Follow the instructions for installing MariaDB Columnstore binary package
 
 Follow the instructions for installing MariaDB Columnstore API RPM
 
-[https://mariadb.com/kb/en/library/columnstore-bulk-write-sdk/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk)
+[https://mariadb.com/kb/en/library/columnstore-bulk-write-sdk/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk/)
 
 ### MariaDB ColumnStore Tools
 
@@ -332,7 +332,7 @@ Additional information on the Java Connector:
 
 How to Install on the Data Adapters:
 
-[https://mariadb.com/kb/en/library/columnstore-streaming-data-adapters/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-streaming-data-adapters)
+[https://mariadb.com/kb/en/library/columnstore-streaming-data-adapters/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-streaming-data-adapters/)
 
 ### MariaDB MaxScale
 
@@ -518,7 +518,7 @@ Follow the instructions for installing MariaDB Columnstore DEBs
 
 Follow the instructions for installing MariaDB Columnstore API DEB
 
-[https://mariadb.com/kb/en/library/columnstore-bulk-write-sdk/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk)
+[https://mariadb.com/kb/en/library/columnstore-bulk-write-sdk/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk/)
 
 ### MariaDB ColumnStore Tools
 
@@ -552,7 +552,7 @@ Additional information on the Java Connector:
 
 How to Install on the Data Adapters:
 
-[https://mariadb.com/kb/en/library/columnstore-streaming-data-adapters/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-streaming-data-adapters)
+[https://mariadb.com/kb/en/library/columnstore-streaming-data-adapters/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-streaming-data-adapters/)
 
 ### MariaDB MaxScale
 
@@ -604,7 +604,7 @@ Follow the instructions for installing MariaDB Columnstore binary package
 
 Follow the instructions for installing MariaDB Columnstore API RPM
 
-[https://mariadb.com/kb/en/library/columnstore-bulk-write-sdk/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk)
+[https://mariadb.com/kb/en/library/columnstore-bulk-write-sdk/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk/)
 
 ### MariaDB ColumnStore Tools
 
@@ -638,7 +638,7 @@ Additional information on the Java Connector:
 
 How to Install on the Data Adapters:
 
-[https://mariadb.com/kb/en/library/columnstore-streaming-data-adapters/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-streaming-data-adapters)
+[https://mariadb.com/kb/en/library/columnstore-streaming-data-adapters/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-streaming-data-adapters/)
 
 ### MariaDB MaxScale
 
@@ -692,7 +692,7 @@ Follow the instructions for installing MariaDB Columnstore DEBs
 
 Follow the instructions for installing MariaDB Columnstore API DEB
 
-[https://mariadb.com/kb/en/library/columnstore-bulk-write-sdk/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk)
+[https://mariadb.com/kb/en/library/columnstore-bulk-write-sdk/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk/)
 
 ### MariaDB ColumnStore Tools
 
@@ -726,7 +726,7 @@ Additional information on the Java Connector:
 
 How to Install on the Data Adapters:
 
-[https://mariadb.com/kb/en/library/columnstore-streaming-data-adapters/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-streaming-data-adapters)
+[https://mariadb.com/kb/en/library/columnstore-streaming-data-adapters/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-streaming-data-adapters/)
 
 ### MariaDB MaxScale
 
@@ -778,7 +778,7 @@ Follow the instructions for installing MariaDB Columnstore binary package
 
 Follow the instructions for installing MariaDB Columnstore API RPM
 
-[https://mariadb.com/kb/en/library/columnstore-bulk-write-sdk/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk)
+[https://mariadb.com/kb/en/library/columnstore-bulk-write-sdk/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk/)
 
 ### MariaDB ColumnStore Tools
 
@@ -812,7 +812,7 @@ Additional information on the Java Connector:
 
 How to Install on the Data Adapters:
 
-[https://mariadb.com/kb/en/library/columnstore-streaming-data-adapters/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-streaming-data-adapters)
+[https://mariadb.com/kb/en/library/columnstore-streaming-data-adapters/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-streaming-data-adapters/)
 
 ### MariaDB MaxScale
 
@@ -866,7 +866,7 @@ Follow the instructions for installing MariaDB Columnstore DEBs
 
 Follow the instructions for installing MariaDB Columnstore API DEB
 
-[https://mariadb.com/kb/en/library/columnstore-bulk-write-sdk/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk)
+[https://mariadb.com/kb/en/library/columnstore-bulk-write-sdk/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk/)
 
 ### MariaDB ColumnStore Tools
 
@@ -900,7 +900,7 @@ Additional information on the Java Connector:
 
 How to Install on the Data Adapters:
 
-[https://mariadb.com/kb/en/library/columnstore-streaming-data-adapters/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-streaming-data-adapters)
+[https://mariadb.com/kb/en/library/columnstore-streaming-data-adapters/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-streaming-data-adapters/)
 
 ### MariaDB MaxScale
 
@@ -952,7 +952,7 @@ Follow the instructions for installing MariaDB Columnstore binary package
 
 Follow the instructions for installing MariaDB Columnstore API RPM
 
-[https://mariadb.com/kb/en/library/columnstore-bulk-write-sdk/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk)
+[https://mariadb.com/kb/en/library/columnstore-bulk-write-sdk/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk/)
 
 ### MariaDB ColumnStore Tools
 
@@ -986,7 +986,7 @@ Additional information on the Java Connector:
 
 How to Install on the Data Adapters:
 
-[https://mariadb.com/kb/en/library/columnstore-streaming-data-adapters/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-streaming-data-adapters)
+[https://mariadb.com/kb/en/library/columnstore-streaming-data-adapters/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-streaming-data-adapters/)
 
 ### MariaDB MaxScale
 
@@ -1040,7 +1040,7 @@ Follow the instructions for installing MariaDB Columnstore DEBs
 
 Follow the instructions for installing MariaDB Columnstore API DEB
 
-[https://mariadb.com/kb/en/library/columnstore-bulk-write-sdk/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk)
+[https://mariadb.com/kb/en/library/columnstore-bulk-write-sdk/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk/)
 
 ### MariaDB ColumnStore Tools
 
@@ -1074,7 +1074,7 @@ Additional information on the Java Connector:
 
 How to Install on the Data Adapters:
 
-[https://mariadb.com/kb/en/library/columnstore-streaming-data-adapters/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-streaming-data-adapters)
+[https://mariadb.com/kb/en/library/columnstore-streaming-data-adapters/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-streaming-data-adapters/)
 
 ### MariaDB MaxScale
 
@@ -1126,7 +1126,7 @@ Follow the instructions for installing MariaDB Columnstore binary package
 
 Follow the instructions for installing MariaDB Columnstore API RPM
 
-[https://mariadb.com/kb/en/library/columnstore-bulk-write-sdk/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk)
+[https://mariadb.com/kb/en/library/columnstore-bulk-write-sdk/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk/)
 
 ### MariaDB ColumnStore Tools
 
@@ -1160,7 +1160,7 @@ Additional information on the Java Connector:
 
 How to Install on the Data Adapters:
 
-[https://mariadb.com/kb/en/library/columnstore-streaming-data-adapters/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-streaming-data-adapters)
+[https://mariadb.com/kb/en/library/columnstore-streaming-data-adapters/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-streaming-data-adapters/)
 
 ### MariaDB MaxScale
 

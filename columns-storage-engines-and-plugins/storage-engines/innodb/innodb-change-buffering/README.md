@@ -2,9 +2,9 @@
 
 INSERT, UPDATE and DELETE statements can be particularly heavy operations to perform, as all indexes need to be updated after each change. For this reason these changes are often buffered.
 
-Pages are modified in the [buffer pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool), and not immediately on disk. When rows are deleted, a flag is set, thus rows are not immediately deleted on disk. Later the changes will be written to disk (''flushed'') by InnoDB background threads. Pages that have been modified in memory and not yet flushed are called dirty pages. The buffering of data changes is called Change Buffer.
+Pages are modified in the [buffer pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool/), and not immediately on disk. When rows are deleted, a flag is set, thus rows are not immediately deleted on disk. Later the changes will be written to disk (''flushed'') by InnoDB background threads. Pages that have been modified in memory and not yet flushed are called dirty pages. The buffering of data changes is called Change Buffer.
 
-Before [MariaDB 5.5](/kb/en/what-is-mariadb-55/), only inserted rows could be buffered, so this buffer was called Insert Buffer. The old name still appears in several places, for example in the output of [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status).
+Before [MariaDB 5.5](/kb/en/what-is-mariadb-55/), only inserted rows could be buffered, so this buffer was called Insert Buffer. The old name still appears in several places, for example in the output of [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/).
 
 The change buffer only contains changes to the indexes. Changes to UNIQUE indexes are primary keys cannot be buffered, because InnoDB has to read the disk to check for duplicate values.
 
@@ -50,4 +50,4 @@ The [innodb_change_buffer_max_size](/kb/en/xtradbinnodb-server-system-variables/
 
 ## See Also
 
-- [InnoDB Buffer Pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool)
+- [InnoDB Buffer Pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool/)

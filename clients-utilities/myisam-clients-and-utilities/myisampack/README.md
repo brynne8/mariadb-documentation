@@ -20,7 +20,7 @@ myisampack *.MYI
 is read, only the individual rows and columns required need to be decompressed,
 allowing for quicker reading.
 
-Once a table has been packed, use [myisamchk -rq](/clients-utilities/myisam-clients-and-utilities/myisamchk) (the quick
+Once a table has been packed, use [myisamchk -rq](/clients-utilities/myisam-clients-and-utilities/myisamchk/) (the quick
 and recover options) to rebuild its indexes.
 
 `myisampack` does not support partitioned tables.
@@ -53,7 +53,7 @@ The following variables can be set while passed as commandline options to
 ## Uncompressing
 
 To uncompress a table compressed with `myisampack`, use the
-[myisamchk -u](/clients-utilities/myisam-clients-and-utilities/myisamchk) option.
+[myisamchk -u](/clients-utilities/myisam-clients-and-utilities/myisamchk/) option.
 
 ## Examples
 
@@ -73,5 +73,5 @@ Data records: 1680
 
 ## See Also
 
-- [FLUSH TABLES FOR EXPORT](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export)
-- [myisamchk](/clients-utilities/myisam-clients-and-utilities/myisamchk)
+- [FLUSH TABLES FOR EXPORT](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export/)
+- [myisamchk](/clients-utilities/myisam-clients-and-utilities/myisamchk/)

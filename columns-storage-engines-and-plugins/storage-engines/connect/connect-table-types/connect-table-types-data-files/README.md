@@ -2,7 +2,7 @@
 
 Most of the tables processed by CONNECT are just plain DOS or UNIX data files,
 logically regarded as tables thanks to the description given when creating
-the table. This description comes from the [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table)
+the table. This description comes from the [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/)
 statement. Depending on the application, these tables can already exist as data
 files, used as is by CONNECT, or can have been physically made by CONNECT as
 the result of a `CREATE TABLE ... SELECT ...` and/or INSERT statement(s).
@@ -35,7 +35,7 @@ three values:
 </tbody></table>
 
 The `FILEID` special column, described
-[here](/columns-storage-engines-and-plugins/storage-engines/connect/using-connect/using-connect-virtual-and-special-columns), allows filtering the file
+[here](/columns-storage-engines-and-plugins/storage-engines/connect/using-connect/using-connect-virtual-and-special-columns/), allows filtering the file
 list or doing some grouping on the files that make a multiple table.
 
 <strong>Note:</strong> Multiple was not initially implemented for XML tables. This
@@ -49,15 +49,15 @@ technique of “file mapping”, in which a file is processed as if it were
 entirely in memory. Mapping is specified when creating the table by the use of
 the `MAPPED=YES` option. This does not apply to tables not handled by system
 I/O functions (<a undefined>XML</a> and
- [INI](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-ini-table-type)).
+ [INI](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-ini-table-type/)).
 
 ## Big File Tables
 
 Because all files are handled by the standard input/output functions of the
 operating system, their size is limited to 2GB, the maximum size handled by
 standard functions. For some table types, CONNECT can deal with files that are
-larger than 2GB, or prone to become larger than this limit. These are the [FIX](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-dos-and-fix-table-types),
-[BIN](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-bin-table-type) and [VEC](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-vec-table-type) types. To tell
+larger than 2GB, or prone to become larger than this limit. These are the [FIX](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-dos-and-fix-table-types/),
+[BIN](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-bin-table-type/) and [VEC](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-vec-table-type/) types. To tell
 connect to use input/output functions dealing with big files, specify the
 option `huge=1` or `huge=YES` for that table. Note however that CONNECT
 cannot randomly access tables having more than 2G records.
@@ -67,11 +67,11 @@ cannot randomly access tables having more than 2G records.
 CONNECT can make and process some tables whose data file is compressed. The
 only supported compression format is the gzlib format. Zip and zlib formats are
 supported differently. The table types that can be compressed are
-[DOS](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-dos-and-fix-table-types),
+[DOS](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-dos-and-fix-table-types/),
 [FIX](connect-dos-and-fix-table-typess),
-[BIN](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-bin-table-type),
-[CSV](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-csv-and-fmt-table-types) and
-[FMT](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-csv-and-fmt-table-types). This can save some disk space
+[BIN](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-bin-table-type/),
+[CSV](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-csv-and-fmt-table-types/) and
+[FMT](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-csv-and-fmt-table-types/). This can save some disk space
 at the cost of a somewhat longer processing time.
 
 Some restrictions apply to compressed tables:
@@ -89,11 +89,11 @@ Use the numeric compress option to specify a compressed table:
 
 These are based on files whose records represent one table row. Only the column representation within each record can differ. The following relational formatted tables are supported:
 
-- [DOS and FIX Table Types](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-dos-and-fix-table-types)
-- [DBF Table Type](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-dbf-table-type)
-- [BIN Table Type](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-bin-table-type)
-- [VEC Table Type](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-vec-table-type)
-- [CSV and FMT Table Types](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-csv-and-fmt-table-types)
+- [DOS and FIX Table Types](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-dos-and-fix-table-types/)
+- [DBF Table Type](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-dbf-table-type/)
+- [BIN Table Type](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-bin-table-type/)
+- [VEC Table Type](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-vec-table-type/)
+- [CSV and FMT Table Types](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-csv-and-fmt-table-types/)
 
 ## NoSQL Table Types
 
@@ -101,11 +101,11 @@ These are based on files that do not match the relational format but often repre
 
 The way it is done is different from what PostgreSQL does. In addition to including in a table some column values of a specific data format (JSON, XML) to be handled by specific functions, CONNECT can directly use JSON, XML or INI files that can be produced by other applications and this is the table definition that describes where and how the contained information must be retrieved.
 
-This is also different from what MariaDB does with [dynamic columns](/sql-statements-structure/nosql/dynamic-columns), which is close to what MySQL and PostgreSQL do with the JSON column type.
+This is also different from what MariaDB does with [dynamic columns](/sql-statements-structure/nosql/dynamic-columns/), which is close to what MySQL and PostgreSQL do with the JSON column type.
 
 The following NoSQL types are supported:
 
-- [XML Table Type](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-xml-table-type)
-- [JSON Table Type](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-json-table-type)
-- [INI Table Type](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-ini-table-type)
+- [XML Table Type](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-xml-table-type/)
+- [JSON Table Type](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-json-table-type/)
+- [INI Table Type](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-ini-table-type/)
 

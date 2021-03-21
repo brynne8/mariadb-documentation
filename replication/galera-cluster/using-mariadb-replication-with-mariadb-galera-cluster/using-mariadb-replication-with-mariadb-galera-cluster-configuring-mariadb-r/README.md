@@ -1,6 +1,6 @@
 # Configuring MariaDB Replication between MariaDB Galera Cluster and MariaDB Server
 
-[MariaDB replication](/kb/en/high-availability-performance-tuning-mariadb-replication/) can be used to replication between [MariaDB Galera Cluster](/replication/galera-cluster) and MariaDB Server. This article will discuss how to do that.
+[MariaDB replication](/kb/en/high-availability-performance-tuning-mariadb-replication/) can be used to replication between [MariaDB Galera Cluster](/replication/galera-cluster/) and MariaDB Server. This article will discuss how to do that.
 
 ## Configuring the Cluster
 
@@ -12,11 +12,11 @@ Before we set up replication, we need to ensure that the cluster is configured p
 
 ### Configuring Wsrep GTID Mode
 
-If you want to use [GTID](/replication/standard-replication/gtid) replication, then you also need to configure some things to [enable wsrep GTID mode](/kb/en/using-mariadb-gtids-with-mariadb-galera-cluster/#enabling-wsrep-gtid-mode). For example:
+If you want to use [GTID](/replication/standard-replication/gtid/) replication, then you also need to configure some things to [enable wsrep GTID mode](/kb/en/using-mariadb-gtids-with-mariadb-galera-cluster/#enabling-wsrep-gtid-mode). For example:
 
 - <a undefined>wsrep_gtid_mode=ON</a> needs to be set on all nodes in the cluster.
 
-- <a undefined>wsrep_gtid_domain_id</a> needs to be set to the same value on all nodes in the cluster, so that each cluster node uses the same domain when assigning [GTIDs](/replication/standard-replication/gtid) for Galera Cluster's write sets.
+- <a undefined>wsrep_gtid_domain_id</a> needs to be set to the same value on all nodes in the cluster, so that each cluster node uses the same domain when assigning [GTIDs](/replication/standard-replication/gtid/) for Galera Cluster's write sets.
 
 - <a undefined>log_slave_updates</a> needs to be enabled on all nodes in the cluster. See [MDEV-9855](https://jira.mariadb.org/browse/MDEV-9855) about that.
 
@@ -24,7 +24,7 @@ If you want to use [GTID](/replication/standard-replication/gtid) replication, t
 
 And as an extra safety measure:
 
-- <a undefined>gtid_domain_id</a> should be set to a different value on all nodes in a given cluster, and each of these values should be different than the configured <a undefined>wsrep_gtid_domain_id</a> value. This is to prevent a node from using the same domain used for Galera Cluster's write sets when assigning [GTIDs](/replication/standard-replication/gtid) for non-Galera transactions, such as DDL executed with <a undefined>wsrep_sst_method=RSU</a> set or DML executed with <a undefined>wsrep_on=OFF</a> set.
+- <a undefined>gtid_domain_id</a> should be set to a different value on all nodes in a given cluster, and each of these values should be different than the configured <a undefined>wsrep_gtid_domain_id</a> value. This is to prevent a node from using the same domain used for Galera Cluster's write sets when assigning [GTIDs](/replication/standard-replication/gtid/) for non-Galera transactions, such as DDL executed with <a undefined>wsrep_sst_method=RSU</a> set or DML executed with <a undefined>wsrep_on=OFF</a> set.
 
 ## Configuring the Slave
 
@@ -38,7 +38,7 @@ Before we set up replication, we also need to ensure that the MariaDB Server sla
 
 ## Setting up Replication
 
-Our process to set up replication is going to be similar to the process described at [Setting up a Replication Slave with Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/setting-up-a-replication-slave-with-mariabackup), but it will be modified a bit to work in this context.
+Our process to set up replication is going to be similar to the process described at [Setting up a Replication Slave with Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/setting-up-a-replication-slave-with-mariabackup/), but it will be modified a bit to work in this context.
 
 ### Start the Cluster
 
@@ -48,7 +48,7 @@ Once the nodes are started, you need to pick a specific node that will act as th
 
 ### Backup the Database on the Cluster's Master Node and Prepare It
 
-The first step is to simply take and prepare a fresh [full backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/full-backup-and-restore-with-mariabackup) of the node that you have chosen to be the replication master. For example:
+The first step is to simply take and prepare a fresh [full backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/full-backup-and-restore-with-mariabackup/) of the node that you have chosen to be the replication master. For example:
 
 ```sql
 $ mariabackup --backup \
@@ -92,7 +92,7 @@ Now that the backup has been restored to the MariaDB Server slave, you can [star
 
 ### Create a Replication User on the Cluster's Master
 
-Before the MariaDB Server slave can begin replicating from the cluster's master, you need to [create a user account](/sql-statements-structure/sql-statements/account-management-sql-commands/create-user) on the master that the slave can use to connect, and you need to [grant](/sql-statements-structure/sql-statements/account-management-sql-commands/grant) the user account the <a undefined>REPLICATION SLAVE</a> privilege. For example:
+Before the MariaDB Server slave can begin replicating from the cluster's master, you need to [create a user account](/sql-statements-structure/sql-statements/account-management-sql-commands/create-user/) on the master that the slave can use to connect, and you need to [grant](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/) the user account the <a undefined>REPLICATION SLAVE</a> privilege. For example:
 
 ```sql
 CREATE USER 'repl'@'dc2-dbserver1' IDENTIFIED BY 'password';
@@ -105,7 +105,7 @@ At this point, you need to get the replication coordinates of the master from th
 
 The coordinates will be in the <a undefined>xtrabackup_binlog_info</a> file.
 
-Mariabackup dumps replication coordinates in two forms: [GTID strings](/replication/standard-replication/gtid) and [binary log](/mariadb-administration/server-monitoring-logs/binary-log) file and position coordinates, like the ones you would normally see from <a undefined>SHOW MASTER STATUS</a> output. In this case, it is probably better to use the [GTID](/replication/standard-replication/gtid) coordinates.
+Mariabackup dumps replication coordinates in two forms: [GTID strings](/replication/standard-replication/gtid/) and [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) file and position coordinates, like the ones you would normally see from <a undefined>SHOW MASTER STATUS</a> output. In this case, it is probably better to use the [GTID](/replication/standard-replication/gtid/) coordinates.
 
 For example:
 
@@ -113,11 +113,11 @@ For example:
 mariadb-bin.000096 568 0-1-2
 ```
 
-Regardless of the coordinates you use, you will have to set up the master connection using [CHANGE MASTER TO](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to) and then start the replication threads with <a undefined>START SLAVE</a>.
+Regardless of the coordinates you use, you will have to set up the master connection using [CHANGE MASTER TO](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to/) and then start the replication threads with <a undefined>START SLAVE</a>.
 
 #### GTIDs
 
-If you want to use GTIDs, then you will have to first set <a undefined>gtid_slave_pos</a>  to the [GTID](/replication/standard-replication/gtid) coordinates that we pulled from the <a undefined>xtrabackup_binlog_info</a> file, and we would set `MASTER_USE_GTID=slave_pos` in the [CHANGE MASTER TO](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to) command. For example:
+If you want to use GTIDs, then you will have to first set <a undefined>gtid_slave_pos</a>  to the [GTID](/replication/standard-replication/gtid/) coordinates that we pulled from the <a undefined>xtrabackup_binlog_info</a> file, and we would set `MASTER_USE_GTID=slave_pos` in the [CHANGE MASTER TO](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to/) command. For example:
 
 ```sql
 SET GLOBAL gtid_slave_pos = "0-1-2";
@@ -132,7 +132,7 @@ START SLAVE;
 
 #### File and Position
 
-If you want to use the [binary log](/mariadb-administration/server-monitoring-logs/binary-log) file and position coordinates, then you would set `MASTER_LOG_FILE` and `MASTER_LOG_POS` in the [CHANGE MASTER TO](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to) command to the file and position coordinates that we pulled the <a undefined>xtrabackup_binlog_info</a> file. For example:
+If you want to use the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) file and position coordinates, then you would set `MASTER_LOG_FILE` and `MASTER_LOG_POS` in the [CHANGE MASTER TO](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to/) command to the file and position coordinates that we pulled the <a undefined>xtrabackup_binlog_info</a> file. For example:
 
 ```sql
 CHANGE MASTER TO 
@@ -161,7 +161,7 @@ You can also set up [circular replication](/kb/en/replication-overview/#ring-rep
 
 ### Create a Replication User on the MariaDB Server Master
 
-Before circular replication can begin, you also need to [create a user account](/sql-statements-structure/sql-statements/account-management-sql-commands/create-user) on the MariaDB Server, since it will be acting as replication master to the cluster's slave, and you need to [grant](/sql-statements-structure/sql-statements/account-management-sql-commands/grant) the user account the <a undefined>REPLICATION SLAVE</a> privilege. For example:
+Before circular replication can begin, you also need to [create a user account](/sql-statements-structure/sql-statements/account-management-sql-commands/create-user/) on the MariaDB Server, since it will be acting as replication master to the cluster's slave, and you need to [grant](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/) the user account the <a undefined>REPLICATION SLAVE</a> privilege. For example:
 
 ```sql
 CREATE USER 'repl'@'c1dbserver1' IDENTIFIED BY 'password';
@@ -170,7 +170,7 @@ GRANT REPLICATION SLAVE ON *.*  TO 'repl'@'c1dbserver1';
 
 ### Start Circular Replication on the Cluster
 
-How this is done would depend on whether you want to use the [GTID](/replication/standard-replication/gtid) coordinates or the [binary log](/mariadb-administration/server-monitoring-logs/binary-log) file and position coordinates.
+How this is done would depend on whether you want to use the [GTID](/replication/standard-replication/gtid/) coordinates or the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) file and position coordinates.
 
 Regardless, you need to ensure that the second cluster is not accepting any writes other than those that it replicates from the cluster at this stage.
 
@@ -182,7 +182,7 @@ To get the GTID coordinates on the MariaDB Server you can check <a undefined>gti
 SHOW GLOBAL VARIABLES LIKE 'gtid_current_pos';
 ```
 
-Then on the node acting as slave in the cluster, you can set up replication by setting <a undefined>gtid_slave_pos</a> to the GTID that was returned and then executing [CHANGE MASTER TO](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to):
+Then on the node acting as slave in the cluster, you can set up replication by setting <a undefined>gtid_slave_pos</a> to the GTID that was returned and then executing [CHANGE MASTER TO](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to/):
 
 ```sql
 SET GLOBAL gtid_slave_pos = "0-1-2";
@@ -197,13 +197,13 @@ START SLAVE;
 
 #### File and Position
 
-To get the [binary log](/mariadb-administration/server-monitoring-logs/binary-log) file and position coordinates on the MariaDB Server, you can execute <a undefined>SHOW MASTER STATUS</a>:
+To get the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) file and position coordinates on the MariaDB Server, you can execute <a undefined>SHOW MASTER STATUS</a>:
 
 ```sql
 SHOW MASTER STATUS
 ```
 
-Then on the node acting as slave in the cluster, you would set `master_log_file` and `master_log_pos` in the [CHANGE MASTER TO](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to) command. For example:
+Then on the node acting as slave in the cluster, you would set `master_log_file` and `master_log_pos` in the [CHANGE MASTER TO](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to/) command. For example:
 
 ```sql
 CHANGE MASTER TO 

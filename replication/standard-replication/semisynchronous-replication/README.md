@@ -10,11 +10,11 @@ Semisynchronous replication was significantly enhanced in [MariaDB 10.1.3](/kb/e
 
 ## Description
 
-[Standard MariaDB replication](/replication/standard-replication) is asynchronous, but MariaDB also provides a semisynchronous replication option.
+[Standard MariaDB replication](/replication/standard-replication/) is asynchronous, but MariaDB also provides a semisynchronous replication option.
 
 With regular asynchronous replication, slaves request events from the master's binary log whenever the slaves are ready. The master does not wait for a slave to confirm that an event has been received.
 
-With fully synchronous replication, all slaves are required to respond that they have received the events. See [Galera Cluster](/replication/galera-cluster).
+With fully synchronous replication, all slaves are required to respond that they have received the events. See [Galera Cluster](/replication/galera-cluster/).
 
 Semisynchronous replication waits for just one slave to acknowledge that it has received and logged the events.
 
@@ -32,7 +32,7 @@ In [MariaDB 10.3.3](/kb/en/mariadb-1033-release-notes/) and later, the Semisynch
 
 The semisynchronous replication plugin is actually two different plugins--one for the master, and one for the slave. Shared libraries for both plugins are included with MariaDB. Although the plugins' shared libraries distributed with MariaDB by default, the plugin is not actually installed by MariaDB by default prior to [MariaDB 10.3.3](/kb/en/mariadb-1033-release-notes/). There are two methods that can be used to install the plugin with MariaDB.
 
-The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname) or [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin).
+The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname/) or [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin/).
 
 For example, if it's a master:
 
@@ -46,7 +46,7 @@ Or if it's a slave:
 INSTALL SONAME 'semisync_slave';
 ```
 
-The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the <a undefined>--plugin-load</a> or the <a undefined>--plugin-load-add</a> options. This can be specified as a command-line argument to [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options) or it can be specified in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files).
+The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the <a undefined>--plugin-load</a> or the <a undefined>--plugin-load-add</a> options. This can be specified as a command-line argument to [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/) or it can be specified in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/).
 
 For example, if it's a master:
 
@@ -70,7 +70,7 @@ plugin_load_add = semisync_slave
 
 In [MariaDB 10.3.3](/kb/en/mariadb-1033-release-notes/) and later, the Semisynchronous Replication feature is built into MariaDB server and is no longer provided by a plugin. <strong>This means that uninstalling the plugin is not supported on those versions.</strong>
 
-You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname) or [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin).
+You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname/) or [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin/).
 
 For example, if it's a master:
 
@@ -84,13 +84,13 @@ Or if it's a slave:
 UNINSTALL SONAME 'semisync_slave';
 ```
 
-If you installed the plugin by providing the <a undefined>--plugin-load</a> or the <a undefined>--plugin-load-add</a> options in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
+If you installed the plugin by providing the <a undefined>--plugin-load</a> or the <a undefined>--plugin-load-add</a> options in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
 
 ## Enabling Semisynchronous Replication
 
 Semisynchronous replication can be enabled by setting the relevant system variables on the master and the slave.
 
-If a server needs to be able to switch between acting as a master and a slave, then you can enable both the master and slave system variables on the server. For example, you might need to do this if [MariaDB MaxScale](/mariadb-platform-x3/sample-platform-x3-implementation-for-transactional-and-analytical-workloads/mariadb-enterprise/maxscale) is being used to enable [auto-failover or switchover](/kb/en/mariadb-maxscale-23-mariadb-monitor/#cluster-manipulation-operations) with [MariaDB Monitor](/kb/en/mariadb-maxscale-23-mariadb-monitor/).
+If a server needs to be able to switch between acting as a master and a slave, then you can enable both the master and slave system variables on the server. For example, you might need to do this if [MariaDB MaxScale](/mariadb-platform-x3/sample-platform-x3-implementation-for-transactional-and-analytical-workloads/mariadb-enterprise/maxscale/) is being used to enable [auto-failover or switchover](/kb/en/mariadb-maxscale-23-mariadb-monitor/#cluster-manipulation-operations) with [MariaDB Monitor](/kb/en/mariadb-maxscale-23-mariadb-monitor/).
 
 ### Enabling Semisynchronous Replication on the Master
 
@@ -100,7 +100,7 @@ Semisynchronous replication can be enabled on the master by setting the <a undef
 SET GLOBAL rpl_semi_sync_master_enabled=ON;
 ```
 
-It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]
@@ -116,7 +116,7 @@ Semisynchronous replication can be enabled on the slave by setting the <a undefi
 SET GLOBAL rpl_semi_sync_slave_enabled=ON;
 ```
 
-It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]
@@ -135,7 +135,7 @@ If this is not done, and the slave thread is already running, then it will conti
 
 ## Configuring the Master Timeout
 
-In semisynchronous replication, only after the events have been written to the relay log and flushed does the slave acknowledge receipt of a transaction's events. If the slave does not acknowledge the transaction before a certain amount of time has passed, then a timeout occurs and the master switches to asynchronous replication. This will be reflected in the master's [error log](/mariadb-administration/server-monitoring-logs/error-log) with messages like the following:
+In semisynchronous replication, only after the events have been written to the relay log and flushed does the slave acknowledge receipt of a transaction's events. If the slave does not acknowledge the transaction before a certain amount of time has passed, then a timeout occurs and the master switches to asynchronous replication. This will be reflected in the master's [error log](/mariadb-administration/server-monitoring-logs/error-log/) with messages like the following:
 
 ```sql
 [Warning] Timeout waiting for reply of binlog (file: mariadb-1-bin.000002, pos: 538), semi-sync up to file , position 0.
@@ -144,7 +144,7 @@ In semisynchronous replication, only after the events have been written to the r
 
 When this occurs, the <a undefined>Rpl_semi_sync_master_status</a> status variable will be switched to `OFF`.
 
-When at least one semisynchronous slave catches up, semisynchronous replication is resumed. This will be reflected in the master's [error log](/mariadb-administration/server-monitoring-logs/error-log) with messages like the following:
+When at least one semisynchronous slave catches up, semisynchronous replication is resumed. This will be reflected in the master's [error log](/mariadb-administration/server-monitoring-logs/error-log/) with messages like the following:
 
 ```sql
 [Note] Semi-sync replication switched ON with slave (server_id: 184137206) at (mariadb-1-bin.000002, 215076)
@@ -160,7 +160,7 @@ If you see a lot of timeouts like this in your environment, then you may want to
 SET GLOBAL rpl_semi_sync_master_timeout=20000;
 ```
 
-It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]
@@ -193,7 +193,7 @@ It can be set dynamically with <a undefined>SET GLOBAL</a>. For example:
 SET GLOBAL rpl_semi_sync_master_wait_point='AFTER_SYNC';
 ```
 
-It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]
@@ -204,7 +204,7 @@ rpl_semi_sync_master_wait_point=AFTER_SYNC
 When this variable is set to `AFTER_SYNC`, the master performs the following steps:
 
 1 Prepares the transaction in the storage engine.
-2 Syncs the transaction to the [binary log](/mariadb-administration/server-monitoring-logs/binary-log).
+2 Syncs the transaction to the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/).
 3 Waits for acknowledgement from the slave.
 4 Commits the transaction to the storage engine.
 5 Returns an acknowledgement to the client.
@@ -215,12 +215,12 @@ The effects of the `AFTER_SYNC` wait point are:
 
 - If the master crashes, then failover should be lossless, because all transactions committed on the master would have been replicated to the slave.
 
-- However, if the master crashes, then its [binary log](/mariadb-administration/server-monitoring-logs/binary-log) may also contain events for transactions that were prepared by the storage engine and written to the binary log, but that were never actually committed by the storage engine. As part of the server's [automatic crash recovery](/mariadb-administration/server-monitoring-logs/transaction-coordinator-log/heuristic-recovery-with-the-transaction-coordinator-log) process, the server may recover these prepared transactions when the server is restarted. This could cause the crashed master to become inconsistent with the slaves. Therefore, the crashed master may need to be rebuilt. See [MDEV-19733](https://jira.mariadb.org/browse/MDEV-19733) for more information.
+- However, if the master crashes, then its [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) may also contain events for transactions that were prepared by the storage engine and written to the binary log, but that were never actually committed by the storage engine. As part of the server's [automatic crash recovery](/mariadb-administration/server-monitoring-logs/transaction-coordinator-log/heuristic-recovery-with-the-transaction-coordinator-log/) process, the server may recover these prepared transactions when the server is restarted. This could cause the crashed master to become inconsistent with the slaves. Therefore, the crashed master may need to be rebuilt. See [MDEV-19733](https://jira.mariadb.org/browse/MDEV-19733) for more information.
 
 When this variable is set to `AFTER_COMMIT`, the master performs the following steps:
 
 1 Prepares the transaction in the storage engine.
-2 Syncs the transaction to the [binary log](/mariadb-administration/server-monitoring-logs/binary-log).
+2 Syncs the transaction to the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/).
 3 Commits the transaction to the storage engine.
 4 Waits for acknowledgement from the slave.
 5 Returns an acknowledgement to the client.
@@ -302,14 +302,14 @@ The effects of the `AFTER_COMMIT` wait point are:
 - <strong>Description:</strong> Whether the transaction should wait for semi-sync acknowledgement after having synced the binlog (`AFTER_SYNC`), or after having committed in storage engine (`AFTER_COMMIT`, the default).
 <ul start="1"><li>When this variable is set to `AFTER_SYNC`, the master performs the following steps:
 <ol start="1"><li>Prepares the transaction in the storage engine.
-</li><li>Syncs the transaction to the [binary log](/mariadb-administration/server-monitoring-logs/binary-log).
+</li><li>Syncs the transaction to the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/).
 </li><li>Waits for acknowledgement from the slave.
 </li><li>Commits the transaction to the storage engine.
 </li><li>Returns an acknowledgement to the client.
 </li></ol>
 </li><li>When this variable is set to `AFTER_COMMIT`, the master performs the following steps:
 <ol start="1"><li>Prepares the transaction in the storage engine.
-</li><li>Syncs the transaction to the [binary log](/mariadb-administration/server-monitoring-logs/binary-log).
+</li><li>Syncs the transaction to the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/).
 </li><li>Commits the transaction to the storage engine.
 </li><li>Waits for acknowledgement from the slave.
 </li><li>Returns an acknowledgement to the client.
@@ -384,7 +384,7 @@ The effects of the `AFTER_COMMIT` wait point are:
 <ul start="1"><li>`OFF` - Disables the plugin without removing it from the <a undefined>mysql.plugins</a> table.
 </li><li>`ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
 </li><li>`FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
-</li><li>`FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname) or [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin) while the server is running.
+</li><li>`FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname/) or [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin/) while the server is running.
 </li></ul>
 </li><li>See [Plugin Overview: Configuring Plugin Activation at Server Startup](/kb/en/plugin-overview/#configuring-plugin-activation-at-server-startup) for more information.
 </li></ul>
@@ -403,7 +403,7 @@ The effects of the `AFTER_COMMIT` wait point are:
 <ul start="1"><li>`OFF` - Disables the plugin without removing it from the <a undefined>mysql.plugins</a> table.
 </li><li>`ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
 </li><li>`FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
-</li><li>`FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname) or [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin) while the server is running.
+</li><li>`FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname/) or [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin/) while the server is running.
 </li></ul>
 </li><li>See [Plugin Overview: Configuring Plugin Activation at Server Startup](/kb/en/plugin-overview/#configuring-plugin-activation-at-server-startup) for more information.
 </li></ul>
@@ -417,4 +417,4 @@ The effects of the `AFTER_COMMIT` wait point are:
 
 ## Status Variables
 
-For a list of status variables added when the plugin is installed, see [Semisynchronous Replication Plugin Status Variables](/replication/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables).
+For a list of status variables added when the plugin is installed, see [Semisynchronous Replication Plugin Status Variables](/replication/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables/).

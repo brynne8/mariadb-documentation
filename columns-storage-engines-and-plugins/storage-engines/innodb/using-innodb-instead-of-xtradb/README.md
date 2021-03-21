@@ -1,6 +1,6 @@
 # Using InnoDB Instead of XtraDB
 
-By default [MariaDB 10.1](/kb/en/what-is-mariadb-101/) and earlier releases come compiled with [XtraDB](/columns-storage-engines-and-plugins/storage-engines/innodb/about-xtradb) as the default InnoDB replacement. From [MariaDB 10.2](/kb/en/what-is-mariadb-102/), InnoDB is the default.
+By default [MariaDB 10.1](/kb/en/what-is-mariadb-101/) and earlier releases come compiled with [XtraDB](/columns-storage-engines-and-plugins/storage-engines/innodb/about-xtradb/) as the default InnoDB replacement. From [MariaDB 10.2](/kb/en/what-is-mariadb-102/), InnoDB is the default.
 
 ##### MariaDB starting with [5.5](/kb/en/what-is-mariadb-55/)
 
@@ -29,4 +29,4 @@ The reasons you may want to use InnoDB instead of XtraDB are:
 
 ## See Also
 
-- [Compiling with the InnoDB plugin from Oracle](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/compiling-with-the-innodb-plugin-from-oracle)
+- [Compiling with the InnoDB plugin from Oracle](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/compiling-with-the-innodb-plugin-from-oracle/)

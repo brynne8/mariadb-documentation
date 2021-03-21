@@ -15,7 +15,7 @@ scale).
 - The decimal point and (for negative numbers) the "-" sign are not
 counted in `M`.
 - If `D` is `0`, values have no decimal point or fractional
-part and on [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert) the value will be rounded to the nearest `DECIMAL`.
+part and on [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/) the value will be rounded to the nearest `DECIMAL`.
 - The maximum number of digits (`M`) for `DECIMAL` is 65.
 - The maximum number of supported decimals (`D`) is `30` before [MariadB 10.2.1](/kb/en/mariadb-1021-release-notes/) and `38` afterwards.
 - If `D` is omitted, the default is `0`. If `M` is omitted, the default is `10`.
@@ -28,7 +28,7 @@ of digits specified by `M`.
 All basic calculations (+, -, *, /) with `DECIMAL` columns are done with
 a precision of 65 digits.
 
-For more details on the attributes, see [Numeric Data Type Overview](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/numeric-data-type-overview).
+For more details on the attributes, see [Numeric Data Type Overview](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/numeric-data-type-overview/).
 
 `DEC`, `NUMERIC` and `FIXED` are synonyms, as well as `NUMBER` in [Oracle mode from MariaDB 10.3](/kb/en/sql_modeoracle-from-mariadb-103/#synonyms-for-basic-sql-types).
 
@@ -87,5 +87,5 @@ SELECT * FROM t1;
 
 ## See Also
 
-- [Numeric Data Type Overview](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/numeric-data-type-overview)
+- [Numeric Data Type Overview](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/numeric-data-type-overview/)
 - [Oracle mode from MariaDB 10.3](/kb/en/sql_modeoracle-from-mariadb-103/#synonyms-for-basic-sql-types)

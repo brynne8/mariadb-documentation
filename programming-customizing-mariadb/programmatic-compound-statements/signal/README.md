@@ -29,15 +29,15 @@ error_property_name:
   | CURSOR_NAME
 ```
 
-`SIGNAL` empties the [diagnostics area](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/diagnostics-area) and produces a custom error. This statement can be used anywhere, but is generally useful when used inside a [stored program](/kb/en/stored-programs-and-views/). When the error is produced, it can be caught by a [HANDLER](/sql-statements-structure/nosql/handler). If not, the current stored program, or the current statement, will terminate with the specified error.
+`SIGNAL` empties the [diagnostics area](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/diagnostics-area/) and produces a custom error. This statement can be used anywhere, but is generally useful when used inside a [stored program](/kb/en/stored-programs-and-views/). When the error is produced, it can be caught by a [HANDLER](/sql-statements-structure/nosql/handler/). If not, the current stored program, or the current statement, will terminate with the specified error.
 
-Sometimes an error [HANDLER](/sql-statements-structure/nosql/handler) just needs to [SIGNAL](/programming-customizing-mariadb/programmatic-compound-statements/signal) the same error it received, optionally with some changes. Usually the [RESIGNAL](/programming-customizing-mariadb/programmatic-compound-statements/resignal) statement is the most convenient way to do this.
+Sometimes an error [HANDLER](/sql-statements-structure/nosql/handler/) just needs to [SIGNAL](/programming-customizing-mariadb/programmatic-compound-statements/signal/) the same error it received, optionally with some changes. Usually the [RESIGNAL](/programming-customizing-mariadb/programmatic-compound-statements/resignal/) statement is the most convenient way to do this.
 
-`error_condition` can be an [SQLSTATE](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate) value or a named error condition defined via [DECLARE CONDITION](/programming-customizing-mariadb/programmatic-compound-statements/declare-condition). [SQLSTATE](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate) must be a constant string consisting of five characters. These codes are standard to ODBC and ANSI SQL. For customized errors, the recommended [SQLSTATE](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate) is '45000'. For a list of SQLSTATE values used by MariaDB, see the [MariaDB Error Codes](/sql-statements-structure/sql-language-structure/mariadb-error-codes) page. The [SQLSTATE](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate) can be read via the API method `mysql_sqlstate( )`.
+`error_condition` can be an [SQLSTATE](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate/) value or a named error condition defined via [DECLARE CONDITION](/programming-customizing-mariadb/programmatic-compound-statements/declare-condition/). [SQLSTATE](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate/) must be a constant string consisting of five characters. These codes are standard to ODBC and ANSI SQL. For customized errors, the recommended [SQLSTATE](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate/) is '45000'. For a list of SQLSTATE values used by MariaDB, see the [MariaDB Error Codes](/sql-statements-structure/sql-language-structure/mariadb-error-codes/) page. The [SQLSTATE](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate/) can be read via the API method `mysql_sqlstate( )`.
 
-To specify error properties user-defined variables and [local variables](/programming-customizing-mariadb/programmatic-compound-statements/declare-variable) can be used, as well as [character set conversions](/kb/en/setting-character-sets-and-collations/#literals) (but you can't set a collation).
+To specify error properties user-defined variables and [local variables](/programming-customizing-mariadb/programmatic-compound-statements/declare-variable/) can be used, as well as [character set conversions](/kb/en/setting-character-sets-and-collations/#literals) (but you can't set a collation).
 
-The error properties, their type and their default values are explained in the [diagnostics area](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/diagnostics-area) page.
+The error properties, their type and their default values are explained in the [diagnostics area](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/diagnostics-area/) page.
 
 ## Errors
 
@@ -67,7 +67,7 @@ ERROR 1231 (42000): Variable 'MYSQL_ERRNO' can't be set to the value of '0'
 
 ## Examples
 
-Here's what happens if [SIGNAL](/programming-customizing-mariadb/programmatic-compound-statements/signal) is used in the client to generate errors:
+Here's what happens if [SIGNAL](/programming-customizing-mariadb/programmatic-compound-statements/signal/) is used in the client to generate errors:
 
 ```sql
 SIGNAL SQLSTATE '01000';
@@ -126,7 +126,7 @@ BEGIN
 END;
 ```
 
-In this example, we'll define a [HANDLER](/sql-statements-structure/nosql/handler) for an error code. When the error occurs, we [SIGNAL](/programming-customizing-mariadb/programmatic-compound-statements/signal) a more informative error which makes sense for our procedure:
+In this example, we'll define a [HANDLER](/sql-statements-structure/nosql/handler/) for an error code. When the error occurs, we [SIGNAL](/programming-customizing-mariadb/programmatic-compound-statements/signal/) a more informative error which makes sense for our procedure:
 
 ```sql
 CREATE PROCEDURE test_error()
@@ -144,8 +144,8 @@ END;
 
 ## See Also
 
-- [Diagnostics Area](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/diagnostics-area)
-- [RESIGNAL](/programming-customizing-mariadb/programmatic-compound-statements/resignal)
-- [HANDLER](/sql-statements-structure/nosql/handler)
+- [Diagnostics Area](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/diagnostics-area/)
+- [RESIGNAL](/programming-customizing-mariadb/programmatic-compound-statements/resignal/)
+- [HANDLER](/sql-statements-structure/nosql/handler/)
 - [Stored Routines](/kb/en/stored-programs-and-views/)
-- [MariaDB Error Codes](/sql-statements-structure/sql-language-structure/mariadb-error-codes)
+- [MariaDB Error Codes](/sql-statements-structure/sql-language-structure/mariadb-error-codes/)

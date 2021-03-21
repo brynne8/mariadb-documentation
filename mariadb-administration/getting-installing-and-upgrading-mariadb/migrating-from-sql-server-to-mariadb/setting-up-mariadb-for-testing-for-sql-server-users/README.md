@@ -16,7 +16,7 @@ There are two different ways to use MariaDB on Windows natively: using Zip packa
 
 In both cases, 32-bit platforms are still supported.
 
-Check the page [Installation issues on Windows](/mariadb-administration/getting-installing-and-upgrading-mariadb/troubleshooting-installation-issues/installation-issues-on-windows) to verify if current versions of MariaDB have troubles on Windows. More generally, it is a good idea to check the [Troubleshooting Installation Issues](/mariadb-administration/getting-installing-and-upgrading-mariadb/troubleshooting-installation-issues) category.
+Check the page [Installation issues on Windows](/mariadb-administration/getting-installing-and-upgrading-mariadb/troubleshooting-installation-issues/installation-issues-on-windows/) to verify if current versions of MariaDB have troubles on Windows. More generally, it is a good idea to check the [Troubleshooting Installation Issues](/mariadb-administration/getting-installing-and-upgrading-mariadb/troubleshooting-installation-issues/) category.
 
 ### ZIP Packages
 
@@ -24,17 +24,17 @@ Windows users don't necessarily need to install MariaDB to use it. They can down
 
 ##### MariaDB starting with [10.4.3](/kb/en/mariadb-1043-release-notes/)
 
-Starting with [MariaDB 10.4.3](/kb/en/mariadb-1043-release-notes/), it is necessary to run [mysql_install_db.exe](/mariadb-administration/getting-installing-and-upgrading-mariadb/mysql_install_dbexe) to install the data directory.
+Starting with [MariaDB 10.4.3](/kb/en/mariadb-1043-release-notes/), it is necessary to run [mysql_install_db.exe](/mariadb-administration/getting-installing-and-upgrading-mariadb/mysql_install_dbexe/) to install the data directory.
 
 The drawback is that MariaDB will need to be started and stopped from the command line.
 
-See [Installing MariaDB Windows ZIP Packages](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-windows-zip-packages).
+See [Installing MariaDB Windows ZIP Packages](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-windows-zip-packages/).
 
 ### MSI Packages
 
 MSI packages provide a friendly graphical interface to install MariaDB. The installation process is easy but flexible. For example, the user can decide which components to install, whether to install it as a service or not, and if networking should be enabled. An interface to uninstall MariaDB is also provided.
 
-See [Installing MariaDB MSI Packages on Windows](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows).
+See [Installing MariaDB MSI Packages on Windows](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows/).
 
 ## Installing MariaDB on Docker
 
@@ -44,10 +44,10 @@ Docker runs on all major operating systems. On Windows and MacOS it runs on a Li
 
 Docker's characteristics makes it optimal to test MariaDB functionalities without wasting time on installation and without making changes to the host system. However, it is not ideal to test MariaDB performance.
 
-See [Installing and Using MariaDB via Docker](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/installing-and-using-mariadb-via-docker).
+See [Installing and Using MariaDB via Docker](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/installing-and-using-mariadb-via-docker/).
 
 ## Reinitializing MariaDB Data Directory
 
-While experimenting with MariaDB, you could end up with an unusable installation. This occurs for example if you deliberately delete files that you shouldn't delete. If it happens, there is no need to uninstall and reinstall MariaDB. Instead, you can simply delete the contents of the data directory and run [mysql_install_db](/clients-utilities/mysql_install_db). The program will recreate your system tables and the essential files.
+While experimenting with MariaDB, you could end up with an unusable installation. This occurs for example if you deliberately delete files that you shouldn't delete. If it happens, there is no need to uninstall and reinstall MariaDB. Instead, you can simply delete the contents of the data directory and run [mysql_install_db](/clients-utilities/mysql_install_db/). The program will recreate your system tables and the essential files.
 
 To know where your data directory is, check the [datadir](/kb/en/server-system-variables/#datadir) system variable.

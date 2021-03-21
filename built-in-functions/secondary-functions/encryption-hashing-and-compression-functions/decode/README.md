@@ -21,7 +21,7 @@ DECODE_ORACLE(expr, search_expr, result_expr [, search_expr2, result_expr2 ...] 
 ## Description
 
 In the default mode, `DECODE` decrypts the encrypted string <em>crypt_str</em> using <em>pass_str</em> as the
-password. <em>crypt_str</em> should be a string returned from [ENCODE()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/encode). The resulting string will be the original string only if <em>pass_str</em> is the same.
+password. <em>crypt_str</em> should be a string returned from [ENCODE()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/encode/). The resulting string will be the original string only if <em>pass_str</em> is the same.
 
 In [Oracle mode](/kb/en/sql_modeoracle/) from [MariaDB 10.3.2](/kb/en/mariadb-1032-release-notes/), `DECODE` compares <em>expr</em> to the search expressions, in order. If it finds a match, the corresponding result expression is returned. If no matches are found, the default expression is returned, or NULL if no default is provided.
 

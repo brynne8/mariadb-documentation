@@ -10,9 +10,9 @@ DEFAULT(col_name)
 
 Returns the default value for a table column. If the column has no default value (and is not NULLABLE - NULLABLE fields have a NULL default), an error is returned.
 
-For integer columns using [AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment), `0` is returned.
+For integer columns using [AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment/), `0` is returned.
 
-When using `DEFAULT` as a value to set in an [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert) or [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update)
+When using `DEFAULT` as a value to set in an [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/) or [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/)
 statement, you can use the bare keyword `DEFAULT` without the parentheses and argument to
 refer to the column in context. You can only use `DEFAULT` as a bare keyword if you are using it
 alone without a surrounding expression or function.

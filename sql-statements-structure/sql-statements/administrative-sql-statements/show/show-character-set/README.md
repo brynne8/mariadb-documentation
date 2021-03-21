@@ -10,11 +10,11 @@ SHOW CHARACTER SET
 ## Description
 
 The <code class="fixed" style="white-space:pre-wrap">SHOW CHARACTER SET</code> statement shows all available [character sets](/kb/en/data-types-character-sets-and-collations/).  The <code class="fixed" style="white-space:pre-wrap">LIKE</code> clause, if present on its own, indicates which character
-set names to match. The <code class="highlight fixed" style="white-space:pre-wrap">WHERE</code> and <code class="highlight fixed" style="white-space:pre-wrap">LIKE</code> clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](/sql-statements-structure/sql-statements/administrative-sql-statements/show/extended-show).
+set names to match. The <code class="highlight fixed" style="white-space:pre-wrap">WHERE</code> and <code class="highlight fixed" style="white-space:pre-wrap">LIKE</code> clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](/sql-statements-structure/sql-statements/administrative-sql-statements/show/extended-show/).
 
-The same information can be queried from the [information_schema.CHARACTER_SETS](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-character_sets-table) table.
+The same information can be queried from the [information_schema.CHARACTER_SETS](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-character_sets-table/) table.
 
-See [Setting Character Sets and Collations](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/setting-character-sets-and-collations) for details on specifying the character set at the server, database, table and column levels.
+See [Setting Character Sets and Collations](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/setting-character-sets-and-collations/) for details on specifying the character set at the server, database, table and column levels.
 
 ## Examples
 

@@ -74,8 +74,8 @@ Then we'll need the following nodes:
 - "mariadb-node" for the nodes in "db-main". This role describes how to setup nodes of a cluster using Galera.
 - "mariadb-replica" for the members of "db-analytics". It describes a running replica, and it includes the tasks that are necessary to provision the node if the data directory is empty when the playbook is applied. The hostname of the primary server is defined in a variable.
 - "mariadb". The aforementioned "mariadb-node" and "mariadb-replica" can be children of this group. They have many things in common (filesystem for the data directory, some basic MariaDB configuration, some installed tools...), so it could make sense to avoid duplication and describe the common traits in a super-role.
-- A "mariabackup" role to take backups with [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup), running jobs during the night. We can associate this role to the "db-main" group, or we could create a child group for servers that will take the backups.
-- "mariadb-dump" for the server that takes dumps with [mariadb-dump](/clients-utilities/backup-restore-and-import-clients/mysqldump). Note that we may decide to take dumps on a replica, so the same host may belong to "db-analytics" and "mariadb-dump".
+- A "mariabackup" role to take backups with [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/), running jobs during the night. We can associate this role to the "db-main" group, or we could create a child group for servers that will take the backups.
+- "mariadb-dump" for the server that takes dumps with [mariadb-dump](/clients-utilities/backup-restore-and-import-clients/mysqldump/). Note that we may decide to take dumps on a replica, so the same host may belong to "db-analytics" and "mariadb-dump".
 - "proxysql" for the namesake group.
 
 ## Architecture

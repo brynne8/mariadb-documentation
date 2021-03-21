@@ -3,8 +3,8 @@
 ## Description
 
 MariaDB provides a standard way of creating spatial columns for geometry types,
-for example, with [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table) or [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table).
-Currently, spatial columns are supported for [MyISAM](/kb/en/myisam/), [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb), NDB, and [ARCHIVE](/columns-storage-engines-and-plugins/storage-engines/archive)
+for example, with [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/) or [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/).
+Currently, spatial columns are supported for [MyISAM](/kb/en/myisam/), [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/), NDB, and [ARCHIVE](/columns-storage-engines-and-plugins/storage-engines/archive/)
 tables. See also [SPATIAL INDEX](/kb/en/spatial/).
 
 The basic geometry type is `GEOMETRY`. But the type can be more specific. The following types are supported:
@@ -29,7 +29,7 @@ row can contain multiple types. For example:
 CREATE TABLE object (shapeA POLYGON, shapeB LINESTRING);
 ```
 
-### [POINT](/sql-statements-structure/geographic-geometric-features/geometry-constructors/point)
+### [POINT](/sql-statements-structure/geographic-geometric-features/geometry-constructors/point/)
 
 ```sql
 CREATE TABLE gis_point  (g POINT);
@@ -41,7 +41,7 @@ INSERT INTO gis_point VALUES
     (PointFromWKB(AsWKB(PointFromText('POINT(10 20)'))));
 ```
 
-### [LINESTRING](/sql-statements-structure/geographic-geometric-features/geometry-constructors/linestring)
+### [LINESTRING](/sql-statements-structure/geographic-geometric-features/geometry-constructors/linestring/)
 
 ```sql
 CREATE TABLE gis_line  (g LINESTRING);
@@ -52,7 +52,7 @@ INSERT INTO gis_line VALUES
     (LineStringFromWKB(AsWKB(LineString(Point(10, 10), Point(40, 10)))));
 ```
 
-### [POLYGON](/sql-statements-structure/geographic-geometric-features/geometry-constructors/polygon)
+### [POLYGON](/sql-statements-structure/geographic-geometric-features/geometry-constructors/polygon/)
 
 ```sql
 CREATE TABLE gis_polygon   (g POLYGON);
@@ -63,7 +63,7 @@ INSERT INTO gis_polygon VALUES
     (PolyFromWKB(AsWKB(Polygon(LineString(Point(0, 0), Point(30, 0), Point(30, 30), Point(0, 0))))));
 ```
 
-### [MULTIPOINT](/sql-statements-structure/geographic-geometric-features/geometry-constructors/multipoint)
+### [MULTIPOINT](/sql-statements-structure/geographic-geometric-features/geometry-constructors/multipoint/)
 
 ```sql
 CREATE TABLE gis_multi_point (g MULTIPOINT);
@@ -74,7 +74,7 @@ INSERT INTO gis_multi_point VALUES
     (MPointFromWKB(AsWKB(MultiPoint(Point(3, 6), Point(4, 10)))));
 ```
 
-### [MULTILINESTRING](/sql-statements-structure/geographic-geometric-features/geometry-constructors/multilinestring)
+### [MULTILINESTRING](/sql-statements-structure/geographic-geometric-features/geometry-constructors/multilinestring/)
 
 ```sql
 CREATE TABLE gis_multi_line (g MULTILINESTRING);
@@ -85,7 +85,7 @@ INSERT INTO gis_multi_line VALUES
     (MLineFromWKB(AsWKB(MultiLineString(LineString(Point(1, 2), Point(3, 5)), LineString(Point(2, 5), Point(5, 8), Point(21, 7))))));
 ```
 
-### [MULTIPOLYGON](/sql-statements-structure/geographic-geometric-features/geometry-constructors/multipolygon)
+### [MULTIPOLYGON](/sql-statements-structure/geographic-geometric-features/geometry-constructors/multipolygon/)
 
 ```sql
 CREATE TABLE gis_multi_polygon  (g MULTIPOLYGON);
@@ -96,7 +96,7 @@ INSERT INTO gis_multi_polygon VALUES
     (MPolyFromWKB(AsWKB(MultiPolygon(Polygon(LineString(Point(0, 3), Point(3, 3), Point(3, 0), Point(0, 3)))))));
 ```
 
-### [GEOMETRYCOLLECTION](/sql-statements-structure/geographic-geometric-features/geometry-constructors/geometrycollection)
+### [GEOMETRYCOLLECTION](/sql-statements-structure/geographic-geometric-features/geometry-constructors/geometrycollection/)
 
 ```sql
 CREATE TABLE gis_geometrycollection  (g GEOMETRYCOLLECTION);

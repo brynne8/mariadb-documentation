@@ -1,6 +1,6 @@
 # Information Schema APPLICABLE_ROLES Table
 
-The [Information Schema](/kb/en/information_schema/) `APPLICABLE_ROLES` table shows the [role authorizations](/mariadb-administration/user-server-security/user-account-management/roles) that the current user may use.
+The [Information Schema](/kb/en/information_schema/) `APPLICABLE_ROLES` table shows the [role authorizations](/mariadb-administration/user-server-security/user-account-management/roles/) that the current user may use.
 
 It contains the following columns:
 
@@ -11,7 +11,7 @@ It contains the following columns:
 <tr><td><code>IS_DEFAULT</code></td><td>Whether the role is the user's default role or not</td><td><a href="/kb/en/mariadb-1013-release-notes/">MariaDB 10.1.3</a></td></tr>
 </tbody></table>
 
-The current role is in the [ENABLED_ROLES](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-enabled_roles-table) Information Schema table.
+The current role is in the [ENABLED_ROLES](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-enabled_roles-table/) Information Schema table.
 
 ## Example
 

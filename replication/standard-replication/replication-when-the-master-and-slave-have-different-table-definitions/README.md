@@ -4,7 +4,7 @@ The terms <em>master</em> and <em>slave</em> have historically been used in repl
 
 While replication is usually meant to take place between masters and slaves with the same table definitions and this is recommended, in certain cases replication can still take place even if the definitions are identical.
 
-Tables on the slave and the master do not need to have the same definition in order for [replication](/replication) to take place. There can be differing numbers of columns, or differing data definitions and, in certain cases, replication can still proceed.
+Tables on the slave and the master do not need to have the same definition in order for [replication](/replication/) to take place. There can be differing numbers of columns, or differing data definitions and, in certain cases, replication can still proceed.
 
 ## Different Column Definitions - Attribute Promotion and Demotion
 
@@ -14,7 +14,7 @@ The conditions differ depending on whether [statement-based](/kb/en/binary-log-f
 
 ### Statement-Based Replication
 
-When using [statement-based replication](/kb/en/binary-log-formats/#statement-based), generally, if a statement can run successfully on the slave, it will be replicated. If a column definition is the same or a larger type on the slave than on the master, it can replicate successfully. For example a column defined as [VARCHAR(10)](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar) will successfully be replicated on a slave with a definition of `VARCHAR(12)`.
+When using [statement-based replication](/kb/en/binary-log-formats/#statement-based), generally, if a statement can run successfully on the slave, it will be replicated. If a column definition is the same or a larger type on the slave than on the master, it can replicate successfully. For example a column defined as [VARCHAR(10)](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar/) will successfully be replicated on a slave with a definition of `VARCHAR(12)`.
 
 Replicating to a slave where the column is defined as smaller than on the master can also work. For example, given the following table definitions:
 
@@ -145,7 +145,7 @@ SHOW SLAVE STATUS\G;
 
 #### Supported Conversions
 
-- Between [TINYINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/tinyint), [SMALLINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/smallint), [MEDIUMINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/mediumint), [INT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int) and [BIGINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/bigint). If lossy conversion is supported, the value from the master will be converted to the maximum or minimum permitted on the slave, which non-lossy conversions require the slave column to be large enough. For example, SMALLINT UNSIGNED can be converted to MEDIUMINT, but not SMALLINT SIGNED.
+- Between [TINYINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/tinyint/), [SMALLINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/smallint/), [MEDIUMINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/mediumint/), [INT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int/) and [BIGINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/bigint/). If lossy conversion is supported, the value from the master will be converted to the maximum or minimum permitted on the slave, which non-lossy conversions require the slave column to be large enough. For example, SMALLINT UNSIGNED can be converted to MEDIUMINT, but not SMALLINT SIGNED.
 
 ## Different Number or Order of Columns
 

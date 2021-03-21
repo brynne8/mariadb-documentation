@@ -1,6 +1,6 @@
 # SHOW ENGINE INNODB STATUS
 
-`SHOW ENGINE INNODB STATUS` is a specific form of the [SHOW ENGINE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine) statement that displays the [InnoDB Monitor](/kb/en/innodb-monitors/) output, which is extensive InnoDB information which can be useful in diagnosing problems.
+`SHOW ENGINE INNODB STATUS` is a specific form of the [SHOW ENGINE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine/) statement that displays the [InnoDB Monitor](/kb/en/innodb-monitors/) output, which is extensive InnoDB information which can be useful in diagnosing problems.
 
 The following sections are displayed
 
@@ -11,9 +11,9 @@ The following sections are displayed
 - <strong>LATEST DETECTED DEADLOCK:</strong> Only shown if there has been a deadlock, it displays the transactions involved in the deadlock and the statements being executed, held and required locked and the transaction rolled back to.
 - <strong>TRANSACTIONS:</strong> The output of this section can help identify lock contention, as well as reasons for the deadlocks.
 - <strong>FILE I/O:</strong> InnoDB thread information as well as pending I/O operations and I/O performance statistics.
-- <strong>INSERT BUFFER AND ADAPTIVE HASH INDEX:</strong> InnoDB insert buffer (old name for the [change buffer](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-change-buffering)) and adaptive hash index status information, including the number of each type of operation performed, and adaptive hash index performance.
+- <strong>INSERT BUFFER AND ADAPTIVE HASH INDEX:</strong> InnoDB insert buffer (old name for the [change buffer](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-change-buffering/)) and adaptive hash index status information, including the number of each type of operation performed, and adaptive hash index performance.
 - <strong>LOG:</strong> InnoDB log information, including current log sequence number, how far the log has been flushed to disk, the position at which InnoDB last took a checkpoint, pending writes and write performance statistics.
-- <strong>BUFFER POOL AND MEMORY:</strong> Information on buffer pool pages read and written, which allows you to see the number of data file I/O operations performed by your queries. See [InnoDB Buffer Pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool) for more. Similar information is also available from the [INFORMATION_SCHEMA.INNODB_BUFFER_POOL_STATS](/kb/en/information-schema-innodb_buffer_pool_stats-table/) table.
+- <strong>BUFFER POOL AND MEMORY:</strong> Information on buffer pool pages read and written, which allows you to see the number of data file I/O operations performed by your queries. See [InnoDB Buffer Pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool/) for more. Similar information is also available from the [INFORMATION_SCHEMA.INNODB_BUFFER_POOL_STATS](/kb/en/information-schema-innodb_buffer_pool_stats-table/) table.
 - <strong>ROW OPERATIONS:</strong>Information about the main thread, including the number and performance rate for each type of row operation.
 
 If the [innodb_status_output_locks](/kb/en/xtradbinnodb-server-system-variables/#innodb_status_output_locks) system variable is set to `1`, extended lock information will be displayed.

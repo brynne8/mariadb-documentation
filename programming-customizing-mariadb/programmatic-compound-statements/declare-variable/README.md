@@ -14,7 +14,7 @@ value can be specified as an expression (even subqueries are permitted); it need
 `DEFAULT` clause is missing, the initial value is `NULL`.
 
 Local variables are treated like stored routine parameters with respect to data
-type and overflow checking.  See [CREATE PROCEDURE](/programming-customizing-mariadb/stored-routines/stored-procedures/create-procedure).
+type and overflow checking.  See [CREATE PROCEDURE](/programming-customizing-mariadb/stored-routines/stored-procedures/create-procedure/).
 
 Local variables must be declared before `CONDITION`s, [CURSORs](/kb/en/programmatic-and-compound-statements-cursors/) and `HANDLER`s.
 
@@ -32,13 +32,13 @@ block, except those blocks that declare a variable with the same name.
 
 Anchored data types allow a data type to be defined based on another object, such as a table row, rather than specifically set in the declaration. If the anchor object changes, so will the anchored data type. This can lead to routines being easier to maintain, so that if the data type in the table is changed, it will automatically be changed in the routine as well.
 
-Variables declared with `ROW TYPE OF` will have the same features as implicit [ROW](/columns-storage-engines-and-plugins/data-types/string-data-types/row) variables. It is not possible to use `ROW TYPE OF` variables in a [LIMIT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/limit) clause.
+Variables declared with `ROW TYPE OF` will have the same features as implicit [ROW](/columns-storage-engines-and-plugins/data-types/string-data-types/row/) variables. It is not possible to use `ROW TYPE OF` variables in a [LIMIT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/limit/) clause.
 
-The real data type of `TYPE OF` and `ROW TYPE OF table_name` will become known at the very beginning of the stored routine call. [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) or [DROP TABLE](/sql-statements-structure/sql-statements/data-definition/drop/drop-table) statements performed inside the current routine on the tables that appear in anchors won't affect the data type of the anchored variables, even if the variable is declared after an [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) or [DROP TABLE](/sql-statements-structure/sql-statements/data-definition/drop/drop-table) statement.
+The real data type of `TYPE OF` and `ROW TYPE OF table_name` will become known at the very beginning of the stored routine call. [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) or [DROP TABLE](/sql-statements-structure/sql-statements/data-definition/drop/drop-table/) statements performed inside the current routine on the tables that appear in anchors won't affect the data type of the anchored variables, even if the variable is declared after an [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) or [DROP TABLE](/sql-statements-structure/sql-statements/data-definition/drop/drop-table/) statement.
 
 The real data type of a `ROW TYPE OF cursor_name` variable will become known when execution enters into the block where the variable is declared. Data type instantiation will happen only once. In a cursor `ROW TYPE OF` variable that is declared inside a loop, its data type will become known on the very first iteration and won't change on further loop iterations.
 
-The tables referenced in `TYPE OF` and `ROW TYPE OF` declarations will be checked for existence at the beginning of the stored routine call. [CREATE PROCEDURE](/programming-customizing-mariadb/stored-routines/stored-procedures/create-procedure) or [CREATE FUNCTION](/sql-statements-structure/sql-statements/data-definition/create/create-function) will not check the referenced tables for existence.
+The tables referenced in `TYPE OF` and `ROW TYPE OF` declarations will be checked for existence at the beginning of the stored routine call. [CREATE PROCEDURE](/programming-customizing-mariadb/stored-routines/stored-procedures/create-procedure/) or [CREATE FUNCTION](/sql-statements-structure/sql-statements/data-definition/create/create-function/) will not check the referenced tables for existence.
 
 ## Examples
 
@@ -54,4 +54,4 @@ DECLARE rec2 ROW TYPE OF cur1; -- Get the row data type from the cursor {{cur1}}
 
 ## See Also
 
-- [User-Defined variables](/sql-statements-structure/sql-language-structure/user-defined-variables)
+- [User-Defined variables](/sql-statements-structure/sql-language-structure/user-defined-variables/)

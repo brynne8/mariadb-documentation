@@ -14,4 +14,4 @@ make dist
 
 This creates a source file with a name like <code class="highlight fixed" style="white-space:pre-wrap">mysql-5.3.2-MariaDB-beta.tar.gz</code>
 
-See also [the generic build instructions](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/generic-build-instructions).
+See also [the generic build instructions](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/generic-build-instructions/).

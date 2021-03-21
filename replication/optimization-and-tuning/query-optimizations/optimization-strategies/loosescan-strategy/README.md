@@ -1,6 +1,6 @@
 # LooseScan Strategy
 
-LooseScan is an execution strategy for [Semi-join subqueries](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/semi-join-subquery-optimizations).
+LooseScan is an execution strategy for [Semi-join subqueries](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/semi-join-subquery-optimizations/).
 
 
 

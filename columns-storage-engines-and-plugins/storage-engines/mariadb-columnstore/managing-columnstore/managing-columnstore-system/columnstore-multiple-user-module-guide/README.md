@@ -8,7 +8,7 @@ This Document describes the setup and the functionality of the MariaDB ColumnSto
 
 The ColumnStore User Module manages and controls the operation of end-user queries. For additional details on this can be found here:
 
-[https://mariadb.com/kb/en/mariadb/columnstore-user-module/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-user-module)
+[https://mariadb.com/kb/en/mariadb/columnstore-user-module/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-user-module/)
 
 ## ColumnStore user module configuration
 
@@ -86,14 +86,14 @@ Active Alarm Counts: Critical = 0, Major = 0, Minor = 0, Warning = 0, Info = 0
 
 ```
 
-[https://mariadb.com/kb/en/mariadb/managing-columnstore-module-configurations/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/managing-columnstore-module-configurations)
+[https://mariadb.com/kb/en/mariadb/managing-columnstore-module-configurations/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/managing-columnstore-module-configurations/)
 
 ## ColumnStore multiple user module query execution
 
 Each of the User Modules have a MariaDB server process (mysqld) that that receive a query request from the MariaDB console or from remote applications via the MariaDB Port interface (defaulted is 3306). The MariaDB server process will send that request to the MariaDB ColumnStore process ExeMgr for processing.
 More details about how this is processed can be found here:
 
-[https://mariadb.com/kb/en/mariadb/columnstore-user-module/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-user-module)
+[https://mariadb.com/kb/en/mariadb/columnstore-user-module/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-user-module/)
 
 ## ColumnStore cross engine joins
 
@@ -101,7 +101,7 @@ MariaDB ColumnStore allows columnstore tables to be joined with non-columnstore 
 
 More information on ColumnStore Cross Engine Joins can be found here:
 
-[https://mariadb.com/kb/en/mariadb/configuring-columnstore-cross-engine-joins/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-database-environment/configuring-columnstore-cross-engine-joins)
+[https://mariadb.com/kb/en/mariadb/configuring-columnstore-cross-engine-joins/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-database-environment/configuring-columnstore-cross-engine-joins/)
 
 ### Automatic query round-robin distribution
 
@@ -139,7 +139,7 @@ MariaDB ColumnStore support Local Performance Module Query where a query can be 
 
 More information on ColumnStore Local Performance Module Query can be found here:
 
-[https://mariadb.com/kb/en/mariadb/configuring-columnstore-local-pm-query-mode/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-database-environment/configuring-columnstore-local-pm-query-mode)
+[https://mariadb.com/kb/en/mariadb/configuring-columnstore-local-pm-query-mode/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-database-environment/configuring-columnstore-local-pm-query-mode/)
 
 <img src="/kb/en/columnstore-multiple-user-module-guide/+image/pm-local-query" alt="pm-local-query" title="pm-local-query">
 

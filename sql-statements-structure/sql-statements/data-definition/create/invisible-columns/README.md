@@ -4,7 +4,7 @@
 
 Invisible columns (sometimes also called hidden columns) first appeared in [MariaDB 10.3.3](/kb/en/mariadb-1033-release-notes/).
 
-Columns can be given an `INVISIBLE` attribute in a [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table) or [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) statement. These columns will then not be listed in the results of a [SELECT *](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) statement, nor do they need to be assigned a value in an [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert) statement, unless INSERT explicitly mentions them by name.
+Columns can be given an `INVISIBLE` attribute in a [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/) or [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) statement. These columns will then not be listed in the results of a [SELECT *](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) statement, nor do they need to be assigned a value in an [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/) statement, unless INSERT explicitly mentions them by name.
 
 Since `SELECT *` does not return the invisible columns, new tables or views created in this manner will have no trace of the invisible columns. If specifically referenced in the SELECT statement, the columns will be brought into the view/new table, but the INVISIBLE attribute will not.
 

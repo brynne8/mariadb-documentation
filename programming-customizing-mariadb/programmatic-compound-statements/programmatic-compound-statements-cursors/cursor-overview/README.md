@@ -10,7 +10,7 @@ MariaDB permits cursors inside [stored programs](/kb/en/stored-programs-and-view
 - Read-only means that data cannot be updated through the cursor.
 - Asensitive means that the cursor points to the actual underlying data. This kind of cursor is quicker than the alternative, an insensitive cursor, as no data is copied to a temporary table. However, changes to the data being used by the cursor will affect the cursor data.
 
-Cursors are created with a [DECLARE CURSOR](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-cursors/declare-cursor) statement and opened with an [OPEN](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-cursors/open) statement. Rows are read with a [FETCH](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-cursors/fetch) statement before the cursor is finally closed with a [CLOSE](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-cursors/close) statement.
+Cursors are created with a [DECLARE CURSOR](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-cursors/declare-cursor/) statement and opened with an [OPEN](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-cursors/open/) statement. Rows are read with a [FETCH](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-cursors/fetch/) statement before the cursor is finally closed with a [CLOSE](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-cursors/close/) statement.
 
 When FETCH is issued and there are no more rows to extract, the following error is produced:
 
@@ -18,11 +18,11 @@ When FETCH is issued and there are no more rows to extract, the following error 
 ERROR 1329 (02000): No data - zero rows fetched, selected, or processed
 ```
 
-To avoid problems, a [DECLARE HANDLER](/programming-customizing-mariadb/programmatic-compound-statements/declare-handler) statement is generally used. The HANDLER should handler the 1329 error, or the '02000' [SQLSTATE](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate), or the NOT FOUND error class.
+To avoid problems, a [DECLARE HANDLER](/programming-customizing-mariadb/programmatic-compound-statements/declare-handler/) statement is generally used. The HANDLER should handler the 1329 error, or the '02000' [SQLSTATE](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate/), or the NOT FOUND error class.
 
-Only [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) statements are allowed for cursors, and they cannot be contained in a variable - so, they cannot be composed dynamically. However, it is possible to SELECT from a view. Since the [CREATE VIEW](/programming-customizing-mariadb/views/create-view) statement can be executed as a prepared statement, it is possible to dynamically create the view that is queried by the cursor.
+Only [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) statements are allowed for cursors, and they cannot be contained in a variable - so, they cannot be composed dynamically. However, it is possible to SELECT from a view. Since the [CREATE VIEW](/programming-customizing-mariadb/views/create-view/) statement can be executed as a prepared statement, it is possible to dynamically create the view that is queried by the cursor.
 
-From [MariaDB 10.3.0](/kb/en/mariadb-1030-release-notes/), cursors can have parameters. Cursor parameters can appear in any part of the [DECLARE CURSOR](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-cursors/declare-cursor) select_statement where a stored procedure variable is allowed (select list, WHERE, HAVING, LIMIT etc). See [DECLARE CURSOR](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-cursors/declare-cursor) and [OPEN](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-cursors/open) for syntax, and below for an example:
+From [MariaDB 10.3.0](/kb/en/mariadb-1030-release-notes/), cursors can have parameters. Cursor parameters can appear in any part of the [DECLARE CURSOR](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-cursors/declare-cursor/) select_statement where a stored procedure variable is allowed (select list, WHERE, HAVING, LIMIT etc). See [DECLARE CURSOR](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-cursors/declare-cursor/) and [OPEN](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-cursors/open/) for syntax, and below for an example:
 
 ## Examples
 
@@ -131,8 +131,8 @@ SELECT * FROM t1;
 
 ## See Also
 
-- [DECLARE CURSOR](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-cursors/declare-cursor)
-- [OPEN cursor_name](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-cursors/open)
-- [FETCH cursor_name](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-cursors/fetch)
-- [CLOSE cursor_name](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-cursors/close)
+- [DECLARE CURSOR](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-cursors/declare-cursor/)
+- [OPEN cursor_name](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-cursors/open/)
+- [FETCH cursor_name](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-cursors/fetch/)
+- [CLOSE cursor_name](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-cursors/close/)
 - [Cursors in Oracle mode](/kb/en/sql_modeoracle-from-mariadb-103/#cursors)

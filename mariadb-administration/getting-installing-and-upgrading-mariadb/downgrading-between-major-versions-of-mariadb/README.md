@@ -1,6 +1,6 @@
 # Downgrading between Major Versions of MariaDB
 
-Downgrading MariaDB is not supported. The only reliable way to downgrade is to [restore from a full backup](/mariadb-administration/backing-up-and-restoring-databases) made before upgrading, and start the old version of MariaDB.
+Downgrading MariaDB is not supported. The only reliable way to downgrade is to [restore from a full backup](/mariadb-administration/backing-up-and-restoring-databases/) made before upgrading, and start the old version of MariaDB.
 
 Some people have reported successfully downgrading, but there are many possible things that can go wrong, and downgrading is not tested in any way by the MariaDB developers.
 

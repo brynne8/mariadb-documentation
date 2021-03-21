@@ -9,7 +9,7 @@ PointFromText(wkt[,srid])
 
 ## Description
 
-Constructs a [POINT](/sql-statements-structure/geographic-geometric-features/geometry-constructors/point) value using its [WKT](/sql-statements-structure/geographic-geometric-features/wkt/wkt-definition) representation and [SRID](/kb/en/srid/).
+Constructs a [POINT](/sql-statements-structure/geographic-geometric-features/geometry-constructors/point/) value using its [WKT](/sql-statements-structure/geographic-geometric-features/wkt/wkt-definition/) representation and [SRID](/kb/en/srid/).
 
 `ST_PointFromText()` and `PointFromText()` are synonyms.
 

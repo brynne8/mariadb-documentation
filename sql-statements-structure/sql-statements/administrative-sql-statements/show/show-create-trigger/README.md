@@ -8,8 +8,8 @@ SHOW CREATE TRIGGER trigger_name
 
 ## Description
 
-This statement shows a <code class="highlight fixed" style="white-space:pre-wrap">[CREATE TRIGGER](/programming-customizing-mariadb/triggers-events/triggers/create-trigger)</code>
-statement that creates the given trigger, as well as the [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode) that was used when the trigger has been created and the character set used by the connection.
+This statement shows a <code class="highlight fixed" style="white-space:pre-wrap">[CREATE TRIGGER](/programming-customizing-mariadb/triggers-events/triggers/create-trigger/)</code>
+statement that creates the given trigger, as well as the [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode/) that was used when the trigger has been created and the character set used by the connection.
 
 The output of this statement is unreliably affected by the <a undefined>sql_quote_show_create</a> server system variable - see [http://bugs.mysql.com/bug.php?id=12719](http://bugs.mysql.com/bug.php?id=12719)
 
@@ -39,9 +39,9 @@ The `Created` column was added in MySQL 5.7 and [MariaDB 10.2.3](/kb/en/mariadb-
 
 ## See also
 
-- [Trigger Overview](/programming-customizing-mariadb/triggers-events/triggers/trigger-overview)
-- [CREATE TRIGGER](/programming-customizing-mariadb/triggers-events/triggers/create-trigger)
-- [DROP TRIGGER](/sql-statements-structure/sql-statements/data-definition/drop/drop-trigger)
-- [information_schema.TRIGGERS Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-triggers-table)
-- [SHOW TRIGGERS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-triggers)
-- [Trigger Limitations](/programming-customizing-mariadb/triggers-events/triggers/trigger-limitations)
+- [Trigger Overview](/programming-customizing-mariadb/triggers-events/triggers/trigger-overview/)
+- [CREATE TRIGGER](/programming-customizing-mariadb/triggers-events/triggers/create-trigger/)
+- [DROP TRIGGER](/sql-statements-structure/sql-statements/data-definition/drop/drop-trigger/)
+- [information_schema.TRIGGERS Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-triggers-table/)
+- [SHOW TRIGGERS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-triggers/)
+- [Trigger Limitations](/programming-customizing-mariadb/triggers-events/triggers/trigger-limitations/)

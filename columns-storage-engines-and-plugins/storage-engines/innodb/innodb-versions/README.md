@@ -10,11 +10,11 @@ In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, the default InnoDB imp
 
 ##### MariaDB until [10.1](/kb/en/what-is-mariadb-101/)
 
-In [MariaDB 10.1](/kb/en/what-is-mariadb-101/) and before, the default InnoDB implementation is based on Percona's XtraDB. XtraDB is a performance enhanced fork of InnoDB. For compatibility reasons, the [system variables](/kb/en/xtradbinnodb-server-system-variables/) still retain their original `innodb` prefixes. If the documentation says that something applies to InnoDB, then it usually also applies to the XtraDB fork, unless explicitly stated otherwise. In these versions, it is still possible to use InnoDB instead of XtraDB. See [Using InnoDB instead of XtraDB](/columns-storage-engines-and-plugins/storage-engines/innodb/using-innodb-instead-of-xtradb) for more information.
+In [MariaDB 10.1](/kb/en/what-is-mariadb-101/) and before, the default InnoDB implementation is based on Percona's XtraDB. XtraDB is a performance enhanced fork of InnoDB. For compatibility reasons, the [system variables](/kb/en/xtradbinnodb-server-system-variables/) still retain their original `innodb` prefixes. If the documentation says that something applies to InnoDB, then it usually also applies to the XtraDB fork, unless explicitly stated otherwise. In these versions, it is still possible to use InnoDB instead of XtraDB. See [Using InnoDB instead of XtraDB](/columns-storage-engines-and-plugins/storage-engines/innodb/using-innodb-instead-of-xtradb/) for more information.
 
 ##### MariaDB until [10.0.8](/kb/en/mariadb-1008-release-notes/)
 
-In [MariaDB 10.0.8](/kb/en/mariadb-1008-release-notes/) and before, the default InnoDB implementation is based on InnoDB from MySQL. In these versions, Percona's XtraDB is available to use as a dynamic plugin. To use XtraDB in these versions, the <a undefined>ignore_builtin_innodb</a> system variable needs to be set, and the `ha_xtradb` plugin needs to be loaded with the <a undefined>plugin_load</a> option. Both can be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. See [Installing Plugins](/kb/en/plugin-overview/#installing-plugins) for more information. For example:
+In [MariaDB 10.0.8](/kb/en/mariadb-1008-release-notes/) and before, the default InnoDB implementation is based on InnoDB from MySQL. In these versions, Percona's XtraDB is available to use as a dynamic plugin. To use XtraDB in these versions, the <a undefined>ignore_builtin_innodb</a> system variable needs to be set, and the `ha_xtradb` plugin needs to be loaded with the <a undefined>plugin_load</a> option. Both can be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. See [Installing Plugins](/kb/en/plugin-overview/#installing-plugins) for more information. For example:
 
 ```sql
 [mariadb]
@@ -110,4 +110,4 @@ variable-size page compression before MySQL 5.7 introduced them.
 ## See Also
 
 - [Why MariaDB uses InnoDB instead of XtraDB from MariaDB 10.2](/kb/en/why-does-mariadb-102-use-innodb-instead-of-xtradb/)
-- [XtraDB Versions](/columns-storage-engines-and-plugins/storage-engines/innodb/about-xtradb)
+- [XtraDB Versions](/columns-storage-engines-and-plugins/storage-engines/innodb/about-xtradb/)

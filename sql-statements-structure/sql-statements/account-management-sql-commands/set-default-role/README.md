@@ -12,13 +12,13 @@ SET DEFAULT ROLE { role | NONE } [ FOR user@host ]
 
 ## Description
 
-The `SET DEFAULT ROLE` statement sets a <strong>default [role](/mariadb-administration/user-server-security/user-account-management/roles)</strong> for a specified (or current) user. A default role is automatically enabled when a user connects (an implicit [SET ROLE](/sql-statements-structure/sql-statements/account-management-sql-commands/set-role) statement is executed immediately after a connection is established).
+The `SET DEFAULT ROLE` statement sets a <strong>default [role](/mariadb-administration/user-server-security/user-account-management/roles/)</strong> for a specified (or current) user. A default role is automatically enabled when a user connects (an implicit [SET ROLE](/sql-statements-structure/sql-statements/account-management-sql-commands/set-role/) statement is executed immediately after a connection is established).
 
 To be able to set a role as a default, the role must already have been granted to that user, and one needs the privileges to enable this role (if you cannot do `SET ROLE X`, you won't be able to do `SET DEFAULT ROLE X`). To set a default role for another user one needs to have write access to the `mysql` database.
 
-To remove a user's default role, use `SET DEFAULT ROLE NONE [ FOR user@host ]`. The record of the default role is not removed if the role is [dropped](/sql-statements-structure/sql-statements/account-management-sql-commands/drop-role) or [revoked](/kb/en/revoke/#roles), so if the role is subsequently re-created or granted, it will again be the user's default role.
+To remove a user's default role, use `SET DEFAULT ROLE NONE [ FOR user@host ]`. The record of the default role is not removed if the role is [dropped](/sql-statements-structure/sql-statements/account-management-sql-commands/drop-role/) or [revoked](/kb/en/revoke/#roles), so if the role is subsequently re-created or granted, it will again be the user's default role.
 
-The default role is stored in the `default_role` column in the [mysql.user](/kb/en/mysqluser-table/) table/view, as well as in the [Information Schema APPLICABLE_ROLES table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-applicable_roles-table), so these can be viewed to see which role has been assigned to a user as the default.
+The default role is stored in the `default_role` column in the [mysql.user](/kb/en/mysqluser-table/) table/view, as well as in the [Information Schema APPLICABLE_ROLES table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-applicable_roles-table/), so these can be viewed to see which role has been assigned to a user as the default.
 
 ## Examples
 

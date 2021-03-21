@@ -1,6 +1,6 @@
 # Information Schema XtraDB Tables
 
-List of Information Schema tables specifically related to [XtraDB](/kb/en/xtradb/). Tables that XtraDB shares with InnoDB are listed in [Information Schema InnoDB Tables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables).
+List of Information Schema tables specifically related to [XtraDB](/kb/en/xtradb/). Tables that XtraDB shares with InnoDB are listed in [Information Schema InnoDB Tables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/).
 
 - [Information Schema CHANGED_PAGE_BITMAPS Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-xtradb-tables/information-schema-changed_page_bitmaps-table/) — Dummy table to allow FLUSH NO_WRITE_TO_BINLOG CHANGED_PAGE_BITMAPS
 - [Information Schema INNODB_BUFFER_POOL_PAGES Table](/kb/en/library/documentation/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_buffer_pool_pages-table/) — XtraDB buffer pool page information.

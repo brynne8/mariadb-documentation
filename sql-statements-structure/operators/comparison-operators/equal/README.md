@@ -18,9 +18,9 @@ SELECT (t1.a, t1.b) = (t2.x, t2.y) FROM t1 INNER JOIN t2;
 SELECT (t1.a = t2.x) AND (t1.b = t2.y) FROM t1 INNER JOIN t2;
 ```
 
-To perform a NULL-safe comparison, use the [&lt;=&gt;](/sql-statements-structure/operators/comparison-operators/null-safe-equal) operator.
+To perform a NULL-safe comparison, use the [&lt;=&gt;](/sql-statements-structure/operators/comparison-operators/null-safe-equal/) operator.
 
-`=` can also be used as an [assignment operator](/sql-statements-structure/operators/assignment-operators/assignment-operators-assignment-operator).
+`=` can also be used as an [assignment operator](/sql-statements-structure/operators/assignment-operators/assignment-operators-assignment-operator/).
 
 ## Examples
 

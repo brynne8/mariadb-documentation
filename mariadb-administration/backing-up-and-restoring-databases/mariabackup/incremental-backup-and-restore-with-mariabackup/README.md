@@ -6,7 +6,7 @@ InnoDB pages contain log sequence numbers, or LSN's.  Whenever you modify a row 
 
 ## Backing up the Database Server
 
-In order to take an incremental backup, you first need to take a [full backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/full-backup-and-restore-with-mariabackup). In order to back up the database, you need to run Mariabackup with the <a undefined>--backup</a> option to tell it to perform a backup and with the <a undefined>--target-dir</a> option to tell it where to place the backup files. When taking a full backup, the target directory must be empty or it must not exist.
+In order to take an incremental backup, you first need to take a [full backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/full-backup-and-restore-with-mariabackup/). In order to back up the database, you need to run Mariabackup with the <a undefined>--backup</a> option to tell it to perform a backup and with the <a undefined>--target-dir</a> option to tell it where to place the backup files. When taking a full backup, the target directory must be empty or it must not exist.
 
 To take a backup, run the following command:
 
@@ -77,7 +77,7 @@ $ mariabackup --prepare \
    --target-dir=/var/mariadb/backup
 ```
 
-Running this command brings the base full backup, that is, `/var/mariadb/backup`, into sync with the changes contained in the [InnoDB redo log](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-redo-log) collected while the backup was taken.
+Running this command brings the base full backup, that is, `/var/mariadb/backup`, into sync with the changes contained in the [InnoDB redo log](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-redo-log/) collected while the backup was taken.
 
 Then, apply the incremental changes to the base full backup:
 
@@ -102,7 +102,7 @@ $ mariabackup --prepare --apply-log-only \
    --target-dir=/var/mariadb/backup
 ```
 
-Running this command brings the base full backup, that is, `/var/mariadb/backup`, into sync with the changes contained in the [InnoDB redo log](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-redo-log) collected while the backup was taken.
+Running this command brings the base full backup, that is, `/var/mariadb/backup`, into sync with the changes contained in the [InnoDB redo log](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-redo-log/) collected while the backup was taken.
 
 Then, apply the incremental changes to the base full backup:
 

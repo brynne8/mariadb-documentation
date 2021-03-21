@@ -2,11 +2,11 @@
 
 ## Ignoring Errors
 
-Normally [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert) stops and rolls back when it encounters an error.
+Normally [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/) stops and rolls back when it encounters an error.
 
-By using the [IGNORE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/ignore) keyword all errors are converted to warnings, which will not stop inserts of additional rows.
+By using the [IGNORE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/ignore/) keyword all errors are converted to warnings, which will not stop inserts of additional rows.
 
-The IGNORE and DELAYED options are ignored when you use [ON DUPLICATE KEY UPDATE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update).
+The IGNORE and DELAYED options are ignored when you use [ON DUPLICATE KEY UPDATE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update/).
 
 ## Incompatibilities
 
@@ -53,15 +53,15 @@ SELECT * FROM t1;
 +------+
 ```
 
-See [INSERT ON DUPLICATE KEY UPDATE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update) for further examples using that syntax.
+See [INSERT ON DUPLICATE KEY UPDATE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update/) for further examples using that syntax.
 
 ## See Also
 
-- [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert)
-- [INSERT DELAYED](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed)
-- [INSERT SELECT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-select)
-- [HIGH_PRIORITY and LOW_PRIORITY](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/high_priority-and-low_priority)
-- [Concurrent Inserts](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/concurrent-inserts)
-- [INSERT - Default &amp; Duplicate Values](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-default-duplicate-values)
-- [INSERT IGNORE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-ignore)
-- [INSERT ON DUPLICATE KEY UPDATE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update)
+- [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/)
+- [INSERT DELAYED](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed/)
+- [INSERT SELECT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-select/)
+- [HIGH_PRIORITY and LOW_PRIORITY](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/high_priority-and-low_priority/)
+- [Concurrent Inserts](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/concurrent-inserts/)
+- [INSERT - Default &amp; Duplicate Values](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-default-duplicate-values/)
+- [INSERT IGNORE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-ignore/)
+- [INSERT ON DUPLICATE KEY UPDATE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update/)

@@ -2,17 +2,17 @@
 
 Implicit type conversion takes place when MariaDB is using operands or different types, in order to make the operands compatible.
 
-It is best practice not to rely upon implicit conversion; rather use [CAST](/built-in-functions/string-functions/cast) to explicitly convert types.
+It is best practice not to rely upon implicit conversion; rather use [CAST](/built-in-functions/string-functions/cast/) to explicitly convert types.
 
 ### Rules for Conversion on Comparison
 
-- If  either argument is NULL, the result of the comparison is NULL unless the NULL-safe [&lt;=&gt;](/sql-statements-structure/operators/comparison-operators/null-safe-equal) equality comparison operator is used.
+- If  either argument is NULL, the result of the comparison is NULL unless the NULL-safe [&lt;=&gt;](/sql-statements-structure/operators/comparison-operators/null-safe-equal/) equality comparison operator is used.
 - If both arguments are integers, they are compared as integers.
 - If both arguments are strings, they are compared as strings.
 - If one argument is decimal and the other argument is decimal or integer, they are compared as decimals.
 - If one argument is decimal and the other argument is a floating point, they are compared as floating point values.
 - If a hexadecimal argument is not compared to a number, it is treated as a binary string.
-- If a constant is compared to a TIMESTAMP or DATETIME, the constant is converted to a timestamp, unless used as an argument to the [IN](/sql-statements-structure/operators/comparison-operators/in) function.
+- If a constant is compared to a TIMESTAMP or DATETIME, the constant is converted to a timestamp, unless used as an argument to the [IN](/sql-statements-structure/operators/comparison-operators/in/) function.
 - In other cases, arguments are compared as floating point, or real, numbers.
 
 Note that if a string column is being compared with a numeric value, MariaDB will not use the index on the column, as there are numerous alternatives that may evaluate as equal (see examples below).
@@ -121,9 +121,9 @@ possible_keys: idx_a
 
 ### Rules for Conversion on Dyadic Arithmetic Operations
 
-Implicit type conversion also takes place on dyadic arithmetic operations ([+](/built-in-functions/numeric-functions/addition-operator),[-](/sql-statements-structure/operators/arithmetic-operators/subtraction-operator-),[*](/built-in-functions/numeric-functions/multiplication-operator),[/](/built-in-functions/numeric-functions/division-operator)).  MariaDB chooses the minimum data type that is guaranteed to fit the result and converts both arguments to the result data type.
+Implicit type conversion also takes place on dyadic arithmetic operations ([+](/built-in-functions/numeric-functions/addition-operator/),[-](/sql-statements-structure/operators/arithmetic-operators/subtraction-operator-/),[*](/built-in-functions/numeric-functions/multiplication-operator/),[/](/built-in-functions/numeric-functions/division-operator/)).  MariaDB chooses the minimum data type that is guaranteed to fit the result and converts both arguments to the result data type.
 
-For [addition (+)](/built-in-functions/numeric-functions/addition-operator), [subtraction (-)](/sql-statements-structure/operators/arithmetic-operators/subtraction-operator-) and [multiplication (*)](/built-in-functions/numeric-functions/multiplication-operator), the result data type is chosen as follows:
+For [addition (+)](/built-in-functions/numeric-functions/addition-operator/), [subtraction (-)](/sql-statements-structure/operators/arithmetic-operators/subtraction-operator-/) and [multiplication (*)](/built-in-functions/numeric-functions/multiplication-operator/), the result data type is chosen as follows:
 
 - If either of the arguments is an approximate number (float, double), the result is double.
 - If either of the arguments is a string (char, varchar, text), the result is double.
@@ -132,7 +132,7 @@ For [addition (+)](/built-in-functions/numeric-functions/addition-operator), [su
 - If either of the arguments is of a temporal type with a zero fractional second precision (time(0), date, datetime(0), timestamp(0)), the result may vary between int, int unsigned, bigint or bigint unsigned, depending on the exact data type combination.
 - If both arguments are integer numbers (tinyint, smallint, mediumint, bigint), the result may vary between int, int unsigned, bigint or bigint unsigned, depending of the exact data types and their signs.
 
-For [division (/)](/built-in-functions/numeric-functions/division-operator), the result data type is chosen as follows:
+For [division (/)](/built-in-functions/numeric-functions/division-operator/), the result data type is chosen as follows:
 
 - If either of the arguments is an approximate number (float, double), the result is double.
 - If either of the arguments is a string (char, varchar, text), the result is double.
@@ -151,7 +151,7 @@ SELECT TIME'10:20:30' + 1;
 +--------------------+
 ```
 
-In order to do temporal addition or subtraction instead, use the [DATE_ADD()](/built-in-functions/date-time-functions/date_add) or [DATE_SUB()](/built-in-functions/date-time-functions/date_sub) functions, or an [INTERVAL](/built-in-functions/date-time-functions/date-and-time-units) expression as the second argument:
+In order to do temporal addition or subtraction instead, use the [DATE_ADD()](/built-in-functions/date-time-functions/date_add/) or [DATE_SUB()](/built-in-functions/date-time-functions/date_sub/) functions, or an [INTERVAL](/built-in-functions/date-time-functions/date-and-time-units/) expression as the second argument:
 
 ```sql
 SELECT TIME'10:20:30' + INTERVAL 1 SECOND;

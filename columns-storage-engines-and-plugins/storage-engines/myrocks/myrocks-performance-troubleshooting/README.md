@@ -16,7 +16,7 @@ Check the output of
 SHOW STATUS like 'Rocksdb%'
 ```
 
-See [MyRocks Status Variables](/columns-storage-engines-and-plugins/storage-engines/myrocks/myrocks-status-variables) for more information.
+See [MyRocks Status Variables](/columns-storage-engines-and-plugins/storage-engines/myrocks/myrocks-status-variables/) for more information.
 
 ### SHOW ENGINE ROCKSDB STATUS
 

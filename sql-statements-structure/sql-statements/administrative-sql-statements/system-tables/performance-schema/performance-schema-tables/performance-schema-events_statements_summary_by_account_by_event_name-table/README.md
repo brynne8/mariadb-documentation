@@ -2,9 +2,9 @@
 
 ##### MariaDB starting with [10.0](/kb/en/what-is-mariadb-100/)
 
-The `events_statements_summary_by_account_by_event_name` table, along with many other new [Performance Schema tables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/list-of-performance-schema-tables), was added in [MariaDB 10.0](/kb/en/what-is-mariadb-100/).
+The `events_statements_summary_by_account_by_event_name` table, along with many other new [Performance Schema tables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/list-of-performance-schema-tables/), was added in [MariaDB 10.0](/kb/en/what-is-mariadb-100/).
 
-The [Performance Schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema) events_statements_summary_by_account_by_event_name table contains statement events summarized by account and event name. It contains the following columns:
+The [Performance Schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/) events_statements_summary_by_account_by_event_name table contains statement events summarized by account and event name. It contains the following columns:
 
 <table><tbody><tr><th>Column</th><th>Description</th></tr>
 <tr><td><code>USER</code></td><td>User. Used together with <code>HOST</code> and <code>EVENT_NAME</code> for grouping events.</td></tr>

@@ -4,7 +4,7 @@
 
 The CONNECT handler was introduced in [MariaDB 10.0](/kb/en/what-is-mariadb-100/).
 
-The main feature of [CONNECT](/columns-storage-engines-and-plugins/storage-engines/connect) is to give MariaDB the ability to handle tables from many sources, native files, other DBMS’s tables, or special “virtual” tables. Moreover, for all tables physically represented by data files, CONNECT recognizes many different file formats, described below but not limited in the future to this list, because more can be easily added to it on demand ([OEM tables](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-table-types-oem)).
+The main feature of [CONNECT](/columns-storage-engines-and-plugins/storage-engines/connect/) is to give MariaDB the ability to handle tables from many sources, native files, other DBMS’s tables, or special “virtual” tables. Moreover, for all tables physically represented by data files, CONNECT recognizes many different file formats, described below but not limited in the future to this list, because more can be easily added to it on demand ([OEM tables](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-table-types-oem/)).
 
 Note: You can download a [PDF version of the CONNECT documentation](https://mariadb.com/kb/en/connect-table-types/+attachment/connect_1_7_01) (1.7.01).
 

@@ -1,9 +1,9 @@
 # MariaDB 10.0.15 Fusion-io Changelog
 
 [Download](http://ftp.osuosl.org/pub/mariadb/mariadb-10.0.15-fusion-io/)
-[Release Notes](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/fusion-io/mariadb-10015-fusion-io-release-notes)
-[Changelog](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/fusion-io/mariadb-10015-fusion-io-changelog)
-[Fusion-io Introduction](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/fusion-io/fusion-io-introduction)
+[Release Notes](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/fusion-io/mariadb-10015-fusion-io-release-notes/)
+[Changelog](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/fusion-io/mariadb-10015-fusion-io-changelog/)
+[Fusion-io Introduction](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/fusion-io/fusion-io-introduction/)
 
 <strong>Release date:</strong> 12 Dec 2014
 

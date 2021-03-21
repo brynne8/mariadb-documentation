@@ -6,7 +6,7 @@ As a general rule of thumb, hardware should be improved in the following order:
 
 ## Memory
 
-Memory is the most important factor as it allows you to adjust the [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables). More memory means larger key and table caches can be stored in memory so that disk access, an order of magnitude slower, is reduced.
+Memory is the most important factor as it allows you to adjust the [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables/). More memory means larger key and table caches can be stored in memory so that disk access, an order of magnitude slower, is reduced.
 
 Simply adding more memory may not result in drastic improvements if the server variables are not set to make use of the extra available memory.
 

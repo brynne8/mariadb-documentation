@@ -11,7 +11,7 @@ RADIANS(X)
 Returns the argument <em>`X`</em>, converted from degrees to radians. Note that
 π radians equals 180 degrees.
 
-This is the converse of the [DEGREES()](/built-in-functions/numeric-functions/degrees) function.
+This is the converse of the [DEGREES()](/built-in-functions/numeric-functions/degrees/) function.
 
 ## Examples
 

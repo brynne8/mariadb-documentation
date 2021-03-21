@@ -4,13 +4,13 @@
 
 Support for application-time period-versioning was added in [MariaDB 10.4.3](/kb/en/mariadb-1043-release-notes/).
 
-Extending [system-versioned tables](/sql-statements-structure/temporal-tables/system-versioned-tables), [MariaDB 10.4](/kb/en/what-is-mariadb-104/) supports application-time period tables. Time periods are defined by a range between two temporal columns. The columns must be of the same [temporal data type](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types), i.e. [DATE](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/date), [TIMESTAMP](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/timestamp) or [DATETIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/datetime) ([TIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/time) and [YEAR](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/year-data-type) are  not supported), and of the same width.
+Extending [system-versioned tables](/sql-statements-structure/temporal-tables/system-versioned-tables/), [MariaDB 10.4](/kb/en/what-is-mariadb-104/) supports application-time period tables. Time periods are defined by a range between two temporal columns. The columns must be of the same [temporal data type](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/), i.e. [DATE](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/date/), [TIMESTAMP](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/timestamp/) or [DATETIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/datetime/) ([TIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/time/) and [YEAR](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/year-data-type/) are  not supported), and of the same width.
 
-Using time periods implicitly defines the two columns as `NOT NULL`.  It also adds a constraint to check whether the first value is less than the second value.  The constraint is invisible to [SHOW CREATE TABLE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-table) statements.  The name of this constraint is prefixed by the time period name, to avoid conflict with other constraints.
+Using time periods implicitly defines the two columns as `NOT NULL`.  It also adds a constraint to check whether the first value is less than the second value.  The constraint is invisible to [SHOW CREATE TABLE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-table/) statements.  The name of this constraint is prefixed by the time period name, to avoid conflict with other constraints.
 
 ### Creating Tables with Time Periods
 
-To create a table with a time period, use a [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table) statement with the `PERIOD` table option.
+To create a table with a time period, use a [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/) statement with the `PERIOD` table option.
 
 ```sql
 CREATE TABLE t1(
@@ -27,7 +27,7 @@ Examples are available in the MariaDB Server source code, at `mysql-test/suite/p
 
 ### Adding and Removing Time Periods
 
-The [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) statement now supports syntax for adding and removing time periods from a table. To add a period, use the `ADD PERIOD` clause.
+The [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) statement now supports syntax for adding and removing time periods from a table. To add a period, use the `ADD PERIOD` clause.
 
 For example:
 
@@ -128,7 +128,7 @@ If there are `DELETE` or `INSERT` triggers, it works as follows: any matched row
 
 ### Updating by Portion
 
-The [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update) syntax now supports `UPDATE FOR PORTION`, which modifies rows based on their occurrence in a range:
+The [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/) syntax now supports `UPDATE FOR PORTION`, which modifies rows based on their occurrence in a range:
 
 To test it, first populate the table with some data:
 
@@ -273,5 +273,5 @@ ERROR 1265 (01000): Data truncated for column 'd1' at row 1
 
 ### See Also
 
-- [System-versioned Tables](/sql-statements-structure/temporal-tables/system-versioned-tables)
-- [Bitemporal Tables](/sql-statements-structure/temporal-tables/bitemporal-tables)
+- [System-versioned Tables](/sql-statements-structure/temporal-tables/system-versioned-tables/)
+- [Bitemporal Tables](/sql-statements-structure/temporal-tables/bitemporal-tables/)

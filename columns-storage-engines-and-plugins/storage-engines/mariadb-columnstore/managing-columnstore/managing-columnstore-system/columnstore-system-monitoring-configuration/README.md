@@ -25,7 +25,7 @@ Convenience utility programs <em>getConfig</em> and <em>setConfig</em> are avail
 
 ## Module heartbeats
 
-Heartbeat monitoring occurs between modules (both [UM](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-user-module) and [PM](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module)) to determine the module is up and functioning. The module heartbeat settings are the same for all modules.
+Heartbeat monitoring occurs between modules (both [UM](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-user-module/) and [PM](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module/)) to determine the module is up and functioning. The module heartbeat settings are the same for all modules.
 
 1 <em>ModuleHeartbeatPeriod</em> refers to how often the heartbeat test is performed. For example, if you set the period to 5, then the heartbeat test is performed every 5 seconds. The initial default value is 1. To disable heartbeat monitoring set the value to -1.
 2 <em>ModuleHeartbeatCount</em>  refers to how many failures in a row must take place before a fault is processed. The initial default value is 3.

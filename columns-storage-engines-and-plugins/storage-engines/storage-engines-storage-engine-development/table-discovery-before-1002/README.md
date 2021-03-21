@@ -1,6 +1,6 @@
 # Table Discovery (before 10.0.2)
 
-This page describes the <strong>old</strong> discovery API, created in MySQL for NDB Cluster. It no longer works in MariaDB. New table discovery API is documented [here](/columns-storage-engines-and-plugins/storage-engines/storage-engines-storage-engine-development/table-discovery).
+This page describes the <strong>old</strong> discovery API, created in MySQL for NDB Cluster. It no longer works in MariaDB. New table discovery API is documented [here](/columns-storage-engines-and-plugins/storage-engines/storage-engines-storage-engine-development/table-discovery/).
 
 There are four parts of it.
 

@@ -8,9 +8,9 @@ TIME [(<microsecond precision>)]
 
 ## Description
 
-A time. The range is `'-838:59:59.999999'` to `'838:59:59.999999'`. [Microsecond precision](/built-in-functions/date-time-functions/microseconds-in-mariadb) can be from 0-6; if not specified 0 is used. Microseconds have been available since [MariaDB 5.3](/kb/en/what-is-mariadb-53/).
+A time. The range is `'-838:59:59.999999'` to `'838:59:59.999999'`. [Microsecond precision](/built-in-functions/date-time-functions/microseconds-in-mariadb/) can be from 0-6; if not specified 0 is used. Microseconds have been available since [MariaDB 5.3](/kb/en/what-is-mariadb-53/).
 
-MariaDB displays `TIME` values in `'HH:MM:SS.ssssss'` format, but allows assignment of times in looser formats, including 'D HH:MM:SS', 'HH:MM:SS', 'HH:MM', 'D HH:MM', 'D HH', 'SS', or 'HHMMSS', as well as permitting dropping of any leading zeros when a delimiter is provided, for example '3:9:10'. For details, see [date and time literals](/sql-statements-structure/sql-language-structure/date-and-time-literals).
+MariaDB displays `TIME` values in `'HH:MM:SS.ssssss'` format, but allows assignment of times in looser formats, including 'D HH:MM:SS', 'HH:MM:SS', 'HH:MM', 'D HH:MM', 'D HH', 'SS', or 'HHMMSS', as well as permitting dropping of any leading zeros when a delimiter is provided, for example '3:9:10'. For details, see [date and time literals](/sql-statements-structure/sql-language-structure/date-and-time-literals/).
 
 ##### MariaDB starting with [10.1.2](/kb/en/mariadb-1012-release-notes/)
 
@@ -38,11 +38,11 @@ SHOW VARIABLES LIKE 'mysql56_temporal_format';
 ALTER TABLE example_table MODIFY ts_col TIME;
 ```
 
-When MariaDB executes the [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) statement, it converts the data from the older temporal format to the newer one.
+When MariaDB executes the [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) statement, it converts the data from the older temporal format to the newer one.
 
 In the event that you have several tables and columns using temporal data types that you want to switch over to the new format, make sure the system variable is enabled, then perform a dump and restore using `mysqldump`.  The columns using relevant temporal data types are restored using the new temporal format.
 
-Starting from [MariaDB 10.5.1](/kb/en/mariadb-1051-release-notes/) columns with old temporal formats are marked with a `/* mariadb-5.3 */` comment in the output of [SHOW CREATE TABLE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-table), [SHOW COLUMNS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-columns), [DESCRIBE](/sql-statements-structure/sql-statements/administrative-sql-statements/describe) statements, as well as in the `COLUMN_TYPE` column of the <a undefined>INFORMATION_SCHEMA.COLUMNS Table</a>.
+Starting from [MariaDB 10.5.1](/kb/en/mariadb-1051-release-notes/) columns with old temporal formats are marked with a `/* mariadb-5.3 */` comment in the output of [SHOW CREATE TABLE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-table/), [SHOW COLUMNS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-columns/), [DESCRIBE](/sql-statements-structure/sql-statements/administrative-sql-statements/describe/) statements, as well as in the `COLUMN_TYPE` column of the <a undefined>INFORMATION_SCHEMA.COLUMNS Table</a>.
 
 ```sql
 SHOW CREATE TABLE mariadb5312_time\G
@@ -77,4 +77,4 @@ SELECT * FROM time;
 
 ## See also
 
-- [Data Type Storage Requirements](/columns-storage-engines-and-plugins/data-types/data-type-storage-requirements)
+- [Data Type Storage Requirements](/columns-storage-engines-and-plugins/data-types/data-type-storage-requirements/)

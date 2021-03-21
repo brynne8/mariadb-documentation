@@ -4,13 +4,13 @@ The `IGNORE` option tells the server to ignore some common errors.
 
 `IGNORE` can be used with the following statements:
 
-- [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete)
-- [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert) (see also [INSERT IGNORE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-ignore))
+- [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/)
+- [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/) (see also [INSERT IGNORE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-ignore/))
 - [LOAD DATA INFILE](/kb/en/load-data-infile/)
-- [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update)
-- [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table)
+- [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/)
+- [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/)
 - [CREATE TABLE ... SELECT](/kb/en/create-table/#create-select)
-- [INSERT ... SELECT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-select)
+- [INSERT ... SELECT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-select/)
 
 The logic used:
 

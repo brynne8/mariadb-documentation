@@ -11,7 +11,7 @@ ROW (<field name> <data type> [{, <field name> <data type>}... ])```
 
 ## Description
 
-`ROW` is a data type for [stored procedure](/programming-customizing-mariadb/stored-routines/stored-procedures) variables.
+`ROW` is a data type for [stored procedure](/programming-customizing-mariadb/stored-routines/stored-procedures/) variables.
 
 ## Features
 
@@ -20,7 +20,7 @@ ROW (<field name> <data type> [{, <field name> <data type>}... ])```
 `ROW` fields (members) act as normal variables, and are able to appear in all
 query parts where a stored procedure variable is allowed:
 
-- Assignment is using the `:=` operator and the [SET](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set) command:
+- Assignment is using the `:=` operator and the [SET](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set/) command:
 
 ```sql
 a.x:= 10;
@@ -52,7 +52,7 @@ INSERT INTO t1 VALUES (rec.a, rec.b, rec.c);
 SELECT a,b INTO rec.a, rec.b FROM t1 WHERE t1.id=10;
 ```
 
-- Dynamic SQL out parameters ([EXECUTE](/sql-statements-structure/sql-statements/prepared-statements/execute-statement) and [EXECUTE IMMEDIATE](/sql-statements-structure/sql-statements/prepared-statements/execute-immediate))
+- Dynamic SQL out parameters ([EXECUTE](/sql-statements-structure/sql-statements/prepared-statements/execute-statement/) and [EXECUTE IMMEDIATE](/sql-statements-structure/sql-statements/prepared-statements/execute-immediate/))
 
 ```sql
 EXECUTE IMMEDIATE 'CALL proc_with_out_param(?)' USING rec.a;
@@ -60,7 +60,7 @@ EXECUTE IMMEDIATE 'CALL proc_with_out_param(?)' USING rec.a;
 
 ### ROW type variables as FETCH targets
 
-`ROW` type variables are allowed as [FETCH](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-cursors/fetch) targets:
+`ROW` type variables are allowed as [FETCH](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-cursors/fetch/) targets:
 
 ```sql
 FETCH cur INTO rec;
@@ -326,5 +326,5 @@ The above example returns:
 
 ## See Also
 
-- [STORED PROCEDURES](/programming-customizing-mariadb/stored-routines/stored-procedures)
-- [DECLARE Variable](/programming-customizing-mariadb/programmatic-compound-statements/declare-variable)
+- [STORED PROCEDURES](/programming-customizing-mariadb/stored-routines/stored-procedures/)
+- [DECLARE Variable](/programming-customizing-mariadb/programmatic-compound-statements/declare-variable/)

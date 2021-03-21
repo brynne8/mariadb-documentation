@@ -1,6 +1,6 @@
 # JSONPath Expressions
 
-A number of [JSON functions](/built-in-functions/special-functions/json-functions) accept JSON Path expressions. MariaDB defines this path as follows:
+A number of [JSON functions](/built-in-functions/special-functions/json-functions/) accept JSON Path expressions. MariaDB defines this path as follows:
 
 ## JSON Path Syntax
 

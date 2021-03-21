@@ -38,7 +38,7 @@ How much speed will be gained depends on
 - How many records will be filtered out 
 - How expensive it was to read them
 
-The former depends on the query and the dataset. The latter is generally bigger when table records are on disk and/or are big, especially when they have [blobs](/columns-storage-engines-and-plugins/data-types/string-data-types/blob).
+The former depends on the query and the dataset. The latter is generally bigger when table records are on disk and/or are big, especially when they have [blobs](/columns-storage-engines-and-plugins/data-types/string-data-types/blob/).
 
 ## Example speedup
 

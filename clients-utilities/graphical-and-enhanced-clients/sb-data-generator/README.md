@@ -2,7 +2,7 @@
 
 Generate and populate databases with large volumes of realistic test data.
 
-[<strong>SB Data Generator</strong>](/clients-utilities/graphical-and-enhanced-clients/sb-data-generator) is a simple and powerful GUI tool for creating large volumes of realistic test data to populate selected tables or entire databases. 
+[<strong>SB Data Generator</strong>](/clients-utilities/graphical-and-enhanced-clients/sb-data-generator/) is a simple and powerful GUI tool for creating large volumes of realistic test data to populate selected tables or entire databases. 
 The tool reverses your database and displays tables and columns, so you can assign to them multiple data generator templates.
 The tool includes multiple built-in generators that allow populating MariaDB database tables with realistic data of various types.
 
@@ -18,4 +18,4 @@ The tool includes multiple built-in generators that allow populating MariaDB dat
 
 - Generate test data for most popular DBMS including MariaDB and MySQL
 
-[<strong>Learn more about SB Data Generator</strong>](/clients-utilities/graphical-and-enhanced-clients/sb-data-generator)
+[<strong>Learn more about SB Data Generator</strong>](/clients-utilities/graphical-and-enhanced-clients/sb-data-generator/)

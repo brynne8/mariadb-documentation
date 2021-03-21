@@ -64,7 +64,7 @@ SHOW TABLES;
 80 rows in set (0.00 sec)
 ```
 
-See [List of Performance Schema Tables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/list-of-performance-schema-tables) for a full list and links to detailed descriptions of each table. From [MariaDB 10.5](/kb/en/what-is-mariadb-105/), there are 80 Performance Schema tables, while until [MariaDB 10.4](/kb/en/what-is-mariadb-104/), there are 52.
+See [List of Performance Schema Tables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/list-of-performance-schema-tables/) for a full list and links to detailed descriptions of each table. From [MariaDB 10.5](/kb/en/what-is-mariadb-105/), there are 80 Performance Schema tables, while until [MariaDB 10.4](/kb/en/what-is-mariadb-104/), there are 52.
 
 ## Activating the Performance Schema
 
@@ -124,15 +124,15 @@ SHOW VARIABLES LIKE "perf%";
 +--------------------------------------------------------+-------+
 ```
 
-See [Performance Schema System Variables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables) for a full list of available system variables.
+See [Performance Schema System Variables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables/) for a full list of available system variables.
 
 Note that the "consumer" events are not shown on this list, as they are only available as options, not as system variables, and they can only be enabled at [startup](/kb/en/mysqld-options/#performance-schema-options).
 
 ## See Also
 
 - [Performance schema options](/kb/en/mysqld-options/#performance-schema-options)
-- [SHOW ENGINE STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine)
-- [SHOW PROFILE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-profile)<code>
+- [SHOW ENGINE STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine/)
+- [SHOW PROFILE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-profile/)<code>
 </code>
 - [ANALYZE STATEMENT](/analyze-statement)
 - [Performance schema in MySQL 5.6](https://dev.mysql.com/doc/refman/5.6/en/performance-schema.html). All things here should also work for MariaDB.

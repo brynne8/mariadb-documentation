@@ -2,7 +2,7 @@
 
 ##### MariaDB starting with [10.0](/kb/en/what-is-mariadb-100/)
 
-The `table_io_waits_summary_by_index_usage` table, along with many other new [Performance Schema tables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/list-of-performance-schema-tables), was added in [MariaDB 10.0](/kb/en/what-is-mariadb-100/).
+The `table_io_waits_summary_by_index_usage` table, along with many other new [Performance Schema tables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/list-of-performance-schema-tables/), was added in [MariaDB 10.0](/kb/en/what-is-mariadb-100/).
 
 The `table_io_waits_summary_by_index_usage` table records table I/O waits by index.
 
@@ -48,6 +48,6 @@ The `table_io_waits_summary_by_index_usage` table records table I/O waits by ind
 <tr><td><code>MAX_TIMER_DELETE</code></td><td>Maximum wait time of all delete operations that are timed.</td></tr>
 </tbody></table>
 
-You can [TRUNCATE](/sql-statements-structure/sql-statements/table-statements/truncate-table) the table, which will reset all counters to zero. The table is also truncated if the [table_io_waits_summary_by_table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-table_io_waits_summary_by_table-table) table is truncated.
+You can [TRUNCATE](/sql-statements-structure/sql-statements/table-statements/truncate-table/) the table, which will reset all counters to zero. The table is also truncated if the [table_io_waits_summary_by_table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-table_io_waits_summary_by_table-table/) table is truncated.
 
 If a table's index structure is changed, index statistics recorded in this table may also be reset.

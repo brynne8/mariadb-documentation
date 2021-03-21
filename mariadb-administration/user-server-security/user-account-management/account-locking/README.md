@@ -8,7 +8,7 @@ Account locking was introduced in [MariaDB 10.4.2](/kb/en/mariadb-1042-release-n
 
 Account locking permits privileged administrators to lock/unlock user accounts. No new client connections will be permitted if an account is locked (existing connections are not affected).
 
-User accounts can be locked at creation, with the [CREATE USER](/sql-statements-structure/sql-statements/account-management-sql-commands/create-user) statement, or modified after creation with the [ALTER USER](/sql-statements-structure/sql-statements/account-management-sql-commands/alter-user) statement. For example:
+User accounts can be locked at creation, with the [CREATE USER](/sql-statements-structure/sql-statements/account-management-sql-commands/create-user/) statement, or modified after creation with the [ALTER USER](/sql-statements-structure/sql-statements/account-management-sql-commands/alter-user/) statement. For example:
 
 ```sql
 CREATE USER 'lorin'@'localhost' ACCOUNT LOCK;
@@ -27,13 +27,13 @@ mysql -ulorin
   ERROR 4151 (HY000): Access denied, this account is locked
 ```
 
-The [ALTER USER](/sql-statements-structure/sql-statements/account-management-sql-commands/alter-user) statement is also used to unlock a user:
+The [ALTER USER](/sql-statements-structure/sql-statements/account-management-sql-commands/alter-user/) statement is also used to unlock a user:
 
 ```sql
 ALTER USER 'lorin'@'localhost' ACCOUNT UNLOCK;
 ```
 
-The [SHOW CREATE USER](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-user) statement will show whether the account is locked:
+The [SHOW CREATE USER](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-user/) statement will show whether the account is locked:
 
 ```sql
 SHOW CREATE USER 'marijn'@'localhost';

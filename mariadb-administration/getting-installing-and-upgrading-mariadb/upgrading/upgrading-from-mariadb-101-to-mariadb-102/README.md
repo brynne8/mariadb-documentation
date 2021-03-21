@@ -2,11 +2,11 @@
 
 ### How to Upgrade
 
-For Windows, see [Upgrading MariaDB on Windows](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-mariadb-on-windows) instead.
+For Windows, see [Upgrading MariaDB on Windows](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-mariadb-on-windows/) instead.
 
-For MariaDB Galera Cluster, see [Upgrading from MariaDB 10.1 to MariaDB 10.2 with Galera Cluster](/replication/galera-cluster/upgrading-galera-cluster/upgrading-from-mariadb-101-to-mariadb-102-with-galera-cluster) instead.
+For MariaDB Galera Cluster, see [Upgrading from MariaDB 10.1 to MariaDB 10.2 with Galera Cluster](/replication/galera-cluster/upgrading-galera-cluster/upgrading-from-mariadb-101-to-mariadb-102-with-galera-cluster/) instead.
 
-Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup).
+Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/).
 
 The suggested upgrade procedure is:
 
@@ -19,7 +19,7 @@ The suggested upgrade procedure is:
 <code class="fixed" style="white-space:pre-wrap">SET GLOBAL innodb_fast_shutdown=0;</code>
 <ul start="1"><li>This step is not necessary when upgrading to [MariaDB 10.2.5](/kb/en/mariadb-1025-release-notes/) or later. Omitting it can make the upgrade process far faster. See [MDEV-12289](https://jira.mariadb.org/browse/MDEV-12289) for more information.
 </li></ul>
-3 [Stop MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically).
+3 [Stop MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically/).
 4 Uninstall the old version of MariaDB.
 <ul start="1"><li>On Debian, Ubuntu, and other similar Linux distributions, execute the following: <br>
 <code class="fixed" style="white-space:pre-wrap">sudo apt-get remove mariadb-server</code>
@@ -33,11 +33,11 @@ The suggested upgrade procedure is:
 </li><li>On RHEL, CentOS, Fedora, and other similar Linux distributions, see [Installing MariaDB Packages with YUM](/kb/en/yum/#installing-mariadb-packages-with-yum) for more information.
 </li><li>On SLES, OpenSUSE, and other similar Linux distributions, see [Installing MariaDB Packages with ZYpp](/kb/en/installing-mariadb-with-zypper/#installing-mariadb-packages-with-zypp) for more information.
 </li></ul>
-6 Make any desired changes to configuration options in [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files), such as `my.cnf`. This includes removing any options that are no longer supported.
-7 [Start MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically).
-8 Run [mysql_upgrade](/sql-statements-structure/sql-statements/table-statements/mysql_upgrade).
+6 Make any desired changes to configuration options in [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/), such as `my.cnf`. This includes removing any options that are no longer supported.
+7 [Start MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically/).
+8 Run [mysql_upgrade](/sql-statements-structure/sql-statements/table-statements/mysql_upgrade/).
 <ul start="1"><li>`mysql_upgrade` does two things:
-<ol start="1"><li>Ensures that the system tables in the [mysq](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables)l database are fully compatible with the new version.
+<ol start="1"><li>Ensures that the system tables in the [mysq](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/)l database are fully compatible with the new version.
 </li><li>Does a very quick check of all tables and marks them as compatible with the new version of MariaDB .
 </li></ol>
 </li></ul>
@@ -48,7 +48,7 @@ On most servers upgrading from 10.1 should be painless. However, there are some 
 
 #### InnoDB Instead of XtraDB
 
-[MariaDB 10.2](/kb/en/what-is-mariadb-102/) uses [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) as the default storage engine, rather than XtraDB, used in [MariaDB 10.1](/kb/en/what-is-mariadb-101/) and before. See [Why does MariaDB 10.2 use InnoDB instead of XtraDB?](/kb/en/why-does-mariadb-102-use-innodb-instead-of-xtradb/) In most cases this should have minimal effect as the latest InnoDB has incorporated most of the improvements made in earlier versions of XtraDB. Note that certain [XtraDB system variables](/kb/en/xtradbinnodb-server-system-variables/) are now ignored (although they still exist so as to permit easy upgrading).
+[MariaDB 10.2](/kb/en/what-is-mariadb-102/) uses [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) as the default storage engine, rather than XtraDB, used in [MariaDB 10.1](/kb/en/what-is-mariadb-101/) and before. See [Why does MariaDB 10.2 use InnoDB instead of XtraDB?](/kb/en/why-does-mariadb-102-use-innodb-instead-of-xtradb/) In most cases this should have minimal effect as the latest InnoDB has incorporated most of the improvements made in earlier versions of XtraDB. Note that certain [XtraDB system variables](/kb/en/xtradbinnodb-server-system-variables/) are now ignored (although they still exist so as to permit easy upgrading).
 
 #### Options That Have Changed Default Values
 
@@ -96,7 +96,7 @@ In particular, take note of the changes to [innodb_strict_mode](/kb/en/xtradbinn
 
 #### Options That Have Been Removed or Renamed
 
-The following options should be removed or renamed if you use them in your [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files):
+The following options should be removed or renamed if you use them in your [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/):
 
 <table><tbody><tr><th>Option</th><th>Reason</th></tr>
 <tr><td>aria_recover</td><td>Renamed to <a href="/kb/en/aria-system-variables/#aria_recover_options">aria_recover_options</a> to match  <a href="/kb/en/myisam-system-variables/#myisam_recover_options">myisam_recover_options</a>.</td></tr>
@@ -111,15 +111,15 @@ The following options should be removed or renamed if you use them in your [opti
 
 #### Reserved Words
 
-New [reserved words](/sql-statements-structure/sql-language-structure/reserved-words): OVER, RECURSIVE and ROWS. These can no longer be used as [identifiers](/sql-statements-structure/sql-language-structure/identifier-names) without being quoted.
+New [reserved words](/sql-statements-structure/sql-language-structure/reserved-words/): OVER, RECURSIVE and ROWS. These can no longer be used as [identifiers](/sql-statements-structure/sql-language-structure/identifier-names/) without being quoted.
 
 #### TokuDB
 
-[TokuDB](/columns-storage-engines-and-plugins/storage-engines/tokudb) has been split into a separate package, mariadb-plugin-tokudb.
+[TokuDB](/columns-storage-engines-and-plugins/storage-engines/tokudb/) has been split into a separate package, mariadb-plugin-tokudb.
 
 #### Replication
 
-[Replication](/replication/standard-replication) from legacy MySQL servers may require setting [binlog_checksum](/kb/en/replication-and-binary-log-server-system-variables/#binlog_checksum) to NONE.
+[Replication](/replication/standard-replication/) from legacy MySQL servers may require setting [binlog_checksum](/kb/en/replication-and-binary-log-server-system-variables/#binlog_checksum) to NONE.
 
 #### SQL Mode
 
@@ -127,25 +127,25 @@ New [reserved words](/sql-statements-structure/sql-language-structure/reserved-w
 
 #### Auto_increment
 
-[Auto_increment](/columns-storage-engines-and-plugins/data-types/auto_increment) columns are no longer permitted in [CHECK constraints](/sql-statements-structure/sql-statements/data-definition/constraint), [DEFAULT value expressions](/kb/en/create-table/#default) and [virtual columns](/kb/en/virtual-computed-columns/). They were permitted in earlier versions, but did not work correctly.
+[Auto_increment](/columns-storage-engines-and-plugins/data-types/auto_increment/) columns are no longer permitted in [CHECK constraints](/sql-statements-structure/sql-statements/data-definition/constraint/), [DEFAULT value expressions](/kb/en/create-table/#default) and [virtual columns](/kb/en/virtual-computed-columns/). They were permitted in earlier versions, but did not work correctly.
 
 #### TLS
 
-Starting with [MariaDB 10.2](/kb/en/what-is-mariadb-102/), when the user specifies the `--ssl` option with a [client or utility](/clients-utilities), the [client or utility](/clients-utilities) will not [verify the server certificate](/kb/en/secure-connections-overview/#server-certificate-verification) by default. In order to verify the server certificate, the user must specify the `--ssl-verify-server-cert` option to the [client or utility](/clients-utilities). For more information, see the [list of options](/kb/en/mysql-command-line-client/#options) for the [mysql](/clients-utilities/mysql-client/mysql-command-line-client) client.
+Starting with [MariaDB 10.2](/kb/en/what-is-mariadb-102/), when the user specifies the `--ssl` option with a [client or utility](/clients-utilities/), the [client or utility](/clients-utilities/) will not [verify the server certificate](/kb/en/secure-connections-overview/#server-certificate-verification) by default. In order to verify the server certificate, the user must specify the `--ssl-verify-server-cert` option to the [client or utility](/clients-utilities/). For more information, see the [list of options](/kb/en/mysql-command-line-client/#options) for the [mysql](/clients-utilities/mysql-client/mysql-command-line-client/) client.
 
 ### Major New Features To Consider
 
 You might consider using the following major new features in [MariaDB 10.2](/kb/en/what-is-mariadb-102/):
 
-- [Window Functions](/built-in-functions/special-functions/window-functions)
-- [mysqlbinlog](/clients-utilities/mysqlbinlog) now supports continuous binary log backups
+- [Window Functions](/built-in-functions/special-functions/window-functions/)
+- [mysqlbinlog](/clients-utilities/mysqlbinlog/) now supports continuous binary log backups
 - [Recursive Common Table Expressions](/kb/en/recursive-common-table-expressions-overview/)
-- [JSON functions](/built-in-functions/special-functions/json-functions)
-- See also [System Variables Added in MariaDB 10.2](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-102).
+- [JSON functions](/built-in-functions/special-functions/json-functions/)
+- See also [System Variables Added in MariaDB 10.2](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-102/).
 
 ### See Also
 
 - [The features in MariaDB 10.2](/kb/en/what-is-mariadb-102/)
-- [Upgrading from MariaDB 10.1 to MariaDB 10.2 with Galera Cluster](/replication/galera-cluster/upgrading-galera-cluster/upgrading-from-mariadb-101-to-mariadb-102-with-galera-cluster)
-- [Upgrading from MariaDB 10.0 to MariaDB 10.1](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-from-mariadb-100-to-mariadb-101)
-- [Upgrading from MariaDB 5.5 to MariaDB 10.0](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-from-mariadb-55-to-mariadb-100)
+- [Upgrading from MariaDB 10.1 to MariaDB 10.2 with Galera Cluster](/replication/galera-cluster/upgrading-galera-cluster/upgrading-from-mariadb-101-to-mariadb-102-with-galera-cluster/)
+- [Upgrading from MariaDB 10.0 to MariaDB 10.1](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-from-mariadb-100-to-mariadb-101/)
+- [Upgrading from MariaDB 5.5 to MariaDB 10.0](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-from-mariadb-55-to-mariadb-100/)

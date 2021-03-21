@@ -2,9 +2,9 @@
 
 ##### MariaDB starting with [10.5](/kb/en/what-is-mariadb-105/)
 
-The [S3 storage engine](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine) has been available since [MariaDB 10.5.4](/kb/en/mariadb-1054-release-notes/).
+The [S3 storage engine](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/) has been available since [MariaDB 10.5.4](/kb/en/mariadb-1054-release-notes/).
 
-The [S3 storage engine](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine) is based on the [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/aria-storage-engine) code.
+The [S3 storage engine](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/) is based on the [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/aria-storage-engine/) code.
 Internally the S3 storage inherits from the Aria code, with hooks
 that change reads, so that instead of reading data from the local disk it
 reads things from S3.
@@ -13,7 +13,7 @@ The S3 engine uses it's own page cache, modified to be able to handle reading bl
 
 ## ALTER TABLE
 
-[ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) will first create a local table in the normal Aria on disk
+[ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) will first create a local table in the normal Aria on disk
 format and then move both index and data to S3 in buckets of S3_BLOCK_SIZE.
 The .frm file is also copied to S3 for discovery to support discovery for
 other MariaDB servers.
@@ -21,8 +21,8 @@ One can also use ALTER TABLE to change the structure of an S3 table.
 
 ## Partitioning Tables
 
-Starting from [MariaDB 10.5.3](/kb/en/mariadb-1053-release-notes/), S3 tables can also be used with [Partitioning tables](/mariadb-administration/partitioning-tables).
-All [ALTER PARTITION](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) operations are supported except:
+Starting from [MariaDB 10.5.3](/kb/en/mariadb-1053-release-notes/), S3 tables can also be used with [Partitioning tables](/mariadb-administration/partitioning-tables/).
+All [ALTER PARTITION](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) operations are supported except:
 
 - REBUILD PARTITION
 - TRUNCATE PARTITION
@@ -105,4 +105,4 @@ delete: s3://mariadb-bucket/foo/test1/index/000001
 
 ## See Also
 
-- [Using the S3 storage engine](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/using-the-s3-storage-engine)
+- [Using the S3 storage engine](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/using-the-s3-storage-engine/)

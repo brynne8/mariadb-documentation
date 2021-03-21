@@ -22,7 +22,7 @@ MariaDB ColumnStore Information Functions are selectable pseudo functions that r
 
 SELECT involving a join between a fact table on the PM node and dimension table across all the nodes to import back on local PM:
 
-With the [infinidb_local_query](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-database-environment/configuring-columnstore-local-pm-query-mode) variable set to 0 (default with [local PM Query](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-database-environment/configuring-columnstore-local-pm-query-mode) ):
+With the [infinidb_local_query](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-database-environment/configuring-columnstore-local-pm-query-mode/) variable set to 0 (default with [local PM Query](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-database-environment/configuring-columnstore-local-pm-query-mode/) ):
 
 Create a script (i.e., extract_query_script.sql in our example) similar to the following:
 
@@ -33,7 +33,7 @@ from fact join dim using (key)
 where idbPm(fact.key) = idbLocalPm();
 ```
 
-The [infinidb_local_query](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-database-environment/configuring-columnstore-local-pm-query-mode) is set to 0 to allow query across all PMs.
+The [infinidb_local_query](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-database-environment/configuring-columnstore-local-pm-query-mode/) is set to 0 to allow query across all PMs.
 
 The query is structured so that the UM process on the PM node gets the fact table data locally from the PM node (as indicated by the use of the idbLocalPm() function), while the dimension table data is extracted from all the PM nodes.
 

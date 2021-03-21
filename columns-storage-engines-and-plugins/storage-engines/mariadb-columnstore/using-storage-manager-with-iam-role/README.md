@@ -40,4 +40,4 @@ cache_size = 2g
 path = /var/lib/columnstore/storagemanager/cache
 ```
 
-<em><strong>Note</strong>: This is an AWS only feature. For other deployment methods, see the example [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/sample-storagemanagercnf).</em>
+<em><strong>Note</strong>: This is an AWS only feature. For other deployment methods, see the example [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/sample-storagemanagercnf/).</em>

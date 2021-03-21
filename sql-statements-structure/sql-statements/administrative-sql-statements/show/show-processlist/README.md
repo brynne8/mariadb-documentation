@@ -10,8 +10,8 @@ SHOW [FULL] PROCESSLIST
 
 <code class="highlight fixed" style="white-space:pre-wrap">SHOW PROCESSLIST</code> shows you which threads are running. You
 can also get this information from the
-[information_schema.PROCESSLIST](/kb/en/information-schema-processlist-table/) table or the [mysqladmin processlist](/clients-utilities/mysqladmin) command. If you have the 
-<code class="highlight fixed" style="white-space:pre-wrap">[PROCESS privilege](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-privileges)</code>, you can see all threads.
+[information_schema.PROCESSLIST](/kb/en/information-schema-processlist-table/) table or the [mysqladmin processlist](/clients-utilities/mysqladmin/) command. If you have the 
+<code class="highlight fixed" style="white-space:pre-wrap">[PROCESS privilege](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-privileges/)</code>, you can see all threads.
 Otherwise, you can see only your own threads (that is, threads associated with
 the MariaDB account that you are using). If you do not use the
 <code class="highlight fixed" style="white-space:pre-wrap">FULL</code> keyword, only the first 100 characters of each
@@ -49,7 +49,7 @@ Note that the `PROGRESS` field from the information schema, and the `PROGRESS` f
 
 Threads can be killed using their thread_id, or, since [MariaDB 10.0.5](/kb/en/mariadb-1005-release-notes/), their query_id, with the [KILL](/kb/en/data-manipulation-kill-connection-query/) statement.
 
-Since queries on this table are locking, if the [performance_schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema) is enabled, you may want to query the [THREADS](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table) table instead.
+Since queries on this table are locking, if the [performance_schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/) is enabled, you may want to query the [THREADS](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table/) table instead.
 
 ## Examples
 

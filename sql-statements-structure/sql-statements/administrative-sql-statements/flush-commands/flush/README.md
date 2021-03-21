@@ -19,12 +19,12 @@ where `table_list` is a list of tables separated by `,` (comma).
 
 The `FLUSH` statement clears or reloads various internal caches used by
 MariaDB. To execute `FLUSH`, you must have the `RELOAD`
-privilege. See [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant).
+privilege. See [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/).
 
 The <code class="fixed" style="white-space:pre-wrap">RESET</code> statement is similar to `FLUSH`. See
-[RESET](/sql-statements-structure/sql-statements/administrative-sql-statements/reset).
+[RESET](/sql-statements-structure/sql-statements/administrative-sql-statements/reset/).
 
-You cannot issue a FLUSH statement from within a [stored function](/programming-customizing-mariadb/stored-routines/stored-functions) or a [trigger](/programming-customizing-mariadb/triggers-events/triggers). Doing so within a stored procedure is permitted, as long as it is not called by a stored function or trigger. See [Stored Routine Limitations](/programming-customizing-mariadb/stored-routines/stored-routine-limitations), [Stored Function Limitations](/programming-customizing-mariadb/stored-routines/stored-functions/stored-function-limitations) and [Trigger Limitations](/programming-customizing-mariadb/triggers-events/triggers/trigger-limitations).
+You cannot issue a FLUSH statement from within a [stored function](/programming-customizing-mariadb/stored-routines/stored-functions/) or a [trigger](/programming-customizing-mariadb/triggers-events/triggers/). Doing so within a stored procedure is permitted, as long as it is not called by a stored function or trigger. See [Stored Routine Limitations](/programming-customizing-mariadb/stored-routines/stored-routine-limitations/), [Stored Function Limitations](/programming-customizing-mariadb/stored-routines/stored-functions/stored-function-limitations/) and [Trigger Limitations](/programming-customizing-mariadb/triggers-events/triggers/trigger-limitations/).
 
 If a listed table is a view, an error like the following will be produced:
 
@@ -32,7 +32,7 @@ If a listed table is a view, an error like the following will be produced:
 ERROR 1347 (HY000): 'test.v' is not BASE TABLE
 ```
 
-By default, `FLUSH` statements are written to the [binary log](/mariadb-administration/server-monitoring-logs/binary-log) and will be [replicated](/replication). The `NO_WRITE_TO_BINLOG` keyword (`LOCAL` is an alias) will ensure the statement is not written to the binary log.
+By default, `FLUSH` statements are written to the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) and will be [replicated](/replication/). The `NO_WRITE_TO_BINLOG` keyword (`LOCAL` is an alias) will ensure the statement is not written to the binary log.
 
 The different flush options are:
 
@@ -60,11 +60,11 @@ The different flush options are:
 <tr><td><code>USER_STATISTICS</code></td><td>Reset user statistics (see <a href="/kb/en/show-user-statistics/">SHOW USER_STATISTICS</a>).</td></tr>
 </tbody></table>
 
-You can also use the [mysqladmin](/clients-utilities/mysqladmin) client to flush things. Use <code class="highlight fixed" style="white-space:pre-wrap">mysqladmin --help</code> to examine what flush commands it supports.
+You can also use the [mysqladmin](/clients-utilities/mysqladmin/) client to flush things. Use <code class="highlight fixed" style="white-space:pre-wrap">mysqladmin --help</code> to examine what flush commands it supports.
 
 ## `FLUSH STATUS`
 
-[Server status variables](/replication/optimization-and-tuning/system-variables/server-status-variables) can be reset by executing the following:
+[Server status variables](/replication/optimization-and-tuning/system-variables/server-status-variables/) can be reset by executing the following:
 
 ```sql
 FLUSH STATUS;
@@ -179,7 +179,7 @@ and table cache.
 
 Note that it's up to the user to ensure that no one is accessing the
 table between `FLUSH TABLES` and the table is copied to or from the
-server. This can be secured by using [LOCK TABLES](/sql-statements-structure/sql-statements/transactions/lock-tables).
+server. This can be secured by using [LOCK TABLES](/sql-statements-structure/sql-statements/transactions/lock-tables/).
 
 If there are any tables locked by the connection that is using `FLUSH TABLES` all the locked tables will be closed as part of the flush and
 reopened and relocked before `FLUSH TABLES` returns. This allows one
@@ -209,7 +209,7 @@ to instead use meta data locks.
 - No statement requiring table changes are allowed for any user until `UNLOCK TABLES`.
 
 Instead of using `FLUSH TABLE WITH READ LOCK` one should in most cases instead use
-[BACKUP STAGE BLOCK_COMMIT](/sql-statements-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage).
+[BACKUP STAGE BLOCK_COMMIT](/sql-statements-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage/).
 
 ### Implementation of `FLUSH TABLES table_list`
 
@@ -235,9 +235,9 @@ This is basically the same behavior as in old MariaDB version if one first lock 
 
 The `FLUSH SSL` command was first added in [MariaDB 10.4](/kb/en/what-is-mariadb-104/).
 
-In [MariaDB 10.4](/kb/en/what-is-mariadb-104/) and later, the `FLUSH SSL` command can be used to dynamically reinitialize the server's [TLS](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption) context. This is most useful if you need to replace a certificate that is about to expire without restarting the server.
+In [MariaDB 10.4](/kb/en/what-is-mariadb-104/) and later, the `FLUSH SSL` command can be used to dynamically reinitialize the server's [TLS](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/) context. This is most useful if you need to replace a certificate that is about to expire without restarting the server.
 
-This operation is performed by reloading the files defined by the following [TLS system variables](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables):
+This operation is performed by reloading the files defined by the following [TLS system variables](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables/):
 
 - <a undefined>ssl_cert</a>
 - <a undefined>ssl_key</a>
@@ -246,9 +246,9 @@ This operation is performed by reloading the files defined by the following [TLS
 - <a undefined>ssl_crl</a>
 - <a undefined>ssl_crlpath</a>
 
-These [TLS system variables](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables) are not dynamic, so their values can <strong>not</strong> be changed without restarting the server.
+These [TLS system variables](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables/) are not dynamic, so their values can <strong>not</strong> be changed without restarting the server.
 
-If you want to dynamically reinitialize the server's [TLS](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption) context, then you need to change the certificate and key files at the relevant paths defined by these [TLS system variables](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables), without actually changing the values of the variables. See [MDEV-19341](https://jira.mariadb.org/browse/MDEV-19341) for more information.
+If you want to dynamically reinitialize the server's [TLS](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/) context, then you need to change the certificate and key files at the relevant paths defined by these [TLS system variables](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables/), without actually changing the values of the variables. See [MDEV-19341](https://jira.mariadb.org/browse/MDEV-19341) for more information.
 
 ## Reducing Memory Usage
 

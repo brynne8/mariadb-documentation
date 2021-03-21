@@ -2,21 +2,21 @@
 
 There are a number of numeric data types:
 
-- [TINYINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/tinyint)
-- [BOOLEAN](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/boolean) - Synonym for TINYINT(1)
-- [INT1](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int1) - Synonym for TINYINT
-- [SMALLINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/smallint)
-- [INT2](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int2) - Synonym for SMALLINT
-- [MEDIUMINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/mediumint)
-- [INT3](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int3) - Synonym for MEDIUMINT
-- [INT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int), INTEGER
-- [INT4](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int4) - Synonym for INT
-- [BIGINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/bigint)
-- [INT8](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int8) - Synonym for BIGINT
-- [DECIMAL](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/decimal), DEC, NUMERIC, FIXED
-- [FLOAT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/float)
-- [DOUBLE](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/double), DOUBLE PRECISION, REAL
-- [BIT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/bit)
+- [TINYINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/tinyint/)
+- [BOOLEAN](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/boolean/) - Synonym for TINYINT(1)
+- [INT1](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int1/) - Synonym for TINYINT
+- [SMALLINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/smallint/)
+- [INT2](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int2/) - Synonym for SMALLINT
+- [MEDIUMINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/mediumint/)
+- [INT3](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int3/) - Synonym for MEDIUMINT
+- [INT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int/), INTEGER
+- [INT4](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int4/) - Synonym for INT
+- [BIGINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/bigint/)
+- [INT8](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int8/) - Synonym for BIGINT
+- [DECIMAL](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/decimal/), DEC, NUMERIC, FIXED
+- [FLOAT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/float/)
+- [DOUBLE](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/double/), DOUBLE PRECISION, REAL
+- [BIT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/bit/)
 
 See the specific articles for detailed information on each.
 
@@ -133,4 +133,4 @@ SELECT * FROM ranges;
 
 ## Auto_increment
 
-The `AUTO_INCREMENT` attribute can be used to generate a unique identity for new rows. For more details, see [auto_increment](/columns-storage-engines-and-plugins/data-types/auto_increment).
+The `AUTO_INCREMENT` attribute can be used to generate a unique identity for new rows. For more details, see [auto_increment](/columns-storage-engines-and-plugins/data-types/auto_increment/).

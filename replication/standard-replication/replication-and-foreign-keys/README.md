@@ -2,7 +2,7 @@
 
 The terms <em>master</em> and <em>slave</em> have historically been used in replication, but the terms terms <em>primary</em> and <em>replica</em> are now preferred. The old terms are used throughout the documentation, and in MariaDB commands, although [MariaDB 10.5](/kb/en/what-is-mariadb-105/) has begun the process of renaming. The documentation will follow over time. See [MDEV-18777](https://jira.mariadb.org/browse/MDEV-18777) to follow progress on this effort.
 
-Replication is based upon the [binary log](/mariadb-administration/server-monitoring-logs/binary-log).  However, cascading deletes or updates based on foreign key relations are an internal mechanism, and are not written to the binary log.
+Replication is based upon the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/).  However, cascading deletes or updates based on foreign key relations are an internal mechanism, and are not written to the binary log.
 
 Because of this, an identical statement run on the master and the slave may result in different outcomes if the foreign key relations are not identical on both master and slave This could be the case if the storage engine on one supports cascading deletes (e.g. InnoDB) and the storage engine on the other does not (e.g. MyISAM), or the one has specified a foreign key relation, and the other hasn't.
 

@@ -38,5 +38,5 @@ SELECT INET6_NTOA(UNHEX('48F3000000000000D4321431BA23846F'));
 
 ## See Also
 
-- [INET6_ATON()](/built-in-functions/secondary-functions/miscellaneous-functions/inet6_aton)
-- [INET_NTOA()](/built-in-functions/secondary-functions/miscellaneous-functions/inet_ntoa)
+- [INET6_ATON()](/built-in-functions/secondary-functions/miscellaneous-functions/inet6_aton/)
+- [INET_NTOA()](/built-in-functions/secondary-functions/miscellaneous-functions/inet_ntoa/)

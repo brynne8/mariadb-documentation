@@ -11,7 +11,7 @@ From [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/), `mariadbd-safe` is th
 <br><br>
 The `mysqld_safe` startup script is in MariaDB distributions on Linux and Unix. It is a wrapper that starts `mysqld` with some extra safety features. For example, if `mysqld_safe` notices that `mysqld` has crashed, then `mysqld_safe` will automatically restart `mysqld`.
 
-`mysqld_safe` is the recommended way to start `mysqld` on Linux and Unix distributions that do not support [systemd](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd). Additionally, the [mysql.server](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqlserver) init script used by [sysVinit](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/sysvinit) starts `mysqld` with `mysqld_safe` by default.
+`mysqld_safe` is the recommended way to start `mysqld` on Linux and Unix distributions that do not support [systemd](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd/). Additionally, the [mysql.server](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqlserver/) init script used by [sysVinit](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/sysvinit/) starts `mysqld` with `mysqld_safe` by default.
 <br><br>
 
 ## Using mysqld_safe
@@ -25,7 +25,7 @@ mysqld_safe [ --defaults-file | --defaults-extra-file ] <options> <mysqld_option
 ### Options
 
 Many of the options supported by `mysqld_safe` are identical to
-options supported by [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options). If an unknown option is provided to `mysqld_safe` on the command-line, then it is passed to `mysqld`.
+options supported by [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/). If an unknown option is provided to `mysqld_safe` on the command-line, then it is passed to `mysqld`.
 
 `mysqld_safe` supports the following options:
 
@@ -63,7 +63,7 @@ options supported by [mysqld](/mariadb-administration/getting-installing-and-upg
 
 ### Option Files
 
-In addition to reading options from the command-line, `mysqld_safe` can also read options from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files). If an unknown option is provided to `mysqld_safe` in an option file, then it is ignored.
+In addition to reading options from the command-line, `mysqld_safe` can also read options from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/). If an unknown option is provided to `mysqld_safe` in an option file, then it is ignored.
 
 The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
 
@@ -76,7 +76,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 #### Option Groups
 
-`mysqld_safe` reads options from the following [option groups](/kb/en/configuring-mariadb-with-option-files/#option-groups) from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files):
+`mysqld_safe` reads options from the following [option groups](/kb/en/configuring-mariadb-with-option-files/#option-groups) from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/):
 
 <table><tbody><tr><th>Group</th><th>Description</th></tr>
 <tr><td><code>[mysqld_safe]</code></td><td>&nbsp;Options read by <code>mysqld_safe</code>, which includes both MariaDB Server and MySQL Server.</td></tr>
@@ -87,7 +87,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 The `[safe_mysqld]` option group is primarily supported for backward compatibility. You should rename such option groups to `[mysqld_safe]` in MariaDB installations to prevent breakage in the future if this compatibility is removed.
 
-`mysqld_safe` also reads options from the following server [option groups](/kb/en/configuring-mariadb-with-option-files/#option-groups) from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files):
+`mysqld_safe` also reads options from the following server [option groups](/kb/en/configuring-mariadb-with-option-files/#option-groups) from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/):
 
 <table><tbody><tr><th>Group</th><th>Description</th></tr>
 <tr><td><code>[mysqld]</code></td><td>&nbsp;Options read by <code>mysqld</code>, which includes both MariaDB Server and MySQL Server.</td></tr>
@@ -220,5 +220,5 @@ follows:
 ## See Also
 
 - [How to increase max number of open files on Linux](http://www.cyberciti.biz/faq/linux-increase-the-maximum-number-of-open-files). This can be used to solve issues like this warning from mysqld:  <code class="fixed" style="white-space:pre-wrap">Changed limits: max_open_files: 1024 (requested 5000)"</code>
-- [mysqld Options](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options)
-- [systemd](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd)
+- [mysqld Options](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/)
+- [systemd](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd/)

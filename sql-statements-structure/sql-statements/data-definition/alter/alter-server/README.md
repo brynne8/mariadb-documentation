@@ -10,7 +10,7 @@ ALTER SERVER server_name
 ## Description
 
 Alters the server information for <em>server_name</em>, adjusting the specified
-options as per the [CREATE SERVER](/sql-statements-structure/sql-statements/data-definition/create/create-server) command. The corresponding fields in the [mysql.servers table](/kb/en/mysqlservers-table/) are updated accordingly. This statement requires the [SUPER](/kb/en/grant/#super) privilege or, from [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/), the [FEDERATED ADMIN](/kb/en/grant/#federated-admin) privilege.
+options as per the [CREATE SERVER](/sql-statements-structure/sql-statements/data-definition/create/create-server/) command. The corresponding fields in the [mysql.servers table](/kb/en/mysqlservers-table/) are updated accordingly. This statement requires the [SUPER](/kb/en/grant/#super) privilege or, from [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/), the [FEDERATED ADMIN](/kb/en/grant/#federated-admin) privilege.
 
 ## Examples
 
@@ -20,6 +20,6 @@ ALTER SERVER s OPTIONS (USER 'sally');
 
 ## See Also
 
-- [CREATE SERVER](/sql-statements-structure/sql-statements/data-definition/create/create-server)
-- [DROP SERVER](/sql-statements-structure/sql-statements/data-definition/drop/drop-server)
-- [Spider Storage Engine](/columns-storage-engines-and-plugins/storage-engines/spider)
+- [CREATE SERVER](/sql-statements-structure/sql-statements/data-definition/create/create-server/)
+- [DROP SERVER](/sql-statements-structure/sql-statements/data-definition/drop/drop-server/)
+- [Spider Storage Engine](/columns-storage-engines-and-plugins/storage-engines/spider/)

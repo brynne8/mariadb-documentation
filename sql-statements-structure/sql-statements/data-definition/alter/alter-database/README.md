@@ -28,9 +28,9 @@ The `CHARACTER SET` clause changes the default database character set.
 The `COLLATE` clause changes the default database collation. See [Character Sets and Collations](/kb/en/data-types-character-sets-and-collations/) for more.
 
 You can see what character sets and collations are available using,
-respectively, the [SHOW CHARACTER SET](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-character-set) and [SHOW COLLATION](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-collation) statements.
+respectively, the [SHOW CHARACTER SET](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-character-set/) and [SHOW COLLATION](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-collation/) statements.
 
-Changing the default character set/collation of a database does not change the character set/collation of any [stored procedures](/programming-customizing-mariadb/stored-routines/stored-procedures) or [stored functions](/programming-customizing-mariadb/stored-routines/stored-functions) that were previously created, and relied on the defaults. These need to be dropped and recreated in order to apply the character set/collation changes.
+Changing the default character set/collation of a database does not change the character set/collation of any [stored procedures](/programming-customizing-mariadb/stored-routines/stored-procedures/) or [stored functions](/programming-customizing-mariadb/stored-routines/stored-functions/) that were previously created, and relied on the defaults. These need to be dropped and recreated in order to apply the character set/collation changes.
 
 The database name can be omitted from the first syntax, in which case
 the statement applies to the default database.
@@ -39,7 +39,7 @@ The syntax that includes the `UPGRADE DATA DIRECTORY NAME` clause was
 added in MySQL 5.1.23. It updates the name of the directory associated
 with the database to use the encoding implemented in MySQL 5.1 for
 mapping database names to database directory names (see
-[Identifier to File Name Mapping](/sql-statements-structure/sql-language-structure/identifier-to-file-name-mapping)). This
+[Identifier to File Name Mapping](/sql-statements-structure/sql-language-structure/identifier-to-file-name-mapping/)). This
 clause is for use under these conditions:
 
 - It is intended when upgrading MySQL to 5.1 or later from older versions.
@@ -86,9 +86,9 @@ ALTER DATABASE p COMMENT='Presentations';
 
 ## See Also
 
-- [CREATE DATABASE](/sql-statements-structure/sql-statements/data-definition/create/create-database)
-- [DROP DATABASE](/sql-statements-structure/sql-statements/data-definition/drop/drop-database)
-- [SHOW CREATE DATABASE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-database)
-- [SHOW DATABASES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-databases)
+- [CREATE DATABASE](/sql-statements-structure/sql-statements/data-definition/create/create-database/)
+- [DROP DATABASE](/sql-statements-structure/sql-statements/data-definition/drop/drop-database/)
+- [SHOW CREATE DATABASE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-database/)
+- [SHOW DATABASES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-databases/)
 - [Character Sets and Collations](/kb/en/character-sets-and-collations/)
 - [Information Schema SCHEMATA Table](/kb/en/information-schema-schemata-table/)

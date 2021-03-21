@@ -1,6 +1,6 @@
 # Using Buffer UPDATE Algorithm
 
-This article explains the [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update) statement's <em>Using Buffer</em> algorithm.
+This article explains the [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/) statement's <em>Using Buffer</em> algorithm.
 
 Take the following table and query:
 
@@ -29,4 +29,4 @@ In order to prevent such situations, the optimizer checks whether the UPDATE sta
 
 This way, each row will be updated only once.
 
-The `Using buffer` [EXPLAIN](/sql-statements-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain) output indicates that the buffer as described above will be used. The algorithm has always been in use, but has only been made visible in the `EXPLAIN` output since [MariaDB 10.0.5](/kb/en/mariadb-1005-release-notes/).
+The `Using buffer` [EXPLAIN](/sql-statements-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain/) output indicates that the buffer as described above will be used. The algorithm has always been in use, but has only been made visible in the `EXPLAIN` output since [MariaDB 10.0.5](/kb/en/mariadb-1005-release-notes/).

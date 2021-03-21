@@ -7,7 +7,7 @@ INSTALL SONAME 'plugin_library'```
 
 ## Description
 
-This statement is a variant of [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin). It installs <strong>all</strong> [plugins](/kb/en/mariadb-plugins/) from a given `plugin_library`. See [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin) for details.
+This statement is a variant of [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin/). It installs <strong>all</strong> [plugins](/kb/en/mariadb-plugins/) from a given `plugin_library`. See [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin/) for details.
 
 <code class="highlight fixed" style="white-space:pre-wrap">plugin_library</code> is the name of the shared library that
 contains the plugin code. The file name extension (for
@@ -46,7 +46,7 @@ initialization function, which handles any setup that the plugin must perform
 before it can be used.
 
 To use <code class="highlight fixed" style="white-space:pre-wrap">INSTALL SONAME</code>, you must have the
-[INSERT privilege](/sql-statements-structure/sql-statements/account-management-sql-commands/grant) for the `mysql.plugin` table.
+[INSERT privilege](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/) for the `mysql.plugin` table.
 
 At server startup, the server loads and initializes any plugin that is
 listed in the `mysql.plugin` table. This means that a plugin is installed
@@ -63,7 +63,7 @@ If you need to load plugins for a single server startup when the
 not to read system tables), use the 
 <code class="highlight fixed" style="white-space:pre-wrap">--plugin-load</code> [mysqld option](/kb/en/mysqld-options-full-list/).
 
-If you need to install only one plugin from a library, use the [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin) statement.
+If you need to install only one plugin from a library, use the [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin/) statement.
 
 ## Examples
 
@@ -81,12 +81,12 @@ INSTALL SONAME 'ha_sequence';
 
 ## See Also
 
-- [List of Plugins](/columns-storage-engines-and-plugins/plugins/information-on-plugins/list-of-plugins)
-- [Plugin Overview](/columns-storage-engines-and-plugins/plugins/plugin-overview)
-- [SHOW PLUGINS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-plugins)
-- [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin)
-- [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin)
-- [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname)
-- [SHOW PLUGINS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-plugins)
-- [INFORMATION_SCHEMA.PLUGINS Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema)
-- [mysql_plugin](/clients-utilities/mysql_plugin)
+- [List of Plugins](/columns-storage-engines-and-plugins/plugins/information-on-plugins/list-of-plugins/)
+- [Plugin Overview](/columns-storage-engines-and-plugins/plugins/plugin-overview/)
+- [SHOW PLUGINS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-plugins/)
+- [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin/)
+- [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin/)
+- [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname/)
+- [SHOW PLUGINS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-plugins/)
+- [INFORMATION_SCHEMA.PLUGINS Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema/)
+- [mysql_plugin](/clients-utilities/mysql_plugin/)

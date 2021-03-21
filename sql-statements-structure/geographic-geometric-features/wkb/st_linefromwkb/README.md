@@ -11,7 +11,7 @@ LineStringFromWKB(wkb[,srid])
 
 ## Description
 
-Constructs a LINESTRING value using its [WKB](/sql-statements-structure/geographic-geometric-features/wkb/well-known-binary-wkb-format)  representation and SRID.
+Constructs a LINESTRING value using its [WKB](/sql-statements-structure/geographic-geometric-features/wkb/well-known-binary-wkb-format/)  representation and SRID.
 
 `ST_LineFromWKB()`, `LineFromWKB()`, `ST_LineStringFromWKB()`, and `LineStringFromWKB()` are synonyms.
 

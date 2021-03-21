@@ -44,9 +44,9 @@ We define some metadata about the image with `LABEL`. Any label is valid.
 
 We declare that the port 3306 (MariaDB default port) should be exposed. However, this has no effect if the port is not exposed at container creation.
 
-Finally, we start the container command: [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options). This command is run when a container based on this image starts. When the process stops or crashes, the container will immediately stop.
+Finally, we start the container command: [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/). This command is run when a container based on this image starts. When the process stops or crashes, the container will immediately stop.
 
-Note that, in a container, we normally run mysqld directly, rather than running [mysqld_safe](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld_safe) or running MariaDB as a service. Containers restart can be handled. by Docker. See [automatic restart](/kb/en/installing-and-using-mariadb-via-docker/#automatic-restart).
+Note that, in a container, we normally run mysqld directly, rather than running [mysqld_safe](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld_safe/) or running MariaDB as a service. Containers restart can be handled. by Docker. See [automatic restart](/kb/en/installing-and-using-mariadb-via-docker/#automatic-restart).
 
 See the documentation links below to learn the syntax allowed in a Dockerfile.
 

@@ -6,10 +6,10 @@ The memory_summary_global_by_event_name table was introduced in [MariaDB 10.5.2]
 
 There are five memory summary tables in the Performance Schema that share a number of fields in common. These include:
 
-- [memory_summary_by_account_by_event_name](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-memory_summary_by_account_by_event_name-table)
-- [memory_summary_by_host_by_event_name](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-memory_summary_by_host_by_event_name-table)
-- [memory_summary_by_thread_by_event_name](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-memory_summary_by_thread_by_event_name-table)
-- [memory_summary_by_user_by_event_name](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-memory_summary_by_user_by_event_name-table)
+- [memory_summary_by_account_by_event_name](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-memory_summary_by_account_by_event_name-table/)
+- [memory_summary_by_host_by_event_name](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-memory_summary_by_host_by_event_name-table/)
+- [memory_summary_by_thread_by_event_name](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-memory_summary_by_thread_by_event_name-table/)
+- [memory_summary_by_user_by_event_name](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-memory_summary_by_user_by_event_name-table/)
 - memory_global_by_event_name
 
 The `memory_summary_global_by_event_name` table contains memory usage statistics aggregated by event and event.

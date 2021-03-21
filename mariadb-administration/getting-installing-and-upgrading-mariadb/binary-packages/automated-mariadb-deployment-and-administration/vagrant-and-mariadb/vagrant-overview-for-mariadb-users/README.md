@@ -42,7 +42,7 @@ A provider adds support for creating a specific type of machines. Vagrant comes 
 
 - VirtualBox allows one to create virtual machines with VirtualBox.
 - Hyper-V allows one to create virtual machines with Microsoft Hyper-V.
-- [Docker](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb) allows one to create Docker containers.
+- [Docker](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/) allows one to create Docker containers.
 
 Alternative providers are maintained by third parties or sold by HashiCorp. They allow one to create different types of machines, for example using VMWare.
 
@@ -62,7 +62,7 @@ A provisioner is a technology used to deploy software to the newly created machi
 
 The simplest provisioner is `shell`, which runs a shell file inside the Vagrant machine. `powershell` is also available.
 
-Other providers use automation software to provision the machine. There are provisioners that allow one to use [Ansible](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb), [Puppet](/kb/en/automated-mariadb-deployment-and-administration-puppet-and-mariadb/), Chef or Salt. Where relevant, there are different provisioners allowing the use of these technologies in a distributed way (for example, using Puppet apply) or in a centralized way (for example, using a Puppet server).
+Other providers use automation software to provision the machine. There are provisioners that allow one to use [Ansible](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/), [Puppet](/kb/en/automated-mariadb-deployment-and-administration-puppet-and-mariadb/), Chef or Salt. Where relevant, there are different provisioners allowing the use of these technologies in a distributed way (for example, using Puppet apply) or in a centralized way (for example, using a Puppet server).
 
 It is interesting to note that there is both a Docker provider and a Docker provisioner. This means that a Vagrant machine can be a Docker container, thanks to the `docker` provisioner. Or it could be any virtualisation technology with Docker running in it, thanks to the `docker` provisioner. In this case, Docker pulls images and starts containers to run the software that should be running in the Vagrant machine.
 

@@ -10,7 +10,7 @@
 
 Subtraction. The operator is also used as the unary minus for changing sign.
 
-If both operands are integers, the result is calculated with [BIGINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/bigint) precision. If either integer is unsigned, the result is also an unsigned integer, unless the NO_UNSIGNED_SUBTRACTION [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode) is enabled, in which case the result is always signed.
+If both operands are integers, the result is calculated with [BIGINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/bigint/) precision. If either integer is unsigned, the result is also an unsigned integer, unless the NO_UNSIGNED_SUBTRACTION [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode/) is enabled, in which case the result is always signed.
 
 For real or string operands, the operand with the highest precision determines the result precision.
 
@@ -52,7 +52,7 @@ Unary minus:
 
 ## See Also
 
-- [Type Conversion](/built-in-functions/string-functions/type-conversion)
-- [Addition Operator (+)](/built-in-functions/numeric-functions/addition-operator)
-- [Multiplication Operator (*)](/built-in-functions/numeric-functions/multiplication-operator)
-- [Division Operator (/)](/built-in-functions/numeric-functions/division-operator)
+- [Type Conversion](/built-in-functions/string-functions/type-conversion/)
+- [Addition Operator (+)](/built-in-functions/numeric-functions/addition-operator/)
+- [Multiplication Operator (*)](/built-in-functions/numeric-functions/multiplication-operator/)
+- [Division Operator (/)](/built-in-functions/numeric-functions/division-operator/)

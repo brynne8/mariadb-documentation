@@ -23,11 +23,11 @@ be used as a suffix for relay logs and master info index files.
 
 The new syntax introduced to handle many connections:
 
-- <code class="highlight fixed" style="white-space:pre-wrap">[CHANGE MASTER ['connection_name'] TO ...](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to)</code>.  This creates or modifies a connection to a master.
+- <code class="highlight fixed" style="white-space:pre-wrap">[CHANGE MASTER ['connection_name'] TO ...](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to/)</code>.  This creates or modifies a connection to a master.
 - <code class="highlight fixed" style="white-space:pre-wrap">FLUSH RELAY LOGS ['connection_name']</code>
-- <code class="highlight fixed" style="white-space:pre-wrap">[MASTER_POS_WAIT(....,['connection_name'])](/built-in-functions/secondary-functions/miscellaneous-functions/master_pos_wait)</code>
+- <code class="highlight fixed" style="white-space:pre-wrap">[MASTER_POS_WAIT(....,['connection_name'])](/built-in-functions/secondary-functions/miscellaneous-functions/master_pos_wait/)</code>
 - <code class="highlight fixed" style="white-space:pre-wrap">[RESET SLAVE ['connection_name'] [ALL](/kb/en/reset-slave/)]</code>.  This is used to reset slave replication position or to remove a slave permanently.
-- <code class="highlight fixed" style="white-space:pre-wrap">[SHOW RELAYLOG ['connection_name'] EVENTS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-relaylog-events)</code>
+- <code class="highlight fixed" style="white-space:pre-wrap">[SHOW RELAYLOG ['connection_name'] EVENTS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-relaylog-events/)</code>
 - <code class="highlight fixed" style="white-space:pre-wrap">[SHOW SLAVE ['connection_name'] STATUS](/kb/en/show-slave-status/)</code>
 - <code class="highlight fixed" style="white-space:pre-wrap">[SHOW ALL SLAVES STATUS](/kb/en/show-slave-status/)</code>
 - <code class="highlight fixed" style="white-space:pre-wrap">[START SLAVE ['connection_name'](/kb/en/start-slave/)...]]</code>
@@ -38,7 +38,7 @@ The new syntax introduced to handle many connections:
 The original old-style connection is an empty string <code class="highlight fixed" style="white-space:pre-wrap">''</code>.
 You don't have to use this connection if you don't want to.
 
-You create new master connections with [CHANGE MASTER](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to).<br>
+You create new master connections with [CHANGE MASTER](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to/).<br>
 You delete the connection permanently with [RESET SLAVE 'connection_name' ALL](/kb/en/reset-slave/).
 
 ## Replication Variables for Multi-Source

@@ -13,7 +13,7 @@ EXECUTE stmt_name
 
 ## Description
 
-After preparing a statement with [PREPARE](/sql-statements-structure/sql-statements/prepared-statements/prepare-statement), you execute it with an
+After preparing a statement with [PREPARE](/sql-statements-structure/sql-statements/prepared-statements/prepare-statement/), you execute it with an
 <code class="fixed" style="white-space:pre-wrap">EXECUTE</code> statement that refers to the prepared statement name. If the
 prepared statement contains any parameter markers, you must supply a
 <code class="fixed" style="white-space:pre-wrap">USING</code> clause that lists user variables containing the values to be
@@ -37,4 +37,4 @@ See [example in PREPARE](/kb/en/prepare-statement/#example).
 
 ## See Also
 
-- [EXECUTE IMMEDIATE](/sql-statements-structure/sql-statements/prepared-statements/execute-immediate)
+- [EXECUTE IMMEDIATE](/sql-statements-structure/sql-statements/prepared-statements/execute-immediate/)

@@ -1,14 +1,14 @@
 # MariaDB Galera Cluster 5.5.42 Changelog
 
 [Download](http://downloads.mariadb.org/mariadb-galera/5.5.42)
-[Release Notes](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5542-release-notes)
-[Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5542-changelog)
-[Overview of MariaDB Galera Cluster](/replication/galera-cluster/what-is-mariadb-galera-cluster)
+[Release Notes](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5542-release-notes/)
+[Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5542-changelog/)
+[Overview of MariaDB Galera Cluster](/replication/galera-cluster/what-is-mariadb-galera-cluster/)
 
 <strong>Release date:</strong> 11 Mar 2015
 
 For the highlights of this release, see the
-[release notes](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5542-release-notes).
+[release notes](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5542-release-notes/).
 
 The revision number links will take you to the revision's page on Github. On
 Github you can view more details of the revision and view diffs of the code

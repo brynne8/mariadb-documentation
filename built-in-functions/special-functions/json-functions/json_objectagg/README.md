@@ -16,7 +16,7 @@ JSON_OBJECTAGG(key, value)
 
 Returns NULL in the case of an error, or if the result contains no rows.
 
-`JSON_OBJECTAGG` cannot currently be used as a [window function](/built-in-functions/special-functions/window-functions).
+`JSON_OBJECTAGG` cannot currently be used as a [window function](/built-in-functions/special-functions/window-functions/).
 
 ## Examples
 

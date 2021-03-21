@@ -3,7 +3,7 @@
 ## Description
 
 You are allowed to specify <code class="highlight fixed" style="white-space:pre-wrap">DUAL</code> as a dummy table name in
-situations where no tables are referenced, such as the following [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) statement:
+situations where no tables are referenced, such as the following [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) statement:
 
 ```sql
 SELECT 1 + 1 FROM DUAL;
@@ -29,4 +29,4 @@ Empty set (0.00 sec)
 
 ## See Also
 
-- [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select)
+- [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/)

@@ -2,7 +2,7 @@
 
 When a WHERE clause is related to the partitioning expression, the optimizer knows which partitions are relevant for the query. Other partitions will not be read. This optimization is called <em>partition pruning</em>.
 
-[EXPLAIN PARTITIONS](/sql-statements-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain) can be used to know which partitions will be read for a given query. A column called `partitions` will contain a comma-separated list of the accessed partitions. For example:
+[EXPLAIN PARTITIONS](/sql-statements-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain/) can be used to know which partitions will be read for a given query. A column called `partitions` will contain a comma-separated list of the accessed partitions. For example:
 
 ```sql
 EXPLAIN PARTITIONS SELECT * FROM orders WHERE id < 15000000;
@@ -21,14 +21,14 @@ SELECT * FROM orders PARTITION (p3) WHERE user_id = 50;
 
 The PARTITION clause is supported for all DML statements:
 
-- [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select)
-- [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert)
-- [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update)
-- [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete)
-- [REPLACE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/replace)
+- [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/)
+- [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/)
+- [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/)
+- [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/)
+- [REPLACE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/replace/)
 
 ## Partition pruning and triggers
 
-In general, partition pruning is applied to statements contained in [triggers](/programming-customizing-mariadb/triggers-events/triggers).
+In general, partition pruning is applied to statements contained in [triggers](/programming-customizing-mariadb/triggers-events/triggers/).
 
 However, note that if a `BEFORE INSERT` or `BEFORE UPDATE` trigger is defined on a table, MariaDB doesn't know in advance if the columns used in the partitioning expression will be changed. For this reason, it is forced to lock all partitions.

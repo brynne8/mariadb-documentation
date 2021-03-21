@@ -1,6 +1,6 @@
 # Aria Clients and Utilities
 
-Clients and utilities for working with the [Aria](/columns-storage-engines-and-plugins/storage-engines/aria) storage engine
+Clients and utilities for working with the [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/) storage engine
 
 - [aria_chk](/clients-utilities/aria-clients-and-utilities/aria_chk/) — Used for checking, repairing, optimizing and sorting Aria tables.
 - [aria_pack](/clients-utilities/aria-clients-and-utilities/aria_pack/) — Tool for compressing Aria tables.

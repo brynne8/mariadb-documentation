@@ -9,8 +9,8 @@ Crosses(g1,g2)
 ## Description
 
 Returns `1` if `g1` spatially crosses `g2`. Returns `NULL` if `g1` is
-a [Polygon](/sql-statements-structure/geographic-geometric-features/geometry-constructors/polygon) or a [MultiPolygon](/sql-statements-structure/geographic-geometric-features/geometry-constructors/multipolygon), or if `g2` is a
-[Point](/sql-statements-structure/geographic-geometric-features/geometry-constructors/point) or a [MultiPoint](/sql-statements-structure/geographic-geometric-features/geometry-constructors/multipoint). Otherwise, returns `0`.
+a [Polygon](/sql-statements-structure/geographic-geometric-features/geometry-constructors/polygon/) or a [MultiPolygon](/sql-statements-structure/geographic-geometric-features/geometry-constructors/multipolygon/), or if `g2` is a
+[Point](/sql-statements-structure/geographic-geometric-features/geometry-constructors/point/) or a [MultiPoint](/sql-statements-structure/geographic-geometric-features/geometry-constructors/multipoint/). Otherwise, returns `0`.
 
 The term spatially crosses denotes a spatial relation between two
 given geometries that has the following properties:

@@ -2,7 +2,7 @@
 
 ##### MariaDB starting with [10.0](/kb/en/what-is-mariadb-100/)
 
-The `table_lock_waits_summary_by_table` table, along with many other new [Performance Schema tables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/list-of-performance-schema-tables), was added in [MariaDB 10.0](/kb/en/what-is-mariadb-100/).
+The `table_lock_waits_summary_by_table` table, along with many other new [Performance Schema tables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/list-of-performance-schema-tables/), was added in [MariaDB 10.0](/kb/en/what-is-mariadb-100/).
 
 The `table_lock_waits_summary_by_table` table records table lock waits by table.
 
@@ -82,4 +82,4 @@ The `table_lock_waits_summary_by_table` table records table lock waits by table.
 <tr><td><code>MAX_TIMER_WRITE_EXTERNAL</code></td><td>Maximum wait time of all external write locks that are timed.</td></tr>
 </tbody></table>
 
-You can [TRUNCATE](/sql-statements-structure/sql-statements/table-statements/truncate-table) the table, which will reset all counters to zero.
+You can [TRUNCATE](/sql-statements-structure/sql-statements/table-statements/truncate-table/) the table, which will reset all counters to zero.

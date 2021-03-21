@@ -37,7 +37,7 @@ VALUES (70, 90), (100, 110);
 +------+------+
 ```
 
-Using TVC's with a [CREATE VIEW](/programming-customizing-mariadb/views/create-view) statement:
+Using TVC's with a [CREATE VIEW](/programming-customizing-mariadb/views/create-view/) statement:
 
 ```sql
 CREATE VIEW v1 AS VALUES (7, 9), (9, 10);
@@ -51,7 +51,7 @@ SELECT * FROM v1;
 +---+----+
 ```
 
-Using TVC with an [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by) clause:
+Using TVC with an [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by/) clause:
 
 ```sql
 SELECT * FROM test.t1
@@ -60,7 +60,7 @@ VALUES (10, 20), (30, 40), (50, 60), (70, 80)
 ORDER BY val1 DESC;
 ```
 
-Using TVC with [LIMIT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/limit) clause:
+Using TVC with [LIMIT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/limit/) clause:
 
 ```sql
 SELECT * FROM test.t1

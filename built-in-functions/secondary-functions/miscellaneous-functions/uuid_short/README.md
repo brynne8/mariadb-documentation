@@ -9,7 +9,7 @@ UUID_SHORT()
 ## Description
 
 Returns a "short" universal identifier as a 64-bit unsigned integer (rather
-than a string-form 128-bit identifier as returned by the [UUID()](/built-in-functions/secondary-functions/miscellaneous-functions/uuid) function).
+than a string-form 128-bit identifier as returned by the [UUID()](/built-in-functions/secondary-functions/miscellaneous-functions/uuid/) function).
 
 The value of <code class="highlight fixed" style="white-space:pre-wrap">UUID_SHORT()</code> is guaranteed to be unique if the
 following conditions hold:
@@ -56,6 +56,6 @@ select * from t1;
 
 ## See Also
 
-- [UUID()](/built-in-functions/secondary-functions/miscellaneous-functions/uuid) ; Return full (128 bit) Universal Unique Identifier
-- [AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment)
-- [Sequences](/sql-statements-structure/sequences) - an alternative to auto_increment available from [MariaDB 10.3](/kb/en/what-is-mariadb-103/)
+- [UUID()](/built-in-functions/secondary-functions/miscellaneous-functions/uuid/) ; Return full (128 bit) Universal Unique Identifier
+- [AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment/)
+- [Sequences](/sql-statements-structure/sequences/) - an alternative to auto_increment available from [MariaDB 10.3](/kb/en/what-is-mariadb-103/)

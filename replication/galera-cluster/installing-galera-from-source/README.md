@@ -7,7 +7,7 @@ If these are not available, you will need to build Galera from source.
 ##### MariaDB starting with [10.1](/kb/en/what-is-mariadb-101/)
 
 Starting from [MariaDB 10.1](/kb/en/what-is-mariadb-101/), the wsrep API for Galera Cluster is included by default. Follow 
-the usual [compiling-mariadb-from-source](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source) instructions
+the usual [compiling-mariadb-from-source](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/) instructions
 
 ##### MariaDB until [10.0](/kb/en/what-is-mariadb-100/)
 

@@ -1,6 +1,6 @@
 # Installing TokuDB
 
-TokuDB has been deprecated by its upstream maintainer. It is disabled from [MariaDB 10.5](/kb/en/what-is-mariadb-105/) and has been been removed in [MariaDB 10.6](/kb/en/what-is-mariadb-106/) - [MDEV-19780](https://jira.mariadb.org/browse/MDEV-19780). We recommend [MyRocks](/columns-storage-engines-and-plugins/storage-engines/myrocks) as a long-term migration path.
+TokuDB has been deprecated by its upstream maintainer. It is disabled from [MariaDB 10.5](/kb/en/what-is-mariadb-105/) and has been been removed in [MariaDB 10.6](/kb/en/what-is-mariadb-106/) - [MDEV-19780](https://jira.mariadb.org/browse/MDEV-19780). We recommend [MyRocks](/columns-storage-engines-and-plugins/storage-engines/myrocks/) as a long-term migration path.
 
 Note that ha_tokudb is not included in binaries built with the "old" glibc. Binaries built with glibc 2.14+ do include it.
 
@@ -17,7 +17,7 @@ TokuDB is available on the following distributions:
 
 <strong>Note:</strong> The TokuDB version that comes from MariaDB.org differs slightly from the
 TokuDB version from [Tokutek](http://www.tokutek.com). Please
-read the [TokuDB Differences](/columns-storage-engines-and-plugins/storage-engines/tokudb/tokudb-differences) article before using TokuDB!
+read the [TokuDB Differences](/columns-storage-engines-and-plugins/storage-engines/tokudb/tokudb-differences/) article before using TokuDB!
 
 The following sections detail how to install and enable TokuDB.
 
@@ -136,7 +136,7 @@ ERROR 1123 (HY000): Can't initialize function 'TokuDB'; Plugin initialization fu
 
 See the section above; [Check for Transparent HugePage Support on Linux](#check-for-transparent-hugepage-support-on-linux).
 
-The [binary log also needs to be enabled](/mariadb-administration/server-monitoring-logs/binary-log/activating-the-binary-log) before attempting to enable TokuDB. Strictly speaking, the XA code requires two XA-capable storage engines, and this is checked at startup. In practice, this requires InnoDB and the binary log to be active. If it isn't, the following warning will be returned and XA features will be disabled:
+The [binary log also needs to be enabled](/mariadb-administration/server-monitoring-logs/binary-log/activating-the-binary-log/) before attempting to enable TokuDB. Strictly speaking, the XA code requires two XA-capable storage engines, and this is checked at startup. In practice, this requires InnoDB and the binary log to be active. If it isn't, the following warning will be returned and XA features will be disabled:
 
 ```sql
 Cannot enable tc-log at run-time. XA features of TokuDB are disabled
@@ -192,7 +192,7 @@ command:
 INSTALL SONAME 'ha_tokudb';
 ```
 
-TokuDB will be installed until someone executes [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname).
+TokuDB will be installed until someone executes [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname/).
 
 ### Temporarily Enabling TokuDB When Starting MariaDB
 
@@ -204,5 +204,5 @@ mysqld --plugin-load=ha_tokudb --plugin-dir=/usr/local/mysql/lib/mysql/plugin
 
 ## See Also
 
-- [Differences between TokuDB from Tokutek.com and the TokuDB version in MariaDB from MariaDB.org](/columns-storage-engines-and-plugins/storage-engines/tokudb/tokudb-differences).
+- [Differences between TokuDB from Tokutek.com and the TokuDB version in MariaDB from MariaDB.org](/columns-storage-engines-and-plugins/storage-engines/tokudb/tokudb-differences/).
 - [TokuDB System and Status Variables](/kb/en/tokudb-system-and-status-variables/)

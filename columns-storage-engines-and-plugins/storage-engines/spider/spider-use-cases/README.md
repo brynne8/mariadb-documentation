@@ -20,7 +20,7 @@ mysql  -u root -p < /usr/share/mysql/install_spider.sql
 
 ## Enable use of non root connections
 
-When using the [General Query Log](/mariadb-administration/server-monitoring-logs/general-query-log), non-root users may encounter issues when querying Spider tables.  Explicitly setting the  <a undefined>spider_internal_sql_log_off</a> system variable causes the Spider node to execute `SET sql_log_off` statements on the data nodes to enable or disable the General Query Log.  When this is done, queries issued by users without the `SUPER` privilege raise an error.
+When using the [General Query Log](/mariadb-administration/server-monitoring-logs/general-query-log/), non-root users may encounter issues when querying Spider tables.  Explicitly setting the  <a undefined>spider_internal_sql_log_off</a> system variable causes the Spider node to execute `SET sql_log_off` statements on the data nodes to enable or disable the General Query Log.  When this is done, queries issued by users without the `SUPER` privilege raise an error.
 
 To avoid this, don't explicitly set the <a undefined>spider_internal_sql_log_off</a> system variable.
 

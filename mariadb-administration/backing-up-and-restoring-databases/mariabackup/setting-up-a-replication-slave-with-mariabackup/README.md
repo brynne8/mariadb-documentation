@@ -2,16 +2,16 @@
 
 The terms <em>master</em> and <em>slave</em> have historically been used in replication, but the terms terms <em>primary</em> and <em>replica</em> are now preferred. The old terms are used throughout the documentation, and in MariaDB commands, although [MariaDB 10.5](/kb/en/what-is-mariadb-105/) has begun the process of renaming. The documentation will follow over time. See [MDEV-18777](https://jira.mariadb.org/browse/MDEV-18777) to follow progress on this effort.
 
-Mariabackup makes it very easy to set up a [replication slave](/kb/en/high-availability-performance-tuning-mariadb-replication/) using a [full backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/full-backup-and-restore-with-mariabackup). This page documents how to set up a replication slave from a backup.
+Mariabackup makes it very easy to set up a [replication slave](/kb/en/high-availability-performance-tuning-mariadb-replication/) using a [full backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/full-backup-and-restore-with-mariabackup/). This page documents how to set up a replication slave from a backup.
 
 If you are using [MariaDB Galera Cluster](/kb/en/galera/), then you may want to try one of the following pages instead:
 
-- [Configuring MariaDB Replication between MariaDB Galera Cluster and MariaDB Server](/replication/galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster-configuring-mariadb-r)
-- [Configuring MariaDB Replication between Two MariaDB Galera Clusters](/replication/galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster/configuring-mariadb-replication-between-two-mariadb-galera-clusters)
+- [Configuring MariaDB Replication between MariaDB Galera Cluster and MariaDB Server](/replication/galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster-configuring-mariadb-r/)
+- [Configuring MariaDB Replication between Two MariaDB Galera Clusters](/replication/galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster/configuring-mariadb-replication-between-two-mariadb-galera-clusters/)
 
 ## Backup the Database and Prepare It
 
-The first step is to simply take and prepare a fresh [full backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/full-backup-and-restore-with-mariabackup) of a database server in the [replication topology](/kb/en/replication-overview/#common-replication-setups). If the source database server is the desired replication master, then we do not need to add any additional options when taking the full backup. For example:
+The first step is to simply take and prepare a fresh [full backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/full-backup-and-restore-with-mariabackup/) of a database server in the [replication topology](/kb/en/replication-overview/#common-replication-setups). If the source database server is the desired replication master, then we do not need to add any additional options when taking the full backup. For example:
 
 ```sql
 $ mariabackup --backup \
@@ -60,7 +60,7 @@ $ chown -R mysql:mysql /var/lib/mysql/
 
 ## Create a Replication User on the Master
 
-Before the new slave can begin replicating from the master, we need to [create a user account](/sql-statements-structure/sql-statements/account-management-sql-commands/create-user) on the master that the slave can use to connect, and we need to [grant](/sql-statements-structure/sql-statements/account-management-sql-commands/grant) the user account the <a undefined>REPLICATION SLAVE</a> privilege. For example:
+Before the new slave can begin replicating from the master, we need to [create a user account](/sql-statements-structure/sql-statements/account-management-sql-commands/create-user/) on the master that the slave can use to connect, and we need to [grant](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/) the user account the <a undefined>REPLICATION SLAVE</a> privilege. For example:
 
 ```sql
 CREATE USER 'repl'@'dbserver2' IDENTIFIED BY 'password';
@@ -79,7 +79,7 @@ At this point, we need to get the replication coordinates of the master from the
 
 If we took the backup on the master, then the coordinates will be in the <a undefined>xtrabackup_binlog_info</a> file. If we took the backup on another slave and if we provided the <a undefined>--slave-info</a> option, then the coordinates will be in the file <a undefined>xtrabackup_slave_info</a> file.
 
-Mariabackup dumps replication coordinates in two forms: [GTID](/replication/standard-replication/gtid) coordinates and [binary log](/mariadb-administration/server-monitoring-logs/binary-log) file and position coordinates, like the ones you would normally see from <a undefined>SHOW MASTER STATUS</a> output. We can choose which set of coordinates we would like to use to set up replication.
+Mariabackup dumps replication coordinates in two forms: [GTID](/replication/standard-replication/gtid/) coordinates and [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) file and position coordinates, like the ones you would normally see from <a undefined>SHOW MASTER STATUS</a> output. We can choose which set of coordinates we would like to use to set up replication.
 
 For example:
 
@@ -87,18 +87,18 @@ For example:
 mariadb-bin.000096 568 0-1-2
 ```
 
-Regardless of the coordinates we use, we will have to set up the master connection using [CHANGE MASTER TO](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to) and then start the replication threads with <a undefined>START SLAVE</a>.
+Regardless of the coordinates we use, we will have to set up the master connection using [CHANGE MASTER TO](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to/) and then start the replication threads with <a undefined>START SLAVE</a>.
 
 ### GTIDs
 
-If we want to use GTIDs, then we will have to first set <a undefined>gtid_slave_pos</a> to the [GTID](/replication/standard-replication/gtid) coordinates that we pulled from either the <a undefined>xtrabackup_binlog_info</a> file or the <a undefined>xtrabackup_slave_info</a> file in the backup directory. For example:
+If we want to use GTIDs, then we will have to first set <a undefined>gtid_slave_pos</a> to the [GTID](/replication/standard-replication/gtid/) coordinates that we pulled from either the <a undefined>xtrabackup_binlog_info</a> file or the <a undefined>xtrabackup_slave_info</a> file in the backup directory. For example:
 
 ```sql
 $ cat xtrabackup_binlog_info
 mariadb-bin.000096 568 0-1-2
 ```
 
-And then we would set `MASTER_USE_GTID=slave_pos` in the [CHANGE MASTER TO](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to) command. For example:
+And then we would set `MASTER_USE_GTID=slave_pos` in the [CHANGE MASTER TO](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to/) command. For example:
 
 ```sql
 SET GLOBAL gtid_slave_pos = "0-1-2";
@@ -113,7 +113,7 @@ START SLAVE;
 
 ### File and Position
 
-If we want to use the [binary log](/mariadb-administration/server-monitoring-logs/binary-log) file and position coordinates, then we would set `MASTER_LOG_FILE` and `MASTER_LOG_POS` in the [CHANGE MASTER TO](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to) command to the file and position coordinates that we pulled; either the <a undefined>xtrabackup_binlog_info</a> file or the <a undefined>xtrabackup_slave_info</a> file in the backup directory, depending on whether the backup was taken from the master or from a slave of the master. For example:
+If we want to use the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) file and position coordinates, then we would set `MASTER_LOG_FILE` and `MASTER_LOG_POS` in the [CHANGE MASTER TO](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to/) command to the file and position coordinates that we pulled; either the <a undefined>xtrabackup_binlog_info</a> file or the <a undefined>xtrabackup_slave_info</a> file in the backup directory, depending on whether the backup was taken from the master or from a slave of the master. For example:
 
 ```sql
 CHANGE MASTER TO 

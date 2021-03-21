@@ -20,4 +20,4 @@ If a SET contains duplicate values, an error will be returned if [strict mode](/
 ## See Also
 
 - [Character Sets and Collations](/kb/en/character-sets-and-collations/)
-- [Data Type Storage Requirements](/columns-storage-engines-and-plugins/data-types/data-type-storage-requirements)
+- [Data Type Storage Requirements](/columns-storage-engines-and-plugins/data-types/data-type-storage-requirements/)

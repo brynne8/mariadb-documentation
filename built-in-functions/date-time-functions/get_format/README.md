@@ -9,7 +9,7 @@ GET_FORMAT({DATE|DATETIME|TIME}, {'EUR'|'USA'|'JIS'|'ISO'|'INTERNAL'})
 ## Description
 
 Returns a format string. This function is useful in combination with
-the [DATE_FORMAT()](/built-in-functions/date-time-functions/date_format) and the [STR_TO_DATE()](/built-in-functions/date-time-functions/str_to_date) functions.
+the [DATE_FORMAT()](/built-in-functions/date-time-functions/date_format/) and the [STR_TO_DATE()](/built-in-functions/date-time-functions/str_to_date/) functions.
 
 Possible result formats are:
 

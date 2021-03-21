@@ -4,7 +4,7 @@
 
 The MariaDB `systemd` service was first released in [MariaDB 10.1.8](/kb/en/mariadb-1018-release-notes/) on supported Linux distributions.
 
-`systemd` is a [sysVinit](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/sysvinit) replacement that is the default service manager on the following Linux distributions:
+`systemd` is a [sysVinit](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/sysvinit/) replacement that is the default service manager on the following Linux distributions:
 
 - RHEL 7 and above
 - CentOS 7 and above
@@ -14,11 +14,11 @@ The MariaDB `systemd` service was first released in [MariaDB 10.1.8](/kb/en/mari
 - SLES 12 and above
 - OpenSUSE 12.2 and above
 
-MariaDB's `systemd` unit file is included in the server packages for [RPMs](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm) and [DEBs](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files). It is also included in certain [binary tarballs](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-binary-tarballs).
+MariaDB's `systemd` unit file is included in the server packages for [RPMs](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/) and [DEBs](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files/). It is also included in certain [binary tarballs](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-binary-tarballs/).
 
 The service name is `mariadb.service`. Aliases to `mysql.service` and `mysqld.service` are also installed for convenience.
 
-When MariaDB is started with the `systemd` unit file, it directly starts the [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options) process as the `mysql` user. Unlike with [sysVinit](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/sysvinit), the [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options) process is not started with [mysqld_safe](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld_safe). As a consequence, options will not be read from the `[mysqld_safe]` [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files).
+When MariaDB is started with the `systemd` unit file, it directly starts the [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/) process as the `mysql` user. Unlike with [sysVinit](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/sysvinit/), the [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/) process is not started with [mysqld_safe](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld_safe/). As a consequence, options will not be read from the `[mysqld_safe]` [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/).
 
 ## Locating the MariaDB Service's Unit File
 
@@ -90,17 +90,17 @@ This template unit file allows you to interact with multiple MariaDB instances o
 sudo systemctl start mariadb@node1
 ```
 
-MariaDB's build system cannot include the `mariadb@.service` template unit file in [RPM](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm) packages on platforms that have <a undefined>cmake</a> versions older than 3.3.0, because these <a undefined>cmake</a> versions have a [bug](https://public.kitware.com/Bug/view.php?id=14782) that causes it to encounter errors when packaging a file in RPMs if the file name contains the `@` character. MariaDB's RHEL 7 and CentOS 7 RPM build hosts only got a new enough <a undefined>cmake</a> version starting with [MariaDB 10.1.39](/kb/en/mariadb-10139-release-notes/), [MariaDB 10.2.23](/kb/en/mariadb-10223-release-notes/), and [MariaDB 10.3.14](/kb/en/mariadb-10314-release-notes/). To use this functionality on a MariaDB version that does not have the file, you can copy the file from a package that does have the file.
+MariaDB's build system cannot include the `mariadb@.service` template unit file in [RPM](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/) packages on platforms that have <a undefined>cmake</a> versions older than 3.3.0, because these <a undefined>cmake</a> versions have a [bug](https://public.kitware.com/Bug/view.php?id=14782) that causes it to encounter errors when packaging a file in RPMs if the file name contains the `@` character. MariaDB's RHEL 7 and CentOS 7 RPM build hosts only got a new enough <a undefined>cmake</a> version starting with [MariaDB 10.1.39](/kb/en/mariadb-10139-release-notes/), [MariaDB 10.2.23](/kb/en/mariadb-10223-release-notes/), and [MariaDB 10.3.14](/kb/en/mariadb-10314-release-notes/). To use this functionality on a MariaDB version that does not have the file, you can copy the file from a package that does have the file.
 
 #### Default configuration of Multiple Instances in 10.4 and Later
 
-`systemd` will also look for an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) for a specific MariaDB instance based on the instance name.
+`systemd` will also look for an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) for a specific MariaDB instance based on the instance name.
 
 It will use the `.%I` as the [custom option group suffix](/kb/en/configuring-mariadb-with-option-files/#custom-option-group-suffixes) that is appended to any [server option group](/kb/en/configuring-mariadb-with-option-files/#server-option-groups), in any configuration file included by default.
 
-In all distributions, the `%I` is the MariaDB instance name. In the above `node1` case, it would use the [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) at the path`/etc/mynode1.cnf`.
+In all distributions, the `%I` is the MariaDB instance name. In the above `node1` case, it would use the [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) at the path`/etc/mynode1.cnf`.
 
-When using multiple instances, each instance will of course also need their own <a undefined>datadir</a>, <a undefined>socket</a> and , <a undefined>port</a> (unless  <a undefined>skip_networking</a> is specified). As <a undefined>mysql_install_db#option-groups</a> reads the same sections as the server, and ExecStartPre= run [mysql_install_db](/clients-utilities/mysql_install_db) within the service, the instances are autocreated if there is sufficient priviledges.
+When using multiple instances, each instance will of course also need their own <a undefined>datadir</a>, <a undefined>socket</a> and , <a undefined>port</a> (unless  <a undefined>skip_networking</a> is specified). As <a undefined>mysql_install_db#option-groups</a> reads the same sections as the server, and ExecStartPre= run [mysql_install_db](/clients-utilities/mysql_install_db/) within the service, the instances are autocreated if there is sufficient priviledges.
 
 To use a 10.3 configuration in 10.4 or later and the following customisation in the editor after running `sudo systemctl edit mariadb@.service`:
 
@@ -114,7 +114,7 @@ Environment='MYSQLD_MULTI_INSTANCE=--defaults-file=/etc/my%I.cnf'
 
 #### Custom configuration of Multiple Instances in 10.4 and Later
 
-Because users may want to do many various things with their multiple instances, we've provided a way to let the user define how they wish their multiple instances to run. The systemd environment variable `MYSQLD_MULTI_INSTANCE` can be set to anything that [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd) and [mysql_install_db](/clients-utilities/mysql_install_db) will recognise.
+Because users may want to do many various things with their multiple instances, we've provided a way to let the user define how they wish their multiple instances to run. The systemd environment variable `MYSQLD_MULTI_INSTANCE` can be set to anything that [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd/) and [mysql_install_db](/clients-utilities/mysql_install_db/) will recognise.
 
 A hosting environment where each user has their own instance may look like 
 (with `sudo systemctl edit mariadb@.service`):
@@ -133,7 +133,7 @@ Here the instance name is the unix user of the service.
 
 #### Configuring Multiple Instances in 10.3 and Earlier
 
-`systemd` will also look for an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) for a specific MariaDB instance based on the instance name. By default, it will look for the option file in a directory defined at build time by the `INSTALL_SYSCONF2DIR` option provided to <a undefined>cmake</a>.
+`systemd` will also look for an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) for a specific MariaDB instance based on the instance name. By default, it will look for the option file in a directory defined at build time by the `INSTALL_SYSCONF2DIR` option provided to <a undefined>cmake</a>.
 
 For example, on RHEL, CentOS, Fedora, and other similar Linux distributions, `INSTALL_SYSCONF2DIR` is defined as `/etc/my.cnf.d/`, so it will look for an option file that matches the format:
 
@@ -143,9 +143,9 @@ And on Debian, Ubuntu, and other similar Linux distributions, `INSTALL_SYSCONF2D
 
 - `/etc/mysql/conf.d/my%I.cnf`
 
-In all distributions, the `%I` is the MariaDB instance name. In the above `node1` case, it would use the [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) at the path`/etc/my.cnf.d/mynode1.cnf` for RHEL-like distributions and `/etc/mysql/conf.d/mynode1.cnf` for Debian-like distributions.
+In all distributions, the `%I` is the MariaDB instance name. In the above `node1` case, it would use the [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) at the path`/etc/my.cnf.d/mynode1.cnf` for RHEL-like distributions and `/etc/mysql/conf.d/mynode1.cnf` for Debian-like distributions.
 
-When using multiple instances, each instance will of course also need their own <a undefined>datadir</a>. See [mysql_install_db](/clients-utilities/mysql_install_db) for information on how to initialize the <a undefined>datadir</a> for additional MariaDB instances.
+When using multiple instances, each instance will of course also need their own <a undefined>datadir</a>. See [mysql_install_db](/clients-utilities/mysql_install_db/) for information on how to initialize the <a undefined>datadir</a> for additional MariaDB instances.
 
 ## Systemd and Galera Cluster
 
@@ -193,7 +193,7 @@ sudo systemctl daemon-reload
 
 ### Useful Systemd Options
 
-Useful `systemd` options are listed below. If an option is equivalent to a common [mysqld_safe](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld_safe) option, then that is also listed.
+Useful `systemd` options are listed below. If an option is equivalent to a common [mysqld_safe](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld_safe/) option, then that is also listed.
 
 <table><tbody><tr><th>mysqld_safe option</th><th>systemd option</th><th>Comments</th></tr>
 <tr><td>no option</td><td><code><a href="https://www.freedesktop.org/software/systemd/man/systemd.exec.html#ProtectHome=">ProtectHome=false</a></code></td><td>If any MariaDB files are in /home/</td></tr>
@@ -223,7 +223,7 @@ There are other options and the `mariadb-service-convert` script will attempt to
 
 ### Configuring the Systemd Service Timeout
 
-MariaDB's [systemd](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd) unit file has a default startup timeout of about 90 seconds on most systems. If a service startup takes longer than this default startup timeout, then `systemd` will assume that `mysqld` has failed to startup, which causes `systemd` to kill the `mysqld` process. To work around this, it can be changed by configuring the <a undefined>TimeoutStartSec</a> option for the `systemd` service.
+MariaDB's [systemd](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd/) unit file has a default startup timeout of about 90 seconds on most systems. If a service startup takes longer than this default startup timeout, then `systemd` will assume that `mysqld` has failed to startup, which causes `systemd` to kill the `mysqld` process. To work around this, it can be changed by configuring the <a undefined>TimeoutStartSec</a> option for the `systemd` service.
 
 A similar problem can happen when stopping the MariaDB service. Therefore, it may also be a good idea to set <a undefined>TimeoutStopSec</a>.
 
@@ -308,7 +308,7 @@ sudo systemctl daemon-reload
 
 ### Configuring MariaDB to Write the Error Log to Syslog
 
-When using `systemd`, if you would like to redirect the [error log](/mariadb-administration/server-monitoring-logs/error-log) to the [syslog](https://linux.die.net/man/8/rsyslogd), then that can easily be done by doing the following:
+When using `systemd`, if you would like to redirect the [error log](/mariadb-administration/server-monitoring-logs/error-log/) to the [syslog](https://linux.die.net/man/8/rsyslogd), then that can easily be done by doing the following:
 
 - Ensure that <a undefined>log_error</a> system variable is <strong>not</strong> set.
 - Set <a undefined>StandardOutput=syslog</a>.
@@ -334,7 +334,7 @@ If you have multiple instances of MariaDB, then you may also want to set <a unde
 
 ### Configuring Access to Home Directories
 
-MariaDB's [systemd](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd) unit file restricts access to `/home`, `/root`, and `/run/user` by default. This restriction can be overriden by setting the <a undefined>ProtectHome</a> option to `false` for the MariaDB `systemd` service. This is done by creating a "drop-in" directory `/etc/systemd/system/mariadb.service.d/` and in it a file with a `.conf` suffix that contains the `ProtectHome=false` directive.
+MariaDB's [systemd](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd/) unit file restricts access to `/home`, `/root`, and `/run/user` by default. This restriction can be overriden by setting the <a undefined>ProtectHome</a> option to `false` for the MariaDB `systemd` service. This is done by creating a "drop-in" directory `/etc/systemd/system/mariadb.service.d/` and in it a file with a `.conf` suffix that contains the `ProtectHome=false` directive.
 
 You can reconfigure the MariaDB `systemd` service to allow access to `/home` by executing the following commands:
 
@@ -364,9 +364,9 @@ sudo systemctl daemon-reload
 
 These environment variables do not set the umask. They set the default file system permissions. See [MDEV-23058](https://jira.mariadb.org/browse/MDEV-23058) for more information.
 
-Keep in mind that configuring the umask this way will only affect the permissions of files created by the `mysqld` process that is managed by `systemd`. The permissions of files created by components that are not managed by `systemd`, such as [mysql_install_db](/clients-utilities/mysql_install_db), will not be effected.
+Keep in mind that configuring the umask this way will only affect the permissions of files created by the `mysqld` process that is managed by `systemd`. The permissions of files created by components that are not managed by `systemd`, such as [mysql_install_db](/clients-utilities/mysql_install_db/), will not be effected.
 
-See [Specifying Permissions for Schema (Data) Directories and Tables](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/specifying-permissions-for-schema-data-directories-and-tables) for more information.
+See [Specifying Permissions for Schema (Data) Directories and Tables](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/specifying-permissions-for-schema-data-directories-and-tables/) for more information.
 
 ## Systemd Journal
 
@@ -391,7 +391,7 @@ Jan 25 18:08:32 ip-172-30-0-249.us-west-2.compute.internal systemd[1]: mariadb.s
 
 ## Converting mysqld_safe Options to Systemd Options
 
-`mariadb-service-convert` is a script included in many MariaDB packages that is used by the package manager to convert <a undefined>mysqld_safe</a> options to `systemd` options. It reads any explicit settings in the `[mysqld_safe]` [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files), and its output is directed to `/etc/systemd/system/mariadb.service.d/migrated-from-my.cnf-settings.conf`. This helps to keep the configuration the same when upgrading from a version of MariaDB that does not use `systemd` to one that does.
+`mariadb-service-convert` is a script included in many MariaDB packages that is used by the package manager to convert <a undefined>mysqld_safe</a> options to `systemd` options. It reads any explicit settings in the `[mysqld_safe]` [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/), and its output is directed to `/etc/systemd/system/mariadb.service.d/migrated-from-my.cnf-settings.conf`. This helps to keep the configuration the same when upgrading from a version of MariaDB that does not use `systemd` to one that does.
 
 Implicitly high defaults of <a undefined>open-files-limit</a> may be missed by the conversion script and require explicit configuration. See [Configuring the Open Files Limit](#configuring-the-open-files-limit).
 

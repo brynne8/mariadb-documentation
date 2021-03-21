@@ -1,6 +1,6 @@
 # MyRocks and Index-Only Scans
 
-This article is about [MyRocks](/columns-storage-engines-and-plugins/storage-engines/myrocks) and index-only scans on secondary indexes. It applies to MariaDB's MyRocks, Facebook's MyRocks, and other variants.
+This article is about [MyRocks](/columns-storage-engines-and-plugins/storage-engines/myrocks/) and index-only scans on secondary indexes. It applies to MariaDB's MyRocks, Facebook's MyRocks, and other variants.
 
 ## Secondary Keys Only
 
@@ -12,7 +12,7 @@ Secondary keys may or may not support index-only scans, depending on the datatyp
 
 MyRocks indexes store "mem-comparable keys" (that is, the key values are compared with `memcmp`). For some datatypes, it is easily possible to convert between the column value and its mem-comparable form, while for others the conversion is one-way.
 
-For example, in case-insensitive collations capital and regular letters are considered identical, i.e. 'c' ='C'.  For some datatypes, MyRocks stores some extra data which allows it to restore the original value back. (For the `latin1_general_ci` [collation](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets) and character 'c', for example, it will store one bit which says whether the original value was a small 'c' or a capital letter 'C'). This doesn't work for all datatypes, though.
+For example, in case-insensitive collations capital and regular letters are considered identical, i.e. 'c' ='C'.  For some datatypes, MyRocks stores some extra data which allows it to restore the original value back. (For the `latin1_general_ci` [collation](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/) and character 'c', for example, it will store one bit which says whether the original value was a small 'c' or a capital letter 'C'). This doesn't work for all datatypes, though.
 
 ## Index-Only Support for Various Datatypes
 
@@ -20,9 +20,9 @@ Index-only scans are supported for numeric and date/time datatypes. For CHAR and
 
 Index-only scans are currently not supported for less frequently used datatypes, like
 
-- [BIT(n)](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/bit)
-- [SET(...)](/columns-storage-engines-and-plugins/data-types/string-data-types/set-data-type)
-- [ENUM(...)](/columns-storage-engines-and-plugins/data-types/string-data-types/enum)
+- [BIT(n)](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/bit/)
+- [SET(...)](/columns-storage-engines-and-plugins/data-types/string-data-types/set-data-type/)
+- [ENUM(...)](/columns-storage-engines-and-plugins/data-types/string-data-types/enum/)
 <em>It is actually possible to add support for those, feel free to write a patch or at least make a case why a particular datatype is important</em>
 
 ## Index-Only Support for Various Collations

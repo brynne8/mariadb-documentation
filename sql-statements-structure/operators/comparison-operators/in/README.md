@@ -13,7 +13,7 @@ returns 0. If all values are constants, they are evaluated according
 to the type of <em>`expr`</em> and sorted. The search for the item then is done
 using a binary search. This means IN is very quick if the IN value
 list consists entirely of constants. Otherwise, type conversion takes
-place according to the rules described at [Type Conversion](/built-in-functions/string-functions/type-conversion), but
+place according to the rules described at [Type Conversion](/built-in-functions/string-functions/type-conversion/), but
 applied to all the arguments.
 
 If <em>`expr`</em> is NULL, IN always returns NULL. If at least one of the values in the list is NULL, and one of the comparisons is true, the result is 1. If at least one of the values in the list is NULL and none of the comparisons is true, the result is NULL.

@@ -8,14 +8,14 @@ The event can be an INSERT, an UPDATE or a DELETE. The trigger can be executed B
 
 The [LOAD DATA INFILE](/kb/en/load-data-infile/) and [LOAD XML](/kb/en/load-xml/) statements invoke INSERT triggers for each row that is being inserted.
 
-The [REPLACE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/replace) statement is executed with the following workflow:
+The [REPLACE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/replace/) statement is executed with the following workflow:
 
 - BEFORE INSERT;
 - BEFORE DELETE (only if a row is being deleted);
 - AFTER DELETE (only if a row is being deleted);
 - AFTER INSERT.
 
-The [INSERT ... ON DUPLICATE KEY UPDATE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update) statement, when a row already exists, follows the following workflow:
+The [INSERT ... ON DUPLICATE KEY UPDATE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update/) statement, when a row already exists, follows the following workflow:
 
 - BEFORE INSERT;
 - BEFORE UPDATE;
@@ -23,7 +23,7 @@ The [INSERT ... ON DUPLICATE KEY UPDATE](/sql-statements-structure/sql-statement
 
 Otherwise, it works like a normal INSERT statement.
 
-Note that [TRUNCATE TABLE](/sql-statements-structure/sql-statements/table-statements/truncate-table) does not activate any triggers.
+Note that [TRUNCATE TABLE](/sql-statements-structure/sql-statements/table-statements/truncate-table/) does not activate any triggers.
 
 ## Triggers and errors
 
@@ -88,11 +88,11 @@ SELECT * FROM animal_count;
 +---------+
 ```
 
-For more details on the syntax, see [CREATE TRIGGER](/programming-customizing-mariadb/triggers-events/triggers/create-trigger).
+For more details on the syntax, see [CREATE TRIGGER](/programming-customizing-mariadb/triggers-events/triggers/create-trigger/).
 
 ## Dropping triggers
 
-To drop a trigger, use the [DROP TRIGGER](/sql-statements-structure/sql-statements/data-definition/drop/drop-trigger) statement. Triggers are also dropped if the table with which they are associated is also dropped.
+To drop a trigger, use the [DROP TRIGGER](/sql-statements-structure/sql-statements/data-definition/drop/drop-trigger/) statement. Triggers are also dropped if the table with which they are associated is also dropped.
 
 ```sql
  DROP TRIGGER increment_animal; 
@@ -100,15 +100,15 @@ To drop a trigger, use the [DROP TRIGGER](/sql-statements-structure/sql-statemen
 
 ## Triggers metadata
 
-The [Information Schema TRIGGERS Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-triggers-table) stores information about triggers.
+The [Information Schema TRIGGERS Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-triggers-table/) stores information about triggers.
 
-The [SHOW TRIGGERS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-triggers) statement returns similar information.
+The [SHOW TRIGGERS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-triggers/) statement returns similar information.
 
-The [SHOW CREATE TRIGGER](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-trigger) statement returns a CREATE TRIGGER statement that creates the given trigger.
+The [SHOW CREATE TRIGGER](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-trigger/) statement returns a CREATE TRIGGER statement that creates the given trigger.
 
 ## More complex triggers
 
-Triggers can consist of multiple statements enclosed by a [BEGIN and END](/programming-customizing-mariadb/programmatic-compound-statements/begin-end). If you're entering multiple statements on the command line, you'll want to temporarily set a new delimiter so that you can use a semicolon to delimit the statements inside your trigger. See [Delimiters in the mysql client](/kb/en/delimiters-in-the-mysql-client/) for more.
+Triggers can consist of multiple statements enclosed by a [BEGIN and END](/programming-customizing-mariadb/programmatic-compound-statements/begin-end/). If you're entering multiple statements on the command line, you'll want to temporarily set a new delimiter so that you can use a semicolon to delimit the statements inside your trigger. See [Delimiters in the mysql client](/kb/en/delimiters-in-the-mysql-client/) for more.
 
 ```sql
 DROP TABLE animals;
@@ -157,7 +157,7 @@ SELECT * FROM animal_count;
 
 If a trigger contains an error and the engine is transactional, or it is a BEFORE trigger, the trigger will not run, and will prevent the original statement from running as well. If the engine is non-transactional, and it is an AFTER trigger, the trigger will not run, but the original statement will.
 
-Here, we'll drop the above examples, and then recreate the trigger with an error, a field that doesn't exist, first using  the default [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb), a transactional engine, and then again using [MyISAM](/kb/en/myisam/), a non-transactional engine.
+Here, we'll drop the above examples, and then recreate the trigger with an error, a field that doesn't exist, first using  the default [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/), a transactional engine, and then again using [MyISAM](/kb/en/myisam/), a non-transactional engine.
 
 ```sql
 DROP TABLE animals;
@@ -205,7 +205,7 @@ SELECT * FROM animals;
 +----+----------+
 ```
 
-The following example shows how to use a trigger to validate data. The [SIGNAL](/programming-customizing-mariadb/programmatic-compound-statements/signal) statement is used to intentionally produce an error if the email field is not a valid email. As the example shows, in that case the new row is not inserted (because it is a BEFORE trigger).
+The following example shows how to use a trigger to validate data. The [SIGNAL](/programming-customizing-mariadb/programmatic-compound-statements/signal/) statement is used to intentionally produce an error if the email field is not a valid email. As the example shows, in that case the new row is not inserted (because it is a BEFORE trigger).
 
 ```sql
 CREATE TABLE user (
@@ -236,9 +236,9 @@ Empty set (0.00 sec)
 
 ## See also
 
-- [CREATE TRIGGER](/programming-customizing-mariadb/triggers-events/triggers/create-trigger)
-- [DROP TRIGGER](/sql-statements-structure/sql-statements/data-definition/drop/drop-trigger)
-- [Information Schema TRIGGERS Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-triggers-table)
-- [SHOW TRIGGERS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-triggers)
-- [SHOW CREATE TRIGGER](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-trigger)
-- [Trigger Limitations](/programming-customizing-mariadb/triggers-events/triggers/trigger-limitations)
+- [CREATE TRIGGER](/programming-customizing-mariadb/triggers-events/triggers/create-trigger/)
+- [DROP TRIGGER](/sql-statements-structure/sql-statements/data-definition/drop/drop-trigger/)
+- [Information Schema TRIGGERS Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-triggers-table/)
+- [SHOW TRIGGERS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-triggers/)
+- [SHOW CREATE TRIGGER](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-trigger/)
+- [Trigger Limitations](/programming-customizing-mariadb/triggers-events/triggers/trigger-limitations/)

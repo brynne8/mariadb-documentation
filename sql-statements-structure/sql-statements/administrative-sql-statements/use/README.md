@@ -20,10 +20,10 @@ USE db2;
 SELECT COUNT(*) FROM mytable;   # selects from db2.mytable
 ```
 
-The [DATABASE()](/built-in-functions/secondary-functions/information-functions/database) function ([SCHEMA()](/built-in-functions/secondary-functions/information-functions/schema) is a synonym) returns the default database.
+The [DATABASE()](/built-in-functions/secondary-functions/information-functions/database/) function ([SCHEMA()](/built-in-functions/secondary-functions/information-functions/schema/) is a synonym) returns the default database.
 
-Another way to set the default database is specifying its name at [mysql](/clients-utilities/mysql-client/mysql-command-line-client) command line client startup.
+Another way to set the default database is specifying its name at [mysql](/clients-utilities/mysql-client/mysql-command-line-client/) command line client startup.
 
 ## See Also
 
-- [Identifier Qualifiers](/sql-statements-structure/sql-language-structure/identifier-qualifiers)
+- [Identifier Qualifiers](/sql-statements-structure/sql-language-structure/identifier-qualifiers/)

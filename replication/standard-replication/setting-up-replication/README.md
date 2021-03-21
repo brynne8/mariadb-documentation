@@ -2,13 +2,13 @@
 
 The terms <em>master</em> and <em>slave</em> have historically been used in replication, but the terms terms <em>primary</em> and <em>replica</em> are now preferred. The old terms are used throughout the documentation, and in MariaDB commands, although [MariaDB 10.5](/kb/en/what-is-mariadb-105/) has begun the process of renaming. The documentation will follow over time. See [MDEV-18777](https://jira.mariadb.org/browse/MDEV-18777) to follow progress on this effort.
 
-Getting [replication](/replication) working involves steps on both the master server/s and steps on the slave server/s.
+Getting [replication](/replication/) working involves steps on both the master server/s and steps on the slave server/s.
 
 [MariaDB 10.0](/kb/en/what-is-mariadb-100/) introduced replication with [global transaction IDs](/kb/en/global-transaction-id/). These have a number of benefits, and it is generally recommended to use this feature from [MariaDB 10.0](/kb/en/what-is-mariadb-100/).
 
 ## Setting up a Replication Slave with Mariabackup
 
-If you would like to use [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup) to set up a replication slave, then you might find the information at [Setting up a Replication Slave with Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/setting-up-a-replication-slave-with-mariabackup) helpful.
+If you would like to use [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/) to set up a replication slave, then you might find the information at [Setting up a Replication Slave with Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/setting-up-a-replication-slave-with-mariabackup/) helpful.
 
 ## Versions
 
@@ -16,7 +16,7 @@ In general, when replicating across different versions of MariaDB, it is best th
 
 ## Configuring the Master
 
-- Enable binary logging if it's not already enabled. See [Activating the Binary Log](/mariadb-administration/server-monitoring-logs/binary-log/activating-the-binary-log) and [Binary log formats](/mariadb-administration/server-monitoring-logs/binary-log/binary-log-formats) for details.
+- Enable binary logging if it's not already enabled. See [Activating the Binary Log](/mariadb-administration/server-monitoring-logs/binary-log/activating-the-binary-log/) and [Binary log formats](/mariadb-administration/server-monitoring-logs/binary-log/binary-log-formats/) for details.
 - Give the master a unique [server_id](/kb/en/server-system-variables/#server_id). All slaves must also be given a server_id. This can be a number from 1 to 2<sup>32</sup>-1, and must be unique for each server in the replicating group.
 - Specify a unique name for your replication logs with [--log-basename](/kb/en/mysqld-options-full-list/#-log-basename). If this is not specified your host name will be used and there will be problems if the hostname ever changes.
 - Slaves will need permission to connect and start replicating from a server. Usually this is done by creating a dedicated slave user, and granting that user permission only to replicate (REPLICATION SLAVE permission).
@@ -34,9 +34,9 @@ binlog-format=mixed
 ```
 
 The server id is a unique number for each MariaDB/MySQL server in your network.
-[binlog-format](/mariadb-administration/server-monitoring-logs/binary-log/binary-log-formats) specifies how your statements are logged. This mainly affects the size of the [binary log](/mariadb-administration/server-monitoring-logs/binary-log) that is sent between the Master and the Slaves.
+[binlog-format](/mariadb-administration/server-monitoring-logs/binary-log/binary-log-formats/) specifies how your statements are logged. This mainly affects the size of the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) that is sent between the Master and the Slaves.
 
-Then execute the following SQL with the [`mysql`](/clients-utilities/mysql-client/mysql-command-line-client) command line client:
+Then execute the following SQL with the [`mysql`](/clients-utilities/mysql-client/mysql-command-line-client/) command line client:
 
 ```sql
 CREATE USER 'replication_user'@'%' IDENTIFIED BY 'bigs3cret';
@@ -91,7 +91,7 @@ UNLOCK TABLES;
 
 ## Start the Slave
 
-- Once the data has been imported, you are ready to start replicating. Begin by running a [CHANGE MASTER TO](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to), making sure that <em>MASTER_LOG_FILE</em> matches the file and <em>MASTER_LOG_POS</em> the position returned by the earlier SHOW MASTER STATUS. For example:
+- Once the data has been imported, you are ready to start replicating. Begin by running a [CHANGE MASTER TO](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to/), making sure that <em>MASTER_LOG_FILE</em> matches the file and <em>MASTER_LOG_POS</em> the position returned by the earlier SHOW MASTER STATUS. For example:
 
 ```sql
 CHANGE MASTER TO
@@ -145,14 +145,14 @@ Slave_SQL_Running: Yes
 
 ## See Also
 
-- [Differences between Statement-based, mixed and row logging](/mariadb-administration/server-monitoring-logs/binary-log/binary-log-formats)
-- [Replication and Foreign Keys](/replication/standard-replication/replication-and-foreign-keys)
-- [Replication as a Backup Solution](/mariadb-administration/backing-up-and-restoring-databases/replication-as-a-backup-solution)
-- [Multi-source Replication](/replication/standard-replication/multi-source-replication)
+- [Differences between Statement-based, mixed and row logging](/mariadb-administration/server-monitoring-logs/binary-log/binary-log-formats/)
+- [Replication and Foreign Keys](/replication/standard-replication/replication-and-foreign-keys/)
+- [Replication as a Backup Solution](/mariadb-administration/backing-up-and-restoring-databases/replication-as-a-backup-solution/)
+- [Multi-source Replication](/replication/standard-replication/multi-source-replication/)
 - [Global Transaction ID](/kb/en/global-transaction-id/)
-- [Parallel Replication](/replication/standard-replication/parallel-replication)
+- [Parallel Replication](/replication/standard-replication/parallel-replication/)
 - [Replication and Binary Log System Variables](/kb/en/replication-and-binary-log-server-system-variables/)
-- [Replication and Binary Log Status Variables](/replication/standard-replication/replication-and-binary-log-status-variables)
-- [Semisynchronous Replication](/replication/standard-replication/semisynchronous-replication)
-- [Delayed Replication](/replication/standard-replication/delayed-replication)
+- [Replication and Binary Log Status Variables](/replication/standard-replication/replication-and-binary-log-status-variables/)
+- [Semisynchronous Replication](/replication/standard-replication/semisynchronous-replication/)
+- [Delayed Replication](/replication/standard-replication/delayed-replication/)
 - [Replication Compatibility](/kb/en/mariadb-vs-mysql-compatibility/#replication-compatibility)

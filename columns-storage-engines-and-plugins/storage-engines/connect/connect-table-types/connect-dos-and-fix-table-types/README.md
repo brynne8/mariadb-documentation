@@ -2,7 +2,7 @@
 
 ## Overview
 
-Tables of type DOS and FIX are based on text files (see [CONNECT Table Types - Data Files](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-table-types-data-files)). Within a record, column fields are positioned at a fixed offset from
+Tables of type DOS and FIX are based on text files (see [CONNECT Table Types - Data Files](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-table-types-data-files/)). Within a record, column fields are positioned at a fixed offset from
 the beginning of the record. Except sometimes for the last field, column fields
 are also of fixed length. If the last field has varying length, the type of the
 table is DOS. For instance, having the file <em>dept.dat</em> formatted like:

@@ -2,7 +2,7 @@
 
 CassandraSE is no longer actively being developed and has been removed in [MariaDB 10.6](/kb/en/what-is-mariadb-106/). See [MDEV-23024](https://jira.mariadb.org/browse/MDEV-23024).
 
-This page documents status variables related to the [Cassandra storage engine](/columns-storage-engines-and-plugins/storage-engines/legacy-storage-engines/cassandra). See [Server Status Variables](/replication/optimization-and-tuning/system-variables/server-status-variables) for a complete list of status variables that can be viewed with [SHOW STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-status).
+This page documents status variables related to the [Cassandra storage engine](/columns-storage-engines-and-plugins/storage-engines/legacy-storage-engines/cassandra/). See [Server Status Variables](/replication/optimization-and-tuning/system-variables/server-status-variables/) for a complete list of status variables that can be viewed with [SHOW STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-status/).
 
 #### `Cassandra_multiget_keys_scanned`
 

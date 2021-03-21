@@ -16,7 +16,7 @@ In [Oracle mode](/kb/en/sql_modeoracle/) one can just use <code class="fixed" st
 
 <code class="fixed" style="white-space:pre-wrap">ROWNUM()</code> returns the current number of accepted rows in the
 current context. It main purpose is to emulate the <code class="fixed" style="white-space:pre-wrap">ROWNUM</code>
-[pseudo column in Oracle](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/ROWNUM-Pseudocolumn.html#GUID-2E40EC12-3FCF-4A4F-B5F2-6BC669021726). For MariaDB native applications, we recommend the usage of [LIMIT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/limit), as it is easier to use and gives more predictable results than the usage of <code class="fixed" style="white-space:pre-wrap">ROWNUM()</code>.
+[pseudo column in Oracle](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/ROWNUM-Pseudocolumn.html#GUID-2E40EC12-3FCF-4A4F-B5F2-6BC669021726). For MariaDB native applications, we recommend the usage of [LIMIT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/limit/), as it is easier to use and gives more predictable results than the usage of <code class="fixed" style="white-space:pre-wrap">ROWNUM()</code>.
 
 The main difference between using <code class="fixed" style="white-space:pre-wrap">LIMIT</code> and
 <code class="fixed" style="white-space:pre-wrap">ROWNUM()</code> to limit the rows in the result is that
@@ -46,10 +46,10 @@ SELECT * FROM (select * from t1 ORDER BY a) WHERE ROWNUM() <= 10;
 
 <code class="fixed" style="white-space:pre-wrap">ROWNUM()</code> can be used in the following context:
 
-- [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select)
-- [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert)
-- [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update)
-- [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete)
+- [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/)
+- [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/)
+- [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/)
+- [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/)
 - [LOAD DATA INFILE](/kb/en/load-data-infile/)
 
 Used in other contexts, <code class="fixed" style="white-space:pre-wrap">ROWNUM()</code> will return 0.
@@ -71,7 +71,7 @@ LOAD DATA INFILE 'filename' into table t1 fields terminated by ','
 
 ## Optimizations
 
-In many cases where <code class="fixed" style="white-space:pre-wrap">ROWNUM()</code> is used, MariaDB will use the same optimizations it uses with [LIMIT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/limit).
+In many cases where <code class="fixed" style="white-space:pre-wrap">ROWNUM()</code> is used, MariaDB will use the same optimizations it uses with [LIMIT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/limit/).
 
 <code class="fixed" style="white-space:pre-wrap">LIMIT</code> optimization is possible when using <code class="fixed" style="white-space:pre-wrap">ROWNUM</code> in the following manner:
 
@@ -115,9 +115,9 @@ While MariaDB tries to emulate Oracle's usage of <code class="fixed" style="whit
 
 - When the optimizer finds rows in a different order (because of different storage methods or optimization). This may also happen in Oracle if one adds or deletes an index, in which case the rows may be found in a different order.
 
-Note that usage of <code class="fixed" style="white-space:pre-wrap">ROWNUM()</code> in functions or [stored procedures](/programming-customizing-mariadb/stored-routines/stored-procedures) will use their own context, not the caller's context.
+Note that usage of <code class="fixed" style="white-space:pre-wrap">ROWNUM()</code> in functions or [stored procedures](/programming-customizing-mariadb/stored-routines/stored-procedures/) will use their own context, not the caller's context.
 
 ## See Also
 
 - [MDEV-24089](https://jira.mariadb.org/browse/MDEV-24089) support oracle syntax: rownum
-- [LIMIT clause](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/limit)
+- [LIMIT clause](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/limit/)

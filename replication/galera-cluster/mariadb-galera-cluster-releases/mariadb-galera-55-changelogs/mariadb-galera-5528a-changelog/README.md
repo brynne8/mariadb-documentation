@@ -1,17 +1,17 @@
 # MariaDB Galera 5.5.28a Changelog
 
 The most recent [MariaDB Galera Cluster 5.5](/kb/en/galera/) release is:<br>
-<span class="cstm-style lead"><strong>[MariaDB Galera Cluster 5.5.63](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5563-release-notes)</strong> [Download<span>&nbsp;</span>Now](https://downloads.mariadb.org/mariadb-galera/5.5)</span>
+<span class="cstm-style lead"><strong>[MariaDB Galera Cluster 5.5.63](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5563-release-notes/)</strong> [Download<span>&nbsp;</span>Now](https://downloads.mariadb.org/mariadb-galera/5.5)</span>
 
 [Download](http://downloads.mariadb.org/mariadb-galera/5.5.28a) | 
-[Release Notes](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-5528a-release-notes) | 
+[Release Notes](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-5528a-release-notes/) | 
 <strong>Changelog</strong> |
-[Overview of Galera](/replication/galera-cluster/what-is-mariadb-galera-cluster)
+[Overview of Galera](/replication/galera-cluster/what-is-mariadb-galera-cluster/)
 
 <strong>Release date:</strong> 21 Dec 2012
 
 For the highlights of this release, see the
-[release notes](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-5528a-release-notes).
+[release notes](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-5528a-release-notes/).
 
 The revision number links will take you to the revision's page on Launchpad. On
 Launchpad you can view more details of the revision and view diffs of the code

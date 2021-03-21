@@ -246,7 +246,7 @@ OPTION_LIST='Expand=AUTHOR'
 
 `AUTHOR` is here the key of the pair that has the array as a value (case sensitive). Expand is limited to only one branch (expanded arrays must be under the same object).
 
-Let us take as an example the file `expense.json` ([found here](/columns-storage-engines-and-plugins/storage-engines/connect/json-sample-files)).
+Let us take as an example the file `expense.json` ([found here](/columns-storage-engines-and-plugins/storage-engines/connect/json-sample-files/)).
 The table jexpall expands all under and including the week array:
 
 From Connect 1.6:
@@ -889,7 +889,7 @@ Therefore we need specific functions to do so. They are introduced now.
 
 ## JSON User Defined Functions
 
-Although such functions written by other parties do exist,<sup class="reference" id="_ref-1">[[2](#_note-1)]</sup> CONNECT provides its own UDFs that are specifically adapted to the JSON table type and easily available because, being inside the CONNECT library or DLL, they require no additional module to be loaded (see [CONNECT - Compiling JSON UDFs in a Separate Library](/columns-storage-engines-and-plugins/storage-engines/connect/connect-compiling-json-udfs-in-a-separate-library) to make these functions in a separate library module).
+Although such functions written by other parties do exist,<sup class="reference" id="_ref-1">[[2](#_note-1)]</sup> CONNECT provides its own UDFs that are specifically adapted to the JSON table type and easily available because, being inside the CONNECT library or DLL, they require no additional module to be loaded (see [CONNECT - Compiling JSON UDFs in a Separate Library](/columns-storage-engines-and-plugins/storage-engines/connect/connect-compiling-json-udfs-in-a-separate-library/) to make these functions in a separate library module).
 
 In particular, [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and 10.3 feature native JSON functions. In some cases, it is possible that these native functions can be used. However, mixing native and UDF JSON functions in the same query often does not work because the way they recognize their arguments is different and might even cause a server crash.
 
@@ -1325,7 +1325,7 @@ select JsonValue(3.1416);
 <tr><td>3.141600</td></tr>
 </tbody></table>
 
-Before [MariaDB 10.0.23](/kb/en/mariadb-10023-release-notes/) and [MariaDB 10.1.9](/kb/en/mariadb-1019-release-notes/), this function was called Json_Value, but was renamed to avoid clashing with the [JSON_VALUE](/built-in-functions/special-functions/json-functions/json_value) function.
+Before [MariaDB 10.0.23](/kb/en/mariadb-10023-release-notes/) and [MariaDB 10.1.9](/kb/en/mariadb-1019-release-notes/), this function was called Json_Value, but was renamed to avoid clashing with the [JSON_VALUE](/built-in-functions/special-functions/json-functions/json_value/) function.
 
 ### Json_Make_Array
 
@@ -2268,5 +2268,5 @@ Note: JSON tables using the MongoDB access accept the specific MONGO options <em
 ## Notes
 
 1 [↑](#_ref-0) The value n can be 0 based or 1 based depending on the base table option. The default is 0 to match what is the current usage in the Json world but it can be set to 1 for tables created in old versions.
-2 [↑](#_ref-1) See&nbsp;for instance: [https://mariadb.com/kb/en/mariadb/json-functions/](/built-in-functions/special-functions/json-functions), [https://github.com/mysqludf/lib_mysqludf_json#readme](https://github.com/mysqludf/lib_mysqludf_json#readme) and [https://blogs.oracle.com/svetasmirnova/entry/json_udf_functions_version_04](https://blogs.oracle.com/svetasmirnova/entry/json_udf_functions_version_04)
+2 [↑](#_ref-1) See&nbsp;for instance: [https://mariadb.com/kb/en/mariadb/json-functions/](/built-in-functions/special-functions/json-functions/), [https://github.com/mysqludf/lib_mysqludf_json#readme](https://github.com/mysqludf/lib_mysqludf_json#readme) and [https://blogs.oracle.com/svetasmirnova/entry/json_udf_functions_version_04](https://blogs.oracle.com/svetasmirnova/entry/json_udf_functions_version_04)
 3 [↑](#_ref-2) This will not work when CONNECT is compiled embedded

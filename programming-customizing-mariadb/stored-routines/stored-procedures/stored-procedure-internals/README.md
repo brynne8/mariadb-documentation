@@ -11,7 +11,7 @@ In order to execute a query, the function `sql_parse.cc:mysql_parse()` is
   executing that particular query.
 
 There are three structures involved in the execution of a query which are of
-  interest to the [stored procedure](/programming-customizing-mariadb/stored-routines/stored-procedures) implementation:
+  interest to the [stored procedure](/programming-customizing-mariadb/stored-routines/stored-procedures/) implementation:
 
 - Lex (mentioned above) is the "compiled" query, that is the output from
     the parser and what is then interpreted to do the actual work.
@@ -41,7 +41,7 @@ This contains, among other things, an array of "instructions" and the
 
 This is the parse context for the procedure. It's primarily used during
       parsing to keep track of local parameters, variables and labels, but
-      it's also used at [CALL](/sql-statements-structure/sql-statements/stored-routine-statements/call) time to find the parameters mode (IN, OUT or INOUT)
+      it's also used at [CALL](/sql-statements-structure/sql-statements/stored-routine-statements/call/) time to find the parameters mode (IN, OUT or INOUT)
       and type when setting up the runtime context.
 
 ##### class sp_instr (sp_head.{cc,h})
@@ -52,7 +52,7 @@ This is the base class for "instructions", that is, what is generated
 
 - sp_instr_stmt
         Execute a statement. This is the "call-out" any normal SQL statement,
-        like a [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select), [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert) etc. It contains the Lex structure for the
+        like a [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/), [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/) etc. It contains the Lex structure for the
         statement in question.
 - sp_instr_set
         Set the value of a local variable (or parameter)
@@ -89,7 +89,7 @@ This contains functions for creating, dropping and finding a stored
 
 #### Parsing CREATE PROCEDURE
 
-When parsing a [CREATE PROCEDURE](/programming-customizing-mariadb/stored-routines/stored-procedures/create-procedure) the parser first initializes the
+When parsing a [CREATE PROCEDURE](/programming-customizing-mariadb/stored-routines/stored-procedures/create-procedure/) the parser first initializes the
     `sphead` and `spcont` (runtime context) fields in the Lex.
     The sql_command code for the result of parsing a is
     `SQLCOM_CREATE_PROCEDURE`.
@@ -115,7 +115,7 @@ The parsing of the parameter list and body is relatively
         containing the variable's frame offset, the expression (an Item),
         and the type.
 - Flow control:
-        Flow control constructs such as [IF](/programming-customizing-mariadb/programmatic-compound-statements/if), [WHILE](/programming-customizing-mariadb/programmatic-compound-statements/while), etc, generate a conditional
+        Flow control constructs such as [IF](/programming-customizing-mariadb/programmatic-compound-statements/if/), [WHILE](/programming-customizing-mariadb/programmatic-compound-statements/while/), etc, generate a conditional
         and unconditional jumps in the "obvious" way, but a few notes may
         be required:
 - Forward jumps: When jumping forward, the exact destination is not
@@ -180,7 +180,7 @@ Here, '3', 'x&gt;0', etc, represent the Items or Lex for the respective
 
 #### Parsing CREATE FUNCTION
 
-[Creating a function](/sql-statements-structure/sql-statements/data-definition/create/create-function) is essentially the same thing as for a PROCEDURE,
+[Creating a function](/sql-statements-structure/sql-statements/data-definition/create/create-function/) is essentially the same thing as for a PROCEDURE,
     with the addition that a FUNCTION has a return type and a RETURN
     statement, but no OUT or INOUT parameters.
 
@@ -228,7 +228,7 @@ The mechanisms of storing, finding, and dropping procedures are
 
 #### CALLing a Procedure
 
-A [CALL](/sql-statements-structure/sql-statements/stored-routine-statements/call) is parsed just like any statement. The resulting Lex has the
+A [CALL](/sql-statements-structure/sql-statements/stored-routine-statements/call/) is parsed just like any statement. The resulting Lex has the
     sql_command SQLCOM_CALL, the procedure's name and the parameters are
     pushed to the Lex' value_list.
 
@@ -259,7 +259,7 @@ The sp_head::execute() method works as follows:
 #### USE database
 
 Before executing the instruction we also keeps the current default
-      database (if any). If this was changed during execution (i.e. a [USE](/sql-statements-structure/sql-statements/administrative-sql-statements/use)
+      database (if any). If this was changed during execution (i.e. a [USE](/sql-statements-structure/sql-statements/administrative-sql-statements/use/)
       statement has been executed), we restore the current database to the
       original.
 
@@ -292,7 +292,7 @@ The semantics in stored procedures is "call-by-value", so we have to
 
 Functions don't have an explicit call keyword like procedures. Instead,
     they appear in expressions with the conventional syntax "fun(arg, ...)".
-    The problem is that we already have [User Defined Functions](/programming-customizing-mariadb/user-defined-functions) (UDFs) which
+    The problem is that we already have [User Defined Functions](/programming-customizing-mariadb/user-defined-functions/) (UDFs) which
     are called the same way. A UDF is detected by the lexical analyzer (not
     the parser!), in the `find_keyword()` function, and returns a `UDF_*_FUNC`
     or `UDA_*_SUM` token with the `udf_func` object as the yylval.
@@ -357,7 +357,7 @@ The procedure name is pushed to Lex-&gt;value_list.
 Dropping is done by simply getting the procedure with the sp_find()
     function and calling `sp_drop()` (both in `sp.{cc,h}`).
 
-[DROP PROCEDURE](/programming-customizing-mariadb/stored-routines/stored-procedures/drop-procedure)/[DROP FUNCTION](/programming-customizing-mariadb/stored-routines/stored-functions/drop-function) also supports the non-standard "IF EXISTS", analogous to other [DROP](/sql-statements-structure/sql-statements/data-definition/drop) statements in MariaDB.
+[DROP PROCEDURE](/programming-customizing-mariadb/stored-routines/stored-procedures/drop-procedure/)/[DROP FUNCTION](/programming-customizing-mariadb/stored-routines/stored-functions/drop-function/) also supports the non-standard "IF EXISTS", analogous to other [DROP](/sql-statements-structure/sql-statements/data-definition/drop/) statements in MariaDB.
 
 #### Condition and Handlers
 

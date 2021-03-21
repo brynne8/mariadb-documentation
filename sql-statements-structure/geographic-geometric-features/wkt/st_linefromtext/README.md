@@ -11,7 +11,7 @@ LineStringFromText(wkt[,srid])
 
 ## Description
 
-Constructs a [LINESTRING](/sql-statements-structure/geographic-geometric-features/geometry-constructors/linestring) value using its [WKT](/sql-statements-structure/geographic-geometric-features/wkt/wkt-definition) representation and [SRID](/kb/en/srid/).
+Constructs a [LINESTRING](/sql-statements-structure/geographic-geometric-features/geometry-constructors/linestring/) value using its [WKT](/sql-statements-structure/geographic-geometric-features/wkt/wkt-definition/) representation and [SRID](/kb/en/srid/).
 
 `ST_LineFromText()`, `ST_LineStringFromText()`, `ST_LineFromText()` and `ST_LineStringFromText()` are all synonyms.
 

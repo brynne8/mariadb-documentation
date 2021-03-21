@@ -2,7 +2,7 @@
 
 In addition to using prepared statements from the libmysqld, you can also do prepared statements from any client by using the text based prepared statement interface.
 
-You first prepare the statement with [PREPARE](/sql-statements-structure/sql-statements/prepared-statements/prepare-statement), execute with [EXECUTE](/sql-statements-structure/sql-statements/prepared-statements/execute-statement), and release it with [DEALLOCATE](/kb/en/deallocate-drop-prepared-statement/).
+You first prepare the statement with [PREPARE](/sql-statements-structure/sql-statements/prepared-statements/prepare-statement/), execute with [EXECUTE](/sql-statements-structure/sql-statements/prepared-statements/execute-statement/), and release it with [DEALLOCATE](/kb/en/deallocate-drop-prepared-statement/).
 
 - [PREPARE Statement](/sql-statements-structure/sql-statements/prepared-statements/prepare-statement/) — Define a prepare statement.
 - [Out Parameters in PREPARE](/sql-statements-structure/sql-statements/prepared-statements/out-parameters-in-prepare/) — Using question mark placeholders for out-parameters in the PREPARE statement

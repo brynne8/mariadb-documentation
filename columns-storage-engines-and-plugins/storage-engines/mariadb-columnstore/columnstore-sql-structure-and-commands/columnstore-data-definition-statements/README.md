@@ -1,6 +1,6 @@
 # ColumnStore Data Definition Statements
 
-You can use most normal statements from the [MariaDB data definition language](/sql-statements-structure/sql-statements/data-definition) (DDL) with ColumnStore tables.
+You can use most normal statements from the [MariaDB data definition language](/sql-statements-structure/sql-statements/data-definition/) (DDL) with ColumnStore tables.
 This section lists DDL that differs for ColumnStore compared to normal MariaDB usage.
 
 - [DDL statements that differ for ColumnStore](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-sql-structure-and-commands/columnstore-data-definition-statements/ddl-statements-that-differ-for-columnstore/) — Lists of data definition statements (DDL) that differ from normal MariaDB DDL

@@ -1,6 +1,6 @@
 # mysql_install_db.exe
 
-The `mysql_install_db.exe` utility is the Windows equivalent of [mysql_install_db](/clients-utilities/mysql_install_db).
+The `mysql_install_db.exe` utility is the Windows equivalent of [mysql_install_db](/clients-utilities/mysql_install_db/).
 
 ## Functionality
 

@@ -11,7 +11,7 @@ RENAME TABLE [IF EXISTS] tbl_name
 
 ## Description
 
-This statement renames one or more tables or [views](/programming-customizing-mariadb/views), but not the privileges associated with them.
+This statement renames one or more tables or [views](/programming-customizing-mariadb/views/), but not the privileges associated with them.
 
 ### IF EXISTS
 
@@ -31,13 +31,13 @@ CREATE TABLE new_table (...);
 RENAME TABLE old_table TO backup_table, new_table TO old_table;
 ```
 
-`tbl_name` can optionally be specified as `db_name`.`tbl_name`. See [Identifier Qualifiers](/sql-statements-structure/sql-language-structure/identifier-qualifiers). This allows to use `RENAME` to move a table from a database to another (as long as they are on the same filesystem):
+`tbl_name` can optionally be specified as `db_name`.`tbl_name`. See [Identifier Qualifiers](/sql-statements-structure/sql-language-structure/identifier-qualifiers/). This allows to use `RENAME` to move a table from a database to another (as long as they are on the same filesystem):
 
 ```sql
 RENAME TABLE db1.t TO db2.t;
 ```
 
-Note that moving a table to another database is not possible if it has some [triggers](/programming-customizing-mariadb/triggers-events/triggers). Trying to do so produces the following error:
+Note that moving a table to another database is not possible if it has some [triggers](/programming-customizing-mariadb/triggers-events/triggers/). Trying to do so produces the following error:
 
 ```sql
 ERROR 1435 (HY000): Trigger in wrong schema
@@ -63,7 +63,7 @@ RENAME TABLE t1 TO tmp_table,
 
 ##### MariaDB starting with [10.3.0](/kb/en/mariadb-1030-release-notes/)
 
-Set the lock wait timeout. See [WAIT and NOWAIT](/sql-statements-structure/sql-statements/transactions/wait-and-nowait).
+Set the lock wait timeout. See [WAIT and NOWAIT](/sql-statements-structure/sql-statements/transactions/wait-and-nowait/).
 
 ## Privileges
 

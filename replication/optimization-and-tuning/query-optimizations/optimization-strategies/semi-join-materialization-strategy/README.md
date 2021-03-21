@@ -1,6 +1,6 @@
 # Semi-join Materialization Strategy
 
-Semi-join Materialization is a special kind of subquery materialization used for [Semi-join subqueries](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/semi-join-subquery-optimizations).  It actually includes two strategies:
+Semi-join Materialization is a special kind of subquery materialization used for [Semi-join subqueries](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/semi-join-subquery-optimizations/).  It actually includes two strategies:
 
 - Materialization/lookup
 - Materialization/scan
@@ -109,7 +109,7 @@ MySQL [world]> explain select * from Country where Country.code IN (select City.
 
 One can see that both plans will do a full scan on the `Country` table. For the second step, MariaDB will fill the materialized table (238 rows read from table City and written to the temporary table) and then do a unique key lookup for each record in table `Country`, which works out to 238 unique key lookups. In total, the second step will cost `(239+238) = 477` reads and `238` temp.table writes.
 
-MySQL's plan for the second step is to read 18 rows using an index on `City.Country` for each record it receives for table `Country`. This works out to a cost of `(18*239) = 4302` reads.  Had there been fewer subquery invocations, this plan would have been better than the one with Materialization.  By the way, MariaDB has an option to use such a query plan, too (see [FirstMatch Strategy](/replication/optimization-and-tuning/query-optimizations/optimization-strategies/firstmatch-strategy)), but it did not choose it.
+MySQL's plan for the second step is to read 18 rows using an index on `City.Country` for each record it receives for table `Country`. This works out to a cost of `(18*239) = 4302` reads.  Had there been fewer subquery invocations, this plan would have been better than the one with Materialization.  By the way, MariaDB has an option to use such a query plan, too (see [FirstMatch Strategy](/replication/optimization-and-tuning/query-optimizations/optimization-strategies/firstmatch-strategy/)), but it did not choose it.
 
 ## Subqueries with grouping
 

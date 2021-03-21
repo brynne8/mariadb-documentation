@@ -11,7 +11,7 @@ AsWKT(g)
 
 ## Description
 
-Converts a value in internal geometry format to its [WKT](/sql-statements-structure/geographic-geometric-features/wkt/wkt-definition) representation and returns the string result.
+Converts a value in internal geometry format to its [WKT](/sql-statements-structure/geographic-geometric-features/wkt/wkt-definition/) representation and returns the string result.
 
 `ST_AsText()`, `AsText()`, `ST_AsWKT()` and `AsWKT()` are all synonyms.
 

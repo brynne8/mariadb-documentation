@@ -1,18 +1,18 @@
 # Inserting and Updating with Views
 
-A [view](/programming-customizing-mariadb/views) can be used for inserting or updating. However, there are certain limitations.
+A [view](/programming-customizing-mariadb/views/) can be used for inserting or updating. However, there are certain limitations.
 
 ## Updating with views
 
 A view cannot be used for updating if it uses  any of the following:
 
-- ALGORITHM=TEMPTABLE (see [View Algorithms](/programming-customizing-mariadb/views/view-algorithms))
-- [HAVING](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select)
+- ALGORITHM=TEMPTABLE (see [View Algorithms](/programming-customizing-mariadb/views/view-algorithms/))
+- [HAVING](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/)
 - [GROUP BY](/kb/en/select/#group-by)
 - [DISTINCT](/kb/en/select/#distinct)
 - [UNION](/kb/en/union/)
 - [UNION ALL](/kb/en/union/)
-- An aggregate function, such as [MAX()](/built-in-functions/aggregate-functions/max), [MIN()](/built-in-functions/aggregate-functions/min), [SUM()](/built-in-functions/aggregate-functions/sum) or [COUNT()](/built-in-functions/aggregate-functions/count)
+- An aggregate function, such as [MAX()](/built-in-functions/aggregate-functions/max/), [MIN()](/built-in-functions/aggregate-functions/min/), [SUM()](/built-in-functions/aggregate-functions/sum/) or [COUNT()](/built-in-functions/aggregate-functions/count/)
 - subquery in the SELECT list
 - subquery in the WHERE clause referring to a table in the FROM clause
 - if it has no underlying table because it refers only to literal values
@@ -52,7 +52,7 @@ If a row is rejected because of the CHECK OPTION, an error similar to the follow
 ERROR 1369 (HY000): CHECK OPTION failed 'db_name.view_name'
 ```
 
-A view with a WHERE which is always false (like `WHERE 0`) and WITH CHECK OPTION is similar to a [BLACKHOLE](/columns-storage-engines-and-plugins/storage-engines/blackhole) table: no row is ever inserted and no row is ever returned. An insertable view with a WHERE which is always false but no CHECK OPTION is a view that accepts data but does not show them.
+A view with a WHERE which is always false (like `WHERE 0`) and WITH CHECK OPTION is similar to a [BLACKHOLE](/columns-storage-engines-and-plugins/storage-engines/blackhole/) table: no row is ever inserted and no row is ever returned. An insertable view with a WHERE which is always false but no CHECK OPTION is a view that accepts data but does not show them.
 
 ## Examples
 

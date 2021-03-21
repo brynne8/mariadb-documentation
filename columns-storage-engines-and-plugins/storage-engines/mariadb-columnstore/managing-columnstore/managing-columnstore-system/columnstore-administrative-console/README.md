@@ -1,7 +1,7 @@
 # ColumnStore Administrative Console
 
 The MariaDB ColumnStore Management Console allows you to configure, monitor, and manage the MariaDB ColumnStore system and servers. 
-Once you have a running ColumnStore cluster, you can invoke the console from any of the [UM](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-user-module) or [PM](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module) nodes. The console utility is called mcsadmin
+Once you have a running ColumnStore cluster, you can invoke the console from any of the [UM](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-user-module/) or [PM](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module/) nodes. The console utility is called mcsadmin
 
 ```sql
 [myuser@srv1~]# mcsadmin

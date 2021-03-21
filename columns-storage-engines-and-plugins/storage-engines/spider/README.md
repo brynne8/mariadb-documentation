@@ -1,6 +1,6 @@
 # Spider
 
-The Spider storage engine supports partitioning and [xa transactions](/sql-statements-structure/sql-statements/transactions/xa-transactions), and allows tables of different MariaDB instances to be handled as if they were on the same instance.
+The Spider storage engine supports partitioning and [xa transactions](/sql-statements-structure/sql-statements/transactions/xa-transactions/), and allows tables of different MariaDB instances to be handled as if they were on the same instance.
 
 ### Versions of Spider in MariaDB
 

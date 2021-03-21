@@ -1,6 +1,6 @@
 # CONSTRAINT
 
-MariaDB supports the implementation of constraints at the table-level using either [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table) or [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) statements.  A table constraint restricts the data you can add to the table.  If you attempt to insert invalid data on a column, MariaDB throws an error.
+MariaDB supports the implementation of constraints at the table-level using either [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/) or [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) statements.  A table constraint restricts the data you can add to the table.  If you attempt to insert invalid data on a column, MariaDB throws an error.
 
 ## Syntax
 
@@ -51,7 +51,7 @@ The [Information Schema TABLE_CONSTRAINTS Table](/kb/en/information-schema-table
 
 ### FOREIGN KEY Constraints
 
-[InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) supports [foreign key](/replication/optimization-and-tuning/optimization-and-indexes/foreign-keys) constraints. The syntax for a foreign key
+[InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) supports [foreign key](/replication/optimization-and-tuning/optimization-and-indexes/foreign-keys/) constraints. The syntax for a foreign key
 constraint definition in InnoDB looks like this:
 
 ```sql
@@ -79,25 +79,25 @@ In [MariaDB 10.2.1](/kb/en/mariadb-1021-release-notes/) you can define constrain
 - `CONSTRAINT [constraint_name] CHECK (expression)`
 
 Before a row is inserted or updated, all constraints are evaluated in the order they are defined. If any constraint expression returns false, then the row will not be inserted or updated.
-One can use most deterministic functions in a constraint, including [UDFs](/programming-customizing-mariadb/user-defined-functions).
+One can use most deterministic functions in a constraint, including [UDFs](/programming-customizing-mariadb/user-defined-functions/).
 
 ```sql
 CREATE TABLE t1 (a INT CHECK (a>2), b INT CHECK (b>2), CONSTRAINT a_greater CHECK (a>b));
 ```
 
-If you use the second format and you don't give a name to the constraint, then the constraint will get an automatically generated name. This is done so that you can later delete the constraint with [ALTER TABLE DROP constraint_name](/sql-statements-structure/sql-statements/data-definition/alter/alter-table).
+If you use the second format and you don't give a name to the constraint, then the constraint will get an automatically generated name. This is done so that you can later delete the constraint with [ALTER TABLE DROP constraint_name](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/).
 
 One can disable all constraint expression checks by setting the [check_constraint_checks](/kb/en/server-system-variables/#check_constraint_checks) variable to `OFF`. This is useful for example when loading a table that violates some constraints that you want to later find and fix in SQL.
 
 ### Replication
 
-In [row-based](/kb/en/binary-log-formats/#row-based) [replication](/replication), only the master checks constraints, and failed statements will not be replicated. In [statement-based](/kb/en/binary-log-formats/#statement-based) replication, the slaves will also check constraints. Constraints should therefore be identical, as well as deterministic, in a replication environment.
+In [row-based](/kb/en/binary-log-formats/#row-based) [replication](/replication/), only the master checks constraints, and failed statements will not be replicated. In [statement-based](/kb/en/binary-log-formats/#statement-based) replication, the slaves will also check constraints. Constraints should therefore be identical, as well as deterministic, in a replication environment.
 
 ### Auto_increment
 
 ##### MariaDB starting with [10.2.6](/kb/en/mariadb-1026-release-notes/)
 
-- From [MariaDB 10.2.6](/kb/en/mariadb-1026-release-notes/), [auto_increment](/columns-storage-engines-and-plugins/data-types/auto_increment) columns are no longer permitted in check constraints. Previously they were permitted, but would not work correctly. See [MDEV-11117](https://jira.mariadb.org/browse/MDEV-11117).
+- From [MariaDB 10.2.6](/kb/en/mariadb-1026-release-notes/), [auto_increment](/columns-storage-engines-and-plugins/data-types/auto_increment/) columns are no longer permitted in check constraints. Previously they were permitted, but would not work correctly. See [MDEV-11117](https://jira.mariadb.org/browse/MDEV-11117).
 
 ## Examples
 
@@ -193,4 +193,4 @@ Compare the definition of table <em>t2</em> to table <em>t3</em>. `CHAR_LENGTH(n
 
 ## See Also
 
-- [Foreign Keys](/replication/optimization-and-tuning/optimization-and-indexes/foreign-keys)
+- [Foreign Keys](/replication/optimization-and-tuning/optimization-and-indexes/foreign-keys/)

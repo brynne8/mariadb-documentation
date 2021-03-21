@@ -28,7 +28,7 @@ interval:
 
 ## Description
 
-This statement creates and schedules a new [event](/programming-customizing-mariadb/triggers-events/event-scheduler/events). It requires the
+This statement creates and schedules a new [event](/programming-customizing-mariadb/triggers-events/event-scheduler/events/). It requires the
 <a undefined>EVENT</a> privilege for the schema in which the event is to be created.
 
 The minimum requirements for a valid CREATE EVENT statement are as
@@ -63,12 +63,12 @@ qualified with the name of a database schema. An event is associated
 with both a MariaDB user (the definer) and a schema, and its name must
 be unique among names of events within that schema. In general, the
 rules governing event names are the same as those for names of stored
-routines. See [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names).
+routines. See [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names/).
 
 If no schema is indicated as part of event_name, the default (current)
 schema is assumed.
 
-For valid identifiers to use as event names, see [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names).
+For valid identifiers to use as event names, see [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names/).
 
 #### OR REPLACE
 
@@ -84,7 +84,7 @@ The `ON SCHEDULE` clause can be used to specify when the event must be triggered
 
 #### AT
 
-If you want to execute the event only once (one time event), you can use the `AT` keyword, followed by a timestamp. If you use [CURRENT_TIMESTAMP](/built-in-functions/date-time-functions/current_timestamp), the event acts as soon as it is created. As a convenience, you can add one or more intervals to that timestamp. You can also specify a timestamp in the past, so that the event is stored but not triggered, until you modify it via [ALTER EVENT](/programming-customizing-mariadb/triggers-events/event-scheduler/alter-event).
+If you want to execute the event only once (one time event), you can use the `AT` keyword, followed by a timestamp. If you use [CURRENT_TIMESTAMP](/built-in-functions/date-time-functions/current_timestamp/), the event acts as soon as it is created. As a convenience, you can add one or more intervals to that timestamp. You can also specify a timestamp in the past, so that the event is stored but not triggered, until you modify it via [ALTER EVENT](/programming-customizing-mariadb/triggers-events/event-scheduler/alter-event/).
 
 The following example shows how to create an event that will be triggered tomorrow at a certain time:
 
@@ -96,7 +96,7 @@ DO something;
 
 You can also specify that an event must be triggered at a regular interval (recurring event). In such cases, use the `EVERY` clause followed by the interval.
 
-If an event is recurring, you can specify when the first execution must happen via the `STARTS` clause and a maximum time for the last execution via the `ENDS` clause. `STARTS` and `ENDS` clauses are followed by a timestamp and, optionally, one or more intervals. The `ENDS` clause can specify a timestamp in the past, so that the event is stored but not executed until you modify it via [ALTER EVENT](/programming-customizing-mariadb/triggers-events/event-scheduler/alter-event).
+If an event is recurring, you can specify when the first execution must happen via the `STARTS` clause and a maximum time for the last execution via the `ENDS` clause. `STARTS` and `ENDS` clauses are followed by a timestamp and, optionally, one or more intervals. The `ENDS` clause can specify a timestamp in the past, so that the event is stored but not executed until you modify it via [ALTER EVENT](/programming-customizing-mariadb/triggers-events/event-scheduler/alter-event/).
 
 In the following example, next month a recurring event will be triggered hourly for a week:
 
@@ -120,14 +120,14 @@ In you specify `ON COMPLETION NOT PRESERVE`, and you specify a timestamp in the 
 
 Events are `ENABLE`d by default. If you want to stop MariaDB from executing
 an event, you may specify `DISABLE`. When it is ready to be activated, you
-may enable it using [ALTER EVENT](/programming-customizing-mariadb/triggers-events/event-scheduler/alter-event). Another option is
+may enable it using [ALTER EVENT](/programming-customizing-mariadb/triggers-events/event-scheduler/alter-event/). Another option is
 `DISABLE ON SLAVE`, which indicates that an event was created on a master and has been replicated to the slave, which is prevented from executing the event. If `DISABLE ON SLAVE` is specifically set, the event will not be executed.
 
 #### COMMENT
 
 The `COMMENT` clause may be used to set a comment for the event. Maximum
 length for comments is 64 characters. The comment is a string, so it must be
-quoted. To see events comments, you can query the [INFORMATION_SCHEMA.EVENTS table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-events-table) (the column is named `EVENT_COMMENT`).
+quoted. To see events comments, you can query the [INFORMATION_SCHEMA.EVENTS table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-events-table/) (the column is named `EVENT_COMMENT`).
 
 ## Examples
 
@@ -189,8 +189,8 @@ Query OK, 0 rows affected, 1 warning (0.00 sec)
 
 ## See Also
 
-- [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names)
+- [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names/)
 - [Events Overview](/kb/en/events-overview/)
-- [SHOW CREATE EVENT](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-event)
-- [ALTER EVENT](/programming-customizing-mariadb/triggers-events/event-scheduler/alter-event)
-- [DROP EVENT](/sql-statements-structure/sql-statements/data-definition/drop/drop-event)
+- [SHOW CREATE EVENT](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-event/)
+- [ALTER EVENT](/programming-customizing-mariadb/triggers-events/event-scheduler/alter-event/)
+- [DROP EVENT](/sql-statements-structure/sql-statements/data-definition/drop/drop-event/)

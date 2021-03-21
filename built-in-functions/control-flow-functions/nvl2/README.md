@@ -34,4 +34,4 @@ SELECT NVL2('x',1,2);
 
 ## See Also
 
-- [IFNULL (or NVL)](/built-in-functions/control-flow-functions/ifnull)
+- [IFNULL (or NVL)](/built-in-functions/control-flow-functions/ifnull/)

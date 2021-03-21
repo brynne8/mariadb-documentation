@@ -8,4 +8,4 @@ From [MariaDB 10.4.6](/kb/en/mariadb-1046-release-notes/), `mariadb-slap` is a s
 
 From [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/), `mysqlslap` is the symlink, and `mariadb-slap` the binary name.
 
-See [mysqlslap](/clients-utilities/mysqlslap) for details.
+See [mysqlslap](/clients-utilities/mysqlslap/) for details.

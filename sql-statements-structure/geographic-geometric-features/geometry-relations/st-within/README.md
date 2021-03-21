@@ -12,7 +12,7 @@ Returns `1` or `0` to indicate whether geometry <em>`g1`</em> is spatially withi
 
 This tests the opposite relationship as <a undefined>ST_CONTAINS()</a>.
 
-ST_WITHIN() uses object shapes, while [WITHIN()](/sql-statements-structure/geographic-geometric-features/geometry-relations/within), based on the original MySQL implementation, uses object bounding rectangles.
+ST_WITHIN() uses object shapes, while [WITHIN()](/sql-statements-structure/geographic-geometric-features/geometry-relations/within/), based on the original MySQL implementation, uses object bounding rectangles.
 
 ## Examples
 

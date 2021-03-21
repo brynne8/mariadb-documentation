@@ -10,7 +10,7 @@ DES_ENCRYPT(str[,{key_num|key_str}])
 
 Encrypts the string with the given key using the Triple-DES algorithm.
 
-This function works only if MariaDB has been configured with [TLS support](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview).
+This function works only if MariaDB has been configured with [TLS support](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview/).
 
 The encryption key to use is chosen based on the second argument to
 `DES_ENCRYPT()`, if one was given. With no argument, the first key from
@@ -60,4 +60,4 @@ SELECT customer_address FROM customer_table
 
 ## See Also
 
-- [DES_DECRYPT()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/des_decrypt)
+- [DES_DECRYPT()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/des_decrypt/)

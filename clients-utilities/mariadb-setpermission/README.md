@@ -8,4 +8,4 @@ From [MariaDB 10.4.6](/kb/en/mariadb-1046-release-notes/), `mariadb-setpermissio
 
 From [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/), `mysql_setpermission` is the symlink, and `mariadb-setpermission` the binary name.
 
-See [mysql_setpermission](/clients-utilities/mysql_setpermission) for details.
+See [mysql_setpermission](/clients-utilities/mysql_setpermission/) for details.

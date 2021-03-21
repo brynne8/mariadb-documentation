@@ -8,7 +8,7 @@ Note that most of the background and redo log scrubbing code has been removed in
 
 Sometimes there is a requirement that when some data is deleted, it is really gone. This might be the case when one stores user's personal information or some other sensitive data. Normally though, when a row is deleted, the space is only marked as free on the page. It may eventually be overwritten, but there is no guarantee when that will happen. A copy of the deleted rows may also be present in the log files.
 
-[MariaDB 10.1.3](/kb/en/mariadb-1013-release-notes/) introduced support for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) data scrubbing. Background threads periodically scan tablespaces and logs and remove all data that should be deleted. The number of background threads for tablespace scans is set by [innodb-encryption-threads](/kb/en/xtradbinnodb-server-system-variables/#innodb_encryption_threads). Log scrubbing happens in a separate thread.
+[MariaDB 10.1.3](/kb/en/mariadb-1013-release-notes/) introduced support for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) data scrubbing. Background threads periodically scan tablespaces and logs and remove all data that should be deleted. The number of background threads for tablespace scans is set by [innodb-encryption-threads](/kb/en/xtradbinnodb-server-system-variables/#innodb_encryption_threads). Log scrubbing happens in a separate thread.
 
 To configure scrubbing one can use the following variables:
 

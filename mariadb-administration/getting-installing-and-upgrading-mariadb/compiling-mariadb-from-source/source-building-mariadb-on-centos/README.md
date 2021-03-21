@@ -24,7 +24,7 @@ Running this command installs many of the build dependencies, but it doesn't ins
 
 In addition to these, you also need to install `gnutls` or `openssl`, depending on the TLS implementation you want to use.
 
-For more information on dependencies, see [Linux Build Environment](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/Build_Environment_Setup_for_Linux).
+For more information on dependencies, see [Linux Build Environment](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/Build_Environment_Setup_for_Linux/).
 
 ## Building MariaDB
 

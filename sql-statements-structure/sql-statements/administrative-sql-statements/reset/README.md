@@ -9,10 +9,10 @@ RESET reset_option [, reset_option] ...
 ## Description
 
 The `RESET` statement is used to clear the state of various server
-operations. You must have the [RELOAD privilege](/sql-statements-structure/sql-statements/account-management-sql-commands/grant) to execute
+operations. You must have the [RELOAD privilege](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/) to execute
 `RESET`.
 
-`RESET` acts as a stronger version of the [FLUSH](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush) statement.
+`RESET` acts as a stronger version of the [FLUSH](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/) statement.
 
 The different `RESET` options are:
 

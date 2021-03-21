@@ -18,5 +18,5 @@ is executed. Each statement_list consists of one or more statements.
 
 ## See Also
 
-- The [IF() function](/built-in-functions/control-flow-functions/if-function), which differs from the `IF` statement described above.
+- The [IF() function](/built-in-functions/control-flow-functions/if-function/), which differs from the `IF` statement described above.
 - [Changes in Oracle mode from MariaDB 10.3](/kb/en/sql_modeoracle-from-mariadb-103/#simple-syntax-compatibility)

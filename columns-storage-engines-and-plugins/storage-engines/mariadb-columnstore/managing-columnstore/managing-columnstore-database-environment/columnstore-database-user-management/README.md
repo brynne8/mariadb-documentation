@@ -2,7 +2,7 @@
 
 # Basic user management
 
-MariaDB ColumnStore allows permissions to be set for user accounts. The syntax of these grants follows the standard MariaDB syntax (see [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant)).
+MariaDB ColumnStore allows permissions to be set for user accounts. The syntax of these grants follows the standard MariaDB syntax (see [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/)).
 
 For the root user, ColumnStore comes with full privileges. In order to set/restrict user accounts, privileges must be given/restricted. ColumnStore uses a dedicated schema called <em>infinidb_vtable</em> for creation of all temporary tables used for ColumnStore query processing. The root user account has been given permission to this account by default, but full permission MUST be given for all user accounts to this schema:
 

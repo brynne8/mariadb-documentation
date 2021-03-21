@@ -1,8 +1,8 @@
 # Performance Schema System Variables
 
-The following variables are used with MariaDB's [Performance Schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema). See [Performance Schema Options](/kb/en/mysqld-options/#performance-schema-options) for Performance Schema options that are not system variables. See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables) for a complete list of system variables and instructions on setting them.
+The following variables are used with MariaDB's [Performance Schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/). See [Performance Schema Options](/kb/en/mysqld-options/#performance-schema-options) for Performance Schema options that are not system variables. See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables/) for a complete list of system variables and instructions on setting them.
 
-See also the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables).
+See also the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables/).
 
 #### `performance_schema`
 
@@ -17,7 +17,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `performance_schema_accounts_size`
 
-- <strong>Description:</strong> Maximum number of rows in the [performance_schema.accounts](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-accounts-table) table. If set to 0, the [Performance Schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema) will not store statistics in the accounts table. Use `-1` (the default) for automated sizing.
+- <strong>Description:</strong> Maximum number of rows in the [performance_schema.accounts](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-accounts-table/) table. If set to 0, the [Performance Schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/) will not store statistics in the accounts table. Use `-1` (the default) for automated sizing.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--performance-schema-accounts-size=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -29,7 +29,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `performance_schema_digests_size`
 
-- <strong>Description:</strong> Maximum number of rows that can be stored in the [events_statements_summary_by_digest](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_summary_by_digest-table) table. `0` for disabling, `-1` (the default) for automated sizing.
+- <strong>Description:</strong> Maximum number of rows that can be stored in the [events_statements_summary_by_digest](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_summary_by_digest-table/) table. `0` for disabling, `-1` (the default) for automated sizing.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--performance-schema-digests-size=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -41,7 +41,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `performance_schema_events_stages_history_long_size`
 
-- <strong>Description:</strong> Number of rows in the [events_stages_history_long](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_history_long-table) table.  `0` for disabling, `-1` (the default) for automated sizing.
+- <strong>Description:</strong> Number of rows in the [events_stages_history_long](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_history_long-table/) table.  `0` for disabling, `-1` (the default) for automated sizing.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--performance-schema-events-stages-history-long-size=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -53,7 +53,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `performance_schema_events_stages_history_size`
 
-- <strong>Description:</strong> Number of rows per thread in the [events_stages_history](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_history-table) table. `0` for disabling, `-1` (the default) for automated sizing.
+- <strong>Description:</strong> Number of rows per thread in the [events_stages_history](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_history-table/) table. `0` for disabling, `-1` (the default) for automated sizing.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--performance-schema-events-stages-history-size=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -65,7 +65,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `performance_schema_events_statements_history_long_size`
 
-- <strong>Description:</strong> Number of rows in the [events_statements_history_long](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_history_long-table) table. `0` for disabling, `-1` (the default) for automated sizing.
+- <strong>Description:</strong> Number of rows in the [events_statements_history_long](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_history_long-table/) table. `0` for disabling, `-1` (the default) for automated sizing.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--performance-schema-events-statements-history-long-size=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -77,7 +77,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `performance_schema_events_statements_history_size`
 
-- <strong>Description:</strong> Number of rows per thread in the [events_statements_history](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_history-table) table. `0` for disabling, `-1` (the default) for automated sizing.
+- <strong>Description:</strong> Number of rows per thread in the [events_statements_history](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_history-table/) table. `0` for disabling, `-1` (the default) for automated sizing.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--performance-schema-events-statements-history-size=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -89,7 +89,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `performance_schema_events_transactions_history_long_size`
 
-- <strong>Description:</strong> Number of rows in [events_transactions_history_long](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_transactions_history_long-table) table. Use `0` to disable, `-1` for automated sizing.
+- <strong>Description:</strong> Number of rows in [events_transactions_history_long](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_transactions_history_long-table/) table. Use `0` to disable, `-1` for automated sizing.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--performance-schema-events-transactions-history-long-size=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -102,7 +102,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `performance_schema_events_transactions_history_size`
 
-- <strong>Description:</strong>Number of rows per thread in [events_transactions_history](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_transactions_history-table). Use 0 to disable, -1 for automated sizing.
+- <strong>Description:</strong>Number of rows per thread in [events_transactions_history](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_transactions_history-table/). Use 0 to disable, -1 for automated sizing.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--performance-schema-events-transactions-history-size=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -115,7 +115,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `performance_schema_events_waits_history_long_size`
 
-- <strong>Description:</strong> Number of rows contained in the [events_waits_history_long](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_history_long-table) table. `0` for disabling, `-1` (the default) for automated sizing.
+- <strong>Description:</strong> Number of rows contained in the [events_waits_history_long](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_history_long-table/) table. `0` for disabling, `-1` (the default) for automated sizing.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--performance-schema-events-waits-history-long-size=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -127,7 +127,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `performance_schema_events_waits_history_size`
 
-- <strong>Description:</strong> Number of rows per thread contained in the [events_waits_history](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_history-table) table. `0` for disabling, `-1` (the default) for automated sizing.
+- <strong>Description:</strong> Number of rows per thread contained in the [events_waits_history](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_history-table/) table. `0` for disabling, `-1` (the default) for automated sizing.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--performance-schema-events-waits-history-size=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -139,7 +139,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `performance_schema_hosts_size`
 
-- <strong>Description:</strong> Number of rows stored in the [hosts](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-hosts-table) table. If set to zero, no connection statistics are kept for the hosts table. `-1` (the default) for automated sizing.
+- <strong>Description:</strong> Number of rows stored in the [hosts](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-hosts-table/) table. If set to zero, no connection statistics are kept for the hosts table. `-1` (the default) for automated sizing.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--performance-schema-hosts-size=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -249,7 +249,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `performance_schema_max_metadata_locks`
 
-- <strong>Description:</strong> Maximum number of [Performance Schema metadata locks](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-metadata_locks-table). Use 0 to disable, -1 for automated scaling.
+- <strong>Description:</strong> Maximum number of [Performance Schema metadata locks](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-metadata_locks-table/). Use 0 to disable, -1 for automated scaling.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--performance-schema-max-metadata-locks=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -483,7 +483,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `performance_schema_setup_actors_size`
 
-- <strong>Description:</strong> The maximum number of rows to store in the performance schema [setup_actors](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-setup_actors-table) table. `-1` (from [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/)) denotes automated sizing.
+- <strong>Description:</strong> The maximum number of rows to store in the performance schema [setup_actors](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-setup_actors-table/) table. `-1` (from [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/)) denotes automated sizing.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--performance-schema-setup-actors-size=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -495,7 +495,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `performance_schema_setup_objects_size`
 
-- <strong>Description:</strong> The maximum number of rows that can be stored in the performance schema [setup_objects](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-setup_objects-table) table. `-1` (from [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/)) denotes automated sizing.
+- <strong>Description:</strong> The maximum number of rows that can be stored in the performance schema [setup_objects](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-setup_objects-table/) table. `-1` (from [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/)) denotes automated sizing.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--performance-schema-setup-objects-size=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -507,7 +507,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `performance_schema_users_size`
 
-- <strong>Description:</strong> Number of rows in the [performance_schema.users](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-users-table) table. If set to 0, the [Performance Schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema) will not store connection statistics in the users table. `-1` (the default) for automated sizing.
+- <strong>Description:</strong> Number of rows in the [performance_schema.users](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-users-table/) table. If set to 0, the [Performance Schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/) will not store connection statistics in the users table. `-1` (the default) for automated sizing.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--performance-schema-users-size=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No

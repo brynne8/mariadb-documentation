@@ -11,7 +11,7 @@ RESTORE TABLE tbl_name [, tbl_name] ... FROM '/path/to/backup/directory'```
 
 ## Description
 
-<strong>Note:</strong> Like [BACKUP TABLE](/kb/en/backup-table/), this command was not reliable and has been removed in current versions of MariaDB. For doing a backup of MariaDB use [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump), [mysqlhotcopy](/clients-utilities/backup-restore-and-import-clients/mysqlhotcopy) or [XtraBackup](/kb/en/backup-restore-and-import-xtrabackup/). See [Backing Up and Restoring](/kb/en/backing-up-and-restoring/).
+<strong>Note:</strong> Like [BACKUP TABLE](/kb/en/backup-table/), this command was not reliable and has been removed in current versions of MariaDB. For doing a backup of MariaDB use [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump/), [mysqlhotcopy](/clients-utilities/backup-restore-and-import-clients/mysqlhotcopy/) or [XtraBackup](/kb/en/backup-restore-and-import-xtrabackup/). See [Backing Up and Restoring](/kb/en/backing-up-and-restoring/).
 
 <code class="highlight fixed" style="white-space:pre-wrap">RESTORE TABLE</code> restores the table or tables from a backup
 that was made with <code class="highlight fixed" style="white-space:pre-wrap">[BACKUP TABLE](/kb/en/backup-table/)</code>. The

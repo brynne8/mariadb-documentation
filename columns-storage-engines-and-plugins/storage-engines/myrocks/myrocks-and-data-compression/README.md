@@ -31,7 +31,7 @@ Another way to make the check is to look into `#rocksdb/LOG` file in the data di
 
 ## Compression Settings
 
-Compression is set on a per-Column Family basis.  See [MyRocks Column Families](/columns-storage-engines-and-plugins/storage-engines/myrocks/myrocks-column-families).
+Compression is set on a per-Column Family basis.  See [MyRocks Column Families](/columns-storage-engines-and-plugins/storage-engines/myrocks/myrocks-column-families/).
 
 ### Checking Compression Settings
 

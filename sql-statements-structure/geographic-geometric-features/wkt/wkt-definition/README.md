@@ -17,4 +17,4 @@ The Well-Known Text (WKT) representation of Geometry is designed to exchange geo
 
 ## See Also
 
-- [Geometry Types](/sql-statements-structure/geographic-geometric-features/geometry-types)
+- [Geometry Types](/sql-statements-structure/geographic-geometric-features/geometry-types/)

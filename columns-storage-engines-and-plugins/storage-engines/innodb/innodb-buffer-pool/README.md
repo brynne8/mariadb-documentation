@@ -1,6 +1,6 @@
 # InnoDB Buffer Pool
 
-The [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) buffer pool is a key component for optimizing MariaDB. It stores data and indexes, and you usually want it as large as possible so as to keep as much of the data and indexes in memory, reducing disk IO, as main bottleneck.
+The [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) buffer pool is a key component for optimizing MariaDB. It stores data and indexes, and you usually want it as large as possible so as to keep as much of the data and indexes in memory, reducing disk IO, as main bottleneck.
 
 ## How the Buffer Pool Works
 
@@ -12,7 +12,7 @@ When information is accessed that appears in the <em>old</em> list, it is moved 
 
 ## innodb_buffer_pool_size
 
-The most important [server system variable](/replication/optimization-and-tuning/system-variables/server-system-variables) is [innodb_buffer_pool_size](/kb/en/innodb-system-variables/#innodb_buffer_pool_size), which you can set from 70-80% of the total available memory on a dedicated database server with only or primarily InnoDB tables.
+The most important [server system variable](/replication/optimization-and-tuning/system-variables/server-system-variables/) is [innodb_buffer_pool_size](/kb/en/innodb-system-variables/#innodb_buffer_pool_size), which you can set from 70-80% of the total available memory on a dedicated database server with only or primarily InnoDB tables.
 
 Be aware that the total memory allocated is about 10% more than the specified size as extra space is also reserved for control structures and buffers. The space must also be contiguous. If you're running a Windows system that loads DLL's at specific addresses, this may cause difficulties.
 
@@ -20,7 +20,7 @@ The larger the size, the longer it will take to initialize. On a modern 64-bit s
 
 Make sure that the size is not too large, causing swapping. The benefit of a larger buffer pool size is more than undone if your operating system is regularly swapping.
 
-Since [MariaDB 10.2.2](/kb/en/mariadb-1022-release-notes/), the buffer pool can be set dynamically, and new variables are introduced that may affect the size and performance. See [Setting Innodb Buffer Pool Size Dynamically](/replication/optimization-and-tuning/system-variables/setting-innodb-buffer-pool-size-dynamically).
+Since [MariaDB 10.2.2](/kb/en/mariadb-1022-release-notes/), the buffer pool can be set dynamically, and new variables are introduced that may affect the size and performance. See [Setting Innodb Buffer Pool Size Dynamically](/replication/optimization-and-tuning/system-variables/setting-innodb-buffer-pool-size-dynamically/).
 
 ## innodb_buffer_pool_instances
 
@@ -52,6 +52,6 @@ The file which contains the buffer pool dump is specified via the [innodb_buffer
 
 ## See Also
 
-- [InnoDB Change Buffering](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-change-buffering)
+- [InnoDB Change Buffering](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-change-buffering/)
 - [Information Schema INNODB_BUFFER_POOL_STATS Table](/kb/en/information-schema-innodb_buffer_pool_stats-table/)
-- [Setting Innodb Buffer Pool Size Dynamically](/replication/optimization-and-tuning/system-variables/setting-innodb-buffer-pool-size-dynamically)
+- [Setting Innodb Buffer Pool Size Dynamically](/replication/optimization-and-tuning/system-variables/setting-innodb-buffer-pool-size-dynamically/)

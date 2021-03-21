@@ -1,14 +1,14 @@
 # MariaDB Galera Cluster 10.0.16 Changelog
 
 [Download](http://downloads.mariadb.org/mariadb-galera/10.0.16)
-[Release Notes](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10016-release-notes)
-[Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10016-changelog)
-[Overview of MariaDB Galera Cluster](/replication/galera-cluster/what-is-mariadb-galera-cluster)
+[Release Notes](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10016-release-notes/)
+[Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10016-changelog/)
+[Overview of MariaDB Galera Cluster](/replication/galera-cluster/what-is-mariadb-galera-cluster/)
 
 <strong>Release date:</strong> 29 Jan 2015
 
 For the highlights of this release, see the
-[release notes](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10016-release-notes).
+[release notes](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10016-release-notes/).
 
 The revision number links will take you to the revision's page on Launchpad. On
 Launchpad you can view more details of the revision and view diffs of the code

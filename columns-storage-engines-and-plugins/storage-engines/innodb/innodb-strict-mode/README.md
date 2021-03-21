@@ -1,6 +1,6 @@
 # InnoDB Strict Mode
 
-[InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) strict mode is similar to [SQL strict mode](/kb/en/sql-mode/#strict-mode). When it is enabled, certain InnoDB warnings become errors instead.
+[InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) strict mode is similar to [SQL strict mode](/kb/en/sql-mode/#strict-mode). When it is enabled, certain InnoDB warnings become errors instead.
 
 ## Configuring InnoDB Strict Mode
 
@@ -22,7 +22,7 @@ Its value for the current session can also be changed dynamically with <a undefi
 SET SESSION innodb_strict_mode=ON;
 ```
 
-It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]
@@ -40,11 +40,11 @@ If InnoDB strict mode is enabled, and if a DDL statement is executed and invalid
 ERROR 1005 (HY000): Can't create table `db1`.`tab` (errno: 140 "Wrong create options")
 ```
 
-However, more details about the error can be found by executing [SHOW WARNINGS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-warnings).
+However, more details about the error can be found by executing [SHOW WARNINGS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-warnings/).
 
 For example, the error is raised in the following cases:
 
-- The <a undefined>KEY_BLOCK_SIZE</a> table option is set to a non-zero value, but the <a undefined>ROW_FORMAT</a> table option is set to some row format other than the [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format) row format. For example:
+- The <a undefined>KEY_BLOCK_SIZE</a> table option is set to a non-zero value, but the <a undefined>ROW_FORMAT</a> table option is set to some row format other than the [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format/) row format. For example:
 
 ```sql
 SET SESSION innodb_strict_mode=ON;
@@ -138,7 +138,7 @@ SHOW WARNINGS;
 3 rows in set (0.000 sec)
 ```
 
-- The <a undefined>ROW_FORMAT</a> table option is set to the [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format) row format, but the <a undefined>innodb_file_per_table</a> system variable is not set to `ON`.
+- The <a undefined>ROW_FORMAT</a> table option is set to the [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format/) row format, but the <a undefined>innodb_file_per_table</a> system variable is not set to `ON`.
 
 ```sql
 SET GLOBAL innodb_file_per_table=OFF;
@@ -162,7 +162,7 @@ SHOW WARNINGS;
 3 rows in set (0.000 sec)
 ```
 
-- The <a undefined>ROW_FORMAT</a> table option is set to a value, but it is not set to one of the values supported by InnoDB: [REDUNDANT](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-redundant-row-format), [COMPACT](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compact-row-format), [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format), and [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format).
+- The <a undefined>ROW_FORMAT</a> table option is set to a value, but it is not set to one of the values supported by InnoDB: [REDUNDANT](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-redundant-row-format/), [COMPACT](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compact-row-format/), [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format/), and [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format/).
 
 ```sql
 SET SESSION innodb_strict_mode=ON;
@@ -185,7 +185,7 @@ SHOW WARNINGS;
 3 rows in set (0.000 sec)
 ```
 
-- Either the <a undefined>KEY_BLOCK_SIZE</a> table option is set to a non-zero value or the <a undefined>ROW_FORMAT</a> table option is set to the [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format) row format, but the <a undefined>innodb_page_size</a> system variable is set to a value greater than `16k`.
+- Either the <a undefined>KEY_BLOCK_SIZE</a> table option is set to a non-zero value or the <a undefined>ROW_FORMAT</a> table option is set to the [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format/) row format, but the <a undefined>innodb_page_size</a> system variable is set to a value greater than `16k`.
 
 ```sql
 SET SESSION innodb_strict_mode=ON;
@@ -278,7 +278,7 @@ SHOW WARNINGS;
 3 rows in set (0.000 sec)
 ```
 
-- The <a undefined>PAGE_COMPRESSED</a> table option is set to `1`, so [InnoDB page compression](/kb/en/compression/) is enabled, but the <a undefined>ROW_FORMAT</a> table option is set to some row format other than the [COMPACT](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compact-row-format) or [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format) row formats.
+- The <a undefined>PAGE_COMPRESSED</a> table option is set to `1`, so [InnoDB page compression](/kb/en/compression/) is enabled, but the <a undefined>ROW_FORMAT</a> table option is set to some row format other than the [COMPACT](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compact-row-format/) or [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format/) row formats.
 
 ```sql
 SET SESSION innodb_strict_mode=ON;
@@ -403,7 +403,7 @@ SHOW WARNINGS;
 3 rows in set (0.00 sec)
 ```
 
-- The <a undefined>ROW_FORMAT</a> table option is set to either the [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format) or the [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format) row format, but the <a undefined>innodb_file_format</a> system variable is not set to `Barracuda`.
+- The <a undefined>ROW_FORMAT</a> table option is set to either the [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format/) or the [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format/) row format, but the <a undefined>innodb_file_format</a> system variable is not set to `Barracuda`.
 
 ```sql
 SET GLOBAL innodb_file_format='Antelope';
@@ -454,7 +454,7 @@ SHOW WARNINGS;
 
 ### COMPRESSED Row Format
 
-If InnoDB strict mode is enabled, and if a table uses the [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format) row format, and if the table's <a undefined>KEY_BLOCK_SIZE</a> is too small to contain a row, then an error is returned by the statement.
+If InnoDB strict mode is enabled, and if a table uses the [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format/) row format, and if the table's <a undefined>KEY_BLOCK_SIZE</a> is too small to contain a row, then an error is returned by the statement.
 
 ### Row Size Too Large
 
@@ -465,4 +465,4 @@ ERROR 1118 (42000): Row size too large (> 8126). Changing some columns to
 TEXT or BLOB may help. In current row format, BLOB prefix of 0 bytes is stored inline.
 ```
 
-See [Troubleshooting Row Size Too Large Errors with InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/troubleshooting-row-size-too-large-errors-with-innodb) for more information.
+See [Troubleshooting Row Size Too Large Errors with InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/troubleshooting-row-size-too-large-errors-with-innodb/) for more information.

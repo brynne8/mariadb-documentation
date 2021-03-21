@@ -13,7 +13,7 @@ It contains the following columns:
 <tr><td><code>TIMER_OVERHEAD</code></td><td>Minimum timer overhead, determined during initialization by calling the timer 20 times and selecting the smallest value. Total overhead will be at least double this, as the timer is called at the beginning and end of each timed event.</td></tr>
 </tbody></table>
 
-Any `NULL` values indicate that that particular timer is not available on your platform, Any timer names with a non-NULL value can be used in the [setup_timers](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-setup_timers-table) table.
+Any `NULL` values indicate that that particular timer is not available on your platform, Any timer names with a non-NULL value can be used in the [setup_timers](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-setup_timers-table/) table.
 
 ## Example
 

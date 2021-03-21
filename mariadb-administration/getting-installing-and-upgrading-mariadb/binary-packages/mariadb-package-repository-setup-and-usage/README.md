@@ -23,7 +23,7 @@ The script will will set up 2 different repositories in a single repository conf
 
 ### MariaDB Repository
 
-The <strong>MariaDB Repository</strong> contains software packages related to MariaDB Server, including the server itself, [clients and utilities](/clients-utilities), [client libraries](/kb/en/client-libraries/), [plugins](/columns-storage-engines-and-plugins/plugins), and [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup).
+The <strong>MariaDB Repository</strong> contains software packages related to MariaDB Server, including the server itself, [clients and utilities](/clients-utilities/), [client libraries](/kb/en/client-libraries/), [plugins](/columns-storage-engines-and-plugins/plugins/), and [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/).
 
 The binaries in MariaDB Corporation's <strong>MariaDB Repository</strong> are currently identical to the binaries in MariaDB Foundation's MariaDB Repository that is configured with the [MariaDB Repository Configuration Tool](https://downloads.mariadb.org/mariadb/repositories/).
 
@@ -35,7 +35,7 @@ If you would not like to configure the <strong>MariaDB Repository</strong> on yo
 
 ### MariaDB MaxScale Repository
 
-The <strong>MariaDB MaxScale Repository</strong> contains software packages related to [MariaDB MaxScale](/mariadb-platform-x3/sample-platform-x3-implementation-for-transactional-and-analytical-workloads/mariadb-enterprise/maxscale).
+The <strong>MariaDB MaxScale Repository</strong> contains software packages related to [MariaDB MaxScale](/mariadb-platform-x3/sample-platform-x3-implementation-for-transactional-and-analytical-workloads/mariadb-enterprise/maxscale/).
 
 By default, the script will configure your system to install from the repository of the <em>latest</em> GA version of MariaDB MaxScale. When a new major GA release occurs, the repository will automatically switch to the new version. If instead you would like to stay on a particular version you will need to manually edit the repository configuration file and change '`latest`' to the version you want (e.g. '`2.5`') or run the MariaDB Package Repository setup script again, specifying the particular version or series you want.
 
@@ -59,7 +59,7 @@ The distributions currently supported by the script include:
 - Ubuntu 16.04 LTS (Xenial), 18.04 LTS (Bionic), and 20.04 (Focal)
 - SUSE Linux Enterprise Server (SLES) 12 and 15
 
-To install MariaDB on distributions not supported by the MariaDB Package Repository setup script, please consider using MariaDB Foundation's [MariaDB Repository Configuration Tool](https://downloads.mariadb.org/mariadb/repositories/). Some Linux distributions also include MariaDB [in their own repositories](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/distributions-which-include-mariadb).
+To install MariaDB on distributions not supported by the MariaDB Package Repository setup script, please consider using MariaDB Foundation's [MariaDB Repository Configuration Tool](https://downloads.mariadb.org/mariadb/repositories/). Some Linux distributions also include MariaDB [in their own repositories](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/distributions-which-include-mariadb/).
 
 ## Using the MariaDB Package Repository Setup Script
 
@@ -252,7 +252,7 @@ To install MariaDB on Red Hat Enterprise Linux (RHEL) and CentOS, see the instru
 sudo yum install MariaDB-server MariaDB-client MariaDB-backup
 ```
 
-To install MariaDB MaxScale on Red Hat Enterprise Linux (RHEL) and CentOS, see the instructions at [MariaDB MaxScale Installation Guide](/mariadb-platform-x3/sample-platform-x3-implementation-for-transactional-and-analytical-workloads/mariadb-enterprise/mariadb-maxscale-23-mariadb-maxscale-installation-guide). For example:
+To install MariaDB MaxScale on Red Hat Enterprise Linux (RHEL) and CentOS, see the instructions at [MariaDB MaxScale Installation Guide](/mariadb-platform-x3/sample-platform-x3-implementation-for-transactional-and-analytical-workloads/mariadb-enterprise/mariadb-maxscale-23-mariadb-maxscale-installation-guide/). For example:
 
 ```sql
 sudo yum install maxscale
@@ -266,7 +266,7 @@ To install MariaDB on Debian and Ubuntu, see the instructions at [Installing Mar
 sudo apt-get install mariadb-server mariadb-client mariadb-backup
 ```
 
-To install MariaDB MaxScale on Debian and Ubuntu, see the instructions at [MariaDB MaxScale Installation Guide](/mariadb-platform-x3/sample-platform-x3-implementation-for-transactional-and-analytical-workloads/mariadb-enterprise/mariadb-maxscale-23-mariadb-maxscale-installation-guide). For example:
+To install MariaDB MaxScale on Debian and Ubuntu, see the instructions at [MariaDB MaxScale Installation Guide](/mariadb-platform-x3/sample-platform-x3-implementation-for-transactional-and-analytical-workloads/mariadb-enterprise/mariadb-maxscale-23-mariadb-maxscale-installation-guide/). For example:
 
 ```sql
 sudo apt-get install maxscale
@@ -280,7 +280,7 @@ To install MariaDB on SUSE Linux Enterprise Server (SLES), see the instructions 
 sudo zypper install MariaDB-server MariaDB-client MariaDB-backup
 ```
 
-To install MariaDB MaxScale on SUSE Linux Enterprise Server (SLES), see the instructions at [MariaDB MaxScale Installation Guide](/mariadb-platform-x3/sample-platform-x3-implementation-for-transactional-and-analytical-workloads/mariadb-enterprise/mariadb-maxscale-23-mariadb-maxscale-installation-guide). For example:
+To install MariaDB MaxScale on SUSE Linux Enterprise Server (SLES), see the instructions at [MariaDB MaxScale Installation Guide](/mariadb-platform-x3/sample-platform-x3-implementation-for-transactional-and-analytical-workloads/mariadb-enterprise/mariadb-maxscale-23-mariadb-maxscale-installation-guide/). For example:
 
 ```sql
 sudo zypper install maxscale

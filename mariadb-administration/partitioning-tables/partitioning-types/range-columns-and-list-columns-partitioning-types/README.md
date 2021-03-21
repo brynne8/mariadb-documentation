@@ -1,16 +1,16 @@
 # RANGE COLUMNS and LIST COLUMNS Partitioning Types
 
-RANGE COLUMNS and LIST COLUMNS are variants of, respectively, [RANGE](/mariadb-administration/partitioning-tables/partitioning-types/range-partitioning-type) and [LIST](/kb/en/list-partitioning/). With these partitioning types there is not a single partitioning expression; instead, a list of one or more columns is accepted. The following rules apply:
+RANGE COLUMNS and LIST COLUMNS are variants of, respectively, [RANGE](/mariadb-administration/partitioning-tables/partitioning-types/range-partitioning-type/) and [LIST](/kb/en/list-partitioning/). With these partitioning types there is not a single partitioning expression; instead, a list of one or more columns is accepted. The following rules apply:
 
 - The list can contain one or more columns.
-- Columns can be of any [integer](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int), [string](/columns-storage-engines-and-plugins/data-types/string-data-types), [DATE](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/date), and [DATETIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/datetime) types.
+- Columns can be of any [integer](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int/), [string](/columns-storage-engines-and-plugins/data-types/string-data-types/), [DATE](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/date/), and [DATETIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/datetime/) types.
 - Only bare columns are permitted; no expressions.
 
 All the specified columns are compared to the specified values to determine which partition should contain a specific row. See below for details.
 
 ## Syntax
 
-The last part of a [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table) statement can be definition of the new table's partitions. In the case of RANGE COLUMNS partitioning, the syntax is the following:
+The last part of a [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/) statement can be definition of the new table's partitions. In the case of RANGE COLUMNS partitioning, the syntax is the following:
 
 ```sql
 PARTITION BY RANGE COLUMNS (col1, col2, ...)

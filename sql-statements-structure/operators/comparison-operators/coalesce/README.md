@@ -35,7 +35,7 @@ SELECT COALESCE(NULL,NULL,NULL);
 +--------------------------+
 ```
 
-When two arguments are given, COALESCE() is the same as [IFNULL()](/built-in-functions/control-flow-functions/ifnull):
+When two arguments are given, COALESCE() is the same as [IFNULL()](/built-in-functions/control-flow-functions/ifnull/):
 
 ```sql
 SET @a=NULL, @b=1;
@@ -63,7 +63,7 @@ SELECT * FROM t1;
 +------+------+
 ```
 
-The reason for the differing results above is that when 0x31 is inserted directly to the column, it's treated as a number (see [Hexadecimal Literals](/sql-statements-structure/sql-language-structure/hexadecimal-literals)), while when 0x31 is passed to COALESCE(), it's treated as a string, because:
+The reason for the differing results above is that when 0x31 is inserted directly to the column, it's treated as a number (see [Hexadecimal Literals](/sql-statements-structure/sql-language-structure/hexadecimal-literals/)), while when 0x31 is passed to COALESCE(), it's treated as a string, because:
 
 - HEX values have a string data type by default.
 - COALESCE() has the same data type as the argument.
@@ -88,9 +88,9 @@ SELECT COALESCE(SUM(score),0) FROM student;
 
 ## See also
 
-- [NULL values](/columns-storage-engines-and-plugins/data-types/null-values)
-- [IS NULL operator](/sql-statements-structure/operators/comparison-operators/is-null)
-- [IS NOT NULL operator](/sql-statements-structure/operators/comparison-operators/is-not-null)
-- [IFNULL function](/built-in-functions/control-flow-functions/ifnull)
-- [NULLIF function](/built-in-functions/control-flow-functions/nullif)
+- [NULL values](/columns-storage-engines-and-plugins/data-types/null-values/)
+- [IS NULL operator](/sql-statements-structure/operators/comparison-operators/is-null/)
+- [IS NOT NULL operator](/sql-statements-structure/operators/comparison-operators/is-not-null/)
+- [IFNULL function](/built-in-functions/control-flow-functions/ifnull/)
+- [NULLIF function](/built-in-functions/control-flow-functions/nullif/)
 - [CONNECT data types](/kb/en/connect-data-types/#null-handling)

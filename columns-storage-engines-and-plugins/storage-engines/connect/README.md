@@ -49,7 +49,7 @@ No precise definition of maturity exists. Because CONNECT handles many table typ
 - [CONNECT Data Types](/columns-storage-engines-and-plugins/storage-engines/connect/connect-data-types/) — Data types supported by CONNECT.
 - [Current Status of the CONNECT Handler](/columns-storage-engines-and-plugins/storage-engines/connect/current-status-of-the-connect-handler/) — The current CONNECT handler is a stable release.
 
-### [CONNECT Table Types](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types)
+### [CONNECT Table Types](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/)
 
 - [CONNECT Table Types Overview](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-table-types-overview/) — CONNECT can handle many table formats.
 - [Inward and Outward Tables](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/inward-and-outward-tables/) — The two broad categories of CONNECT tables.
@@ -90,7 +90,7 @@ No precise definition of maturity exists. Because CONNECT handles many table typ
 - [CONNECT - Security](/columns-storage-engines-and-plugins/storage-engines/connect/connect-security/) — CONNECT requires the FILE privilege for "outward" tables
 - [CONNECT - OEM Table Example](/columns-storage-engines-and-plugins/storage-engines/connect/connect-oem-table-example/) — Example showing how an OEM table can be implemented.
 
-### [Using CONNECT](/columns-storage-engines-and-plugins/storage-engines/connect/using-connect)
+### [Using CONNECT](/columns-storage-engines-and-plugins/storage-engines/connect/using-connect/)
 
 - [Using CONNECT - General Information](/columns-storage-engines-and-plugins/storage-engines/connect/using-connect/using-connect-general-information/) — Using CONNECT - General Information
 - [Using CONNECT - Virtual and Special Columns](/columns-storage-engines-and-plugins/storage-engines/connect/using-connect/using-connect-virtual-and-special-columns/) — Virtual and special columns example usage

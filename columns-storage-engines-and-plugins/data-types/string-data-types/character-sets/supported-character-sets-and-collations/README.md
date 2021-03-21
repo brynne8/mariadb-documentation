@@ -4,7 +4,7 @@
 
 [MariaDB 10.2](/kb/en/what-is-mariadb-102/) supports the following character sets:
 
-Note that the [Mroonga Storage Engine](/columns-storage-engines-and-plugins/storage-engines/mroonga) only supports a limited number of character sets. See [Mroonga available character sets](/kb/en/about-mroonga/#available-character-sets).
+Note that the [Mroonga Storage Engine](/columns-storage-engines-and-plugins/storage-engines/mroonga/) only supports a limited number of character sets. See [Mroonga available character sets](/kb/en/about-mroonga/#available-character-sets).
 
 <table><tbody><tr><th>Charset</th><th>Description</th><th>Default collation</th><th>Maxlen</th></tr>
 <tr><td>big5</td><td>Big5 Traditional Chinese</td><td>big5_chinese_ci</td><td>2</td></tr>
@@ -49,7 +49,7 @@ Note that the [Mroonga Storage Engine](/columns-storage-engines-and-plugins/stor
 <tr><td>eucjpms</td><td>UJIS for Windows Japanese</td><td>eucjpms_japanese_ci</td><td>3</td></tr>
 </tbody></table>
 
-You can see which character sets are available in a particular version by running the [SHOW CHARACTER SET](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-character-set) statement.
+You can see which character sets are available in a particular version by running the [SHOW CHARACTER SET](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-character-set/) statement.
 
 ## Collations
 
@@ -394,7 +394,7 @@ collation name indicates the collation is case sensitive. A '<code class="highli
 
 ##### MariaDB starting with [10.2](/kb/en/what-is-mariadb-102/)
 
-Until [MariaDB 10.2](/kb/en/what-is-mariadb-102/), all collations were of type `PADSPACE`. From [MariaDB 10.2](/kb/en/what-is-mariadb-102/), 88 new `NO PAD` collations are available. `NO PAD` collations regard trailing spaces as normal characters. You can get a list of all of these by querying the [Information Schema COLLATIONS Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-collations-table) as follows:
+Until [MariaDB 10.2](/kb/en/what-is-mariadb-102/), all collations were of type `PADSPACE`. From [MariaDB 10.2](/kb/en/what-is-mariadb-102/), 88 new `NO PAD` collations are available. `NO PAD` collations regard trailing spaces as normal characters. You can get a list of all of these by querying the [Information Schema COLLATIONS Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-collations-table/) as follows:
 
 ```sql
 SELECT collation_name FROM information_schema.COLLATIONS
@@ -421,4 +421,4 @@ collations to MariaDB.
 
 ## See Also
 
-- [Information Schema COLLATIONS Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-collations-table)
+- [Information Schema COLLATIONS Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-collations-table/)

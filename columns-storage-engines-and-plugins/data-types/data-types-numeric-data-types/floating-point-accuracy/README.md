@@ -2,7 +2,7 @@
 
 Due to their nature, not all floating-point numbers can be stored with exact precision. Hardware architecture, the CPU or even the compiler version and optimization level may affect the precision.
 
-If you are comparing [DOUBLEs](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/double) or [FLOATs](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/float) with numeric decimals, it is not safe to use the [equality](/sql-statements-structure/operators/comparison-operators/equal) operator.
+If you are comparing [DOUBLEs](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/double/) or [FLOATs](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/float/) with numeric decimals, it is not safe to use the [equality](/sql-statements-structure/operators/comparison-operators/equal/) operator.
 
 Sometimes, changing a floating-point number from single-precision (FLOAT) to double-precision (DOUBLE) will fix the problem.
 

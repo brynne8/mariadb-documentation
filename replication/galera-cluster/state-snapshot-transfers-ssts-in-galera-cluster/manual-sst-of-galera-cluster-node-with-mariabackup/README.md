@@ -1,8 +1,8 @@
 # Manual SST of Galera Cluster Node With Mariabackup
 
-Sometimes it can be helpful to perform a "manual SST" when Galera's [normal SSTs](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts) fail. This can be especially useful when the cluster's <a undefined>datadir</a> is very large, since a normal SST can take a long time to fail in that case.
+Sometimes it can be helpful to perform a "manual SST" when Galera's [normal SSTs](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts/) fail. This can be especially useful when the cluster's <a undefined>datadir</a> is very large, since a normal SST can take a long time to fail in that case.
 
-A manual SST essentially consists of taking a backup of the donor, loading the backup on the joiner, and then manually editing the cluster state on the joiner node. This page will show how to perform this process with [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup).
+A manual SST essentially consists of taking a backup of the donor, loading the backup on the joiner, and then manually editing the cluster state on the joiner node. This page will show how to perform this process with [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/).
 
 ## Process
 
@@ -19,7 +19,7 @@ MYSQL_BACKUP_DIR=/mysql_backup
 mkdir $MYSQL_BACKUP_DIR
 ```
 
-- Take a [full backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/full-backup-and-restore-with-mariabackup) the of the donor node with `mariabackup`. The <a undefined>--galera-info</a> option should also be provided, so that the node's cluster state is also backed up.
+- Take a [full backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/full-backup-and-restore-with-mariabackup/) the of the donor node with `mariabackup`. The <a undefined>--galera-info</a> option should also be provided, so that the node's cluster state is also backed up.
 
 ```sql
 DB_USER=sstuser
@@ -32,7 +32,7 @@ mariabackup --backup  --galera-info \
 
 - Verify that the MariaDB Server process is stopped on the joiner node. This will depend on your [service manager](/kb/en/starting-and-stopping-mariadb-starting-and-stopping-mariadb/).
 
-For example, on [systemd](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd) systems, you can execute::
+For example, on [systemd](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd/) systems, you can execute::
 
 ```sql
 systemctl status mariadb
@@ -125,13 +125,13 @@ chown -R mysql:mysql $MYSQL_DATADIR/
 
 - Start the MariaDB Server process on the joiner node. This will depend on your [service manager](/kb/en/starting-and-stopping-mariadb-starting-and-stopping-mariadb/).
 
-For example, on [systemd](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd) systems, you can execute::
+For example, on [systemd](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd/) systems, you can execute::
 
 ```sql
 systemctl start mariadb
 ```
 
-- Watch the MariaDB [error log](/mariadb-administration/server-monitoring-logs/error-log) on the joiner node and verify that the node does not need to perform a [normal SSTs](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts) due to the manual SST.
+- Watch the MariaDB [error log](/mariadb-administration/server-monitoring-logs/error-log/) on the joiner node and verify that the node does not need to perform a [normal SSTs](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts/) due to the manual SST.
 
 ```sql
 tail -f /var/log/mysql/mysqld.log

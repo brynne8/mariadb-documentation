@@ -7,7 +7,7 @@ caused the row event.
 
 Until [MariaDB 10.2.4](/kb/en/mariadb-1024-release-notes/), the binlog event type `Annotate_rows_log_event` was off by default (so as not to change the binary log format and to allow one to replicate [MariaDB 5.3](/kb/en/what-is-mariadb-53/) to MySQL/[MariaDB 5.1](/kb/en/what-is-mariadb-51/)). You can enable this with <a undefined>--binlog-annotate-row-events</a>.
 
-In the [binary log](/clients-utilities/mysqlbinlog), each `Annotate_rows` event precedes the
+In the [binary log](/clients-utilities/mysqlbinlog/), each `Annotate_rows` event precedes the
 corresponding Table map event or the first of the Table map events, if there
 are more than one (e.g. in a case of multi-delete or insert delayed).
 
@@ -308,8 +308,8 @@ ROLLBACK /* added by mysqlbinlog */;
 
 ## See Also
 
-- [mysqlbinlog Options](/clients-utilities/mysqlbinlog/mysqlbinlog-options)
+- [mysqlbinlog Options](/clients-utilities/mysqlbinlog/mysqlbinlog-options/)
 - [Replication and Binary Log Server System Variables](/kb/en/replication-and-binary-log-server-system-variables/)
-- [Full List of MariaDB Options, System and Status Variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables)
-- [mysqld Options](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options)
+- [Full List of MariaDB Options, System and Status Variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables/)
+- [mysqld Options](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/)
 - [What is MariaDB 5.3](/kb/en/what-is-mariadb-53/)

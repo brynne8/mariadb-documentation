@@ -9,7 +9,7 @@ PointN(ls,N)
 
 ## Description
 
-Returns the N-th [Point](/sql-statements-structure/geographic-geometric-features/geometry-constructors/point) in the [LineString](/sql-statements-structure/geographic-geometric-features/geometry-constructors/linestring) value `ls`.
+Returns the N-th [Point](/sql-statements-structure/geographic-geometric-features/geometry-constructors/point/) in the [LineString](/sql-statements-structure/geographic-geometric-features/geometry-constructors/linestring/) value `ls`.
 Points are numbered beginning with `1`.
 
 `ST_PointN()` and `PointN()` are synonyms.

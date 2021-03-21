@@ -2,7 +2,7 @@
 
 ##### MariaDB starting with [10.1.1](/kb/en/mariadb-1011-release-notes/)
 
-Starting from [MariaDB 10.1.1](/kb/en/mariadb-1011-release-notes/) compound statements can also be used outside of [stored programs](/programming-customizing-mariadb/stored-routines).
+Starting from [MariaDB 10.1.1](/kb/en/mariadb-1011-release-notes/) compound statements can also be used outside of [stored programs](/programming-customizing-mariadb/stored-routines/).
 
 ```sql
 delimiter |
@@ -24,10 +24,10 @@ Query OK, 0 rows affected, 2 warnings (0.00 sec)
 
 Note, that using compound statements this way is subject to following limitations:
 
-- Only [BEGIN](/programming-customizing-mariadb/programmatic-compound-statements/begin-end), [IF](/kb/en/if-statement/), [CASE](/programming-customizing-mariadb/programmatic-compound-statements/case-statement), [LOOP](/programming-customizing-mariadb/programmatic-compound-statements/loop), [WHILE](/programming-customizing-mariadb/programmatic-compound-statements/while), [REPEAT](/programming-customizing-mariadb/programmatic-compound-statements/repeat-loop) statements may start a compound statement outside of stored programs.
-- [BEGIN](/programming-customizing-mariadb/programmatic-compound-statements/begin-end) must use the `BEGIN NOT ATOMIC` syntax (otherwise it'll be confused with [BEGIN](/sql-statements-structure/sql-statements/transactions/start-transaction) that starts a transaction).
+- Only [BEGIN](/programming-customizing-mariadb/programmatic-compound-statements/begin-end/), [IF](/kb/en/if-statement/), [CASE](/programming-customizing-mariadb/programmatic-compound-statements/case-statement/), [LOOP](/programming-customizing-mariadb/programmatic-compound-statements/loop/), [WHILE](/programming-customizing-mariadb/programmatic-compound-statements/while/), [REPEAT](/programming-customizing-mariadb/programmatic-compound-statements/repeat-loop/) statements may start a compound statement outside of stored programs.
+- [BEGIN](/programming-customizing-mariadb/programmatic-compound-statements/begin-end/) must use the `BEGIN NOT ATOMIC` syntax (otherwise it'll be confused with [BEGIN](/sql-statements-structure/sql-statements/transactions/start-transaction/) that starts a transaction).
 - A compound statement might not start with a label.
-- A compound statement is parsed completely<span>—</span>note "2 warnings" in the above example, even if the condition was false (InnoDB was, indeed, disabled), and the [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table) statement was not executed, it was still parsed and the parser produced "Unknown storage engine" warning.
+- A compound statement is parsed completely<span>—</span>note "2 warnings" in the above example, even if the condition was false (InnoDB was, indeed, disabled), and the [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/) statement was not executed, it was still parsed and the parser produced "Unknown storage engine" warning.
 
 Inside a compound block first three limitations do not apply, one can use anything that can be used inside a stored program — including labels, condition handlers, variables, and so on:
 

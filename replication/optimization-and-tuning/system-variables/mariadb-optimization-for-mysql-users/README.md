@@ -11,13 +11,13 @@ to, when making the switch.
 aria-pagecache-buffer-size=##
 ```
 
-If you are using a log of on-disk temporary tables, increase the above to as much as you can afford. See [Aria Storage Engine](/columns-storage-engines-and-plugins/storage-engines/aria/aria-storage-engine) for more details.
+If you are using a log of on-disk temporary tables, increase the above to as much as you can afford. See [Aria Storage Engine](/columns-storage-engines-and-plugins/storage-engines/aria/aria-storage-engine/) for more details.
 
 ```sql
 key-cache-segments=8
 ```
 
-If you use/have a lot of MyISAM files, increase the above to 4 or 8. See [Segmented Key Cache](/replication/optimization-and-tuning/system-variables/segmented-key-cache) and [Segmented Key Cache Performance](/kb/en/segmented-key-cache-performance/) for more information.
+If you use/have a lot of MyISAM files, increase the above to 4 or 8. See [Segmented Key Cache](/replication/optimization-and-tuning/system-variables/segmented-key-cache/) and [Segmented Key Cache Performance](/kb/en/segmented-key-cache-performance/) for more information.
 
 ```sql
 thread-handling=pool-of-threads

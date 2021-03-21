@@ -24,7 +24,7 @@ The default approaches can be changed by setting the [aria_stats_method](/kb/en/
 
 ## Null-Safe and Regular Comparisons
 
-The comparison operator used plays an important role. If two values are compared with &lt;=&gt; (see the [null-safe-equal](/sql-statements-structure/operators/comparison-operators/null-safe-equal) comparison operator), and both are null, 1 is returned. If the same values are compared with = (see the [equal](/sql-statements-structure/operators/comparison-operators/equal) comparison operator) null is returned. For example:
+The comparison operator used plays an important role. If two values are compared with &lt;=&gt; (see the [null-safe-equal](/sql-statements-structure/operators/comparison-operators/null-safe-equal/) comparison operator), and both are null, 1 is returned. If the same values are compared with = (see the [equal](/sql-statements-structure/operators/comparison-operators/equal/) comparison operator) null is returned. For example:
 
 ```sql
 SELECT 1 <=> 1, NULL <=> NULL, 1 <=> NULL;
@@ -48,7 +48,7 @@ SELECT 1 = 1, NULL = NULL, 1 = NULL;
 
 ## Engine-Independent Statistics
 
-[MariaDB 10.0.1](/kb/en/mariadb-1001-release-notes/) introduced a way to gather statistics independently of the storage engine. See [Engine-independent table statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics).
+[MariaDB 10.0.1](/kb/en/mariadb-1001-release-notes/) introduced a way to gather statistics independently of the storage engine. See [Engine-independent table statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics/).
 
 <br>
 
@@ -56,11 +56,11 @@ SELECT 1 = 1, NULL = NULL, 1 = NULL;
 
 ## Histogram-Based Statistics
 
-[Histogram-Based Statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/histogram-based-statistics) were introduced in [MariaDB 10.0.2](/kb/en/mariadb-1002-release-notes/), and are collected by default from [MariaDB 10.4.3](/kb/en/mariadb-1043-release-notes/).
+[Histogram-Based Statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/histogram-based-statistics/) were introduced in [MariaDB 10.0.2](/kb/en/mariadb-1002-release-notes/), and are collected by default from [MariaDB 10.4.3](/kb/en/mariadb-1043-release-notes/).
 
 ## See Also
 
-- [User Statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/user-statistics). This plugin provides user, client, table and index usage statistics.
-- [InnoDB Persistent Statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics)
-- [Engine-independent Statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics)
-- [Histogram-based Statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/histogram-based-statistics)
+- [User Statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/user-statistics/). This plugin provides user, client, table and index usage statistics.
+- [InnoDB Persistent Statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics/)
+- [Engine-independent Statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics/)
+- [Histogram-based Statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/histogram-based-statistics/)

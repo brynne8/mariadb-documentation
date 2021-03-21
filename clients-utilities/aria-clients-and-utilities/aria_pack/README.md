@@ -1,6 +1,6 @@
 # aria_pack
 
-aria_pack is a tool for compressing [Aria](/columns-storage-engines-and-plugins/storage-engines/aria) tables. The resulting table are read-only, and usually about 40% to 70% smaller.
+aria_pack is a tool for compressing [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/) tables. The resulting table are read-only, and usually about 40% to 70% smaller.
 
 aria_pack is run as follows
 
@@ -18,7 +18,7 @@ to compress all the files.
 
 aria_pack compresses each column separately, and, when the resulting data is read, only the individual rows and columns required need to be decompressed, allowing for quicker reading.
 
-Once a table has been packed, use [aria_chk -rq](/clients-utilities/aria-clients-and-utilities/aria_chk) (the quick and recover options) to rebuild its indexes.
+Once a table has been packed, use [aria_chk -rq](/clients-utilities/aria-clients-and-utilities/aria_chk/) (the quick and recover options) to rebuild its indexes.
 
 ## Options
 
@@ -44,7 +44,7 @@ The following variables can be set while passed as commandline options to aria_p
 
 ## Unpacking
 
-To unpack a table compressed with aria_pack, use the [aria_chk -u](/clients-utilities/aria-clients-and-utilities/aria_chk) option.
+To unpack a table compressed with aria_pack, use the [aria_chk -u](/clients-utilities/aria-clients-and-utilities/aria_chk/) option.
 
 ## Example
 
@@ -63,5 +63,5 @@ State updated
 
 ## See Also
 
-- [FLUSH TABLES FOR EXPORT](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export)
-- [myisamchk](/clients-utilities/myisam-clients-and-utilities/myisamchk)
+- [FLUSH TABLES FOR EXPORT](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export/)
+- [myisamchk](/clients-utilities/myisam-clients-and-utilities/myisamchk/)

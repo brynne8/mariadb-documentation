@@ -192,7 +192,7 @@ Non-zero values of `Handler_mrr_key_refills` and/or `Handler_mrr_rowid_refills` 
 
 ### Effect on Other Status Variables
 
-When a Multi Range Read scan makes an index lookup (or some other "basic" operation), the counter of the "basic" operation, e.g. [Handler_read_key](/kb/en/server-status-variables/#handler_read_key), will also be incremented. This way, you can still see total number of index accesses, including those made by MRR. [Per-user/table/index statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/user-statistics) counters also include the row reads made by Multi Range Read scans.
+When a Multi Range Read scan makes an index lookup (or some other "basic" operation), the counter of the "basic" operation, e.g. [Handler_read_key](/kb/en/server-status-variables/#handler_read_key), will also be incremented. This way, you can still see total number of index accesses, including those made by MRR. [Per-user/table/index statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/user-statistics/) counters also include the row reads made by Multi Range Read scans.
 
 ### Why Using Multi Range Read Can Cause Higher Values in Status Variables
 

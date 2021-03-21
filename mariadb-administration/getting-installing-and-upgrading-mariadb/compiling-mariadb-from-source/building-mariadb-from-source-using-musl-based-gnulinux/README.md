@@ -2,7 +2,7 @@
 
 ## Instructions on compiling MariaDB on musl-based operating systems (Alpine)
 
-The instructions on this page will help you compile [MariaDB](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb) from source.
+The instructions on this page will help you compile [MariaDB](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/) from source.
 Links to more complete instructions for specific platforms can be found on the
 [source](/kb/en/source/) page.
 

@@ -10,9 +10,9 @@ DATE_FORMAT(date, format[, locale])
 
 Formats the date value according to the format string.
 
-The language used for the names is controlled by the value of the [lc_time_names](/kb/en/server-system-variables/#lc_time_names) system variable. See [server locale](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale) for more on the supported locales.
+The language used for the names is controlled by the value of the [lc_time_names](/kb/en/server-system-variables/#lc_time_names) system variable. See [server locale](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale/) for more on the supported locales.
 
-The options that can be used by DATE_FORMAT(), as well as its inverse [STR_TO_DATE](/built-in-functions/date-time-functions/str_to_date)() and the [FROM_UNIXTIME()](/built-in-functions/date-time-functions/from_unixtime) function, are:
+The options that can be used by DATE_FORMAT(), as well as its inverse [STR_TO_DATE](/built-in-functions/date-time-functions/str_to_date/)() and the [FROM_UNIXTIME()](/built-in-functions/date-time-functions/from_unixtime/) function, are:
 
 <table><tbody><tr><th>Option</th><th>Description</th></tr>
 <tr><td><code>%a</code></td><td>Short weekday name in current locale (Variable <a href="/kb/en/server-system-variables/#lc_time_names">lc_time_names</a>).</td></tr>
@@ -52,7 +52,7 @@ The options that can be used by DATE_FORMAT(), as well as its inverse [STR_TO_DA
 <tr><td><code>%%</code></td><td>A literal <code>%</code> character.</td></tr>
 </tbody></table>
 
-To get a date in one of the standard formats, [GET_FORMAT()](/built-in-functions/date-time-functions/get_format) can be used.
+To get a date in one of the standard formats, [GET_FORMAT()](/built-in-functions/date-time-functions/get_format/) can be used.
 
 ## Examples
 
@@ -102,7 +102,7 @@ SELECT DATE_FORMAT('2006-06-00', '%d');
 
 ##### MariaDB starting with [10.3.2](/kb/en/mariadb-1032-release-notes/)
 
-Optionally, the locale can be explicitly specified as the third DATE_FORMAT() argument. Doing so makes the function independent from the session settings, and the three argument version of DATE_FORMAT() can be used in virtual indexed and persistent [generated-columns](/sql-statements-structure/sql-statements/data-definition/create/generated-columns):
+Optionally, the locale can be explicitly specified as the third DATE_FORMAT() argument. Doing so makes the function independent from the session settings, and the three argument version of DATE_FORMAT() can be used in virtual indexed and persistent [generated-columns](/sql-statements-structure/sql-statements/data-definition/create/generated-columns/):
 
 ```sql
 SELECT DATE_FORMAT('2006-01-01', '%W', 'el_GR');
@@ -115,5 +115,5 @@ SELECT DATE_FORMAT('2006-01-01', '%W', 'el_GR');
 
 ## See Also
 
-- [STR_TO_DATE()](/built-in-functions/date-time-functions/str_to_date)
-- [FROM_UNIXTIME()](/built-in-functions/date-time-functions/from_unixtime)
+- [STR_TO_DATE()](/built-in-functions/date-time-functions/str_to_date/)
+- [FROM_UNIXTIME()](/built-in-functions/date-time-functions/from_unixtime/)

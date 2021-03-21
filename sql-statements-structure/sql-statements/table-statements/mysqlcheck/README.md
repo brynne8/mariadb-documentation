@@ -10,7 +10,7 @@ From [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/), `mariadb-check` is th
 
 `mysqlcheck` is a maintenance tool that allows you to check, repair, analyze and optimize multiple tables from the command line.
 
-It is essentially a commandline interface to the [CHECK TABLE](/sql-statements-structure/sql-statements/table-statements/check-table), [REPAIR TABLE](/sql-statements-structure/sql-statements/table-statements/repair-table), [ANALYZE TABLE](/sql-statements-structure/sql-statements/table-statements/analyze-table) and [OPTIMIZE TABLE](/replication/optimization-and-tuning/optimizing-tables/optimize-table) commands, and so, unlike [myisamchk](/clients-utilities/myisam-clients-and-utilities/myisamchk) and [aria_chk](/clients-utilities/aria-clients-and-utilities/aria_chk), requires the server to be running.
+It is essentially a commandline interface to the [CHECK TABLE](/sql-statements-structure/sql-statements/table-statements/check-table/), [REPAIR TABLE](/sql-statements-structure/sql-statements/table-statements/repair-table/), [ANALYZE TABLE](/sql-statements-structure/sql-statements/table-statements/analyze-table/) and [OPTIMIZE TABLE](/replication/optimization-and-tuning/optimizing-tables/optimize-table/) commands, and so, unlike [myisamchk](/clients-utilities/myisam-clients-and-utilities/myisamchk/) and [aria_chk](/clients-utilities/aria-clients-and-utilities/aria_chk/), requires the server to be running.
 
 This tool does not work with partitioned tables.
 
@@ -110,7 +110,7 @@ copying it somewhere with another name, the alternatives are:
 
 ### Option Files
 
-In addition to reading options from the command-line, `mysqlcheck` can also read options from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files). If an unknown option is provided to `mysqlcheck` in an option file, then it is ignored.
+In addition to reading options from the command-line, `mysqlcheck` can also read options from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/). If an unknown option is provided to `mysqlcheck` in an option file, then it is ignored.
 
 The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
 
@@ -126,7 +126,7 @@ In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, `mysqlcheck` is linked
 
 #### Option Groups
 
-`mysqlcheck` reads options from the following [option groups](/kb/en/configuring-mariadb-with-option-files/#option-groups) from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files):
+`mysqlcheck` reads options from the following [option groups](/kb/en/configuring-mariadb-with-option-files/#option-groups) from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/):
 
 <table><tbody><tr><th>Group</th><th>Description</th></tr>
 <tr><td><code>[mysqlcheck]</code></td><td>&nbsp;Options read by <code>mysqlcheck</code>, which includes both MariaDB Server and MySQL Server.</td></tr>
@@ -157,7 +157,7 @@ check.
 
 ### mysqlcheck and all-databases
 
-`mysqlcheck --all-databases` will ignore the internal log tables [general_log](/kb/en/mysqlgeneral_log-table/) and [slow_log](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlslow_log-table) as these can't be checked, repaired or optimized.
+`mysqlcheck --all-databases` will ignore the internal log tables [general_log](/kb/en/mysqlgeneral_log-table/) and [slow_log](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlslow_log-table/) as these can't be checked, repaired or optimized.
 
 ### mysqlcheck and verbose
 
@@ -167,4 +167,4 @@ Using two `--verbose` options will also give you connection information.
 
 ##### MariaDB starting with [10.0.14](/kb/en/mariadb-10014-release-notes/)
 
-If you use three `--verbose` options you will also get, on stdout, all [ALTER](/sql-statements-structure/sql-statements/data-definition/alter/alter-table), [RENAME](/sql-statements-structure/sql-statements/data-definition/rename-table), and [CHECK](/sql-statements-structure/sql-statements/table-statements/check-table) commands that mysqlcheck executes.
+If you use three `--verbose` options you will also get, on stdout, all [ALTER](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/), [RENAME](/sql-statements-structure/sql-statements/data-definition/rename-table/), and [CHECK](/sql-statements-structure/sql-statements/table-statements/check-table/) commands that mysqlcheck executes.

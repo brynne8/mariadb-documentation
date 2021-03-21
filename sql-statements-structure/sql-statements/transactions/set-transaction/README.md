@@ -33,7 +33,7 @@ This statement sets the transaction isolation level or the transaction access mo
   performed within the current session.
 
 A change to the global default isolation level requires the 
-<code class="highlight fixed" style="white-space:pre-wrap">[SUPER](/sql-statements-structure/sql-statements/account-management-sql-commands/grant)</code> privilege. Any session is free to change its
+<code class="highlight fixed" style="white-space:pre-wrap">[SUPER](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/)</code> privilege. Any session is free to change its
 session isolation level (even in the middle of a transaction), or the isolation
 level for its next transaction.
 
@@ -100,7 +100,7 @@ recovery to work.
 
 <strong>Note:</strong> If the <code class="highlight fixed" style="white-space:pre-wrap">READ COMMITTED</code> isolation
 level is used or the [innodb_locks_unsafe_for_binlog](/kb/en/innodb-system-variables/#innodb_locks_unsafe_for_binlog) system variable is enabled,
-there is no InnoDB gap locking except for [foreign-key](/replication/optimization-and-tuning/optimization-and-indexes/foreign-keys) constraint checking and
+there is no InnoDB gap locking except for [foreign-key](/replication/optimization-and-tuning/optimization-and-indexes/foreign-keys/) constraint checking and
 duplicate-key checking. Also, record locks for non-matching rows are released
 after MariaDB has evaluated the <code class="highlight fixed" style="white-space:pre-wrap">WHERE</code> condition.If you use <code class="highlight fixed" style="white-space:pre-wrap">READ COMMITTED</code> or enable innodb_locks_unsafe_for_binlog, you must use row-based binary logging.
 
@@ -124,7 +124,7 @@ before it. For other search conditions, InnoDB locks the index range
 scanned, using gap locks or next-key (gap plus index-record) locks to
 block insertions by other sessions into the gaps covered by the range.
 
-This is the minimum isolation level for non-distributed [XA transactions](/sql-statements-structure/sql-statements/transactions/xa-transactions).
+This is the minimum isolation level for non-distributed [XA transactions](/sql-statements-structure/sql-statements/transactions/xa-transactions/).
 
 #### SERIALIZABLE
 
@@ -137,7 +137,7 @@ not block for other transactions. (This means that to force a plain
 SELECT to block if other transactions have modified the selected rows,
 you should disable autocommit.)
 
-Distributed [XA transactions](/sql-statements-structure/sql-statements/transactions/xa-transactions) should always use this isolation level.
+Distributed [XA transactions](/sql-statements-structure/sql-statements/transactions/xa-transactions/) should always use this isolation level.
 
 ### Access Mode
 
@@ -147,7 +147,7 @@ The access mode specifies whether the transaction is allowed to write data or no
 
 It is not permitted to specify both `READ WRITE` and `READ ONLY` in the same statement.
 
-`READ WRITE` and `READ ONLY` can also be specified in the [START TRANSACTION](/sql-statements-structure/sql-statements/transactions/start-transaction) statement, in which case the specified mode is only valid for one transaction.
+`READ WRITE` and `READ ONLY` can also be specified in the [START TRANSACTION](/sql-statements-structure/sql-statements/transactions/start-transaction/) statement, in which case the specified mode is only valid for one transaction.
 
 ## Examples
 

@@ -10,7 +10,7 @@ framework, but which does not require GNOME and, on Windows, MS-DOM (DOMDOC), th
 
 DOMDOC is the default for the Windows version of CONNECT and libxml2 is always
 used on other systems. On Windows the choice can be specified using the XMLSUP
-[CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table) list option, for instance specifying
+[CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/) list option, for instance specifying
 `option_list='xmlsup=libxml2'`.
 
 ## Creating XML tables
@@ -260,7 +260,7 @@ However, building a permanent index is not yet implemented. It is unclear whethe
 
 ## Having Columns defined by Discovery
 
-It is possible to let the MariaDB discovery process do the job of column specification. When columns are not defined in the [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table) statement, CONNECT endeavours to analyze the XML file and to provide the column specifications. This is possible only for true XML tables, but not for HTML tables.
+It is possible to let the MariaDB discovery process do the job of column specification. When columns are not defined in the [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/) statement, CONNECT endeavours to analyze the XML file and to provide the column specifications. This is possible only for true XML tables, but not for HTML tables.
 
 For instance, the <em>xsamp</em> table could have been created specifying:
 
@@ -286,7 +286,7 @@ CREATE TABLE `xsamp` (
   `FILE_NAME`='E:/Data/Xml/Xsample.xml' `TABNAME`='BIBLIO' `OPTION_LIST`='rownode=BOOK';
 ```
 
-It is equivalent except for the column sizes that have been calculated from the file as the maximum length of the corresponding column when it was a normal value. Also, all columns are specified as type [CHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/char) because XML does not provide information about the node content data type. Nullable is set to true if the column is missing in some rows.
+It is equivalent except for the column sizes that have been calculated from the file as the maximum length of the corresponding column when it was a normal value. Also, all columns are specified as type [CHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/char/) because XML does not provide information about the node content data type. Nullable is set to true if the column is missing in some rows.
 
 If a more complex definition is desired, you can ask CONNECT to analyse the XPATH up to a given level using the level option in the option list. The level value is the number of nodes that are taken in the XPATH. For instance:
 

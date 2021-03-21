@@ -1,6 +1,6 @@
 # myisamlog
 
-`myisamlog` processes and returns the contents of a [MyISAM log file](/mariadb-administration/server-monitoring-logs/myisam-log).
+`myisamlog` processes and returns the contents of a [MyISAM log file](/mariadb-administration/server-monitoring-logs/myisam-log/).
 
 Invoke `myisamlog` like this:
 

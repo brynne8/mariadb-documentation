@@ -15,13 +15,13 @@ way, you need to explicitly install and enable it in order for feedback data to 
 
 Although the plugin's shared library is distributed with MariaDB by default, the plugin is not actually installed by MariaDB by default. There are two methods that can be used to install the plugin with MariaDB.
 
-The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname) or [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin). For example:
+The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname/) or [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin/). For example:
 
 ```sql
 INSTALL SONAME 'feedback';
 ```
 
-The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the <a undefined>--plugin-load</a> or the <a undefined>--plugin-load-add</a> options. This can be specified as a command-line argument to [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options) or it can be specified in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files). For example:
+The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the <a undefined>--plugin-load</a> or the <a undefined>--plugin-load-add</a> options. This can be specified as a command-line argument to [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/) or it can be specified in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/). For example:
 
 ```sql
 [mariadb]
@@ -31,17 +31,17 @@ plugin_load_add = feedback
 
 ## Uninstalling the Plugin
 
-You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname) or [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin). For example:
+You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname/) or [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin/). For example:
 
 ```sql
 UNINSTALL SONAME 'feedback';
 ```
 
-If you installed the plugin by providing the <a undefined>--plugin-load</a> or the <a undefined>--plugin-load-add</a> options in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
+If you installed the plugin by providing the <a undefined>--plugin-load</a> or the <a undefined>--plugin-load-add</a> options in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
 
 ## Enabling the Plugin
 
-You can enable the plugin by setting the <a undefined>feedback</a> option to `ON` in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files). For example:
+You can enable the plugin by setting the <a undefined>feedback</a> option to `ON` in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/). For example:
 
 ```sql
 [mariadb]
@@ -49,14 +49,14 @@ You can enable the plugin by setting the <a undefined>feedback</a> option to `ON
 feedback=ON
 ```
 
-In Windows, the plugin can also be enabled during a new [MSI](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows) installation. The MSI GUI installation provides the "Enable feedback plugin" checkbox to enable the plugin. The MSI command-line installation provides the FEEDBACK=1 command-line option to enable the plugin.
+In Windows, the plugin can also be enabled during a new [MSI](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows/) installation. The MSI GUI installation provides the "Enable feedback plugin" checkbox to enable the plugin. The MSI command-line installation provides the FEEDBACK=1 command-line option to enable the plugin.
 
 See the next section for how to verify the plugin is installed and active and (if needed) install the plugin.
 
 ## Verifying the Plugin's Status
 
 To verify whether the `feedback` plugin is installed and enabled, execute the
-[SHOW PLUGINS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-plugins) statement or query the [information_schema.plugins](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema) table. For example:
+[SHOW PLUGINS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-plugins/) statement or query the [information_schema.plugins](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema/) table. For example:
 
 ```sql
 SELECT plugin_status FROM information_schema.plugins 
@@ -83,12 +83,12 @@ If you see `DISABLED` instead of `ACTIVE`, then you still need to [enable the pl
 
 The `feedback` plugin will collect:
 
-- Certain rows from [SHOW STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-status) and [SHOW VARIABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-variables).
-- All installed [plugins](/columns-storage-engines-and-plugins/plugins) and their versions.
+- Certain rows from [SHOW STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-status/) and [SHOW VARIABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-variables/).
+- All installed [plugins](/columns-storage-engines-and-plugins/plugins/) and their versions.
 - System information such as CPU count, memory, architecture, and OS/linux distribution.
 - The <a undefined>feedback_server_uid</a>, which is a SHA1 hash of the MAC address of the first network interface and the TCP port that the server listens on.
 
-The `feedback` plugin creates the <a undefined>FEEDBACK</a> table in the [INFORMATION_SCHEMA](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema) database. To see the data that has been collected by the plugin, you can execute:
+The `feedback` plugin creates the <a undefined>FEEDBACK</a> table in the [INFORMATION_SCHEMA](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/) database. To see the data that has been collected by the plugin, you can execute:
 
 ```sql
 SELECT * FROM information_schema.feedback;
@@ -129,7 +129,7 @@ plugin will automatically send a report to all URLs in the list a few minutes af
 If the <a undefined>feedback_url</a> system variable is set to an empty string, then the
 plugin will <strong>not</strong> automatically send any data. This may be necessary if outbound HTTP communication from your database server is not permitted. In this case, you can still upload the data manually, if you'd like.
 
-First, generate the report file with the MariaDB command-line [mysq](/clients-utilities/mysql-client/mysql-command-line-client)l client:
+First, generate the report file with the MariaDB command-line [mysq](/clients-utilities/mysql-client/mysql-command-line-client/)l client:
 
 ```sql
 $ mysql -e 'select * from information_schema.feedback' > report.txt
@@ -229,7 +229,7 @@ Manual uploading allows you to be absolutely sure that we receive only the data 
 <ul start="1"><li>`OFF` - Disables the plugin without removing it from the <a undefined>mysql.plugins</a> table.
 </li><li>`ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
 </li><li>`FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
-</li><li>`FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname) or [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin) while the server is running.
+</li><li>`FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname/) or [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin/) while the server is running.
 </li></ul>
 </li><li>See [Plugin Overview: Configuring Plugin Activation at Server Startup](/kb/en/plugin-overview/#configuring-plugin-activation-at-server-startup) for more information.
 </li></ul>

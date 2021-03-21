@@ -15,7 +15,7 @@ The key differentiator between a Fusion-io and a legacy SSD/HDD is the following
 3 In some cases, Fusion-io devices allow for atomic writes, which allows the server to safely disable the [doublewrite buffer](/kb/en/xtradbinnodb-doublewrite-buffer/).
 4 Use ioDrive as a write-through read cache. This is possible on server level with Fusion-io directCache software or in VMware environments using ioTurbine software or the ioCache bundle product. Reads happen from ioDrive and all writes go directly to your SAN or disk.
 5 Highly Available shared storage with ION. Have two different hosts, Fusion-io cards in them and share/replicate data with Fusion-io's ION software.
-6 The luxurious Platinum setup: [MariaDB Galera Cluster](/replication/galera-cluster/what-is-mariadb-galera-cluster) running on Fusion-io SLC cards on several hosts.
+6 The luxurious Platinum setup: [MariaDB Galera Cluster](/replication/galera-cluster/what-is-mariadb-galera-cluster/) running on Fusion-io SLC cards on several hosts.
 
 ## Atomic Writes
 
@@ -23,7 +23,7 @@ Starting with [MariaDB 5.5.31](/kb/en/mariadb-5531-release-notes/), MariaDB Serv
 
 MariaDB Server does not currently support atomic writes on Fusion-io devices with any other file systems.
 
-See [atomic write support](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/atomic-write-support) for more information about MariaDB Server's atomic write support.
+See [atomic write support](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/atomic-write-support/) for more information about MariaDB Server's atomic write support.
 
 ## Future Suggested Development
 

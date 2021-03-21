@@ -1,6 +1,6 @@
 # Dynamic Columns API
 
-This page describes client-side of [MariaDB 10.0.1](/kb/en/mariadb-1001-release-notes/) API and MariaDB Connector/C 2.0 for reading and writing [Dynamic Columns](/sql-statements-structure/nosql/dynamic-columns) blobs.
+This page describes client-side of [MariaDB 10.0.1](/kb/en/mariadb-1001-release-notes/) API and MariaDB Connector/C 2.0 for reading and writing [Dynamic Columns](/sql-statements-structure/nosql/dynamic-columns/) blobs.
 
 Normally, you should use [Dynamic column functions](/kb/en/dynamic-columns/#dynamic-columns-functions) which are run inside the MariaDB server and allow one to access Dynamic Columns content without any client-side libraries.
 

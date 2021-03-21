@@ -2,11 +2,11 @@
 
 The CSV Storage Engine can read and append to files stored in CSV (comma-separated-values) format.
 
-However, since [MariaDB 10.0](/kb/en/what-is-mariadb-100/), a better storage engine is able to read and write such files: [CONNECT](/columns-storage-engines-and-plugins/storage-engines/connect).
+However, since [MariaDB 10.0](/kb/en/what-is-mariadb-100/), a better storage engine is able to read and write such files: [CONNECT](/columns-storage-engines-and-plugins/storage-engines/connect/).
 
 ## The CSV storage engine and logging to tables
 
-The CSV storage engine is the default storage engine when using [logging of SQL queries](/mariadb-administration/server-monitoring-logs/writing-logs-into-tables) to tables.
+The CSV storage engine is the default storage engine when using [logging of SQL queries](/mariadb-administration/server-monitoring-logs/writing-logs-into-tables/) to tables.
 
 ```sql
 mysqld --log-output=table
@@ -31,7 +31,7 @@ The `.CSM` file stores metadata about the table such as the state and the number
 - CSV tables do not support indexing.
 - CSV tables cannot be partitioned.
 - Columns in CSV tables must be declared as NOT NULL.
-- No [transactions](/sql-statements-structure/sql-statements/transactions).
+- No [transactions](/sql-statements-structure/sql-statements/transactions/).
 - The original CSV-format does not enable IETF-compatible parsing of embedded quote and comma characters. From [MariaDB 10.1.8](/kb/en/mariadb-1018-release-notes/), it is possible to do so by setting the [IETF_QUOTES](/kb/en/create-table/#ietf_quotes) option when creating a table.
 
 ## Examples
@@ -80,4 +80,4 @@ $ cat csv_test.CSV
 
 ## See Also
 
-- [Checking and Repairing CSV Tables](/columns-storage-engines-and-plugins/storage-engines/csv/checking-and-repairing-csv-tables)
+- [Checking and Repairing CSV Tables](/columns-storage-engines-and-plugins/storage-engines/csv/checking-and-repairing-csv-tables/)

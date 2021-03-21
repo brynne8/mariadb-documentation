@@ -1,6 +1,6 @@
 # Regular Expressions Overview
 
-Regular Expressions allow MariaDB to perform complex pattern matching on a string. In many cases, the simple pattern matching provided by [LIKE](/built-in-functions/string-functions/like) is sufficient. `LIKE` performs two kinds of matches:
+Regular Expressions allow MariaDB to perform complex pattern matching on a string. In many cases, the simple pattern matching provided by [LIKE](/built-in-functions/string-functions/like/) is sufficient. `LIKE` performs two kinds of matches:
 
 - `_` - the underscore, matching a single character
 - `%` - the percentage sign, matching any number of characters.
@@ -11,7 +11,7 @@ In other cases you may need more control over the returned matches, and will nee
 
 Until [MariaDB 10.0.5](/kb/en/mariadb-1005-release-notes/), MariaDB used the POSIX 1003.2 compliant regular expression library. The new PCRE library is mostly backwards compatible with what is described below - see the [PCRE Regular Expressions](/kb/en/pcre-regular-expressions/) article for the enhancements made in 10.0.5.
 
-Regular expression matches are performed with the [REGEXP](/built-in-functions/string-functions/regular-expressions-functions/regexp) function. `RLIKE` is a synonym for `REGEXP`.
+Regular expression matches are performed with the [REGEXP](/built-in-functions/string-functions/regular-expressions-functions/regexp/) function. `RLIKE` is a synonym for `REGEXP`.
 
 Comparisons are performed on the byte value, so characters that are treated as equivalent by a collation, but do not have the same byte-value, such as accented characters, could evaluate as unequal. Also note that until [MariaDB 10.0.5](/kb/en/mariadb-1005-release-notes/), regular expressions were not multi-byte safe, and therefore could produce unexpected results in multi-byte character sets.
 

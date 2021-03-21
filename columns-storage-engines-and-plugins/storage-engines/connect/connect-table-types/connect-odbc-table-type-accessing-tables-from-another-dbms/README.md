@@ -75,7 +75,7 @@ Currently, some restrictions apply to ODBC tables:
 2 No indexing of ODBC tables (do not specify any columns as key). However,
   because CONNECT can often add a where clause to the query sent to the data
   source, indexing will be used by the data source if it supports it. (Remote indexing is available with version 1.04, released with [MariaDB 10.1.6](/kb/en/mariadb-1016-release-notes/))
-3 CONNECT ODBC supports [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) and [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert). [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update) and [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete) are also supported
+3 CONNECT ODBC supports [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) and [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/). [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/) and [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/) are also supported
   in a somewhat restricted way (see below). For other operations, use an ODBC
   table with the EXECSRC option (see below) to directly send proper commands
   to the data source.
@@ -108,7 +108,7 @@ Note that the best way to handle ORDER BY is to set the max_length_for_sort_data
 
 For tables too large to be stored in memory another possibility is to make your table to use a scrollable cursor. In this case each randomly accessed row can be retrieved from the data source specifying its cursor position, which is reasonably fast. However, scrollable cursors are not supported by all data sources.
 
-With CONNECT version 1.04 (from [MariaDB 10.1.6](/kb/en/mariadb-1016-release-notes/)), another way to provide random access is to specify some columns to be indexed. This should be done only when the corresponding column of the source table is also indexed. This should be used for tables too large to be stored in memory and is similar to the remote indexing used by the [MYSQL table type](/kb/en/connect-table-types-mysql-table-type-accessing-mysqlmariadb-tables/) and by the [FEDERATED engine](/columns-storage-engines-and-plugins/storage-engines/federatedx-storage-engine).
+With CONNECT version 1.04 (from [MariaDB 10.1.6](/kb/en/mariadb-1016-release-notes/)), another way to provide random access is to specify some columns to be indexed. This should be done only when the corresponding column of the source table is also indexed. This should be used for tables too large to be stored in memory and is similar to the remote indexing used by the [MYSQL table type](/kb/en/connect-table-types-mysql-table-type-accessing-mysqlmariadb-tables/) and by the [FEDERATED engine](/columns-storage-engines-and-plugins/storage-engines/federatedx-storage-engine/).
 
 There remains the possibility to extract data from the external table and to construct
 another table of any file format from the data source. For instance to construct
@@ -274,7 +274,7 @@ minimizes the data transfer through ODBC.
 
 ## Data Modifying Operations
 
-The only data modifying operations are the [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert) , [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update) and [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete) commands.
+The only data modifying operations are the [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/) , [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/) and [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/) commands.
 They can be executed successfully only if the data source database or tables
 are not read/only.
 
@@ -303,7 +303,7 @@ result in error if the key value is duplicated.
 
 ### UPDATE and DELETE Commands
 
-Unlike the [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert) command, [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update) and [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete) are supported in a simplified way. Only simple table commands are supported; CONNECT does not support multi-table commands, commands sent from a procedure, or issued via a trigger.
+Unlike the [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/) command, [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/) and [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/) are supported in a simplified way. Only simple table commands are supported; CONNECT does not support multi-table commands, commands sent from a procedure, or issued via a trigger.
 These commands are just rephrased to correspond to the data source syntax and sent to the
 data source for execution. Let us suppose we created the table:
 
@@ -445,7 +445,7 @@ CONNECTION='Driver=SQLite3 ODBC Driver;Database=test.sqlite3;NoWCHAR=yes'
 CHARSET=utf8 DATA_CHARSET=utf8;
 ```
 
-We can populate it directly using the supported [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert) statement:
+We can populate it directly using the supported [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/) statement:
 
 ```sql
 insert into tlite(name,birth) values('Toto','2005-06-12');
@@ -467,7 +467,7 @@ select * from tlite;
 <tr><td>4</td><td>John</td><td>1968-05-30</td><td>Last</td></tr>
 </tbody></table>
 
-Any command, for instance [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update), can be executed from the <em>crlite</em> table:
+Any command, for instance [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/), can be executed from the <em>crlite</em> table:
 
 ```sql
 select * from crlite where command =
@@ -785,7 +785,7 @@ The specific method of setting the&nbsp;NLS_LANG&nbsp;variable can vary dependin
 
 ### Using systemd
 
-With Linux distributions that use [systemd](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd), you need to set the environment variable in the service file, (systemd doesn't read from the&nbsp;/etc/environment&nbsp;file).
+With Linux distributions that use [systemd](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd/), you need to set the environment variable in the service file, (systemd doesn't read from the&nbsp;/etc/environment&nbsp;file).
 
 This is done by setting the&nbsp;Environment&nbsp;variable in the&nbsp;[Service]&nbsp;unit. For instance,
 

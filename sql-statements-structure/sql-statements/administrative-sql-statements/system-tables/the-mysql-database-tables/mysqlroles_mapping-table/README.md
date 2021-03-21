@@ -2,17 +2,17 @@
 
 ##### MariaDB starting with [10.0.5](/kb/en/mariadb-1005-release-notes/)
 
-[Roles](/mariadb-administration/user-server-security/user-account-management/roles) were introduced in [MariaDB 10.0.5](/kb/en/mariadb-1005-release-notes/).
+[Roles](/mariadb-administration/user-server-security/user-account-management/roles/) were introduced in [MariaDB 10.0.5](/kb/en/mariadb-1005-release-notes/).
 
-The `mysql.roles_mapping` table contains information about mariaDB [roles](/mariadb-administration/user-server-security/user-account-management/roles).
+The `mysql.roles_mapping` table contains information about mariaDB [roles](/mariadb-administration/user-server-security/user-account-management/roles/).
 
 ##### MariaDB starting with [10.4](/kb/en/what-is-mariadb-104/)
 
-In [MariaDB 10.4](/kb/en/what-is-mariadb-104/) and later, this table uses the [Aria](/columns-storage-engines-and-plugins/storage-engines/aria) storage engine.
+In [MariaDB 10.4](/kb/en/what-is-mariadb-104/) and later, this table uses the [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/) storage engine.
 
 ##### MariaDB until [10.3](/kb/en/what-is-mariadb-103/)
 
-In [MariaDB 10.3](/kb/en/what-is-mariadb-103/) and before, this table uses the [MyISAM](/columns-storage-engines-and-plugins/storage-engines/myisam-storage-engine) storage engine.
+In [MariaDB 10.3](/kb/en/what-is-mariadb-103/) and before, this table uses the [MyISAM](/columns-storage-engines-and-plugins/storage-engines/myisam-storage-engine/) storage engine.
 
 The `mysql.roles_mapping` table contains the following fields:
 

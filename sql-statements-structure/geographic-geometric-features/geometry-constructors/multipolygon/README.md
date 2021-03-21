@@ -8,7 +8,7 @@ MultiPolygon(poly1,poly2,...)
 
 ## Description
 
-Constructs a [WKB](/sql-statements-structure/geographic-geometric-features/wkb) MultiPolygon value from a set of WKB [Polygon](/sql-statements-structure/geographic-geometric-features/geometry-constructors/polygon) arguments. If any argument is not a WKB Polygon, the return value is `NULL`.
+Constructs a [WKB](/sql-statements-structure/geographic-geometric-features/wkb/) MultiPolygon value from a set of WKB [Polygon](/sql-statements-structure/geographic-geometric-features/geometry-constructors/polygon/) arguments. If any argument is not a WKB Polygon, the return value is `NULL`.
 
 ## Example
 

@@ -14,4 +14,4 @@ BACKUP TABLE tbl_name [, tbl_name] ... TO '/path/to/backup/directory'
 
 <strong>Note:</strong> Like [RESTORE TABLE](/kb/en/restore-table/), this command was not reliable and has been removed in current versions of MariaDB.
 
-For doing a backup of MariaDB use [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump) or [MariaDB Backup](/kb/en/mariadb-backup/). See [Backing Up and Restoring](/kb/en/backing-up-and-restoring/).
+For doing a backup of MariaDB use [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump/) or [MariaDB Backup](/kb/en/mariadb-backup/). See [Backing Up and Restoring](/kb/en/backing-up-and-restoring/).

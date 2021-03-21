@@ -465,7 +465,7 @@ sudo apt-get install mariadb-columnstore-kafka-avro-adapters
 
 Before install, make sure you go through the preparation guide to complete the system setup before installs the packages
 
-[https://mariadb.com/kb/en/library/preparing-for-columnstore-installation-11x/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-11x/preparing-for-columnstore-installation-11x)
+[https://mariadb.com/kb/en/library/preparing-for-columnstore-installation-11x/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-11x/preparing-for-columnstore-installation-11x/)
 
 ## CentOS 6
 
@@ -680,7 +680,7 @@ After the installation completes, follow the configuration and startup steps in 
 
 Additional information on the ColumnStore API (Bulk Write SDK):
 
-[https://mariadb.com/kb/en/library/columnstore-bulk-write-sdk/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk)
+[https://mariadb.com/kb/en/library/columnstore-bulk-write-sdk/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk/)
 
 ## CentOS 7
 
@@ -1092,7 +1092,7 @@ Additional information on the Backup and Restore Tool:
 
 Additional information on mcsimport:
 
-[https://mariadb.com/kb/en/library/columnstore-remote-bulk-data-import-mcsimport/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-remote-bulk-data-import-mcsimport)
+[https://mariadb.com/kb/en/library/columnstore-remote-bulk-data-import-mcsimport/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-remote-bulk-data-import-mcsimport/)
 
 ## CentOS 6
 
@@ -1504,7 +1504,7 @@ How to Install the Java Connector:
 
 Additional information on the Data Adapters:
 
-[https://mariadb.com/kb/en/library/columnstore-streaming-data-adapters/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-streaming-data-adapters)
+[https://mariadb.com/kb/en/library/columnstore-streaming-data-adapters/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-streaming-data-adapters/)
 
 NOTE: MaxScale CDC Connector requires the MariaDB MaxScale package be installed first.
 

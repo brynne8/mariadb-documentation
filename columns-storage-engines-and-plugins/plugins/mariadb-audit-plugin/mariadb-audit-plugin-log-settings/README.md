@@ -14,7 +14,7 @@ You can put the equivalent of this in the configuration file like so:
 server_audit_events=connect,query
 ```
 
-By default, logging is set to `OFF`. To enable it, set the [server_audit_logging](/kb/en/server_audit-system-variables/#server_audit_logging) variable to `ON`. Note that if the [query cache](/replication/optimization-and-tuning/buffers-caches-and-threads/query-cache) is enabled, and a query is returned from the query cache, no `TABLE` records will appear in the log since the server didn't open or access any tables and instead relied on the cached results. So you may want to disable query caching.
+By default, logging is set to `OFF`. To enable it, set the [server_audit_logging](/kb/en/server_audit-system-variables/#server_audit_logging) variable to `ON`. Note that if the [query cache](/replication/optimization-and-tuning/buffers-caches-and-threads/query-cache/) is enabled, and a query is returned from the query cache, no `TABLE` records will appear in the log since the server didn't open or access any tables and instead relied on the cached results. So you may want to disable query caching.
 
 There are actually a few types of events that may be logged, not just the three common ones mentioned above. A full list of related system variables is detailed on the [Server_Audit System Variables](/kb/en/server_audit-system-variables/) page, and status variables on the [Server_Audit Status Variables](/kb/en/server_audit-status-variables/) page of this documentation. Some of the major ones are highlighted below:
 
@@ -97,7 +97,7 @@ If you want to monitor user access to specific databases or tables (e.g., `mysql
 
 Because of the `TABLE` option, you may disable query logging and still know who accessed which tables. You might want to disable `QUERY` event logging to prevent sensitive data from being logged. Since <em>table</em> event logging will log who accessed which table, you can still watch for malicious activities with the log. This is often enough to fulfill auditing requirements.
 
-Below is an example with both `TABLE` and `QUERY` events logging.  For this scenario, suppose there is a [VIEW](/programming-customizing-mariadb/views/create-view) in which columns are selected from a few tables in a `company` database. The underlying tables are related to sensitive employee information, in particular salaries. Although we may have taken precautions to ensure that only certain user accounts have access to those tables, we will monitor the Audit Plugin logs for anyone who queries them<span>—</span>directly or indirectly through a view.
+Below is an example with both `TABLE` and `QUERY` events logging.  For this scenario, suppose there is a [VIEW](/programming-customizing-mariadb/views/create-view/) in which columns are selected from a few tables in a `company` database. The underlying tables are related to sensitive employee information, in particular salaries. Although we may have taken precautions to ensure that only certain user accounts have access to those tables, we will monitor the Audit Plugin logs for anyone who queries them<span>—</span>directly or indirectly through a view.
 
 ```sql
 20170817 16:04:33,ip-172-30-0-38,root,localhost,29,913,READ,company,employees,
@@ -108,7 +108,7 @@ Below is an example with both `TABLE` and `QUERY` events logging.  For this scen
 'SELECT * FROM employee_pay WHERE title LIKE \'%Executive%\'  OR title LIKE \'%Manager%\'',0
 ```
 
-Although the user executed only one [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) statement, there are multiple entries to the log: one for each table accessed and one entry for the query on the view, (i.e., `employee_pay`). We know primarily this is all for one query because they all have the same connection and query identification numbers (i.e., `29` and `913`).
+Although the user executed only one [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) statement, there are multiple entries to the log: one for each table accessed and one entry for the query on the view, (i.e., `employee_pay`). We know primarily this is all for one query because they all have the same connection and query identification numbers (i.e., `29` and `913`).
 
 ## Logging User Activities
 

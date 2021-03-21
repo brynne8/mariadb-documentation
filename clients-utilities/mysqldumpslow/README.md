@@ -8,7 +8,7 @@ From [MariaDB 10.4.6](/kb/en/mariadb-1046-release-notes/), `mariadb-dumpslow` is
 
 From [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/), `mariadb-dumpslow` is the name of the tool, with `mysqldumpslow` a symlink .
 
-`mysqldumpslow` is a tool to examine the [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log).
+`mysqldumpslow` is a tool to examine the [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log/).
 
 It parses the slow query log files, printing a summary result. Normally, mysqldumpslow groups queries that are similar except for the particular values of number and string data values. It “abstracts” these values to N and ´S´ when displaying summary output. The `-a` and `-n` options can be used to modify value abstracting behavior.
 

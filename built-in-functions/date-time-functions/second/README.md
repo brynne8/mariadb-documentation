@@ -8,7 +8,7 @@ SECOND(time)
 
 ## Description
 
-Returns the second for a given `time` (which can include [microseconds](/built-in-functions/date-time-functions/microseconds-in-mariadb)), in the range 0 to 59, or `NULL` if not given a valid time value.
+Returns the second for a given `time` (which can include [microseconds](/built-in-functions/date-time-functions/microseconds-in-mariadb/)), in the range 0 to 59, or `NULL` if not given a valid time value.
 
 ## Examples
 

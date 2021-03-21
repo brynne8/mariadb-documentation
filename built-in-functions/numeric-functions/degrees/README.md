@@ -10,7 +10,7 @@ DEGREES(X)
 
 Returns the argument <em>`X`</em>, converted from radians to degrees.
 
-This is the converse of the [RADIANS()](/built-in-functions/numeric-functions/radians) function.
+This is the converse of the [RADIANS()](/built-in-functions/numeric-functions/radians/) function.
 
 ## Examples
 

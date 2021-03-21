@@ -86,13 +86,13 @@ change the type of existing columns, or rename columns or the table
 itself. You can also change the comment for the table and the storage engine of the
 table.
 
-If another connection is using the table, a [metadata lock](/sql-statements-structure/sql-statements/transactions/metadata-locking) is active, and this statement will wait until the lock is released. This is also true for non-transactional tables.
+If another connection is using the table, a [metadata lock](/sql-statements-structure/sql-statements/transactions/metadata-locking/) is active, and this statement will wait until the lock is released. This is also true for non-transactional tables.
 
-When adding a `UNIQUE` index on a column (or a set of columns) which have duplicated values, an error will be produced and the statement will be stopped. To suppress the error and force the creation of `UNIQUE` indexes, discarding duplicates, the [IGNORE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/ignore) option can be specified. This can be useful if a column (or a set of columns) should be UNIQUE but it contains duplicate values; however, this technique provides no control on which rows are preserved and which are deleted. Also, note that `IGNORE` is accepted but ignored in `ALTER TABLE ... EXCHANGE PARTITION` statements.
+When adding a `UNIQUE` index on a column (or a set of columns) which have duplicated values, an error will be produced and the statement will be stopped. To suppress the error and force the creation of `UNIQUE` indexes, discarding duplicates, the [IGNORE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/ignore/) option can be specified. This can be useful if a column (or a set of columns) should be UNIQUE but it contains duplicate values; however, this technique provides no control on which rows are preserved and which are deleted. Also, note that `IGNORE` is accepted but ignored in `ALTER TABLE ... EXCHANGE PARTITION` statements.
 
-This statement can also be used to rename a table. For details see [RENAME TABLE](/sql-statements-structure/sql-statements/data-definition/rename-table).
+This statement can also be used to rename a table. For details see [RENAME TABLE](/sql-statements-structure/sql-statements/data-definition/rename-table/).
 
-When an index is created, the storage engine may use a configurable buffer in the process. Incrementing the buffer speeds up the index creation. [Aria](/columns-storage-engines-and-plugins/storage-engines/aria) and [MyISAM](/kb/en/myisam/) allocate a buffer whose size is defined by <a undefined>aria_sort_buffer_size</a> or [myisam_sort_buffer_size](/kb/en/myisam-server-system-variables/#myisam_sort_buffer_size), also used for [REPAIR TABLE](/sql-statements-structure/sql-statements/table-statements/repair-table). [InnoDB/XtraDB](/columns-storage-engines-and-plugins/storage-engines/innodb) allocates three buffers whose size is defined by [innodb_sort_buffer_size](/kb/en/innodb-system-variables/#innodb_sort_buffer_size).
+When an index is created, the storage engine may use a configurable buffer in the process. Incrementing the buffer speeds up the index creation. [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/) and [MyISAM](/kb/en/myisam/) allocate a buffer whose size is defined by <a undefined>aria_sort_buffer_size</a> or [myisam_sort_buffer_size](/kb/en/myisam-server-system-variables/#myisam_sort_buffer_size), also used for [REPAIR TABLE](/sql-statements-structure/sql-statements/table-statements/repair-table/). [InnoDB/XtraDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) allocates three buffers whose size is defined by [innodb_sort_buffer_size](/kb/en/innodb-system-variables/#innodb_sort_buffer_size).
 
 ## Privileges
 
@@ -104,7 +104,7 @@ If you are renaming a table, then it also requires the [DROP](/kb/en/grant/#tabl
 
 In [MariaDB 10.0](/kb/en/what-is-mariadb-100/) and later, online DDL is supported with the [ALGORITHM](#algorithm) and [LOCK](#lock) clauses.
 
-See [InnoDB Online DDL Overview](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview) for more information on online DDL with [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb).
+See [InnoDB Online DDL Overview](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview/) for more information on online DDL with [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/).
 
 ### `ALTER ONLINE TABLE`
 
@@ -148,7 +148,7 @@ In [MariaDB 10.0.10](/kb/en/mariadb-10010-release-notes/) and before, this state
 
 ##### MariaDB starting with [10.3.0](/kb/en/mariadb-1030-release-notes/)
 
-Set the lock wait timeout. See [WAIT and NOWAIT](/sql-statements-structure/sql-statements/transactions/wait-and-nowait).
+Set the lock wait timeout. See [WAIT and NOWAIT](/sql-statements-structure/sql-statements/transactions/wait-and-nowait/).
 
 ## IF EXISTS
 
@@ -189,7 +189,7 @@ See [CREATE TABLE: Column Definitions](/kb/en/create-table/#column-definitions) 
 
 See [CREATE TABLE: Index Definitions](/kb/en/create-table/#index-definitions) for information about index definitions.
 
-The [CREATE INDEX](/sql-statements-structure/sql-statements/data-definition/create/create-index) and [DROP INDEX](/sql-statements-structure/sql-statements/data-definition/drop/drop-index) statements can also be used to add or remove an index.
+The [CREATE INDEX](/sql-statements-structure/sql-statements/data-definition/create/create-index/) and [DROP INDEX](/sql-statements-structure/sql-statements/data-definition/drop/drop-index/) statements can also be used to add or remove an index.
 
 ## Character Sets and Collations
 
@@ -198,7 +198,7 @@ CONVERT TO CHARACTER SET charset_name [COLLATE collation_name]
 [DEFAULT] CHARACTER SET [=] charset_name
 [DEFAULT] COLLATE [=] collation_name```
 
-See [Setting Character Sets and Collations](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/setting-character-sets-and-collations) for details on setting the [character sets and collations](/kb/en/data-types-character-sets-and-collations/).
+See [Setting Character Sets and Collations](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/setting-character-sets-and-collations/) for details on setting the [character sets and collations](/kb/en/data-types-character-sets-and-collations/).
 
 ## Alter Specifications
 
@@ -211,12 +211,12 @@ See [CREATE TABLE: Table Options](/kb/en/create-table/#table-options) for inform
 ```sql
 ... ADD COLUMN [IF NOT EXISTS]  (col_name column_definition,...)```
 
-Adds a column to the table. The syntax is the same as in [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table).
+Adds a column to the table. The syntax is the same as in [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/).
 If you are using <code class="highlight fixed" style="white-space:pre-wrap">IF NOT_EXISTS</code> the column will not be added if it was not there already. This is very useful when doing scripts to modify tables.
 
 The `FIRST` and `AFTER` clauses affect the physical order of columns in the datafile. Use `FIRST` to add a column in the first (leftmost) position, or `AFTER` followed by a column name to add the new column in any other position. Note that, nowadays, the physical position of a column is usually irrelevant.
 
-See also [Instant ADD COLUMN for InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-online-ddl/instant-add-column-for-innodb).
+See also [Instant ADD COLUMN for InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-online-ddl/instant-add-column-for-innodb/).
 
 ### DROP COLUMN
 
@@ -259,7 +259,7 @@ DESC x;
 
 ##### MariaDB starting with [10.4.0](/kb/en/mariadb-1040-release-notes/)
 
-[MariaDB 10.4.0](/kb/en/mariadb-1040-release-notes/) supports instant DROP COLUMN. DROP COLUMN of an indexed column would imply [DROP INDEX](/sql-statements-structure/sql-statements/data-definition/drop/drop-index) (and in the case of a non-UNIQUE multi-column index, possibly ADD INDEX). These will not be allowed with [ALGORITHM=INSTANT](#algorithm), but unlike before, they can be allowed with [ALGORITHM=NOCOPY](#algorithm)
+[MariaDB 10.4.0](/kb/en/mariadb-1040-release-notes/) supports instant DROP COLUMN. DROP COLUMN of an indexed column would imply [DROP INDEX](/sql-statements-structure/sql-statements/data-definition/drop/drop-index/) (and in the case of a non-UNIQUE multi-column index, possibly ADD INDEX). These will not be allowed with [ALGORITHM=INSTANT](#algorithm), but unlike before, they can be allowed with [ALGORITHM=NOCOPY](#algorithm)
 
 <code class="highlight fixed" style="white-space:pre-wrap">RESTRICT</code> and <code class="highlight fixed" style="white-space:pre-wrap">CASCADE</code> are allowed to make porting from other database systems easier. In MariaDB, they do nothing.
 
@@ -344,13 +344,13 @@ First, you have to specify the name of the target (parent) table and a column or
 
 If either clause is omitted, the default behavior for the omitted clause is `RESTRICT`.
 
-See [Foreign Keys](/replication/optimization-and-tuning/optimization-and-indexes/foreign-keys) for more information.
+See [Foreign Keys](/replication/optimization-and-tuning/optimization-and-indexes/foreign-keys/) for more information.
 
 ### DROP FOREIGN KEY
 
 Drop a foreign key.
 
-See [Foreign Keys](/replication/optimization-and-tuning/optimization-and-indexes/foreign-keys) for more information.
+See [Foreign Keys](/replication/optimization-and-tuning/optimization-and-indexes/foreign-keys/) for more information.
 
 ### ADD INDEX
 
@@ -392,39 +392,39 @@ See [Getting Started with Indexes: Unique Index](/kb/en/getting-started-with-ind
 
 Add a `FULLTEXT` index.
 
-See [Full-Text Indexes](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes) for more information.
+See [Full-Text Indexes](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) for more information.
 
 ### DROP FULLTEXT INDEX
 
 Drop a `FULLTEXT` index.
 
-See [Full-Text Indexes](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes) for more information.
+See [Full-Text Indexes](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) for more information.
 
 ### ADD SPATIAL INDEX
 
 Add a SPATIAL index.
 
-See [SPATIAL INDEX](/sql-statements-structure/geographic-geometric-features/spatial-index) for more information.
+See [SPATIAL INDEX](/sql-statements-structure/geographic-geometric-features/spatial-index/) for more information.
 
 ### DROP SPATIAL INDEX
 
 Drop a SPATIAL index.
 
-See [SPATIAL INDEX](/sql-statements-structure/geographic-geometric-features/spatial-index) for more information.
+See [SPATIAL INDEX](/sql-statements-structure/geographic-geometric-features/spatial-index/) for more information.
 
 ### ENABLE/ DISABLE KEYS
 
-`DISABLE KEYS` will disable all non unique keys for the table for storage engines that support this (at least MyISAM and Aria). This can be used to [speed up inserts](/replication/optimization-and-tuning/query-optimizations/how-to-quickly-insert-data-into-mariadb) into empty tables.
+`DISABLE KEYS` will disable all non unique keys for the table for storage engines that support this (at least MyISAM and Aria). This can be used to [speed up inserts](/replication/optimization-and-tuning/query-optimizations/how-to-quickly-insert-data-into-mariadb/) into empty tables.
 
 `ENABLE KEYS` will enable all disabled keys.
 
 ### RENAME TO
 
-Renames the table. See also [RENAME TABLE](/sql-statements-structure/sql-statements/data-definition/rename-table).
+Renames the table. See also [RENAME TABLE](/sql-statements-structure/sql-statements/data-definition/rename-table/).
 
 ### ADD CONSTRAINT
 
-Modifies the table adding a [constraint](/sql-statements-structure/sql-statements/data-definition/constraint) on a particular column or columns.
+Modifies the table adding a [constraint](/sql-statements-structure/sql-statements/data-definition/constraint/) on a particular column or columns.
 
 ##### MariaDB starting with [10.2.1](/kb/en/mariadb-1021-release-notes/)
 
@@ -436,7 +436,7 @@ Note: Before [MariaDB 10.2.1](/kb/en/mariadb-1021-release-notes/), constraint ex
 ALTER TABLE table_name 
 ADD CONSTRAINT [constraint_name] CHECK(expression);```
 
-Before a row is inserted or updated, all constraints are evaluated in the order they are defined.  If any constraint fails, then the row will not be updated.  One can use most deterministic functions in a constraint, including [UDF's](/programming-customizing-mariadb/user-defined-functions).
+Before a row is inserted or updated, all constraints are evaluated in the order they are defined.  If any constraint fails, then the row will not be updated.  One can use most deterministic functions in a constraint, including [UDF's](/programming-customizing-mariadb/user-defined-functions/).
 
 ```sql
 CREATE TABLE account_ledger (
@@ -474,7 +474,7 @@ WHERE TABLE_NAME = 'account_ledger';
 
 ##### MariaDB starting with [10.2.22](/kb/en/mariadb-10222-release-notes/)
 
-`DROP CONSTRAINT` for `UNIQUE` and `FOREIGN KEY` [constraints](/sql-statements-structure/sql-statements/data-definition/constraint) was introduced in [MariaDB 10.2.22](/kb/en/mariadb-10222-release-notes/) and [MariaDB 10.3.13](/kb/en/mariadb-10313-release-notes/).
+`DROP CONSTRAINT` for `UNIQUE` and `FOREIGN KEY` [constraints](/sql-statements-structure/sql-statements/data-definition/constraint/) was introduced in [MariaDB 10.2.22](/kb/en/mariadb-10222-release-notes/) and [MariaDB 10.3.13](/kb/en/mariadb-10313-release-notes/).
 
 ##### MariaDB starting with [10.2.1](/kb/en/mariadb-1021-release-notes/)
 
@@ -519,7 +519,7 @@ ALTER TABLE t DROP CONSTRAINT is_unique;
 
 ##### MariaDB starting with [10.3.4](/kb/en/mariadb-1034-release-notes/)
 
-[System-versioned tables](/sql-statements-structure/temporal-tables/system-versioned-tables) was added in [MariaDB 10.3.4](/kb/en/mariadb-1034-release-notes/).
+[System-versioned tables](/sql-statements-structure/temporal-tables/system-versioned-tables/) was added in [MariaDB 10.3.4](/kb/en/mariadb-1034-release-notes/).
 
 Add system versioning.
 
@@ -527,7 +527,7 @@ Add system versioning.
 
 ##### MariaDB starting with [10.3.4](/kb/en/mariadb-1034-release-notes/)
 
-[System-versioned tables](/sql-statements-structure/temporal-tables/system-versioned-tables) was added in [MariaDB 10.3.4](/kb/en/mariadb-1034-release-notes/).
+[System-versioned tables](/sql-statements-structure/temporal-tables/system-versioned-tables/) was added in [MariaDB 10.3.4](/kb/en/mariadb-1034-release-notes/).
 
 Drop system versioning.
 
@@ -535,7 +535,7 @@ Drop system versioning.
 
 ##### MariaDB starting with [10.3.4](/kb/en/mariadb-1034-release-notes/)
 
-[System-versioned tables](/sql-statements-structure/temporal-tables/system-versioned-tables) was added in [MariaDB 10.3.4](/kb/en/mariadb-1034-release-notes/).
+[System-versioned tables](/sql-statements-structure/temporal-tables/system-versioned-tables/) was added in [MariaDB 10.3.4](/kb/en/mariadb-1034-release-notes/).
 
 ### FORCE
 
@@ -573,7 +573,7 @@ See [copying InnoDB's transportable tablespaces](/kb/en/innodb-file-per-table-ta
 
 ### IMPORT TABLESPACE
 
-This is used to import an InnoDB table's tablespace. The tablespace should have been copied from its original server after executing [FLUSH TABLES FOR EXPORT](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export).
+This is used to import an InnoDB table's tablespace. The tablespace should have been copied from its original server after executing [FLUSH TABLES FOR EXPORT](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export/).
 
 See [copying InnoDB's transportable tablespaces](/kb/en/innodb-file-per-table-tablespaces/#copying-transportable-tablespaces) for more information.
 
@@ -603,7 +603,7 @@ In [MariaDB 10.3.7](/kb/en/mariadb-1037-release-notes/) and later, the <a undefi
 
 #### `ALGORITHM=COPY`
 
-`ALGORITHM=COPY` was introduced in [MariaDB 10.0](/kb/en/what-is-mariadb-100/) as the name for the original [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) algorithm.
+`ALGORITHM=COPY` was introduced in [MariaDB 10.0](/kb/en/what-is-mariadb-100/) as the name for the original [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) algorithm.
 
 When `ALGORITHM=COPY` is set, MariaDB essentially does the following operations:
 
@@ -626,7 +626,7 @@ RENAME TABLE tmp_tab TO original_tab;
 
 This algorithm is very inefficient, but it is generic, so it works for all storage engines.
 
-If `ALGORITHM=COPY` is specified, then the copy algorithm will be used even if it is not necessary. This can result in a lengthy table copy. If multiple [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) operations are required that each require the table to be rebuilt, then it is best to specify all operations in a single [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) statement, so that the table is only rebuilt once.
+If `ALGORITHM=COPY` is specified, then the copy algorithm will be used even if it is not necessary. This can result in a lengthy table copy. If multiple [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) operations are required that each require the table to be rebuilt, then it is best to specify all operations in a single [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) statement, so that the table is only rebuilt once.
 
 #### `ALGORITHM=INPLACE`
 
@@ -638,7 +638,7 @@ When `ALGORITHM=INPLACE` is set, the underlying storage engine uses optimization
 
 A more accurate name would have been `ALGORITHM=ENGINE`, where `ENGINE` refers to an "engine-specific" algorithm.
 
-If an [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) operation supports `ALGORITHM=INPLACE`, then it can be performed using optimizations by the underlying storage engine, but it may rebuilt.
+If an [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) operation supports `ALGORITHM=INPLACE`, then it can be performed using optimizations by the underlying storage engine, but it may rebuilt.
 
 See [InnoDB Online DDL Operations with ALGORITHM=INPLACE](/kb/en/innodb-online-ddl-operations-with-algorithminplace/) for more.
 
@@ -686,14 +686,14 @@ See [InnoDB Online DDL Overview: LOCK](/kb/en/innodb-online-ddl-overview/#lock) 
 ## Progress Reporting
 
 MariaDB provides progress reporting for `ALTER TABLE` statement for clients
-that support the new progress reporting protocol. For example, if you were using the [mysql](/clients-utilities/mysql-client/mysql-command-line-client) client, then the progress report might look like this::
+that support the new progress reporting protocol. For example, if you were using the [mysql](/clients-utilities/mysql-client/mysql-command-line-client/) client, then the progress report might look like this::
 
 ```sql
 ALTER TABLE test ENGINE=Aria;
 Stage: 1 of 2 'copy to tmp table'    46% of stage
 ```
 
-The progress report is also shown in the output of the [SHOW PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist) statement and in the contents of the <a undefined>information_schema.PROCESSLIST</a> table.
+The progress report is also shown in the output of the [SHOW PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist/) statement and in the contents of the <a undefined>information_schema.PROCESSLIST</a> table.
 
 See [Progress Reporting](/kb/en/progress-reporting/) for more information.
 
@@ -763,7 +763,7 @@ Adding a unique index:
 ALTER TABLE rooms ADD UNIQUE INDEX u(room_number);
 ```
 
-From [MariaDB 10.5.3](/kb/en/mariadb-1053-release-notes/), adding a primary key for an [application-time period table](/sql-statements-structure/temporal-tables/application-time-periods) with a [WITHOUT OVERLAPS](/kb/en/application-time-periods/#without-overlaps) constraint:
+From [MariaDB 10.5.3](/kb/en/mariadb-1053-release-notes/), adding a primary key for an [application-time period table](/sql-statements-structure/temporal-tables/application-time-periods/) with a [WITHOUT OVERLAPS](/kb/en/application-time-periods/#without-overlaps) constraint:
 
 ```sql
 ALTER TABLE rooms ADD PRIMARY KEY(room_number, p WITHOUT OVERLAPS);
@@ -771,8 +771,8 @@ ALTER TABLE rooms ADD PRIMARY KEY(room_number, p WITHOUT OVERLAPS);
 
 ## See Also
 
-- [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table)
-- [DROP TABLE](/sql-statements-structure/sql-statements/data-definition/drop/drop-table)
+- [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/)
+- [DROP TABLE](/sql-statements-structure/sql-statements/data-definition/drop/drop-table/)
 - [Character Sets and Collations](/kb/en/character-sets-and-collations/)
-- [SHOW CREATE TABLE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-table)
-- [Instant ADD COLUMN for InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-online-ddl/instant-add-column-for-innodb)
+- [SHOW CREATE TABLE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-table/)
+- [Instant ADD COLUMN for InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-online-ddl/instant-add-column-for-innodb/)

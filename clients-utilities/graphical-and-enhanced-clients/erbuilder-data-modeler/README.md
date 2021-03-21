@@ -2,7 +2,7 @@
 
 <img src="/kb/en/erbuilder-data-modeler/+image/ERBuilder-logo" alt="ERBuilder-logo" title="ERBuilder-logo">
 
-[ERBuilder Data Modeler](/clients-utilities/graphical-and-enhanced-clients/erbuilder-data-modeler) is a GUI data modeling tool that allows developers to visualize, design, and model databases by using entity relationship diagrams and automatically generates the most popular SQL databases. Generate and share the data Model documentation with your team. Optimize your data model by using advanced features such as test data generation, schema compare, and schema synchronization
+[ERBuilder Data Modeler](/clients-utilities/graphical-and-enhanced-clients/erbuilder-data-modeler/) is a GUI data modeling tool that allows developers to visualize, design, and model databases by using entity relationship diagrams and automatically generates the most popular SQL databases. Generate and share the data Model documentation with your team. Optimize your data model by using advanced features such as test data generation, schema compare, and schema synchronization
 
 <strong>Supported DBMS include:</strong>
 

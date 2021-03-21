@@ -2,7 +2,7 @@
 
 ##### MariaDB starting with [10.0](/kb/en/what-is-mariadb-100/)
 
-The `host_cache` table, along with many other new [Performance Schema tables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/list-of-performance-schema-tables), was added in [MariaDB 10.0](/kb/en/what-is-mariadb-100/).
+The `host_cache` table, along with many other new [Performance Schema tables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/list-of-performance-schema-tables/), was added in [MariaDB 10.0](/kb/en/what-is-mariadb-100/).
 
 The `host_cache` table contains host and IP information from the host_cache, used for avoiding DNS lookups for new client connections.
 
@@ -40,4 +40,4 @@ The host_cache table contains the following columns:
 <tr><td><code>LAST_ERROR_SEEN</code></td><td>Timestamp of the most recent error seen from the IP.</td></tr>
 </tbody></table>
 
-The `host_cache` table, along with the `host_cache`, is cleared with [FLUSH HOSTS](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush), [TRUNCATE TABLE](/sql-statements-structure/sql-statements/table-statements/truncate-table) `host_cache` or by setting the [host_cache_size](/kb/en/server-system-variables/#host_cache_size) system variable at runtime.
+The `host_cache` table, along with the `host_cache`, is cleared with [FLUSH HOSTS](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/), [TRUNCATE TABLE](/sql-statements-structure/sql-statements/table-statements/truncate-table/) `host_cache` or by setting the [host_cache_size](/kb/en/server-system-variables/#host_cache_size) system variable at runtime.

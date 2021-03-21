@@ -27,21 +27,21 @@ Some things are not on the map:
 ## Links to pages about individual optimizations:
 
 - [IN-&gt;EXISTS](/kb/en/non-semi-join-subquery-optimizations/#the-in-to-exists-transformation)
-- [Subquery Caching](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/subquery-cache)
+- [Subquery Caching](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/subquery-cache/)
 
-- [Semi-join optimizations](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/semi-join-subquery-optimizations)
-<ul start="1"><li>[Table pullout](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/table-pullout-optimization)
-</li><li>[FirstMatch](/replication/optimization-and-tuning/query-optimizations/optimization-strategies/firstmatch-strategy)
-</li><li>[Materialization, +scan, +lookup](/replication/optimization-and-tuning/query-optimizations/optimization-strategies/semi-join-materialization-strategy)
-</li><li>[LooseScan](/replication/optimization-and-tuning/query-optimizations/optimization-strategies/loosescan-strategy)
-</li><li>[DuplicateWeedout execution strategy](/replication/optimization-and-tuning/query-optimizations/optimization-strategies/duplicateweedout-strategy)
+- [Semi-join optimizations](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/semi-join-subquery-optimizations/)
+<ul start="1"><li>[Table pullout](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/table-pullout-optimization/)
+</li><li>[FirstMatch](/replication/optimization-and-tuning/query-optimizations/optimization-strategies/firstmatch-strategy/)
+</li><li>[Materialization, +scan, +lookup](/replication/optimization-and-tuning/query-optimizations/optimization-strategies/semi-join-materialization-strategy/)
+</li><li>[LooseScan](/replication/optimization-and-tuning/query-optimizations/optimization-strategies/loosescan-strategy/)
+</li><li>[DuplicateWeedout execution strategy](/replication/optimization-and-tuning/query-optimizations/optimization-strategies/duplicateweedout-strategy/)
 </li></ul>
 
 - Non-semi-join [Materialization](/kb/en/non-semi-join-subquery-optimizations/#materialization-for-non-correlated-in-subqueries) (including NULL-aware and partial matching)
 
 - Derived table optimizations
-<ul start="1"><li>[Derived table merge](/replication/optimization-and-tuning/query-optimizations/optimizations-for-derived-tables/derived-table-merge-optimization)
-</li><li>[Derived table with keys](/replication/optimization-and-tuning/query-optimizations/optimizations-for-derived-tables/derived-table-with-key-optimization)
+<ul start="1"><li>[Derived table merge](/replication/optimization-and-tuning/query-optimizations/optimizations-for-derived-tables/derived-table-merge-optimization/)
+</li><li>[Derived table with keys](/replication/optimization-and-tuning/query-optimizations/optimizations-for-derived-tables/derived-table-with-key-optimization/)
 </li></ul>
 
 ## See also

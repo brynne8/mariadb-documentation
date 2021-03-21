@@ -6,7 +6,7 @@ Replication is a feature allowing the contents of one or more servers (called ma
 
 You can exert control over which data to replicate. All databases, one or more databases, or tables within a database can each be selectively replicated.
 
-The main mechanism used in replication is the [binary log](/mariadb-administration/server-monitoring-logs/binary-log). If binary logging is enabled, all updates to the database (data manipulation and data definition) are written into the binary log as binlog events. Slaves read the binary log from each master in order to access the data to replicate. A [relay log](/mariadb-administration/server-monitoring-logs/binary-log/relay-log) is created on the slave server, using the same format as the binary log, and this is used to perform the replication. Old relay log files are removed when no longer needed.
+The main mechanism used in replication is the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/). If binary logging is enabled, all updates to the database (data manipulation and data definition) are written into the binary log as binlog events. Slaves read the binary log from each master in order to access the data to replicate. A [relay log](/mariadb-administration/server-monitoring-logs/binary-log/relay-log/) is created on the slave server, using the same format as the binary log, and this is used to perform the replication. Old relay log files are removed when no longer needed.
 
 A slave server keeps track of the position in the master's binlog of the last event applied on the slave. This allows the slave server to re-connect and resume from where it left off after replication has been temporarily stopped. It also allows a slave to disconnect, be cloned and then have the new slave resume replication from the same master.
 
@@ -18,7 +18,7 @@ Replication is used in a number of common scenarios. Uses include:
 
 - Scalability. By having one or more slave servers, reads can be spread over multiple servers, reducing the load on the master. The most common scenario for a high-read, low-write environment is to have one master, where all the writes occur, replicating to multiple slaves, which handle most of the reads.
 - Data analysis. Analyzing data may have too much of an impact on a master server, and this can similarly be handled on a slave server, while the master continues unaffected by the extra load.
-- Backup assistance. [Backups](/kb/en/backing-up-and-restoring/) can more easily be run if a server is not actively changing the data. A common scenario is to replicate the data to slave, which is then disconnected from the master with the data in a stable state. Backup is then performed from this server. See [Replication as a Backup Solution](/mariadb-administration/backing-up-and-restoring-databases/replication-as-a-backup-solution).
+- Backup assistance. [Backups](/kb/en/backing-up-and-restoring/) can more easily be run if a server is not actively changing the data. A common scenario is to replicate the data to slave, which is then disconnected from the master with the data in a stable state. Backup is then performed from this server. See [Replication as a Backup Solution](/mariadb-administration/backing-up-and-restoring-databases/replication-as-a-backup-solution/).
 - Distribution of data. Instead of being connected to a remote master, it's possible to replicate the data locally and work from this data instead.
 
 ## Common Replication Setups
@@ -55,5 +55,5 @@ Replication is used in a number of common scenarios. Uses include:
 
 ## See Also
 
-- [Setting Up Replication](/replication/standard-replication/setting-up-replication)
+- [Setting Up Replication](/replication/standard-replication/setting-up-replication/)
 - [Replication Compatibility](/kb/en/mariadb-vs-mysql-compatibility/#replication-compatibility)

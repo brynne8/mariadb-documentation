@@ -16,7 +16,7 @@ Note: Before [MariaDB 10.0.10](/kb/en/mariadb-10010-release-notes/) the argument
 
 Returns a string of comma separated numeric values corresponding to a probability distribution represented by the histogram of type `hist_type` (`SINGLE_PREC_HB` or `DOUBLE_PREC_HB`). The `hist_type` and `histogram` would be commonly used from the [mysql.column_stats table](/kb/en/mysqlcolumn_stats-table/).
 
-See [Histogram Based Statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/histogram-based-statistics) for details.
+See [Histogram Based Statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/histogram-based-statistics/) for details.
 
 ## Examples
 

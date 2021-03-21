@@ -2,7 +2,7 @@
 
 NULL represents an unknown value. It is <em>not</em> an empty string (by default), or a zero value. These are all valid values, and are not NULLs.
 
-When a table is [created](/sql-statements-structure/sql-statements/data-definition/create/create-table) or the format [altered](/sql-statements-structure/sql-statements/data-definition/alter/alter-table), columns can be specified as accepting NULL values, or not accepting them, with the `NULL` and `NOT NULL` clauses respectively.
+When a table is [created](/sql-statements-structure/sql-statements/data-definition/create/create-table/) or the format [altered](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/), columns can be specified as accepting NULL values, or not accepting them, with the `NULL` and `NOT NULL` clauses respectively.
 
 For example, a customer table could contain dates of birth. For some customers, this information is unknown, so the value could be NULL.
 
@@ -16,19 +16,19 @@ CREATE TABLE customer (
 )
 ```
 
-[User-defined variables](/sql-statements-structure/sql-language-structure/user-defined-variables) are NULL until a value is explicitly assigned.
+[User-defined variables](/sql-statements-structure/sql-language-structure/user-defined-variables/) are NULL until a value is explicitly assigned.
 
-[Stored routines](/kb/en/stored-programs-and-views/) parameters and [local variables](/programming-customizing-mariadb/programmatic-compound-statements/declare-variable) can always be set to NULL. If no DEFAULT value is specified for a local variable, its initial value will be NULL. If no value is assigned to an OUT parameter in a stored procedure, NULL is assigned at the end of the procedure.
+[Stored routines](/kb/en/stored-programs-and-views/) parameters and [local variables](/programming-customizing-mariadb/programmatic-compound-statements/declare-variable/) can always be set to NULL. If no DEFAULT value is specified for a local variable, its initial value will be NULL. If no value is assigned to an OUT parameter in a stored procedure, NULL is assigned at the end of the procedure.
 
 ## Syntax
 
 The case of `NULL` is not relevant. `\N` (uppercase) is an alias for `NULL`.
 
-The [IS](/sql-statements-structure/operators/comparison-operators/is) operator accepts `UNKNOWN` as an alias for `NULL`, which is meant for [boolean contexts](/sql-statements-structure/sql-language-structure/sql-language-structure-boolean-literals).
+The [IS](/sql-statements-structure/operators/comparison-operators/is/) operator accepts `UNKNOWN` as an alias for `NULL`, which is meant for [boolean contexts](/sql-statements-structure/sql-language-structure/sql-language-structure-boolean-literals/).
 
 ## Comparison Operators
 
-NULL values cannot be used with most [comparison operators](/sql-statements-structure/operators/comparison-operators). For example, [=](/sql-statements-structure/operators/comparison-operators/equal), [&gt;](/sql-statements-structure/operators/comparison-operators/greater-than), [&gt;=](/sql-statements-structure/operators/comparison-operators/greater-than-or-equal), [&lt;=](/sql-statements-structure/operators/comparison-operators/less-than-or-equal), [&lt;](/sql-statements-structure/operators/comparison-operators/less-than), or [!=](/sql-statements-structure/operators/comparison-operators/not-equal) cannot be used, as any comparison with a NULL always returns a NULL value, never true (1) or false (0).
+NULL values cannot be used with most [comparison operators](/sql-statements-structure/operators/comparison-operators/). For example, [=](/sql-statements-structure/operators/comparison-operators/equal/), [&gt;](/sql-statements-structure/operators/comparison-operators/greater-than/), [&gt;=](/sql-statements-structure/operators/comparison-operators/greater-than-or-equal/), [&lt;=](/sql-statements-structure/operators/comparison-operators/less-than-or-equal/), [&lt;](/sql-statements-structure/operators/comparison-operators/less-than/), or [!=](/sql-statements-structure/operators/comparison-operators/not-equal/) cannot be used, as any comparison with a NULL always returns a NULL value, never true (1) or false (0).
 
 ```sql
 SELECT NULL = NULL;
@@ -46,7 +46,7 @@ SELECT 99 = NULL;
 +-----------+
 ```
 
-To overcome this, certain operators are specifically designed for use with NULL values. To cater for testing equality between two values that may contain NULLs, there's [&lt;=&gt;](/sql-statements-structure/operators/comparison-operators/null-safe-equal), NULL-safe equal.
+To overcome this, certain operators are specifically designed for use with NULL values. To cater for testing equality between two values that may contain NULLs, there's [&lt;=&gt;](/sql-statements-structure/operators/comparison-operators/null-safe-equal/), NULL-safe equal.
 
 ```sql
 SELECT 99 <=> NULL, NULL <=> NULL;
@@ -57,7 +57,7 @@ SELECT 99 <=> NULL, NULL <=> NULL;
 +-------------+---------------+
 ```
 
-Other operators for working with NULLs include [IS NULL](/sql-statements-structure/operators/comparison-operators/is-null) and [IS NOT NULL](/sql-statements-structure/operators/comparison-operators/is-not-null), [ISNULL](/sql-statements-structure/operators/comparison-operators/isnull) (for testing an expression) and [COALESCE](/sql-statements-structure/operators/comparison-operators/coalesce) (for returning the first non-NULL parameter).
+Other operators for working with NULLs include [IS NULL](/sql-statements-structure/operators/comparison-operators/is-null/) and [IS NOT NULL](/sql-statements-structure/operators/comparison-operators/is-not-null/), [ISNULL](/sql-statements-structure/operators/comparison-operators/isnull/) (for testing an expression) and [COALESCE](/sql-statements-structure/operators/comparison-operators/coalesce/) (for returning the first non-NULL parameter).
 
 ## Ordering
 
@@ -77,7 +77,7 @@ All NULL values are also regarded as equivalent for the purposes of the DISTINCT
 
 ## Functions
 
-In most cases, functions will return NULL if any of the parameters are NULL. There are also functions specifically for handling NULLs. These include [IFNULL()](/built-in-functions/control-flow-functions/ifnull),  [NULLIF()](/built-in-functions/control-flow-functions/nullif) and [COALESCE()](/sql-statements-structure/operators/comparison-operators/coalesce).
+In most cases, functions will return NULL if any of the parameters are NULL. There are also functions specifically for handling NULLs. These include [IFNULL()](/built-in-functions/control-flow-functions/ifnull/),  [NULLIF()](/built-in-functions/control-flow-functions/nullif/) and [COALESCE()](/sql-statements-structure/operators/comparison-operators/coalesce/).
 
 ```sql
 SELECT IFNULL(1,0); 
@@ -102,7 +102,7 @@ SELECT COALESCE(NULL,NULL,1);
 +-----------------------+
 ```
 
-Aggregate functions, such as [SUM](/built-in-functions/aggregate-functions/sum) and [AVG](/built-in-functions/aggregate-functions/avg) ignore NULLs.
+Aggregate functions, such as [SUM](/built-in-functions/aggregate-functions/sum/) and [AVG](/built-in-functions/aggregate-functions/avg/) ignore NULLs.
 
 ```sql
 CREATE TABLE t(x INT);
@@ -124,7 +124,7 @@ SELECT AVG(x) FROM t;
 +--------+
 ```
 
-The one exception is [COUNT(*)](/built-in-functions/aggregate-functions/count), which counts rows, and doesn't look at whether a value is NULL or not. Compare for example, COUNT(x), which ignores the NULL, and COUNT(*), which counts it:
+The one exception is [COUNT(*)](/built-in-functions/aggregate-functions/count/), which counts rows, and doesn't look at whether a value is NULL or not. Compare for example, COUNT(x), which ignores the NULL, and COUNT(*), which counts it:
 
 ```sql
 SELECT COUNT(x) FROM t;
@@ -144,7 +144,7 @@ SELECT COUNT(*) FROM t;
 
 ## AUTO_INCREMENT, TIMESTAMP and Virtual Columns
 
-MariaDB handles NULL values in a special way if the field is an [AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment), a [TIMESTAMP](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/timestamp) or a [virtual column](/kb/en/virtual-columns/). Inserting a NULL value into a numeric AUTO_INCREMENT column will result in the next number in the auto increment sequence being inserted instead. This technique is frequently used with AUTO_INCREMENT fields, which are left to take care of themselves.
+MariaDB handles NULL values in a special way if the field is an [AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment/), a [TIMESTAMP](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/timestamp/) or a [virtual column](/kb/en/virtual-columns/). Inserting a NULL value into a numeric AUTO_INCREMENT column will result in the next number in the auto increment sequence being inserted instead. This technique is frequently used with AUTO_INCREMENT fields, which are left to take care of themselves.
 
 ```sql
 CREATE TABLE t2(id INT PRIMARY KEY AUTO_INCREMENT, letter CHAR(1));
@@ -268,9 +268,9 @@ In [Oracle mode](/kb/en/sql_modeoracle-from-mariadb-103/#null-handling), NULL ca
 IF a=10 THEN NULL; ELSE NULL; END IF
 ```
 
-In [Oracle mode](/kb/en/sql_modeoracle-from-mariadb-103/#null-handling), [CONCAT](/built-in-functions/string-functions/concat) and the [Logical OR operator ||](/sql-statements-structure/operators/logical-operators/or) ignore [NULL](null).
+In [Oracle mode](/kb/en/sql_modeoracle-from-mariadb-103/#null-handling), [CONCAT](/built-in-functions/string-functions/concat/) and the [Logical OR operator ||](/sql-statements-structure/operators/logical-operators/or/) ignore [NULL](null).
 
-When setting [sql_mode=EMPTY_STRING_IS_NULL](/mariadb-administration/variables-and-modes/sql-mode), empty strings and NULLs are the same thing. For example:
+When setting [sql_mode=EMPTY_STRING_IS_NULL](/mariadb-administration/variables-and-modes/sql-mode/), empty strings and NULLs are the same thing. For example:
 
 ```sql
 SET sql_mode=EMPTY_STRING_IS_NULL;
@@ -280,12 +280,12 @@ INSERT INTO t1 VALUES (''); -- inserts NULL
 
 ## See Also
 
-- [Primary Keys with Nullable Columns](/replication/optimization-and-tuning/optimization-and-indexes/primary-keys-with-nullable-columns)
-- [IS NULL operator](/sql-statements-structure/operators/comparison-operators/is-null)
-- [IS NOT NULL operator](/sql-statements-structure/operators/comparison-operators/is-not-null)
-- [ISNULL function](/sql-statements-structure/operators/comparison-operators/isnull)
-- [COALESCE function](/sql-statements-structure/operators/comparison-operators/coalesce)
-- [IFNULL function](/built-in-functions/control-flow-functions/ifnull)
-- [NULLIF function](/built-in-functions/control-flow-functions/nullif)
+- [Primary Keys with Nullable Columns](/replication/optimization-and-tuning/optimization-and-indexes/primary-keys-with-nullable-columns/)
+- [IS NULL operator](/sql-statements-structure/operators/comparison-operators/is-null/)
+- [IS NOT NULL operator](/sql-statements-structure/operators/comparison-operators/is-not-null/)
+- [ISNULL function](/sql-statements-structure/operators/comparison-operators/isnull/)
+- [COALESCE function](/sql-statements-structure/operators/comparison-operators/coalesce/)
+- [IFNULL function](/built-in-functions/control-flow-functions/ifnull/)
+- [NULLIF function](/built-in-functions/control-flow-functions/nullif/)
 - [CONNECT data types](/kb/en/connect-data-types/#null-handling)
 - [Oracle mode from MariaDB 10.3](/kb/en/sql_modeoracle-from-mariadb-103/#null-handling)

@@ -52,4 +52,4 @@ SELECT UUID();
 
 ## See Also
 
-- [UUID_SHORT()](/built-in-functions/secondary-functions/miscellaneous-functions/uuid_short) ; Return short (64 bit) Universal Unique Identifier
+- [UUID_SHORT()](/built-in-functions/secondary-functions/miscellaneous-functions/uuid_short/) ; Return short (64 bit) Universal Unique Identifier

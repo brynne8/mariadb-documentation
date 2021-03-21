@@ -2,15 +2,15 @@
 
 ## Syntax
 
-See [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) for the full syntax.
+See [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) for the full syntax.
 
 ## Description
 
 The `WITH ROLLUP` modifier adds extra rows to the resultset that represent super-aggregate summaries. The super-aggregated column is represented by a `NULL` value. Multiple aggregates over different columns will be added if there are multiple `GROUP BY` columns.
 
-The [LIMIT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/limit) clause can be used at the same time, and is applied after the `WITH ROLLUP` rows have been added.
+The [LIMIT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/limit/) clause can be used at the same time, and is applied after the `WITH ROLLUP` rows have been added.
 
-`WITH ROLLUP` cannot be used with [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by). Some sorting is still possible by using `ASC` or `DESC` clauses with the `GROUP BY` column, although the super-aggregate rows will always be added last.
+`WITH ROLLUP` cannot be used with [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by/). Some sorting is still possible by using `ASC` or `DESC` clauses with the `GROUP BY` column, although the super-aggregate rows will always be added last.
 
 ## Examples
 
@@ -133,14 +133,14 @@ SELECT country, year, genre, SUM(sales)
 
 ## See Also
 
-- [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select)
-- [Joins and Subqueries](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries)
-- [LIMIT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/limit)
-- [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by)
-- [GROUP BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/group-by)
-- [Common Table Expressions](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/common-table-expressions)
-- [SELECT INTO OUTFILE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select-into-outfile)
-- [SELECT INTO DUMPFILE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select-into-dumpfile)
-- [FOR UPDATE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/for-update)
-- [LOCK IN SHARE MODE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/lock-in-share-mode)
-- [Optimizer Hints](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/optimizer-hints)
+- [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/)
+- [Joins and Subqueries](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/)
+- [LIMIT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/limit/)
+- [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by/)
+- [GROUP BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/group-by/)
+- [Common Table Expressions](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/common-table-expressions/)
+- [SELECT INTO OUTFILE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select-into-outfile/)
+- [SELECT INTO DUMPFILE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select-into-dumpfile/)
+- [FOR UPDATE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/for-update/)
+- [LOCK IN SHARE MODE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/lock-in-share-mode/)
+- [Optimizer Hints](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/optimizer-hints/)

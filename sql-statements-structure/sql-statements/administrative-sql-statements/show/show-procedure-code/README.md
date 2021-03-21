@@ -10,12 +10,12 @@ SHOW PROCEDURE CODE proc_name
 
 This statement is a MariaDB extension that is available only for servers that
 have been built with debugging support. It displays a representation of the
-internal implementation of the named [stored procedure](/programming-customizing-mariadb/stored-routines/stored-procedures). A similar statement,
- <code class="highlight fixed" style="white-space:pre-wrap">[SHOW FUNCTION CODE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-function-code)</code>, displays
-information about [stored functions](/programming-customizing-mariadb/stored-routines/stored-functions).
+internal implementation of the named [stored procedure](/programming-customizing-mariadb/stored-routines/stored-procedures/). A similar statement,
+ <code class="highlight fixed" style="white-space:pre-wrap">[SHOW FUNCTION CODE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-function-code/)</code>, displays
+information about [stored functions](/programming-customizing-mariadb/stored-routines/stored-functions/).
 
 Both statements require that you be the owner of the routine or have
- <code class="highlight fixed" style="white-space:pre-wrap">[SELECT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant)</code> access to the <a undefined>mysql.proc</a> table.
+ <code class="highlight fixed" style="white-space:pre-wrap">[SELECT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/)</code> access to the <a undefined>mysql.proc</a> table.
 
 If the named routine is available, each statement produces a result
 set. Each row in the result set corresponds to one "instruction" in
@@ -52,11 +52,11 @@ SHOW PROCEDURE CODE p1//
 
 ## See Also
 
-- [Stored Procedure Overview](/programming-customizing-mariadb/stored-routines/stored-procedures/stored-procedure-overview)
-- [CREATE PROCEDURE](/programming-customizing-mariadb/stored-routines/stored-procedures/create-procedure)
-- [ALTER PROCEDURE](/programming-customizing-mariadb/stored-routines/stored-procedures/alter-procedure)
-- [DROP PROCEDURE](/programming-customizing-mariadb/stored-routines/stored-procedures/drop-procedure)
-- [SHOW CREATE PROCEDURE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-procedure)
-- [SHOW PROCEDURE STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-procedure-status)
-- [Stored Routine Privileges](/programming-customizing-mariadb/stored-routines/stored-functions/stored-routine-privileges)
-- [Information Schema ROUTINES Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table)
+- [Stored Procedure Overview](/programming-customizing-mariadb/stored-routines/stored-procedures/stored-procedure-overview/)
+- [CREATE PROCEDURE](/programming-customizing-mariadb/stored-routines/stored-procedures/create-procedure/)
+- [ALTER PROCEDURE](/programming-customizing-mariadb/stored-routines/stored-procedures/alter-procedure/)
+- [DROP PROCEDURE](/programming-customizing-mariadb/stored-routines/stored-procedures/drop-procedure/)
+- [SHOW CREATE PROCEDURE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-procedure/)
+- [SHOW PROCEDURE STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-procedure-status/)
+- [Stored Routine Privileges](/programming-customizing-mariadb/stored-routines/stored-functions/stored-routine-privileges/)
+- [Information Schema ROUTINES Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table/)

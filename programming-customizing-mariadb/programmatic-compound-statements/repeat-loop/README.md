@@ -14,11 +14,11 @@ search_condition is true. Thus, a `REPEAT` always enters the loop at
 least once. statement_list consists of one or more statements, each
 terminated by a semicolon (i.e., `;`) statement delimiter.
 
-A `REPEAT` statement can be [labeled](/programming-customizing-mariadb/programmatic-compound-statements/labels). end_label cannot be given unless
+A `REPEAT` statement can be [labeled](/programming-customizing-mariadb/programmatic-compound-statements/labels/). end_label cannot be given unless
 begin_label also is present. If both are present, they must be the
 same.
 
-See [Delimiters](/clients-utilities/mysql-client/delimiters) in the [mysql](/clients-utilities/mysql-client) client for more on client delimiter usage.
+See [Delimiters](/clients-utilities/mysql-client/delimiters/) in the [mysql](/clients-utilities/mysql-client/) client for more on client delimiter usage.
 
 ```sql
 DELIMITER //

@@ -6,26 +6,26 @@ MariaDB has many system variables that can be changed to suit your needs.
 
 The full list of server variables are listed in the contents on this page, and most are described on this page, but some are described elsewhere:
 
-- [Aria System Variables](/columns-storage-engines-and-plugins/storage-engines/aria/aria-system-variables)
-- [CONNECT System Variables](/columns-storage-engines-and-plugins/storage-engines/connect/connect-system-variables)
+- [Aria System Variables](/columns-storage-engines-and-plugins/storage-engines/aria/aria-system-variables/)
+- [CONNECT System Variables](/columns-storage-engines-and-plugins/storage-engines/connect/connect-system-variables/)
 - [Galera System Variables](/kb/en/mariadb-galera-cluster-configuration-variables/)
 - [Global Transaction ID System Variables](/kb/en/gtid/#system-variables-for-global-transaction-id)
-- [HandlerSocket Plugin System Variables](/sql-statements-structure/nosql/handlersocket/handlersocket-configuration-options)
-- [InnoDB System Variables](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-system-variables)
-- [Mroonga System Variables](/columns-storage-engines-and-plugins/storage-engines/mroonga/mroonga-system-variables)
-- [MyRocks System Variables](/columns-storage-engines-and-plugins/storage-engines/myrocks/myrocks-system-variables)
+- [HandlerSocket Plugin System Variables](/sql-statements-structure/nosql/handlersocket/handlersocket-configuration-options/)
+- [InnoDB System Variables](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-system-variables/)
+- [Mroonga System Variables](/columns-storage-engines-and-plugins/storage-engines/mroonga/mroonga-system-variables/)
+- [MyRocks System Variables](/columns-storage-engines-and-plugins/storage-engines/myrocks/myrocks-system-variables/)
 - [MyISAM System Variables](/kb/en/myisam-server-system-variables/)
-- [Performance Schema System Variables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables)
+- [Performance Schema System Variables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables/)
 - [Replication and Binary Log System Variables](/kb/en/replication-and-binary-log-server-system-variables/)
-- [S3 Storage Engine System Variables](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/s3-storage-engine-system-variables)
+- [S3 Storage Engine System Variables](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/s3-storage-engine-system-variables/)
 - [Server_Audit System Variables](/kb/en/server_audit-system-variables/)
-- [Spider System Variables](/columns-storage-engines-and-plugins/storage-engines/spider/spider-server-system-variables)
-- [SQL_ERROR_LOG Plugin System Variables](/replication/optimization-and-tuning/system-variables/sql_error_log-plugin-system-variables)
+- [Spider System Variables](/columns-storage-engines-and-plugins/storage-engines/spider/spider-server-system-variables/)
+- [SQL_ERROR_LOG Plugin System Variables](/replication/optimization-and-tuning/system-variables/sql_error_log-plugin-system-variables/)
 - [SSL System Variables](/kb/en/ssl-server-system-variables/)
 - [Threadpool System Variables](/kb/en/thread-pool-system-and-status-variables/)
-- [TokuDB System Variables](/columns-storage-engines-and-plugins/storage-engines/tokudb/tokudb-system-variables)
+- [TokuDB System Variables](/columns-storage-engines-and-plugins/storage-engines/tokudb/tokudb-system-variables/)
 
-See also the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables).
+See also the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables/).
 
 Most of these can be set with [command line options](/kb/en/mysqld-options-full-list/) and many of them can be changed at runtime.
 
@@ -37,7 +37,7 @@ There are a few ways to see the full list of server system variables:
 SHOW VARIABLES;
 ```
 
-- See [SHOW VARIABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-variables) for instructions on using this command.
+- See [SHOW VARIABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-variables/) for instructions on using this command.
 
 - From your shell, run mysqld like so:
 
@@ -63,7 +63,7 @@ shell> ./mysqld_safe --aria_group_commit="hard"
 aria_group_commit = "hard"
 ```
 
-- Set them from the mysql client using the [SET](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set) command. Only variables that are dynamic can be set at runtime in this way. Note that variables set in this way will not persist after a restart.
+- Set them from the mysql client using the [SET](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set/) command. Only variables that are dynamic can be set at runtime in this way. Note that variables set in this way will not persist after a restart.
 
 ```sql
 SET GLOBAL aria_group_commit="hard";
@@ -88,7 +88,7 @@ The suffix can be upper or lower-case.
 
 #### `alter_algorithm`
 
-- <strong>Description:</strong> The implied `ALGORITHM` for [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) if no `ALGORITHM` clause is specified. The deprecated variable [old_alter_table](#old_alter_table) is an alias for this.
+- <strong>Description:</strong> The implied `ALGORITHM` for [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) if no `ALGORITHM` clause is specified. The deprecated variable [old_alter_table](#old_alter_table) is an alias for this.
 <ul start="1"><li>`COPY` corresponds to the pre-MySQL 5.1 approach of creating an intermediate table, copying data one row at a time, and renaming and dropping tables. 
 </li><li>`INPLACE` requests that the operation be refused if it cannot be done natively inside a the storage engine. 
 </li><li>`DEFAULT` (the default) chooses `INPLACE` if available, and falls back to `COPY`. 
@@ -105,7 +105,7 @@ The suffix can be upper or lower-case.
 
 #### `analyze_sample_percentage`
 
-- <strong>Description:</strong> Percentage of rows from the table [ANALYZE TABLE](/sql-statements-structure/sql-statements/table-statements/analyze-table) will sample to collect table statistics. Set to 0 to let MariaDB decide what percentage of rows to sample.
+- <strong>Description:</strong> Percentage of rows from the table [ANALYZE TABLE](/sql-statements-structure/sql-statements/table-statements/analyze-table/) will sample to collect table statistics. Set to 0 to let MariaDB decide what percentage of rows to sample.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--analyze-sample-percentage=#</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -116,7 +116,7 @@ The suffix can be upper or lower-case.
 
 #### `autocommit`
 
-- <strong>Description:</strong> If set to 1, the default, all queries are committed immediately. The [LOCK IN SHARE MODE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/lock-in-share-mode) and [FOR UPDATE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/for-update) clauses therefore have no effect. If set to 0, they are only committed upon a [COMMIT](/kb/en/transactions-commit-statement/) statement, or rolled back with a [ROLLBACK](/kb/en/rollback-statement/) statement. If autocommit is set to 0, and then changed to 1, all open transactions are immediately committed.
+- <strong>Description:</strong> If set to 1, the default, all queries are committed immediately. The [LOCK IN SHARE MODE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/lock-in-share-mode/) and [FOR UPDATE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/for-update/) clauses therefore have no effect. If set to 0, they are only committed upon a [COMMIT](/kb/en/transactions-commit-statement/) statement, or rolled back with a [ROLLBACK](/kb/en/rollback-statement/) statement. If autocommit is set to 0, and then changed to 1, all open transactions are immediately committed.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--autocommit[=#]</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -127,7 +127,7 @@ The suffix can be upper or lower-case.
 
 #### `automatic_sp_privileges`
 
-- <strong>Description:</strong> When set to 1, the default, when a stored routine is created, the creator is automatically granted permission to [ALTER](/programming-customizing-mariadb/stored-routines/stored-procedures/alter-procedure) (which includes dropping) and to EXECUTE the routine. If set to 0, the creator is not automatically granted these privileges.
+- <strong>Description:</strong> When set to 1, the default, when a stored routine is created, the creator is automatically granted permission to [ALTER](/programming-customizing-mariadb/stored-routines/stored-procedures/alter-procedure/) (which includes dropping) and to EXECUTE the routine. If set to 0, the creator is not automatically granted these privileges.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--automatic-sp-privileges</code>, <code class="fixed" style="white-space:pre-wrap">--skip-automatic-sp-privileges</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -179,7 +179,7 @@ The suffix can be upper or lower-case.
 
 #### `bind_address`
 
-- <strong>Description:</strong> By default, the MariaDB server listens for TCP/IP connections on a network socket bound to a single address, 0.0.0.0. You can specify an alternative when the server starts using this option; either a host name, an IPv4 or an IPv6 address. In Debian and Ubuntu, the default bind_address is 127.0.0.1, which binds the server to listen on localhost only. `bind_address` has always been available as a [mysqld option](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options), from [MariaDB 10.3.3](/kb/en/mariadb-1033-release-notes/) its also available as a system variable.
+- <strong>Description:</strong> By default, the MariaDB server listens for TCP/IP connections on a network socket bound to a single address, 0.0.0.0. You can specify an alternative when the server starts using this option; either a host name, an IPv4 or an IPv6 address. In Debian and Ubuntu, the default bind_address is 127.0.0.1, which binds the server to listen on localhost only. `bind_address` has always been available as a [mysqld option](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/), from [MariaDB 10.3.3](/kb/en/mariadb-1033-release-notes/) its also available as a system variable.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--bind-address=addr</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -191,7 +191,7 @@ The suffix can be upper or lower-case.
 
 #### `bulk_insert_buffer_size`
 
-- <strong>Description:</strong> Size in bytes of the per-thread cache tree used to speed up bulk inserts into [MyISAM](/kb/en/myisam/) and [Aria](/columns-storage-engines-and-plugins/storage-engines/aria) tables. A value of 0 disables the cache tree.
+- <strong>Description:</strong> Size in bytes of the per-thread cache tree used to speed up bulk inserts into [MyISAM](/kb/en/myisam/) and [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/) tables. A value of 0 disables the cache tree.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--bulk-insert-buffer-size=#</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -234,7 +234,7 @@ The suffix can be upper or lower-case.
 
 #### `character_set_filesystem`
 
-- <strong>Description:</strong> The [character set](/kb/en/data-types-character-sets-and-collations/) for the filesystem. Used for converting file names specified as a string literal from [character_set_client](#character_set_client) to character_set_filesystem before opening the file. By default set to `binary`, so no conversion takes place. This could be useful for statements such as [LOAD_FILE()](/built-in-functions/string-functions/load_file) or [LOAD DATA INFILE](/kb/en/load-data-infile/) on system where multi-byte file names are use.
+- <strong>Description:</strong> The [character set](/kb/en/data-types-character-sets-and-collations/) for the filesystem. Used for converting file names specified as a string literal from [character_set_client](#character_set_client) to character_set_filesystem before opening the file. By default set to `binary`, so no conversion takes place. This could be useful for statements such as [LOAD_FILE()](/built-in-functions/string-functions/load_file/) or [LOAD DATA INFILE](/kb/en/load-data-infile/) on system where multi-byte file names are use.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--character-set-filesystem=name</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -286,7 +286,7 @@ The suffix can be upper or lower-case.
 
 #### `check_constraint_checks`
 
-- <strong>Description:</strong> If set to `0`, will disable [constraint checks](/sql-statements-structure/sql-statements/data-definition/constraint), for example when loading a table that violates some constraints that you plan to fix later.
+- <strong>Description:</strong> If set to `0`, will disable [constraint checks](/sql-statements-structure/sql-statements/data-definition/constraint/), for example when loading a table that violates some constraints that you plan to fix later.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--check-constraint-checks=[0|1]</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -339,7 +339,7 @@ The suffix can be upper or lower-case.
 
 #### `concurrent_insert`
 
-- <strong>Description:</strong> If set to `AUTO` or `1`, the default, MariaDB allows [concurrent INSERTs](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/concurrent-inserts) and SELECTs for [MyISAM](/kb/en/myisam/) tables with no free blocks in the data (deleted rows in the middle). If set to `NEVER` or `0`, concurrent inserts are disabled. If set to `ALWAYS` or `2`, concurrent inserts are permitted for all MyISAM tables, even those with holes, in which case new rows are added at the end of a table if the table is being used by another thread. <br><br>If the [--skip-new](/kb/en/mysqld-options/#-skip-new) option is used when starting the server, concurrent_insert is set to `NEVER`. <br><br>Changing the variable only affects new opened tables. Use [FLUSH TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush) If you want it to also affect cached tables. <br><br>See  [Concurrent Inserts](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/concurrent-inserts) for more.
+- <strong>Description:</strong> If set to `AUTO` or `1`, the default, MariaDB allows [concurrent INSERTs](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/concurrent-inserts/) and SELECTs for [MyISAM](/kb/en/myisam/) tables with no free blocks in the data (deleted rows in the middle). If set to `NEVER` or `0`, concurrent inserts are disabled. If set to `ALWAYS` or `2`, concurrent inserts are permitted for all MyISAM tables, even those with holes, in which case new rows are added at the end of a table if the table is being used by another thread. <br><br>If the [--skip-new](/kb/en/mysqld-options/#-skip-new) option is used when starting the server, concurrent_insert is set to `NEVER`. <br><br>Changing the variable only affects new opened tables. Use [FLUSH TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/) If you want it to also affect cached tables. <br><br>See  [Concurrent Inserts](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/concurrent-inserts/) for more.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--concurrent-insert[=value]</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -364,7 +364,7 @@ The suffix can be upper or lower-case.
 
 - <strong>Description:</strong> Write a core-file on crashes. The file name and location are system dependent. On Linux it is usually called `core.${PID}`, and it is usually written to the data directory. However, this can be changed.
 <ul start="1"><li>See [Enabling Core Dumps](/kb/en/enabling-core-dumps/) for more information.
-</li><li>Previously this system variable existed only as an [option](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options), but it was also made into a read-only system variable starting with [MariaDB 10.3.9](/kb/en/mariadb-1039-release-notes/), [MariaDB 10.2.17](/kb/en/mariadb-10217-release-notes/) and [MariaDB 10.1.35](/kb/en/mariadb-10135-release-notes/).
+</li><li>Previously this system variable existed only as an [option](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/), but it was also made into a read-only system variable starting with [MariaDB 10.3.9](/kb/en/mariadb-1039-release-notes/), [MariaDB 10.2.17](/kb/en/mariadb-10217-release-notes/) and [MariaDB 10.1.35](/kb/en/mariadb-10135-release-notes/).
 </li><li>On Windows &gt;= [MariaDB 10.4.3](/kb/en/mariadb-1043-release-notes/), this option is set by default. 
 </li><li>Note that the option accepts no arguments; specifying `--core-file` sets the value to `ON`. It cannot be disabled in the case of Windows &gt;= [MariaDB 10.4.3](/kb/en/mariadb-1043-release-notes/).
 </li></ul>
@@ -431,7 +431,7 @@ The suffix can be upper or lower-case.
 
 #### `debug_sync`
 
-- <strong>Description:</strong> Used in debugging to show the interface to the [Debug Sync facility](/clients-utilities/mysqltest/the-debug-sync-facility). MariaDB needs to be configured with -DENABLE_DEBUG_SYNC=1 for this variable to be available.
+- <strong>Description:</strong> Used in debugging to show the interface to the [Debug Sync facility](/clients-utilities/mysqltest/the-debug-sync-facility/). MariaDB needs to be configured with -DENABLE_DEBUG_SYNC=1 for this variable to be available.
 - <strong>Scope:</strong> Session
 - <strong>Dynamic:</strong> Yes
 - <strong>Data Type:</strong> `string`
@@ -441,7 +441,7 @@ The suffix can be upper or lower-case.
 
 #### `default_password_lifetime`
 
-- <strong>Description:</strong> This defines the global [password expiration policy](/mariadb-administration/user-server-security/user-account-management/user-password-expiry). 0 means automatic password expiration is disabled. If the value is a positive integer N, the passwords must be changed every N days. This behavior can be overridden using the password expiration options in [ALTER USER](/sql-statements-structure/sql-statements/account-management-sql-commands/alter-user).
+- <strong>Description:</strong> This defines the global [password expiration policy](/mariadb-administration/user-server-security/user-account-management/user-password-expiry/). 0 means automatic password expiration is disabled. If the value is a positive integer N, the passwords must be changed every N days. This behavior can be overridden using the password expiration options in [ALTER USER](/sql-statements-structure/sql-statements/account-management-sql-commands/alter-user/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--default-password-lifetime=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -498,7 +498,7 @@ The suffix can be upper or lower-case.
 
 #### `default_tmp_storage_engine`
 
-- <strong>Description:</strong>  Default storage engine that will be used for tables created with [CREATE TEMPORARY TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table) where no engine is specified. For internal temporary tables see [aria_used_for_temp_tables](/kb/en/aria-system-variables/#aria_used_for_temp_tables)). The storage engine used must be active or the server will not start. See [default_storage_engine](#default_storage_engine) for the default for non-temporary tables. Defaults to NULL, in which case the value from [default_storage_engine](#default_storage_engine) is used.
+- <strong>Description:</strong>  Default storage engine that will be used for tables created with [CREATE TEMPORARY TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/) where no engine is specified. For internal temporary tables see [aria_used_for_temp_tables](/kb/en/aria-system-variables/#aria_used_for_temp_tables)). The storage engine used must be active or the server will not start. See [default_storage_engine](#default_storage_engine) for the default for non-temporary tables. Defaults to NULL, in which case the value from [default_storage_engine](#default_storage_engine) is used.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--default-tmp-storage-engine=name</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -510,7 +510,7 @@ The suffix can be upper or lower-case.
 
 #### `default_week_format`
 
-- <strong>Description:</strong> Default mode for the [WEEK()](/built-in-functions/date-time-functions/week) function. See that page for details on the different modes
+- <strong>Description:</strong> Default mode for the [WEEK()](/built-in-functions/date-time-functions/week/) function. See that page for details on the different modes
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--default-week-format=#</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -522,7 +522,7 @@ The suffix can be upper or lower-case.
 
 #### `delay_key_write`
 
-- <strong>Description:</strong> Specifies how MyISAM tables handles [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table) DELAY_KEY_WRITE. If set to `ON`, the default, any DELAY KEY WRITEs are honored. The key buffer is then flushed only when the table closes, speeding up writes. MyISAM tables should be automatically checked upon startup in this case, and --external locking should not be used, as it can lead to index corruption. If set to `OFF`, DELAY KEY WRITEs are ignored, while if set to `ALL`, all new opened tables are treated as if created with DELAY KEY WRITEs enabled.
+- <strong>Description:</strong> Specifies how MyISAM tables handles [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/) DELAY_KEY_WRITE. If set to `ON`, the default, any DELAY KEY WRITEs are honored. The key buffer is then flushed only when the table closes, speeding up writes. MyISAM tables should be automatically checked upon startup in this case, and --external locking should not be used, as it can lead to index corruption. If set to `OFF`, DELAY KEY WRITEs are ignored, while if set to `ALL`, all new opened tables are treated as if created with DELAY KEY WRITEs enabled.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--delay-key-write[=name]</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -534,7 +534,7 @@ The suffix can be upper or lower-case.
 
 #### `delayed_insert_limit`
 
-- <strong>Description:</strong> After this many rows have been inserted with [INSERT DELAYED](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed), the handler will check for and execute any waiting [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) statements.
+- <strong>Description:</strong> After this many rows have been inserted with [INSERT DELAYED](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed/), the handler will check for and execute any waiting [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) statements.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--delayed-insert-limit=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -546,7 +546,7 @@ The suffix can be upper or lower-case.
 
 #### `delayed_insert_timeout`
 
-- <strong>Description:</strong> Time in seconds that the [INSERT DELAYED](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed) handler will wait for INSERTs before terminating.
+- <strong>Description:</strong> Time in seconds that the [INSERT DELAYED](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed/) handler will wait for INSERTs before terminating.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--delayed-insert-timeout=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -557,7 +557,7 @@ The suffix can be upper or lower-case.
 
 #### `delayed_queue_size`
 
-- <strong>Description:</strong> Number of rows, per table, that can be queued when performing [INSERT DELAYED](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed) statements. If the queue becomes full, clients attempting to perform INSERT DELAYED's will wait until the queue has room available again.
+- <strong>Description:</strong> Number of rows, per table, that can be queued when performing [INSERT DELAYED](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed/) statements. If the queue becomes full, clients attempting to perform INSERT DELAYED's will wait until the queue has room available again.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--delayed-queue-size=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -569,7 +569,7 @@ The suffix can be upper or lower-case.
 
 #### `disconnect_on_expired_password`
 
-- <strong>Description:</strong> When a user password has expired (see [User Password Expiry](/mariadb-administration/user-server-security/user-account-management/user-password-expiry)), this variable controls how the server handles clients that are not aware of the sandbox mode. If enabled, the client is not permitted to connect, otherwise the server puts the client in a sandbox mode.
+- <strong>Description:</strong> When a user password has expired (see [User Password Expiry](/mariadb-administration/user-server-security/user-account-management/user-password-expiry/)), this variable controls how the server handles clients that are not aware of the sandbox mode. If enabled, the client is not permitted to connect, otherwise the server puts the client in a sandbox mode.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--disconnect-on-expired-password[={0|1}]</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -664,7 +664,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `enforce_storage_engine`
 
-- <strong>Description:</strong> Force the use of a particular storage engine for new tables. Used to avoid unwanted creation of tables using another engine. For example, setting to [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) will prevent any [MyISAM](/kb/en/myisam/) tables from being created. If another engine is specified in a [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table) statement, the outcome depends on whether the `NO_ENGINE_SUBSTITUTION` [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode) has been set or not. If set (the default from [MariaDB 10.1.7](/kb/en/mariadb-1017-release-notes/)), the query will fail, while if not set, a warning will be returned and the table created according to the engine specified by this variable. The variable has a session scope, but is only modifiable by a user with the SUPER privilege.
+- <strong>Description:</strong> Force the use of a particular storage engine for new tables. Used to avoid unwanted creation of tables using another engine. For example, setting to [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) will prevent any [MyISAM](/kb/en/myisam/) tables from being created. If another engine is specified in a [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/) statement, the outcome depends on whether the `NO_ENGINE_SUBSTITUTION` [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode/) has been set or not. If set (the default from [MariaDB 10.1.7](/kb/en/mariadb-1017-release-notes/)), the query will fail, while if not set, a warning will be returned and the table created according to the engine specified by this variable. The variable has a session scope, but is only modifiable by a user with the SUPER privilege.
 - <strong>Commandline:</strong> None
 - <strong>Scope:</strong> Session
 - <strong>Dynamic:</strong> Yes
@@ -702,7 +702,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `error_count`
 
-- <strong>Description:</strong> Read-only variable denoting the number of errors from the most recent statement in the current session that generated errors. See [SHOW_ERRORS()](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-errors).
+- <strong>Description:</strong> Read-only variable denoting the number of errors from the most recent statement in the current session that generated errors. See [SHOW_ERRORS()](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-errors/).
 - <strong>Scope:</strong> Session
 - <strong>Dynamic:</strong> Yes
 - <strong>Data Type:</strong> `numeric`
@@ -711,7 +711,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `event_scheduler`
 
-- <strong>Description:</strong> Status of the [Event](/programming-customizing-mariadb/triggers-events/event-scheduler/events) Scheduler. Can be set to `ON` or `OFF`, while `DISABLED` means it cannot be set at runtime. Setting the variable will cause a load of events if they were not loaded at startup.
+- <strong>Description:</strong> Status of the [Event](/programming-customizing-mariadb/triggers-events/event-scheduler/events/) Scheduler. Can be set to `ON` or `OFF`, while `DISABLED` means it cannot be set at runtime. Setting the variable will cause a load of events if they were not loaded at startup.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--event-scheduler[=value]</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -735,7 +735,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `explicit_defaults_for_timestamp`
 
-- <strong>Description:</strong> This option causes [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table) to create all [TIMESTAMP](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/timestamp) columns as [NULL](/columns-storage-engines-and-plugins/data-types/null-values) with the DEFAULT NULL attribute, Without this option, TIMESTAMP columns are NOT NULL and have implicit DEFAULT clauses.
+- <strong>Description:</strong> This option causes [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/) to create all [TIMESTAMP](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/timestamp/) columns as [NULL](/columns-storage-engines-and-plugins/data-types/null-values/) with the DEFAULT NULL attribute, Without this option, TIMESTAMP columns are NOT NULL and have implicit DEFAULT clauses.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--explicit-defaults-for-timestamp=[={0|1}]</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -779,7 +779,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `foreign_key_checks`
 
-- <strong>Description:</strong> If set to 1 (the default) [foreign key constraints](/replication/optimization-and-tuning/optimization-and-indexes/foreign-keys) (including ON UPDATE and ON DELETE behavior) [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables are checked, while if set to 0, they are not checked. `0` is not recommended for normal use, though it can be useful in situations where you know the data is consistent, but want to reload data in a different order from that that specified by parent/child relationships. Setting this variable to 1 does not retrospectively check for inconsistencies introduced while set to 0.
+- <strong>Description:</strong> If set to 1 (the default) [foreign key constraints](/replication/optimization-and-tuning/optimization-and-indexes/foreign-keys/) (including ON UPDATE and ON DELETE behavior) [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables are checked, while if set to 0, they are not checked. `0` is not recommended for normal use, though it can be useful in situations where you know the data is consistent, but want to reload data in a different order from that that specified by parent/child relationships. Setting this variable to 1 does not retrospectively check for inconsistencies introduced while set to 0.
 - <strong>Commandline:</strong> None
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -790,7 +790,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `ft_boolean_syntax`
 
-- <strong>Description:</strong> List of operators supported by an IN BOOLEAN MODE [full-text search](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes). If you wish to change, note that each character must be ASCII and non-alphanumeric, the full string must be 14 characters and the first or second character must be a space. Positions 10, 13 and 14 are reserved for future extensions. Also, no duplicates are permitted except for the phrase quoting characters in positions 11 and 12, which may be the same.
+- <strong>Description:</strong> List of operators supported by an IN BOOLEAN MODE [full-text search](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/). If you wish to change, note that each character must be ASCII and non-alphanumeric, the full string must be 14 characters and the first or second character must be a space. Positions 10, 13 and 14 are reserved for future extensions. Also, no duplicates are permitted except for the phrase quoting characters in positions 11 and 12, which may be the same.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--ft-boolean-syntax=name</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -801,7 +801,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `ft_max_word_len`
 
-- <strong>Description:</strong> Maximum length for a word to be included in the [MyISAM](/kb/en/myisam/) [full-text index](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes). If this variable is changed, the full-text index must be rebuilt. The quickest way to do this is by issuing a <code class="fixed" style="white-space:pre-wrap">REPAIR TABLE table_name QUICK</code> statement. See [innodb_ft_max_token_size](/kb/en/innodb-system-variables/#innodb_ft_max_token_size) for the [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) equivalent.
+- <strong>Description:</strong> Maximum length for a word to be included in the [MyISAM](/kb/en/myisam/) [full-text index](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/). If this variable is changed, the full-text index must be rebuilt. The quickest way to do this is by issuing a <code class="fixed" style="white-space:pre-wrap">REPAIR TABLE table_name QUICK</code> statement. See [innodb_ft_max_token_size](/kb/en/innodb-system-variables/#innodb_ft_max_token_size) for the [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) equivalent.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--ft-max-word-len=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -813,7 +813,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `ft_min_word_len`
 
-- <strong>Description:</strong> Minimum length for a word to be included in the [MyISAM](/kb/en/myisam/) [full-text index](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes). If this variable is changed, the full-text index must be rebuilt. The quickest way to do this is by issuing a <code class="fixed" style="white-space:pre-wrap">REPAIR TABLE table_name QUICK</code> statement. See [innodb_ft_min_token_size](/kb/en/innodb-system-variables/#innodb_ft_min_token_size) for the [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) equivalent.
+- <strong>Description:</strong> Minimum length for a word to be included in the [MyISAM](/kb/en/myisam/) [full-text index](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/). If this variable is changed, the full-text index must be rebuilt. The quickest way to do this is by issuing a <code class="fixed" style="white-space:pre-wrap">REPAIR TABLE table_name QUICK</code> statement. See [innodb_ft_min_token_size](/kb/en/innodb-system-variables/#innodb_ft_min_token_size) for the [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) equivalent.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--ft-min-word-len=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -825,7 +825,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `ft_query_expansion_limit`
 
-- <strong>Description:</strong> For [full-text searches](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes), denotes the numer of top matches when using WITH QUERY EXPANSION.
+- <strong>Description:</strong> For [full-text searches](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/), denotes the numer of top matches when using WITH QUERY EXPANSION.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--ft-query-expansion-limit=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -837,7 +837,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `ft_stopword_file`
 
-- <strong>Description:</strong> File containing a list of [stopwords](/kb/en/stopwords/) for use in [MyISAM](/kb/en/myisam/) [full-text searches](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes). Unless an absolute path is specified the file will be looked for in the data directory. The file is not parsed for comments, so all words found become stopwords. By default, a built-in list of words (built from `storage/myisam/ft_static.c file`) is used. Stopwords can be disabled by setting this variable to `''` (an empty string). If this variable is changed, the full-text index must be rebuilt. The quickest way to do this is by issuing a <code class="fixed" style="white-space:pre-wrap">REPAIR TABLE table_name QUICK</code> statement. See [innodb_ft_server_stopword_table](/kb/en/innodb-system-variables/#innodb_ft_server_stopword_table) for the [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) equivalent.
+- <strong>Description:</strong> File containing a list of [stopwords](/kb/en/stopwords/) for use in [MyISAM](/kb/en/myisam/) [full-text searches](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/). Unless an absolute path is specified the file will be looked for in the data directory. The file is not parsed for comments, so all words found become stopwords. By default, a built-in list of words (built from `storage/myisam/ft_static.c file`) is used. Stopwords can be disabled by setting this variable to `''` (an empty string). If this variable is changed, the full-text index must be rebuilt. The quickest way to do this is by issuing a <code class="fixed" style="white-space:pre-wrap">REPAIR TABLE table_name QUICK</code> statement. See [innodb_ft_server_stopword_table](/kb/en/innodb-system-variables/#innodb_ft_server_stopword_table) for the [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) equivalent.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--ft-stopword-file=file_name</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -848,7 +848,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `general_log`
 
-- <strong>Description:</strong> If set to 0, the default unless the --general-log option is used, the [general query log](/mariadb-administration/server-monitoring-logs/general-query-log) is disabled, while if set to 1, the general query log is enabled. See [log_output](#log_output) for how log files are written. If that variable is set to `NONE`, no logs will be written even if general_query_log is set to `1`.
+- <strong>Description:</strong> If set to 0, the default unless the --general-log option is used, the [general query log](/mariadb-administration/server-monitoring-logs/general-query-log/) is disabled, while if set to 1, the general query log is enabled. See [log_output](#log_output) for how log files are written. If that variable is set to `NONE`, no logs will be written even if general_query_log is set to `1`.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--general-log</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -859,7 +859,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `general_log_file`
 
-- <strong>Description:</strong> Name of the [general query log](/mariadb-administration/server-monitoring-logs/general-query-log) file. If this is not specified, the name is taken from the [log-basename](/kb/en/mysqld-options/#-log-basename) setting or from your system hostname with <code class="highlight fixed" style="white-space:pre-wrap">.log</code> as a suffix.
+- <strong>Description:</strong> Name of the [general query log](/mariadb-administration/server-monitoring-logs/general-query-log/) file. If this is not specified, the name is taken from the [log-basename](/kb/en/mysqld-options/#-log-basename) setting or from your system hostname with <code class="highlight fixed" style="white-space:pre-wrap">.log</code> as a suffix.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--general-log-file=file_name</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -870,7 +870,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `group_concat_max_len`
 
-- <strong>Description:</strong> Maximum length in bytes of the returned result for a [GROUP_CONCAT()](/built-in-functions/aggregate-functions/group_concat) function.
+- <strong>Description:</strong> Maximum length in bytes of the returned result for a [GROUP_CONCAT()](/built-in-functions/aggregate-functions/group_concat/) function.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--group-concat-max-len=#</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -888,7 +888,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `have_compress`
 
-- <strong>Description:</strong> If the zlib compression library is accessible to the server, this will be set to `YES`, otherwise it will be `NO`. The [COMPRESS()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/compress) and [UNCOMPRESS()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/uncompress) functions will only be available if set to `YES`.
+- <strong>Description:</strong> If the zlib compression library is accessible to the server, this will be set to `YES`, otherwise it will be `NO`. The [COMPRESS()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/compress/) and [UNCOMPRESS()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/uncompress/) functions will only be available if set to `YES`.
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
 
@@ -896,7 +896,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `have_crypt`
 
-- <strong>Description:</strong> If the crypt() system call is available this variable will be set to `YES`, otherwise it will be set to `NO`.  If set to `NO`, the [ENCRYPT()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/encrypt) function cannot be used.
+- <strong>Description:</strong> If the crypt() system call is available this variable will be set to `YES`, otherwise it will be set to `NO`.  If set to `NO`, the [ENCRYPT()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/encrypt/) function cannot be used.
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
 
@@ -904,7 +904,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `have_csv`
 
-- <strong>Description:</strong> If the server supports [CSV tables](/columns-storage-engines-and-plugins/storage-engines/csv), will be set to `YES`, otherwise will be set to `NO`. Removed in [MariaDB 10.0](/kb/en/what-is-mariadb-100/), use the [Information Schema PLUGINS](/kb/en/information-schema-plugins-table/) table or [SHOW ENGINES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engines) instead.
+- <strong>Description:</strong> If the server supports [CSV tables](/columns-storage-engines-and-plugins/storage-engines/csv/), will be set to `YES`, otherwise will be set to `NO`. Removed in [MariaDB 10.0](/kb/en/what-is-mariadb-100/), use the [Information Schema PLUGINS](/kb/en/information-schema-plugins-table/) table or [SHOW ENGINES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engines/) instead.
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
 - <strong>Removed:</strong> [MariaDB 10.0](/kb/en/what-is-mariadb-100/)
@@ -938,7 +938,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `have_partitioning`
 
-- <strong>Description:</strong> If the server supports partitioning, will be set to `YES`, unless the `--skip-partition` option is used, in which case will be set to `DISABLED`. Will be set to `NO` otherwise. Removed in [MariaDB 10.0](/kb/en/what-is-mariadb-100/) - [SHOW PLUGINS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-plugins) should be used instead.
+- <strong>Description:</strong> If the server supports partitioning, will be set to `YES`, unless the `--skip-partition` option is used, in which case will be set to `DISABLED`. Will be set to `NO` otherwise. Removed in [MariaDB 10.0](/kb/en/what-is-mariadb-100/) - [SHOW PLUGINS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-plugins/) should be used instead.
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
 - <strong>Removed:</strong> [MariaDB 10.0](/kb/en/what-is-mariadb-100/)
@@ -947,7 +947,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `have_profiling`
 
-- <strong>Description:</strong> If statement profiling is available, will be set to `YES`, otherwise will be set to `NO`.  See [SHOW PROFILES()](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-profiles) and [SHOW PROFILE()](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-profile).
+- <strong>Description:</strong> If statement profiling is available, will be set to `YES`, otherwise will be set to `NO`.  See [SHOW PROFILES()](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-profiles/) and [SHOW PROFILE()](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-profile/).
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
 
@@ -963,7 +963,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `have_rtree_keys`
 
-- <strong>Description:</strong> If RTREE indexes (used for [spatial indexes](/sql-statements-structure/geographic-geometric-features/spatial-index)) are available, will be set to `YES`, otherwise will be set to `NO`.
+- <strong>Description:</strong> If RTREE indexes (used for [spatial indexes](/sql-statements-structure/geographic-geometric-features/spatial-index/)) are available, will be set to `YES`, otherwise will be set to `NO`.
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
 
@@ -984,7 +984,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `histogram_size`
 
-- <strong>Description:</strong> Number of bytes used for a [histogram](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/histogram-based-statistics). If set to 0, no histograms are created by [ANALYZE](/sql-statements-structure/sql-statements/table-statements/analyze-table).
+- <strong>Description:</strong> Number of bytes used for a [histogram](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/histogram-based-statistics/). If set to 0, no histograms are created by [ANALYZE](/sql-statements-structure/sql-statements/table-statements/analyze-table/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--histogram-size=#</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -997,7 +997,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `histogram_type`
 
-- <strong>Description:</strong> Specifies the type of [histograms](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/histogram-based-statistics) created by [ANALYZE](/sql-statements-structure/sql-statements/table-statements/analyze-table). 
+- <strong>Description:</strong> Specifies the type of [histograms](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/histogram-based-statistics/) created by [ANALYZE](/sql-statements-structure/sql-statements/table-statements/analyze-table/). 
 <ul start="1"><li>`SINGLE_PREC_HB` - single precision height-balanced.
 </li><li>`DOUBLE_PREC_HB` - double precision height-balanced.
 </li></ul>
@@ -1013,7 +1013,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `host_cache_size`
 
-- <strong>Description:</strong> Number of host names that will be cached to avoid resolving. Setting to `0` disables the cache. Changing the value while the server is running causes an implicit [FLUSH HOSTS](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush), clearing the host cache and truncating the [performance_schema.host_cache](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-host_cache-table) table. If you are connecting from a lot of different machines you should consider increasing.
+- <strong>Description:</strong> Number of host names that will be cached to avoid resolving. Setting to `0` disables the cache. Changing the value while the server is running causes an implicit [FLUSH HOSTS](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/), clearing the host cache and truncating the [performance_schema.host_cache](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-host_cache-table/) table. If you are connecting from a lot of different machines you should consider increasing.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--host-cache-size=#</code>.
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -1041,7 +1041,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `idle_readonly_transaction_timeout`
 
-- <strong>Description:</strong> Time in seconds that the server waits for idle read-only transactions before killing the connection. If set to `0`, the default, connections are never killed. See also [idle_transaction_timeout](#idle_transaction_timeout), [idle_write_transaction_timeout](#idle_write_transaction_timeout) and [Transaction Timeouts](/sql-statements-structure/sql-statements/transactions/transaction-timeouts).
+- <strong>Description:</strong> Time in seconds that the server waits for idle read-only transactions before killing the connection. If set to `0`, the default, connections are never killed. See also [idle_transaction_timeout](#idle_transaction_timeout), [idle_write_transaction_timeout](#idle_write_transaction_timeout) and [Transaction Timeouts](/sql-statements-structure/sql-statements/transactions/transaction-timeouts/).
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
 - <strong>Data Type:</strong> `numeric`
@@ -1053,7 +1053,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `idle_transaction_timeout`
 
-- <strong>Description:</strong> Time in seconds that the server waits for idle transactions before killing the connection. If set to `0`, the default, connections are never killed. See also [idle_readonly_transaction_timeout](#idle_readonly_transaction_timeout), [idle_write_transaction_timeout](#idle_write_transaction_timeout) and [Transaction Timeouts](/sql-statements-structure/sql-statements/transactions/transaction-timeouts).
+- <strong>Description:</strong> Time in seconds that the server waits for idle transactions before killing the connection. If set to `0`, the default, connections are never killed. See also [idle_readonly_transaction_timeout](#idle_readonly_transaction_timeout), [idle_write_transaction_timeout](#idle_write_transaction_timeout) and [Transaction Timeouts](/sql-statements-structure/sql-statements/transactions/transaction-timeouts/).
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
 - <strong>Data Type:</strong> `numeric`
@@ -1065,7 +1065,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `idle_write_transaction_timeout`
 
-- <strong>Description:</strong> Time in seconds that the server waits for idle read-write transactions before killing the connection. If set to `0`, the default, connections are never killed. See also [idle_transaction_timeout](#idle_transaction_timeout), [idle_readonly_transaction_timeout](#idle_readonly_transaction_timeout) and  [Transaction Timeouts](/sql-statements-structure/sql-statements/transactions/transaction-timeouts). Called `idle_readwrite_transaction_timeout` until [MariaDB 10.3.2](/kb/en/mariadb-1032-release-notes/).
+- <strong>Description:</strong> Time in seconds that the server waits for idle read-write transactions before killing the connection. If set to `0`, the default, connections are never killed. See also [idle_transaction_timeout](#idle_transaction_timeout), [idle_readonly_transaction_timeout](#idle_readonly_transaction_timeout) and  [Transaction Timeouts](/sql-statements-structure/sql-statements/transactions/transaction-timeouts/). Called `idle_readwrite_transaction_timeout` until [MariaDB 10.3.2](/kb/en/mariadb-1032-release-notes/).
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
 - <strong>Data Type:</strong> `numeric`
@@ -1077,7 +1077,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `ignore_db_dirs`
 
-- <strong>Description:</strong> Tells the server that this directory can never be a database. That means two things - firstly it is ignored by the [SHOW DATABASES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-databases) command and [INFORMATION_SCHEMA](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema) tables. And secondly, USE, CREATE DATABASE and SELECT statements will return an error if the database from the ignored list specified. Use this option several times if you need to ignore more than one directory. To make the list empty set the void value to the option as --ignore-db-dir=. If the option or configuration is specified multiple times, viewing this value will list the ignore directories separated by a period.
+- <strong>Description:</strong> Tells the server that this directory can never be a database. That means two things - firstly it is ignored by the [SHOW DATABASES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-databases/) command and [INFORMATION_SCHEMA](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/) tables. And secondly, USE, CREATE DATABASE and SELECT statements will return an error if the database from the ignored list specified. Use this option several times if you need to ignore more than one directory. To make the list empty set the void value to the option as --ignore-db-dir=. If the option or configuration is specified multiple times, viewing this value will list the ignore directories separated by a period.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--ignore-db-dirs=dir</code>.
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -1087,7 +1087,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `in_predicate_conversion_threshold`
 
-- <strong>Description:</strong> The minimum number of scalar elements in the value list of an IN predicate that triggers its conversion to an IN subquery. Set to 0 to disable the conversion. See [Conversion of Big IN Predicates Into Subqueries](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/conversion-of-big-in-predicates-into-subqueries).
+- <strong>Description:</strong> The minimum number of scalar elements in the value list of an IN predicate that triggers its conversion to an IN subquery. Set to 0 to disable the conversion. See [Conversion of Big IN Predicates Into Subqueries](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/conversion-of-big-in-predicates-into-subqueries/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--in-predicate-conversion-threshold=#</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> No
@@ -1131,7 +1131,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `insert_id`
 
-- <strong>Description:</strong> Value to be used for the next statement inserting a new [AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment) value.
+- <strong>Description:</strong> Value to be used for the next statement inserting a new [AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment/) value.
 - <strong>Scope:</strong> Session
 - <strong>Dynamic:</strong> Yes
 - <strong>Data Type:</strong> `numeric`
@@ -1178,7 +1178,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `join_cache_level`
 
-- <strong>Description:</strong> Controls which of the eight block-based algorithms can be used for join operations. See [Block-based join algorithms](/replication/optimization-and-tuning/query-optimizations/block-based-join-algorithms) for more information.
+- <strong>Description:</strong> Controls which of the eight block-based algorithms can be used for join operations. See [Block-based join algorithms](/replication/optimization-and-tuning/query-optimizations/block-based-join-algorithms/) for more information.
 <ul><li>1 – flat (Block Nested Loop) BNL
 </li><li>2 – incremental BNL
 </li><li>3 – flat Block Nested Loop Hash (BNLH)
@@ -1229,7 +1229,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `large_pages`
 
-- <strong>Description:</strong> Indicates whether large page support (Linux only - called huge pages) is used.  This is set with `--large-pages` or disabled with `--skip-large-pages`. Large pages are used for the [innodb buffer pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool) and for online DDL (of size 3* [innodb_sort_buffer_size](/kb/en/innodb-system-variables/#innodb_sort_buffer_size) (or 6 when encryption is used)). To use large pages, the Linux `sysctl` variable `kernel.shmmax` must be large than the llocation. Also the `sysctl` variable `vm.nr_hugepages` multipled by [large-page](#large_page_size)) must be larger than the usage. The ulimit for locked memory must be sufficient to cover the amount used (`ulimit -l` and equalivent in /etc/security/limits.conf / or in systemd [LimitMEMLOCK](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd)). If these operating system controls or insufficient free huge pages are available, the allocation of large pages will fall back to conventional memory allocation and a warning will appear in the logs. Only allocations of the default `Hugepagesize` currently occur (see `/proc/meminfo`).
+- <strong>Description:</strong> Indicates whether large page support (Linux only - called huge pages) is used.  This is set with `--large-pages` or disabled with `--skip-large-pages`. Large pages are used for the [innodb buffer pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool/) and for online DDL (of size 3* [innodb_sort_buffer_size](/kb/en/innodb-system-variables/#innodb_sort_buffer_size) (or 6 when encryption is used)). To use large pages, the Linux `sysctl` variable `kernel.shmmax` must be large than the llocation. Also the `sysctl` variable `vm.nr_hugepages` multipled by [large-page](#large_page_size)) must be larger than the usage. The ulimit for locked memory must be sufficient to cover the amount used (`ulimit -l` and equalivent in /etc/security/limits.conf / or in systemd [LimitMEMLOCK](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd/)). If these operating system controls or insufficient free huge pages are available, the allocation of large pages will fall back to conventional memory allocation and a warning will appear in the logs. Only allocations of the default `Hugepagesize` currently occur (see `/proc/meminfo`).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--large-pages</code>, <code class="fixed" style="white-space:pre-wrap">--skip-large-pages</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -1240,7 +1240,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `last_insert_id`
 
-- <strong>Description:</strong> Contains the same value as that returned by [LAST_INSERT_ID()](/built-in-functions/secondary-functions/information-functions/last_insert_id). Note that setting this variable doen't update the value returned by the underlying function.
+- <strong>Description:</strong> Contains the same value as that returned by [LAST_INSERT_ID()](/built-in-functions/secondary-functions/information-functions/last_insert_id/). Note that setting this variable doen't update the value returned by the underlying function.
 - <strong>Scope:</strong> Session
 - <strong>Dynamic:</strong> Yes
 - <strong>Data Type:</strong> `numeric`
@@ -1249,11 +1249,11 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `lc_messages`
 
-- <strong>Description:</strong> This system variable can be specified as a [locale](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale) name. The language of the associated [locale](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale) will be used for error messages. See [Server Locales](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale) for a list of supported locales and their associated languages.
+- <strong>Description:</strong> This system variable can be specified as a [locale](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale/) name. The language of the associated [locale](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale/) will be used for error messages. See [Server Locales](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale/) for a list of supported locales and their associated languages.
 <ul start="1"><li>This system variable is set to `en_US` by default, which means that error messages are in English by default.
-</li><li>If this system variable is set to a valid [locale](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale) name, but the server can't find an [error message file](/kb/en/error-log/#error-messages-file) for the language associated with the [locale](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale), then the default language will be used instead.
+</li><li>If this system variable is set to a valid [locale](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale/) name, but the server can't find an [error message file](/kb/en/error-log/#error-messages-file) for the language associated with the [locale](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale/), then the default language will be used instead.
 </li><li>This system variable is used along with the <a undefined>lc_messages_dir</a> system variable to construct the path to the [error messages file](/kb/en/error-log/#error-messages-file).
-</li><li>See [Setting the Language for Error Messages](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/setting-the-language-for-error-messages) for more information.
+</li><li>See [Setting the Language for Error Messages](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/setting-the-language-for-error-messages/) for more information.
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--lc-messages=name</code>
 - <strong>Scope:</strong> Global, Session
@@ -1265,10 +1265,10 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `lc_messages_dir`
 
-- <strong>Description:</strong> This system variable can be specified either as the path to the directory storing the server's [error message files](/kb/en/error-log/#error-messages-file) or as the path to the directory storing the specific language's [error message file](/kb/en/error-log/#error-messages-file). See [Server Locales](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale) for a list of available locales and their related languages.
-<ul start="1"><li>The server initially tries to interpret the value of this system variable as a path to the directory storing the server's [error message files](/kb/en/error-log/#error-messages-file). Therefore, it constructs the path to the language's [error message file](/kb/en/error-log/#error-messages-file) by concatenating the value of this system variable with the language name of the [locale](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale) specified by the <a undefined>lc_messages</a> system variable .
+- <strong>Description:</strong> This system variable can be specified either as the path to the directory storing the server's [error message files](/kb/en/error-log/#error-messages-file) or as the path to the directory storing the specific language's [error message file](/kb/en/error-log/#error-messages-file). See [Server Locales](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale/) for a list of available locales and their related languages.
+<ul start="1"><li>The server initially tries to interpret the value of this system variable as a path to the directory storing the server's [error message files](/kb/en/error-log/#error-messages-file). Therefore, it constructs the path to the language's [error message file](/kb/en/error-log/#error-messages-file) by concatenating the value of this system variable with the language name of the [locale](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale/) specified by the <a undefined>lc_messages</a> system variable .
 </li><li>If the server does not find the [error message file](/kb/en/error-log/#error-messages-file) for the language, then it tries to interpret the value of this system variable as a direct path to the directory storing the specific language's [error message file](/kb/en/error-log/#error-messages-file).
-</li><li>See [Setting the Language for Error Messages](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/setting-the-language-for-error-messages) for more information.
+</li><li>See [Setting the Language for Error Messages](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/setting-the-language-for-error-messages/) for more information.
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--lc-messages-dir=path</code>
 - <strong>Scope:</strong> Global
@@ -1279,7 +1279,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `lc_time_names`
 
-- <strong>Description:</strong> The locale that determines the language used for the date and time functions [DAYNAME()](/built-in-functions/date-time-functions/dayname), [MONTHNAME()](/built-in-functions/date-time-functions/monthname) and [DATE_FORMAT()](date-format). Locale names are language and region subtags, for example 'en_ZA' (English - South Africa) or 'es_US: Spanish - United States'. The default is always 'en-US' regardless of the system's locale setting. See [server locale](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale) for a full list of supported locales.
+- <strong>Description:</strong> The locale that determines the language used for the date and time functions [DAYNAME()](/built-in-functions/date-time-functions/dayname/), [MONTHNAME()](/built-in-functions/date-time-functions/monthname/) and [DATE_FORMAT()](date-format). Locale names are language and region subtags, for example 'en_ZA' (English - South Africa) or 'es_US: Spanish - United States'. The default is always 'en-US' regardless of the system's locale setting. See [server locale](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale/) for a full list of supported locales.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--lc-time-names=name</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -1310,7 +1310,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `lock_wait_timeout`
 
-- <strong>Description:</strong> Timeout in seconds for attempts to acquire [metadata locks](/sql-statements-structure/sql-statements/transactions/metadata-locking). Statements using metadata locks include [FLUSH TABLES WITH READ LOCK](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush), [LOCK TABLES](/kb/en/transactions-lock/), HANDLER and DML and DDL operations on tables, [stored procedures](/programming-customizing-mariadb/stored-routines/stored-procedures) and [functions](/programming-customizing-mariadb/stored-routines/stored-functions), and [views](/programming-customizing-mariadb/views). The timeout is separate for each attempt, of which there may be multiple in a single statement. `0` (from [MariaDB 10.3.0](/kb/en/mariadb-1030-release-notes/)) means no wait. See [WAIT and NOWAIT](/sql-statements-structure/sql-statements/transactions/wait-and-nowait).
+- <strong>Description:</strong> Timeout in seconds for attempts to acquire [metadata locks](/sql-statements-structure/sql-statements/transactions/metadata-locking/). Statements using metadata locks include [FLUSH TABLES WITH READ LOCK](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/), [LOCK TABLES](/kb/en/transactions-lock/), HANDLER and DML and DDL operations on tables, [stored procedures](/programming-customizing-mariadb/stored-routines/stored-procedures/) and [functions](/programming-customizing-mariadb/stored-routines/stored-functions/), and [views](/programming-customizing-mariadb/views/). The timeout is separate for each attempt, of which there may be multiple in a single statement. `0` (from [MariaDB 10.3.0](/kb/en/mariadb-1030-release-notes/)) means no wait. See [WAIT and NOWAIT](/sql-statements-structure/sql-statements/transactions/wait-and-nowait/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--lock-wait-timeout=#</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -1351,7 +1351,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `log_disabled_statements`
 
-- <strong>Description:</strong> If set, the specified type of statements (slave or stored procedure statements) will not be logged to the [general log](/mariadb-administration/server-monitoring-logs/general-query-log).
+- <strong>Description:</strong> If set, the specified type of statements (slave or stored procedure statements) will not be logged to the [general log](/mariadb-administration/server-monitoring-logs/general-query-log/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--log-disabled_statements=value</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> No
@@ -1364,7 +1364,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `log_error`
 
-- <strong>Description:</strong> Specifies the name of the [error log](/mariadb-administration/server-monitoring-logs/error-log). If [--console](/kb/en/mysqld-options/#-console) is specified later in the configuration (Windows only) or this option isn't specified, errors will be logged to stderr. If no name is provided, errors will still be logged to `hostname.err` in the `datadir` directory by default. If a configuration file sets `--log-error`, one can reset it with `--skip-log-error` (useful to override a system wide configuration file). MariaDB always writes its error log, but the destination is configurable. See [error log](/mariadb-administration/server-monitoring-logs/error-log) for details.
+- <strong>Description:</strong> Specifies the name of the [error log](/mariadb-administration/server-monitoring-logs/error-log/). If [--console](/kb/en/mysqld-options/#-console) is specified later in the configuration (Windows only) or this option isn't specified, errors will be logged to stderr. If no name is provided, errors will still be logged to `hostname.err` in the `datadir` directory by default. If a configuration file sets `--log-error`, one can reset it with `--skip-log-error` (useful to override a system wide configuration file). MariaDB always writes its error log, but the destination is configurable. See [error log](/mariadb-administration/server-monitoring-logs/error-log/) for details.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--log-error[=name]</code>, <code class="fixed" style="white-space:pre-wrap">--skip-log-error</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -1375,7 +1375,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `log_output`
 
-- <strong>Description:</strong> How the output for the [general query log](/mariadb-administration/server-monitoring-logs/general-query-log) and the [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log) is stored. By default written to file (`FILE`), it can also be stored in the [general_log](/kb/en/mysqlgeneral_log-table/) and [slow_log](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlslow_log-table) tables in the mysql database (`TABLE`), or not stored at all (`NONE`). More than one option can be chosen at the same time, with `NONE` taking precedence if present. Logs will not be written if logging is not enabled. See [Writing logs into tables](/mariadb-administration/server-monitoring-logs/writing-logs-into-tables), and the [slow_query_log](#slow_query_log) and [general_log](#general_log) server system variables.
+- <strong>Description:</strong> How the output for the [general query log](/mariadb-administration/server-monitoring-logs/general-query-log/) and the [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log/) is stored. By default written to file (`FILE`), it can also be stored in the [general_log](/kb/en/mysqlgeneral_log-table/) and [slow_log](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlslow_log-table/) tables in the mysql database (`TABLE`), or not stored at all (`NONE`). More than one option can be chosen at the same time, with `NONE` taking precedence if present. Logs will not be written if logging is not enabled. See [Writing logs into tables](/mariadb-administration/server-monitoring-logs/writing-logs-into-tables/), and the [slow_query_log](#slow_query_log) and [general_log](#general_log) server system variables.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--log-output=name</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -1387,7 +1387,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `log_queries_not_using_indexes`
 
-- <strong>Description:</strong> Queries that don't use an index, or that perform a  full index scan where the index doesn't limit the number of rows, will be logged to the [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log) (regardless of time taken). The slow query log needs to be enabled for this to have an effect. Mapped to `log_slow_filter='not_using_index'` from [MariaDB 10.3.1](/kb/en/mariadb-1031-release-notes/).
+- <strong>Description:</strong> Queries that don't use an index, or that perform a  full index scan where the index doesn't limit the number of rows, will be logged to the [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log/) (regardless of time taken). The slow query log needs to be enabled for this to have an effect. Mapped to `log_slow_filter='not_using_index'` from [MariaDB 10.3.1](/kb/en/mariadb-1031-release-notes/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--log-queries-not-using-indexes</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -1398,7 +1398,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `log_slow_admin_statements`
 
-- <strong>Description:</strong> Log slow [OPTIMIZE](/replication/optimization-and-tuning/optimizing-tables/optimize-table), [ANALYZE](/sql-statements-structure/sql-statements/table-statements/analyze-table), [ALTER](/sql-statements-structure/sql-statements/data-definition/alter) and other [administrative](/kb/en/slow-query-log-overview/#logging-slow-administrative-statements) statements to the [slow log](/mariadb-administration/server-monitoring-logs/slow-query-log) if it is open. Before [MariaDB 10.1.13](/kb/en/mariadb-10113-release-notes/), this was only available as a mysqld option, not a server variable. See also [log_slow_disabled_statements](#log_slow_disabled_statements) and [log_slow_filter](#log_slow_filter).
+- <strong>Description:</strong> Log slow [OPTIMIZE](/replication/optimization-and-tuning/optimizing-tables/optimize-table/), [ANALYZE](/sql-statements-structure/sql-statements/table-statements/analyze-table/), [ALTER](/sql-statements-structure/sql-statements/data-definition/alter/) and other [administrative](/kb/en/slow-query-log-overview/#logging-slow-administrative-statements) statements to the [slow log](/mariadb-administration/server-monitoring-logs/slow-query-log/) if it is open. Before [MariaDB 10.1.13](/kb/en/mariadb-10113-release-notes/), this was only available as a mysqld option, not a server variable. See also [log_slow_disabled_statements](#log_slow_disabled_statements) and [log_slow_filter](#log_slow_filter).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--log-slow-admin-statements</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -1413,7 +1413,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `log_slow_disabled_statements`
 
-- <strong>Description:</strong> If set, the specified type of statements will not be logged to the [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log). See also [log_slow_admin_statements](#log_slow_admin_statements) and [log_slow_filter](#log_slow_filter).
+- <strong>Description:</strong> If set, the specified type of statements will not be logged to the [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log/). See also [log_slow_admin_statements](#log_slow_admin_statements) and [log_slow_filter](#log_slow_filter).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--log-slow-disabled_statements=value</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> No
@@ -1426,7 +1426,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `log_slow_filter`
 
-- <strong>Description:</strong> Comma-delimited string containing one or more settings for filtering what is logged to the [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log). If a query matches one of the types listed in the filter, and takes longer than [long_query_time](#long_query_time), it will be logged(except for 'not_using_index' which is always logged if enabled, regardless of the time). Sets [log-slow-admin-statements](#log_slow_admin_statements) to ON. See also [log_slow_disabled_statements](#log_slow_disabled_statements).
+- <strong>Description:</strong> Comma-delimited string containing one or more settings for filtering what is logged to the [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log/). If a query matches one of the types listed in the filter, and takes longer than [long_query_time](#long_query_time), it will be logged(except for 'not_using_index' which is always logged if enabled, regardless of the time). Sets [log-slow-admin-statements](#log_slow_admin_statements) to ON. See also [log_slow_disabled_statements](#log_slow_disabled_statements).
 <ul><li>`admin` log [administrative](/kb/en/slow-query-log-overview/#logging-slow-administrative-statements) queries (create, optimize, drop etc...) 
 </li><li>`filesort` logs queries that use a filesort. 
 </li><li>`filesort_on_disk` logs queries that perform a a filesort on disk.
@@ -1435,7 +1435,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 </li><li>`full_scan` logs queries that perform full table scans.
 </li><li>`not_using_index` logs queries that don't use an index, or that perform a full index scan where the index doesn't limit the number of rows. Disregards [long_query_time](#long_query_time), unlike other options. [log_queries_not_using_indexes](#log_queries_not_using_indexes) maps to this option. From [MariaDB 10.3.1](/kb/en/mariadb-1031-release-notes/).
 </li><li>`query_cache` log queries that are resolved by the query cache.
-</li><li>`query_cache_miss` logs queries that are not found in the [query cache](/replication/optimization-and-tuning/buffers-caches-and-threads/query-cache).
+</li><li>`query_cache_miss` logs queries that are not found in the [query cache](/replication/optimization-and-tuning/buffers-caches-and-threads/query-cache/).
 </li><li>`tmp_table` logs queries that create an implicit temporary table. 
 </li><li>`tmp_table_on_disk` logs queries that create a temporary table on disk.
 </li></ul>
@@ -1465,7 +1465,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `log_slow_rate_limit`
 
-- <strong>Description:</strong> The [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log) will log every this many queries. The default is `1`, or every query, while setting it to `20` would log every 20 queries, or five percent. Aims to reduce I/O usage and excessively large slow query logs. See also [Slow Query Log Extended Statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/slow-query-log-extended-statistics).
+- <strong>Description:</strong> The [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log/) will log every this many queries. The default is `1`, or every query, while setting it to `20` would log every 20 queries, or five percent. Aims to reduce I/O usage and excessively large slow query logs. See also [Slow Query Log Extended Statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/slow-query-log-extended-statistics/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">log-slow-rate-limit=#</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -1477,10 +1477,10 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `log_slow_verbosity`
 
-- <strong>Description:</strong> Controls information to be added to the [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log). Options are added in a comma-delimited string. See also [Slow Query Log Extended Statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/slow-query-log-extended-statistics). log_slow_verbosity is not supported when log_output='TABLE'.
+- <strong>Description:</strong> Controls information to be added to the [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log/). Options are added in a comma-delimited string. See also [Slow Query Log Extended Statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/slow-query-log-extended-statistics/). log_slow_verbosity is not supported when log_output='TABLE'.
 <ul><li>`query_plan` logs query execution plan information
 </li><li>`innodb` an unused Percona XtraDB option for logging XtraDB/InnoDB statistics.
-</li><li>`explain` prints EXPLAIN output in the [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log). See [EXPLAIN in the Slow Query Log](/mariadb-administration/server-monitoring-logs/slow-query-log/explain-in-the-slow-query-log).
+</li><li>`explain` prints EXPLAIN output in the [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log/). See [EXPLAIN in the Slow Query Log](/mariadb-administration/server-monitoring-logs/slow-query-log/explain-in-the-slow-query-log/).
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">log-slow-verbosity=value1[,value2...]</code>
 - <strong>Scope:</strong> Global, Session
@@ -1493,7 +1493,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `log_tc_size`
 
-- <strong>Description:</strong> Defines the size in bytes of the memory-mapped file-based transaction coordinator log, which is only used if the [binary log](/mariadb-administration/server-monitoring-logs/binary-log) is disabled. If you have two or more XA-capable storage engines enabled, then a transaction coordinator log must be available. This size is defined in multiples of 4096. This size could always be set as a commandline option, but it was made into a system variable in [MariaDB 10.1.3](/kb/en/mariadb-1013-release-notes/). See [Transaction Coordinator Log](/mariadb-administration/server-monitoring-logs/transaction-coordinator-log) for more information. Also see the <a undefined>--log-tc</a> server option and the <a undefined>--tc-heuristic-recover</a> option.
+- <strong>Description:</strong> Defines the size in bytes of the memory-mapped file-based transaction coordinator log, which is only used if the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) is disabled. If you have two or more XA-capable storage engines enabled, then a transaction coordinator log must be available. This size is defined in multiples of 4096. This size could always be set as a commandline option, but it was made into a system variable in [MariaDB 10.1.3](/kb/en/mariadb-1013-release-notes/). See [Transaction Coordinator Log](/mariadb-administration/server-monitoring-logs/transaction-coordinator-log/) for more information. Also see the <a undefined>--log-tc</a> server option and the <a undefined>--tc-heuristic-recover</a> option.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">log-tc-size=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -1508,7 +1508,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 - <strong>Description:</strong> Determines which additional warnings are logged. Setting to `0` disables additional warning logging. Note that this does not prevent all warnings, there is a core set of warnings that will always be written to the error log. The additional warnings are as follows:
 <ul start="1"><li>log_warnings &gt;= 1
-<ul start="1"><li>[Event scheduler](/programming-customizing-mariadb/triggers-events/event-scheduler) information.
+<ul start="1"><li>[Event scheduler](/programming-customizing-mariadb/triggers-events/event-scheduler/) information.
 </li><li>System signals
 </li><li>Wrong usage of <code class="fixed" style="white-space:pre-wrap">--user</code>
 </li><li>Failed setrlimit() and mlockall()
@@ -1519,7 +1519,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 </li><li>Slave reconnects
 </li><li>Killed slaves
 </li><li>Error reading relay logs
-</li><li>[Unsafe statements for statement-based replication](/replication/standard-replication/unsafe-statements-for-statement-based-replication). If this warning occurs frequently, it is throttled to prevent flooding the log.
+</li><li>[Unsafe statements for statement-based replication](/replication/standard-replication/unsafe-statements-for-statement-based-replication/). If this warning occurs frequently, it is throttled to prevent flooding the log.
 </li><li>Disabled [plugins](/kb/en/mariadb-plugins/) that one tried to enable or use.
 </li><li>UDF files that didn't include the required init functions.
 </li><li>DNS lookup failures.
@@ -1564,7 +1564,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `long_query_time`
 
-- <strong>Description:</strong> If a query takes longer than this many seconds to execute (microseconds can be specified too), the [Slow_queries](/kb/en/server-status-variables/#slow_queries) status variable is incremented and, if enabled, the query is logged to the [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log).
+- <strong>Description:</strong> If a query takes longer than this many seconds to execute (microseconds can be specified too), the [Slow_queries](/kb/en/server-status-variables/#slow_queries) status variable is incremented and, if enabled, the query is logged to the [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--long-query-time=#</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -1576,7 +1576,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `low_priority_updates`
 
-- <strong>Description:</strong> If set to 1 (0 is the default), for [storage engines](/columns-storage-engines-and-plugins/storage-engines) that use only table-level locking ([Aria](/columns-storage-engines-and-plugins/storage-engines/aria), [MyISAM](/kb/en/myisam/), [MEMORY](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/memory-storage-engine) and [MERGE](/columns-storage-engines-and-plugins/storage-engines/merge)), all INSERTs, UPDATEs, DELETEs and LOCK TABLE WRITEs will wait until there are no more SELECTs or LOCK TABLE READs pending on the relevant tables. Set this to 1 if reads are prioritized over writes. 
+- <strong>Description:</strong> If set to 1 (0 is the default), for [storage engines](/columns-storage-engines-and-plugins/storage-engines/) that use only table-level locking ([Aria](/columns-storage-engines-and-plugins/storage-engines/aria/), [MyISAM](/kb/en/myisam/), [MEMORY](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/memory-storage-engine/) and [MERGE](/columns-storage-engines-and-plugins/storage-engines/merge/)), all INSERTs, UPDATEs, DELETEs and LOCK TABLE WRITEs will wait until there are no more SELECTs or LOCK TABLE READs pending on the relevant tables. Set this to 1 if reads are prioritized over writes. 
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and earlier, <a undefined>sql_low_priority_updates</a> is a synonym.
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--low-priority-updates</code>
@@ -1628,7 +1628,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `max_connect_errors`
 
-- <strong>Description:</strong> Limit to the number of successive failed connects from a host before the host is blocked from making further connections. The count for a host is reset to zero if they successfully connect. To unblock, flush the host cache with a [FLUSH HOSTS](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush) statement or [mysqladmin flush-hosts](/clients-utilities/mysqladmin).
+- <strong>Description:</strong> Limit to the number of successive failed connects from a host before the host is blocked from making further connections. The count for a host is reset to zero if they successfully connect. To unblock, flush the host cache with a [FLUSH HOSTS](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/) statement or [mysqladmin flush-hosts](/clients-utilities/mysqladmin/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--max-connect-errors=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -1639,7 +1639,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `max_connections`
 
-- <strong>Description:</strong> The maximum number of simultaneous client connections. See also [Handling Too Many Connections](/replication/optimization-and-tuning/system-variables/handling-too-many-connections). Note that this value affects the number of file descriptors required on the operating system. Minimum was changed from `1` to `10` to avoid possible unexpected results for the user ([MDEV-18252](https://jira.mariadb.org/browse/MDEV-18252)).
+- <strong>Description:</strong> The maximum number of simultaneous client connections. See also [Handling Too Many Connections](/replication/optimization-and-tuning/system-variables/handling-too-many-connections/). Note that this value affects the number of file descriptors required on the operating system. Minimum was changed from `1` to `10` to avoid possible unexpected results for the user ([MDEV-18252](https://jira.mariadb.org/browse/MDEV-18252)).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--max-connections=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -1654,7 +1654,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `max_delayed_threads`
 
-- <strong>Description:</strong> Limits to the number of [INSERT DELAYED](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed) threads. Once this limit is reached, the insert is handled as if there was no DELAYED attribute. If set to `0`, DELAYED is ignored entirely. The session value can only be set to `0` or to the same as the global value.
+- <strong>Description:</strong> Limits to the number of [INSERT DELAYED](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed/) threads. Once this limit is reached, the insert is handled as if there was no DELAYED attribute. If set to `0`, DELAYED is ignored entirely. The session value can only be set to `0` or to the same as the global value.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--max-delayed-threads=#</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -1666,7 +1666,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `max_digest_length`
 
-- <strong>Description:</strong> Maximum length considered for computing a statement digest, such as used by the [Performance Schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema) and query rewrite plugins. Statements that differ after this many bytes produce the same digest, and are aggregated for statistics purposes. The variable is allocated per session. Increasing will allow longer statements to be distinguished from each other, but increase memory use, while decreasing will reduce memory use, but more statements may become indistinguishable.
+- <strong>Description:</strong> Maximum length considered for computing a statement digest, such as used by the [Performance Schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/) and query rewrite plugins. Statements that differ after this many bytes produce the same digest, and are aggregated for statistics purposes. The variable is allocated per session. Increasing will allow longer statements to be distinguished from each other, but increase memory use, while decreasing will reduce memory use, but more statements may become indistinguishable.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--max-digest-length=#</code>
 - <strong>Scope:</strong> Global,
 - <strong>Dynamic:</strong> Yes
@@ -1679,7 +1679,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `max_error_count`
 
-- <strong>Description:</strong> Specifies the maximum number of messages stored for display by [SHOW ERRORS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-errors) and [SHOW WARNINGS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-warnings) statements.
+- <strong>Description:</strong> Specifies the maximum number of messages stored for display by [SHOW ERRORS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-errors/) and [SHOW WARNINGS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-warnings/) statements.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--max-error-count=#</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -1691,7 +1691,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `max_heap_table_size`
 
-- <strong>Description:</strong> Maximum size in bytes for user-created [MEMORY](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/memory-storage-engine) tables. Setting the variable while the server is active has no effect on existing tables unless they are recreated or altered. The smaller of max_heap_table_size and [tmp_table_size](#tmp_table_size) also limits internal in-memory tables. When the maximum size is reached, any further attempts to insert data will receive a "table ... is full" error. Temporary tables created with [CREATE TEMPORARY](/sql-statements-structure/sql-statements/data-definition/create/create-table) will not be converted to Aria, as occurs with internal temporary tables, but will also receive a table full error.
+- <strong>Description:</strong> Maximum size in bytes for user-created [MEMORY](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/memory-storage-engine/) tables. Setting the variable while the server is active has no effect on existing tables unless they are recreated or altered. The smaller of max_heap_table_size and [tmp_table_size](#tmp_table_size) also limits internal in-memory tables. When the maximum size is reached, any further attempts to insert data will receive a "table ... is full" error. Temporary tables created with [CREATE TEMPORARY](/sql-statements-structure/sql-statements/data-definition/create/create-table/) will not be converted to Aria, as occurs with internal temporary tables, but will also receive a table full error.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--max-heap-table-size=#</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -1751,7 +1751,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `max_password_errors`
 
-- <strong>Description:</strong> The maximum permitted number of failed connection attempts due to an invalid password before a user is blocked from further connections. [FLUSH_PRIVILEGES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush) will permit the user to connect again. This limit is ignored for users with the [SUPER](/kb/en/grant/#super) privilege or, from [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/), the [CONNECTION ADMIN](/kb/en/grant/#connection-admin) privilege.
+- <strong>Description:</strong> The maximum permitted number of failed connection attempts due to an invalid password before a user is blocked from further connections. [FLUSH_PRIVILEGES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/) will permit the user to connect again. This limit is ignored for users with the [SUPER](/kb/en/grant/#super) privilege or, from [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/), the [CONNECTION ADMIN](/kb/en/grant/#connection-admin) privilege.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--max-password-errors=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -1842,7 +1842,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `max_sp_recursion_depth`
 
-- <strong>Description:</strong> Permitted number of recursive calls for a [stored procedure](/programming-customizing-mariadb/stored-routines/stored-procedures). `0`, the default, no recursion is permitted. Increasing this value increases the thread stack requirements, so you may need to increase [thread_stack](#thread_stack) as well. This limit doesn't apply to [stored functions](/programming-customizing-mariadb/stored-routines/stored-functions).
+- <strong>Description:</strong> Permitted number of recursive calls for a [stored procedure](/programming-customizing-mariadb/stored-routines/stored-procedures/). `0`, the default, no recursion is permitted. Increasing this value increases the thread stack requirements, so you may need to increase [thread_stack](#thread_stack) as well. This limit doesn't apply to [stored functions](/programming-customizing-mariadb/stored-routines/stored-functions/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--max-sp-recursion-depth[=#]</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -1854,7 +1854,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `max_statement_time`
 
-- <strong>Description:</strong> Maximum time in seconds that a query can execute before being aborted. This includes all queries, not just [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) statements, but excludes statements in stored procedures. If set to 0, no limit is applied. See [Aborting statements that take longer than a certain time to execute](/kb/en/aborting-statements-that-take-longer-than-a-certain-time-to-execute/) for details and limitations. Useful when combined with [SET STATEMENT](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set-statement) for limiting the execution times of individual queries.
+- <strong>Description:</strong> Maximum time in seconds that a query can execute before being aborted. This includes all queries, not just [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) statements, but excludes statements in stored procedures. If set to 0, no limit is applied. See [Aborting statements that take longer than a certain time to execute](/kb/en/aborting-statements-that-take-longer-than-a-certain-time-to-execute/) for details and limitations. Useful when combined with [SET STATEMENT](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set-statement/) for limiting the execution times of individual queries.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--max-statement-time[=#]</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -1886,7 +1886,7 @@ Maximum simultaneous connections permitted for each user account.  When set to `
 
 #### `max_write_lock_count`
 
-- <strong>Description:</strong> Read lock requests will be permitted for processing after this many write locks. Applies only to storage engines that use table level locks (thr_lock), so no effect with [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) or [Archive](/columns-storage-engines-and-plugins/storage-engines/archive).
+- <strong>Description:</strong> Read lock requests will be permitted for processing after this many write locks. Applies only to storage engines that use table level locks (thr_lock), so no effect with [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) or [Archive](/columns-storage-engines-and-plugins/storage-engines/archive/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--max-write-lock-count=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -1923,7 +1923,7 @@ Maximum simultaneous connections permitted for each user account.  When set to `
 
 #### `min_examined_row_limit`
 
-- <strong>Description:</strong> If a query examines more than this number of rows, it is logged to the [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log). If set to `0`, the default, no row limit is used.
+- <strong>Description:</strong> If a query examines more than this number of rows, it is logged to the [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log/). If set to `0`, the default, no row limit is used.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--min-examined-row-limit=#</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -1956,7 +1956,7 @@ Maximum simultaneous connections permitted for each user account.  When set to `
 
 #### `mysql56_temporal_format`
 
-- <strong>Description:</strong> If set (the default), MariaDB uses the MySQL 5.6 low level formats for [TIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/time), [DATETIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/datetime) and [TIMESTAMP](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/timestamp) instead of the [MariaDB 5.3](/kb/en/what-is-mariadb-53/) version. The version MySQL introduced in 5.6 requires more storage, but potentially allows negative dates and has some advantages in replication. There should be no reason to revert to the old [MariaDB 5.3](/kb/en/what-is-mariadb-53/) microsecond format. See also [MDEV-10723](https://jira.mariadb.org/browse/MDEV-10723).
+- <strong>Description:</strong> If set (the default), MariaDB uses the MySQL 5.6 low level formats for [TIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/time/), [DATETIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/datetime/) and [TIMESTAMP](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/timestamp/) instead of the [MariaDB 5.3](/kb/en/what-is-mariadb-53/) version. The version MySQL introduced in 5.6 requires more storage, but potentially allows negative dates and has some advantages in replication. There should be no reason to revert to the old [MariaDB 5.3](/kb/en/what-is-mariadb-53/) microsecond format. See also [MDEV-10723](https://jira.mariadb.org/browse/MDEV-10723).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--mysql56-temporal-format</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -2038,7 +2038,7 @@ Maximum simultaneous connections permitted for each user account.  When set to `
 
 #### `old_alter_table`
 
-- <strong>Description:</strong> From [MariaDB 10.3.7](/kb/en/mariadb-1037-release-notes/), an alias for [alter_algorithm](#alter_algorithm). Prior to that, if set to `1` (`0` is default), MariaDB reverts to the non-optimized, pre-MySQL 5.1, method of processing [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) statements. A temporary table is created, the data is copied over, and then the temporary table is renamed to the original.
+- <strong>Description:</strong> From [MariaDB 10.3.7](/kb/en/mariadb-1037-release-notes/), an alias for [alter_algorithm](#alter_algorithm). Prior to that, if set to `1` (`0` is default), MariaDB reverts to the non-optimized, pre-MySQL 5.1, method of processing [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) statements. A temporary table is created, the data is copied over, and then the temporary table is renamed to the original.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--old-alter-table</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -2063,7 +2063,7 @@ Maximum simultaneous connections permitted for each user account.  When set to `
 
 #### `old_passwords`
 
-- <strong>Description:</strong> If set to `1` (`0` is default), MariaDB reverts to using the [mysql_old_password](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-mysql_old_password) authentication plugin by default for newly created users and passwords, instead of the [mysql_native_password](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-mysql_native_password) authentication plugin.
+- <strong>Description:</strong> If set to `1` (`0` is default), MariaDB reverts to using the [mysql_old_password](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-mysql_old_password/) authentication plugin by default for newly created users and passwords, instead of the [mysql_native_password](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-mysql_native_password/) authentication plugin.
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
 - <strong>Data Type:</strong> `boolean`
@@ -2078,8 +2078,8 @@ Maximum simultaneous connections permitted for each user account.  When set to `
 MAX([max_connections](#max_connections)*5, [max_connections](#max_connections) +[table_open_cache](#table_open_cache)*2) <br>
 <br>
 MariaDB sets the limit with <a undefined>setrlimit</a>. MariaDB cannot set this to exceed the hard limit imposed by the operating system. Therefore, you may also need to change the hard limit. There are a few ways to do so. 
-<ul start="1"><li>If you are using [mysqld_safe](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld_safe) to start `mysqld`, then see the instructions at [mysqld_safe: Configuring the Open Files Limit](/kb/en/mysqld_safe/#configuring-the-open-files-limit). 
-</li><li>If you are using [systemd](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd) to start `mysqld`, then see the instructions at [systemd: Configuring the Open Files Limit](/kb/en/systemd/#configuring-the-open-files-limit). 
+<ul start="1"><li>If you are using [mysqld_safe](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld_safe/) to start `mysqld`, then see the instructions at [mysqld_safe: Configuring the Open Files Limit](/kb/en/mysqld_safe/#configuring-the-open-files-limit). 
+</li><li>If you are using [systemd](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd/) to start `mysqld`, then see the instructions at [systemd: Configuring the Open Files Limit](/kb/en/systemd/#configuring-the-open-files-limit). 
 </li><li>Otherwise, you can change the hard limit for the `mysql` user account by modifying <a undefined>/etc/security/limits.conf</a>. See [Configuring Linux for MariaDB: Configuring the Open Files Limit](/kb/en/configuring-linux-for-mariadb/#configuring-the-open-files-limit) for more details.
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--open-files-limit=count</code>
@@ -2142,7 +2142,7 @@ MariaDB sets the limit with <a undefined>setrlimit</a>. MariaDB cannot set this 
 
 #### `optimizer_switch`
 
-- <strong>Description:</strong> A series of flags for controlling the query optimizer. See [Optimizer Switch](/replication/optimization-and-tuning/query-optimizations/optimizer-switch) for defaults, and a comparison to MySQL.
+- <strong>Description:</strong> A series of flags for controlling the query optimizer. See [Optimizer Switch](/replication/optimization-and-tuning/query-optimizations/optimizer-switch/) for defaults, and a comparison to MySQL.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--optimizer-switch=value</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -2151,36 +2151,36 @@ MariaDB sets the limit with <a undefined>setrlimit</a>. MariaDB cannot set this 
 <ul start="1"><li>`condition_pushdown_for_derived={on|off}` (&gt;=[MariaDB 10.2.2](/kb/en/mariadb-1022-release-notes/)) 
 </li><li>`condition_pushdown_for_subquery={on|off}` (&gt;=[MariaDB 10.4.0](/kb/en/mariadb-1040-release-notes/)) 
 </li><li>`default` - set all optimizations to their default values.
-</li><li>`derived_merge={on|off}` - see [Derived table merge optimization](/replication/optimization-and-tuning/query-optimizations/optimizations-for-derived-tables/derived-table-merge-optimization)
-</li><li>`derived_with_keys={on|off}` - see [Derived table with key optimization](/replication/optimization-and-tuning/query-optimizations/optimizations-for-derived-tables/derived-table-with-key-optimization)
+</li><li>`derived_merge={on|off}` - see [Derived table merge optimization](/replication/optimization-and-tuning/query-optimizations/optimizations-for-derived-tables/derived-table-merge-optimization/)
+</li><li>`derived_with_keys={on|off}` - see [Derived table with key optimization](/replication/optimization-and-tuning/query-optimizations/optimizations-for-derived-tables/derived-table-with-key-optimization/)
 </li><li>`engine_condition_pushdown={on|off}`. Deprecated in [MariaDB 10.1.1](/kb/en/mariadb-1011-release-notes/) as engine condition pushdown is now automatically enabled for all engines that support it.
-</li><li>`exists_to_in={on|off}` - see [EXISTS-to-IN optimization](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/exists-to-in-optimization)
-</li><li>`extended_keys={on|off}`  - see [Extended Keys](/replication/optimization-and-tuning/query-optimizations/extended-keys)
-</li><li>`firstmatch={on|off}` - see [First Match Strategy](/replication/optimization-and-tuning/query-optimizations/optimization-strategies/firstmatch-strategy)
-</li><li>`index_condition_pushdown={on|off}` - see [Index Condition Pushdown](/replication/optimization-and-tuning/query-optimizations/index-condition-pushdown)
+</li><li>`exists_to_in={on|off}` - see [EXISTS-to-IN optimization](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/exists-to-in-optimization/)
+</li><li>`extended_keys={on|off}`  - see [Extended Keys](/replication/optimization-and-tuning/query-optimizations/extended-keys/)
+</li><li>`firstmatch={on|off}` - see [First Match Strategy](/replication/optimization-and-tuning/query-optimizations/optimization-strategies/firstmatch-strategy/)
+</li><li>`index_condition_pushdown={on|off}` - see [Index Condition Pushdown](/replication/optimization-and-tuning/query-optimizations/index-condition-pushdown/)
 </li><li>`index_merge={on|off}`
 </li><li>`index_merge_intersection={on|off}`
 </li><li>`index_merge_sort_intersection={on|off}` - [more details](/kb/en/index_merge_sort_intersection/)
 </li><li>`index_merge_sort_union={on|off}`
 </li><li>`index_merge_union={on|off}`
 </li><li>`in_to_exists={on|off}` - see [IN-TO-EXISTS transformation](/kb/en/non-semi-join-subquery-optimizations/#the-in-to-exists-transformation)
-</li><li>`join_cache_bka={on|off}` - see [Block-Based Join Algorithms](/replication/optimization-and-tuning/query-optimizations/block-based-join-algorithms)
-</li><li>`join_cache_hashed={on|off}` - see [Block-Based Join Algorithms](/replication/optimization-and-tuning/query-optimizations/block-based-join-algorithms)
-</li><li>`join_cache_incremental={on|off}` - see [Block-Based Join Algorithms](/replication/optimization-and-tuning/query-optimizations/block-based-join-algorithms)
-</li><li>`loosescan={on|off}` - see [LooseScan strategy](/replication/optimization-and-tuning/query-optimizations/optimization-strategies/loosescan-strategy)
-</li><li>`materialization={on|off}` - [Semi-join](/replication/optimization-and-tuning/query-optimizations/optimization-strategies/semi-join-materialization-strategy) and [non semi-join](/kb/en/non-semi-join-subquery-optimizations/#materialization-for-non-correlated-in-subqueries) materialization.
-</li><li>`mrr={on|off}` - see [Multi Range Read optimization](/replication/optimization-and-tuning/mariadb-internal-optimizations/multi-range-read-optimization)
-</li><li>`mrr_cost_based={on|off}` - see [Multi Range Read optimization](/replication/optimization-and-tuning/mariadb-internal-optimizations/multi-range-read-optimization)
-</li><li>`mrr_sort_keys={on|off}` - see [Multi Range Read optimization](/replication/optimization-and-tuning/mariadb-internal-optimizations/multi-range-read-optimization)
-</li><li>`optimize_join_buffer_size={on|off}` - see [Block-Based Join Algorithms](/replication/optimization-and-tuning/query-optimizations/block-based-join-algorithms)
+</li><li>`join_cache_bka={on|off}` - see [Block-Based Join Algorithms](/replication/optimization-and-tuning/query-optimizations/block-based-join-algorithms/)
+</li><li>`join_cache_hashed={on|off}` - see [Block-Based Join Algorithms](/replication/optimization-and-tuning/query-optimizations/block-based-join-algorithms/)
+</li><li>`join_cache_incremental={on|off}` - see [Block-Based Join Algorithms](/replication/optimization-and-tuning/query-optimizations/block-based-join-algorithms/)
+</li><li>`loosescan={on|off}` - see [LooseScan strategy](/replication/optimization-and-tuning/query-optimizations/optimization-strategies/loosescan-strategy/)
+</li><li>`materialization={on|off}` - [Semi-join](/replication/optimization-and-tuning/query-optimizations/optimization-strategies/semi-join-materialization-strategy/) and [non semi-join](/kb/en/non-semi-join-subquery-optimizations/#materialization-for-non-correlated-in-subqueries) materialization.
+</li><li>`mrr={on|off}` - see [Multi Range Read optimization](/replication/optimization-and-tuning/mariadb-internal-optimizations/multi-range-read-optimization/)
+</li><li>`mrr_cost_based={on|off}` - see [Multi Range Read optimization](/replication/optimization-and-tuning/mariadb-internal-optimizations/multi-range-read-optimization/)
+</li><li>`mrr_sort_keys={on|off}` - see [Multi Range Read optimization](/replication/optimization-and-tuning/mariadb-internal-optimizations/multi-range-read-optimization/)
+</li><li>`optimize_join_buffer_size={on|off}` - see [Block-Based Join Algorithms](/replication/optimization-and-tuning/query-optimizations/block-based-join-algorithms/)
 </li><li>`orderby_uses_equalities={on|off}` (&gt;= [MariaDB 10.1.15](/kb/en/mariadb-10115-release-notes/), [MariaDB 10.2.1](/kb/en/mariadb-1021-release-notes/)) - if not set, the optimizer ignores equality propagation. See [MDEV-8989](https://jira.mariadb.org/browse/MDEV-8989).
-</li><li>`outer_join_with_cache={on|off}` - see [Block-Based Join Algorithms](/replication/optimization-and-tuning/query-optimizations/block-based-join-algorithms)
-</li><li>`partial_match_rowid_merge={on|off}` - see [Non-semi-join subquery optimizations](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/non-semi-join-subquery-optimizations)
-</li><li>`partial_match_table_scan={on|off}` - see [Non-semi-join subquery optimizations](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/non-semi-join-subquery-optimizations)
-</li><li>`semijoin={on|off}` - see [Semi-join subquery optimizations](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/semi-join-subquery-optimizations)
-</li><li>`semijoin_with_cache={on|off}` - see [Block-Based Join Algorithms](/replication/optimization-and-tuning/query-optimizations/block-based-join-algorithms)
-</li><li>`subquery_cache={on|off}` - see [subquery cache](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/subquery-cache).
-</li><li>`table_elimination={on|off}` - see [Table Elimination User Interface](/replication/optimization-and-tuning/query-optimizations/table-elimination/table-elimination-user-interface)
+</li><li>`outer_join_with_cache={on|off}` - see [Block-Based Join Algorithms](/replication/optimization-and-tuning/query-optimizations/block-based-join-algorithms/)
+</li><li>`partial_match_rowid_merge={on|off}` - see [Non-semi-join subquery optimizations](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/non-semi-join-subquery-optimizations/)
+</li><li>`partial_match_table_scan={on|off}` - see [Non-semi-join subquery optimizations](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/non-semi-join-subquery-optimizations/)
+</li><li>`semijoin={on|off}` - see [Semi-join subquery optimizations](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/semi-join-subquery-optimizations/)
+</li><li>`semijoin_with_cache={on|off}` - see [Block-Based Join Algorithms](/replication/optimization-and-tuning/query-optimizations/block-based-join-algorithms/)
+</li><li>`subquery_cache={on|off}` - see [subquery cache](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/subquery-cache/).
+</li><li>`table_elimination={on|off}` - see [Table Elimination User Interface](/replication/optimization-and-tuning/query-optimizations/table-elimination/table-elimination-user-interface/)
 </li></ul>
 
 ---
@@ -2217,8 +2217,8 @@ MariaDB sets the limit with <a undefined>setrlimit</a>. MariaDB cannot set this 
 the best query execution plan.
 <ul start="1"><li>`1` Use selectivity of predicates as in [MariaDB 5.5](/kb/en/what-is-mariadb-55/).
 </li><li>`2` Use selectivity of all range predicates supported by indexes.
-</li><li>`3` Use selectivity of all range predicates estimated without [histogram](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/histogram-based-statistics).
-</li><li>`4` Use selectivity of all range predicates estimated with [histogram](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/histogram-based-statistics).
+</li><li>`3` Use selectivity of all range predicates estimated without [histogram](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/histogram-based-statistics/).
+</li><li>`4` Use selectivity of all range predicates estimated with [histogram](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/histogram-based-statistics/).
 </li><li>`5` Additionally use selectivity of certain non-range predicates calculated on record sample.
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--optimizer-use-condition-selectivity=#</code>
@@ -2266,7 +2266,7 @@ the best query execution plan.
 
 #### `port`
 
-- <strong>Description:</strong> Port to listen for TCP/IP connections. If set to `0`, will default to, in order of preference, my.cnf, the MYSQL_TCP_PORT [environment variable](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-environment-variables), /etc/services, built-in default (3306).
+- <strong>Description:</strong> Port to listen for TCP/IP connections. If set to `0`, will default to, in order of preference, my.cnf, the MYSQL_TCP_PORT [environment variable](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-environment-variables/), /etc/services, built-in default (3306).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--port=#</code>, <code class="fixed" style="white-space:pre-wrap">-P</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -2290,7 +2290,7 @@ the best query execution plan.
 
 #### `profiling`
 
-- <strong>Description:</strong> If set to `1` (`0` is default), statement profiling will be enabled. See [SHOW PROFILES()](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-profiles) and [SHOW PROFILE()](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-profile).
+- <strong>Description:</strong> If set to `1` (`0` is default), statement profiling will be enabled. See [SHOW PROFILES()](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-profiles/) and [SHOW PROFILE()](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-profile/).
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
 - <strong>Data Type:</strong> `boolean`
@@ -2300,7 +2300,7 @@ the best query execution plan.
 
 #### `profiling_history_size`
 
-- <strong>Description:</strong> Number of statements about which profiling information is maintained. If set to `0`, no profiles are stored. See [SHOW PROFILES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-profiles).
+- <strong>Description:</strong> Number of statements about which profiling information is maintained. If set to `0`, no profiles are stored. See [SHOW PROFILES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-profiles/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--profiling-history-size=# </code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -2476,7 +2476,7 @@ the best query execution plan.
 
 #### `rand_seed1`
 
-- <strong>Description:</strong> `rand_seed1` and `rand_seed2` facilitate replication of the [RAND()](/built-in-functions/numeric-functions/rand) function. The master passes the value of these to the slaves so that the random number generator is seeded in the same way, and generates the same value, on the slave as on the master. Until [MariaDB 10.1.4](/kb/en/mariadb-1014-release-notes/), the variable value could not be viewed, with the [SHOW VARIABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-variables) output always displaying zero.
+- <strong>Description:</strong> `rand_seed1` and `rand_seed2` facilitate replication of the [RAND()](/built-in-functions/numeric-functions/rand/) function. The master passes the value of these to the slaves so that the random number generator is seeded in the same way, and generates the same value, on the slave as on the master. Until [MariaDB 10.1.4](/kb/en/mariadb-1014-release-notes/), the variable value could not be viewed, with the [SHOW VARIABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-variables/) output always displaying zero.
 - <strong>Commandline:</strong> None
 - <strong>Scope:</strong> Session
 - <strong>Dynamic:</strong> Yes
@@ -2506,7 +2506,7 @@ the best query execution plan.
 
 #### `read_buffer_size`
 
-- <strong>Description:</strong> Each thread performing a sequential scan (for MyISAM, Aria and MERGE tables) allocates a buffer of this size in bytes for each table scanned. Increase if you perform many sequential scans. If not in a multiple of 4KB, will be rounded down to the nearest multiple. Also used in ORDER BY's for caching indexes in a temporary file (not temporary table), for caching results of nested queries, for bulk inserts into partitions, and to determine the memory block size of [MEMORY](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/memory-storage-engine) tables.
+- <strong>Description:</strong> Each thread performing a sequential scan (for MyISAM, Aria and MERGE tables) allocates a buffer of this size in bytes for each table scanned. Increase if you perform many sequential scans. If not in a multiple of 4KB, will be rounded down to the nearest multiple. Also used in ORDER BY's for caching indexes in a temporary file (not temporary table), for caching results of nested queries, for bulk inserts into partitions, and to determine the memory block size of [MEMORY](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/memory-storage-engine/) tables.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--read-buffer-size=#</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -2518,7 +2518,7 @@ the best query execution plan.
 
 #### `read_only`
 
-- <strong>Description:</strong> When set to `1` (`0` is default), no updates are permitted except from users with the [SUPER](/kb/en/grant/#super) privilege or, from [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/), the  [READ ONLY ADMIN](/kb/en/grant/#read_only-admin) privilege, or replica servers updating from a primary. The `read_only` variable is useful for replica servers to ensure no updates are accidentally made outside of what are performed on the primary. Inserting rows to log tables, updates to temporary tables and [OPTIMIZE TABLE](/replication/optimization-and-tuning/optimizing-tables/optimize-table) or [ANALYZE TABLE](/sql-statements-structure/sql-statements/table-statements/analyze-table) statements are excluded from this limitation. If `read_only` is set to `1`, then the [SET PASSWORD](/sql-statements-structure/sql-statements/account-management-sql-commands/set-password) statement is limited only to users with the [SUPER](/kb/en/grant/#super) privilege (&lt;= [MariaDB 10.5.1](/kb/en/mariadb-1051-release-notes/)) or [READ ONLY ADMIN](/kb/en/grant/#read_only-admin) privilege (&gt;= [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/)). Attempting to set this variable to `1` will fail if the current session has table locks or transactions pending, while if other sessions hold table locks, the statement will wait until these locks are released before completing. While the attempt to set `read_only` is waiting, other requests for table locks or transactions will also wait until `read_only` has been set. See [Read-Only Replicas](/replication/standard-replication/read-only-replicas) for more.
+- <strong>Description:</strong> When set to `1` (`0` is default), no updates are permitted except from users with the [SUPER](/kb/en/grant/#super) privilege or, from [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/), the  [READ ONLY ADMIN](/kb/en/grant/#read_only-admin) privilege, or replica servers updating from a primary. The `read_only` variable is useful for replica servers to ensure no updates are accidentally made outside of what are performed on the primary. Inserting rows to log tables, updates to temporary tables and [OPTIMIZE TABLE](/replication/optimization-and-tuning/optimizing-tables/optimize-table/) or [ANALYZE TABLE](/sql-statements-structure/sql-statements/table-statements/analyze-table/) statements are excluded from this limitation. If `read_only` is set to `1`, then the [SET PASSWORD](/sql-statements-structure/sql-statements/account-management-sql-commands/set-password/) statement is limited only to users with the [SUPER](/kb/en/grant/#super) privilege (&lt;= [MariaDB 10.5.1](/kb/en/mariadb-1051-release-notes/)) or [READ ONLY ADMIN](/kb/en/grant/#read_only-admin) privilege (&gt;= [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/)). Attempting to set this variable to `1` will fail if the current session has table locks or transactions pending, while if other sessions hold table locks, the statement will wait until these locks are released before completing. While the attempt to set `read_only` is waiting, other requests for table locks or transactions will also wait until `read_only` has been set. See [Read-Only Replicas](/replication/standard-replication/read-only-replicas/) for more.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--read-only</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -2576,7 +2576,7 @@ the best query execution plan.
 
 #### `safe_show_database`
 
-- <strong>Description:</strong> This variable was removed in [MariaDB 5.5](/kb/en/what-is-mariadb-55/), and has been replaced by the more flexible [SHOW DATABASES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-databases) privilege.
+- <strong>Description:</strong> This variable was removed in [MariaDB 5.5](/kb/en/what-is-mariadb-55/), and has been replaced by the more flexible [SHOW DATABASES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-databases/) privilege.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--safe-show-database</code> (until MySQL 4.1.1)
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -2587,7 +2587,7 @@ the best query execution plan.
 
 #### `secure_auth`
 
-- <strong>Description:</strong> Connections will be blocked if they use the the [mysql_old_password](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-mysql_old_password) authentication plugin. The server will also fail to start if the privilege tables are in the old, pre-MySQL 4.1 format.
+- <strong>Description:</strong> Connections will be blocked if they use the the [mysql_old_password](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-mysql_old_password/) authentication plugin. The server will also fail to start if the privilege tables are in the old, pre-MySQL 4.1 format.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--secure-auth</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -2598,7 +2598,7 @@ the best query execution plan.
 
 #### `secure_file_priv`
 
-- <strong>Description:</strong> [LOAD DATA](/kb/en/load-data-infile/), [SELECT ... INTO](/kb/en/select/#into) and [LOAD FILE()](/built-in-functions/string-functions/load_file) will only work with files in the specified path. If not set, the default, or set to empty string, the statements will work with any files that can be accessed.
+- <strong>Description:</strong> [LOAD DATA](/kb/en/load-data-infile/), [SELECT ... INTO](/kb/en/select/#into) and [LOAD FILE()](/built-in-functions/string-functions/load_file/) will only work with files in the specified path. If not set, the default, or set to empty string, the statements will work with any files that can be accessed.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--secure-file-priv=path</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -2693,9 +2693,9 @@ the best query execution plan.
 
 #### `skip_external_locking`
 
-- <strong>Description:</strong> If this system variable is set, then some kinds of external table locks will be disabled for some [storage engines](/columns-storage-engines-and-plugins/storage-engines).
-<ul start="1"><li>If this system variable is set, then the [MyISAM](/columns-storage-engines-and-plugins/storage-engines/myisam-storage-engine) storage engine will not use file-based locks. Otherwise, it will use the <a undefined>fcntl()</a> function with the `F_SETLK` option to get file-based locks on Unix, and it will use the <a undefined>LockFileEx()</a> function to get file-based locks on Windows.
-</li><li>If this system variable is set, then the [Aria](/columns-storage-engines-and-plugins/storage-engines/aria) storage engine will not lock a table when it decrements the table's in-file counter that keeps track of how many connections currently have the table open. See [MDEV-19393](https://jira.mariadb.org/browse/MDEV-19393) for more information.
+- <strong>Description:</strong> If this system variable is set, then some kinds of external table locks will be disabled for some [storage engines](/columns-storage-engines-and-plugins/storage-engines/).
+<ul start="1"><li>If this system variable is set, then the [MyISAM](/columns-storage-engines-and-plugins/storage-engines/myisam-storage-engine/) storage engine will not use file-based locks. Otherwise, it will use the <a undefined>fcntl()</a> function with the `F_SETLK` option to get file-based locks on Unix, and it will use the <a undefined>LockFileEx()</a> function to get file-based locks on Windows.
+</li><li>If this system variable is set, then the [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/) storage engine will not lock a table when it decrements the table's in-file counter that keeps track of how many connections currently have the table open. See [MDEV-19393](https://jira.mariadb.org/browse/MDEV-19393) for more information.
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--skip-external-locking</code>
 - <strong>Scope:</strong> Global
@@ -2729,7 +2729,7 @@ the best query execution plan.
 
 #### `skip_show_database`
 
-- <strong>Description:</strong> If set to 1, (0 is the default), only users with the [SHOW DATABASES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-databases) privilege can use the SHOW DATABASES statement to see all database names.
+- <strong>Description:</strong> If set to 1, (0 is the default), only users with the [SHOW DATABASES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-databases/) privilege can use the SHOW DATABASES statement to see all database names.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--skip-show-database</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -2740,7 +2740,7 @@ the best query execution plan.
 
 #### `slow_launch_time`
 
-- <strong>Description:</strong> Time in seconds. If a thread takes longer than this to launch, the `slow_launch_threads` [server status variable](/replication/optimization-and-tuning/system-variables/server-status-variables) is incremented.
+- <strong>Description:</strong> Time in seconds. If a thread takes longer than this to launch, the `slow_launch_threads` [server status variable](/replication/optimization-and-tuning/system-variables/server-status-variables/) is incremented.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--slow-launch-time=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -2751,7 +2751,7 @@ the best query execution plan.
 
 #### `slow_query_log`
 
-- <strong>Description:</strong> If set to 0, the default unless the --slow-query-log option is used, the [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log) is disabled, while if set to 1 (both global and session variables), the slow query log is enabled. [MariaDB 10.1](/kb/en/what-is-mariadb-101/) added support for session variables.
+- <strong>Description:</strong> If set to 0, the default unless the --slow-query-log option is used, the [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log/) is disabled, while if set to 1 (both global and session variables), the slow query log is enabled. [MariaDB 10.1](/kb/en/what-is-mariadb-101/) added support for session variables.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--slow-query-log</code>
 - <strong>Scope:</strong> Global, Session ([MariaDB 10.1](/kb/en/what-is-mariadb-101/))
 - <strong>Dynamic:</strong> Yes
@@ -2763,7 +2763,7 @@ the best query execution plan.
 
 #### `slow_query_log_file`
 
-- <strong>Description:</strong> Name of the [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log) file.
+- <strong>Description:</strong> Name of the [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log/) file.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--slow-query-log-file=file_name</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -2852,7 +2852,7 @@ the best query execution plan.
 
 #### `sql_log_off`
 
-- <strong>Description:</strong> If set to 1 (0 is the default), no logging to the [general query log](/mariadb-administration/server-monitoring-logs/general-query-log) is done for the client. Only clients with the SUPER privilege can update this variable.
+- <strong>Description:</strong> If set to 1 (0 is the default), no logging to the [general query log](/mariadb-administration/server-monitoring-logs/general-query-log/) is done for the client. Only clients with the SUPER privilege can update this variable.
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
 - <strong>Data Type:</strong> `boolean`
@@ -2869,7 +2869,7 @@ the best query execution plan.
 
 #### `sql_low_priority_updates`
 
-- <strong>Description:</strong> If set to 1 (0 is the default), for [storage engines](/columns-storage-engines-and-plugins/storage-engines) that use only table-level locking ([Aria](/columns-storage-engines-and-plugins/storage-engines/aria), [MyISAM](/kb/en/myisam/), [MEMORY](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/memory-storage-engine) and [MERGE](/columns-storage-engines-and-plugins/storage-engines/merge)), all INSERTs, UPDATEs, DELETEs and LOCK TABLE WRITEs will wait until there are no more SELECTs or LOCK TABLE READs pending on the relevant tables. Set this to 1 if reads are prioritized over writes.
+- <strong>Description:</strong> If set to 1 (0 is the default), for [storage engines](/columns-storage-engines-and-plugins/storage-engines/) that use only table-level locking ([Aria](/columns-storage-engines-and-plugins/storage-engines/aria/), [MyISAM](/kb/en/myisam/), [MEMORY](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/memory-storage-engine/) and [MERGE](/columns-storage-engines-and-plugins/storage-engines/merge/)), all INSERTs, UPDATEs, DELETEs and LOCK TABLE WRITEs will wait until there are no more SELECTs or LOCK TABLE READs pending on the relevant tables. Set this to 1 if reads are prioritized over writes.
 <ul start="1"><li>This is a synonym for <a undefined>low_priority_updates</a>.
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--sql-low-priority-updates</code>
@@ -2891,7 +2891,7 @@ the best query execution plan.
 
 #### `sql_mode`
 
-- <strong>Description:</strong> Sets the [SQL Mode](/mariadb-administration/variables-and-modes/sql-mode). Multiple modes can be set, separated by a comma.
+- <strong>Description:</strong> Sets the [SQL Mode](/mariadb-administration/variables-and-modes/sql-mode/). Multiple modes can be set, separated by a comma.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--sql-mode=value[,value[,value...]]</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -2901,13 +2901,13 @@ the best query execution plan.
 </li><li>`NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION` (&gt;= [MariaDB 10.1.7](/kb/en/mariadb-1017-release-notes/))
 </li><li>`(empty string)` (&lt;= [MariaDB 10.1.6](/kb/en/mariadb-1016-release-notes/))
 </li></ul>
-- <strong>Valid Values:</strong> See [SQL Mode](/mariadb-administration/variables-and-modes/sql-mode) for the full list.
+- <strong>Valid Values:</strong> See [SQL Mode](/mariadb-administration/variables-and-modes/sql-mode/) for the full list.
 
 ---
 
 #### `sql_notes`
 
-- <strong>Description:</strong> If set to 1, the default, [warning_count](#warning_count) is incremented each time a Note warning is encountered. If set to 0, Note warnings are not recorded. [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump) has outputs to set this variable to 0 so that no unnecessary increments occur when data is reloaded.
+- <strong>Description:</strong> If set to 1, the default, [warning_count](#warning_count) is incremented each time a Note warning is encountered. If set to 0, Note warnings are not recorded. [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump/) has outputs to set this variable to 0 so that no unnecessary increments occur when data is reloaded.
 - <strong>Commandline:</strong> None
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -2918,7 +2918,7 @@ the best query execution plan.
 
 #### `sql_quote_show_create`
 
-- <strong>Description:</strong> If set to 1, the default, the server will quote identifiers for [SHOW CREATE DATABASE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-database), [SHOW CREATE TABLE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-table) and [SHOW CREATE VIEW](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-view) statements. Quoting is disabled if set to 0. Enable to ensure replications works when identifiers require quoting.
+- <strong>Description:</strong> If set to 1, the default, the server will quote identifiers for [SHOW CREATE DATABASE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-database/), [SHOW CREATE TABLE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-table/) and [SHOW CREATE VIEW](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-view/) statements. Quoting is disabled if set to 0. Enable to ensure replications works when identifiers require quoting.
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
 - <strong>Data Type:</strong> `boolean`
@@ -2967,7 +2967,7 @@ the best query execution plan.
 
 #### `standard_compliant_cte`
 
-- <strong>Description:</strong> Allow only standard-compliant [common table expressions](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/common-table-expressions). Prior to [MariaDB 10.2.4](/kb/en/mariadb-1024-release-notes/), this variable was named `standards_compliant_cte`.
+- <strong>Description:</strong> Allow only standard-compliant [common table expressions](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/common-table-expressions/). Prior to [MariaDB 10.2.4](/kb/en/mariadb-1024-release-notes/), this variable was named `standards_compliant_cte`.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--standard-compliant-cte={0|1}</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -3014,7 +3014,7 @@ the best query execution plan.
 
 #### `system_time_zone`
 
-- <strong>Description:</strong> The system time zone is determined when the server starts. The system [time zone](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones) is usually read from the operating system's environment. See [Time Zones: System Time Zone](/kb/en/time-zones/#system-time-zone) for the various ways to change the system time zone. This variable is not the same as the <a undefined>time_zone</a> system variable, which is the variable that actually controls a session's active time zone. The system time zone is used for a session when `time_zone` is set to the special value `SYSTEM`.
+- <strong>Description:</strong> The system time zone is determined when the server starts. The system [time zone](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones/) is usually read from the operating system's environment. See [Time Zones: System Time Zone](/kb/en/time-zones/#system-time-zone) for the various ways to change the system time zone. This variable is not the same as the <a undefined>time_zone</a> system variable, which is the variable that actually controls a session's active time zone. The system time zone is used for a session when `time_zone` is set to the special value `SYSTEM`.
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
 - <strong>Data Type:</strong> `string`
@@ -3051,7 +3051,7 @@ the best query execution plan.
 
 #### `table_open_cache`
 
-- <strong>Description:</strong> Maximum number of open tables cached in one table cache instance. See [Optimizing table_open_cache](/replication/optimization-and-tuning/system-variables/optimizing-table_open_cache) for suggestions on optimizing. Increasing table_open_cache increases the number of file descriptors required.
+- <strong>Description:</strong> Maximum number of open tables cached in one table cache instance. See [Optimizing table_open_cache](/replication/optimization-and-tuning/system-variables/optimizing-table_open_cache/) for suggestions on optimizing. Increasing table_open_cache increases the number of file descriptors required.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--table-open-cache=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -3139,7 +3139,7 @@ the best query execution plan.
 
 #### `thread_cache_size`
 
-- <strong>Description:</strong> Number of threads server caches for re-use. If this limit hasn't been reached, when a client disconnects, its threads are put into the cache, and re-used where possible. In [MariaDB 10.2.0](/kb/en/mariadb-1020-release-notes/) and newer the threads are freed after 5 minutes of idle time. Normally this setting has little effect, as the other aspects of the thread implementation are more important, but increasing it can help servers with high volumes of connections per second so that most can use a cached, rather than a new, thread. The cache miss rate can be calculated as the [server status variables](/replication/optimization-and-tuning/system-variables/server-status-variables) threads_created/connections. If the [thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool) is active, `thread_cache_size` is ignored. If `thread_cache_size` is set to greater than the value of [max_connections](#max_connections), `thread_cache_size` will be set to the [max_connections](#max_connections) value.
+- <strong>Description:</strong> Number of threads server caches for re-use. If this limit hasn't been reached, when a client disconnects, its threads are put into the cache, and re-used where possible. In [MariaDB 10.2.0](/kb/en/mariadb-1020-release-notes/) and newer the threads are freed after 5 minutes of idle time. Normally this setting has little effect, as the other aspects of the thread implementation are more important, but increasing it can help servers with high volumes of connections per second so that most can use a cached, rather than a new, thread. The cache miss rate can be calculated as the [server status variables](/replication/optimization-and-tuning/system-variables/server-status-variables/) threads_created/connections. If the [thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/) is active, `thread_cache_size` is ignored. If `thread_cache_size` is set to greater than the value of [max_connections](#max_connections), `thread_cache_size` will be set to the [max_connections](#max_connections) value.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--thread-cache-size=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -3189,7 +3189,7 @@ the best query execution plan.
 
 #### `time_zone`
 
-- <strong>Description:</strong> The global value determines the default [time zone](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones) for sessions that connect. The session value determines the session's active [time zone](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones). When it is set to `SYSTEM`, the session's time zone is determined by the <a undefined>system_time_zone</a> system variable.
+- <strong>Description:</strong> The global value determines the default [time zone](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones/) for sessions that connect. The session value determines the session's active [time zone](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones/). When it is set to `SYSTEM`, the session's time zone is determined by the <a undefined>system_time_zone</a> system variable.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--default-time-zone=string</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -3200,7 +3200,7 @@ the best query execution plan.
 
 #### `timed_mutexes`
 
-- <strong>Description:</strong> Determines whether [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) mutexes are timed. `OFF`, the default, disables mutex timing, while `ON` enables it. See also [SHOW ENGINE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine) for more on mutex statistics. Deprecated and has no effect.
+- <strong>Description:</strong> Determines whether [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) mutexes are timed. `OFF`, the default, disables mutex timing, while `ON` enables it. See also [SHOW ENGINE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine/) for more on mutex statistics. Deprecated and has no effect.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--timed-mutexes</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -3213,7 +3213,7 @@ the best query execution plan.
 
 #### `timestamp`
 
-- <strong>Description:</strong> Sets the time for the client. This will affect the result returned by the [NOW()](/built-in-functions/date-time-functions/now) function, not the [SYSDATE()](/built-in-functions/date-time-functions/sysdate) function, unless the server is started with the [--sysdate-is-now](/kb/en/mysqld-options/#-sysdate-is-now) option, in which case SYSDATE becomes an alias of NOW, and will also be affected. Also used to get the original timestamp when restoring rows from the [binary log](/mariadb-administration/server-monitoring-logs/binary-log).
+- <strong>Description:</strong> Sets the time for the client. This will affect the result returned by the [NOW()](/built-in-functions/date-time-functions/now/) function, not the [SYSDATE()](/built-in-functions/date-time-functions/sysdate/) function, unless the server is started with the [--sysdate-is-now](/kb/en/mysqld-options/#-sysdate-is-now) option, in which case SYSDATE becomes an alias of NOW, and will also be affected. Also used to get the original timestamp when restoring rows from the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/).
 - <strong>Scope:</strong> Session
 - <strong>Dynamic:</strong> Yes
 - <strong>Valid Values:</strong> `timestamp_value` (Unix epoch timestamp, not MariaDB timestamp), `DEFAULT`
@@ -3222,7 +3222,7 @@ the best query execution plan.
 
 #### `tmp_disk_table_size`
 
-- <strong>Description:</strong> Max size for data for an internal temporary on-disk [MyISAM](/kb/en/myisam/) or [Aria](/columns-storage-engines-and-plugins/storage-engines/aria) table.  These tables are created as part of complex queries when the result doesn't fit into the memory engine. You can set this variable if you want to limit the size of temporary tables created in your temporary directory [tmpdir](#tmpdir).
+- <strong>Description:</strong> Max size for data for an internal temporary on-disk [MyISAM](/kb/en/myisam/) or [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/) table.  These tables are created as part of complex queries when the result doesn't fit into the memory engine. You can set this variable if you want to limit the size of temporary tables created in your temporary directory [tmpdir](#tmpdir).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--tmp-disk-table-size=#</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -3243,7 +3243,7 @@ the best query execution plan.
 
 #### `tmp_table_size`
 
-- <strong>Description:</strong> The largest size for temporary tables in memory (not [MEMORY](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/memory-storage-engine) tables) although if [max_heap_table_size](#max_heap_table_size) is smaller the lower limit will apply. If a table exceeds the limit, MariaDB converts it to a MyISAM or Aria table. You can see if it's necessary to increase by comparing the [status variables](/replication/optimization-and-tuning/system-variables/server-status-variables) `Created_tmp_disk_tables` and `Created_tmp_tables` to see how many temporary tables out of the total created needed to be converted to disk. Often complex GROUP BY queries are responsible for exceeding the limit. Defaults may be different on some systems, see for example [Differences in MariaDB in Debian](/kb/en/differences-in-mariadb-in-debian/). From [MariaDB 10.2.7](/kb/en/mariadb-1027-release-notes/), [tmp_memory_table_size](#tmp_memory_table_size) is an alias.
+- <strong>Description:</strong> The largest size for temporary tables in memory (not [MEMORY](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/memory-storage-engine/) tables) although if [max_heap_table_size](#max_heap_table_size) is smaller the lower limit will apply. If a table exceeds the limit, MariaDB converts it to a MyISAM or Aria table. You can see if it's necessary to increase by comparing the [status variables](/replication/optimization-and-tuning/system-variables/server-status-variables/) `Created_tmp_disk_tables` and `Created_tmp_tables` to see how many temporary tables out of the total created needed to be converted to disk. Often complex GROUP BY queries are responsible for exceeding the limit. Defaults may be different on some systems, see for example [Differences in MariaDB in Debian](/kb/en/differences-in-mariadb-in-debian/). From [MariaDB 10.2.7](/kb/en/mariadb-1027-release-notes/), [tmp_memory_table_size](#tmp_memory_table_size) is an alias.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--tmp-table-size=#</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -3258,7 +3258,7 @@ the best query execution plan.
 
 #### `tmpdir`
 
-- <strong>Description:</strong> Directory for storing temporary tables and files. Can specify a list (separated by semicolons in Windows, and colons in Unix) that will then be used in round-robin fashion. This can be used for load balancing across several disks. Note that if the server is a [replication](/replication) replica, and [slave_load_tmpdir](/kb/en/replication-and-binary-log-system-variables/#slave_load_tmpdir), which overrides `tmpdir` for replicas, is not set, you should not set `tmpdir` to a directory that is cleared when the machine restarts, or else replication may fail.
+- <strong>Description:</strong> Directory for storing temporary tables and files. Can specify a list (separated by semicolons in Windows, and colons in Unix) that will then be used in round-robin fashion. This can be used for load balancing across several disks. Note that if the server is a [replication](/replication/) replica, and [slave_load_tmpdir](/kb/en/replication-and-binary-log-system-variables/#slave_load_tmpdir), which overrides `tmpdir` for replicas, is not set, you should not set `tmpdir` to a directory that is cleared when the machine restarts, or else replication may fail.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--tmpdir=path</code> or <code class="fixed" style="white-space:pre-wrap">-t path</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -3312,7 +3312,7 @@ the best query execution plan.
 
 #### `tx_read_only`
 
-- <strong>Description:</strong> Default transaction access mode. If set to `OFF`, the default, access is read/write. If set to `ON`, access is read-only. The `SET TRANSACTION` statement can also change the value of this variable. See [SET TRANSACTION](/sql-statements-structure/sql-statements/transactions/set-transaction) and [START TRANSACTION](/sql-statements-structure/sql-statements/transactions/start-transaction).
+- <strong>Description:</strong> Default transaction access mode. If set to `OFF`, the default, access is read/write. If set to `ON`, access is read-only. The `SET TRANSACTION` statement can also change the value of this variable. See [SET TRANSACTION](/sql-statements-structure/sql-statements/transactions/set-transaction/) and [START TRANSACTION](/sql-statements-structure/sql-statements/transactions/start-transaction/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--transaction-read-only=#</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -3345,12 +3345,12 @@ the best query execution plan.
 
 #### `use_stat_tables`
 
-- <strong>Description:</strong> Controls the use of [engine-independent table statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics). 
+- <strong>Description:</strong> Controls the use of [engine-independent table statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics/). 
 <ul start="1"><li>`never`: The optimizer will not use data from statistics tables. 
 </li><li>`complementary`: The optimizer uses data from statistics tables if the same kind of data is not provided by the storage engine.
 </li><li>`preferably`: Prefer the data from statistics tables, if it's not available there, use the data from the storage engine.
-</li><li>`complementary_for_queries`: Same as `complementary`, but for queries only (to avoid needlessly collecting for [ANALYZE TABLE](/sql-statements-structure/sql-statements/table-statements/analyze-table)). From [MariaDB 10.4.1](/kb/en/mariadb-1041-release-notes/).
-</li><li>`preferably_for_queries`: Same as `preferably`, but for queries only (to avoid needlessly collecting for [ANALYZE TABLE](/sql-statements-structure/sql-statements/table-statements/analyze-table)). From [MariaDB 10.4.1](/kb/en/mariadb-1041-release-notes/).
+</li><li>`complementary_for_queries`: Same as `complementary`, but for queries only (to avoid needlessly collecting for [ANALYZE TABLE](/sql-statements-structure/sql-statements/table-statements/analyze-table/)). From [MariaDB 10.4.1](/kb/en/mariadb-1041-release-notes/).
+</li><li>`preferably_for_queries`: Same as `preferably`, but for queries only (to avoid needlessly collecting for [ANALYZE TABLE](/sql-statements-structure/sql-statements/table-statements/analyze-table/)). From [MariaDB 10.4.1](/kb/en/mariadb-1041-release-notes/).
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--use-stat-tables=mode</code>
 - <strong>Scope:</strong> Global, Session
@@ -3363,7 +3363,7 @@ the best query execution plan.
 
 #### `version`
 
-- <strong>Description:</strong> Server version number. It may also include a suffix with configuration or build information. `-debug` indicates debugging support was enabled on the server, and `-log` indicates at least one of the binary log, general log or [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log) are enabled, for example `10.0.1-MariaDB-mariadb1precise-log`. From [MariaDB 10.2.1](/kb/en/mariadb-1021-release-notes/), this variable can be set at startup in order to fake the server version.
+- <strong>Description:</strong> Server version number. It may also include a suffix with configuration or build information. `-debug` indicates debugging support was enabled on the server, and `-log` indicates at least one of the binary log, general log or [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log/) are enabled, for example `10.0.1-MariaDB-mariadb1precise-log`. From [MariaDB 10.2.1](/kb/en/mariadb-1021-release-notes/), this variable can be set at startup in order to fake the server version.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap"> -V</code>, <code class="fixed" style="white-space:pre-wrap">--version[=name]</code> (&gt;= [MariaDB 10.2.1](/kb/en/mariadb-1021-release-notes/)), <code class="fixed" style="white-space:pre-wrap">--version</code> (&lt;= [MariaDB 10.2.0](/kb/en/mariadb-1020-release-notes/))
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -3435,7 +3435,7 @@ the best query execution plan.
 
 #### `warning_count`
 
-- <strong>Description:</strong> Read-only variable indicating the number of warnings, errors and notes resulting from the most recent statement that generated messages. See [SHOW WARNINGS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-warnings) for more. Note warnings will only be recorded if [sql_notes](#sql_notes) is true (the default).
+- <strong>Description:</strong> Read-only variable indicating the number of warnings, errors and notes resulting from the most recent statement that generated messages. See [SHOW WARNINGS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-warnings/) for more. Note warnings will only be recorded if [sql_notes](#sql_notes) is true (the default).
 - <strong>Scope:</strong> Session
 - <strong>Dynamic:</strong> No
 - <strong>Type:</strong> numeric

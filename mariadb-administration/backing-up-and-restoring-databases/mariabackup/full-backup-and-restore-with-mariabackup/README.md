@@ -44,7 +44,7 @@ $ mariabackup --prepare \
 
 Once the backup is complete and you have prepared the backup for restoration (previous step), you can restore the backup using either the <a undefined>--copy-back</a> or the <a undefined>--move-back</a> options. The <a undefined>--copy-back</a> option allows you to keep the original backup files. The <a undefined>--move-back</a> option actually moves the backup files to the <a undefined>datadir</a>, so the original backup files are lost.
 
-- First, [stop the MariaDB Server process](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb).
+- First, [stop the MariaDB Server process](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/).
 
 - Then, ensure that the <a undefined>datadir</a> is empty.
 
@@ -63,7 +63,7 @@ When Mariabackup restores a database, it preserves the file and directory privil
 $ chown -R mysql:mysql /var/lib/mysql/
 ```
 
-- Finally, [start the MariaDB Server process](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb).
+- Finally, [start the MariaDB Server process](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/).
 
 ### Restoring with Other Tools
 

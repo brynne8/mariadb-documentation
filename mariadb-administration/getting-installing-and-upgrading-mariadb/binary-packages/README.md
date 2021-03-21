@@ -1,6 +1,6 @@
 # MariaDB Binary Packages
 
-This section contains information on and installation instructions for [MariaDB binaries and packages](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb).
+This section contains information on and installation instructions for [MariaDB binaries and packages](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/).
 
 - [Installing MariaDB RPM Files](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/) — Information and instructions on using the RPM packages and the related repositories.
 - [Installing MariaDB .deb Files](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files/) — Installing MariaDB .deb Files.

@@ -12,7 +12,7 @@ Given a date `date`, returns the number of days since the start of the current c
 
 The function is not designed for use with dates before the advent of the Gregorian calendar in October 1582. Results will not be reliable since it doesn't account for the lost days when the calendar changed from the Julian calendar.
 
-This is the converse of the [FROM_DAYS()](/built-in-functions/date-time-functions/from_days) function.
+This is the converse of the [FROM_DAYS()](/built-in-functions/date-time-functions/from_days/) function.
 
 ## Examples
 

@@ -15,7 +15,7 @@ Going from one configuration to another will require a re-installation of the Ma
 
 <strong>NOTE</strong>: You can install MariaDB ColumnStore as a root user or non-root user. This is based on how you setup the servers based on "Preparing for Installation Document". If installing as root, you need to be logged in as root user in a root login shell. If you are installing as non-root, you need to be logged in as a non-root user that was setup in the "Preparing for Installation Document".
 
-[https://mariadb.com/kb/en/library/preparing-for-columnstore-installation-11x/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-11x/preparing-for-columnstore-installation-11x)
+[https://mariadb.com/kb/en/library/preparing-for-columnstore-installation-11x/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-11x/preparing-for-columnstore-installation-11x/)
 
 ## ColumnStore Cluster Test Tool
 

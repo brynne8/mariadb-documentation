@@ -11,7 +11,7 @@ BOOL, BOOLEAN
 These types are synonyms for [TINYINT(1)](/kb/en/sql_language-data_types-tinyint/). 
 A value of zero is considered false. Non-zero values are considered true.
 
-However, the values TRUE and FALSE are merely aliases for 1 and 0. See [Boolean Literals](/sql-statements-structure/sql-language-structure/sql-language-structure-boolean-literals), as well as the [IS operator](/sql-statements-structure/operators/comparison-operators/is) for testing values against a boolean.
+However, the values TRUE and FALSE are merely aliases for 1 and 0. See [Boolean Literals](/sql-statements-structure/sql-language-structure/sql-language-structure-boolean-literals/), as well as the [IS operator](/sql-statements-structure/operators/comparison-operators/is/) for testing values against a boolean.
 
 ## Examples
 
@@ -87,5 +87,5 @@ to neither 1 nor 0.
 
 ## See Also
 
-- [Boolean Literals](/sql-statements-structure/sql-language-structure/sql-language-structure-boolean-literals)
-- [IS operator](/sql-statements-structure/operators/comparison-operators/is)
+- [Boolean Literals](/sql-statements-structure/sql-language-structure/sql-language-structure-boolean-literals/)
+- [IS operator](/sql-statements-structure/operators/comparison-operators/is/)

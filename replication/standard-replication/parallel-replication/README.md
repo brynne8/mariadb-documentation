@@ -6,14 +6,14 @@ The terms <em>master</em> and <em>slave</em> have historically been used in repl
 
 Parallel Replication was introduced in [MariaDB 10.0.5](/kb/en/mariadb-1005-release-notes/).
 
-From [MariaDB 10.0.5](/kb/en/mariadb-1005-release-notes/), some writes, [replicated](/replication/standard-replication) from the master can be executed in parallel (simultaneously) on the slave. Note that for parallel replication to work, both the master and slave need to be [MariaDB 10.0.5](/kb/en/mariadb-1005-release-notes/) or later.
+From [MariaDB 10.0.5](/kb/en/mariadb-1005-release-notes/), some writes, [replicated](/replication/standard-replication/) from the master can be executed in parallel (simultaneously) on the slave. Note that for parallel replication to work, both the master and slave need to be [MariaDB 10.0.5](/kb/en/mariadb-1005-release-notes/) or later.
 
 ## Parallel Replication Overview
 
 MariaDB replication in general takes place in three parts:
 
 - Replication events are read from the master by the IO thread and queued in
-the [relay log](/mariadb-administration/server-monitoring-logs/binary-log/relay-log).
+the [relay log](/mariadb-administration/server-monitoring-logs/binary-log/relay-log/).
 - Replication events are fetched one at a time by the SQL thread from the relay log
 - Each event is applied on the slave to replicate all changes done on the
 master.
@@ -32,7 +32,7 @@ connection by setting [@@connection_name.slave-parallel-mode](/kb/en/replication
 
 The value (#) of slave_parallel_threads specifies how many threads will be created in a pool of worker
 threads used to apply events in parallel for *all* your slaves (this includes
-[multi-source replication](/replication/standard-replication/multi-source-replication)). If the value is zero,
+[multi-source replication](/replication/standard-replication/multi-source-replication/)). If the value is zero,
 then no worker threads are created, and old-style replication is used where
 events are applied inside the SQL thread. Usually the value, if non-zero,
 should be at least two times the number of multi-source master connections
@@ -101,7 +101,7 @@ with a later InnoDB update). DDL statements are not applied in parallel with
 any other transactions, earlier or later.
 
 The different kind of transactions can be identified in the output of
-[mysqlbinlog](/clients-utilities/mysqlbinlog). For example:
+[mysqlbinlog](/clients-utilities/mysqlbinlog/). For example:
 
 ```sql
 #150324 13:06:26 server id 1  end_log_pos 6881 	GTID 0-1-42 ddl
@@ -137,7 +137,7 @@ Aggressive mode of in-order parallel replication can be configured by setting th
 
 Conservative mode of in-order parallel replication was introduced in [MariaDB 10.0](/kb/en/what-is-mariadb-100/).
 
-Conservative mode of in-order parallel replication uses the [group commit](/mariadb-administration/server-monitoring-logs/binary-log/group-commit-for-the-binary-log) on the master to discover potential for parallel apply of events on the slave. If two transactions commit together in a [group commit](/mariadb-administration/server-monitoring-logs/binary-log/group-commit-for-the-binary-log) on the master, they are written into the binlog with the same commit id. Such events are certain to not conflict with each other, and they can be scheduled by the parallel replication to run in different worker threads.
+Conservative mode of in-order parallel replication uses the [group commit](/mariadb-administration/server-monitoring-logs/binary-log/group-commit-for-the-binary-log/) on the master to discover potential for parallel apply of events on the slave. If two transactions commit together in a [group commit](/mariadb-administration/server-monitoring-logs/binary-log/group-commit-for-the-binary-log/) on the master, they are written into the binlog with the same commit id. Such events are certain to not conflict with each other, and they can be scheduled by the parallel replication to run in different worker threads.
 
 Conservative mode of in-order parallel replication is the default mode until [MariaDB 10.5.0](/kb/en/mariadb-1050-release-notes/), but it can also be configured by setting the <a undefined>slave_parallel_mode</a> system variable to `conservative` on the slave.
 
@@ -148,7 +148,7 @@ transaction begins the commit step; at this point it is safe to start the
 second transaction, as it can no longer disrupt the execution of the first
 one.
 
-Here is example output from [mysqlbinlog](/clients-utilities/mysqlbinlog) that shows how GTID events are marked
+Here is example output from [mysqlbinlog](/clients-utilities/mysqlbinlog/) that shows how GTID events are marked
 with commit id. The GTID 0-1-47 has no commit id, and can not run in
 parallel. The GTIDs 0-1-48 and 0-1-49 have the same commit id 630, and can
 thus replicate in parallel with one another on a slave:
@@ -167,7 +167,7 @@ happen in the same order as on the master, so that operation is transparent to
 applications.
 
 The opportunities for parallel replication on slaves can be highly increased
-if more transactions are committed in a [group commit](/mariadb-administration/server-monitoring-logs/binary-log/group-commit-for-the-binary-log) on the master. This can be tuned
+if more transactions are committed in a [group commit](/mariadb-administration/server-monitoring-logs/binary-log/group-commit-for-the-binary-log/) on the master. This can be tuned
 using the [binlog_commit_wait_count](/kb/en/replication-and-binary-log-server-system-variables/#binlog_commit_wait_count) and
 [binlog_commit_wait_usec](/kb/en/replication-and-binary-log-server-system-variables/#binlog_commit_wait_usec) variables. If for example the
 application can tolerate up to 50 milliseconds extra delay for transactions on
@@ -178,12 +178,12 @@ not set <code class="highlight fixed" style="white-space:pre-wrap">binlog_commit
 cause significant slowdown for applications that run a lot of small
 transactions serially one after the other.
 
-Note that even if there is no parallelism available from the master [group commit](/mariadb-administration/server-monitoring-logs/binary-log/group-commit-for-the-binary-log), there is still an opportunity for speedup from in-order parallel
+Note that even if there is no parallelism available from the master [group commit](/mariadb-administration/server-monitoring-logs/binary-log/group-commit-for-the-binary-log/), there is still an opportunity for speedup from in-order parallel
 replication, since the actual commit steps of different transactions can run
 in parallel. This can be particularly effective on a slave with binlog enabled
 ([log_slave_updates=1](/kb/en/replication-and-binary-log-server-system-variables/#log_slave_updates)), and more so if slave is configured
 to be crash-safe ([sync_binlog=1](/kb/en/replication-and-binary-log-server-system-variables/#sync_binlog) and
-[innodb_flush_log_at_trx_commit=1](/kb/en/xtradbinnodb-server-system-variables/#innodb_flush_log_at_trx_commit)), as this makes [group commit](/mariadb-administration/server-monitoring-logs/binary-log/group-commit-for-the-binary-log) possible on the slave.
+[innodb_flush_log_at_trx_commit=1](/kb/en/xtradbinnodb-server-system-variables/#innodb_flush_log_at_trx_commit)), as this makes [group commit](/mariadb-administration/server-monitoring-logs/binary-log/group-commit-for-the-binary-log/) possible on the slave.
 
 #### Minimal Mode of In-Order Parallel Replication
 
@@ -262,7 +262,7 @@ Out-of-order parallel replication is disabled when
 
 ## Checking Worker Thread Status in SHOW PROCESSLIST
 
-The worker threads will be listed as "system user" in [SHOW PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist). Their
+The worker threads will be listed as "system user" in [SHOW PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist/). Their
 state will show the query they are currently working on, or it can show one of
 these:
 
@@ -298,7 +298,7 @@ The configured value of the <a undefined>slave_parallel_max_queued</a> system va
 If this value is set too high, and the slave is far (eg. gigabytes of binlog)
 behind the master, then the [SQL thread](/kb/en/replication-threads/#slave-sql-thread) can quickly read all of that and fill up memory with huge amounts of binlog events faster than the [worker threads](/kb/en/replication-threads/#worker-threads) can consume them.
 
-On the other hand, if set too low, the [SQL thread](/kb/en/replication-threads/#slave-sql-thread) might not have sufficient space for queuing enough events to keep the worker threads busy, which could reduce performance. In this case, the [SQL thread](/kb/en/replication-threads/#slave-sql-thread) will have the [thread state](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-states) that states `Waiting for room in worker thread event queue`. For example:
+On the other hand, if set too low, the [SQL thread](/kb/en/replication-threads/#slave-sql-thread) might not have sufficient space for queuing enough events to keep the worker threads busy, which could reduce performance. In this case, the [SQL thread](/kb/en/replication-threads/#slave-sql-thread) will have the [thread state](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-states/) that states `Waiting for room in worker thread event queue`. For example:
 
 ```sql
 +----+-------------+-----------+------+---------+--------+-----------------------------------------------+------------------+----------+
@@ -313,9 +313,9 @@ On the other hand, if set too low, the [SQL thread](/kb/en/replication-threads/#
 +----+-------------+-----------+------+---------+--------+-----------------------------------------------+------------------+----------+
 ```
 
-The <a undefined>slave_parallel_max_queued</a> system variable does not define a hard limit, since the [binary log](/mariadb-administration/server-monitoring-logs/binary-log) events that are currently executing always need to be held in-memory. This means that at least two events per [worker thread](/kb/en/replication-threads/#worker-threads) can always be queued in-memory, regardless of the value of <a undefined>slave_parallel_threads</a>.
+The <a undefined>slave_parallel_max_queued</a> system variable does not define a hard limit, since the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) events that are currently executing always need to be held in-memory. This means that at least two events per [worker thread](/kb/en/replication-threads/#worker-threads) can always be queued in-memory, regardless of the value of <a undefined>slave_parallel_threads</a>.
 
-Usually, the <a undefined>slave_parallel_threads</a> system variable should be set large enough that the [SQL thread](/kb/en/replication-threads/#slave-sql-thread) is able to read far enough ahead in the [binary log](/mariadb-administration/server-monitoring-logs/binary-log) to exploit all possible parallelism. In normal operation, the slave will hopefully not be too far
+Usually, the <a undefined>slave_parallel_threads</a> system variable should be set large enough that the [SQL thread](/kb/en/replication-threads/#slave-sql-thread) is able to read far enough ahead in the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) to exploit all possible parallelism. In normal operation, the slave will hopefully not be too far
 behind, so there will not be a need to queue much data in-memory. The <a undefined>slave_parallel_max_queued</a> system variable could be set fairly high (eg. a few hundred kilobytes) to not limit throughtput. It should just be set low enough that total allocation of the parallel slave queue will not cause the server to run out of memory.
 
 ## Configuration Variable slave_domain_parallel_threads

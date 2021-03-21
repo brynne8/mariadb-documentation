@@ -56,7 +56,7 @@ using the subquery cache.
 
 Every subquery cache creates a temporary table where the results and all
 parameters are stored. It has a unique index over all parameters. First the
-cache is created in a [MEMORY](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/memory-storage-engine) table (if doing this is impossible the cache becomes
+cache is created in a [MEMORY](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/memory-storage-engine/) table (if doing this is impossible the cache becomes
 disabled for that expression). When the table grows up to the minimum of
 `tmp_table_size` and `max_heap_table_size`, the hit rate will be checked:
 
@@ -174,7 +174,7 @@ order by
 
 ## See Also
 
-- [Query cache](/replication/optimization-and-tuning/buffers-caches-and-threads/query-cache)
+- [Query cache](/replication/optimization-and-tuning/buffers-caches-and-threads/query-cache/)
 - [http://mysqlmaniac.com/2012/what-about-the-subqueries/](http://mysqlmaniac.com/2012/what-about-the-subqueries/) blog post describing impact of  subquery cache optimization on queries used by DynamicPageList MediaWiki extension
 - [http://varokism.blogspot.ru/2013/06/mariadb-subquery-cache-in-real-use-case.html](http://varokism.blogspot.ru/2013/06/mariadb-subquery-cache-in-real-use-case.html) Another use case from the real world
 - [What is MariaDB 5.3](/kb/en/what-is-mariadb-53/)

@@ -8,7 +8,7 @@ TEXT or BLOB may help. In current row format, BLOB prefix of 0 bytes is stored
 inline.
 ```
 
-And they can also see the following message as an error or warning in the [error log](/mariadb-administration/server-monitoring-logs/error-log):
+And they can also see the following message as an error or warning in the [error log](/mariadb-administration/server-monitoring-logs/error-log/):
 
 ```sql
 [Warning] InnoDB: Cannot add field col in table db1.tab because after adding it, 
@@ -21,9 +21,9 @@ These messages indicate that the table's definition allows rows that the table's
 
 These messages are raised in the following cases:
 
-- If [InnoDB strict mode](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-strict-mode) is <strong>enabled</strong> and if a [DDL](/sql-statements-structure/sql-statements/data-definition) statement is executed that touches the table, such as [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table) or [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table), then InnoDB will raise an <strong>error</strong> with this message
-- If [InnoDB strict mode](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-strict-mode) is <strong>disabled</strong> and if a [DDL](/sql-statements-structure/sql-statements/data-definition) statement is executed that touches the table, such as [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table) or [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table), then InnoDB will raise a <strong>warning</strong> with this message.
-- Regardless of whether [InnoDB strict mode](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-strict-mode)  is enabled, if a [DML](/sql-statements-structure/sql-statements/data-manipulation) statement is executed that attempts to write a row that the table's InnoDB row format can't store, then InnoDB will raise an <strong>error</strong> with this message.
+- If [InnoDB strict mode](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-strict-mode/) is <strong>enabled</strong> and if a [DDL](/sql-statements-structure/sql-statements/data-definition/) statement is executed that touches the table, such as [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/) or [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/), then InnoDB will raise an <strong>error</strong> with this message
+- If [InnoDB strict mode](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-strict-mode/) is <strong>disabled</strong> and if a [DDL](/sql-statements-structure/sql-statements/data-definition/) statement is executed that touches the table, such as [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/) or [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/), then InnoDB will raise a <strong>warning</strong> with this message.
+- Regardless of whether [InnoDB strict mode](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-strict-mode/)  is enabled, if a [DML](/sql-statements-structure/sql-statements/data-manipulation/) statement is executed that attempts to write a row that the table's InnoDB row format can't store, then InnoDB will raise an <strong>error</strong> with this message.
 <br><br>
 
 ## Example of the Problem
@@ -244,7 +244,7 @@ TEXT or BLOB may help. In current row format, BLOB prefix of 0 bytes is stored i
 
 The root cause is that InnoDB has a maximum row size that is roughly equivalent to half of the value of the <a undefined>innodb_page_size</a> system variable. See [InnoDB Row Formats Overview: Maximum Row Size](/kb/en/innodb-row-formats-overview/#maximum-row-size) for more information.
 
-InnoDB's row formats work around this limit by storing certain kinds of variable-length columns on overflow pages. However, different row formats can store different types of data on overflow pages. Some row formats can store more data in overflow pages than others. For example, the [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format) and [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format) row formats can store the most data in overflow pages. To learn how the various InnoDB row formats use overflow pages, see the following pages:
+InnoDB's row formats work around this limit by storing certain kinds of variable-length columns on overflow pages. However, different row formats can store different types of data on overflow pages. Some row formats can store more data in overflow pages than others. For example, the [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format/) and [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format/) row formats can store the most data in overflow pages. To learn how the various InnoDB row formats use overflow pages, see the following pages:
 
 - [InnoDB REDUNDANT Row Format: Overflow Pages with the REDUNDANT Row Format](/kb/en/innodb-redundant-row-format/#overflow-pages-with-the-redundant-row-format)
 - [InnoDB COMPACT Row Format: Overflow Pages with the COMPACT Row Format](/kb/en/innodb-compact-row-format/#overflow-pages-with-the-compact-row-format)
@@ -255,7 +255,7 @@ InnoDB's row formats work around this limit by storing certain kinds of variable
 
 InnoDB does not currently have an easy way to check all existing tables to determine which tables have this problem. See [MDEV-20400](https://jira.mariadb.org/browse/MDEV-20400) for more information.
 
-One method to check a single existing table for this problem is to enable [InnoDB strict mode](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-strict-mode), and then try to create a duplicate of the table with <a undefined>CREATE TABLE ... LIKE</a>. If the table has this problem, then the operation will fail. For example:
+One method to check a single existing table for this problem is to enable [InnoDB strict mode](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-strict-mode/), and then try to create a duplicate of the table with <a undefined>CREATE TABLE ... LIKE</a>. If the table has this problem, then the operation will fail. For example:
 
 ```sql
 SET SESSION innodb_strict_mode=ON;
@@ -327,22 +327,22 @@ There are several potential solutions available to solve this problem.
 
 ### Converting the Table to the `DYNAMIC` Row Format
 
-If the table is using either the [REDUNDANT](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-redundant-row-format) or the [COMPACT](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compact-row-format) row format, then one potential solution to this problem is to convert the table to use the [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format) row format instead.
+If the table is using either the [REDUNDANT](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-redundant-row-format/) or the [COMPACT](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compact-row-format/) row format, then one potential solution to this problem is to convert the table to use the [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format/) row format instead.
 
 If your tables were originally created on an older version of MariaDB or MySQL, then your table may be using one of InnoDB's older row formats:
 
-- In [MariaDB 10.1](/kb/en/what-is-mariadb-101/) and before, and in MySQL 5.6 and before, the [COMPACT](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compact-row-format) row format was the default row format.
-- In MySQL 4.1 and before, the [REDUNDANT](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-redundant-row-format) row format was the default row format.
+- In [MariaDB 10.1](/kb/en/what-is-mariadb-101/) and before, and in MySQL 5.6 and before, the [COMPACT](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compact-row-format/) row format was the default row format.
+- In MySQL 4.1 and before, the [REDUNDANT](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-redundant-row-format/) row format was the default row format.
 
-The [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format) row format can store more data on overflow pages than these older row formats, so this row format may actually be able to store the table's data safely. See [InnoDB DYNAMIC Row Format: Overflow Pages with the DYNAMIC Row Format](/kb/en/innodb-dynamic-row-format/#overflow-pages-with-the-dynamic-row-format) for more information.
+The [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format/) row format can store more data on overflow pages than these older row formats, so this row format may actually be able to store the table's data safely. See [InnoDB DYNAMIC Row Format: Overflow Pages with the DYNAMIC Row Format](/kb/en/innodb-dynamic-row-format/#overflow-pages-with-the-dynamic-row-format) for more information.
 
-Therefore, a potential solution to the <em>Row size too large</em> error is to convert the table to use the [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format) row format. For example:
+Therefore, a potential solution to the <em>Row size too large</em> error is to convert the table to use the [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format/) row format. For example:
 
 ```sql
 ALTER TABLE tab ROW_FORMAT=DYNAMIC;
 ```
 
-You can use the <a undefined>INNODB_SYS_TABLES</a> table in the [information_schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables) database to find all tables that use the [REDUNDANT](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-redundant-row-format) or the [COMPACT](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compact-row-format) row formats. This is helpful if you would like to convert all of your tables that you still use the older row formats to the [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format) row format. For example, the following query can find those tables, while excluding [InnoDB's internal system tables](/kb/en/innodb-system-tablespaces/#system-tables-within-the-innodb-system-tablespace):
+You can use the <a undefined>INNODB_SYS_TABLES</a> table in the [information_schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/) database to find all tables that use the [REDUNDANT](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-redundant-row-format/) or the [COMPACT](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compact-row-format/) row formats. This is helpful if you would like to convert all of your tables that you still use the older row formats to the [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format/) row format. For example, the following query can find those tables, while excluding [InnoDB's internal system tables](/kb/en/innodb-system-tablespaces/#system-tables-within-the-innodb-system-tablespace):
 
 ```sql
 SELECT NAME, ROW_FORMAT
@@ -351,11 +351,11 @@ WHERE ROW_FORMAT IN('Redundant', 'Compact')
 AND NAME NOT IN('SYS_DATAFILES', 'SYS_FOREIGN', 'SYS_FOREIGN_COLS', 'SYS_TABLESPACES', 'SYS_VIRTUAL', 'SYS_ZIP_DICT', 'SYS_ZIP_DICT_COLS');
 ```
 
-In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, the [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format) row format is the default row format. If your tables were originally created on one of these newer versions, then they may already be using this row format. In that case, you may need to try the next solution.
+In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, the [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format/) row format is the default row format. If your tables were originally created on one of these newer versions, then they may already be using this row format. In that case, you may need to try the next solution.
 
 ### Fitting More Columns on Overflow Pages
 
-If the table is already using the [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format) row format, then another potential solution to this problem is to change the table schema, so that the row format can store more columns on overflow pages.
+If the table is already using the [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format/) row format, then another potential solution to this problem is to change the table schema, so that the row format can store more columns on overflow pages.
 
 In order for InnoDB to store some variable-length columns on overflow pages, the length of those columns may need to be increased.
 
@@ -365,25 +365,25 @@ Some possible ways to change the table schema are listed below.
 
 #### Converting Some Columns to `BLOB` or `TEXT`
 
-For [BLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/blob) and [TEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/text) columns, the [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format) row format can store these columns on overflow pages. See [InnoDB DYNAMIC Row Format: Overflow Pages with the DYNAMIC Row Format](/kb/en/innodb-dynamic-row-format/#overflow-pages-with-the-dynamic-row-format) for more information.
+For [BLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/blob/) and [TEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/text/) columns, the [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format/) row format can store these columns on overflow pages. See [InnoDB DYNAMIC Row Format: Overflow Pages with the DYNAMIC Row Format](/kb/en/innodb-dynamic-row-format/#overflow-pages-with-the-dynamic-row-format) for more information.
 
-Therefore, a potential solution to the <em>Row size too large</em> error is to convert some columns to the [BLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/blob) or [TEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/text) data types.
+Therefore, a potential solution to the <em>Row size too large</em> error is to convert some columns to the [BLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/blob/) or [TEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/text/) data types.
 
 #### Increasing the Length of `VARBINARY` Columns
 
-For [VARBINARY](/columns-storage-engines-and-plugins/data-types/string-data-types/varbinary) columns, the [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format) row format can only store these columns on overflow pages if the maximum length of the column is 256 bytes or longer. See [InnoDB DYNAMIC Row Format: Overflow Pages with the DYNAMIC Row Format](/kb/en/innodb-dynamic-row-format/#overflow-pages-with-the-dynamic-row-format) for more information.
+For [VARBINARY](/columns-storage-engines-and-plugins/data-types/string-data-types/varbinary/) columns, the [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format/) row format can only store these columns on overflow pages if the maximum length of the column is 256 bytes or longer. See [InnoDB DYNAMIC Row Format: Overflow Pages with the DYNAMIC Row Format](/kb/en/innodb-dynamic-row-format/#overflow-pages-with-the-dynamic-row-format) for more information.
 
-Therefore, a potential solution to the <em>Row size too large</em> error is to ensure that all [VARBINARY](/columns-storage-engines-and-plugins/data-types/string-data-types/varbinary) columns are at least as long as `varbinary(256)`.
+Therefore, a potential solution to the <em>Row size too large</em> error is to ensure that all [VARBINARY](/columns-storage-engines-and-plugins/data-types/string-data-types/varbinary/) columns are at least as long as `varbinary(256)`.
 
 #### Increasing the Length of `VARCHAR` Columns
 
-For [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar) columns, the [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format) row format can only store these columns on overflow pages if the maximum length of the column is 256 bytes or longer. See [InnoDB DYNAMIC Row Format: Overflow Pages with the DYNAMIC Row Format](/kb/en/innodb-dynamic-row-format/#overflow-pages-with-the-dynamic-row-format) for more information.
+For [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar/) columns, the [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format/) row format can only store these columns on overflow pages if the maximum length of the column is 256 bytes or longer. See [InnoDB DYNAMIC Row Format: Overflow Pages with the DYNAMIC Row Format](/kb/en/innodb-dynamic-row-format/#overflow-pages-with-the-dynamic-row-format) for more information.
 
-The original table schema shown earlier on this page causes the <em>Row size too large</em> error, because all of the table's [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar) columns are smaller than 256 bytes, which means that they have to be stored on the row's main data page.
+The original table schema shown earlier on this page causes the <em>Row size too large</em> error, because all of the table's [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar/) columns are smaller than 256 bytes, which means that they have to be stored on the row's main data page.
 
-Therefore, a potential solution to the <em>Row size too large</em> error is to ensure that all [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar) columns are at least as long as 256 bytes. The number of characters required to reach the 256 byte limit depends on the [character set](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets) used by the column.
+Therefore, a potential solution to the <em>Row size too large</em> error is to ensure that all [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar/) columns are at least as long as 256 bytes. The number of characters required to reach the 256 byte limit depends on the [character set](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/) used by the column.
 
-For example, when using InnoDB's [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format) row format and a default character set of [latin1](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/supported-character-sets-and-collations) (which requires up to 1 byte per character), the 256 byte limit means that a [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar) column will only be stored on overflow pages if it is at least as large as a `varchar(256)`:
+For example, when using InnoDB's [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format/) row format and a default character set of [latin1](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/supported-character-sets-and-collations/) (which requires up to 1 byte per character), the 256 byte limit means that a [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar/) column will only be stored on overflow pages if it is at least as large as a `varchar(256)`:
 
 ```sql
 SET GLOBAL innodb_default_row_format='dynamic';
@@ -591,7 +591,7 @@ CREATE OR REPLACE TABLE tab (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 ```
 
-And when using InnoDB's [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format) row format and a default character set of [utf8](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/unicode) (which requires up to 3 bytes per character), the 256 byte limit means that a [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar) column will only be stored on overflow pages if it is at least as large as a `varchar(86)`:
+And when using InnoDB's [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format/) row format and a default character set of [utf8](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/unicode/) (which requires up to 3 bytes per character), the 256 byte limit means that a [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar/) column will only be stored on overflow pages if it is at least as large as a `varchar(86)`:
 
 ```sql
 SET GLOBAL innodb_default_row_format='dynamic';
@@ -799,7 +799,7 @@ CREATE OR REPLACE TABLE tab (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
 
-And when using InnoDB's [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format) row format and a default character set of [utf8mb4](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/unicode) (which requires up to 4 bytes per character), the 256 byte limit means that a [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar) column will only be stored on overflow pages if it is at least as large as a `varchar(64)`:
+And when using InnoDB's [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format/) row format and a default character set of [utf8mb4](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/unicode/) (which requires up to 4 bytes per character), the 256 byte limit means that a [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar/) column will only be stored on overflow pages if it is at least as large as a `varchar(64)`:
 
 ```sql
 SET GLOBAL innodb_default_row_format='dynamic';
@@ -1023,22 +1023,22 @@ This workaround can even work if your table is so wide that the previous solutio
 
 A <em>safe</em> workaround is to refactor some of the columns into a JSON document.
 
-The JSON document can be queried and manipulated using MariaDB's [JSON functions](/built-in-functions/special-functions/json-functions).
+The JSON document can be queried and manipulated using MariaDB's [JSON functions](/built-in-functions/special-functions/json-functions/).
 
 The JSON document can be stored in a column that uses one of the following data types:
 
-- [TEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/text): The maximum size of a [TEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/text) column is 64 KB.
-- [MEDIUMTEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/mediumtext): The maximum size of a [MEDIUMTEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/mediumtext) column is 16 MB.
-- [LONGTEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/longtext): The maximum size of a [LONGTEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/longtext) column is 4 GB.
-- [JSON](/columns-storage-engines-and-plugins/data-types/string-data-types/json-data-type): This is just an alias for the [LONGTEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/longtext) data type.
+- [TEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/text/): The maximum size of a [TEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/text/) column is 64 KB.
+- [MEDIUMTEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/mediumtext/): The maximum size of a [MEDIUMTEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/mediumtext/) column is 16 MB.
+- [LONGTEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/longtext/): The maximum size of a [LONGTEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/longtext/) column is 4 GB.
+- [JSON](/columns-storage-engines-and-plugins/data-types/string-data-types/json-data-type/): This is just an alias for the [LONGTEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/longtext/) data type.
 
 This workaround can even work if your table is so wide that the previous solutions have failed to solve them problem for your table.
 
 ### Disabling InnoDB Strict Mode
 
-An <em>unsafe</em> workaround is to disable [InnoDB strict mode](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-strict-mode). [InnoDB strict mode](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-strict-mode) can be disabled by setting the <a undefined>innodb_strict_mode</a> system variable to `OFF`.
+An <em>unsafe</em> workaround is to disable [InnoDB strict mode](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-strict-mode/). [InnoDB strict mode](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-strict-mode/) can be disabled by setting the <a undefined>innodb_strict_mode</a> system variable to `OFF`.
 
-For example, even though the following table schema is too large for most InnoDB row formats to store, it can still be created when [InnoDB strict mode](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-strict-mode) is disabled:
+For example, even though the following table schema is too large for most InnoDB row formats to store, it can still be created when [InnoDB strict mode](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-strict-mode/) is disabled:
 
 ```sql
 SET GLOBAL innodb_default_row_format='dynamic';
@@ -1246,7 +1246,7 @@ CREATE OR REPLACE TABLE tab (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 ```
 
-But as mentioned above, if [InnoDB strict mode](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-strict-mode) is <strong>disabled</strong> and if a [DDL](/sql-statements-structure/sql-statements/data-definition) statement is executed, then InnoDB will still raise a <strong>warning</strong> with this message. The [SHOW WARNINGS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-warnings) statement can be used to view the warning. For example:
+But as mentioned above, if [InnoDB strict mode](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-strict-mode/) is <strong>disabled</strong> and if a [DDL](/sql-statements-structure/sql-statements/data-definition/) statement is executed, then InnoDB will still raise a <strong>warning</strong> with this message. The [SHOW WARNINGS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-warnings/) statement can be used to view the warning. For example:
 
 ```sql
 SHOW WARNINGS;
@@ -1258,4 +1258,4 @@ SHOW WARNINGS;
 1 row in set (0.000 sec)
 ```
 
-As mentioned above, even though InnoDB is allowing the table to be created, there is still an opportunity for errors. Regardless of whether [InnoDB strict mode](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-strict-mode) is enabled, if a [DML](/sql-statements-structure/sql-statements/data-manipulation) statement is executed that attempts to write a row that the table's InnoDB row format can't store, then InnoDB will raise an <strong>error</strong> with this message. This creates a somewhat <em>unsafe</em> situation, because it means that the application has the chance to encounter an additional error while executing [DML](/sql-statements-structure/sql-statements/data-manipulation).
+As mentioned above, even though InnoDB is allowing the table to be created, there is still an opportunity for errors. Regardless of whether [InnoDB strict mode](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-strict-mode/) is enabled, if a [DML](/sql-statements-structure/sql-statements/data-manipulation/) statement is executed that attempts to write a row that the table's InnoDB row format can't store, then InnoDB will raise an <strong>error</strong> with this message. This creates a somewhat <em>unsafe</em> situation, because it means that the application has the chance to encounter an additional error while executing [DML](/sql-statements-structure/sql-statements/data-manipulation/).

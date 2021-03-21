@@ -39,7 +39,7 @@ in the given files, /file1<em> and </em>file2<em>:</em>
 shell> replace a b b a -- file1 file2 ...
 ```
 
-The replace program is used by [msql2mysql](/clients-utilities/msql2mysql).
+The replace program is used by [msql2mysql](/clients-utilities/msql2mysql/).
 
 ## Options
 

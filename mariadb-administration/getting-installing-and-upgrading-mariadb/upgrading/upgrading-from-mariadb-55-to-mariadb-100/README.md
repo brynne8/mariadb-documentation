@@ -7,9 +7,9 @@ There are no changes in table or index formats between [MariaDB 5.5](/kb/en/what
 
 ### How to Upgrade
 
-For Windows, see [Upgrading MariaDB on Windows](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-mariadb-on-windows) instead.
+For Windows, see [Upgrading MariaDB on Windows](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-mariadb-on-windows/) instead.
 
-For MariaDB Galera Cluster, see [Upgrading from MariaDB Galera Cluster 5.5 to MariaDB Galera Cluster 10.0](/replication/galera-cluster/upgrading-galera-cluster/upgrading-from-mariadb-galera-cluster-55-to-mariadb-galera-cluster-100) instead.
+For MariaDB Galera Cluster, see [Upgrading from MariaDB Galera Cluster 5.5 to MariaDB Galera Cluster 10.0](/replication/galera-cluster/upgrading-galera-cluster/upgrading-from-mariadb-galera-cluster-55-to-mariadb-galera-cluster-100/) instead.
 
 Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [Percona XtraBackup](/kb/en/backup-restore-and-import-clients-percona-xtrabackup/).
 
@@ -22,7 +22,7 @@ The suggested upgrade procedure is:
 </li></ul>
 2 Set <a undefined>innodb_fast_shutdown</a> to `0`. It can be changed dynamically with <a undefined>SET GLOBAL</a>. For example: <br>
 <code class="fixed" style="white-space:pre-wrap">SET GLOBAL innodb_fast_shutdown=0;</code>
-3 [Stop MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically).
+3 [Stop MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically/).
 4 Uninstall the old version of MariaDB.
 <ul start="1"><li>On Debian, Ubuntu, and other similar Linux distributions, execute the following: <br>
 <code class="fixed" style="white-space:pre-wrap">sudo apt-get remove mariadb-server</code>
@@ -36,11 +36,11 @@ The suggested upgrade procedure is:
 </li><li>On RHEL, CentOS, Fedora, and other similar Linux distributions, see [Installing MariaDB Packages with YUM](/kb/en/yum/#installing-mariadb-packages-with-yum) for more information.
 </li><li>On SLES, OpenSUSE, and other similar Linux distributions, see [Installing MariaDB Packages with ZYpp](/kb/en/installing-mariadb-with-zypper/#installing-mariadb-packages-with-zypp) for more information.
 </li></ul>
-6 Make any desired changes to configuration options in [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files), such as `my.cnf`. This includes removing any options that are no longer supported.
-7 [Start MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically).
-8 Run [mysql_upgrade](/sql-statements-structure/sql-statements/table-statements/mysql_upgrade).
+6 Make any desired changes to configuration options in [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/), such as `my.cnf`. This includes removing any options that are no longer supported.
+7 [Start MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically/).
+8 Run [mysql_upgrade](/sql-statements-structure/sql-statements/table-statements/mysql_upgrade/).
 <ul start="1"><li>`mysql_upgrade` does two things:
-<ol start="1"><li>Ensures that the system tables in the [mysq](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables)l database are fully compatible with the new version.
+<ol start="1"><li>Ensures that the system tables in the [mysq](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/)l database are fully compatible with the new version.
 </li><li>Does a very quick check of all tables and marks them as compatible with the new version of MariaDB .
 </li></ol>
 </li></ul>
@@ -119,7 +119,7 @@ New reserved word: RETURNING. This can no longer be used as an identifier withou
 
 #### Other
 
-The `SET OPTION` syntax is deprecated in [MariaDB 10.0](/kb/en/what-is-mariadb-100/). Use [SET](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set) instead.
+The `SET OPTION` syntax is deprecated in [MariaDB 10.0](/kb/en/what-is-mariadb-100/). Use [SET](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set/) instead.
 
 ### New Major Features To Consider
 
@@ -128,17 +128,17 @@ You should consider using the following new major features in [MariaDB 10.0](/kb
 #### For Master / Slave Setups
 
 - [Global transaction id](/kb/en/global-transaction-id/) is enabled by default. This makes it easier to change a slave to a master.
-- [MariaDB 10.0](/kb/en/what-is-mariadb-100/) supports [parallel applying of queries on slaves](/replication/standard-replication/parallel-replication). You can enable this with [slave-parallel-threads=#](/kb/en/replication-and-binary-log-server-system-variables/#slave_parallel_threads).  Note that this works only if your master is [MariaDB 10.0](/kb/en/what-is-mariadb-100/) or later.
-- [Multi source replication](/replication/standard-replication/multi-source-replication)
+- [MariaDB 10.0](/kb/en/what-is-mariadb-100/) supports [parallel applying of queries on slaves](/replication/standard-replication/parallel-replication/). You can enable this with [slave-parallel-threads=#](/kb/en/replication-and-binary-log-server-system-variables/#slave_parallel_threads).  Note that this works only if your master is [MariaDB 10.0](/kb/en/what-is-mariadb-100/) or later.
+- [Multi source replication](/replication/standard-replication/multi-source-replication/)
 
 #### Galera
 
-See [Upgrading from MariaDB Galera Cluster 5.5 to MariaDB Galera Cluster 10.0](/replication/galera-cluster/upgrading-galera-cluster/upgrading-from-mariadb-galera-cluster-55-to-mariadb-galera-cluster-100) for more details on [Galera](/replication/galera-cluster/what-is-mariadb-galera-cluster) upgrades.
+See [Upgrading from MariaDB Galera Cluster 5.5 to MariaDB Galera Cluster 10.0](/replication/galera-cluster/upgrading-galera-cluster/upgrading-from-mariadb-galera-cluster-55-to-mariadb-galera-cluster-100/) for more details on [Galera](/replication/galera-cluster/what-is-mariadb-galera-cluster/) upgrades.
 
 #### Variables
 
-- [System Variables Added in MariaDB 10.0](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-100)
-- [Status Variables Added in MariaDB 10.0](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/status-variables-added-in-mariadb-100)
+- [System Variables Added in MariaDB 10.0](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-100/)
+- [Status Variables Added in MariaDB 10.0](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/status-variables-added-in-mariadb-100/)
 
 ## Notes
 
@@ -147,4 +147,4 @@ See [Upgrading from MariaDB Galera Cluster 5.5 to MariaDB Galera Cluster 10.0](/
 ## See Also
 
 - [The features in MariaDB 10.0](/kb/en/what-is-mariadb-100/)
-- [Upgrading from MariaDB Galera Cluster 5.5 to MariaDB Galera Cluster 10.0](/replication/galera-cluster/upgrading-galera-cluster/upgrading-from-mariadb-galera-cluster-55-to-mariadb-galera-cluster-100)
+- [Upgrading from MariaDB Galera Cluster 5.5 to MariaDB Galera Cluster 10.0](/replication/galera-cluster/upgrading-galera-cluster/upgrading-from-mariadb-galera-cluster-55-to-mariadb-galera-cluster-100/)

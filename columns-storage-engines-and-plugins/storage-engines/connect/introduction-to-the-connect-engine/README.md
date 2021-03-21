@@ -26,7 +26,7 @@ An ISO standard exists that describes one way to implement and use MED in SQL
 by defining foreign tables for which an external FDW (Foreign Data Wrapper) has
 been developed in C.
 
-However, since this was written, a new source of data was developed as the “cloud”. Data are existing worldwide and, in particular, can be obtained in JSON or XML format in answer to REST queries. From [Connect 1.06.0010](/columns-storage-engines-and-plugins/storage-engines/connect), it is possible to create JSON, XML or CSV tables based on data retrieved from such REST queries.
+However, since this was written, a new source of data was developed as the “cloud”. Data are existing worldwide and, in particular, can be obtained in JSON or XML format in answer to REST queries. From [Connect 1.06.0010](/columns-storage-engines-and-plugins/storage-engines/connect/), it is possible to create JSON, XML or CSV tables based on data retrieved from such REST queries.
 
 MED as described above is a rather complex way to achieve this goal and MariaDB does not support
 the ISO SQL/MED standard. But, to cover the need, possibly in transactional but
@@ -37,9 +37,9 @@ The main features of CONNECT are:
 
 1 No need for additional SQL language extensions.
 2 Embedded wrappers for many external data types (files, data sources, virtual).
-3 NoSQL query facilities for [JSON](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-json-table-type), [XML](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-xml-table-type), HTML files and using JSON UDFs.
+3 NoSQL query facilities for [JSON](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-json-table-type/), [XML](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-xml-table-type/), HTML files and using JSON UDFs.
 4 NoSQL data obtained from REST queries (requires cpprestsdk).
-5 NoSQL new data type [MONGO](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-mongo-table-type) accessing MongoDB collections as relational tables.
+5 NoSQL new data type [MONGO](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-mongo-table-type/) accessing MongoDB collections as relational tables.
 6 Read/Write access to external files of most commonly used formats.
 7 Direct access to most external data sources via ODBC, JDBC and MySQL or MongoDB API.
 8 Only used columns are retrieved from external scan.

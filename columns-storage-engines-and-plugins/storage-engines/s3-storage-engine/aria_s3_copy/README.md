@@ -2,13 +2,13 @@
 
 ##### MariaDB starting with [10.5](/kb/en/what-is-mariadb-105/)
 
-The [S3 storage engine](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine) has been available since [MariaDB 10.5.4](/kb/en/mariadb-1054-release-notes/).
+The [S3 storage engine](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/) has been available since [MariaDB 10.5.4](/kb/en/mariadb-1054-release-notes/).
 
-`aria_s3_copy` is a tool for copying an [Aria](/columns-storage-engines-and-plugins/storage-engines/aria) table to and from [S3](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine).
+`aria_s3_copy` is a tool for copying an [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/) table to and from [S3](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/).
 
 The Aria table must be non transactional and have [ROW_FORMAT=PAGE](/kb/en/aria-storage-formats/#page).
 
-For `aria_s3_copy` to work reliably, the table should not be changed by the MariaDB server during the copy, and one should have first performed [FLUSH TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush) to ensure that the table is properly closed.
+For `aria_s3_copy` to work reliably, the table should not be changed by the MariaDB server during the copy, and one should have first performed [FLUSH TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/) to ensure that the table is properly closed.
 
 Example of properly created Aria table:
 
@@ -16,7 +16,7 @@ Example of properly created Aria table:
 create table test1 (a int) transactional=0 row_format=PAGE engine=aria;
 ```
 
-Note that when using [ALTER TABLE table_name ENGINE=S3](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/using-the-s3-storage-engine) this restriction doesn't apply.
+Note that when using [ALTER TABLE table_name ENGINE=S3](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/using-the-s3-storage-engine/) this restriction doesn't apply.
 
 ### Main Arguments
 

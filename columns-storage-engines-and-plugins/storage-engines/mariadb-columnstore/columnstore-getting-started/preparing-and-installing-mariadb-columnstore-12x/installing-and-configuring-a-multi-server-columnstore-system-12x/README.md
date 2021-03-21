@@ -6,7 +6,7 @@ Review the [Preparing for ColumnStore Installation 1.2.x](/kb/en/preparing-for-c
 
 ## Validating Pre-Requisites are Complete
 
-The [ColumnStore Cluster Tester Tool](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-11x/mariadb-columnstore-cluster-test-tool) can be used to verify that the target servers are are setup correctly and report specific known errors that can cause failures or timeouts in the cluster setup scripts.
+The [ColumnStore Cluster Tester Tool](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-11x/mariadb-columnstore-cluster-test-tool/) can be used to verify that the target servers are are setup correctly and report specific known errors that can cause failures or timeouts in the cluster setup scripts.
 
 The tool should be run from the same server as the subsequent quick install and postConfigure scripts. With no arguments the script will only test the current server. Specify the other servers in the cluster using the <em>--ippaddr</em> argument to validate those servers are reachable and also configured correctly.
 
@@ -53,4 +53,4 @@ NOTE: The Multi-Server Quick Installer defaults to a Non-Distributed Install mea
 
 ## MariaDB ColumnStore Custom Installation
 
-If you choose not to do the quick install and chose to customize the various options of installations using a wizard, you may use  MariaDB ColumnStore postConfigure script. Please look at [Custom Installation of Multi-Server Cluster](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-12x/custom-installation-of-multi-server-columnstore-cluster).
+If you choose not to do the quick install and chose to customize the various options of installations using a wizard, you may use  MariaDB ColumnStore postConfigure script. Please look at [Custom Installation of Multi-Server Cluster](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-12x/custom-installation-of-multi-server-columnstore-cluster/).

@@ -2,16 +2,16 @@
 
 <strong>Release date:</strong> 26th October 2016
 
-[MariaDB ColumnStore 1.0.4](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore) is a beta release of MariaDB ColumnStore. This is the first beta release of MariaDB ColumnStore with improvements over the previous 1.0.3 alpha release.
+[MariaDB ColumnStore 1.0.4](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/) is a beta release of MariaDB ColumnStore. This is the first beta release of MariaDB ColumnStore with improvements over the previous 1.0.3 alpha release.
 
 MariaDB ColumnStore 1.0.4 is a <strong><em>[Beta](/kb/en/release-criteria/)</em></strong> release.
 
 <strong>Do not use <em>beta</em> releases on production systems!</strong>
 
-For an overview of [MariaDB ColumnStore](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore) see [MariaDB ColumnStore Architectural Overview](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-architectural-overview)
+For an overview of [MariaDB ColumnStore](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/) see [MariaDB ColumnStore Architectural Overview](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-architectural-overview/)
 
 Please provide feedback in [JIRA](https://jira.mariadb.org/browse/MCOL) for anything that is not working as expected so that we can fix it before we make the release available for the larger community.
-For general "how to questions" ask questions [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore) or subscribe to mariadb-columnstore@googlegroups.com
+For general "how to questions" ask questions [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/) or subscribe to mariadb-columnstore@googlegroups.com
 
 ## Notable Changes
 
@@ -59,7 +59,7 @@ Below is list of some of the bugs and issues fixed. A number of regression test 
 
 ## Upgrade
 
-Multi version upgrades are not supported, please upgrade versions prior to 1.0.3 before upgrading to 1.0.4. Details on upgrading from version to 1.0.3 to 1.0.4 can be found [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/mariadb-columnstore-columnstore/mariadb-columnstore-10-upgrades/upgrading-mariadb-columnstore-from-103-to-104).
+Multi version upgrades are not supported, please upgrade versions prior to 1.0.3 before upgrading to 1.0.4. Details on upgrading from version to 1.0.3 to 1.0.4 can be found [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/mariadb-columnstore-columnstore/mariadb-columnstore-10-upgrades/upgrading-mariadb-columnstore-from-103-to-104/).
 
 Upgrade from MariaDB ColumnStore Alpha versions 1.0.0 to 1.0.2 is not supported, please upgrade to version 1.0.3 prior to upgrading to 1.0.4.
 
@@ -90,7 +90,7 @@ There are a number bugs and known limitations within this beta version of MariaD
 ```
 
 - [MCOL-404](https://jira.mariadb.org/browse/MCOL-404): Non root user install does not work. Install as root instead for this release.
-- The current logging default generates full verbose debug logs. This can be controlled by making logging configuration changes as described [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/columnstore-system-monitoring-configuration).
+- The current logging default generates full verbose debug logs. This can be controlled by making logging configuration changes as described [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/columnstore-system-monitoring-configuration/).
 - While Millisecond and Microsecond storage is supported for datetime, time and timestamp columns, at this time the query results cannot return millisecond and microseconds.
 - UTF-8 Limitation
 <ul start="1"><li>UTF-8 must be declared at the table level if the instance has been set up with a UTF-8 profile. Tables created with a non-matching character set will yield indeterminate results. 
@@ -101,7 +101,7 @@ There are a number bugs and known limitations within this beta version of MariaD
 
 ## Documentation
 
-[MariaDB ColumnStore Documentation](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore)
+[MariaDB ColumnStore Documentation](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/)
 
 ## Packaging
 

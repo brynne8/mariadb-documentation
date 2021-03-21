@@ -9,7 +9,7 @@ SHOW MASTER LOGS
 
 ## Description
 
-Lists the [binary log](/mariadb-administration/server-monitoring-logs/binary-log) files on the server. This statement is used as part of the
+Lists the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) files on the server. This statement is used as part of the
 procedure described in <a undefined>PURGE BINARY LOGS</a>, that shows how to
 determine which logs can be purged.
 

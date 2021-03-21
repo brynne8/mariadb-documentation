@@ -1,6 +1,6 @@
 # Stored Procedure Overview
 
-A Stored Procedure is a routine invoked with a [CALL](/sql-statements-structure/sql-statements/stored-routine-statements/call) statement. It may have input parameters, output parameters and parameters that are both input parameters and output parameters.
+A Stored Procedure is a routine invoked with a [CALL](/sql-statements-structure/sql-statements/stored-routine-statements/call/) statement. It may have input parameters, output parameters and parameters that are both input parameters and output parameters.
 
 ## Creating a Stored Procedure
 
@@ -60,7 +60,7 @@ CREATE PROCEDURE
   END;
 ```
 
-See [CREATE PROCEDURE](/programming-customizing-mariadb/stored-routines/stored-procedures/create-procedure) for full syntax details.
+See [CREATE PROCEDURE](/programming-customizing-mariadb/stored-routines/stored-procedures/create-procedure/) for full syntax details.
 
 ## Why use Stored Procedures?
 
@@ -68,7 +68,7 @@ Security is a key reason. Banks commonly use stored procedures so that applicati
 
 ## Stored Procedure listings and definitions
 
-To find which stored functions are running on the server, use [SHOW PROCEDURE STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-procedure-status).
+To find which stored functions are running on the server, use [SHOW PROCEDURE STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-procedure-status/).
 
 ```sql
 SHOW PROCEDURE STATUS\G
@@ -86,7 +86,7 @@ collation_connection: utf8_general_ci
   Database Collation: latin1_swedish_ci
 ```
 
-or query the [routines table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table) in the INFORMATION_SCHEMA database directly:
+or query the [routines table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table/) in the INFORMATION_SCHEMA database directly:
 
 ```sql
 SELECT ROUTINE_NAME FROM INFORMATION_SCHEMA.ROUTINES 
@@ -98,7 +98,7 @@ SELECT ROUTINE_NAME FROM INFORMATION_SCHEMA.ROUTINES
 +--------------------+
 ```
 
-To find out what the stored procedure does, use [SHOW CREATE PROCEDURE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-procedure).
+To find out what the stored procedure does, use [SHOW CREATE PROCEDURE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-procedure/).
 
 ```sql
 SHOW CREATE PROCEDURE Reset_animal_count\G
@@ -115,14 +115,14 @@ collation_connection: utf8_general_ci
 
 ## Dropping and Updating a Stored Procedure
 
-To drop a stored procedure, use the [DROP PROCEDURE](/programming-customizing-mariadb/stored-routines/stored-procedures/drop-procedure) statement.
+To drop a stored procedure, use the [DROP PROCEDURE](/programming-customizing-mariadb/stored-routines/stored-procedures/drop-procedure/) statement.
 
 ```sql
 DROP PROCEDURE Reset_animal_count();
 ```
 
-To change the characteristics of a stored procedure, use [ALTER PROCEDURE](/programming-customizing-mariadb/stored-routines/stored-procedures/alter-procedure).  However, you cannot change the parameters or body of a stored procedure using this statement; to make such changes, you must drop and re-create the procedure using DROP PROCEDURE and CREATE PROCEDURE.
+To change the characteristics of a stored procedure, use [ALTER PROCEDURE](/programming-customizing-mariadb/stored-routines/stored-procedures/alter-procedure/).  However, you cannot change the parameters or body of a stored procedure using this statement; to make such changes, you must drop and re-create the procedure using DROP PROCEDURE and CREATE PROCEDURE.
 
 ## Permissions in Stored Procedures
 
-See the article [Stored Routine Privileges](/programming-customizing-mariadb/stored-routines/stored-functions/stored-routine-privileges).
+See the article [Stored Routine Privileges](/programming-customizing-mariadb/stored-routines/stored-functions/stored-routine-privileges/).

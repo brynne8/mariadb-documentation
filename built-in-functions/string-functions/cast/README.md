@@ -8,26 +8,26 @@ CAST(expr AS type)
 
 ## Description
 
-The `CAST()` function takes a value of one [type](/columns-storage-engines-and-plugins/data-types) and produces a value of another type, similar to the [CONVERT()](/built-in-functions/string-functions/convert) function.
+The `CAST()` function takes a value of one [type](/columns-storage-engines-and-plugins/data-types/) and produces a value of another type, similar to the [CONVERT()](/built-in-functions/string-functions/convert/) function.
 
 The type can be one of the following values:
 
-- [BINARY](/columns-storage-engines-and-plugins/data-types/string-data-types/binary)
-- [CHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/char)
-- [DATE](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/date)
-- [DATETIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/datetime)
-- [DECIMAL[(M[,D])](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/decimal)]
-- [DOUBLE](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/double)
-- [FLOAT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/float) (from [MariaDB 10.4.5](/kb/en/mariadb-1045-release-notes/))
-- [INTEGER](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int) 
+- [BINARY](/columns-storage-engines-and-plugins/data-types/string-data-types/binary/)
+- [CHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/char/)
+- [DATE](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/date/)
+- [DATETIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/datetime/)
+- [DECIMAL[(M[,D])](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/decimal/)]
+- [DOUBLE](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/double/)
+- [FLOAT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/float/) (from [MariaDB 10.4.5](/kb/en/mariadb-1045-release-notes/))
+- [INTEGER](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int/) 
 <ul start="1"><li>Short for `SIGNED INTEGER`
 </li></ul>
 - SIGNED [INTEGER]
 - UNSIGNED [INTEGER]
-- [TIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/time)
-- [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar) (in [Oracle mode](/kb/en/sql_modeoracle/), from [MariaDB 10.3](/kb/en/what-is-mariadb-103/))
+- [TIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/time/)
+- [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar/) (in [Oracle mode](/kb/en/sql_modeoracle/), from [MariaDB 10.3](/kb/en/what-is-mariadb-103/))
 
-The main difference between `CAST` and [CONVERT()](/built-in-functions/string-functions/convert) is that [CONVERT(expr,type)](/built-in-functions/string-functions/convert) is ODBC syntax while `CAST(expr as type)` and [CONVERT(... USING ...)](/built-in-functions/string-functions/convert) are SQL92 syntax.
+The main difference between `CAST` and [CONVERT()](/built-in-functions/string-functions/convert/) is that [CONVERT(expr,type)](/built-in-functions/string-functions/convert/) is ODBC syntax while `CAST(expr as type)` and [CONVERT(... USING ...)](/built-in-functions/string-functions/convert/) are SQL92 syntax.
 
 In [MariaDB 10.4](/kb/en/what-is-mariadb-104/) and later, you can use the `CAST()` function with the `INTERVAL` keyword.
 
@@ -47,7 +47,7 @@ SELECT CAST("1" AS UNSIGNED INTEGER);
 SELECT CAST(123 AS CHAR CHARACTER SET utf8)
 ```
 
-Note that when one casts to [CHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/char) without specifying the character set, the [collation_connection](/kb/en/server-system-variables/#collation_connection) character set collation will be used. When used with `CHAR CHARACTER SET`, the default collation for that character set will be used.
+Note that when one casts to [CHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/char/) without specifying the character set, the [collation_connection](/kb/en/server-system-variables/#collation_connection) character set collation will be used. When used with `CHAR CHARACTER SET`, the default collation for that character set will be used.
 
 ```sql
 SELECT COLLATION(CAST(123 AS CHAR));
@@ -77,7 +77,7 @@ SELECT COLLATION(CAST(123 AS CHAR CHARACTER SET utf8)
 +-------------------------------------------------------------------------+
 ```
 
-Using `CAST()` to order an [ENUM](/columns-storage-engines-and-plugins/data-types/string-data-types/enum) field as a [CHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/char) rather than the internal numerical value:
+Using `CAST()` to order an [ENUM](/columns-storage-engines-and-plugins/data-types/string-data-types/enum/) field as a [CHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/char/) rather than the internal numerical value:
 
 ```sql
 CREATE TABLE enum_list (enum_field enum('c','a','b'));
@@ -137,8 +137,8 @@ SELECT CAST(2019-01-04 INTERVAL AS DAY_SECOND(2)) AS "Cast";
 
 ## See Also
 
-- [Supported data types](/columns-storage-engines-and-plugins/data-types)
-- [Microseconds in MariaDB](/built-in-functions/date-time-functions/microseconds-in-mariadb)
-- [String literals](/sql-statements-structure/sql-language-structure/string-literals)
-- [COLLATION()](/built-in-functions/secondary-functions/information-functions/collation)
-- [CONVERT()](/built-in-functions/string-functions/convert)
+- [Supported data types](/columns-storage-engines-and-plugins/data-types/)
+- [Microseconds in MariaDB](/built-in-functions/date-time-functions/microseconds-in-mariadb/)
+- [String literals](/sql-statements-structure/sql-language-structure/string-literals/)
+- [COLLATION()](/built-in-functions/secondary-functions/information-functions/collation/)
+- [CONVERT()](/built-in-functions/string-functions/convert/)

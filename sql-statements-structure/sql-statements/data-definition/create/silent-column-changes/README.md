@@ -1,12 +1,12 @@
 # Silent Column Changes
 
-When a [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table) or [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) command is issued, MariaDB will silently change a column specification in the following cases:
+When a [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/) or [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) command is issued, MariaDB will silently change a column specification in the following cases:
 
 - [PRIMARY KEY](/kb/en/getting-started-with-indexes/#primary-key) columns are always NOT NULL.
-- Any trailing spaces from [SET](/columns-storage-engines-and-plugins/data-types/string-data-types/set-data-type) and [ENUM](/columns-storage-engines-and-plugins/data-types/string-data-types/enum) values are discarded.
-- [TIMESTAMP](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/timestamp) columns are always NOT NULL, and display sizes are discarded
+- Any trailing spaces from [SET](/columns-storage-engines-and-plugins/data-types/string-data-types/set-data-type/) and [ENUM](/columns-storage-engines-and-plugins/data-types/string-data-types/enum/) values are discarded.
+- [TIMESTAMP](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/timestamp/) columns are always NOT NULL, and display sizes are discarded
 - A row-size limit of 65535 bytes applies
-- If strict SQL mode is not enabled, a [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar) column longer than 65535 become [TEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/text), and a [VARBINARY](/columns-storage-engines-and-plugins/data-types/string-data-types/varbinary) columns longer than 65535 becomes a [BLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/blob). If strict mode is enabled the silent changes will not be made, and an error will occur.
+- If strict SQL mode is not enabled, a [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar/) column longer than 65535 become [TEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/text/), and a [VARBINARY](/columns-storage-engines-and-plugins/data-types/string-data-types/varbinary/) columns longer than 65535 becomes a [BLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/blob/). If strict mode is enabled the silent changes will not be made, and an error will occur.
 - If a USING clause specifies an index that's not permitted by the storage engine, the engine will instead use another available index type that can be applied without affecting results.
 - If the CHARACTER SET binary attribute is specified, the column is created as the matching binary data type. A TEXT becomes a BLOB, CHAR a BINARY and VARCHAR a VARBINARY. ENUMs and SETs are created as defined.
 

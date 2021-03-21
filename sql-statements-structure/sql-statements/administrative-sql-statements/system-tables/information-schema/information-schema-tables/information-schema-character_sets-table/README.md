@@ -11,7 +11,7 @@ It contains the following columns:
 <tr><td><code>MAXLEN</code></td><td>Maximum length.</td></tr>
 </tbody></table>
 
-The [SHOW CHARACTER SET](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-character-set) statement returns the same results (although in a different order), and both can be refined in the same way. For example, the following two statements return the same results:
+The [SHOW CHARACTER SET](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-character-set/) statement returns the same results (although in a different order), and both can be refined in the same way. For example, the following two statements return the same results:
 
 ```sql
 SHOW CHARACTER SET WHERE Maxlen LIKE '2';
@@ -24,7 +24,7 @@ SELECT * FROM information_schema.CHARACTER_SETS
 WHERE MAXLEN LIKE '2';
 ```
 
-See [Setting Character Sets and Collations](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/setting-character-sets-and-collations) for details on specifying the character set at the server, database, table and column levels, and [Supported Character Sets and Collations](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/supported-character-sets-and-collations) for a full list of supported characters sets and collations.
+See [Setting Character Sets and Collations](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/setting-character-sets-and-collations/) for details on specifying the character set at the server, database, table and column levels, and [Supported Character Sets and Collations](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/supported-character-sets-and-collations/) for a full list of supported characters sets and collations.
 
 ## Example
 

@@ -9,7 +9,7 @@ PURGE { BINARY | MASTER } LOGS
 
 ## Description
 
-The <code class="fixed" style="white-space:pre-wrap">PURGE BINARY LOGS</code> statement deletes all the [binary log](/mariadb-administration/server-monitoring-logs/binary-log)
+The <code class="fixed" style="white-space:pre-wrap">PURGE BINARY LOGS</code> statement deletes all the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/)
 files listed in the log index file prior to the specified log file name or
 date. <code class="fixed" style="white-space:pre-wrap">BINARY</code> and <code class="fixed" style="white-space:pre-wrap">MASTER</code> are synonyms.
 Deleted log files also are removed from the list recorded in the index file, so
@@ -22,10 +22,10 @@ If a replica is active but has yet to read from a binary log file you attempt to
 This statement has no effect if the server was not started with the
 [--log-bin](/kb/en/replication-and-binary-log-system-variables/#log_bin) option to enable binary logging.
 
-To list the binary log files on the server, use [SHOW BINARY LOGS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-binary-logs). To see which files they are reading, use [SHOW SLAVE STATUS](/kb/en/show-slave-status/) (or [SHOW REPLICA STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-replica-status) from [MariaDB 10.5.1](/kb/en/mariadb-1051-release-notes/)). You can only delete the files that are older than the oldest file that is used by the slaves.
+To list the binary log files on the server, use [SHOW BINARY LOGS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-binary-logs/). To see which files they are reading, use [SHOW SLAVE STATUS](/kb/en/show-slave-status/) (or [SHOW REPLICA STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-replica-status/) from [MariaDB 10.5.1](/kb/en/mariadb-1051-release-notes/)). You can only delete the files that are older than the oldest file that is used by the slaves.
 
-To delete all binary log files, use [RESET MASTER](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/reset-master).
-To move to a new log file (for example if you want to remove the current log file), use [FLUSH LOGS](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush) before you execute `PURGE LOGS`.
+To delete all binary log files, use [RESET MASTER](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/reset-master/).
+To move to a new log file (for example if you want to remove the current log file), use [FLUSH LOGS](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/) before you execute `PURGE LOGS`.
 
 If the [expire_logs_days](/kb/en/server-system-variables/#expire_logs_days) server system variable is not set to 0, the server automatically deletes binary log files after the given number of days.
 
@@ -47,5 +47,5 @@ PURGE BINARY LOGS BEFORE '2013-04-22 09:55:22';
 
 ## See Also
 
-- [Using and Maintaining the Binary Log](/mariadb-administration/server-monitoring-logs/binary-log/using-and-maintaining-the-binary-log)
-- [FLUSH LOGS](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush).
+- [Using and Maintaining the Binary Log](/mariadb-administration/server-monitoring-logs/binary-log/using-and-maintaining-the-binary-log/)
+- [FLUSH LOGS](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/).

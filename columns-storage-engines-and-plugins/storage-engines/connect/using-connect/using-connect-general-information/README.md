@@ -4,7 +4,7 @@
 
 The CONNECT handler was introduced in [MariaDB 10.0](/kb/en/what-is-mariadb-100/).
 
-The main characteristic of [CONNECT](/columns-storage-engines-and-plugins/storage-engines/connect) is to enable accessing data scattered on a machine as if it was a centralized database. This, and the fact that that locking is not used by connect (data files are open and closed for each query) makes CONNECT very useful for importing or exporting data into or from a MariaDB database and also for all types of Business Intelligence applications. However, it is not suited for transactional applications.
+The main characteristic of [CONNECT](/columns-storage-engines-and-plugins/storage-engines/connect/) is to enable accessing data scattered on a machine as if it was a centralized database. This, and the fact that that locking is not used by connect (data files are open and closed for each query) makes CONNECT very useful for importing or exporting data into or from a MariaDB database and also for all types of Business Intelligence applications. However, it is not suited for transactional applications.
 
 For instance, the index type used by CONNECT is closer to bitmap indexing than to B-trees. It is very fast for retrieving result but not when updating is done. In fact, even if only one indexed value is modified in a big table, the index is entirely remade (yet this being four to five times faster than for a b-tree index). But normally in Business Intelligence applications, files are not modified so often.
 
@@ -37,11 +37,11 @@ Be aware of the two broad kinds of CONNECT tables:
 
 ### Drop Table statement
 
-For outward tables, the [DROP TABLE](/sql-statements-structure/sql-statements/data-definition/drop/drop-table) statement just removes the table definition but does not erase the table data. However, dropping an inward tables also erase the table data as well.
+For outward tables, the [DROP TABLE](/sql-statements-structure/sql-statements/data-definition/drop/drop-table/) statement just removes the table definition but does not erase the table data. However, dropping an inward tables also erase the table data as well.
 
 ### Alter Table statement
 
-Be careful using the [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) statement. Currently the data compatibility is not tested and the modified definition can become incompatible with the data. In particular, Alter modifies the table definition only but does not modify the table data. Consequently, the table type should not be modified this way, except to correct an incorrect definition. Also adding, dropping or modifying columns may be wrong because the default offset values (when not explicitly given by the FLAG option) may be wrong when recompiled with missing columns.
+Be careful using the [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) statement. Currently the data compatibility is not tested and the modified definition can become incompatible with the data. In particular, Alter modifies the table definition only but does not modify the table data. Consequently, the table type should not be modified this way, except to correct an incorrect definition. Also adding, dropping or modifying columns may be wrong because the default offset values (when not explicitly given by the FLAG option) may be wrong when recompiled with missing columns.
 
 Safe use of ALTER is for indexing, as we have seen earlier, and to change options such as MAPPED or HUGE those do not impact the data format but just the way the data file is accessed. Modifying the BLOCK_SIZE option is all right with FIX, BIN, DBF, split VEC tables; however it is unsafe for VEC tables that are not split (only one data file) because at their creation the estimate size has been made a multiple of the block size. This can cause errors if this estimate is not a multiple of the new value of the block size.
 

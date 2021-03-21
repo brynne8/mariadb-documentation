@@ -10,7 +10,7 @@ The rest of the article is dedicated to *major* upgrades, e.g 10.1.x to 10.2.y.
 
 This section assumes MSI installations.
 
-First, check everything listed in the Incompatibilities section of the article relating to the version you are upgrading, for example, [Upgrading from MariaDB 10.1 to MariaDB 10.2](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-from-mariadb-101-to-mariadb-102), to make sure you are prepared for the upgrade.
+First, check everything listed in the Incompatibilities section of the article relating to the version you are upgrading, for example, [Upgrading from MariaDB 10.1 to MariaDB 10.2](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-from-mariadb-101-to-mariadb-102/), to make sure you are prepared for the upgrade.
 
 MariaDB (and also MySQL) allows different versions of the product to co-exist
 on the same machine, as long as these versions are different either in major or
@@ -23,7 +23,7 @@ just replace 5.2.6 executables with 5.2.7 ones.
 
 Now imagine, that both 5.1 and 5.2 are installed on the same machine and we
 want to upgrade the database instance running on 5.1 to the new version. In
-this case special tools are requied. Traditionally, [mysql_upgrade](/sql-statements-structure/sql-statements/table-statements/mysql_upgrade) is used
+this case special tools are requied. Traditionally, [mysql_upgrade](/sql-statements-structure/sql-statements/table-statements/mysql_upgrade/) is used
 to accomplish this. On Windows, the
 [MySQL
 upgrade](http://dev.mysql.com/doc/refman/5.5/en/windows-upgrading.html) is a complicated multiple-step manual process.
@@ -84,4 +84,4 @@ Upgrade wizard to upgrade an instance running as a 32-bit process to run as
 
 Both UpgradeWizard and mysql_upgrade_service can also be used to upgrade
 database instances that were installed with the
-[ZIP installation](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-windows-zip-packages).
+[ZIP installation](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-windows-zip-packages/).

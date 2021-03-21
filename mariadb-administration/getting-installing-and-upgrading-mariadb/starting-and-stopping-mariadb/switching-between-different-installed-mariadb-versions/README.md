@@ -5,7 +5,7 @@ and running them one at a time. This is useful when doing benchmarking,
 testing, or for when developing different MariaDB versions.
 
 This is most easily done using the tar files from
-[downloads.askmonty.org](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb).
+[downloads.askmonty.org](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/).
 
 ## Stopping a pre-installed MySQL/MariaDB from interfering with your tests
 
@@ -24,15 +24,15 @@ Note that you don't have to uninstall or otherwise remove MySQL!
 
 Here is a short description of how to generate a tar file from a source
 distribution. If you have
-[downloaded](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb) a binary tar file, you
+[downloaded](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/) a binary tar file, you
 can skip this section.
 
 The steps to create a binary tar file are:
 
 - Decide where to put the source. A good place is under <code class="highlight fixed" style="white-space:pre-wrap">/usr/local/src/mariadb-5.#</code>.
 - [Get the source](/kb/en/source-getting-the-mariadb-source-code/)
-- [Compile the source](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source)
-- [Create the binary tar ball](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/creating-the-mariadb-binary-tarball).
+- [Compile the source](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/)
+- [Create the binary tar ball](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/creating-the-mariadb-binary-tarball/).
 
 You will then be left with a tar file named something like:
 <code class="highlight fixed" style="white-space:pre-wrap">mariadb-5.3.2-MariaDB-beta-linux-x86_64.tar.gz</code>

@@ -41,7 +41,7 @@ Start a dedicated thread in Mariabackup to copy InnoDB redo log (`ib_logfile*`).
 
 ### Create a Consistent Backup Point
 
-- Execute [FLUSH TABLE WITH READ LOCK](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush). This is default, but may be omitted with the `-–no-lock` parameter. The reason why `FLUSH` is needed is to ensure that all tables are in a consistent state at the exact same point in time, independent of storage engine.
+- Execute [FLUSH TABLE WITH READ LOCK](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/). This is default, but may be omitted with the `-–no-lock` parameter. The reason why `FLUSH` is needed is to ensure that all tables are in a consistent state at the exact same point in time, independent of storage engine.
 - If `--lock-ddl-per-table` is used and there is a user query waiting for MDL, the user query will be killed to resolve a deadlock. Note that these are only queries of type ALTER, DROP, TRUNCATE or RENAME TABLE. ([MDEV-15636](https://jira.mariadb.org/browse/MDEV-15636))
 
 ### Last Copy Phase
@@ -55,7 +55,7 @@ Start a dedicated thread in Mariabackup to copy InnoDB redo log (`ib_logfile*`).
 
 ### Release Locks
 
-- If [FLUSH TABLE WITH READ LOCK](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush) was done:
+- If [FLUSH TABLE WITH READ LOCK](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/) was done:
 <ul start="1"><li>execute: `UNLOCK TABLES`
 </li></ul>
 - If `--lock-ddl-per-table`  was done:
@@ -72,4 +72,4 @@ Start a dedicated thread in Mariabackup to copy InnoDB redo log (`ib_logfile*`).
 
 ## Notes
 
-- If [FLUSH TABLE WITH READ LOCK](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush) is not used, then only InnoDB tables will be consistent (not the privilege tables in the mysql database or the binary log). The backup point depends on the content of the redo log within the backup itself.
+- If [FLUSH TABLE WITH READ LOCK](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/) is not used, then only InnoDB tables will be consistent (not the privilege tables in the mysql database or the binary log). The backup point depends on the content of the redo log within the backup itself.

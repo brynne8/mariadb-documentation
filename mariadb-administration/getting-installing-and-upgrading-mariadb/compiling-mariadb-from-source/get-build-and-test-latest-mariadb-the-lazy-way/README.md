@@ -2,7 +2,7 @@
 
 The intention of this documentation is show all the steps of getting, building and testing the latest MariaDB server (10.5 at time of writing) from GitHub.  Each stage links to the full documentation for that step if you need to find out more.
 
-## [Install all tools needed to build MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/Build_Environment_Setup_for_Linux)
+## [Install all tools needed to build MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/Build_Environment_Setup_for_Linux/)
 
 ### OpenSuse
 
@@ -27,7 +27,7 @@ cd mariadb
 git checkout 10.5
 ```
 
-## [Build It](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/generic-build-instructions)
+## [Build It](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/generic-build-instructions/)
 
 The following command builds a server the same way that is used for building releases. Use `cmake . -DCMAKE_BUILD_TYPE=Debug` to build for debugging.
 
@@ -42,23 +42,23 @@ cd mysql-test
 mtr --parallel=8 --force
 ```
 
-## [Install the Default Databases](/clients-utilities/mariadb-install-db)
+## [Install the Default Databases](/clients-utilities/mariadb-install-db/)
 
 ```sql
 ./scripts/mariadb-install-db --srcdir=.
 ```
 
-(Older MariaDB version use [mysql_install_db](/clients-utilities/mysql_install_db))
+(Older MariaDB version use [mysql_install_db](/clients-utilities/mysql_install_db/))
 
 ## Install the Server (If needed)
 
-You can also [run and test mariadb directly from the build directory](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/running-mariadb-from-the-build-directory), in which case you can skip the rest of the steps below.
+You can also [run and test mariadb directly from the build directory](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/running-mariadb-from-the-build-directory/), in which case you can skip the rest of the steps below.
 
 ```sql
 make install
 ```
 
-### [Start the Server](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically)
+### [Start the Server](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically/)
 
 Start the server in it's own terminal window for testing. Note that the directory depends on your system!
 

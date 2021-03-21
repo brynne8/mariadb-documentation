@@ -1,6 +1,6 @@
 # Aggregate Functions
 
-The following functions (also called aggregate functions) can be used with the [GROUP BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/group-by) clause:
+The following functions (also called aggregate functions) can be used with the [GROUP BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/group-by/) clause:
 
 - [Stored Aggregate Functions](/programming-customizing-mariadb/stored-routines/stored-functions/stored-aggregate-functions/) — Custom aggregate functions.
 - [AVG](/built-in-functions/aggregate-functions/avg/) — Returns the average value.

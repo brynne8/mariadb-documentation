@@ -10,7 +10,7 @@ SPIDER_BG_DIRECT_SQL('sql', 'tmp_table_list', 'parameters')
 
 Executes the given SQL statement in the background on the remote server, as defined in the parameters listing.  If the query returns a result-set, it sttores the results in the given temporary table.  When the given SQL statement executes successfully, this function returns the number of called UDF's.  It returns `0` when the given SQL statement fails.
 
-This function is a [UDF](/programming-customizing-mariadb/user-defined-functions) installed with the [Spider](/columns-storage-engines-and-plugins/storage-engines/spider) storage engine.
+This function is a [UDF](/programming-customizing-mariadb/user-defined-functions/) installed with the [Spider](/columns-storage-engines-and-plugins/storage-engines/spider/) storage engine.
 
 ## Examples
 
@@ -37,4 +37,4 @@ SELECT SPIDER_BG_DIRECT_SQL('SELECT * FROM example_table',  '',
 
 ## See also
 
-- [SPIDER_DIRECT_SQL](/columns-storage-engines-and-plugins/storage-engines/spider/spider-functions/spider_direct_sql)
+- [SPIDER_DIRECT_SQL](/columns-storage-engines-and-plugins/storage-engines/spider/spider-functions/spider_direct_sql/)

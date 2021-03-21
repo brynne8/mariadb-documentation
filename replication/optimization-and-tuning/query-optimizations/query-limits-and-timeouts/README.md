@@ -16,7 +16,7 @@ The [LIMIT](/kb/en/select/#limit) clause restricts the number of returned rows.
 
 ##### MariaDB starting with [10.0.0](/kb/en/mariadb-1000-release-notes/)
 
-## [LIMIT ROWS EXAMINED](/replication/optimization-and-tuning/query-optimizations/limit-rows-examined)
+## [LIMIT ROWS EXAMINED](/replication/optimization-and-tuning/query-optimizations/limit-rows-examined/)
 
 ```sql
 SELECT ... LIMIT ROWS EXAMINED rows_limit;
@@ -26,7 +26,7 @@ Stops the query after 'rows_limit' number of rows have been examined.
 
 ## sql_safe_updates
 
-If the [sql_safe_updates](/kb/en/server-system-variables/#sql_safe_updates) variable is set, one can't execute an [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update) or [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete)
+If the [sql_safe_updates](/kb/en/server-system-variables/#sql_safe_updates) variable is set, one can't execute an [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/) or [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/)
 statement unless one specifies a key constraint in the <code class="fixed" style="white-space:pre-wrap">WHERE</code> clause or provide a <code class="fixed" style="white-space:pre-wrap">LIMIT</code> clause (or both).
 
 ```sql
@@ -38,7 +38,7 @@ UPDATE tbl_name SET not_key_column=val;
 
 ## sql_select_limit
 
-[sql_select_limit](/kb/en/server-system-variables/#sql_select_limit) acts as an automatic <code class="fixed" style="white-space:pre-wrap">LIMIT row_count</code> to any [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) query.
+[sql_select_limit](/kb/en/server-system-variables/#sql_select_limit) acts as an automatic <code class="fixed" style="white-space:pre-wrap">LIMIT row_count</code> to any [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) query.
 
 ```sql
 SET @@SQL_SELECT_LIMIT=1000
@@ -72,6 +72,6 @@ If the [max_statement_time](/kb/en/server-system-variables/#max_statement_time) 
 
 ## See Also
 
-- [WAIT and NOWAIT](/sql-statements-structure/sql-statements/transactions/wait-and-nowait)
-- [Aborting statements that take longer than a certain time to execute](/replication/optimization-and-tuning/query-optimizations/aborting-statements)
+- [WAIT and NOWAIT](/sql-statements-structure/sql-statements/transactions/wait-and-nowait/)
+- [Aborting statements that take longer than a certain time to execute](/replication/optimization-and-tuning/query-optimizations/aborting-statements/)
 - [lock_wait_timeout](/kb/en/server-system-variables/#lock_wait_timeout) variable

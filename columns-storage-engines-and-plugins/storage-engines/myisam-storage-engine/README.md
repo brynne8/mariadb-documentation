@@ -1,10 +1,10 @@
 # MyISAM
 
-MyISAM was the default [storage engine](storage-engine) from MySQL 3.23 until it was replaced by [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) in MariaDB and MySQL 5.5. It's a light, non-transactional engine with great performance, is easy to copy between systems and has a small data footprint.
+MyISAM was the default [storage engine](storage-engine) from MySQL 3.23 until it was replaced by [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) in MariaDB and MySQL 5.5. It's a light, non-transactional engine with great performance, is easy to copy between systems and has a small data footprint.
 
-You're encouraged to rather use the [Aria](/columns-storage-engines-and-plugins/storage-engines/aria) storage engine for new applications, which has even better performance and the goal of being crash-safe.
+You're encouraged to rather use the [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/) storage engine for new applications, which has even better performance and the goal of being crash-safe.
 
-Until [MariaDB 10.4](/kb/en/what-is-mariadb-104/), [system tables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables) used the MyISAM storage engine.
+Until [MariaDB 10.4](/kb/en/what-is-mariadb-104/), [system tables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/) used the MyISAM storage engine.
 
 - [MyISAM Overview](/columns-storage-engines-and-plugins/storage-engines/myisam-storage-engine/myisam-overview/) — Light, non-transactional storage engine
 - [MyISAM System Variables](/columns-storage-engines-and-plugins/storage-engines/myisam-storage-engine/myisam-system-variables/) — MyISAM system variables.

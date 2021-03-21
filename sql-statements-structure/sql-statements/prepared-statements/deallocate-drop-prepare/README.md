@@ -8,7 +8,7 @@
 
 ## Description
 
-To deallocate a prepared statement produced with [PREPARE](/sql-statements-structure/sql-statements/prepared-statements/prepare-statement), use a
+To deallocate a prepared statement produced with [PREPARE](/sql-statements-structure/sql-statements/prepared-statements/prepare-statement/), use a
 <code class="fixed" style="white-space:pre-wrap">DEALLOCATE PREPARE</code> statement that refers to the prepared statement
 name.
 
@@ -33,6 +33,6 @@ See [example in PREPARE](/kb/en/prepare-statement/#example).
 
 ## See Also
 
-- [PREPARE Statement](/sql-statements-structure/sql-statements/prepared-statements/prepare-statement)
-- [EXECUTE Statement](/sql-statements-structure/sql-statements/prepared-statements/execute-statement)
-- [EXECUTE IMMEDIATE](/sql-statements-structure/sql-statements/prepared-statements/execute-immediate)
+- [PREPARE Statement](/sql-statements-structure/sql-statements/prepared-statements/prepare-statement/)
+- [EXECUTE Statement](/sql-statements-structure/sql-statements/prepared-statements/execute-statement/)
+- [EXECUTE IMMEDIATE](/sql-statements-structure/sql-statements/prepared-statements/execute-immediate/)

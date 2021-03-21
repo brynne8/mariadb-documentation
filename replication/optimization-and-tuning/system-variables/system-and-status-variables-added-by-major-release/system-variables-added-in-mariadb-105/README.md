@@ -1,6 +1,6 @@
 # System Variables Added in MariaDB 10.5
 
-This is a list of [system variables](/replication/optimization-and-tuning/system-variables/server-system-variables) that have been added in the [MariaDB 10.5](/kb/en/what-is-mariadb-105/) series. The list does not include variables that are not part of the default release.
+This is a list of [system variables](/replication/optimization-and-tuning/system-variables/server-system-variables/) that have been added in the [MariaDB 10.5](/kb/en/what-is-mariadb-105/) series. The list does not include variables that are not part of the default release.
 
 <table><tbody><tr><th>Variable</th><th>Added</th></tr>
 <tr><td><a href="/kb/en/replication-and-binary-log-system-variables/#binlog_row_metadata">binlog_row_metadata</a></td><td><a href="/kb/en/mariadb-1050-release-notes/">MariaDB 10.5.0</a></td></tr>
@@ -38,6 +38,6 @@ This is a list of [system variables](/replication/optimization-and-tuning/system
 
 ## See Also
 
-- [Status Variables Added in MariaDB 10.5](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/status-variables-added-in-mariadb-105)
-- [System Variables Added in MariaDB 10.4](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-104)
-- [System Variables Added in MariaDB 10.3](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-103)
+- [Status Variables Added in MariaDB 10.5](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/status-variables-added-in-mariadb-105/)
+- [System Variables Added in MariaDB 10.4](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-104/)
+- [System Variables Added in MariaDB 10.3](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-103/)

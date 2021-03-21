@@ -17,7 +17,7 @@ Returns a binary string representing the string's sorting and comparison value. 
 
 WEIGHT_STRING() is particularly useful when adding new collations, for testing purposes.
 
-If `str` is a non-binary string ([CHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/char), [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar) or [TEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/text)), WEIGHT_STRING returns the string's collation weight. If `str` is a binary string ([BINARY](/columns-storage-engines-and-plugins/data-types/string-data-types/binary), [VARBINARY](/columns-storage-engines-and-plugins/data-types/string-data-types/varbinary) or [BLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/blob)), the return value is simply the input value, since the weight for each byte in a binary string is the byte value.
+If `str` is a non-binary string ([CHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/char/), [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar/) or [TEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/text/)), WEIGHT_STRING returns the string's collation weight. If `str` is a binary string ([BINARY](/columns-storage-engines-and-plugins/data-types/string-data-types/binary/), [VARBINARY](/columns-storage-engines-and-plugins/data-types/string-data-types/varbinary/) or [BLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/blob/)), the return value is simply the input value, since the weight for each byte in a binary string is the byte value.
 
 WEIGHT_STRING() returns NULL if given a NULL input.
 
@@ -43,7 +43,7 @@ If the LEVEL is specified without using a range, an optional modifier is permitt
 
 ## Examples
 
-The examples below use the [HEX()](/built-in-functions/string-functions/hex) function to represent non-printable results in hexadecimal format.
+The examples below use the [HEX()](/built-in-functions/string-functions/hex/) function to represent non-printable results in hexadecimal format.
 
 ```sql
 SELECT HEX(WEIGHT_STRING('x'));

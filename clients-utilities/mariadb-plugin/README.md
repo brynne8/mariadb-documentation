@@ -8,4 +8,4 @@ From [MariaDB 10.4.6](/kb/en/mariadb-1046-release-notes/), `mariadb-plugin` is a
 
 From [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/), `mysql_plugin` is the symlink, and `mariadb-plugin` the binary name.
 
-See [mysql_plugin](/clients-utilities/mysql_plugin) for details.
+See [mysql_plugin](/clients-utilities/mysql_plugin/) for details.

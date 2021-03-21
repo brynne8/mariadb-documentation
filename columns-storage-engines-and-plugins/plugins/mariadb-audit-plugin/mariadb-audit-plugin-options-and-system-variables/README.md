@@ -1,6 +1,6 @@
 # MariaDB Audit Plugin Options and System Variables
 
-There are a several options and system variables related to the [MariaDB Audit Plugin](/kb/en/server_audit-mariadb-audit-plugin/), once it has been [installed](/kb/en/mariadb-audit-plugin-entitymdashentity-installation/).  System variables can be displayed using the [SHOW VARIABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-variables) statement like so:
+There are a several options and system variables related to the [MariaDB Audit Plugin](/kb/en/server_audit-mariadb-audit-plugin/), once it has been [installed](/kb/en/mariadb-audit-plugin-entitymdashentity-installation/).  System variables can be displayed using the [SHOW VARIABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-variables/) statement like so:
 
 ```sql
 SHOW GLOBAL VARIABLES LIKE '%server_audit%';
@@ -37,7 +37,7 @@ server_audit_excl_users='bob,ted'
 
 ### System Variables
 
-Below is a list of all system variables related to the Audit Plugin.  See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables) for a complete list of system variables and instructions on setting them. See also the [full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables).
+Below is a list of all system variables related to the Audit Plugin.  See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables/) for a complete list of system variables and instructions on setting them. See also the [full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables/).
 
 #### `server_audit_events`
 
@@ -52,7 +52,7 @@ Below is a list of all system variables related to the Audit Plugin.  See [Serve
 </li><li>`CONNECT`, `QUERY`, `TABLE`, `QUERY_DDL`, `QUERY_DML` (MariaDB Audit Plugin &gt;= 1.2.0)
 </li><li>`CONNECT`, `QUERY`, `TABLE`, `QUERY_DDL`, `QUERY_DML`, `QUERY_DCL` (MariaDB Audit Plugin &gt;=1.3.0)
 </li><li>`CONNECT`, `QUERY`, `TABLE`, `QUERY_DDL`, `QUERY_DML`, `QUERY_DCL`, `QUERY_DML_NO_SELECT` (MariaDB Audit Plugin &gt;= 1.4.4)
-</li><li>See [MariaDB Audit Plugin - Versions](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/mariadb-audit-plugin-versions) to determine which MariaDB releases contain each MariaDB Audit Plugin versions.
+</li><li>See [MariaDB Audit Plugin - Versions](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/mariadb-audit-plugin-versions/) to determine which MariaDB releases contain each MariaDB Audit Plugin versions.
 </li></ul>
 
 ---
@@ -240,7 +240,7 @@ Below is a list of all system variables related to the Audit Plugin.  See [Serve
 <ul start="1"><li>`OFF` - Disables the plugin without removing it from the <a undefined>mysql.plugins</a> table.
 </li><li>`ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
 </li><li>`FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
-</li><li>`FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname) or [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin) while the server is running.
+</li><li>`FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname/) or [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin/) while the server is running.
 </li></ul>
 </li><li>See [MariaDB Audit Plugin - Installation: Prohibiting Uninstallation](/kb/en/mariadb-audit-plugin-installation/#prohibiting-uninstallation) for more information on one use case.
 </li><li>See [Plugin Overview: Configuring Plugin Activation at Server Startup](/kb/en/plugin-overview/#configuring-plugin-activation-at-server-startup) for more information.

@@ -1,6 +1,6 @@
 # COMMIT
 
-The `COMMIT`  statement ends a transaction, saving any changes to the data so that they become visible to subsequent transactions. Also, [unlocks metadata](/sql-statements-structure/sql-statements/transactions/metadata-locking) changed by current transaction. If [autocommit](/kb/en/server-system-variables/#autocommit) is set to 1, an implicit commit is performed after each statement. Otherwise, all transactions which don't end with an explicit `COMMIT` are implicitly rollbacked and the changes are lost. The [ROLLBACK](/sql-statements-structure/sql-statements/transactions/rollback) statement can be used to do this explicitly.
+The `COMMIT`  statement ends a transaction, saving any changes to the data so that they become visible to subsequent transactions. Also, [unlocks metadata](/sql-statements-structure/sql-statements/transactions/metadata-locking/) changed by current transaction. If [autocommit](/kb/en/server-system-variables/#autocommit) is set to 1, an implicit commit is performed after each statement. Otherwise, all transactions which don't end with an explicit `COMMIT` are implicitly rollbacked and the changes are lost. The [ROLLBACK](/sql-statements-structure/sql-statements/transactions/rollback/) statement can be used to do this explicitly.
 
 The required syntax for the `COMMIT`  statement is as follows:
 
@@ -20,4 +20,4 @@ There are `NO RELEASE` and `AND NO CHAIN` options. By default, commits do not `R
 
 - [autocommit](/kb/en/server-system-variables/#autocommit) - server system variable that determines whether statements are automatically committed.
 - [completion_type](/kb/en/server-system-variables/#completion_type) - server system variable that determines whether COMMIT's are standard, COMMIT AND CHAIN or COMMIT RELEASE.
-- [SQL statements that cause an implicit commit](/sql-statements-structure/sql-statements/transactions/sql-statements-that-cause-an-implicit-commit)
+- [SQL statements that cause an implicit commit](/sql-statements-structure/sql-statements/transactions/sql-statements-that-cause-an-implicit-commit/)

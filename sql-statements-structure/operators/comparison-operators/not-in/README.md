@@ -8,7 +8,7 @@ expr NOT IN (value,...)
 
 ## Description
 
-This is the same as NOT (expr [IN](/sql-statements-structure/operators/comparison-operators/in) (value,...)).
+This is the same as NOT (expr [IN](/sql-statements-structure/operators/comparison-operators/in/) (value,...)).
 
 ## Examples
 

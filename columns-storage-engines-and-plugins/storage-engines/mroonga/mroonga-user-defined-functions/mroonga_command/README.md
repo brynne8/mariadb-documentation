@@ -8,7 +8,7 @@ mroonga_command (command)
 
 ## Description
 
-`mroonga_command` is a [user-defined function](/programming-customizing-mariadb/user-defined-functions) (UDF) included with the [Mroonga storage engine](/columns-storage-engines-and-plugins/storage-engines/mroonga). It passes a command to Groonga for execution. See [Creating Mroonga User-Defined Functions](/columns-storage-engines-and-plugins/storage-engines/mroonga/mroonga-user-defined-functions/creating-mroonga-user-defined-functions) for details on creating this UDF if required.
+`mroonga_command` is a [user-defined function](/programming-customizing-mariadb/user-defined-functions/) (UDF) included with the [Mroonga storage engine](/columns-storage-engines-and-plugins/storage-engines/mroonga/). It passes a command to Groonga for execution. See [Creating Mroonga User-Defined Functions](/columns-storage-engines-and-plugins/storage-engines/mroonga/mroonga-user-defined-functions/creating-mroonga-user-defined-functions/) for details on creating this UDF if required.
 
 - `command` - string, required parameter specifying the command to pass that will be executed by Groonga. See [the Groonga reference](http://groonga.org/docs/reference/command.html) for a list of commands.
 
@@ -26,4 +26,4 @@ SELECT mroonga_command('status');
 
 ## See Also
 
-- [Creating Mroonga User-Defined Functions](/columns-storage-engines-and-plugins/storage-engines/mroonga/mroonga-user-defined-functions/creating-mroonga-user-defined-functions)
+- [Creating Mroonga User-Defined Functions](/columns-storage-engines-and-plugins/storage-engines/mroonga/mroonga-user-defined-functions/creating-mroonga-user-defined-functions/)

@@ -96,7 +96,7 @@ condition_value:
 
 The `CREATE PACKAGE BODY` statement can be used when [Oracle SQL_MODE](/kb/en/sql_modeoracle-from-mariadb-103/) is set.
 
-The `CREATE PACKAGE BODY` statement creates the package body for a stored package. The package specification must be previously created using the [CREATE PACKAGE](/sql-statements-structure/sql-statements/data-definition/create/create-package) statement.
+The `CREATE PACKAGE BODY` statement creates the package body for a stored package. The package specification must be previously created using the [CREATE PACKAGE](/sql-statements-structure/sql-statements/data-definition/create/create-package/) statement.
 
 A package body provides implementations of the package public routines and can optionally have:
 
@@ -168,7 +168,7 @@ DELIMITER ;
 
 ## See Also
 
-- [CREATE PACKAGE](/sql-statements-structure/sql-statements/data-definition/create/create-package)
-- [SHOW CREATE PACKAGE BODY](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-package-body)
-- [DROP PACKAGE BODY](/sql-statements-structure/sql-statements/data-definition/drop/drop-package-body)
+- [CREATE PACKAGE](/sql-statements-structure/sql-statements/data-definition/create/create-package/)
+- [SHOW CREATE PACKAGE BODY](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-package-body/)
+- [DROP PACKAGE BODY](/sql-statements-structure/sql-statements/data-definition/drop/drop-package-body/)
 - [Oracle SQL_MODE](/kb/en/sql_modeoracle-from-mariadb-103/)

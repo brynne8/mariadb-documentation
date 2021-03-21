@@ -11,7 +11,7 @@ analyse([max_elements[,max_memory]])
 This procedure is defined in the sql/sql_analyse.cc file. It examines
 the result from a query and returns an analysis of the results that
 suggests optimal data types for each column. To obtain this analysis,
-append PROCEDURE ANALYSE to the end of a [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) statement:
+append PROCEDURE ANALYSE to the end of a [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) statement:
 
 ```sql
 SELECT ... FROM ... WHERE ... PROCEDURE ANALYSE([max_elements,[max_memory]])
@@ -37,5 +37,5 @@ The arguments are optional and are used as follows:
 
 ## See Also
 
-- [PROCEDURE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/procedure)
-- [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select)
+- [PROCEDURE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/procedure/)
+- [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/)

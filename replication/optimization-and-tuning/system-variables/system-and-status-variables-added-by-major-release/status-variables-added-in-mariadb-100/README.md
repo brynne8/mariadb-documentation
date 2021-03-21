@@ -1,11 +1,11 @@
 # Status Variables Added in MariaDB 10.0
 
-This is a list of [status variables](/replication/optimization-and-tuning/system-variables/server-status-variables) that were added in the [MariaDB 10.0](/kb/en/what-is-mariadb-100/) series.
+This is a list of [status variables](/replication/optimization-and-tuning/system-variables/server-status-variables/) that were added in the [MariaDB 10.0](/kb/en/what-is-mariadb-100/) series.
 
 The list excludes status related to the following storage engines included in [MariaDB 10.0](/kb/en/what-is-mariadb-100/):
 
-- [Galera Status Variables](/replication/galera-cluster/galera-cluster-status-variables)
-- [Mroonga Status Variables](/columns-storage-engines-and-plugins/storage-engines/mroonga/mroonga-status-variables)
+- [Galera Status Variables](/replication/galera-cluster/galera-cluster-status-variables/)
+- [Mroonga Status Variables](/columns-storage-engines-and-plugins/storage-engines/mroonga/mroonga-status-variables/)
 - [Spider Status Variables](/kb/en/spider-server-status-variables/)
 
 <table><tbody><tr><th>Variable</th><th>Added</th></tr>
@@ -56,5 +56,5 @@ The list excludes status related to the following storage engines included in [M
 
 ## See also
 
-- [System variables added in MariaDB 10.0](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-100)
-- [Status variables added in MariaDB 10.1](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/status-variables-added-in-mariadb-101)
+- [System variables added in MariaDB 10.0](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-100/)
+- [Status variables added in MariaDB 10.1](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/status-variables-added-in-mariadb-101/)

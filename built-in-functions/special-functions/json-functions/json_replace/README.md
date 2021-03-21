@@ -18,7 +18,7 @@ An error will occur if the JSON document is invalid, the path is invalid or if t
 
 Paths and values are evaluated from left to right, with the result from the earlier evaluation being used as the value for the next.
 
-JSON_REPLACE can only update data, while [JSON_INSERT](/built-in-functions/special-functions/json-functions/json_insert) can only insert. [JSON_SET](/built-in-functions/special-functions/json-functions/json_set) can update or insert data.
+JSON_REPLACE can only update data, while [JSON_INSERT](/built-in-functions/special-functions/json-functions/json_insert/) can only insert. [JSON_SET](/built-in-functions/special-functions/json-functions/json_set/) can update or insert data.
 
 ## Examples
 

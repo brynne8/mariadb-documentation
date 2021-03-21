@@ -1,6 +1,6 @@
 # MyRocks Column Families
 
-[MyRocks](/columns-storage-engines-and-plugins/storage-engines/myrocks) stores data in column families. These are similar to tablespaces.
+[MyRocks](/columns-storage-engines-and-plugins/storage-engines/myrocks/) stores data in column families. These are similar to tablespaces.
 By default, the data is stored in the `default` column family.
 
 One can specify which column family the data goes to by using index comments:
@@ -51,8 +51,8 @@ One can check the contents of  `INFORMATION_SCHEMA.ROCKSDB_CF_OPTIONS` to see wh
 
 Options that are frequently configured are:
 
-- Data compression. See [myrocks-and-data-compression](/columns-storage-engines-and-plugins/storage-engines/myrocks/myrocks-and-data-compression).
-- Bloom Filters. See [myrocks-and-bloom-filters](/columns-storage-engines-and-plugins/storage-engines/myrocks/myrocks-and-bloom-filters).
+- Data compression. See [myrocks-and-data-compression](/columns-storage-engines-and-plugins/storage-engines/myrocks/myrocks-and-data-compression/).
+- Bloom Filters. See [myrocks-and-bloom-filters](/columns-storage-engines-and-plugins/storage-engines/myrocks/myrocks-and-bloom-filters/).
 
 ## Examining Column Family Parameters
 

@@ -8,7 +8,7 @@ From [MariaDB 10.4.6](/kb/en/mariadb-1046-release-notes/), `mariadb-show` is a s
 
 From [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/), `mysqlshow` is the symlink, and `mariadb-show` the binary name.
 
-Shows the structure of a MariaDB database (databases, tables, columns and indexes). You can also use [SHOW DATABASES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-databases), [SHOW TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-tables), [SHOW COLUMNS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-columns), [SHOW INDEX](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-index) and [SHOW TABLE STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-table-status), as well as the [Information Schema](/kb/en/information_schema/) tables ([TABLES](/kb/en/information-schema-tables-table/), [COLUMNS](/kb/en/information-schema-columns-table/), [STATISTICS](/kb/en/information-schema-statistics-table/)), to get similar functionality.
+Shows the structure of a MariaDB database (databases, tables, columns and indexes). You can also use [SHOW DATABASES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-databases/), [SHOW TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-tables/), [SHOW COLUMNS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-columns/), [SHOW INDEX](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-index/) and [SHOW TABLE STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-table-status/), as well as the [Information Schema](/kb/en/information_schema/) tables ([TABLES](/kb/en/information-schema-tables-table/), [COLUMNS](/kb/en/information-schema-columns-table/), [STATISTICS](/kb/en/information-schema-statistics-table/)), to get similar functionality.
 
 ## Using mysqlshow
 
@@ -70,7 +70,7 @@ what's matched by the wildcard is shown.  If a database name contains any unders
 
 ### Option Files
 
-In addition to reading options from the command-line, `mysqlshow` can also read options from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files). If an unknown option is provided to `mysqlshow` in an option file, then it is ignored.
+In addition to reading options from the command-line, `mysqlshow` can also read options from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/). If an unknown option is provided to `mysqlshow` in an option file, then it is ignored.
 
 The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
 
@@ -86,7 +86,7 @@ In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, `mysqlshow` is linked 
 
 #### Option Groups
 
-`mysqlshow` reads options from the following [option groups](/kb/en/configuring-mariadb-with-option-files/#option-groups) from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files):
+`mysqlshow` reads options from the following [option groups](/kb/en/configuring-mariadb-with-option-files/#option-groups) from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/):
 
 <table><tbody><tr><th>Group</th><th>Description</th></tr>
 <tr><td><code>[mysqlshow]</code></td><td>&nbsp;Options read by <code>mysqlshow</code>, which includes both MariaDB Server and MySQL Server.</td></tr>

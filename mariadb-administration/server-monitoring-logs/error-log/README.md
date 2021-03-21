@@ -12,7 +12,7 @@ MariaDB always writes its error log, but the destination is configurable.
 
 To configure the error log to be written to a file, you can set the <a undefined>log_error</a> system variable. You can configure a specific file name. However, if a specific file name is not configured, then the log will be written to the `${hostname}.err` file in the <a undefined>datadir</a> directory by default.
 
-The <a undefined>log_error</a> system variable can be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example, to write the error log to the default `${hostname}.err`  file, you could configure the following:
+The <a undefined>log_error</a> system variable can be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example, to write the error log to the default `${hostname}.err`  file, you could configure the following:
 
 ```sql
 [mariadb]
@@ -38,7 +38,7 @@ However, the <a undefined>log_error</a> system variable can also be an absolute 
 log_error=/var/log/mysql/mariadb.err
 ```
 
-Another way to configure the error log file name is to set the <a undefined>log-basename</a> option, which configures MariaDB to use a common prefix for all log files (e.g. [general query log](/mariadb-administration/server-monitoring-logs/general-query-log), [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log), error log, [binary logs](/mariadb-administration/server-monitoring-logs/binary-log), etc.). The error log file name will be built by adding a `.err` extension to this prefix. For example, if you configured the following, then the error log would still be written to `mariadb.err` in the <a undefined>datadir</a> directory:
+Another way to configure the error log file name is to set the <a undefined>log-basename</a> option, which configures MariaDB to use a common prefix for all log files (e.g. [general query log](/mariadb-administration/server-monitoring-logs/general-query-log/), [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log/), error log, [binary logs](/mariadb-administration/server-monitoring-logs/binary-log/), etc.). The error log file name will be built by adding a `.err` extension to this prefix. For example, if you configured the following, then the error log would still be written to `mariadb.err` in the <a undefined>datadir</a> directory:
 
 ```sql
 [mariadb]
@@ -53,7 +53,7 @@ The <a undefined>log-basename</a> cannot be an absolute path. The log file name 
 
 On Unix, if the <a undefined>log_error</a> system variable is not set, then errors are written to `stderr`, which usually means that the log messages are output to the terminal that started `mysqld`.
 
-If the <a undefined>log_error</a> system variable was set in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) or on the command-line, then it can still be unset by specifying `--skip-log-error`.
+If the <a undefined>log_error</a> system variable was set in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) or on the command-line, then it can still be unset by specifying `--skip-log-error`.
 
 ### Writing the Error Log to Syslog on Unix
 
@@ -61,13 +61,13 @@ On Unix, the error log can also be redirected to the [syslog](https://linux.die.
 
 #### Syslog with mysqld_safe
 
-If you [start](/kb/en/starting-and-stopping-mariadb-starting-and-stopping-mariadb/) MariaDB with [mysqld_safe](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld_safe), then the error log can be redirected to the syslog. See [mysqld_safe: Configuring MariaDB to Write the Error Log to Syslog](/kb/en/mysqld_safe/#configuring-mariadb-to-write-the-error-log-to-syslog) for more information.
+If you [start](/kb/en/starting-and-stopping-mariadb-starting-and-stopping-mariadb/) MariaDB with [mysqld_safe](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld_safe/), then the error log can be redirected to the syslog. See [mysqld_safe: Configuring MariaDB to Write the Error Log to Syslog](/kb/en/mysqld_safe/#configuring-mariadb-to-write-the-error-log-to-syslog) for more information.
 
 #### Syslog with Systemd
 
-If you [start](/kb/en/starting-and-stopping-mariadb-starting-and-stopping-mariadb/) MariaDB with [systemd](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd), then the error log can also be redirected to the syslog. See [Systemd: Configuring MariaDB to Write the Error Log to Syslog](/kb/en/systemd/#configuring-mariadb-to-write-the-error-log-to-syslog) for more information.
+If you [start](/kb/en/starting-and-stopping-mariadb-starting-and-stopping-mariadb/) MariaDB with [systemd](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd/), then the error log can also be redirected to the syslog. See [Systemd: Configuring MariaDB to Write the Error Log to Syslog](/kb/en/systemd/#configuring-mariadb-to-write-the-error-log-to-syslog) for more information.
 
-[systemd](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd) also has its own logging system called the `journal`, and some errors may get logged there instead. See [Systemd:Systemd Journal](/kb/en/systemd/#systemd-journal) for more information.
+[systemd](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd/) also has its own logging system called the `journal`, and some errors may get logged there instead. See [Systemd:Systemd Journal](/kb/en/systemd/#systemd-journal) for more information.
 
 ### Writing the Error Log to Console on Windows
 
@@ -97,7 +97,7 @@ The <a undefined>log_warnings</a> system variable can be used to configure the v
 SET GLOBAL log_warnings=3;
 ```
 
-It can also be set either on the command-line or in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+It can also be set either on the command-line or in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]
@@ -113,13 +113,13 @@ The <a undefined>log_warnings</a> system variable only has an effect on some log
 
 If <a undefined>log_warnings</a> is `0`, then many optional warnings will not be logged. However, this does not prevent all warnings from being logged, because there are certain core warnings that will always be written to the error log. For example:
 
-- If [InnoDB strict mode](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-strict-mode) is disabled, and if DDL is performed on a table that triggers a ["Row size too large" error](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/troubleshooting-row-size-too-large-errors-with-innodb), then InnoDB will log a warning:
+- If [InnoDB strict mode](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-strict-mode/) is disabled, and if DDL is performed on a table that triggers a ["Row size too large" error](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/troubleshooting-row-size-too-large-errors-with-innodb/), then InnoDB will log a warning:
 
 ```sql
 [Warning] InnoDB: Cannot add field col25 in table db1.tab because after adding it, the row size is 8477 which is greater than maximum allowed size (8126) for a record on index leaf page.
 ```
 
-However, if [InnoDB strict mode](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-strict-mode) is enabled, then the same message will be logged as an error.
+However, if [InnoDB strict mode](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-strict-mode/) is enabled, then the same message will be logged as an error.
 
 ### Verbosity Level 1
 
@@ -139,13 +139,13 @@ If <a undefined>log_warnings</a> is `1`, then many types of warnings are logged.
 [Warning] IP address '192.168.1.193' could not be resolved: Name or service not known
 ```
 
-- Messages related to the [event scheduler](/programming-customizing-mariadb/triggers-events/event-scheduler):
+- Messages related to the [event scheduler](/programming-customizing-mariadb/triggers-events/event-scheduler/):
 
 ```sql
 [Note] Event Scheduler: Loaded 0 events
 ```
 
-- Messages related to [unsafe statements for statement-based replication](/replication/standard-replication/unsafe-statements-for-statement-based-replication):
+- Messages related to [unsafe statements for statement-based replication](/replication/standard-replication/unsafe-statements-for-statement-based-replication/):
 
 ```sql
 [Warning] Unsafe statement written to the binary log using statement format since 
@@ -155,7 +155,7 @@ If <a undefined>log_warnings</a> is `1`, then many types of warnings are logged.
 
 ##### MariaDB starting with [10.0.14](/kb/en/mariadb-10014-release-notes/)
 
-Frequent warnings about [unsafe statements for statement-based replication](/replication/standard-replication/unsafe-statements-for-statement-based-replication) can cause the error log to grow very large. In [MariaDB 10.0.14](/kb/en/mariadb-10014-release-notes/) and later, MariaDB will automatically detect frequent duplicate warnings about [unsafe statements for statement-based replication](/replication/standard-replication/unsafe-statements-for-statement-based-replication). After 10 identical warnings are detected, MariaDB will prevent that same warning from being written to the error log again for the next 5 minutes.
+Frequent warnings about [unsafe statements for statement-based replication](/replication/standard-replication/unsafe-statements-for-statement-based-replication/) can cause the error log to grow very large. In [MariaDB 10.0.14](/kb/en/mariadb-10014-release-notes/) and later, MariaDB will automatically detect frequent duplicate warnings about [unsafe statements for statement-based replication](/replication/standard-replication/unsafe-statements-for-statement-based-replication/). After 10 identical warnings are detected, MariaDB will prevent that same warning from being written to the error log again for the next 5 minutes.
 
 ### Verbosity Level 2
 
@@ -306,7 +306,7 @@ From [MariaDB 10.1.5](/kb/en/mariadb-1015-release-notes/), the date format has b
 
 ## Rotating the Error Log on Unix and Linux
 
-Unix and Linux distributions offer the <a undefined>logrotate</a> utility, which makes it very easy to rotate log files. See [Rotating Logs on Unix and Linux](/mariadb-administration/server-monitoring-logs/rotating-logs-on-unix-and-linux) for more information on how to use this utility to rotate the error log.
+Unix and Linux distributions offer the <a undefined>logrotate</a> utility, which makes it very easy to rotate log files. See [Rotating Logs on Unix and Linux](/mariadb-administration/server-monitoring-logs/rotating-logs-on-unix-and-linux/) for more information on how to use this utility to rotate the error log.
 
 ## Error Messages File
 
@@ -316,7 +316,7 @@ Many error messages are ready from an error messages file that contains localize
 [ERROR] Can't find messagefile '/usr/share/errmsg.sys'
 ```
 
-If this error is occurring because the file is in a custom location, then you can configure this location by setting the <a undefined>lc_messages_dir</a> system variable either on the command-line or in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+If this error is occurring because the file is in a custom location, then you can configure this location by setting the <a undefined>lc_messages_dir</a> system variable either on the command-line or in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]
@@ -333,4 +333,4 @@ lc_messages_dir=/usr/share/mysql/
 lc_messages=en_US
 ```
 
-See [Setting the Language for Error Messages](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/setting-the-language-for-error-messages) for more information.
+See [Setting the Language for Error Messages](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/setting-the-language-for-error-messages/) for more information.

@@ -2,7 +2,7 @@
 
 ## Page Flushing with InnoDB Page Cleaner Threads
 
-InnoDB page cleaner threads flush dirty pages from the [InnoDB buffer pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool). These dirty pages are flushed using a least-recently used (LRU) algorithm.
+InnoDB page cleaner threads flush dirty pages from the [InnoDB buffer pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool/). These dirty pages are flushed using a least-recently used (LRU) algorithm.
 
 ### Page Flushing with Multiple InnoDB Page Cleaner Threads
 
@@ -10,7 +10,7 @@ InnoDB page cleaner threads flush dirty pages from the [InnoDB buffer pool](/col
 
 The [innodb_page_cleaners](/kb/en/innodb-system-variables/#innodb_page_cleaners) system variable was added in [MariaDB 10.2.2](/kb/en/mariadb-1022-release-notes/), and makes it possible to use multiple InnoDB page cleaner threads. It is deprecated and ignored from [MariaDB 10.5.1](/kb/en/mariadb-1051-release-notes/), as the original reasons for for splitting the buffer pool have mostly gone away.
 
-The number of InnoDB page cleaner threads can be configured by setting the [innodb_page_cleaners](/kb/en/innodb-system-variables/#innodb_page_cleaners) system variable. This system variable can be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+The number of InnoDB page cleaner threads can be configured by setting the [innodb_page_cleaners](/kb/en/innodb-system-variables/#innodb_page_cleaners) system variable. This system variable can be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]
@@ -38,7 +38,7 @@ InnoDB's multi-thread flush feature was first added in [MariaDB 10.1.0](/kb/en/m
 
 In [MariaDB 10.3.1](/kb/en/mariadb-1031-release-notes/) and before, InnoDB's multi-thread flush feature can be used. This is especially useful in [MariaDB 10.1](/kb/en/what-is-mariadb-101/), which only supports a single page cleaner thread.
 
-InnoDB's multi-thread flush feature can be enabled by setting the [innodb_use_mtflush](/kb/en/innodb-system-variables/#innodb_use_mtflush) system variable. The number of threads cane be configured by setting the [innodb_mtflush_threads](/kb/en/innodb-system-variables/#innodb_mtflush_threads) system variable. This system variable can be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+InnoDB's multi-thread flush feature can be enabled by setting the [innodb_use_mtflush](/kb/en/innodb-system-variables/#innodb_use_mtflush) system variable. The number of threads cane be configured by setting the [innodb_mtflush_threads](/kb/en/innodb-system-variables/#innodb_mtflush_threads) system variable. This system variable can be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]
@@ -61,7 +61,7 @@ The amount of I/O capacity available to InnoDB can be configured by setting the 
 SET GLOBAL innodb_io_capacity=20000;
 ```
 
-This system variable can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+This system variable can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]
@@ -75,7 +75,7 @@ The maximum amount of I/O capacity available to InnoDB in an emergency can be co
 SET GLOBAL innodb_io_capacity_max=20000;
 ```
 
-This system variable can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+This system variable can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]

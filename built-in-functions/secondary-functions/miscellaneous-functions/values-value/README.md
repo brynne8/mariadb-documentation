@@ -16,7 +16,7 @@ VALUES(col_name)
 
 ## Description
 
-In an [INSERT ... ON DUPLICATE KEY UPDATE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update) statement, you can use the `VALUES(col_name)` function in the  [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update) clause to refer to column values from the  [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert) portion of the statement. In other words,  `VALUES(col_name)` in the `UPDATE` clause refers to the value of col_name that would be inserted, had no duplicate-key conflict occurred. This function is especially useful in multiple-row inserts.
+In an [INSERT ... ON DUPLICATE KEY UPDATE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update/) statement, you can use the `VALUES(col_name)` function in the  [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/) clause to refer to column values from the  [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/) portion of the statement. In other words,  `VALUES(col_name)` in the `UPDATE` clause refers to the value of col_name that would be inserted, had no duplicate-key conflict occurred. This function is especially useful in multiple-row inserts.
 
 The `VALUES()` function is meaningful only in `INSERT ... ON DUPLICATE KEY UPDATE` statements and returns `NULL` otherwise.
 

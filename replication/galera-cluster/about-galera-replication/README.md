@@ -107,6 +107,6 @@ For more information on Group Commit, see the [Galera](https://galeracluster.com
 ## See Also
 
 - [Galera Cluster: Galera Replication](https://galeracluster.com/products/)
-- [What is MariaDB Galera Cluster?](/replication/galera-cluster/what-is-mariadb-galera-cluster)
-- [Galera Use Cases](/replication/galera-cluster/galera-use-cases)
-- [Getting Started with MariaDB/Galera Cluster](/replication/galera-cluster/getting-started-with-mariadb-galera-cluster)
+- [What is MariaDB Galera Cluster?](/replication/galera-cluster/what-is-mariadb-galera-cluster/)
+- [Galera Use Cases](/replication/galera-cluster/galera-use-cases/)
+- [Getting Started with MariaDB/Galera Cluster](/replication/galera-cluster/getting-started-with-mariadb-galera-cluster/)

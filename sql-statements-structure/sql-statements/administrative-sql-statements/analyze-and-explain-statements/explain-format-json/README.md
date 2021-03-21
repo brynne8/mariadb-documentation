@@ -6,7 +6,7 @@ Starting from version 10.1.2, MariaDB supports the EXPLAIN FORMAT=JSON syntax.
 
 ## Synopsis
 
-`EXPLAIN FORMAT=JSON` is a variant of [EXPLAIN](/sql-statements-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain) command that produces output in JSON form. The output always has one row which has only one column titled "`JSON`". The contents are a JSON representation of the query plan, formatted for readability:
+`EXPLAIN FORMAT=JSON` is a variant of [EXPLAIN](/sql-statements-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain/) command that produces output in JSON form. The output always has one row which has only one column titled "`JSON`". The contents are a JSON representation of the query plan, formatted for readability:
 
 ```sql
 EXPLAIN FORMAT=JSON SELECT * FROM t1 WHERE col1=1\G

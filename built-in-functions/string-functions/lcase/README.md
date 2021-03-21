@@ -8,4 +8,4 @@ LCASE(str)
 
 ## Description
 
-LCASE() is a synonym for [LOWER()](/built-in-functions/string-functions/lower).
+LCASE() is a synonym for [LOWER()](/built-in-functions/string-functions/lower/).

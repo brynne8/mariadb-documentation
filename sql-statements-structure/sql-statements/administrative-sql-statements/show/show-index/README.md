@@ -30,7 +30,7 @@ You can also list a table's indexes with the following command:
 mysqlshow -k db_name tbl_name
 ```
 
-See [mysqlshow](/clients-utilities/mysqlshow) for more details.
+See [mysqlshow](/clients-utilities/mysqlshow/) for more details.
 
 The <a undefined>information_schema.STATISTICS</a> table stores similar information.
 
@@ -52,7 +52,7 @@ The following fields are returned by `SHOW INDEX`.
 <tr><td><strong><code>Index_comment</code></strong></td><td>Contents of the <code>COMMENT</code> attribute when the index was created.</td></tr>
 </tbody></table>
 
-The <code class="highlight fixed" style="white-space:pre-wrap">WHERE</code> and <code class="highlight fixed" style="white-space:pre-wrap">LIKE</code> clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](/sql-statements-structure/sql-statements/administrative-sql-statements/show/extended-show).
+The <code class="highlight fixed" style="white-space:pre-wrap">WHERE</code> and <code class="highlight fixed" style="white-space:pre-wrap">LIKE</code> clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](/sql-statements-structure/sql-statements/administrative-sql-statements/show/extended-show/).
 
 ## Examples
 

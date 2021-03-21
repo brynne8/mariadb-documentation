@@ -10,7 +10,7 @@ innochecksum [options] file_name
 
 ## Description
 
-It reads an [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tablespace file, calculates the checksum for each page, compares the calculated checksum to the stored checksum, and reports mismatches, which indicate damaged pages. It was originally developed to speed up verifying the integrity of tablespace files after power outages but can also be used after file copies. Because checksum mismatches will cause InnoDB to deliberately shut down a running server, it can be preferable to use innochecksum rather than waiting for a server in production usage to encounter the damaged pages.
+It reads an [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tablespace file, calculates the checksum for each page, compares the calculated checksum to the stored checksum, and reports mismatches, which indicate damaged pages. It was originally developed to speed up verifying the integrity of tablespace files after power outages but can also be used after file copies. Because checksum mismatches will cause InnoDB to deliberately shut down a running server, it can be preferable to use innochecksum rather than waiting for a server in production usage to encounter the damaged pages.
 
 Multiple filenames can be specified by a wildcard on non-Windows systems only.
 
@@ -18,7 +18,7 @@ innochecksum has worked with compressed pages since [MariaDB 10.0.16](/kb/en/mar
 
 [MariaDB 10.1.4](/kb/en/mariadb-1014-release-notes/) added options to analyze leaf pages to estimate how fragmented an index is and how much benefit can be gained from defragmentation.
 
-innochecksum cannot be used on tablespace files that the server already has open. For such files, you should use [CHECK TABLE](/kb/en/sql-commands-check-table/) to check tables within the tablespace. If checksum mismatches are found, you would normally restore the tablespace from backup or start the server and attempt to use [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump) to make a backup of the tables within the tablespace.
+innochecksum cannot be used on tablespace files that the server already has open. For such files, you should use [CHECK TABLE](/kb/en/sql-commands-check-table/) to check tables within the tablespace. If checksum mismatches are found, you would normally restore the tablespace from backup or start the server and attempt to use [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump/) to make a backup of the tables within the tablespace.
 
 ## Options
 

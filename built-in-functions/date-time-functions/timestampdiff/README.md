@@ -14,7 +14,7 @@ a date and the other a datetime; a date value is treated as a datetime
 having the time part '00:00:00' where necessary. The unit for the
 result (an integer) is given by the unit argument. The legal values
 for unit are the same as those listed in the description of the
-[TIMESTAMPADD()](/built-in-functions/date-time-functions/timestampadd) function, i.e  MICROSECOND, SECOND, MINUTE, HOUR, DAY, WEEK, MONTH, QUARTER, or YEAR.
+[TIMESTAMPADD()](/built-in-functions/date-time-functions/timestampadd/) function, i.e  MICROSECOND, SECOND, MINUTE, HOUR, DAY, WEEK, MONTH, QUARTER, or YEAR.
 
 `TIMESTAMPDIFF` can also be used to calculate age.
 

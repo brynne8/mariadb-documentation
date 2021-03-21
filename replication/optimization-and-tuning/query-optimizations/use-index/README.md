@@ -38,6 +38,6 @@ If we had not used USE INDEX, the Name index would have been in possible keys.
 
 ## See Also
 
-- [Index Hints: How to Force Query Plans](/replication/optimization-and-tuning/query-optimizations/index-hints-how-to-force-query-plans) for more details
-- [IGNORE INDEX](/replication/optimization-and-tuning/query-optimizations/ignore-index)
-- [FORCE INDEX](/replication/optimization-and-tuning/query-optimizations/force-index)
+- [Index Hints: How to Force Query Plans](/replication/optimization-and-tuning/query-optimizations/index-hints-how-to-force-query-plans/) for more details
+- [IGNORE INDEX](/replication/optimization-and-tuning/query-optimizations/ignore-index/)
+- [FORCE INDEX](/replication/optimization-and-tuning/query-optimizations/force-index/)

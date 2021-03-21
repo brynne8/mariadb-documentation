@@ -2,7 +2,7 @@
 
 ##### MariaDB starting with [10.2](/kb/en/what-is-mariadb-102/)
 
-[Window functions](/built-in-functions/special-functions/window-functions) were first introduced in [MariaDB 10.2.0](/kb/en/mariadb-1020-release-notes/).
+[Window functions](/built-in-functions/special-functions/window-functions/) were first introduced in [MariaDB 10.2.0](/kb/en/mariadb-1020-release-notes/).
 
 ## Syntax
 
@@ -20,7 +20,7 @@ frame_border:
 
 ## Description
 
-A basic overview of [window functions](/built-in-functions/special-functions/window-functions) is described in [Window Functions Overview](/built-in-functions/special-functions/window-functions/window-functions-overview). Window frames expand this functionality by allowing the function to include a specified a number of rows around the current row.
+A basic overview of [window functions](/built-in-functions/special-functions/window-functions/) is described in [Window Functions Overview](/built-in-functions/special-functions/window-functions/window-functions-overview/). Window frames expand this functionality by allowing the function to include a specified a number of rows around the current row.
 
 These include:
 
@@ -32,23 +32,23 @@ These include:
 
 The following functions operate on window frames:
 
-- [AVG](/built-in-functions/aggregate-functions/avg)
-- [BIT_AND](/built-in-functions/aggregate-functions/bit_and)
-- [BIT_OR](/built-in-functions/aggregate-functions/bit_or)
-- [BIT_XOR](/built-in-functions/aggregate-functions/bit_xor)
-- [COUNT](/built-in-functions/aggregate-functions/count)
-- [LEAD](/built-in-functions/special-functions/window-functions/lead)
-- [MAX](/built-in-functions/aggregate-functions/max)
-- [MIN](/built-in-functions/aggregate-functions/min)
-- [NTILE](/built-in-functions/special-functions/window-functions/ntile)
-- [STD](/built-in-functions/aggregate-functions/std)
-- [STDDEV](/built-in-functions/aggregate-functions/stddev)
-- [STDDEV_POP](/built-in-functions/aggregate-functions/stddev_pop)
-- [STDDEV_SAMP](/built-in-functions/aggregate-functions/stddev_samp)
-- [SUM](/built-in-functions/aggregate-functions/sum)
-- [VAR_POP](/built-in-functions/aggregate-functions/var_pop)
-- [VAR_SAMP](/built-in-functions/aggregate-functions/var_samp)
-- [VARIANCE](/built-in-functions/aggregate-functions/variance)
+- [AVG](/built-in-functions/aggregate-functions/avg/)
+- [BIT_AND](/built-in-functions/aggregate-functions/bit_and/)
+- [BIT_OR](/built-in-functions/aggregate-functions/bit_or/)
+- [BIT_XOR](/built-in-functions/aggregate-functions/bit_xor/)
+- [COUNT](/built-in-functions/aggregate-functions/count/)
+- [LEAD](/built-in-functions/special-functions/window-functions/lead/)
+- [MAX](/built-in-functions/aggregate-functions/max/)
+- [MIN](/built-in-functions/aggregate-functions/min/)
+- [NTILE](/built-in-functions/special-functions/window-functions/ntile/)
+- [STD](/built-in-functions/aggregate-functions/std/)
+- [STDDEV](/built-in-functions/aggregate-functions/stddev/)
+- [STDDEV_POP](/built-in-functions/aggregate-functions/stddev_pop/)
+- [STDDEV_SAMP](/built-in-functions/aggregate-functions/stddev_samp/)
+- [SUM](/built-in-functions/aggregate-functions/sum/)
+- [VAR_POP](/built-in-functions/aggregate-functions/var_pop/)
+- [VAR_SAMP](/built-in-functions/aggregate-functions/var_samp/)
+- [VARIANCE](/built-in-functions/aggregate-functions/variance/)
 
 Window frames are determined by the <em>frame_clause</em> in the window function request.
 
@@ -83,7 +83,7 @@ SELECT name, test, score, SUM(score)
 +---------+--------+-------+-------------+
 ```
 
-By not specifying an OVER condition, the [SUM](/built-in-functions/aggregate-functions/sum) function is run over the entire dataset. However, if we specify an ORDER BY condition based on score (and order the entire result in the same way for clarity), the following result is returned:
+By not specifying an OVER condition, the [SUM](/built-in-functions/aggregate-functions/sum/) function is run over the entire dataset. However, if we specify an ORDER BY condition based on score (and order the entire result in the same way for clarity), the following result is returned:
 
 ```sql
 SELECT name, test, score, SUM(score) 

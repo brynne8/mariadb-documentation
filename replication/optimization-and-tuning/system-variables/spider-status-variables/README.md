@@ -2,11 +2,11 @@
 
 ##### MariaDB starting with [10.0.4](/kb/en/mariadb-1004-release-notes/)
 
-The [Spider storage engine](/columns-storage-engines-and-plugins/storage-engines/spider) was introduced in [MariaDB 10.0.4](/kb/en/mariadb-1004-release-notes/)
+The [Spider storage engine](/columns-storage-engines-and-plugins/storage-engines/spider/) was introduced in [MariaDB 10.0.4](/kb/en/mariadb-1004-release-notes/)
 
-See [Server Status Variables](/replication/optimization-and-tuning/system-variables/server-status-variables) for a complete list of status variables that can be viewed with [SHOW STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-status).
+See [Server Status Variables](/replication/optimization-and-tuning/system-variables/server-status-variables/) for a complete list of status variables that can be viewed with [SHOW STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-status/).
 
-See also the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables).
+See also the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables/).
 
 #### `Spider_direct_aggregate`
 

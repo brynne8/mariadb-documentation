@@ -4,7 +4,7 @@ Data Types in MariaDB
 
 
 
-### [Numeric Data Types](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types)
+### [Numeric Data Types](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/)
 
 - [Numeric Data Type Overview](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/numeric-data-type-overview/) — Overview and usage of the numeric data types.
 - [TINYINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/tinyint/) — Tiny integer, -128 to 127 signed.
@@ -28,7 +28,7 @@ Data Types in MariaDB
 - [INT4](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int4/) — Synonym for INT.
 - [INT8](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int8/) — Synonym for BIGINT.
 
-### [String Data Types](/columns-storage-engines-and-plugins/data-types/string-data-types)
+### [String Data Types](/columns-storage-engines-and-plugins/data-types/string-data-types/)
 
 - [String Literals](/sql-statements-structure/sql-language-structure/string-literals/) — Strings are sequences of characters and are enclosed with quotes.
 - [CHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/char/) — Fixed-length string.
@@ -54,7 +54,7 @@ Data Types in MariaDB
 - [Data Type Storage Requirements](/columns-storage-engines-and-plugins/data-types/data-type-storage-requirements/) — Storage requirements for the various data types.
 - [ROW](/columns-storage-engines-and-plugins/data-types/string-data-types/row/) — Data type for stored procedure variables.
 
-### [Date and Time Data Types](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types)
+### [Date and Time Data Types](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/)
 
 - [DATE](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/date/) — The date type YYYY-MM-DD.
 - [TIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/time/) — Time format HH:MM:SS.ssssss

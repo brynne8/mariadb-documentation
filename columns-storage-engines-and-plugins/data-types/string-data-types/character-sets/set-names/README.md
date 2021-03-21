@@ -11,11 +11,11 @@ SET NAMES {'charset_name'
 
 Sets the [character_set_client](/kb/en/server-system-variables/#character_set_client), [character_set_connection](/kb/en/server-system-variables/#character_set_connection), [character_set_results](/kb/en/server-system-variables/#character_set_results) and, implicitly, the [collation_connection](/kb/en/server-system-variables/#collation_connection) session system variables to the specified character set and collation.
 
-This determines which [character set](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets) the client will use to send statements to the server, and the server will use for sending results back to the client.
+This determines which [character set](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/) the client will use to send statements to the server, and the server will use for sending results back to the client.
 
 `ucs2`, `utf16`, and `utf32` are not valid character sets for `SET NAMES`, as they cannot be used as client character sets.
 
-The collation clause is optional. If not defined (or if `DEFAULT` is specified), the [default collation for the character set](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/supported-character-sets-and-collations) will be used.
+The collation clause is optional. If not defined (or if `DEFAULT` is specified), the [default collation for the character set](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/supported-character-sets-and-collations/) will be used.
 
 Quotes are optional for the character set or collation clauses.
 
@@ -87,5 +87,5 @@ SELECT VARIABLE_NAME, SESSION_VALUE
 
 ## See Also
 
-- [SET CHARACTER SET](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/set-character-set)
-- [Character Sets and Collations](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets)
+- [SET CHARACTER SET](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/set-character-set/)
+- [Character Sets and Collations](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/)

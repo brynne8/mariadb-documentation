@@ -1,6 +1,6 @@
 # FirstMatch Strategy
 
-`FirstMatch` is an execution strategy for [Semi-join subqueries](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/semi-join-subquery-optimizations).
+`FirstMatch` is an execution strategy for [Semi-join subqueries](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/semi-join-subquery-optimizations/).
 
 ## The idea
 
@@ -78,7 +78,7 @@ The general idea behind the `FirstMatch` strategy is the same as the one behind 
 
 ## See also
 
-- [Semi-join subquery optimizations](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/semi-join-subquery-optimizations)
+- [Semi-join subquery optimizations](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/semi-join-subquery-optimizations/)
 
 In-depth material:
 

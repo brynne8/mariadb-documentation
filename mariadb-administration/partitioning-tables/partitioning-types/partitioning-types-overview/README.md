@@ -6,10 +6,10 @@ The size of individual partitions depends on the partitioning type. Read and wri
 
 MariaDB supports the following partitioning types:
 
-- [RANGE](/mariadb-administration/partitioning-tables/partitioning-types/range-partitioning-type)
+- [RANGE](/mariadb-administration/partitioning-tables/partitioning-types/range-partitioning-type/)
 - [LIST](/kb/en/list-partitioning/)
-- [RANGE COLUMNS and LIST COLUMNS](/mariadb-administration/partitioning-tables/partitioning-types/range-columns-and-list-columns-partitioning-types), HASH COLUMNS
+- [RANGE COLUMNS and LIST COLUMNS](/mariadb-administration/partitioning-tables/partitioning-types/range-columns-and-list-columns-partitioning-types/), HASH COLUMNS
 - HASH
 - KEY
 - LINEAR HASH, LINEAR KEY
-- [SYSTEM_TIME](/sql-statements-structure/temporal-tables/system-versioned-tables)
+- [SYSTEM_TIME](/sql-statements-structure/temporal-tables/system-versioned-tables/)

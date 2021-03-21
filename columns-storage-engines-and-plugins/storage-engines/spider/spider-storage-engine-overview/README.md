@@ -8,7 +8,7 @@ The Spider storage engine was introduced in [MariaDB 10.0.4](/kb/en/mariadb-1004
 
 <img src="/kb/en/spider-storage-engine-overview/+image/spider_overview" alt="spider_overview" title="spider_overview">
 
-The Spider storage engine is a [storage engine](/columns-storage-engines-and-plugins/storage-engines) with built-in sharding features. It supports partitioning and [xa transactions](/sql-statements-structure/sql-statements/transactions/xa-transactions), and allows tables of different MariaDB instances to be handled as if they were on the same instance. It refers to one possible implementation of ISO/IEC 9075-9:2008 SQL/MED.
+The Spider storage engine is a [storage engine](/columns-storage-engines-and-plugins/storage-engines/) with built-in sharding features. It supports partitioning and [xa transactions](/sql-statements-structure/sql-statements/transactions/xa-transactions/), and allows tables of different MariaDB instances to be handled as if they were on the same instance. It refers to one possible implementation of ISO/IEC 9075-9:2008 SQL/MED.
 
 When a table is created with the Spider storage engine, the table links to the table on a remote server. The remote table can be of any storage engine. The table link is concretely achieved by the establishment of the connection from a local MariaDB server to a remote MariaDB server. The link is shared for all tables that are part of a the same transaction.
 
@@ -34,7 +34,7 @@ The Spider documentation on the MariaDB Knowledge Base is currently incomplete. 
 
 ##### MariaDB starting with [10.3.4](/kb/en/mariadb-1034-release-notes/)
 
-If you are using Spider with [replication](/replication), you can expand the list of transaction errors to be retried by setting [slave_transaction_retry_errors](/kb/en/replication-and-binary-log-server-system-variables/#slave_transaction_retry_errors) to the following to avoid network problems:
+If you are using Spider with [replication](/replication/), you can expand the list of transaction errors to be retried by setting [slave_transaction_retry_errors](/kb/en/replication-and-binary-log-server-system-variables/#slave_transaction_retry_errors) to the following to avoid network problems:
 
 - 1158: Got an error reading communication packets
 - 1159: Got timeout reading communication packets
@@ -56,9 +56,9 @@ From [MariaDB 10.4.5](/kb/en/mariadb-1045-release-notes/), the above is included
 
 ### Basic Usage
 
-To create a table in the Spider storage engine format, the COMMENT and/or CONNECTION clauses of the [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table) statement are used to pass connection information about the remote server.
+To create a table in the Spider storage engine format, the COMMENT and/or CONNECTION clauses of the [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/) statement are used to pass connection information about the remote server.
 
-For example, the following table exists on a remote server (in this example, the remote node was created with the [MySQL Sandbox](/clients-utilities/mysql-sandbox) tool, an easy way to test with multiple installations)::
+For example, the following table exists on a remote server (in this example, the remote node was created with the [MySQL Sandbox](/clients-utilities/mysql-sandbox/) tool, an easy way to test with multiple installations)::
 
 ```sql
 node1 >CREATE TABLE s(

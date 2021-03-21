@@ -44,5 +44,5 @@ Requires the [REPLICATION MASTER ADMIN](/kb/en/grant/#replication-master-admin) 
 ## See Also
 
 - [MariaDB replication](/kb/en/high-availability-performance-tuning-mariadb-replication/)
-- [Replication threads](/replication/standard-replication/replication-threads)
-- [SHOW PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist). In [SHOW PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist) output, replica threads are identified by `Binlog Dump`
+- [Replication threads](/replication/standard-replication/replication-threads/)
+- [SHOW PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist/). In [SHOW PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist/) output, replica threads are identified by `Binlog Dump`

@@ -8,8 +8,8 @@ LineString(pt1,pt2,...)
 
 ## Description
 
-Constructs a [WKB](/sql-statements-structure/geographic-geometric-features/wkb) LineString value from a number of WKB [Point](/sql-statements-structure/geographic-geometric-features/geometry-constructors/point) arguments.  If any argument is not a WKB Point, the return value is
-`NULL`. If the number of [Point](/sql-statements-structure/geographic-geometric-features/geometry-constructors/point) arguments is less than two, the return value is `NULL`.
+Constructs a [WKB](/sql-statements-structure/geographic-geometric-features/wkb/) LineString value from a number of WKB [Point](/sql-statements-structure/geographic-geometric-features/geometry-constructors/point/) arguments.  If any argument is not a WKB Point, the return value is
+`NULL`. If the number of [Point](/sql-statements-structure/geographic-geometric-features/geometry-constructors/point/) arguments is less than two, the return value is `NULL`.
 
 ## Examples
 

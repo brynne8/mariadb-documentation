@@ -2,7 +2,7 @@
 
 ##### MariaDB starting with [10.5.0](/kb/en/mariadb-1050-release-notes/)
 
-INSERT ... RETURNING was added in [MariaDB 10.5.0](/kb/en/mariadb-1050-release-notes/), and returns a resultset of the [inserted](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert) rows.
+INSERT ... RETURNING was added in [MariaDB 10.5.0](/kb/en/mariadb-1050-release-notes/), and returns a resultset of the [inserted](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/) rows.
 
 ## Syntax
 
@@ -42,7 +42,7 @@ INSERT [LOW_PRIORITY | HIGH_PRIORITY] [IGNORE]
 
 ## Description
 
-`INSERT ... RETURNING` returns a resultset of the [inserted](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert) rows.
+`INSERT ... RETURNING` returns a resultset of the [inserted](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/) rows.
 
 This returns the listed columns for all the rows that are inserted, or alternatively, the specified SELECT expression. Any SQL expressions which can be calculated can be used in the select expression for the RETURNING clause, including virtual columns and aliases, expressions which use various operators such as bitwise, logical and arithmetic operators, string functions, date-time functions, numeric functions, control flow functions, secondary functions and stored functions. Along with this, statements which have subqueries and prepared statements can also be used.
 
@@ -90,7 +90,7 @@ Aggregate functions cannot be used in the RETURNING clause. Since aggregate func
 
 ## See Also
 
-- [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert)
-- [REPLACE ... RETURNING](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/replacereturning)
+- [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/)
+- [REPLACE ... RETURNING](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/replacereturning/)
 - [DELETE ... RETURNING](/kb/en/delete/#returning)
 - [Returning clause](https://www.youtube.com/watch?v=n-LTdEBeAT4) (video)

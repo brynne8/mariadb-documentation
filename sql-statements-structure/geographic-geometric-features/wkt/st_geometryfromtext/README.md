@@ -1,3 +1,3 @@
 # ST_GeometryFromText
 
-A synonym for [ST_GeomFromText](/sql-statements-structure/geographic-geometric-features/wkt/st_geomfromtext).
+A synonym for [ST_GeomFromText](/sql-statements-structure/geographic-geometric-features/wkt/st_geomfromtext/).

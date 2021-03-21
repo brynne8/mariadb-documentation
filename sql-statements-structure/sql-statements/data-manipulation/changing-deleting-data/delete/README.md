@@ -53,16 +53,16 @@ from tbl_name and returns a count of the number of deleted rows. This count can
 be obtained by calling the [ROW_COUNT()](/kb/en/row-count/) function. The
 <code class="fixed" style="white-space:pre-wrap">WHERE</code> clause, if given, specifies the conditions that identify
 which rows to delete. With no <code class="fixed" style="white-space:pre-wrap">WHERE</code> clause, all rows are
-deleted. If the [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by) clause is specified, the rows are
-deleted in the order that is specified. The [LIMIT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/limit) clause
+deleted. If the [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by/) clause is specified, the rows are
+deleted in the order that is specified. The [LIMIT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/limit/) clause
 places a limit on the number of rows that can be deleted.
 
 For the multiple-table syntax, <code class="fixed" style="white-space:pre-wrap">DELETE</code> deletes from each
 <code class="fixed" style="white-space:pre-wrap">tbl_name</code> the rows that satisfy the conditions. In this case,
-[ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by) and [LIMIT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/limit)&gt; cannot be used. A `DELETE` can also reference tables which are located in different databases; see [Identifier Qualifiers](/sql-statements-structure/sql-language-structure/identifier-qualifiers) for the syntax.
+[ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by/) and [LIMIT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/limit/)&gt; cannot be used. A `DELETE` can also reference tables which are located in different databases; see [Identifier Qualifiers](/sql-statements-structure/sql-language-structure/identifier-qualifiers/) for the syntax.
 
 <code class="fixed" style="white-space:pre-wrap">where_condition</code> is an expression that evaluates to true for
-each row to be deleted. It is specified as described in [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select).
+each row to be deleted. It is specified as described in [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/).
 
 Currently, you cannot delete from a table and select from the same
 table in a subquery.
@@ -70,18 +70,18 @@ table in a subquery.
 You need the <code class="fixed" style="white-space:pre-wrap">DELETE</code> privilege on a table to delete rows from
 it. You need only the <code class="fixed" style="white-space:pre-wrap">SELECT</code> privilege for any columns that
 are only read, such as those named in the <code class="fixed" style="white-space:pre-wrap">WHERE</code> clause. See
-[GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant).
+[GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/).
 
 ##### MariaDB starting with [10.0](/kb/en/what-is-mariadb-100/)
 
-The PARTITION clause was introduced in [MariaDB 10.0](/kb/en/what-is-mariadb-100/). See [Partition Pruning and Selection](/mariadb-administration/partitioning-tables/partition-pruning-and-selection) for details.
+The PARTITION clause was introduced in [MariaDB 10.0](/kb/en/what-is-mariadb-100/). See [Partition Pruning and Selection](/mariadb-administration/partitioning-tables/partition-pruning-and-selection/) for details.
 
 As stated, a <code class="highlight fixed" style="white-space:pre-wrap">DELETE</code> statement with no <code class="highlight fixed" style="white-space:pre-wrap">WHERE</code>
 clause deletes all rows. A faster way to do this, when you do not need to know
 the number of deleted rows, is to use <code class="highlight fixed" style="white-space:pre-wrap">TRUNCATE TABLE</code>. However,
 within a transaction or if you have a lock on the table, 
 <code class="fixed" style="white-space:pre-wrap">TRUNCATE TABLE</code> cannot be used whereas <code class="fixed" style="white-space:pre-wrap">DELETE</code>
-can. See <code class="highlight fixed" style="white-space:pre-wrap">[TRUNCATE TABLE](/sql-statements-structure/sql-statements/table-statements/truncate-table)</code>, and
+can. See <code class="highlight fixed" style="white-space:pre-wrap">[TRUNCATE TABLE](/sql-statements-structure/sql-statements/table-statements/truncate-table/)</code>, and
 <code class="highlight fixed" style="white-space:pre-wrap">[LOCK](/kb/en/lock/)</code>.
 
 ### RETURNING
@@ -104,11 +104,11 @@ DELETE FROM t1 WHERE c1 IN (SELECT b.c1 FROM t1 b WHERE b.c2=0);
 
 ##### MariaDB starting with [10.3.4](/kb/en/mariadb-1034-release-notes/)
 
-One can use `DELETE HISTORY` to delete historical information from [System-versioned tables](/sql-statements-structure/temporal-tables/system-versioned-tables).
+One can use `DELETE HISTORY` to delete historical information from [System-versioned tables](/sql-statements-structure/temporal-tables/system-versioned-tables/).
 
 ## Examples
 
-How to use the [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by) and [LIMIT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/limit) clauses:
+How to use the [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by/) and [LIMIT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/limit/) clauses:
 
 ```sql
 DELETE FROM page_hit ORDER BY timestamp LIMIT 1000000;
@@ -155,10 +155,10 @@ Query OK, 0 rows affected (0.00 sec)
 
 ## See Also
 
-- [How IGNORE works](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/ignore)
-- [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select)
-- [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by)
-- [LIMIT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/limit)
-- [REPLACE ... RETURNING](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/replacereturning)
-- [INSERT ... RETURNING](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insertreturning)
+- [How IGNORE works](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/ignore/)
+- [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/)
+- [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by/)
+- [LIMIT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/limit/)
+- [REPLACE ... RETURNING](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/replacereturning/)
+- [INSERT ... RETURNING](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insertreturning/)
 - [Returning clause](https://www.youtube.com/watch?v=n-LTdEBeAT4) (video)

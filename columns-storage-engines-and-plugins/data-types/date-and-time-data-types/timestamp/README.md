@@ -20,9 +20,9 @@ For more information, see [Internal Format](#internal-format).
 
 ## Supported Values
 
-MariaDB stores values that use the `TIMESTAMP` data type as the number of seconds since '1970-01-01 00:00:00' ([UTC](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time)). This means that the `TIMESTAMP` data type can hold values between '1970-01-01 00:00:01' ([UTC](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time)) and '2038-01-19 03:14:07' ([UTC](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time)).
+MariaDB stores values that use the `TIMESTAMP` data type as the number of seconds since '1970-01-01 00:00:00' ([UTC](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time/)). This means that the `TIMESTAMP` data type can hold values between '1970-01-01 00:00:01' ([UTC](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time/)) and '2038-01-19 03:14:07' ([UTC](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time/)).
 
-MariaDB can also store [microseconds](/built-in-functions/date-time-functions/microseconds-in-mariadb) with a precision between 0 and 6. If no microsecond precision is specified, then 0 is used by default.
+MariaDB can also store [microseconds](/built-in-functions/date-time-functions/microseconds-in-mariadb/) with a precision between 0 and 6. If no microsecond precision is specified, then 0 is used by default.
 
 ## Automatic Values
 
@@ -33,7 +33,7 @@ MariaDB has special behavior for the first column that uses the `TIMESTAMP` data
 
 This means that if the column is not explicitly assigned a value in an `INSERT` or `UPDATE` query, then MariaDB will automatically initialize the column's value with the current date and time.
 
-This automatic initialization for `INSERT` and `UPDATE` queries can also be <strong>explicitly enabled</strong> for a column that uses the `TIMESTAMP` data type by specifying the `DEFAULT CURRENT_TIMESTAMP` and `ON UPDATE CURRENT_TIMESTAMP` clauses for the column. In these clauses, any synonym of [CURRENT_TIMESTAMP](/built-in-functions/date-time-functions/now) is accepted, including `CURRENT_TIMESTAMP()`, `NOW()`, `LOCALTIME`, `LOCALTIME()`, `LOCALTIMESTAMP`, and `LOCALTIMESTAMP()`.
+This automatic initialization for `INSERT` and `UPDATE` queries can also be <strong>explicitly enabled</strong> for a column that uses the `TIMESTAMP` data type by specifying the `DEFAULT CURRENT_TIMESTAMP` and `ON UPDATE CURRENT_TIMESTAMP` clauses for the column. In these clauses, any synonym of [CURRENT_TIMESTAMP](/built-in-functions/date-time-functions/now/) is accepted, including `CURRENT_TIMESTAMP()`, `NOW()`, `LOCALTIME`, `LOCALTIME()`, `LOCALTIMESTAMP`, and `LOCALTIMESTAMP()`.
 
 This automatic initialization for `INSERT` queries can also be <strong>explicitly disabled</strong> for a column that uses the `TIMESTAMP` data type by specifying a constant `DEFAULT` value. For example, `DEFAULT 0`.
 
@@ -45,7 +45,7 @@ This automatic initialization for `NULL` values can also be <strong>explicitly d
 
 ## Time Zones
 
-If a column uses the `TIMESTAMP` data type, then any inserted values are converted from the session's time zone to [Coordinated Universal Time (UTC)](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time) when stored, and converted back to the session's time zone when retrieved.
+If a column uses the `TIMESTAMP` data type, then any inserted values are converted from the session's time zone to [Coordinated Universal Time (UTC)](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time/) when stored, and converted back to the session's time zone when retrieved.
 
 MariaDB does not currently store any time zone identifier with the value of the `TIMESTAMP` data type. See [MDEV-10018](https://jira.mariadb.org/browse/MDEV-10018) for more information.
 
@@ -58,7 +58,7 @@ MariaDB does not currently support time zone literals that contain time zone ide
 
 ## SQL_MODE=MAXDB
 
-If the [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode) is set to `MAXDB`, TIMESTAMP fields will be silently converted to [DATETIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/datetime).
+If the [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode/) is set to `MAXDB`, TIMESTAMP fields will be silently converted to [DATETIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/datetime/).
 
 ## Internal Format
 
@@ -82,11 +82,11 @@ SHOW VARIABLES LIKE 'mysql56_temporal_format';
 ALTER TABLE example_table MODIFY ts_col TIMESTAMP;
 ```
 
-When MariaDB executes the [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) statement, it converts the data from the older temporal format to the newer one.
+When MariaDB executes the [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) statement, it converts the data from the older temporal format to the newer one.
 
 In the event that you have several tables and columns using temporal data types that you want to switch over to the new format, make sure the system variable is enabled, then perform a dump and restore using `mysqldump`.  The columns using relevant temporal data types are restored using the new temporal format.
 
-Starting from [MariaDB 10.5.1](/kb/en/mariadb-1051-release-notes/) columns with old temporal formats are marked with a `/* mariadb-5.3 */`  comment in the output of [SHOW CREATE TABLE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-table), [SHOW COLUMNS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-columns), [DESCRIBE](/sql-statements-structure/sql-statements/administrative-sql-statements/describe) statements, as well as in the `COLUMN_TYPE` column of the <a undefined>INFORMATION_SCHEMA.COLUMNS Table</a>.
+Starting from [MariaDB 10.5.1](/kb/en/mariadb-1051-release-notes/) columns with old temporal formats are marked with a `/* mariadb-5.3 */`  comment in the output of [SHOW CREATE TABLE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-table/), [SHOW COLUMNS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-columns/), [DESCRIBE](/sql-statements-structure/sql-statements/administrative-sql-statements/describe/) statements, as well as in the `COLUMN_TYPE` column of the <a undefined>INFORMATION_SCHEMA.COLUMNS Table</a>.
 
 ```sql
 SHOW CREATE TABLE mariadb5312_timestamp\G
@@ -221,7 +221,7 @@ DESC t3;
 +-------+-----------+------+-----+---------------------+-----------------------------+
 ```
 
-Explicitly setting a timestamp with the [CURRENT_TIMESTAMP](/built-in-functions/date-time-functions/current_timestamp) function:
+Explicitly setting a timestamp with the [CURRENT_TIMESTAMP](/built-in-functions/date-time-functions/current_timestamp/) function:
 
 ```sql
 INSERT INTO t3(id,ts2)  VALUES (3,CURRENT_TIMESTAMP());
@@ -250,4 +250,4 @@ SELECT * FROM t4;
 
 ## See Also
 
-- [Data Type Storage Requirements](/columns-storage-engines-and-plugins/data-types/data-type-storage-requirements)
+- [Data Type Storage Requirements](/columns-storage-engines-and-plugins/data-types/data-type-storage-requirements/)

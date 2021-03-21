@@ -4,7 +4,7 @@ Mariabackup creates the following files:
 
 ## `backup-my.cnf`
 
-During the backup, any server options relevant to Mariabackup are written to the `backup-my.cnf` [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files), so that they can be re-read later during the `--prepare` stage.
+During the backup, any server options relevant to Mariabackup are written to the `backup-my.cnf` [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/), so that they can be re-read later during the `--prepare` stage.
 
 ## `ib_logfile0`
 
@@ -20,7 +20,7 @@ In [MariaDB 10.2.9](/kb/en/mariadb-1029-release-notes/) and before, Mariabackup 
 
 ## `xtrabackup_binlog_info`
 
-This file stores the [binary log](/mariadb-administration/server-monitoring-logs/binary-log) file name and position that corresponds to the backup.
+This file stores the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) file name and position that corresponds to the backup.
 
 This file also stores the value of the <a undefined>gtid_current_pos</a> system variable that correspond to the backup.
 
@@ -71,9 +71,9 @@ If the <a undefined>--extra-lsndir</a> option is provided, then an extra copy of
 
 ### `backup_type`
 
-If the backup is a non-prepared [full backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/full-backup-and-restore-with-mariabackup) or a non-prepared [partial backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/partial-backup-and-restore-with-mariabackup), then `backup_type`  is set to `full-backuped`.
+If the backup is a non-prepared [full backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/full-backup-and-restore-with-mariabackup/) or a non-prepared [partial backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/partial-backup-and-restore-with-mariabackup/), then `backup_type`  is set to `full-backuped`.
 
-If the backup is a non-prepared [incremental backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/incremental-backup-and-restore-with-mariabackup), then `backup_type`  is set to `incremental`.
+If the backup is a non-prepared [incremental backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/incremental-backup-and-restore-with-mariabackup/), then `backup_type`  is set to `incremental`.
 
 If the backup has already been prepared, then `backup_type`  is set to `log-applied`.
 
@@ -81,17 +81,17 @@ If the backup has already been prepared, then `backup_type`  is set to `log-appl
 
 If `backup_type` is `full-backuped`, then `from_lsn` has the value of `0`.
 
-If `backup_type` is `incremental`, then `from_lsn` has the value of the [log sequence number (LSN)](/kb/en/innodb-redo-log/#log-sequence-number-lsn) at which the backup started reading from the [InnoDB redo log](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-redo-log). This is internally used by Mariabackup when preparing incremental backups.
+If `backup_type` is `incremental`, then `from_lsn` has the value of the [log sequence number (LSN)](/kb/en/innodb-redo-log/#log-sequence-number-lsn) at which the backup started reading from the [InnoDB redo log](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-redo-log/). This is internally used by Mariabackup when preparing incremental backups.
 
-This value can be manually set during an [incremental backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/incremental-backup-and-restore-with-mariabackup) with the <a undefined>--incremental-lsn</a> option. However, it is generally better to let Mariabackup figure out the `from_lsn` automatically by specifying a parent backup with the <a undefined>--incremental-basedir</a> option.
+This value can be manually set during an [incremental backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/incremental-backup-and-restore-with-mariabackup/) with the <a undefined>--incremental-lsn</a> option. However, it is generally better to let Mariabackup figure out the `from_lsn` automatically by specifying a parent backup with the <a undefined>--incremental-basedir</a> option.
 
 ### `to_lsn`
 
-`to_lsn` has the value of the [log sequence number (LSN)](/kb/en/innodb-redo-log/#log-sequence-number-lsn) of the last checkpoint in the [InnoDB redo log](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-redo-log). This is internally used by Mariabackup when preparing incremental backups.
+`to_lsn` has the value of the [log sequence number (LSN)](/kb/en/innodb-redo-log/#log-sequence-number-lsn) of the last checkpoint in the [InnoDB redo log](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-redo-log/). This is internally used by Mariabackup when preparing incremental backups.
 
 ### `last_lsn`
 
-`last_lsn` has the value of the last [log sequence number (LSN)](/kb/en/innodb-redo-log/#log-sequence-number-lsn) read from the [InnoDB redo log](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-redo-log). This is internally used by Mariabackup when preparing incremental backups.
+`last_lsn` has the value of the last [log sequence number (LSN)](/kb/en/innodb-redo-log/#log-sequence-number-lsn) read from the [InnoDB redo log](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-redo-log/). This is internally used by Mariabackup when preparing incremental backups.
 
 ## `xtrabackup_info`
 
@@ -141,7 +141,7 @@ The amount of time that Mariabackup held its locks.
 
 ### `binlog_pos`
 
-This field stores the [binary log](/mariadb-administration/server-monitoring-logs/binary-log) file name and position that corresponds to the backup.
+This field stores the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) file name and position that corresponds to the backup.
 
 This field also stores the value of the <a undefined>gtid_current_pos</a> system variable that correspond to the backup.
 
@@ -151,25 +151,25 @@ The values in this field are only guaranteed to be consistent with the backup if
 
 This is identical to `from_lsn` in <a undefined>xtrabackup_checkpoints</a>.
 
-If the backup is a [full backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/full-backup-and-restore-with-mariabackup), then `innodb_from_lsn` has the value of `0`.
+If the backup is a [full backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/full-backup-and-restore-with-mariabackup/), then `innodb_from_lsn` has the value of `0`.
 
-If the backup is an [incremental backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/incremental-backup-and-restore-with-mariabackup), then `innodb_from_lsn` has the value of the [log sequence number (LSN)](/kb/en/innodb-redo-log/#log-sequence-number-lsn) at which the backup started reading from the [InnoDB redo log](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-redo-log).
+If the backup is an [incremental backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/incremental-backup-and-restore-with-mariabackup/), then `innodb_from_lsn` has the value of the [log sequence number (LSN)](/kb/en/innodb-redo-log/#log-sequence-number-lsn) at which the backup started reading from the [InnoDB redo log](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-redo-log/).
 
 ### `innodb_to_lsn`
 
 This is identical to `to_lsn` in <a undefined>xtrabackup_checkpoints</a>.
 
-`innodb_to_lsn` has the value of the [log sequence number (LSN)](/kb/en/innodb-redo-log/#log-sequence-number-lsn) of the last checkpoint in the [InnoDB redo log](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-redo-log).
+`innodb_to_lsn` has the value of the [log sequence number (LSN)](/kb/en/innodb-redo-log/#log-sequence-number-lsn) of the last checkpoint in the [InnoDB redo log](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-redo-log/).
 
 ### `partial`
 
-If the backup is a [partial backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/partial-backup-and-restore-with-mariabackup), then this value will be `Y`.
+If the backup is a [partial backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/partial-backup-and-restore-with-mariabackup/), then this value will be `Y`.
 
 Otherwise, this value will be `N`.
 
 ### `incremental`
 
-If the backup is an [incremental backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/incremental-backup-and-restore-with-mariabackup), then this value will be `Y`.
+If the backup is an [incremental backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/incremental-backup-and-restore-with-mariabackup/), then this value will be `Y`.
 
 Otherwise, this value will be `N`.
 
@@ -189,9 +189,9 @@ Otherwise, this value will be `N`.
 
 ## `xtrabackup_slave_info`
 
-If the <a undefined>--slave-info</a> option is provided, then this file contains the [CHANGE MASTER](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to) command that can be used to set up a new server as a slave of the original server's master after the backup has been restored.
+If the <a undefined>--slave-info</a> option is provided, then this file contains the [CHANGE MASTER](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to/) command that can be used to set up a new server as a slave of the original server's master after the backup has been restored.
 
-Mariabackup does <strong>not</strong> check if [GTIDs](/replication/standard-replication/gtid) are being used in replication. It takes a shortcut and assumes that if the <a undefined>gtid_slave_pos</a> system variable is non-empty, then it writes the [CHANGE MASTER](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to) command with the <a undefined>MASTER_USE_GTID</a> option set to `slave_pos`. Otherwise, it writes the [CHANGE MASTER](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to) command with the <a undefined>MASTER_LOG_FILE</a> and <a undefined>MASTER_LOG_POS</a> options using the master's [binary log](/mariadb-administration/server-monitoring-logs/binary-log) file and position. See [MDEV-19264](https://jira.mariadb.org/browse/MDEV-19264) for more information.
+Mariabackup does <strong>not</strong> check if [GTIDs](/replication/standard-replication/gtid/) are being used in replication. It takes a shortcut and assumes that if the <a undefined>gtid_slave_pos</a> system variable is non-empty, then it writes the [CHANGE MASTER](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to/) command with the <a undefined>MASTER_USE_GTID</a> option set to `slave_pos`. Otherwise, it writes the [CHANGE MASTER](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to/) command with the <a undefined>MASTER_LOG_FILE</a> and <a undefined>MASTER_LOG_POS</a> options using the master's [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) file and position. See [MDEV-19264](https://jira.mariadb.org/browse/MDEV-19264) for more information.
 
 ## `xtrabackup_galera_info`
 
@@ -213,11 +213,11 @@ d38587ce-246c-11e5-bcce-6bbd0831cc0f:1352215
 
 ## `&lt;table&gt;.delta`
 
-If the backup is an [incremental backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/incremental-backup-and-restore-with-mariabackup), then this file contains changed pages for the table.
+If the backup is an [incremental backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/incremental-backup-and-restore-with-mariabackup/), then this file contains changed pages for the table.
 
 ## `&lt;table&gt;.delta.meta`
 
-If the backup is an [incremental backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/incremental-backup-and-restore-with-mariabackup), then this file contains metadata about `&lt;table&gt;.delta` files. The fields in this file are listed below.
+If the backup is an [incremental backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/incremental-backup-and-restore-with-mariabackup/), then this file contains metadata about `&lt;table&gt;.delta` files. The fields in this file are listed below.
 
 ### `page_size`
 

@@ -28,7 +28,7 @@ routine_body:
 
 ## Description
 
-Creates a [stored procedure](/programming-customizing-mariadb/stored-routines/stored-procedures). By default, a routine is
+Creates a [stored procedure](/programming-customizing-mariadb/stored-routines/stored-procedures/). By default, a routine is
 associated with the default database. To associate the routine
 explicitly with a given database, specify the name as db_name.sp_name
 when you create it.
@@ -39,12 +39,12 @@ the given default database while it executes. USE statements within
 stored routines are disallowed.
 
 When a stored procedure has been created, you invoke it by
-using the `CALL` statement (see [CALL](/sql-statements-structure/sql-statements/stored-routine-statements/call)).
+using the `CALL` statement (see [CALL](/sql-statements-structure/sql-statements/stored-routine-statements/call/)).
 
 To execute the `CREATE PROCEDURE` statement, it is
 necessary to have the `CREATE ROUTINE` privilege. By default, MariaDB
 automatically grants the `ALTER ROUTINE` and `EXECUTE` privileges to the
-routine creator. See also [Stored Routine Privileges](/programming-customizing-mariadb/stored-routines/stored-functions/stored-routine-privileges).
+routine creator. See also [Stored Routine Privileges](/programming-customizing-mariadb/stored-routines/stored-functions/stored-routine-privileges/).
 
 The `DEFINER` and SQL SECURITY clauses specify the security context to
 be used when checking access privileges at routine execution time, as
@@ -68,7 +68,7 @@ used. Parameter names are not case sensitive.
 Each parameter can be declared to use any valid data type, except that
 the COLLATE attribute cannot be used.
 
-For valid identifiers to use as procedure names, see [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names).
+For valid identifiers to use as procedure names, see [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names/).
 
 ### IN/OUT/INOUT
 
@@ -93,36 +93,36 @@ parameter.
 
 ### DETERMINISTIC/NOT DETERMINISTIC
 
-`DETERMINISTIC` and `NOT DETERMINISTIC` apply only to [functions](/programming-customizing-mariadb/stored-routines/stored-functions). Specifying `DETERMINISTC` or `NON-DETERMINISTIC` in procedures has no effect. The default value is `NOT DETERMINISTIC`. Functions are `DETERMINISTIC` when they always return the same value for the same input. For example, a truncate or substring function. Any function involving data, therefore, is always `NOT DETERMINISTIC`.
+`DETERMINISTIC` and `NOT DETERMINISTIC` apply only to [functions](/programming-customizing-mariadb/stored-routines/stored-functions/). Specifying `DETERMINISTC` or `NON-DETERMINISTIC` in procedures has no effect. The default value is `NOT DETERMINISTIC`. Functions are `DETERMINISTIC` when they always return the same value for the same input. For example, a truncate or substring function. Any function involving data, therefore, is always `NOT DETERMINISTIC`.
 
 ### CONTAINS SQL/NO SQL/READS SQL DATA/MODIFIES SQL DATA
 
 `CONTAINS SQL`, `NO SQL`, `READS SQL DATA`, and `MODIFIES SQL DATA` are informative clauses that tell the server what the function does. MariaDB does not check in any way whether the specified clause is correct. If none of these clauses are specified, `CONTAINS SQL` is used by default.
 
-`MODIFIES SQL DATA` means that the function contains statements that may modify data stored in databases. This happens if the function contains statements like [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete), [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update), [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert), [REPLACE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/replace) or DDL.
+`MODIFIES SQL DATA` means that the function contains statements that may modify data stored in databases. This happens if the function contains statements like [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/), [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/), [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/), [REPLACE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/replace/) or DDL.
 
-`READS SQL DATA` means that the function reads data stored in databases, but does not modify any data. This happens if [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) statements are used, but there no write operations are executed.
+`READS SQL DATA` means that the function reads data stored in databases, but does not modify any data. This happens if [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) statements are used, but there no write operations are executed.
 
-`CONTAINS SQL` means that the function contains at least one SQL statement, but it does not read or write any data stored in a database. Examples include [SET](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set) or [DO](/sql-statements-structure/sql-statements/stored-routine-statements/do).
+`CONTAINS SQL` means that the function contains at least one SQL statement, but it does not read or write any data stored in a database. Examples include [SET](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set/) or [DO](/sql-statements-structure/sql-statements/stored-routine-statements/do/).
 
 `NO SQL` means nothing, because MariaDB does not currently support any language other than SQL.
 
 The routine_body consists of a valid SQL procedure statement. This can
-be a simple statement such as [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) or [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert), or it can be a
-compound statement written using [BEGIN and END](/programming-customizing-mariadb/programmatic-compound-statements/begin-end). Compound statements
+be a simple statement such as [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) or [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/), or it can be a
+compound statement written using [BEGIN and END](/programming-customizing-mariadb/programmatic-compound-statements/begin-end/). Compound statements
 can contain declarations, loops, and other control structure
 statements. See [Programmatic and Compound Statements](/kb/en/programmatic-and-compound-statements/) for syntax details.
 
 MariaDB allows routines to contain DDL statements, such as `CREATE` and
-DROP. MariaDB also allows [stored procedures](/programming-customizing-mariadb/stored-routines/stored-procedures) (but not [stored functions](/programming-customizing-mariadb/stored-routines/stored-functions))
+DROP. MariaDB also allows [stored procedures](/programming-customizing-mariadb/stored-routines/stored-procedures/) (but not [stored functions](/programming-customizing-mariadb/stored-routines/stored-functions/))
 to contain SQL transaction statements such as `COMMIT`.
 
 For additional information about statements that are not allowed in
-stored routines, see [Stored Routine Limitations](/programming-customizing-mariadb/stored-routines/stored-routine-limitations).
+stored routines, see [Stored Routine Limitations](/programming-customizing-mariadb/stored-routines/stored-routine-limitations/).
 
 ### Invoking stored procedure from within programs
 
-For information about invoking [stored procedures](/programming-customizing-mariadb/stored-routines/stored-procedures) from within programs written in a language that has a MariaDB/MySQL interface, see [CALL](/sql-statements-structure/sql-statements/stored-routine-statements/call).
+For information about invoking [stored procedures](/programming-customizing-mariadb/stored-routines/stored-procedures/) from within programs written in a language that has a MariaDB/MySQL interface, see [CALL](/sql-statements-structure/sql-statements/stored-routine-statements/call/).
 
 ### OR REPLACE
 
@@ -135,7 +135,7 @@ DROP PROCEDURE IF EXISTS name;
 CREATE PROCEDURE name ...;
 ```
 
-with the exception that any existing [privileges](/programming-customizing-mariadb/stored-routines/stored-functions/stored-routine-privileges) for the procedure are not dropped.
+with the exception that any existing [privileges](/programming-customizing-mariadb/stored-routines/stored-functions/stored-routine-privileges/) for the procedure are not dropped.
 
 ### sql_mode
 
@@ -226,11 +226,11 @@ Query OK, 0 rows affected (0.03 sec)
 
 ## See Also
 
-- [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names)
-- [Stored Procedure Overview](/programming-customizing-mariadb/stored-routines/stored-procedures/stored-procedure-overview)
-- [ALTER PROCEDURE](/programming-customizing-mariadb/stored-routines/stored-procedures/alter-procedure)
-- [DROP PROCEDURE](/programming-customizing-mariadb/stored-routines/stored-procedures/drop-procedure)
-- [SHOW CREATE PROCEDURE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-procedure)
-- [SHOW PROCEDURE STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-procedure-status)
-- [Stored Routine Privileges](/programming-customizing-mariadb/stored-routines/stored-functions/stored-routine-privileges)
-- [Information Schema ROUTINES Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table)
+- [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names/)
+- [Stored Procedure Overview](/programming-customizing-mariadb/stored-routines/stored-procedures/stored-procedure-overview/)
+- [ALTER PROCEDURE](/programming-customizing-mariadb/stored-routines/stored-procedures/alter-procedure/)
+- [DROP PROCEDURE](/programming-customizing-mariadb/stored-routines/stored-procedures/drop-procedure/)
+- [SHOW CREATE PROCEDURE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-procedure/)
+- [SHOW PROCEDURE STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-procedure-status/)
+- [Stored Routine Privileges](/programming-customizing-mariadb/stored-routines/stored-functions/stored-routine-privileges/)
+- [Information Schema ROUTINES Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table/)

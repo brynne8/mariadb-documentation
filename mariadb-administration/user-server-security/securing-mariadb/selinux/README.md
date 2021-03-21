@@ -68,13 +68,13 @@ ls --directory --scontext /mariadb/data
 
 ### Setting the File Context for Log Files
 
-If you use a custom directory for [log files](/mariadb-administration/server-monitoring-logs), then you may need to set the file context for that directory. The SELinux file context for MariaDB [log files](/mariadb-administration/server-monitoring-logs) is `mysqld_log_t`. You can determine if this file context is present on your system and which files or directories it is associated with by executing the following command:
+If you use a custom directory for [log files](/mariadb-administration/server-monitoring-logs/), then you may need to set the file context for that directory. The SELinux file context for MariaDB [log files](/mariadb-administration/server-monitoring-logs/) is `mysqld_log_t`. You can determine if this file context is present on your system and which files or directories it is associated with by executing the following command:
 
 ```sql
 sudo semanage fcontext --list | grep mysqld_log_t
 ```
 
-If you would like to set the file context for your custom directory for [log files](/mariadb-administration/server-monitoring-logs), then that can be done by executing the <a undefined>semanage fcontext</a> and <a undefined>restorecon</a> commands. For example:
+If you would like to set the file context for your custom directory for [log files](/mariadb-administration/server-monitoring-logs/), then that can be done by executing the <a undefined>semanage fcontext</a> and <a undefined>restorecon</a> commands. For example:
 
 ```sql
 sudo semanage fcontext -a -t mysqld_log_t "/var/log/mysql(/.*)?"
@@ -89,13 +89,13 @@ ls --directory --scontext /var/log/mysql
 
 ### Setting the File Context for Option Files
 
-If you use a custom directory for [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files), then you may need to set the file context for that directory. The SELinux file context for MariaDB [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) is `mysqld_etc_t`. You can determine if this file context is present on your system and which files or directories it is associated with by executing the following command:
+If you use a custom directory for [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/), then you may need to set the file context for that directory. The SELinux file context for MariaDB [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) is `mysqld_etc_t`. You can determine if this file context is present on your system and which files or directories it is associated with by executing the following command:
 
 ```sql
 sudo semanage fcontext --list | grep mysqld_etc_t
 ```
 
-If you would like to set the file context for your custom directory for [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files), then that can be done by executing the <a undefined>semanage fcontext</a> and <a undefined>restorecon</a> commands. For example:
+If you would like to set the file context for your custom directory for [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/), then that can be done by executing the <a undefined>semanage fcontext</a> and <a undefined>restorecon</a> commands. For example:
 
 ```sql
 sudo semanage fcontext -a -t mysqld_etc_t "/etc/mariadb(/.*)?"
@@ -143,7 +143,7 @@ You might need to troubleshoot SELinux-related issues in cases, such as:
 
 ### File System Permission Errors
 
-If the file system permissions for some MariaDB directory look fine, but the MariaDB [error log](/mariadb-administration/server-monitoring-logs/error-log) still has errors that look similar to the following:
+If the file system permissions for some MariaDB directory look fine, but the MariaDB [error log](/mariadb-administration/server-monitoring-logs/error-log/) still has errors that look similar to the following:
 
 ```sql
 130321 11:50:51 mysqld_safe Starting mysqld daemon with databases from /datadir

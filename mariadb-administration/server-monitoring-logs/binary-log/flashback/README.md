@@ -6,18 +6,18 @@ DML-only flashback was introduced in [MariaDB 10.2.4](/kb/en/mariadb-1024-releas
 
 Flashback is a feature that will allow instances, databases or tables to be rolled back to an old snapshot.
 
-Flashback is currently supported only over DML statements ([INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert), [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete), [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update)). An upcoming version of MariaDB will add support for flashback over DDL statements ([DROP](/sql-statements-structure/sql-statements/data-definition/drop/drop-table), [TRUNCATE](/sql-statements-structure/sql-statements/table-statements/truncate-table), [ALTER](/sql-statements-structure/sql-statements/data-definition/alter/alter-table), etc.) by copying or moving the current table to a reserved and hidden database, and then copying or moving back when using flashback. See [MDEV-10571](https://jira.mariadb.org/browse/MDEV-10571).
+Flashback is currently supported only over DML statements ([INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/), [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/), [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/)). An upcoming version of MariaDB will add support for flashback over DDL statements ([DROP](/sql-statements-structure/sql-statements/data-definition/drop/drop-table/), [TRUNCATE](/sql-statements-structure/sql-statements/table-statements/truncate-table/), [ALTER](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/), etc.) by copying or moving the current table to a reserved and hidden database, and then copying or moving back when using flashback. See [MDEV-10571](https://jira.mariadb.org/browse/MDEV-10571).
 
 Flashback is achieved in MariaDB Server using existing support for full image format binary logs (`binlog_row_image=FULL`), so it supports all engines.
 
-The real work of Flashback is done by [mysqlbinlog](/clients-utilities/mysqlbinlog) with `--flashback`. This causes events to be translated: INSERT to DELETE, DELETE to INSERT, and for UPDATEs the before and after images are swapped.
+The real work of Flashback is done by [mysqlbinlog](/clients-utilities/mysqlbinlog/) with `--flashback`. This causes events to be translated: INSERT to DELETE, DELETE to INSERT, and for UPDATEs the before and after images are swapped.
 
 When executing `mysqlbinlog` with `--flashback`, the Flashback events will be stored in memory. You should make sure your server has enough memory for this feature.
 
 ## New Arguments
 
-- [mysqlbinlog](/clients-utilities/mysqlbinlog) has a new option: `--flashback` or `-B` that will let it work in flashback mode.
-- [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options) has a new option: [--flashback](/kb/en/mysqld-options/#-flashback) that enables the binary log and sets `binlog_format=ROW`. It is not mandatory to use this option if you have already enabled those options directly.
+- [mysqlbinlog](/clients-utilities/mysqlbinlog/) has a new option: `--flashback` or `-B` that will let it work in flashback mode.
+- [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/) has a new option: [--flashback](/kb/en/mysqld-options/#-flashback) that enables the binary log and sets `binlog_format=ROW`. It is not mandatory to use this option if you have already enabled those options directly.
 
 Do not use `-v` `-vv` options, as this adds verbose information to the binary log which can cause problems when importing. See [MDEV-12066](https://jira.mariadb.org/browse/MDEV-12066) and [MDEV-12067](https://jira.mariadb.org/browse/MDEV-12067).
 

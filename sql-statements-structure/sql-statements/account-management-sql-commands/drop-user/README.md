@@ -16,7 +16,7 @@ Each account is named using the same format as for the `CREATE USER`
 statement; for example, <code class="fixed" style="white-space:pre-wrap">'jeffrey'@'localhost'</code>.  If you specify
 only the user name part of the account name, a host name part of `'%'` is
 used. For additional information about specifying account names, see
-[CREATE USER](/sql-statements-structure/sql-statements/account-management-sql-commands/create-user).
+[CREATE USER](/sql-statements-structure/sql-statements/account-management-sql-commands/create-user/).
 
 Note that, if you specify an account that is currently connected, it will not
 be deleted until the connection is closed. The connection will not be
@@ -67,8 +67,8 @@ SHOW WARNINGS;
 
 ## See Also
 
-- [CREATE USER](/sql-statements-structure/sql-statements/account-management-sql-commands/create-user)
-- [ALTER USER](/sql-statements-structure/sql-statements/account-management-sql-commands/alter-user)
-- [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant)
-- [SHOW CREATE USER](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-user)
+- [CREATE USER](/sql-statements-structure/sql-statements/account-management-sql-commands/create-user/)
+- [ALTER USER](/sql-statements-structure/sql-statements/account-management-sql-commands/alter-user/)
+- [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/)
+- [SHOW CREATE USER](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-user/)
 - [mysql.user table](/kb/en/mysqluser-table/)

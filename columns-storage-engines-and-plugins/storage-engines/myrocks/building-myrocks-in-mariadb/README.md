@@ -1,12 +1,12 @@
 # Building MyRocks in MariaDB
 
-This page describes how to get [MyRocks in MariaDB](/columns-storage-engines-and-plugins/storage-engines/myrocks) when compiling MariaDB from source.
+This page describes how to get [MyRocks in MariaDB](/columns-storage-engines-and-plugins/storage-engines/myrocks/) when compiling MariaDB from source.
 
 (See [https://github.com/facebook/mysql-5.6/wiki/Build-Steps](https://github.com/facebook/mysql-5.6/wiki/Build-Steps) for instructions how to build the upstream)
 
 ## Build Process and Requirements
 
-MariaDB compile process will compile [MyRocks](/columns-storage-engines-and-plugins/storage-engines/myrocks) into <code class="fixed" style="white-space:pre-wrap">ha_rocksdb.so</code> by default if the platform supports it (That is, no WITH_ROCKSDB switch is necessary).
+MariaDB compile process will compile [MyRocks](/columns-storage-engines-and-plugins/storage-engines/myrocks/) into <code class="fixed" style="white-space:pre-wrap">ha_rocksdb.so</code> by default if the platform supports it (That is, no WITH_ROCKSDB switch is necessary).
 
 Platform requirements:
 

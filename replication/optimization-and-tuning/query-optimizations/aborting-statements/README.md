@@ -17,13 +17,13 @@ The feature was based upon a patch by Davi Arnaut.
 
 ## User [max_statement_time](/kb/en/server-system-variables/#max_statement_time)
 
-[max_statement_time](/kb/en/server-system-variables/#max_statement_time) can be stored per user with the [GRANT ... MAX_STATEMENT_TIME](/sql-statements-structure/sql-statements/account-management-sql-commands/grant) syntax.
+[max_statement_time](/kb/en/server-system-variables/#max_statement_time) can be stored per user with the [GRANT ... MAX_STATEMENT_TIME](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/) syntax.
 
 ##### MariaDB starting with [10.1.2](/kb/en/mariadb-1012-release-notes/)
 
 ## Per-query [max_statement_time](/kb/en/server-system-variables/#max_statement_time)
 
-By using [max_statement_time](/kb/en/server-system-variables/#max_statement_time) in conjunction with [SET STATEMENT](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set-statement), it is possible to limit the execution time of individual queries. For example:
+By using [max_statement_time](/kb/en/server-system-variables/#max_statement_time) in conjunction with [SET STATEMENT](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set-statement/), it is possible to limit the execution time of individual queries. For example:
 
 ```sql
 SET STATEMENT max_statement_time=100 FOR 
@@ -40,7 +40,7 @@ SELECT MAX_STATEMENT_TIME=2 * FROM t1;
 ## Limitations
 
 - [max_statement_time](/kb/en/server-system-variables/#max_statement_time) does not work in embedded servers.
-- [max_statement_time](/kb/en/server-system-variables/#max_statement_time) does not work for [COMMIT](/sql-statements-structure/sql-statements/transactions/commit) statements in a Galera cluster (see [MDEV-18673](https://jira.mariadb.org/browse/MDEV-18673) for discussion).
+- [max_statement_time](/kb/en/server-system-variables/#max_statement_time) does not work for [COMMIT](/sql-statements-structure/sql-statements/transactions/commit/) statements in a Galera cluster (see [MDEV-18673](https://jira.mariadb.org/browse/MDEV-18673) for discussion).
 
 ## Differences Between the MariaDB and MySQL Implementations
 
@@ -53,5 +53,5 @@ MySQL 5.7.4 introduced similar functionality, but the MariaDB implementation dif
 
 ## See Also
 
-- [Query limits and timeouts](/replication/optimization-and-tuning/query-optimizations/query-limits-and-timeouts)
+- [Query limits and timeouts](/replication/optimization-and-tuning/query-optimizations/query-limits-and-timeouts/)
 - [lock_wait_timeout](/kb/en/server-system-variables/#lock_wait_timeout) variable

@@ -24,4 +24,4 @@ UPDATE t SET blob_col=LOAD_FILE('/tmp/picture') WHERE id=1;
 
 ## See Also
 
-- [SELECT INTO DUMPFILE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select-into-dumpfile)
+- [SELECT INTO DUMPFILE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select-into-dumpfile/)

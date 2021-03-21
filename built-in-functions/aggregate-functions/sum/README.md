@@ -12,7 +12,7 @@ Returns the sum of <em>`expr`</em>. If the return set has no rows, `SUM()` retur
 `NULL`. The `DISTINCT` keyword can be used to sum only the distinct values
 of `expr`.
 
-From [MariaDB 10.2.0](/kb/en/mariadb-1020-release-notes/), SUM() can be used as a [window function](/built-in-functions/special-functions/window-functions), although not with the DISTINCT specifier.
+From [MariaDB 10.2.0](/kb/en/mariadb-1020-release-notes/), SUM() can be used as a [window function](/built-in-functions/special-functions/window-functions/), although not with the DISTINCT specifier.
 
 ## Examples
 
@@ -68,7 +68,7 @@ SELECT name,SUM(units) FROM sales
 +------+------------+
 ```
 
-As a [window function](/built-in-functions/special-functions/window-functions):
+As a [window function](/built-in-functions/special-functions/window-functions/):
 
 ```sql
 CREATE OR REPLACE TABLE student_test (name CHAR(10), test CHAR(10), score TINYINT);
@@ -94,6 +94,6 @@ SELECT name, test, score, SUM(score) OVER (PARTITION BY name) AS total_score FRO
 
 ## See Also
 
-- [AVG](/built-in-functions/aggregate-functions/avg) (average)
-- [MAX](/built-in-functions/aggregate-functions/max) (maximum)
-- [MIN](/built-in-functions/aggregate-functions/min) (minimum)
+- [AVG](/built-in-functions/aggregate-functions/avg/) (average)
+- [MAX](/built-in-functions/aggregate-functions/max/) (maximum)
+- [MIN](/built-in-functions/aggregate-functions/min/) (minimum)

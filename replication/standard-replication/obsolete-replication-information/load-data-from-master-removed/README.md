@@ -17,9 +17,9 @@ will have the additional advantage of working with more storage engines.
 
 For MySQL 5.1 and earlier, the recommended alternative solution to
 using <code class="highlight fixed" style="white-space:pre-wrap">LOAD DATA FROM MASTER</code> or
- <code class="highlight fixed" style="white-space:pre-wrap">LOAD TABLE FROM MASTER</code> is using [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump) or [mysqlhotcopy](/clients-utilities/backup-restore-and-import-clients/mysqlhotcopy).
+ <code class="highlight fixed" style="white-space:pre-wrap">LOAD TABLE FROM MASTER</code> is using [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump/) or [mysqlhotcopy](/clients-utilities/backup-restore-and-import-clients/mysqlhotcopy/).
 The latter requires Perl and two Perl modules (DBI and DBD:mysql) and works for
-[MyISAM](/kb/en/myisam/) and [ARCHIVE](/columns-storage-engines-and-plugins/storage-engines/archive) tables only. With mysqldump, you can create SQL dumps on the
+[MyISAM](/kb/en/myisam/) and [ARCHIVE](/columns-storage-engines-and-plugins/storage-engines/archive/) tables only. With mysqldump, you can create SQL dumps on the
 master and pipe (or copy) these to a mysql client on the slave. This has the
 advantage of working for all storage engines, but can be quite slow, since it
 works using <code class="highlight fixed" style="white-space:pre-wrap">SELECT</code>.
@@ -47,7 +47,7 @@ Use of this statement is subject to the following conditions:
 If you are loading large tables, you might have to increase the values of
  <code class="highlight fixed" style="white-space:pre-wrap">net_read_timeout</code> and <code class="highlight fixed" style="white-space:pre-wrap">net_write_timeout</code> on
 both the master and slave servers.
-See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables).
+See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables/).
 
 Note that <code class="highlight fixed" style="white-space:pre-wrap">LOAD DATA FROM MASTER</code> does not copy any tables
 from the mysql database. This makes it easy to have different users and
@@ -62,7 +62,7 @@ All master tables for which the user does not have the
  <code class="highlight fixed" style="white-space:pre-wrap">LOAD DATA FROM MASTER</code>. This is because the master hides
 them from the user: <code class="highlight fixed" style="white-space:pre-wrap">LOAD DATA FROM MASTER</code> calls
  <code class="highlight fixed" style="white-space:pre-wrap">SHOW DATABASES</code> to know the master databases to load, but
- <code class="highlight fixed" style="white-space:pre-wrap">[SHOW DATABASES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-databases)</code> returns only databases
+ <code class="highlight fixed" style="white-space:pre-wrap">[SHOW DATABASES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-databases/)</code> returns only databases
 for which the user has some privilege.   On the slave side, the user that
 issues <code class="highlight fixed" style="white-space:pre-wrap">LOAD DATA FROM MASTER</code> must have privileges for
 dropping and creating the databases and tables that are copied.

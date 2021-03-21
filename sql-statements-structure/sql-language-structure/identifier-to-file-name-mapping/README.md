@@ -6,7 +6,7 @@ Not all characters that are allowed in table names can be used in file names. Ev
 
 This is implemented using a special character set. MariaDB converts a table name to the "filename" character set to get the file name for this table. And it converts the file name from the "filename" character set to, for example, utf8 to get the table name for this file name.
 
-The conversion rules are as follows: if the identifier is made up only of basic Latin numbers, letters and/or the underscore character, the encoding matches the name (see however [Identifier Case Sensitivity](/sql-statements-structure/sql-language-structure/identifier-case-sensitivity)). Otherwise they are encoded according to the following table:
+The conversion rules are as follows: if the identifier is made up only of basic Latin numbers, letters and/or the underscore character, the encoding matches the name (see however [Identifier Case Sensitivity](/sql-statements-structure/sql-language-structure/identifier-case-sensitivity/)). Otherwise they are encoded according to the following table:
 
 <table><tbody><tr><th>Code Range</th><th>Pattern</th><th>Number</th><th>Used</th><th>Unused</th><th>Blocks</th></tr>
 <tr><td>00C0..017F</td><td>[@][0..4][g..z]</td><td>5*20= 100</td><td>97</td><td>3</td><td>Latin-1 Supplement + Latin Extended-A</td></tr>

@@ -52,7 +52,7 @@ Controllers constantly check if there are differences between the pod's current 
 
 Most of the actions taken by the controllers user the API server in the Control Plane. However, this is not necessarily true for custom controllers. Also, some actions cannot be performed via the Control Plane. For example, if some nodes crashed, adding new nodes involves taking actions outside of the Kubernetes cluster, and controllers will have to do this themselves.
 
-It is possible to write custom controllers to perform checks that require knowledge about a specific technology. For example, a MariaDB custom controller may want to check if [replication](/replication/standard-replication) is working by issuing [SHOW REPLICA STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-replica-status) commands. This logic is specific to the way MariaDB works, and can only be implemented in a customer controller. Custom controllers are usually part of operators.
+It is possible to write custom controllers to perform checks that require knowledge about a specific technology. For example, a MariaDB custom controller may want to check if [replication](/replication/standard-replication/) is working by issuing [SHOW REPLICA STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-replica-status/) commands. This logic is specific to the way MariaDB works, and can only be implemented in a customer controller. Custom controllers are usually part of operators.
 
 For more information, see [Controllers](https://kubernetes.io/docs/concepts/architecture/controller/) in the Kubernetes documentation.
 

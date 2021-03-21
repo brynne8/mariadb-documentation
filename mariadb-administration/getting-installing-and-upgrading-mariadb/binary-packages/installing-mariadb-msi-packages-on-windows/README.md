@@ -31,7 +31,7 @@ dialogs to control various database properties. Note that you do not
 necessarily have to create an instance at this stage. For example, if you
 already have MySQL or MariaDB databases running as services, you can just
 upgrade them during the installation. Also, you can create additional database
-instances after the installation, with the [mysql_install_db.exe](/mariadb-administration/getting-installing-and-upgrading-mariadb/mysql_install_dbexe) utility.
+instances after the installation, with the [mysql_install_db.exe](/mariadb-administration/getting-installing-and-upgrading-mariadb/mysql_install_dbexe/) utility.
 
 <strong>NOTE</strong>: By default, if you install a database instance, the data directory
 will be in the "data" folder under the installation root. To change the data

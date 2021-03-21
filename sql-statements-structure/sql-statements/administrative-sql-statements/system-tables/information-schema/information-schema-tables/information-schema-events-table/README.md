@@ -31,4 +31,4 @@ It contains the following columns:
 <tr><td><code>DATABASE_COLLATION</code></td><td>Database <a href="/kb/en/data-types-character-sets-and-collations/">collation</a> with which the event is linked.</td></tr>
 </tbody></table>
 
-The [SHOW EVENTS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-events) and [SHOW CREATE EVENT](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-event) statements provide similar information.
+The [SHOW EVENTS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-events/) and [SHOW CREATE EVENT](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-event/) statements provide similar information.

@@ -1,6 +1,6 @@
 # Configuring PAM Authentication and User Mapping with Unix Authentication
 
-In this article, we will walk through the configuration of PAM authentication using the [pam](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam) authentication plugin and user and group mapping with the [pam_user_map](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/user-and-group-mapping-with-pam) PAM module. The primary authentication will be handled by the <a undefined>pam_unix</a> PAM module, which performs standard Unix password authentication.
+In this article, we will walk through the configuration of PAM authentication using the [pam](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam/) authentication plugin and user and group mapping with the [pam_user_map](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/user-and-group-mapping-with-pam/) PAM module. The primary authentication will be handled by the <a undefined>pam_unix</a> PAM module, which performs standard Unix password authentication.
 
 ## Hypothetical Requirements
 
@@ -45,13 +45,13 @@ Next, let's [install the pam_user_map PAM module](/kb/en/user-and-group-mapping-
 
 Before the module can be compiled from source, we may need to install some dependencies.
 
-On RHEL, CentOS, and other similar Linux distributions that use [RPM packages](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm), we need to install `gcc` and `pam-devel`:
+On RHEL, CentOS, and other similar Linux distributions that use [RPM packages](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/), we need to install `gcc` and `pam-devel`:
 
 ```sql
 sudo yum install gcc pam-devel
 ```
 
-On Debian, Ubuntu, and other similar Linux distributions that use [DEB packages](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files), we need to install `gcc` and `libpam0g-dev`:
+On Debian, Ubuntu, and other similar Linux distributions that use [DEB packages](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files/), we need to install `gcc` and `libpam0g-dev`:
 
 ```sql
 sudo apt-get install gcc libpam0g-dev
@@ -152,7 +152,7 @@ GRANT PROXY ON 'dba'@'%' TO ''@'%';
 
 ## Testing our Configuration
 
-Next, let's test out our configuration by [verifying that mapping is occurring](/kb/en/user-and-group-mapping-with-pam/#verifying-that-mapping-is-occurring). We can verify this by logging in as each of our users and comparing the return value of [USER()](/built-in-functions/secondary-functions/information-functions/user), which is the original user name and the return value of [CURRENT_USER()](/built-in-functions/secondary-functions/information-functions/current_user), which is the authenticated user name.
+Next, let's test out our configuration by [verifying that mapping is occurring](/kb/en/user-and-group-mapping-with-pam/#verifying-that-mapping-is-occurring). We can verify this by logging in as each of our users and comparing the return value of [USER()](/built-in-functions/secondary-functions/information-functions/user/), which is the original user name and the return value of [CURRENT_USER()](/built-in-functions/secondary-functions/information-functions/current_user/), which is the authenticated user name.
 
 First, let's test out our `foo` user:
 
@@ -176,7 +176,7 @@ MariaDB [(none)]> SELECT USER(), CURRENT_USER();
 1 row in set (0.000 sec)
 ```
 
-We can verify that our `foo` Unix user was properly mapped to the `bar` MariaDB user by looking at the return value of [CURRENT_USER()](/built-in-functions/secondary-functions/information-functions/current_user).
+We can verify that our `foo` Unix user was properly mapped to the `bar` MariaDB user by looking at the return value of [CURRENT_USER()](/built-in-functions/secondary-functions/information-functions/current_user/).
 
 Then let's test out our `alice` user in the `dba` group:
 
@@ -222,4 +222,4 @@ MariaDB [(none)]> SELECT USER(), CURRENT_USER();
 1 row in set (0.000 sec)
 ```
 
-We can verify that our `alice` and `bob` Unix users in the `dba` Unix group were properly mapped to the `dba` MariaDB user by looking at the return values of [CURRENT_USER()](/built-in-functions/secondary-functions/information-functions/current_user).
+We can verify that our `alice` and `bob` Unix users in the `dba` Unix group were properly mapped to the `dba` MariaDB user by looking at the return values of [CURRENT_USER()](/built-in-functions/secondary-functions/information-functions/current_user/).

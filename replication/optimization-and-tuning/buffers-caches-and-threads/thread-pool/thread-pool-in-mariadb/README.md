@@ -54,11 +54,11 @@ as you see fit.
 
 If you find any issues with any of the default behavior, then we encourage you to [submit a bug report](/kb/en/reporting-bugs/).
 
-See [Thread Pool System and Status Variables](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables) for the full list of the thread pool's system variables.
+See [Thread Pool System and Status Variables](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables/) for the full list of the thread pool's system variables.
 
 ### Configuring the Thread Pool on Unix
 
-On Unix, if you would like to use the thread pool, then you can use the thread pool by setting the <a undefined>thread_handling</a> system variable to `pool-of-threads` in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+On Unix, if you would like to use the thread pool, then you can use the thread pool by setting the <a undefined>thread_handling</a> system variable to `pool-of-threads` in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]
@@ -68,9 +68,9 @@ thread_handling=pool-of-threads
 
 The following system variables can also be configured on Unix:
 
-- <a undefined>thread_pool_size</a> – The number of [thread groups](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-groups-in-the-unix-implementation-of-the-thread-pool) in the thread pool, which determines how many statements can execute simultaneously. The default value is the number of CPUs on the system. When setting this system variable's value at system startup, the max value is 100000. However, it is not a good idea to set it that high. When setting this system variable's value dynamically, the max value is either 128 or the value that was set at system startup--whichever value is higher. See [Thread Groups in the Unix Implementation of the Thread Pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-groups-in-the-unix-implementation-of-the-thread-pool) for more information.
+- <a undefined>thread_pool_size</a> – The number of [thread groups](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-groups-in-the-unix-implementation-of-the-thread-pool/) in the thread pool, which determines how many statements can execute simultaneously. The default value is the number of CPUs on the system. When setting this system variable's value at system startup, the max value is 100000. However, it is not a good idea to set it that high. When setting this system variable's value dynamically, the max value is either 128 or the value that was set at system startup--whichever value is higher. See [Thread Groups in the Unix Implementation of the Thread Pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-groups-in-the-unix-implementation-of-the-thread-pool/) for more information.
 
-- <a undefined>thread_pool_max_threads</a> – The maximum number of threads in the thread pool. Once this limit is reached, no new threads will be created in most cases. In rare cases, the actual number of threads can slightly exceed this, because each [thread group](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-groups-in-the-unix-implementation-of-the-thread-pool) needs at least two threads (i.e. at least one worker thread and at least one listener thread) to prevent deadlocks. The default value in [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.0](/kb/en/what-is-mariadb-100/) is `500`. The default value in [MariaDB 10.1](/kb/en/what-is-mariadb-101/) is `1000` in [MariaDB 10.1](/kb/en/what-is-mariadb-101/). The default value in [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later is `65536`.
+- <a undefined>thread_pool_max_threads</a> – The maximum number of threads in the thread pool. Once this limit is reached, no new threads will be created in most cases. In rare cases, the actual number of threads can slightly exceed this, because each [thread group](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-groups-in-the-unix-implementation-of-the-thread-pool/) needs at least two threads (i.e. at least one worker thread and at least one listener thread) to prevent deadlocks. The default value in [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.0](/kb/en/what-is-mariadb-100/) is `500`. The default value in [MariaDB 10.1](/kb/en/what-is-mariadb-101/) is `1000` in [MariaDB 10.1](/kb/en/what-is-mariadb-101/). The default value in [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later is `65536`.
 
 - <a undefined>thread_pool_stall_limit</a> – The number of milliseconds between each stall check performed by the timer thread. The default value is `500`. Stall detection is used to prevent a single client connection from monopolizing a thread group. When the timer thread detects that a thread group is stalled, it wakes up a sleeping worker thread in the thread group, if one is available. If there isn't one, then it creates a new worker thread in the thread group. This temporarily allows several client connections in the thread group to run in parallel. However, note that the timer thread will not create a new worker thread if the number of threads in the thread pool is already greater than or equal to the maximum defined by the <a undefined>thread_pool_max_threads</a> variable, unless the thread group does not already have a listener thread. See [Thread Groups in the Unix Implementation of the Thread Pool: Thread Group Stalls](/kb/en/thread-groups-in-the-unix-implementation-of-the-thread-pool/#thread-group-stalls) for more information.
 
@@ -84,7 +84,7 @@ The Windows implementation of the thread pool uses a native thread pool created 
 
 On Windows, if you would like to use the thread pool, then you do not need to do anything, because the default for the <a undefined>thread_handling</a> system variable is already preset to `pool-of-threads`.
 
-However, if you would like to use the old one thread per-connection behavior on Windows, then you can use use that by setting the <a undefined>thread_handling</a> system variable to `one-thread-per-connection` in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+However, if you would like to use the old one thread per-connection behavior on Windows, then you can use use that by setting the <a undefined>thread_handling</a> system variable to `one-thread-per-connection` in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]
@@ -135,7 +135,7 @@ You can enable this and configure a specific port by setting the <a undefined>ex
 
 You can configure a specific number of connections for this port by setting the <a undefined>extra_max_connections</a> system variable.
 
-These system variables can be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+These system variables can be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]
@@ -144,7 +144,7 @@ extra_port = 8385
 extra_max_connections = 10
 ```
 
-Once you have the extra port configured, you can use the [mysql](/clients-utilities/mysql-client/mysql-command-line-client) client with the `-P` option to connect to the port.
+Once you have the extra port configured, you can use the [mysql](/clients-utilities/mysql-client/mysql-command-line-client/) client with the `-P` option to connect to the port.
 
 ```sql
 $ mysql -u root -P 8385 -p
@@ -161,17 +161,17 @@ Currently there are two status variables exposed to monitor pool activity.
 
 ## Thread Groups in the Unix Implementation of the Thread Pool
 
-On Unix, the thread pool implementation uses objects called thread groups to divide up client connections into many independent sets of threads. See [Thread Groups in the Unix Implementation of the Thread Pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-groups-in-the-unix-implementation-of-the-thread-pool) for more information.
+On Unix, the thread pool implementation uses objects called thread groups to divide up client connections into many independent sets of threads. See [Thread Groups in the Unix Implementation of the Thread Pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-groups-in-the-unix-implementation-of-the-thread-pool/) for more information.
 
 ## Fixing a Blocked Thread Pool
 
 When using global locks, even with a high value on the <a undefined>thread_pool_max_threads</a> system variable, it is still possible to block the entire pool.
 
-Imagine the case where a client performs [FLUSH TABLES WITH READ LOCK](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush) then pauses.  If then the number of other clients connecting to the server to start write operations exceeds the maximum number of threads allowed in the pool, it can block the Server.  This makes it impossible to issue the <a undefined>UNLOCK TABLES</a> statement.  It can also block MaxScale from monitoring the Server.
+Imagine the case where a client performs [FLUSH TABLES WITH READ LOCK](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/) then pauses.  If then the number of other clients connecting to the server to start write operations exceeds the maximum number of threads allowed in the pool, it can block the Server.  This makes it impossible to issue the <a undefined>UNLOCK TABLES</a> statement.  It can also block MaxScale from monitoring the Server.
 
 To mitigate the issue, MariaDB allows you to configure an extra port for administrative connections.  See [Configuring the Extra Port](#configuring-the-extra-port) for information on how to configure this.
 
-Once you have the extra port configured, you can use the [mysql](/clients-utilities/mysql-client/mysql-command-line-client) client with the `-P` option to connect to the port.
+Once you have the extra port configured, you can use the [mysql](/clients-utilities/mysql-client/mysql-command-line-client/) client with the `-P` option to connect to the port.
 
 ```sql
 $ mysql -u root -P 8385 -p
@@ -257,4 +257,4 @@ The [thread_cache_size](/kb/en/server-system-variables/#thread_cache_size) syste
 
 - [Thread Pool System and Status Variables](/kb/en/thread-pool-system-and-status-variables/)
 - [Threadpool Benchmarks](/kb/en/threadpool-benchmarks/)
-- [Thread Pool in MariaDB 5.1 - 5.3](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb-51-53)
+- [Thread Pool in MariaDB 5.1 - 5.3](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb-51-53/)

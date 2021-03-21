@@ -70,9 +70,9 @@ collation_connection: utf8_general_ci
 
 ## See also
 
-- [CREATE PACKAGE](/sql-statements-structure/sql-statements/data-definition/create/create-package)
-- [SHOW CREATE PACKAGE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-package)
-- [DROP PACKAGE](/sql-statements-structure/sql-statements/data-definition/drop/drop-package)
-- [CREATE PACKAGE BODY](/sql-statements-structure/sql-statements/data-definition/create/create-package-body)
-- [DROP PACKAGE BODY](/sql-statements-structure/sql-statements/data-definition/drop/drop-package-body)
+- [CREATE PACKAGE](/sql-statements-structure/sql-statements/data-definition/create/create-package/)
+- [SHOW CREATE PACKAGE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-package/)
+- [DROP PACKAGE](/sql-statements-structure/sql-statements/data-definition/drop/drop-package/)
+- [CREATE PACKAGE BODY](/sql-statements-structure/sql-statements/data-definition/create/create-package-body/)
+- [DROP PACKAGE BODY](/sql-statements-structure/sql-statements/data-definition/drop/drop-package-body/)
 - [Oracle SQL_MODE](/kb/en/sql_modeoracle-from-mariadb-103/)

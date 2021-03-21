@@ -45,6 +45,6 @@ SELECT SUBSTRING_INDEX('www.mariadb.org', '.', -2);
 
 ## See Also
 
-- [INSTR()](/built-in-functions/string-functions/instr) - Returns the position of a string within a string
-- [LOCATE()](/built-in-functions/string-functions/locate) - Returns the position of a string within a string
-- [SUBSTRING()](/built-in-functions/string-functions/substring) - Returns a string based on position
+- [INSTR()](/built-in-functions/string-functions/instr/) - Returns the position of a string within a string
+- [LOCATE()](/built-in-functions/string-functions/locate/) - Returns the position of a string within a string
+- [SUBSTRING()](/built-in-functions/string-functions/substring/) - Returns a string based on position

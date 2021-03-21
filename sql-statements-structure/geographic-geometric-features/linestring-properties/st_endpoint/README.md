@@ -9,8 +9,8 @@ EndPoint(ls)
 
 ## Description
 
-Returns the [Point](/sql-statements-structure/geographic-geometric-features/geometry-constructors/point) that is the endpoint of the
-[LineString](/sql-statements-structure/geographic-geometric-features/geometry-constructors/linestring) value `ls`.
+Returns the [Point](/sql-statements-structure/geographic-geometric-features/geometry-constructors/point/) that is the endpoint of the
+[LineString](/sql-statements-structure/geographic-geometric-features/geometry-constructors/linestring/) value `ls`.
 
 `ST_EndPoint()` and `EndPoint()` are synonyms.
 

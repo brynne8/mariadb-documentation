@@ -12,7 +12,7 @@ COLUMN_JSON(dyncol_blob)
 
 ## Description
 
-Returns a JSON representation of data in `dyncol_blob`. Can also be used to display nested columns. See [dynamic columns](/sql-statements-structure/nosql/dynamic-columns) for more information.
+Returns a JSON representation of data in `dyncol_blob`. Can also be used to display nested columns. See [dynamic columns](/sql-statements-structure/nosql/dynamic-columns/) for more information.
 
 ## Example
 

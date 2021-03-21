@@ -6,7 +6,7 @@ This is a <strong><em>[Stable](/kb/en/release-criteria/) (GA)</em></strong> rele
 
 ## Important Notices
 
-- MariaDB will include the [Audit Plugin](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin) by default from versions 5.5.37 and 10.0.10. At the time of writing these versions haven't yet been released.
+- MariaDB will include the [Audit Plugin](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/) by default from versions 5.5.37 and 10.0.10. At the time of writing these versions haven't yet been released.
 - The MariaDB Audit Plugin works for MariaDB, MySQL and Percona Server.
 
 ## Download

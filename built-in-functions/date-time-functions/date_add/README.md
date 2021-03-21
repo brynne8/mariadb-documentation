@@ -12,9 +12,9 @@ Performs date arithmetic. The <em>date</em> argument specifies the
 starting date or datetime value. <em>expr</em> is an expression specifying the
 interval value to be added or subtracted from the starting date. <em>expr</em> is a
 string; it may start with a "`-`" for negative intervals. <em>unit</em> is a
-keyword indicating the units in which the expression should be interpreted. See [Date and Time Units](/built-in-functions/date-time-functions/date-and-time-units) for a complete list of permitted units.
+keyword indicating the units in which the expression should be interpreted. See [Date and Time Units](/built-in-functions/date-time-functions/date-and-time-units/) for a complete list of permitted units.
 
-See also [DATE_SUB()](/built-in-functions/date-time-functions/date_sub).
+See also [DATE_SUB()](/built-in-functions/date-time-functions/date_sub/).
 
 ## Examples
 

@@ -130,7 +130,7 @@ The query cache size is allocated in 1024 byte-blocks, thus it should be set to 
 
 The query result is stored using a minimum block size of <a undefined>query_cache_min_res_unit</a>. Check two conditions to use a good value of this variable: Query cache insert result blocks with locks, each new block insert lock query cache, a small value will increase locks and fragmentation and waste less memory for small results, a big value will increase memory use wasting more memory for small results but it reduce locks. Test with your workload for fine tune this variable.
 
-If the [strict mode](/mariadb-administration/variables-and-modes/sql-mode) is enabled, setting the query cache size to an invalid value will cause an error. Otherwise, it will be set to the nearest permitted value, and a warning will be triggered.
+If the [strict mode](/mariadb-administration/variables-and-modes/sql-mode/) is enabled, setting the query cache size to an invalid value will cause an error. Otherwise, it will be set to the nearest permitted value, and a warning will be triggered.
 
 ```sql
 SHOW VARIABLES LIKE 'query_cache_size';
@@ -200,7 +200,7 @@ The [QUERY_CACHE_INFO plugin](/kb/en/query_cache_info-plugin/) creates the [QUER
 
 ## Query Cache Fragmentation
 
-The Query Cache uses blocks of variable length, and over time may become fragmented. A high `Qcache_free_blocks` relative to `Qcache_total_blocks` may indicate fragmentation. [FLUSH QUERY CACHE](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush-query-cache) will defragment the query cache without dropping any queries :
+The Query Cache uses blocks of variable length, and over time may become fragmented. A high `Qcache_free_blocks` relative to `Qcache_total_blocks` may indicate fragmentation. [FLUSH QUERY CACHE](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush-query-cache/) will defragment the query cache without dropping any queries :
 
 ```sql
 FLUSH QUERY CACHE;
@@ -226,14 +226,14 @@ SHOW STATUS LIKE 'Qcache%';
 
 ## Emptying and disabling the Query Cache
 
-To empty or clear all results from the query cache, use [RESET QUERY CACHE](/sql-statements-structure/sql-statements/administrative-sql-statements/reset). [FLUSH TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush) will have the same effect.
+To empty or clear all results from the query cache, use [RESET QUERY CACHE](/sql-statements-structure/sql-statements/administrative-sql-statements/reset/). [FLUSH TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/) will have the same effect.
 
 Setting either <a undefined>query_cache_type</a> or <a undefined>query_cache_size</a> to `0` will disable the query cache, but to free up the most resources, set both to `0` when you wish to disable caching.
 
 ## Limitations
 
 - The query cache needs to be disabled in order to use [OQGRAPH](/kb/en/oqgraph/).
-- The query cache is not used by the [Spider](/columns-storage-engines-and-plugins/storage-engines/spider) storage engine (amongst others).
+- The query cache is not used by the [Spider](/columns-storage-engines-and-plugins/storage-engines/spider/) storage engine (amongst others).
 - The query cache also needs to be disabled for MariaDB [Galera](/kb/en/galera/) cluster versions prior to "5.5.40-galera", "10.0.14-galera" and "10.1.2".
 
 ## LOCK TABLES and the Query Cache
@@ -269,9 +269,9 @@ The query cache can be used when tables have a write lock (which may seem confus
 
 ## Transactions and the Query Cache
 
-The query cache handles transactions. Internally a flag (FLAGS_IN_TRANS) is set to 0 when a query was executed outside a transaction, and to 1 when the query was inside a transaction ([BEGIN](begin) / [COMMIT](/sql-statements-structure/sql-statements/transactions/commit) / [ROLLBACK](/sql-statements-structure/sql-statements/transactions/rollback)). This flag is part of the "query cache hash", in others words one query inside a transaction is different from a query outside a transaction.
+The query cache handles transactions. Internally a flag (FLAGS_IN_TRANS) is set to 0 when a query was executed outside a transaction, and to 1 when the query was inside a transaction ([BEGIN](begin) / [COMMIT](/sql-statements-structure/sql-statements/transactions/commit/) / [ROLLBACK](/sql-statements-structure/sql-statements/transactions/rollback/)). This flag is part of the "query cache hash", in others words one query inside a transaction is different from a query outside a transaction.
 
-Queries that change rows ([INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert) / [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update) / [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete) / [TRUNCATE](/built-in-functions/numeric-functions/truncate)) inside a transaction will invalidate all queries from the table, and turn off the query cache to the changed table. Transactions that don't end with COMMIT / ROLLBACK check that even without COMMIT / ROLLBACK, the query cache is turned off to allow row level locking and consistency level.
+Queries that change rows ([INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/) / [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/) / [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/) / [TRUNCATE](/built-in-functions/numeric-functions/truncate/)) inside a transaction will invalidate all queries from the table, and turn off the query cache to the changed table. Transactions that don't end with COMMIT / ROLLBACK check that even without COMMIT / ROLLBACK, the query cache is turned off to allow row level locking and consistency level.
 
 Examples:
 
@@ -396,7 +396,7 @@ From the sql_cache.cc, function "try_lock" using TIMEOUT :
           break;
 ```
 
-When inserting a query inside the query cache or aborting a query cache insert (using the [KILL](/sql-statements-structure/sql-statements/administrative-sql-statements/kill) command for example), a try_lock function waits until the query cache returns; no timeout is used in this case.
+When inserting a query inside the query cache or aborting a query cache insert (using the [KILL](/sql-statements-structure/sql-statements/administrative-sql-statements/kill/) command for example), a try_lock function waits until the query cache returns; no timeout is used in this case.
 
 When two processes execute the same query, only the last process stores the query result. All other processes increase the [Qcache_not_cached](/kb/en/server-status-variables/#qcache_not_cached) status variable.
 

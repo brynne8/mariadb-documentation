@@ -23,17 +23,17 @@ different complexity. For example,
 
 ## Installing the Plugin
 
-The `pam` authentication plugin's library is provided in [binary packages](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages) in all releases on Linux.
+The `pam` authentication plugin's library is provided in [binary packages](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/) in all releases on Linux.
 
 Although the plugin's shared library is distributed with MariaDB by default, the plugin is not actually installed by MariaDB by default. There are two methods that can be used to install the plugin with MariaDB.
 
-The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname) or [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin). For example:
+The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname/) or [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin/). For example:
 
 ```sql
 INSTALL SONAME 'auth_pam';
 ```
 
-The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the <a undefined>--plugin-load</a> or the <a undefined>--plugin-load-add</a> options. This can be specified as a command-line argument to [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options) or it can be specified in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files). For example:
+The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the <a undefined>--plugin-load</a> or the <a undefined>--plugin-load-add</a> options. This can be specified as a command-line argument to [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/) or it can be specified in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/). For example:
 
 ```sql
 [mariadb]
@@ -47,13 +47,13 @@ plugin_load_add = auth_pam
 
 Starting in [MariaDB 10.4.0](/kb/en/mariadb-1040-release-notes/), the `auth_pam` shared library actually refers to version `2.0` of the `pam` authentication plugin. [MariaDB 10.4.0](/kb/en/mariadb-1040-release-notes/) and later also provides version `1.0` of the plugin as the `auth_pam_v1` shared library.
 
-In [MariaDB 10.4.0](/kb/en/mariadb-1040-release-notes/) and later, if you need to install version `1.0` of the authentication plugin instead of version `2.0`, then you can do so. For example, with [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname) or [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin):
+In [MariaDB 10.4.0](/kb/en/mariadb-1040-release-notes/) and later, if you need to install version `1.0` of the authentication plugin instead of version `2.0`, then you can do so. For example, with [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname/) or [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin/):
 
 ```sql
 INSTALL SONAME 'auth_pam_v1';
 ```
 
-Or by specifying in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files):
+Or by specifying in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/):
 
 ```sql
 [mariadb]
@@ -63,13 +63,13 @@ plugin_load_add = auth_pam_v1
 
 ## Uninstalling the Plugin
 
-You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname) or [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin). For example:
+You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname/) or [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin/). For example:
 
 ```sql
 UNINSTALL SONAME 'auth_pam';
 ```
 
-If you installed the plugin by providing the <a undefined>--plugin-load</a> or the <a undefined>--plugin-load-add</a> options in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
+If you installed the plugin by providing the <a undefined>--plugin-load</a> or the <a undefined>--plugin-load-add</a> options in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
 
 ### Uninstalling the v1 Plugin
 
@@ -126,7 +126,7 @@ The problem is that on some systems, the `pam_unix` PAM module needs access to `
 
 Newer versions of PAM do not have this limitation, so you may want to try upgrading your version of PAM to see if that fixes the issue.
 
-If that does not work, then you can work around this problem by giving the user that runs [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options) access to `/etc/shadow`. For example, if the `mysql` user runs [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options), then you could do the following:
+If that does not work, then you can work around this problem by giving the user that runs [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/) access to `/etc/shadow`. For example, if the `mysql` user runs [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/), then you could do the following:
 
 ```sql
 sudo groupadd shadow
@@ -145,13 +145,13 @@ Starting in [MariaDB 10.4.0](/kb/en/mariadb-1040-release-notes/), the `pam` auth
 
 ## Creating Users
 
-Similar to all other [authentication plugins](/columns-storage-engines-and-plugins/plugins/authentication-plugins), to create a user in MariaDB which uses the `pam` authentication plugin, you would execute [CREATE USER](/sql-statements-structure/sql-statements/account-management-sql-commands/create-user) while specifying the name of the plugin in the <a undefined>IDENTIFIED VIA</a> clause. For example:
+Similar to all other [authentication plugins](/columns-storage-engines-and-plugins/plugins/authentication-plugins/), to create a user in MariaDB which uses the `pam` authentication plugin, you would execute [CREATE USER](/sql-statements-structure/sql-statements/account-management-sql-commands/create-user/) while specifying the name of the plugin in the <a undefined>IDENTIFIED VIA</a> clause. For example:
 
 ```sql
 CREATE USER username@hostname IDENTIFIED VIA pam;
 ```
 
-If [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode) does not have `NO_AUTO_CREATE_USER` set, then you can also create the user this way with [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant). For example:
+If [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode/) does not have `NO_AUTO_CREATE_USER` set, then you can also create the user this way with [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/). For example:
 
 ```sql
 GRANT SELECT ON db.* TO username@hostname IDENTIFIED VIA pam;
@@ -174,13 +174,13 @@ For clients that use the `libmysqlclient` or [MariaDB Connector/C](/kb/en/mariad
 - `dialog`
 - `mysql_clear_password`
 
-When connecting with a [client or utility](/clients-utilities) to a server as a user account that authenticates with the `pam` authentication plugin, you may need to tell the client where to find the relevant client authentication plugin by specifying the `--plugin-dir` option. For example:
+When connecting with a [client or utility](/clients-utilities/) to a server as a user account that authenticates with the `pam` authentication plugin, you may need to tell the client where to find the relevant client authentication plugin by specifying the `--plugin-dir` option. For example:
 
 ```sql
 mysql --plugin-dir=/usr/local/mysql/lib64/mysql/plugin --user=alice
 ```
 
-Both the `dialog` and the `mysql_clear_password` client authentication plugins transmit the password to the server in clear text. Therefore, when you use the `pam` authentication plugin, it is incredibly important to [encrypt client connections  using TLS](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption) to prevent the clear-text passwords from being seen by unauthorized users.
+Both the `dialog` and the `mysql_clear_password` client authentication plugins transmit the password to the server in clear text. Therefore, when you use the `pam` authentication plugin, it is incredibly important to [encrypt client connections  using TLS](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/) to prevent the clear-text passwords from being seen by unauthorized users.
 
 ### `dialog`
 
@@ -196,7 +196,7 @@ For some libraries or applications, this problem can be fixed by copying `dialog
 
 If your client does not support the `dialog` client authentication plugin, then you may need to use the <a undefined>mysql_clear_password</a> client authentication plugin instead.
 
-The `dialog` client authentication plugin transmits the password to the server in clear text. Therefore, when you use the `pam` authentication plugin, it is incredibly important to [encrypt client connections using TLS](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption) to prevent the clear-text passwords from being seen by unauthorized users.
+The `dialog` client authentication plugin transmits the password to the server in clear text. Therefore, when you use the `pam` authentication plugin, it is incredibly important to [encrypt client connections using TLS](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/) to prevent the clear-text passwords from being seen by unauthorized users.
 
 ### `mysql_clear_password`
 
@@ -204,7 +204,7 @@ The `dialog` client authentication plugin transmits the password to the server i
 
 The `mysql_clear_password` client authentication plugin and the <a undefined>pam_use_cleartext_plugin</a> system variable were first added in [MariaDB 5.5.32](/kb/en/mariadb-5532-release-notes/) and [MariaDB 10.1.1](/kb/en/mariadb-1011-release-notes/).
 
-Users can instruct the `pam` authentication plugin to use the `mysql_clear_password` client authentication plugin instead of the <a undefined>dialog</a> client authentication plugin by configuring the <a undefined>pam_use_cleartext_plugin</a> system variable on the server. It can be set in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files). For example:
+Users can instruct the `pam` authentication plugin to use the `mysql_clear_password` client authentication plugin instead of the <a undefined>dialog</a> client authentication plugin by configuring the <a undefined>pam_use_cleartext_plugin</a> system variable on the server. It can be set in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/). For example:
 
 ```sql
 [mariadb]
@@ -220,7 +220,7 @@ It is important to note that the `mysql_clear_password` plugin has very limited 
 
 - If the PAM service requires challenge-responses, multiple questions, or other similar complicated authentication schemes, then the PAM service is not compatible with `mysql_clear_password` client authentication plugin. In that case, the <a undefined>dialog</a> client authentication plugin will have to be used instead.
 
-The `mysql_clear_password` client authentication plugin transmits the password to the server in clear text. Therefore, when you use the `pam` authentication plugin, it is incredibly important to [encrypt client connections using TLS](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption) to prevent the clear-text passwords from being seen by unauthorized users.
+The `mysql_clear_password` client authentication plugin transmits the password to the server in clear text. Therefore, when you use the `pam` authentication plugin, it is incredibly important to [encrypt client connections using TLS](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/) to prevent the clear-text passwords from being seen by unauthorized users.
 
 #### Compatiblity with MySQL Clients and Client Libraries
 
@@ -287,7 +287,7 @@ Jan  9 05:35:41 ip-172-30-0-198 mysqld: pam_unix(mariadb:auth): authentication f
 
 ### PAM Authentication Plugin's Debug Logging
 
-MariaDB's `pam` authentication plugin can also log additional verbose debug logging to the [error log](/mariadb-administration/server-monitoring-logs/error-log). This is only done if the plugin is a [debug build](/kb/en/compiling-mariadb-for-debugging/) and if <a undefined>pam_debug</a> is set.
+MariaDB's `pam` authentication plugin can also log additional verbose debug logging to the [error log](/mariadb-administration/server-monitoring-logs/error-log/). This is only done if the plugin is a [debug build](/kb/en/compiling-mariadb-for-debugging/) and if <a undefined>pam_debug</a> is set.
 
 The output looks like this:
 
@@ -339,7 +339,7 @@ mariadb:account - @ is authenticating as alice
 
 ## User and Group Mapping
 
-Even when using the `pam` authentication plugin, the authenticating PAM user account still needs to exist in MariaDB, and the account needs to have privileges in the database. Creating these MariaDB accounts and making sure the privileges are correct can be a lot of work. To decrease the amount of work involved, some users would like to be able to map a PAM user to a different MariaDB user. For example, let’s say that `alice` and `bob` are both DBAs. It would be nice if each of them could log into MariaDB with their own PAM username and password, while MariaDB sees both of them as the same `dba` user. That way, there is only one MariaDB account to keep track of. See [User and Group Mapping with PAM](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/user-and-group-mapping-with-pam) for more information on how to do this.
+Even when using the `pam` authentication plugin, the authenticating PAM user account still needs to exist in MariaDB, and the account needs to have privileges in the database. Creating these MariaDB accounts and making sure the privileges are correct can be a lot of work. To decrease the amount of work involved, some users would like to be able to map a PAM user to a different MariaDB user. For example, let’s say that `alice` and `bob` are both DBAs. It would be nice if each of them could log into MariaDB with their own PAM username and password, while MariaDB sees both of them as the same `dba` user. That way, there is only one MariaDB account to keep track of. See [User and Group Mapping with PAM](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/user-and-group-mapping-with-pam/) for more information on how to do this.
 
 ## PAM Modules
 
@@ -349,17 +349,17 @@ There are many PAM modules. The ones described below are the ones that have been
 
 The <a undefined>pam_unix</a> PAM module provides support for Unix password authentication. It is the default PAM module on most systems.
 
-For a tutorial on setting up PAM authentication and user or group mapping with Unix authentication, see [Configuring PAM Authentication and User Mapping with Unix Authentication](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/configuring-pam-authentication-and-user-mapping-with-unix-authentication).
+For a tutorial on setting up PAM authentication and user or group mapping with Unix authentication, see [Configuring PAM Authentication and User Mapping with Unix Authentication](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/configuring-pam-authentication-and-user-mapping-with-unix-authentication/).
 
 ### pam_user_map
 
-The [pam_user_map](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/user-and-group-mapping-with-pam) PAM module was developed by MariaDB to support user and group mapping.
+The [pam_user_map](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/user-and-group-mapping-with-pam/) PAM module was developed by MariaDB to support user and group mapping.
 
 ### pam_ldap
 
 The <a undefined>pam_ldap</a> PAM module provides support for LDAP authentication.
 
-For a tutorial on setting up PAM authentication and user or group mapping with LDAP authentication, see [Configuring PAM Authentication and User Mapping with LDAP Authentication](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/configuring-pam-authentication-and-user-mapping-with-ldap-authentication).
+For a tutorial on setting up PAM authentication and user or group mapping with LDAP authentication, see [Configuring PAM Authentication and User Mapping with LDAP Authentication](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/configuring-pam-authentication-and-user-mapping-with-ldap-authentication/).
 
 This can also be configured for [Active Directory](https://en.wikipedia.org/wiki/Active_Directory) authentication.
 
@@ -421,9 +421,9 @@ Starting in [MariaDB 10.4.0](/kb/en/mariadb-1040-release-notes/), the `pam` auth
 
 ### Conflicts with Password Validation
 
-When a [password validation plugin](/columns-storage-engines-and-plugins/plugins/password-validation-plugins) is enabled, MariaDB won't allow an account to be created if the password validation plugin says that the account's password is too weak. This creates a problem for accounts that authenticate with the `pam` authentication plugin, since MariaDB has no knowledge of the user's password. When a user tries to create an account that authenticates with the `pam` authentication plugin, the password validation plugin would throw an error, even with <a undefined>strict_password_validation=OFF</a> set.
+When a [password validation plugin](/columns-storage-engines-and-plugins/plugins/password-validation-plugins/) is enabled, MariaDB won't allow an account to be created if the password validation plugin says that the account's password is too weak. This creates a problem for accounts that authenticate with the `pam` authentication plugin, since MariaDB has no knowledge of the user's password. When a user tries to create an account that authenticates with the `pam` authentication plugin, the password validation plugin would throw an error, even with <a undefined>strict_password_validation=OFF</a> set.
 
-The workaround is to uninstall the [password validation plugin](/columns-storage-engines-and-plugins/plugins/password-validation-plugins) with [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin), and then create the account, and then reinstall the [password validation plugin](/kb/en/password-validation/) with [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin).
+The workaround is to uninstall the [password validation plugin](/columns-storage-engines-and-plugins/plugins/password-validation-plugins/) with [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin/), and then create the account, and then reinstall the [password validation plugin](/kb/en/password-validation/) with [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin/).
 
 For example:
 
@@ -452,7 +452,7 @@ Starting in [MariaDB 10.4.0](/kb/en/mariadb-1040-release-notes/), accounts that 
 
 ### SELinux
 
-[SELinux](/mariadb-administration/user-server-security/securing-mariadb/selinux) may cause issues when using the `pam` authentication plugin. For example, using <a undefined>pam_unix</a> with the `pam` authentication plugin while SELinux is enabled can sometimes lead to SELinux errors involving <a undefined>unix_chkpwd</a>, such as the following::
+[SELinux](/mariadb-administration/user-server-security/securing-mariadb/selinux/) may cause issues when using the `pam` authentication plugin. For example, using <a undefined>pam_unix</a> with the `pam` authentication plugin while SELinux is enabled can sometimes lead to SELinux errors involving <a undefined>unix_chkpwd</a>, such as the following::
 
 ```sql
 Apr 14 12:37:59 localhost setroubleshoot: Plugin Exception restorecon_source
@@ -478,8 +478,8 @@ If you can't get the `pam` authentication plugin to work with SELinux at all, th
 
 You may find the following PAM-related tutorials helpful:
 
-- [Configuring PAM Authentication and User Mapping with Unix Authentication](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/configuring-pam-authentication-and-user-mapping-with-unix-authentication)
-- [Configuring PAM Authentication and User Mapping with LDAP Authentication](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/configuring-pam-authentication-and-user-mapping-with-ldap-authentication)
+- [Configuring PAM Authentication and User Mapping with Unix Authentication](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/configuring-pam-authentication-and-user-mapping-with-unix-authentication/)
+- [Configuring PAM Authentication and User Mapping with LDAP Authentication](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/configuring-pam-authentication-and-user-mapping-with-ldap-authentication/)
 
 ## Versions
 
@@ -493,7 +493,7 @@ You may find the following PAM-related tutorials helpful:
 
 ### `pam_debug`
 
-- <strong>Description:</strong> Enables verbose debug logging to the [error log](/mariadb-administration/server-monitoring-logs/error-log) for all authentication handled by the plugin.
+- <strong>Description:</strong> Enables verbose debug logging to the [error log](/mariadb-administration/server-monitoring-logs/error-log/) for all authentication handled by the plugin.
 <ul start="1"><li>This system variable is only available when the plugin is a [debug build](/kb/en/compiling-mariadb-for-debugging/).
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--pam-debug</code>
@@ -538,7 +538,7 @@ You may find the following PAM-related tutorials helpful:
 <ul start="1"><li>`OFF` - Disables the plugin without removing it from the <a undefined>mysql.plugins</a> table.
 </li><li>`ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
 </li><li>`FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
-</li><li>`FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname) or [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin) while the server is running.
+</li><li>`FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname/) or [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin/) while the server is running.
 </li></ul>
 </li><li>See [Plugin Overview: Configuring Plugin Activation at Server Startup](/kb/en/plugin-overview/#configuring-plugin-activation-at-server-startup) for more information.
 </li></ul>

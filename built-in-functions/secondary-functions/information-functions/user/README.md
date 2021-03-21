@@ -10,8 +10,8 @@ USER()
 
 Returns the current MariaDB user name and host name, given when authenticating to MariaDB,  as a string in the utf8 [character set](/kb/en/data-types-character-sets-and-collations/).
 
-Note that the value of USER() may differ from the value of [CURRENT_USER()](/built-in-functions/secondary-functions/information-functions/current_user), which is the user used to authenticate the current client. 
-[CURRENT_ROLE()](/built-in-functions/secondary-functions/information-functions/current_role) returns the current active role.
+Note that the value of USER() may differ from the value of [CURRENT_USER()](/built-in-functions/secondary-functions/information-functions/current_user/), which is the user used to authenticate the current client. 
+[CURRENT_ROLE()](/built-in-functions/secondary-functions/information-functions/current_role/) returns the current active role.
 
 `SYSTEM_USER()` and `SESSION_USER` are synonyms for `USER()`.
 
@@ -32,4 +32,4 @@ MariaDB [(none)]> select user(),current_user();
 
 ## See Also
 
-- [CURRENT_USER()](/built-in-functions/secondary-functions/information-functions/current_user)
+- [CURRENT_USER()](/built-in-functions/secondary-functions/information-functions/current_user/)

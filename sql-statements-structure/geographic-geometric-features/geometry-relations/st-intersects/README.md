@@ -10,9 +10,9 @@ ST_INTERSECTS(g1,g2)
 
 Returns `1` or `0` to indicate whether geometry <em>`g1`</em> spatially intersects geometry <em>`g2`</em>.
 
-ST_INTERSECTS() uses object shapes, while [INTERSECTS()](/sql-statements-structure/geographic-geometric-features/geometry-relations/intersects), based on the original MySQL implementation, uses object bounding rectangles.
+ST_INTERSECTS() uses object shapes, while [INTERSECTS()](/sql-statements-structure/geographic-geometric-features/geometry-relations/intersects/), based on the original MySQL implementation, uses object bounding rectangles.
 
-ST_INTERSECTS() tests the opposite relationship to [ST_DISJOINT()](/sql-statements-structure/geographic-geometric-features/geometry-relations/st_disjoint).
+ST_INTERSECTS() tests the opposite relationship to [ST_DISJOINT()](/sql-statements-structure/geographic-geometric-features/geometry-relations/st_disjoint/).
 
 ## Examples
 

@@ -10,18 +10,18 @@ DROP VIEW [IF EXISTS]
 
 ## Description
 
-`DROP VIEW` removes one or more [views](/programming-customizing-mariadb/views). You must have the DROP privilege for
+`DROP VIEW` removes one or more [views](/programming-customizing-mariadb/views/). You must have the DROP privilege for
 each view. If any of the views named in the argument list do not exist, MariaDB
 returns an error indicating by name which non-existing views it was unable to
 drop, but it also drops all of the views in the list that do exist.
 
 The `IF EXISTS` clause prevents an error from occurring for views that don't
 exist. When this clause is given, a `NOTE` is generated for each non-existent
-view. See [SHOW WARNINGS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-warnings).
+view. See [SHOW WARNINGS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-warnings/).
 
 `RESTRICT` and `CASCADE`, if given, are parsed and ignored.
 
-It is possible to specify view names as `db_name`.`view_name`. This is useful to delete views from multiple databases with one statement. See [Identifier Qualifiers](/sql-statements-structure/sql-language-structure/identifier-qualifiers) for details.
+It is possible to specify view names as `db_name`.`view_name`. This is useful to delete views from multiple databases with one statement. See [Identifier Qualifiers](/sql-statements-structure/sql-language-structure/identifier-qualifiers/) for details.
 
 The [DROP privilege](/kb/en/grant/#table-privileges) is required to use `DROP TABLE` on non-temporary tables. For temporary tables, no privilege is required, because such tables are only visible for the current session.
 
@@ -32,9 +32,9 @@ ERROR 1356 (HY000): View 'db_name.view_name' references invalid table(s) or
 column(s) or function(s) or definer/invoker of view lack rights to use them
 ```
 
-This problem is reported in the output of [CHECK TABLE](/sql-statements-structure/sql-statements/table-statements/check-table).
+This problem is reported in the output of [CHECK TABLE](/sql-statements-structure/sql-statements/table-statements/check-table/).
 
-Note that it is not necessary to use `DROP VIEW` to replace an existing view, because [CREATE VIEW](/programming-customizing-mariadb/views/create-view) has an `OR REPLACE` clause.
+Note that it is not necessary to use `DROP VIEW` to replace an existing view, because [CREATE VIEW](/programming-customizing-mariadb/views/create-view/) has an `OR REPLACE` clause.
 
 ## Examples
 
@@ -63,7 +63,7 @@ SHOW WARNINGS;
 
 ## See Also
 
-- [CREATE VIEW](/programming-customizing-mariadb/views/create-view)
-- [ALTER VIEW](/programming-customizing-mariadb/views/alter-view)
+- [CREATE VIEW](/programming-customizing-mariadb/views/create-view/)
+- [ALTER VIEW](/programming-customizing-mariadb/views/alter-view/)
 - [SHOW CREATE VIEWS](show-create-views)
-- [INFORMATION SCHEMA VIEWS Table](/programming-customizing-mariadb/views/information-schema-views-table)
+- [INFORMATION SCHEMA VIEWS Table](/programming-customizing-mariadb/views/information-schema-views-table/)

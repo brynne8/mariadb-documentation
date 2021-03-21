@@ -44,7 +44,7 @@ SELECT 18014398509481984*18014398509481984;
 
 ## See Also
 
-- [Type Conversion](/built-in-functions/string-functions/type-conversion)
-- [Addition Operator (+)](/built-in-functions/numeric-functions/addition-operator)
-- [Subtraction Operator (-)](/sql-statements-structure/operators/arithmetic-operators/subtraction-operator-)
-- [Division Operator (/)](/built-in-functions/numeric-functions/division-operator)
+- [Type Conversion](/built-in-functions/string-functions/type-conversion/)
+- [Addition Operator (+)](/built-in-functions/numeric-functions/addition-operator/)
+- [Subtraction Operator (-)](/sql-statements-structure/operators/arithmetic-operators/subtraction-operator-/)
+- [Division Operator (/)](/built-in-functions/numeric-functions/division-operator/)

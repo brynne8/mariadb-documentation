@@ -1,10 +1,10 @@
 # Sequence Storage Engine
 
-This article is about the Sequence storage engine. For details about sequence objects, see [Sequences](/sql-statements-structure/sequences).
+This article is about the Sequence storage engine. For details about sequence objects, see [Sequences](/sql-statements-structure/sequences/).
 
 A <strong>Sequence</strong> engine allows the creation of ascending or descending sequences of numbers (positive integers) with a given starting value, ending value and increment.
 
-It creates completely virtual, ephemeral tables automatically when you need them. There is no way to create a Sequence table explicitly. Nor are they ever written to disk or create `.frm` files. They are read-only, [transactional](/sql-statements-structure/sql-statements/transactions), and [support XA](/sql-statements-structure/sql-statements/transactions/xa-transactions).
+It creates completely virtual, ephemeral tables automatically when you need them. There is no way to create a Sequence table explicitly. Nor are they ever written to disk or create `.frm` files. They are read-only, [transactional](/sql-statements-structure/sql-statements/transactions/), and [support XA](/sql-statements-structure/sql-statements/transactions/xa-transactions/).
 
 ## Installing
 
@@ -16,7 +16,7 @@ INSTALL SONAME "ha_sequence";
 
 From [MariaDB 10.1](/kb/en/what-is-mariadb-101/), the Sequence engine is installed by default.
 
-If it has been correctly installed, [SHOW ENGINES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engines) will list the Sequence storage engine as supported:
+If it has been correctly installed, [SHOW ENGINES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engines/) will list the Sequence storage engine as supported:
 
 ```sql
 SHOW ENGINES\G
@@ -193,7 +193,7 @@ SELECT DAYNAME('1980-12-05' + INTERVAL (seq) YEAR) day,
 +-----------+------------+
 ```
 
-Although Sequence tables can only directly make use of positive integers, they can indirectly be used to return negative results by making use of the [CAST](/built-in-functions/string-functions/cast) statement. For example:
+Although Sequence tables can only directly make use of positive integers, they can indirectly be used to return negative results by making use of the [CAST](/built-in-functions/string-functions/cast/) statement. For example:
 
 ```sql
 SELECT CAST(seq AS INT) - 5 x FROM seq_5_to_1;
@@ -208,9 +208,9 @@ SELECT CAST(seq AS INT) - 5 x FROM seq_5_to_1;
 +----+
 ```
 
-[CAST](/built-in-functions/string-functions/cast) is required to avoid a `BIGINT UNSIGNED value is out of range` error.
+[CAST](/built-in-functions/string-functions/cast/) is required to avoid a `BIGINT UNSIGNED value is out of range` error.
 
-Sequence tables, while virtual, are still tables, so they must be in a database. This means that a default database must be selected (for example, via the [USE](/sql-statements-structure/sql-statements/administrative-sql-statements/use) command) to be able to query a Sequence table. The [information_schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema) database cannot be used as the default for a Sequence table.
+Sequence tables, while virtual, are still tables, so they must be in a database. This means that a default database must be selected (for example, via the [USE](/sql-statements-structure/sql-statements/administrative-sql-statements/use/) command) to be able to query a Sequence table. The [information_schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/) database cannot be used as the default for a Sequence table.
 
 ## Table Name Conflicts
 

@@ -5,7 +5,7 @@ If you choose not to do the quick install and chose to customize the various opt
 ## Custom Install Wizard: postConfigure
 
 The postConfigure script is a customer wizard to do the system(server and storage) configuration and setup.  
-Before running the postConfigure script, you must have done [Preparing for ColumnStore Installation 1.2.x](/kb/en/preparing-for-columnstore-installation-12x/) steps and the pre-requisite validation using [ColumnStore Cluster Tester Tool](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-11x/mariadb-columnstore-cluster-test-tool). Once you have done these steps,  then run the postConfigure script from the node designated as PM1.
+Before running the postConfigure script, you must have done [Preparing for ColumnStore Installation 1.2.x](/kb/en/preparing-for-columnstore-installation-12x/) steps and the pre-requisite validation using [ColumnStore Cluster Tester Tool](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-11x/mariadb-columnstore-cluster-test-tool/). Once you have done these steps,  then run the postConfigure script from the node designated as PM1.
 
 The script can take several parameters. However, all are optional
 

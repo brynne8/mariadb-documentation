@@ -4,9 +4,9 @@
 
 The ability to create stored aggregate functions was added in [MariaDB 10.3.3](/kb/en/mariadb-1033-release-notes/).
 
-[Aggregate functions](/built-in-functions/aggregate-functions) are functions that are computed over a sequence of rows and return one result for the sequence of rows.
+[Aggregate functions](/built-in-functions/aggregate-functions/) are functions that are computed over a sequence of rows and return one result for the sequence of rows.
 
-Creating a custom aggregate function is done using the [CREATE FUNCTION](/sql-statements-structure/sql-statements/data-definition/create/create-function) statement with two main differences:
+Creating a custom aggregate function is done using the [CREATE FUNCTION](/sql-statements-structure/sql-statements/data-definition/create/create-function/) statement with two main differences:
 
 - The addition of the AGGREGATE keyword, so `CREATE AGGREGATE FUNCTION`
 - The `FETCH GROUP NEXT ROW` instruction inside the loop
@@ -141,10 +141,10 @@ SELECT aggregate_count(stud_id) FROM marks;
 
 ## See Also
 
-- [Stored Function Overview](/programming-customizing-mariadb/stored-routines/stored-functions/stored-function-overview)
-- [CREATE FUNCTION](/sql-statements-structure/sql-statements/data-definition/create/create-function)
-- [SHOW CREATE FUNCTION](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-function)
-- [DROP FUNCTION](/programming-customizing-mariadb/stored-routines/stored-functions/drop-function)
-- [Stored Routine Privileges](/programming-customizing-mariadb/stored-routines/stored-functions/stored-routine-privileges)
-- [SHOW FUNCTION STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-function-status)
-- [Information Schema ROUTINES Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table)
+- [Stored Function Overview](/programming-customizing-mariadb/stored-routines/stored-functions/stored-function-overview/)
+- [CREATE FUNCTION](/sql-statements-structure/sql-statements/data-definition/create/create-function/)
+- [SHOW CREATE FUNCTION](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-function/)
+- [DROP FUNCTION](/programming-customizing-mariadb/stored-routines/stored-functions/drop-function/)
+- [Stored Routine Privileges](/programming-customizing-mariadb/stored-routines/stored-functions/stored-routine-privileges/)
+- [SHOW FUNCTION STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-function-status/)
+- [Information Schema ROUTINES Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table/)

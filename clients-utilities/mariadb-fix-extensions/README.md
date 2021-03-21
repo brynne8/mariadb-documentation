@@ -8,4 +8,4 @@ From [MariaDB 10.4.6](/kb/en/mariadb-1046-release-notes/), `mariadb-fix-extensio
 
 From [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/), `mysql_fix_extensions` is the symlink, and `mariadb-fix-extensions` the binary name.
 
-See [mysql_fix_extensions](/clients-utilities/mysql_fix_extensions) for details.
+See [mysql_fix_extensions](/clients-utilities/mysql_fix_extensions/) for details.

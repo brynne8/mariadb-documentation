@@ -1,6 +1,6 @@
 # Information Schema VIEWS Table
 
-The [Information Schema](/kb/en/information_schema/) `VIEWS` table contains information about [views](/programming-customizing-mariadb/views). The `SHOW VIEW` [privilege](/sql-statements-structure/sql-statements/account-management-sql-commands/grant) is required to view the table.
+The [Information Schema](/kb/en/information_schema/) `VIEWS` table contains information about [views](/programming-customizing-mariadb/views/). The `SHOW VIEW` [privilege](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/) is required to view the table.
 
 It has the following columns:
 
@@ -38,7 +38,7 @@ COLLATION_CONNECTION: utf8_general_ci
 
 ## See also
 
-- [CREATE VIEW](/programming-customizing-mariadb/views/create-view)
-- [ALTER VIEW](/programming-customizing-mariadb/views/alter-view)
-- [DROP VIEW](/programming-customizing-mariadb/views/drop-view)
+- [CREATE VIEW](/programming-customizing-mariadb/views/create-view/)
+- [ALTER VIEW](/programming-customizing-mariadb/views/alter-view/)
+- [DROP VIEW](/programming-customizing-mariadb/views/drop-view/)
 - <a undefined>SHOW CREATE VIEWS</a>

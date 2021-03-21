@@ -1,6 +1,6 @@
 # Full List of MariaDB Options, System and Status Variables
 
-Alphabetical list of all  [mysqld Options](/kb/en/mysqld-options-full-list/), [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables) and [Server Status Variables](/replication/optimization-and-tuning/system-variables/server-status-variables). The convention used is that variable names are listed with '_' and options with '-'. If a variable and option both exist, both versions are listed for easy searching.
+Alphabetical list of all  [mysqld Options](/kb/en/mysqld-options-full-list/), [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables/) and [Server Status Variables](/replication/optimization-and-tuning/system-variables/server-status-variables/). The convention used is that variable names are listed with '_' and options with '-'. If a variable and option both exist, both versions are listed for easy searching.
 
 <table><tbody><tr><th>Name</th></tr>
 <tr><td><a href="/kb/en/mysqld-options/#-a-ansi">-a (--ansii)</a></td></tr>
@@ -2372,13 +2372,13 @@ Alphabetical list of all  [mysqld Options](/kb/en/mysqld-options-full-list/), [S
 
 ## See Also
 
-- [System Variables Added in MariaDB 10.5](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-105)
-- [Status Variables Added in MariaDB 10.5](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/status-variables-added-in-mariadb-105)
-- [System Variables Added in MariaDB 10.4](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-104)
-- [Status Variables Added in MariaDB 10.4](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/status-variables-added-in-mariadb-104)
-- [System Variables Added in MariaDB 10.3](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-103)
-- [Status Variables Added in MariaDB 10.3](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/status-variables-added-in-mariadb-103)
-- [System Variables Added in MariaDB 10.2](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-102)
-- [Status Variables Added in MariaDB 10.2](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/status-variables-added-in-mariadb-102)
-- [System Variables Added in MariaDB 10.1](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-101)
-- [Status Variables Added in MariaDB 10.1](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/status-variables-added-in-mariadb-101)
+- [System Variables Added in MariaDB 10.5](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-105/)
+- [Status Variables Added in MariaDB 10.5](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/status-variables-added-in-mariadb-105/)
+- [System Variables Added in MariaDB 10.4](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-104/)
+- [Status Variables Added in MariaDB 10.4](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/status-variables-added-in-mariadb-104/)
+- [System Variables Added in MariaDB 10.3](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-103/)
+- [Status Variables Added in MariaDB 10.3](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/status-variables-added-in-mariadb-103/)
+- [System Variables Added in MariaDB 10.2](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-102/)
+- [Status Variables Added in MariaDB 10.2](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/status-variables-added-in-mariadb-102/)
+- [System Variables Added in MariaDB 10.1](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-101/)
+- [Status Variables Added in MariaDB 10.1](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/status-variables-added-in-mariadb-101/)

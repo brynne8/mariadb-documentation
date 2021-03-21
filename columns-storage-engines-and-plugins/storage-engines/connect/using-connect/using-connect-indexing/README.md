@@ -4,13 +4,13 @@
 
 The CONNECT handler was introduced in [MariaDB 10.0](/kb/en/what-is-mariadb-100/).
 
-[Indexing](/replication/optimization-and-tuning/optimization-and-indexes) is one of the main ways to optimize queries. Key columns, in
+[Indexing](/replication/optimization-and-tuning/optimization-and-indexes/) is one of the main ways to optimize queries. Key columns, in
 particular when they are used to join tables, should be indexed. But what
 should be done for columns that have only few distinct values?  If they are
 randomly placed in the table they should not be indexed because reading many
 rows in random order can be slower than reading the entire table sequentially.
 However, if the values are sorted or clustered, indexing can be acceptable
-because [CONNECT](/columns-storage-engines-and-plugins/storage-engines/connect) indexes store the values in the order they appear into the
+because [CONNECT](/columns-storage-engines-and-plugins/storage-engines/connect/) indexes store the values in the order they appear into the
 table and this will make retrieving them almost as fast as reading them
 sequentially.
 
@@ -27,10 +27,10 @@ CONNECT standard indexes are created and used as the ones of other storage engin
 have a specific internal format. The CONNECT handler supports the use of standard indexes for most
 of the file based table types.
 
-You can define them in the [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table) statement, or either using the CREATE
-INDEX statement or the [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) statement. In all cases, the index files are
-automatically made. They can be dropped either using the [DROP INDEX](/sql-statements-structure/sql-statements/data-definition/drop/drop-index) statement
-or the [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) statement, and this erases the index files.
+You can define them in the [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/) statement, or either using the CREATE
+INDEX statement or the [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) statement. In all cases, the index files are
+automatically made. They can be dropped either using the [DROP INDEX](/sql-statements-structure/sql-statements/data-definition/drop/drop-index/) statement
+or the [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) statement, and this erases the index files.
 
 Indexes are automatically reconstructed when the table is created, modified by
 INSERT, UPDATE or DELETE commands, or when the SEPINDEX option is changed.
@@ -47,7 +47,7 @@ unlock tables;
 ```
 
 If a table was modified by an external application that does not handle indexing, the indexes must be
-reconstructed to prevent returning false or incomplete results. To do this, use the [OPTIMIZE TABLE](/replication/optimization-and-tuning/optimizing-tables/optimize-table) command.
+reconstructed to prevent returning false or incomplete results. To do this, use the [OPTIMIZE TABLE](/replication/optimization-and-tuning/optimizing-tables/optimize-table/) command.
 
 For outward tables, index files are not erased when dropping the table. This is
 the same as for the data file and preserves the possibility of several users
@@ -93,7 +93,7 @@ causes of indexing errors are:
   manually remove or update the duplicate values.
 
 In both cases, after correcting the error, remake the indexes with the
-[OPTIMIZE TABLE](/replication/optimization-and-tuning/optimizing-tables/optimize-table) command.
+[OPTIMIZE TABLE](/replication/optimization-and-tuning/optimizing-tables/optimize-table/) command.
 
 ### Index file mapping
 
@@ -148,9 +148,9 @@ However this will also apply to all other clauses, this column being now case se
 
 ## Remote Indexing
 
-Remote indexing is specific to the [MYSQL](/kb/en/connect-table-types-mysql-table-type-accessing-mysqlmariadb-tables/) table type. It is equivalent to what the [FEDERATED](/columns-storage-engines-and-plugins/storage-engines/federatedx-storage-engine)
+Remote indexing is specific to the [MYSQL](/kb/en/connect-table-types-mysql-table-type-accessing-mysqlmariadb-tables/) table type. It is equivalent to what the [FEDERATED](/columns-storage-engines-and-plugins/storage-engines/federatedx-storage-engine/)
 storage does. A MYSQL table does not support indexes per se. Because access to the table is handled
-remotely, it is the remote table that supports the indexes. What the MYSQL table does is just to add a WHERE clause to the [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) command sent to the remote server allowing the remote server to use
+remotely, it is the remote table that supports the indexes. What the MYSQL table does is just to add a WHERE clause to the [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) command sent to the remote server allowing the remote server to use
 indexing when applicable.
 Note however that because CONNECT adds when possible all or part of the where clause of the
 original query, this happens often even if the remote indexed column is not declared locally indexed.
@@ -201,11 +201,11 @@ alter table patients add primary key (pnb) comment 'DYNAMIC' dynam=1;
 ```
 
 Note 1: The comment is not mandatory here but useful to see that the index is dynamic if you use the
-[SHOW INDEX](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-index) command.
+[SHOW INDEX](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-index/) command.
 
 Note 2: There is currently no way to just change the DYNAM option without dropping and adding the
 index. This is unfortunate because it takes time.
 
 ## Virtual Indexing
 
-It applies only to the virtual tables of type [VIR](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-table-types-vir) and must be made on a column specifying `SPECIAL=ROWID` or `SPECIAL=ROWNUM`.
+It applies only to the virtual tables of type [VIR](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-table-types-vir/) and must be made on a column specifying `SPECIAL=ROWID` or `SPECIAL=ROWNUM`.

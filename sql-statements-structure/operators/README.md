@@ -2,13 +2,13 @@
 
 Operators can be used for comparing values or for assigning values. There are several operators and they may be used in different SQL statements and clauses. Some can be used somewhat on their own, not within an SQL statement clause.
 
-For comparing values<span>—</span>string or numeric<span>—</span>you can use symbols such as the equal-sign (i.e., `=`) or the exclamation point and the equal-sign together (i.e., `!=`).  You might use these in `WHERE` clauses or within a flow-control statement or function (e.g., [IF( )](/built-in-functions/control-flow-functions/if-function)).  You can also use basic regular expressions with the `LIKE ` operator.
+For comparing values<span>—</span>string or numeric<span>—</span>you can use symbols such as the equal-sign (i.e., `=`) or the exclamation point and the equal-sign together (i.e., `!=`).  You might use these in `WHERE` clauses or within a flow-control statement or function (e.g., [IF( )](/built-in-functions/control-flow-functions/if-function/)).  You can also use basic regular expressions with the `LIKE ` operator.
 
-For assigning values, you can also use the equal-sign or other arithmetic symbols (e.g. plus-sign).  You might do this with the [SET](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set) statement or in a `SET` clause in an [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update) statement.
+For assigning values, you can also use the equal-sign or other arithmetic symbols (e.g. plus-sign).  You might do this with the [SET](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set/) statement or in a `SET` clause in an [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/) statement.
 
 
 
-### [Arithmetic Operators](/sql-statements-structure/operators/arithmetic-operators)
+### [Arithmetic Operators](/sql-statements-structure/operators/arithmetic-operators/)
 
 - [Addition Operator (+)](/built-in-functions/numeric-functions/addition-operator/) — Addition.
 - [DIV](/built-in-functions/numeric-functions/div/) — Integer division.
@@ -18,12 +18,12 @@ For assigning values, you can also use the equal-sign or other arithmetic symbol
 - [Multiplication Operator (*)](/built-in-functions/numeric-functions/multiplication-operator/) — Multiplication.
 - [Subtraction Operator (-)](/sql-statements-structure/operators/arithmetic-operators/subtraction-operator-/) — Subtraction and unary minus.
 
-### [Assignment Operators](/sql-statements-structure/operators/assignment-operators)
+### [Assignment Operators](/sql-statements-structure/operators/assignment-operators/)
 
 - [Assignment Operator (:=)](/sql-statements-structure/operators/assignment-operators/operador-de-atribuicao/) — Assignment operator for assigning a value.
 - [Assignment Operator (=)](/sql-statements-structure/operators/assignment-operators/assignment-operators-assignment-operator/) — The equal sign as an assignment operator.
 
-### [Bit Functions and Operators](/built-in-functions/secondary-functions/bit-functions-and-operators)
+### [Bit Functions and Operators](/built-in-functions/secondary-functions/bit-functions-and-operators/)
 
 - [Operator Precedence](/sql-statements-structure/operators/operator-precedence/) — Precedence of SQL operators
 - [&](/built-in-functions/secondary-functions/bit-functions-and-operators/bitwise_and/) — Bitwise AND
@@ -36,7 +36,7 @@ For assigning values, you can also use the equal-sign or other arithmetic symbol
 - [Parentheses](/built-in-functions/secondary-functions/bit-functions-and-operators/parentheses/) — Parentheses modify the precedence of other operators in an expression
 - [TRUE FALSE](/built-in-functions/secondary-functions/bit-functions-and-operators/true-false/) — TRUE and FALSE evaluate to 1 and 0
 
-### [Comparison Operators](/sql-statements-structure/operators/comparison-operators)
+### [Comparison Operators](/sql-statements-structure/operators/comparison-operators/)
 
 - [!=](/sql-statements-structure/operators/comparison-operators/not-equal/) — Not equal operator.
 - [<](/sql-statements-structure/operators/comparison-operators/less-than/) — Less than operator.
@@ -59,7 +59,7 @@ For assigning values, you can also use the equal-sign or other arithmetic symbol
 - [NOT BETWEEN](/sql-statements-structure/operators/comparison-operators/not-between/) — Same as NOT (expr BETWEEN min AND max)
 - [NOT IN](/sql-statements-structure/operators/comparison-operators/not-in/) — Same as NOT (expr IN (value,...))
 
-### [Logical Operators](/sql-statements-structure/operators/logical-operators)
+### [Logical Operators](/sql-statements-structure/operators/logical-operators/)
 
 - [!](/sql-statements-structure/operators/logical-operators/not/) — Logical NOT.
 - [&&](/sql-statements-structure/operators/logical-operators/and/) — Logical AND.

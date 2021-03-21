@@ -1,6 +1,6 @@
 # Creating User-Defined Functions
 
-[User-defined functions](/programming-customizing-mariadb/user-defined-functions) allow MariaDB to be extended with a new function that works like a native (built-in) MariaDB function such as [ABS()](/built-in-functions/numeric-functions/abs) or [CONCAT()](/built-in-functions/string-functions/concat). There are alternative ways to add a new function: writing a native function (which requires modifying and compiling the server source code), or writing a stored function.
+[User-defined functions](/programming-customizing-mariadb/user-defined-functions/) allow MariaDB to be extended with a new function that works like a native (built-in) MariaDB function such as [ABS()](/built-in-functions/numeric-functions/abs/) or [CONCAT()](/built-in-functions/string-functions/concat/). There are alternative ways to add a new function: writing a native function (which requires modifying and compiling the server source code), or writing a stored function.
 
 Statements making use of user-defined functions are not safe for replication.
 
@@ -50,11 +50,11 @@ Each time the SQL function <em>X()</em> is called:
 - MariaDB will first call the C/C++ initialization function, <em>x_init()</em>, assuming it exists. All setup will be performed, and if it returns an error, the SQL statement is aborted and no further functions are called.
 - If there is no <em>x_init()</em> function, or it has been called and did not return an error, <em>x()</em> is then called once per row.
 - After all rows have finished processing, <em>x_deinit()</em> is called, if present, to clean up by de-allocating any memory that was allocated in <em>x_init()</em>.
-- See [User-defined Functions Calling Sequences](/programming-customizing-mariadb/user-defined-functions/user-defined-functions-calling-sequences) for more details on the functions.
+- See [User-defined Functions Calling Sequences](/programming-customizing-mariadb/user-defined-functions/user-defined-functions-calling-sequences/) for more details on the functions.
 
 ## Aggregate Functions
 
-The following functions are required for aggregate functions, such as [AVG()](/built-in-functions/aggregate-functions/avg) and [SUM()](/built-in-functions/aggregate-functions/sum).
+The following functions are required for aggregate functions, such as [AVG()](/built-in-functions/aggregate-functions/avg/) and [SUM()](/built-in-functions/aggregate-functions/sum/).
 
 ### x_clear()
 
@@ -66,7 +66,7 @@ Used to add the argument to the current aggregate.
 
 ### x_remove()
 
-Starting from [MariaDB 10.4](/kb/en/what-is-mariadb-104/), improves the support of [window functions](/built-in-functions/special-functions/window-functions) (so it is not obligatory to add it) and should remove the argument from the current aggregate.
+Starting from [MariaDB 10.4](/kb/en/what-is-mariadb-104/), improves the support of [window functions](/built-in-functions/special-functions/window-functions/) (so it is not obligatory to add it) and should remove the argument from the current aggregate.
 
 ### Description
 
@@ -77,7 +77,7 @@ Each time the aggregate SQL function <em>X()</em> is called:
 - After all rows have finished processing, <em>x_deinit()</em> is called, if present, to clean up by de-allocating any memory that was allocated in <em>x_init()</em>.
 
 - MariaDB will first call the C/C++ initialization function, <em>x_init()</em>, assuming it exists. All setup will be performed, and if it returns an error, the SQL statement is aborted and no further functions are called.
-- The table is sorted according to the [GROUP BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/group-by) expression.
+- The table is sorted according to the [GROUP BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/group-by/) expression.
 - <em>x_clear()</em> is called for the first row of each new group.
 - <em>x_add()</em> is called once per row for each row in the same group.
 - <em>x()</em> is called when the group changes, or after the last row, to get the aggregate result.
@@ -90,6 +90,6 @@ For an example, see `sql/udf_example.cc` in the source tree. For a collection of
 
 ## See Also
 
-- [Stored Functions](/programming-customizing-mariadb/stored-routines/stored-functions)
-- [Stored Aggregate Functions](/programming-customizing-mariadb/stored-routines/stored-functions/stored-aggregate-functions)
-- [User-defined Functions Calling Sequences](/programming-customizing-mariadb/user-defined-functions/user-defined-functions-calling-sequences)
+- [Stored Functions](/programming-customizing-mariadb/stored-routines/stored-functions/)
+- [Stored Aggregate Functions](/programming-customizing-mariadb/stored-routines/stored-functions/stored-aggregate-functions/)
+- [User-defined Functions Calling Sequences](/programming-customizing-mariadb/user-defined-functions/user-defined-functions-calling-sequences/)

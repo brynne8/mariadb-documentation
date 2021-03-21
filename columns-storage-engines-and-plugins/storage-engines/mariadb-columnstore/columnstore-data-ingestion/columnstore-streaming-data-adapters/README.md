@@ -1,6 +1,6 @@
 # ColumnStore Streaming Data Adapters
 
-The [ColumnStore Bulk Data API](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk) enables the creation of higher performance adapters for ETL integration and data ingestions. The Streaming Data Adapters are out of box adapters using these API for specific data sources and use cases.
+The [ColumnStore Bulk Data API](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk/) enables the creation of higher performance adapters for ETL integration and data ingestions. The Streaming Data Adapters are out of box adapters using these API for specific data sources and use cases.
 
 - MaxScale CDC Data Adapter is integration of the MaxScale CDC streams into MariaDB ColumnStore.
 - Kafka Data Adapter is integration of the Kafka streams into MariaDB ColumnStore.

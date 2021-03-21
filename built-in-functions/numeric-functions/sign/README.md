@@ -38,4 +38,4 @@ SELECT SIGN(234);
 
 ## See Also
 
-- [ABS()](/built-in-functions/numeric-functions/abs)
+- [ABS()](/built-in-functions/numeric-functions/abs/)

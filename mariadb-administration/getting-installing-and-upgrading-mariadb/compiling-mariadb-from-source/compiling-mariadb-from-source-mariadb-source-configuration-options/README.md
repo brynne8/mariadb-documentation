@@ -9,4 +9,4 @@ cmake . -LH
 ## See Also
 
 - [Get the Code, Build it, Test it](https://mariadb.org/get-involved/getting-started-for-developers/get-code-build-test/) (mariadb.org)
-- [Generic Build Instructions](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/generic-build-instructions)
+- [Generic Build Instructions](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/generic-build-instructions/)

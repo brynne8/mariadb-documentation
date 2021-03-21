@@ -1,6 +1,6 @@
 # Thread Command Values
 
-A thread can have any of the following `COMMAND` values (displayed by the `COMMAND` field listed by the [SHOW PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist) statement or in the [Information Schema PROCESSLIST Table](/kb/en/information-schema-processlist-table/), as well as the `PROCESSLIST_COMMAND` value listed in the [Performance Schema threads Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table)). These indicate the nature of the thread's activity.
+A thread can have any of the following `COMMAND` values (displayed by the `COMMAND` field listed by the [SHOW PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist/) statement or in the [Information Schema PROCESSLIST Table](/kb/en/information-schema-processlist-table/), as well as the `PROCESSLIST_COMMAND` value listed in the [Performance Schema threads Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table/)). These indicate the nature of the thread's activity.
 
 <table><tbody><tr><th>Value</th><th>Description</th></tr>
 <tr><td>Binlog Dump</td><td>Master thread for sending <a href="/kb/en/binary-log/">binary log</a> contents to a slave.</td></tr>

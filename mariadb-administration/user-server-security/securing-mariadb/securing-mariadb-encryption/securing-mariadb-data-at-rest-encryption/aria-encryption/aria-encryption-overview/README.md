@@ -1,14 +1,14 @@
 # Aria Encryption Overview
 
-MariaDB can encrypt data in tables that use the [Aria storage engine](/columns-storage-engines-and-plugins/storage-engines/aria).  This includes both user-created tables and internal on-disk temporary tables that use the Aria storage engine.  This ensures that your Aria data is only accessible through MariaDB.
+MariaDB can encrypt data in tables that use the [Aria storage engine](/columns-storage-engines-and-plugins/storage-engines/aria/).  This includes both user-created tables and internal on-disk temporary tables that use the Aria storage engine.  This ensures that your Aria data is only accessible through MariaDB.
 
 For encryption with the InnoDB and XtraDB storage engines, see [Encrypting Data for InnoDB/XtraDB](/kb/en/encrypting-data-for-innodb-xtradb/).
 
 ## Basic Configuration
 
-In order to enable encryption for tables using the [Aria storage engine](/columns-storage-engines-and-plugins/storage-engines/aria), there are a couple server system variables that you need to set and configure. Most users will want to set <a undefined>aria_encrypt_tables</a> and <a undefined>encrypt_tmp_disk_tables</a>.
+In order to enable encryption for tables using the [Aria storage engine](/columns-storage-engines-and-plugins/storage-engines/aria/), there are a couple server system variables that you need to set and configure. Most users will want to set <a undefined>aria_encrypt_tables</a> and <a undefined>encrypt_tmp_disk_tables</a>.
 
-Users of data-at-rest encryption will also need to have a [key management and encryption plugin](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management) configured. Some examples are [File Key Management Plugin](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin) and [AWS Key Management Plugin](/kb/en/aws-key-management-encryption-plugin/).
+Users of data-at-rest encryption will also need to have a [key management and encryption plugin](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management/) configured. Some examples are [File Key Management Plugin](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin/) and [AWS Key Management Plugin](/kb/en/aws-key-management-encryption-plugin/).
 
 ```sql
 [mariadb]

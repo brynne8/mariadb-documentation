@@ -68,15 +68,15 @@ SET optimizer_switch='semijoin=off'
 
 MariaDB has five different semi-join execution strategies:
 
-- [Table pullout optimization](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/table-pullout-optimization)
-- [FirstMatch execution strategy](/replication/optimization-and-tuning/query-optimizations/optimization-strategies/firstmatch-strategy)
-- [Semi-join Materialization execution strategy](/replication/optimization-and-tuning/query-optimizations/optimization-strategies/semi-join-materialization-strategy)
-- [LooseScan execution strategy](/replication/optimization-and-tuning/query-optimizations/optimization-strategies/loosescan-strategy)
-- [DuplicateWeedout execution strategy](/replication/optimization-and-tuning/query-optimizations/optimization-strategies/duplicateweedout-strategy)
+- [Table pullout optimization](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/table-pullout-optimization/)
+- [FirstMatch execution strategy](/replication/optimization-and-tuning/query-optimizations/optimization-strategies/firstmatch-strategy/)
+- [Semi-join Materialization execution strategy](/replication/optimization-and-tuning/query-optimizations/optimization-strategies/semi-join-materialization-strategy/)
+- [LooseScan execution strategy](/replication/optimization-and-tuning/query-optimizations/optimization-strategies/loosescan-strategy/)
+- [DuplicateWeedout execution strategy](/replication/optimization-and-tuning/query-optimizations/optimization-strategies/duplicateweedout-strategy/)
 
 ## See Also
 
 - [What is MariaDB 5.3](/kb/en/what-is-mariadb-53/)
-- [Subquery Optimizations Map](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/subquery-optimizations-map)
+- [Subquery Optimizations Map](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/subquery-optimizations-map/)
 - ["Observations about subquery use cases"](http://s.petrunia.net/blog/?p=35) blog post
 - [http:<em>en.wikipedia.org/wiki/Semijoin</em>](http://en.wikipedia.org/wiki/Semijoin)

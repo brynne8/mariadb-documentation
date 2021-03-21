@@ -14,7 +14,7 @@ RELEASE_ALL_LOCKS()
 
 Releases all named locks held by the current session. Returns the number of locks released, or `0` if none were held.
 
-Statements using the `RELEASE_ALL_LOCKS` function are [not safe for statement-based replication](/replication/standard-replication/unsafe-statements-for-statement-based-replication).
+Statements using the `RELEASE_ALL_LOCKS` function are [not safe for statement-based replication](/replication/standard-replication/unsafe-statements-for-statement-based-replication/).
 
 ## Examples
 
@@ -43,7 +43,7 @@ SELECT RELEASE_ALL_LOCKS();
 
 ## See Also
 
-- [GET_LOCK](/built-in-functions/secondary-functions/miscellaneous-functions/get_lock)
-- [IS_FREE_LOCK](/built-in-functions/secondary-functions/miscellaneous-functions/is_free_lock)
-- [IS_USED_LOCK](/built-in-functions/secondary-functions/miscellaneous-functions/is_used_lock)
-- [RELEASE_LOCK](/built-in-functions/secondary-functions/miscellaneous-functions/release_lock)
+- [GET_LOCK](/built-in-functions/secondary-functions/miscellaneous-functions/get_lock/)
+- [IS_FREE_LOCK](/built-in-functions/secondary-functions/miscellaneous-functions/is_free_lock/)
+- [IS_USED_LOCK](/built-in-functions/secondary-functions/miscellaneous-functions/is_used_lock/)
+- [RELEASE_LOCK](/built-in-functions/secondary-functions/miscellaneous-functions/release_lock/)

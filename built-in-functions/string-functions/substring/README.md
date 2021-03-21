@@ -110,6 +110,6 @@ SELECT SUBSTR('abc',1,2);
 
 ## See Also
 
-- [INSTR()](/built-in-functions/string-functions/instr) - Returns the position of a string within a string
-- [LOCATE()](/built-in-functions/string-functions/locate) - Returns the position of a string within a string
-- [SUBSTRING_INDEX()](/built-in-functions/string-functions/substring_index) - Returns a string based on substring
+- [INSTR()](/built-in-functions/string-functions/instr/) - Returns the position of a string within a string
+- [LOCATE()](/built-in-functions/string-functions/locate/) - Returns the position of a string within a string
+- [SUBSTRING_INDEX()](/built-in-functions/string-functions/substring_index/) - Returns a string based on substring

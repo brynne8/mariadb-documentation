@@ -2,7 +2,7 @@
 
 This article describes the old thread pool in [MariaDB 5.1](/kb/en/what-is-mariadb-51/) - 5.3.
 
-[MariaDB 5.5](/kb/en/what-is-mariadb-55/) and later use an improved thread pool - see  [Thread pool in MariaDB](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb).
+[MariaDB 5.5](/kb/en/what-is-mariadb-55/) and later use an improved thread pool - see  [Thread pool in MariaDB](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb/).
 
 ## About pool of threads
 

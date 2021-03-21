@@ -12,14 +12,14 @@ The `SHOW GRANTS` statement lists privileges granted to a particular user or rol
 
 ### Users
 
-The statement lists the [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant) statement or
+The statement lists the [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/) statement or
 statements that must be issued to duplicate the privileges that are granted to
 a MariaDB user account. The account is named using the same format as for the
 <code class="fixed" style="white-space:pre-wrap">GRANT</code> statement; for example,
 '<code class="fixed" style="white-space:pre-wrap">jeffrey'@'localhost</code>'. If you specify only the user name part
 of the account name, a host name part of '<code class="fixed" style="white-space:pre-wrap">%</code>' is used.  For
 additional information about specifying account names, see
-[GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant).
+[GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/).
 
 ```sql
 SHOW GRANTS FOR 'root'@'localhost';
@@ -49,7 +49,7 @@ Note that the `DELETE HISTORY` privilege, introduced in [MariaDB 10.3.4](/kb/en/
 
 ### Roles
 
-`SHOW GRANTS` can also be used to view the privileges granted to a [role](/mariadb-administration/user-server-security/user-account-management/roles).
+`SHOW GRANTS` can also be used to view the privileges granted to a [role](/mariadb-administration/user-server-security/user-account-management/roles/).
 
 #### Example
 
@@ -65,7 +65,7 @@ SHOW GRANTS FOR journalist;
 
 ## See Also
 
-- [Authentication from MariaDB 10.4](/mariadb-administration/user-server-security/user-account-management/authentication-from-mariadb-104)
-- [SHOW CREATE USER](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-user) shows how the user was created.
-- [SHOW PRIVILEGES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-privileges) shows the privileges supported by MariaDB.
-- [Roles](/mariadb-administration/user-server-security/user-account-management/roles)
+- [Authentication from MariaDB 10.4](/mariadb-administration/user-server-security/user-account-management/authentication-from-mariadb-104/)
+- [SHOW CREATE USER](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-user/) shows how the user was created.
+- [SHOW PRIVILEGES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-privileges/) shows the privileges supported by MariaDB.
+- [Roles](/mariadb-administration/user-server-security/user-account-management/roles/)

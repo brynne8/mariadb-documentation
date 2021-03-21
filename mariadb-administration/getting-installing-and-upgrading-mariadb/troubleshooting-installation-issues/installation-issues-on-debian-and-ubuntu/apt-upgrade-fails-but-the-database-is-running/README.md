@@ -41,4 +41,4 @@ To overcome this, the timeout needs to be increased. This can be achieved as fol
 
 - <strong>On systems where systemd is not enabled/supported:</strong> The timeout can be increased by setting MYSQLD_STARTUP_TIMEOUT either directly in the script or via the command line. In [MariaDB 10.1.13](/kb/en/mariadb-10113-release-notes/) and later versions, the init script also sources /etc/default/mariadb, so it can also be used to set MYSQLD_STARTUP_TIMEOUT to persistently change the startup timeout. The default timeout has been increased from 30s to 60s in [MariaDB 10.1.13](/kb/en/mariadb-10113-release-notes/).
 
-- <strong>On systems that support systemd</strong>: The startup timeout can be increased by setting [TimeoutStartSec systemd](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd) option.
+- <strong>On systems that support systemd</strong>: The startup timeout can be increased by setting [TimeoutStartSec systemd](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd/) option.

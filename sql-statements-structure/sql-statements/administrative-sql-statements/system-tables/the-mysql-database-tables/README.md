@@ -1,6 +1,6 @@
 # The mysql Database Tables
 
-MariaDB comes pre-installed with a system database called `mysql` containing many important tables storing, in particular, [grant and privilege](/sql-statements-structure/sql-statements/account-management-sql-commands/grant) information. Until [MariaDB 10.4](/kb/en/what-is-mariadb-104/), system tables used the [MyISAM](/kb/en/myisam/) storage engine. From [MariaDB 10.4](/kb/en/what-is-mariadb-104/), they use [Aria](/columns-storage-engines-and-plugins/storage-engines/aria).
+MariaDB comes pre-installed with a system database called `mysql` containing many important tables storing, in particular, [grant and privilege](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/) information. Until [MariaDB 10.4](/kb/en/what-is-mariadb-104/), system tables used the [MyISAM](/kb/en/myisam/) storage engine. From [MariaDB 10.4](/kb/en/what-is-mariadb-104/), they use [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/).
 
 - [mysql.column_stats Table](/kb/en/library/documentation/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlcolumn_stats-table/) — Column stats for engine-independent statistics
 - [mysql.columns_priv Table](/kb/en/library/documentation/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlcolumns_priv-table/) — Column-level privileges

@@ -1,6 +1,6 @@
 # EXPLAIN Analyzer
 
-The [EXPLAIN Analyzer](https://mariadb.org/explain_analyzer/analyze/) is an online tool for analyzing and optionally sharing the output of both [EXPLAIN](/sql-statements-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain) and `EXPLAIN EXTENDED`.
+The [EXPLAIN Analyzer](https://mariadb.org/explain_analyzer/analyze/) is an online tool for analyzing and optionally sharing the output of both [EXPLAIN](/sql-statements-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain/) and `EXPLAIN EXTENDED`.
 
 ## Using the Analyzer
 
@@ -32,7 +32,7 @@ MariaDB [test]> EXPLAIN SELECT * FROM t1 INNER JOIN t2 INNER JOIN t3 WHERE t1.a=
 
 ## Clients which integrate with the Explain Analyzer
 
-The Analyzer has an API that client programs can use to send EXPLAINs. If you are a client application developer, see the [EXPLAIN Analyzer API](/clients-utilities/explain-analyzer-api) page for details.
+The Analyzer has an API that client programs can use to send EXPLAINs. If you are a client application developer, see the [EXPLAIN Analyzer API](/clients-utilities/explain-analyzer-api/) page for details.
 
 The following clients have support for the EXPLAIN Analyzer built in:
 

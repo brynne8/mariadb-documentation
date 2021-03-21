@@ -2,7 +2,7 @@
 
 ##### MariaDB starting with [10.5](/kb/en/what-is-mariadb-105/)
 
-The [S3 storage engine](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine) has been available since [MariaDB 10.5.4](/kb/en/mariadb-1054-release-notes/).
+The [S3 storage engine](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/) has been available since [MariaDB 10.5.4](/kb/en/mariadb-1054-release-notes/).
 
 If you can't get the S3 storage engine to work, here are some steps to help verify where the problem could be.
 
@@ -23,7 +23,7 @@ There are several ways to ensure you get them right:
 
 ### Using aria_s3_copy to Test the Connection
 
-[aria_s3_copy](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/aria_s3_copy) is a tool that allows you to copy [aria](/columns-storage-engines-and-plugins/storage-engines/aria) tables to and from S3.  It's useful for testing the connection as it allows you to specify all s3 options on the command line.
+[aria_s3_copy](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/aria_s3_copy/) is a tool that allows you to copy [aria](/columns-storage-engines-and-plugins/storage-engines/aria/) tables to and from S3.  It's useful for testing the connection as it allows you to specify all s3 options on the command line.
 
 Execute the following sql commands to create a trivial sql table:
 
@@ -34,7 +34,7 @@ insert into s3_test values (1),(2);
 flush tables s3_test;
 ```
 
-Now you can use the [aria_s3_copy](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/aria_s3_copy) tool to copy this to S3 from your
+Now you can use the [aria_s3_copy](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/aria_s3_copy/) tool to copy this to S3 from your
 shell/the command line:
 
 ```sql
@@ -48,14 +48,14 @@ Copying index information test/s3_test/index
 Copying data information test/s3_test/data
 ```
 
-As you can see from the above, [aria_s3_copy](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/aria_s3_copy) is using the current directory as the database name.
+As you can see from the above, [aria_s3_copy](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/aria_s3_copy/) is using the current directory as the database name.
 
-You can also set the [aria_s3_copy](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/aria_s3_copy) options in your my.cnf file to avoid
+You can also set the [aria_s3_copy](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/aria_s3_copy/) options in your my.cnf file to avoid
 some typing.
 
 ### Using mysql-test-run to Test the Connection and the S3 Storage Engine
 
-One can use the [MariaDB test system](/clients-utilities/mysqltest) to run all default S3 test against your S3 storage.
+One can use the [MariaDB test system](/clients-utilities/mysqltest/) to run all default S3 test against your S3 storage.
 
 To do that you have to locate the `mysql-test` directory in your system and
 `cd` to it.
@@ -104,9 +104,9 @@ Note that there may be more tests in your output as we are constantly adding mor
 ## What to Do Next
 
 When you got the connection to work, you should add the options to your global my.cnf file.
-Now you can start testing S3 from your [mysql command client](/clients-utilities/mysql-client/mysql-command-line-client) by converting some existing table to S3 with [ALTER TABLE ... ENGINE=S3](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/using-the-s3-storage-engine).
+Now you can start testing S3 from your [mysql command client](/clients-utilities/mysql-client/mysql-command-line-client/) by converting some existing table to S3 with [ALTER TABLE ... ENGINE=S3](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/using-the-s3-storage-engine/).
 
 ## See Also
 
-- [Using the S3 Storage Engine](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/using-the-s3-storage-engine)
-- [Using MinIO with mysql-test-run to test the S3 storage engine](/clients-utilities/mysqltest/installing-minio-for-usage-with-mysql-test-run)
+- [Using the S3 Storage Engine](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/using-the-s3-storage-engine/)
+- [Using MinIO with mysql-test-run to test the S3 storage engine](/clients-utilities/mysqltest/installing-minio-for-usage-with-mysql-test-run/)

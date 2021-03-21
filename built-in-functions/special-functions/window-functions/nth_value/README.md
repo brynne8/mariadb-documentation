@@ -2,7 +2,7 @@
 
 ##### MariaDB starting with [10.2.2](/kb/en/mariadb-1022-release-notes/)
 
-The NTH_VALUE() function was first introduced with other [window functions](/built-in-functions/special-functions/window-functions) in [MariaDB 10.2](/kb/en/what-is-mariadb-102/).
+The NTH_VALUE() function was first introduced with other [window functions](/built-in-functions/special-functions/window-functions/) in [MariaDB 10.2](/kb/en/what-is-mariadb-102/).
 
 ## Syntax
 

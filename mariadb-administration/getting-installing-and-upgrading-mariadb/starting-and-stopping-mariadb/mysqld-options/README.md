@@ -8,11 +8,11 @@ From [MariaDB 10.4.6](/kb/en/mariadb-1046-release-notes/), `mariadbd` is a symli
 
 From [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/), `mariadbd` is the name of the binary, with `mysqld` a symlink .
 
-This page lists all of the options for `mysqld` / `mariadbd`, ordered by topic. For a full alphabetical list of all mysqld options, as well as server and status variables, see [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables).
+This page lists all of the options for `mysqld` / `mariadbd`, ordered by topic. For a full alphabetical list of all mysqld options, as well as server and status variables, see [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables/).
 
 In many cases, the entry here is a summary, and links to the full description.
 
-By convention, [server variables](/replication/optimization-and-tuning/system-variables/server-system-variables) have usually been specified with an underscore in the configuration files, and a dash on the command line. You can however specify underscores as dashes - they are interchangeable.
+By convention, [server variables](/replication/optimization-and-tuning/system-variables/server-system-variables/) have usually been specified with an underscore in the configuration files, and a dash on the command line. You can however specify underscores as dashes - they are interchangeable.
 
 See [mysqld startup options](/kb/en/mysqld-startup-options/) for which files and groups mysqld reads for it's default options.
 
@@ -48,7 +48,7 @@ See [mysqld startup options](/kb/en/mysqld-startup-options/) for which files and
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--defaults-extra-file=name</code>
 - <strong>Description:</strong> Read this extra option file after all other option files are read.
-<ul start="1"><li>See [Configuring MariaDB with Option Files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files).
+<ul start="1"><li>See [Configuring MariaDB with Option Files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/).
 </li></ul>
 
 ---
@@ -57,7 +57,7 @@ See [mysqld startup options](/kb/en/mysqld-startup-options/) for which files and
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--defaults-file=name</code>
 - <strong>Description:</strong> Only read options from the given option file.
-<ul start="1"><li>See [Configuring MariaDB with Option Files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files).
+<ul start="1"><li>See [Configuring MariaDB with Option Files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/).
 </li></ul>
 
 ---
@@ -66,7 +66,7 @@ See [mysqld startup options](/kb/en/mysqld-startup-options/) for which files and
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--defaults-group-suffix=name</code>
 - <strong>Description:</strong> In addition to the default option groups, also read option groups with the given suffix.
-<ul start="1"><li>See [Configuring MariaDB with Option Files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files).
+<ul start="1"><li>See [Configuring MariaDB with Option Files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/).
 </li></ul>
 
 ---
@@ -75,7 +75,7 @@ See [mysqld startup options](/kb/en/mysqld-startup-options/) for which files and
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--no-defaults</code>
 - <strong>Description:</strong> Don't read options from any option file.
-<ul start="1"><li>See [Configuring MariaDB with Option Files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files).
+<ul start="1"><li>See [Configuring MariaDB with Option Files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/).
 </li></ul>
 
 ---
@@ -84,7 +84,7 @@ See [mysqld startup options](/kb/en/mysqld-startup-options/) for which files and
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--print-defaults</code>
 - <strong>Description:</strong> Read options from option files, print all option values, and then exit the program.
-<ul start="1"><li>See [Configuring MariaDB with Option Files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files).
+<ul start="1"><li>See [Configuring MariaDB with Option Files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/).
 </li></ul>
 
 ---
@@ -114,7 +114,7 @@ other MariaDB and MySQL versions:
 
 #### `--safe-mode`
 
-- <strong>Description:</strong> Disable some potential unsafe optimizations. For 5.2, [INSERT DELAYED](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed) is disabled, [myisam_recover_options](/kb/en/myisam-system-variables/#myisam_recover_options) is set to DEFAULT (automatically recover crashed MyISAM files) and the [query cache](/replication/optimization-and-tuning/buffers-caches-and-threads/query-cache) is disabled. For [Aria](/columns-storage-engines-and-plugins/storage-engines/aria) tables, disable bulk insert optimization to enable one to use [aria_read_log](/clients-utilities/aria-clients-and-utilities/aria_read_log) to recover tables even if tables are deleted (good for testing recovery).
+- <strong>Description:</strong> Disable some potential unsafe optimizations. For 5.2, [INSERT DELAYED](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed/) is disabled, [myisam_recover_options](/kb/en/myisam-system-variables/#myisam_recover_options) is set to DEFAULT (automatically recover crashed MyISAM files) and the [query cache](/replication/optimization-and-tuning/buffers-caches-and-threads/query-cache/) is disabled. For [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/) tables, disable bulk insert optimization to enable one to use [aria_read_log](/clients-utilities/aria-clients-and-utilities/aria_read_log/) to recover tables even if tables are deleted (good for testing recovery).
 
 ---
 
@@ -150,9 +150,9 @@ other MariaDB and MySQL versions:
 
 #### `--language`
 
-- <strong>Description:</strong> This option can be used to set the server's language for error messages. This option can be specified either as a language name or as the path to the directory storing the language's [error message file](/kb/en/error-log/#error-messages-file). See [Server Locales](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale) for a list of supported locales and their associated languages.
+- <strong>Description:</strong> This option can be used to set the server's language for error messages. This option can be specified either as a language name or as the path to the directory storing the language's [error message file](/kb/en/error-log/#error-messages-file). See [Server Locales](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale/) for a list of supported locales and their associated languages.
 <ul start="1"><li>This option is deprecated. Use the <a undefined>lc_messages</a> and <a undefined>lc_messages_dir</a> system variables instead.
-</li><li>See [Setting the Language for Error Messages](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/setting-the-language-for-error-messages) for more information.
+</li><li>See [Setting the Language for Error Messages](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/setting-the-language-for-error-messages/) for more information.
 </li></ul>
 
 ---
@@ -234,7 +234,7 @@ The following options and system variables are related to using MariaDB on Windo
 
 ## Replication and Binary Logging Options
 
-The following options are related to [replication](/replication) and the [binary log](/mariadb-administration/server-monitoring-logs/binary-log):
+The following options are related to [replication](/replication/) and the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/):
 
 #### `--abort-slave-event-count`
 
@@ -246,11 +246,11 @@ The following options are related to [replication](/replication) and the [binary
 #### `--binlog-do-db`
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--binlog-do-db=name</code>
-- <strong>Description:</strong> This option allows you to configure a [replication master](/replication) to write statements and transactions affecting databases that match a specified name into its [binary log](/mariadb-administration/server-monitoring-logs/binary-log). Since the filtered statements or transactions will not be present in the [binary log](/mariadb-administration/server-monitoring-logs/binary-log), its replication slaves will not be able to replicate them.
+- <strong>Description:</strong> This option allows you to configure a [replication master](/replication/) to write statements and transactions affecting databases that match a specified name into its [binary log](/mariadb-administration/server-monitoring-logs/binary-log/). Since the filtered statements or transactions will not be present in the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/), its replication slaves will not be able to replicate them.
 <ul start="1"><li>This option will <strong>not</strong> work with cross-database updates with [statement-based logging](/kb/en/binary-log-formats/#statement-based-logging). See the [Statement-Based Logging](/kb/en/replication-filters/#statement-based-logging) section for more information.
 </li><li>This option can <strong>not</strong> be set dynamically.
-</li><li>When setting it on the command-line or in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files), the option does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the option multiple times.
-</li><li>See [Replication Filters](/replication/standard-replication/replication-filters) for more information. 
+</li><li>When setting it on the command-line or in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/), the option does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the option multiple times.
+</li><li>See [Replication Filters](/replication/standard-replication/replication-filters/) for more information. 
 </li></ul>
 
 ---
@@ -258,11 +258,11 @@ The following options are related to [replication](/replication) and the [binary
 #### `--binlog-ignore-db`
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--binlog-ignore-db=name</code>
-- <strong>Description:</strong> This option allows you to configure a [replication master](/replication) to <strong>not</strong> write statements and transactions affecting databases that match a specified name into its [binary log](/mariadb-administration/server-monitoring-logs/binary-log). Since the filtered statements or transactions will not be present in the [binary log](/mariadb-administration/server-monitoring-logs/binary-log), its replication slaves will not be able to replicate them.
+- <strong>Description:</strong> This option allows you to configure a [replication master](/replication/) to <strong>not</strong> write statements and transactions affecting databases that match a specified name into its [binary log](/mariadb-administration/server-monitoring-logs/binary-log/). Since the filtered statements or transactions will not be present in the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/), its replication slaves will not be able to replicate them.
 <ul start="1"><li>This option will <strong>not</strong> work with cross-database updates with [statement-based logging](/kb/en/binary-log-formats/#statement-based-logging). See the [Statement-Based Logging](/kb/en/replication-filters/#statement-based-logging) section for more information.
 </li><li>This option can <strong>not</strong> be set dynamically.
-</li><li>When setting it on the command-line or in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files), the option does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the option multiple times.
-</li><li>See [Replication Filters](/replication/standard-replication/replication-filters) for more information. 
+</li><li>When setting it on the command-line or in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/), the option does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the option multiple times.
+</li><li>See [Replication Filters](/replication/standard-replication/replication-filters/) for more information. 
 </li></ul>
 
 ---
@@ -270,7 +270,7 @@ The following options are related to [replication](/replication) and the [binary
 #### `--binlog-row-event-max-size`
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--binlog-row-event-max-size=#</code>
-- <strong>Description:</strong> The maximum size of a row-based [binary log](/mariadb-administration/server-monitoring-logs/binary-log) event in bytes. Rows will be grouped into events smaller than this size if possible. The value has to be a multiple of 256.
+- <strong>Description:</strong> The maximum size of a row-based [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) event in bytes. Rows will be grouped into events smaller than this size if possible. The value has to be a multiple of 256.
 - <strong>Default value</strong>
 <ul start="1"><li>`8192` (&gt;= [MariaDB 10.2.4](/kb/en/mariadb-1024-release-notes/))
 </li><li>`1024` (&lt;= [MariaDB 10.2.3](/kb/en/mariadb-1023-release-notes/))
@@ -288,7 +288,7 @@ The following options are related to [replication](/replication) and the [binary
 #### `--flashback`
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--flashback</code>
-- <strong>Description:</strong> Setup the server to use flashback. This enables the [binary log](/mariadb-administration/server-monitoring-logs/binary-log) and sets `binlog_format=ROW`.
+- <strong>Description:</strong> Setup the server to use flashback. This enables the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) and sets `binlog_format=ROW`.
 - <strong>Introduced:</strong> [MariaDB 10.2.4](/kb/en/mariadb-1024-release-notes/)
 
 ---
@@ -303,7 +303,7 @@ The following options are related to [replication](/replication) and the [binary
 #### `--log-basename`
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--log-basename=name</code>
-- <strong>Description:</strong> Basename for all log files and the .pid file. This sets all log file names at once (in 'datadir') and is normally the only option you need for specifying log files. This is especially recommended to be set if you are using [replication](/replication) as it ensures that your log file names are not dependent on your host name. Sets names for [log-bin](/kb/en/replication-and-binary-log-server-system-variables/#log_bin), [log-bin-index](/kb/en/replication-and-binary-log-server-system-variables/#log_bin_index), [relay-log](/kb/en/replication-and-binary-log-server-system-variables/#relay_log), [relay-log-index](/kb/en/replication-and-binary-log-server-system-variables/#relay_log_index), [general-log-file](/kb/en/server-system-variables/#general_log_file), <code class="fixed" style="white-space:pre-wrap">--log-slow-query-log-file</code>, <code class="fixed" style="white-space:pre-wrap">--log-error-file</code>, and [pid-file](/kb/en/server-system-variables/#pid_file).
+- <strong>Description:</strong> Basename for all log files and the .pid file. This sets all log file names at once (in 'datadir') and is normally the only option you need for specifying log files. This is especially recommended to be set if you are using [replication](/replication/) as it ensures that your log file names are not dependent on your host name. Sets names for [log-bin](/kb/en/replication-and-binary-log-server-system-variables/#log_bin), [log-bin-index](/kb/en/replication-and-binary-log-server-system-variables/#log_bin_index), [relay-log](/kb/en/replication-and-binary-log-server-system-variables/#relay_log), [relay-log-index](/kb/en/replication-and-binary-log-server-system-variables/#relay_log_index), [general-log-file](/kb/en/server-system-variables/#general_log_file), <code class="fixed" style="white-space:pre-wrap">--log-slow-query-log-file</code>, <code class="fixed" style="white-space:pre-wrap">--log-error-file</code>, and [pid-file](/kb/en/server-system-variables/#pid_file).
 - <strong>Introduced:</strong> [MariaDB 5.2](/kb/en/what-is-mariadb-52/)
 
 ---
@@ -325,7 +325,7 @@ The following options are related to [replication](/replication) and the [binary
 #### `--master-info-file`
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--master-info-file=name</code>
-- <strong>Description:</strong> Name and location of the file where the `MASTER_LOG_FILE` and `MASTER_LOG_POS` options (i.e. the [binary log](/mariadb-administration/server-monitoring-logs/binary-log) position on the master) and most other [CHANGE MASTER](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to) options are written. The [slave's I/O thread](/kb/en/replication-threads/#slave-io-thread) keeps this [binary log](/mariadb-administration/server-monitoring-logs/binary-log) position updated as it downloads events.
+- <strong>Description:</strong> Name and location of the file where the `MASTER_LOG_FILE` and `MASTER_LOG_POS` options (i.e. the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) position on the master) and most other [CHANGE MASTER](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to/) options are written. The [slave's I/O thread](/kb/en/replication-threads/#slave-io-thread) keeps this [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) position updated as it downloads events.
 <ul start="1"><li>See [CHANGE MASTER TO: Option Persistence](/kb/en/change-master-to/#option-persistence) for more information.
 </li></ul>
 
@@ -358,7 +358,7 @@ The following options are related to [replication](/replication) and the [binary
 #### `--master-ssl`
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--master-ssl</code>
-- <strong>Description:</strong> Enable the slave to [connect to the master using TLS](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview).
+- <strong>Description:</strong> Enable the slave to [connect to the master using TLS](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview/).
 
 ---
 
@@ -414,12 +414,12 @@ The following options are related to [replication](/replication) and the [binary
 #### `--replicate-rewrite-db`
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--replicate-rewrite-db=master_database-&gt;slave_database</code>
-- <strong>Description:</strong> This option allows you to configure a [replication slave](/replication) to rewrite database names. It uses the format `master_database-&gt;slave_database`. If a slave encounters a [binary log](/mariadb-administration/server-monitoring-logs/binary-log) event in which the default database (i.e. the one selected by the [USE](/sql-statements-structure/sql-statements/administrative-sql-statements/use) statement) is `master_database`, then the slave will apply the event in `slave_database` instead.
+- <strong>Description:</strong> This option allows you to configure a [replication slave](/replication/) to rewrite database names. It uses the format `master_database-&gt;slave_database`. If a slave encounters a [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) event in which the default database (i.e. the one selected by the [USE](/sql-statements-structure/sql-statements/administrative-sql-statements/use/) statement) is `master_database`, then the slave will apply the event in `slave_database` instead.
 <ul start="1"><li>This option will <strong>not</strong> work with cross-database updates with [statement-based logging](/kb/en/binary-log-formats/#statement-based-logging). See the [Statement-Based Logging](/kb/en/replication-filters/#statement-based-logging) section for more information.
-</li><li>This option only affects statements that involve tables. This option does not affect statements involving the database itself, such as [CREATE DATABASE](/sql-statements-structure/sql-statements/data-definition/create/create-database), [ALTER DATABASE](/sql-statements-structure/sql-statements/data-definition/alter/alter-database), and [DROP DATABASE](/sql-statements-structure/sql-statements/data-definition/drop/drop-database). 
+</li><li>This option only affects statements that involve tables. This option does not affect statements involving the database itself, such as [CREATE DATABASE](/sql-statements-structure/sql-statements/data-definition/create/create-database/), [ALTER DATABASE](/sql-statements-structure/sql-statements/data-definition/alter/alter-database/), and [DROP DATABASE](/sql-statements-structure/sql-statements/data-definition/drop/drop-database/). 
 </li><li>This option can <strong>not</strong> be set dynamically.
-</li><li>When setting it on the command-line or in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files), the option does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the option multiple times.
-</li><li>See [Replication Filters](/replication/standard-replication/replication-filters) for more information. 
+</li><li>When setting it on the command-line or in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/), the option does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the option multiple times.
+</li><li>See [Replication Filters](/replication/standard-replication/replication-filters/) for more information. 
 </li></ul>
 
 ---
@@ -441,13 +441,13 @@ The following options are related to [replication](/replication) and the [binary
 #### `--sysdate-is-now`
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--sysdate-is-now</code>
-- <strong>Description:</strong> Non-default option to alias [SYSDATE()](/built-in-functions/date-time-functions/sysdate) to [NOW()](/built-in-functions/date-time-functions/now) to make it safe for [replication](/replication). Since 5.0, SYSDATE() has returned a `dynamic' value different for different invocations, even within the same statement.
+- <strong>Description:</strong> Non-default option to alias [SYSDATE()](/built-in-functions/date-time-functions/sysdate/) to [NOW()](/built-in-functions/date-time-functions/now/) to make it safe for [replication](/replication/). Since 5.0, SYSDATE() has returned a `dynamic' value different for different invocations, even within the same statement.
 
 ---
 
 ### Replication and Binary Logging Options and System Variables
 
-The following options and system variables are related to [replication](/replication) and the [binary log](/mariadb-administration/server-monitoring-logs/binary-log):
+The following options and system variables are related to [replication](/replication/) and the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/):
 
 - [auto-increment-increment](/kb/en/replication-and-binary-log-server-system-variables/#auto_increment_increment)
 - [auto-increment-offset](/kb/en/replication-and-binary-log-server-system-variables/#auto_increment_offset)
@@ -524,7 +524,7 @@ The following options and system variables are related to [replication](/replica
 
 ### Semisynchronous Replication Options and System Variables
 
-The options and system variables related to [Semisynchronous Replication](/replication/standard-replication/semisynchronous-replication) are described [here](/kb/en/semisynchronous-replication/#system-variables).
+The options and system variables related to [Semisynchronous Replication](/replication/standard-replication/semisynchronous-replication/) are described [here](/kb/en/semisynchronous-replication/#system-variables).
 
 ## Optimizer Options
 
@@ -592,25 +592,25 @@ The options and system variables related to [Semisynchronous Replication](/repli
 
 ### MyISAM Storage Engine Options
 
-The options related to the [MyISAM](/columns-storage-engines-and-plugins/storage-engines/myisam-storage-engine) storage engine are described below.
+The options related to the [MyISAM](/columns-storage-engines-and-plugins/storage-engines/myisam-storage-engine/) storage engine are described below.
 
 #### `--external-locking`
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--external-locking</code>
-- <strong>Description:</strong> Use system (external) locking (disabled by default).  With this option enabled you can run [myisamchk](/clients-utilities/myisam-clients-and-utilities/myisamchk) to test (not repair) tables while the server is running. Disable with [--skip-external-locking](/kb/en/server-system-variables/#skip_external_locking).
+- <strong>Description:</strong> Use system (external) locking (disabled by default).  With this option enabled you can run [myisamchk](/clients-utilities/myisam-clients-and-utilities/myisamchk/) to test (not repair) tables while the server is running. Disable with [--skip-external-locking](/kb/en/server-system-variables/#skip_external_locking).
 
 ---
 
 #### `--log-isam`
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--log-isam[=file_name]</code>
-- <strong>Description:</strong> Enable the [MyISAM log](/mariadb-administration/server-monitoring-logs/myisam-log), which logs all MyISAM changes to file. If no filename is provided, the default, <em>myisam.log</em> is used.
+- <strong>Description:</strong> Enable the [MyISAM log](/mariadb-administration/server-monitoring-logs/myisam-log/), which logs all MyISAM changes to file. If no filename is provided, the default, <em>myisam.log</em> is used.
 
 ---
 
 #### MyISAM Storage Engine Options and System Variables
 
-Some options and system variables related to the [MyISAM](/columns-storage-engines-and-plugins/storage-engines/myisam-storage-engine) storage engine can be found [here](/columns-storage-engines-and-plugins/storage-engines/myisam-storage-engine/myisam-system-variables). Direct links to many of them can be found below.
+Some options and system variables related to the [MyISAM](/columns-storage-engines-and-plugins/storage-engines/myisam-storage-engine/) storage engine can be found [here](/columns-storage-engines-and-plugins/storage-engines/myisam-storage-engine/myisam-system-variables/). Direct links to many of them can be found below.
 
 - [concurrent-insert](/kb/en/server-system-variables/#concurrent_insert)
 - [delayed-insert-limit](/kb/en/server-system-variables/#delayed_insert_limit)
@@ -635,7 +635,7 @@ Some options and system variables related to the [MyISAM](/columns-storage-engin
 
 ### InnoDB Storage Engine Options
 
-The options related to the [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) storage engine are described below.
+The options related to the [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) storage engine are described below.
 
 #### `--innodb`
 
@@ -771,7 +771,7 @@ The options related to the [InnoDB](/columns-storage-engines-and-plugins/storage
 
 #### InnoDB Storage Engine Options and System Variables
 
-Some options and system variables related to the [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) storage engine can be found [here](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-system-variables). Direct links to many of them can be found below.
+Some options and system variables related to the [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) storage engine can be found [here](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-system-variables/). Direct links to many of them can be found below.
 
 - [ignore-builtin-innodb](/kb/en/innodb-system-variables/#ignore_builtin_innodb)
 - [innodb-adaptive-checkpoint](/kb/en/innodb-system-variables/#innodb_adaptive_checkpoint)
@@ -1009,7 +1009,7 @@ Some options and system variables related to the [InnoDB](/columns-storage-engin
 
 ### Aria Storage Engine Options
 
-The options related to the [Aria](/columns-storage-engines-and-plugins/storage-engines/aria) storage engine are described below.
+The options related to the [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/) storage engine are described below.
 
 #### `--aria-log-dir-path`
 
@@ -1021,7 +1021,7 @@ The options related to the [Aria](/columns-storage-engines-and-plugins/storage-e
 
 #### Aria Storage Engine Options and System Variables
 
-Some options and system variables related to the [Aria](/columns-storage-engines-and-plugins/storage-engines/aria) storage engine can be found [here](/columns-storage-engines-and-plugins/storage-engines/aria/aria-system-variables). Direct links to many of them can be found below.
+Some options and system variables related to the [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/) storage engine can be found [here](/columns-storage-engines-and-plugins/storage-engines/aria/aria-system-variables/). Direct links to many of them can be found below.
 
 - [aria-block-size](/kb/en/aria-system-variables/#aria_block_size)
 - [aria-checkpoint-interval](/kb/en/aria-system-variables/#aria_checkpoint_interval)
@@ -1052,19 +1052,19 @@ Some options and system variables related to the [Aria](/columns-storage-engines
 
 ### MyRocks Storage Engine Options
 
-The options and system variables related to the [MyRocks](/columns-storage-engines-and-plugins/storage-engines/myrocks) storage engine can be found [here](/columns-storage-engines-and-plugins/storage-engines/myrocks/myrocks-system-variables).
+The options and system variables related to the [MyRocks](/columns-storage-engines-and-plugins/storage-engines/myrocks/) storage engine can be found [here](/columns-storage-engines-and-plugins/storage-engines/myrocks/myrocks-system-variables/).
 
 ### S3 Storage Engine Options
 
-The options and system variables related to the [S3](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine) storage engine can be found [here](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/s3-storage-engine-system-variables).
+The options and system variables related to the [S3](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/) storage engine can be found [here](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/s3-storage-engine-system-variables/).
 
 ### CONNECT Storage Engine Options
 
-The options related to the [CONNECT](/columns-storage-engines-and-plugins/storage-engines/connect) storage engine are described below.
+The options related to the [CONNECT](/columns-storage-engines-and-plugins/storage-engines/connect/) storage engine are described below.
 
 #### CONNECT Storage Engine Options and System Variables
 
-Some options and system variables related to the [CONNECT](/columns-storage-engines-and-plugins/storage-engines/connect) storage engine can be found [here](/columns-storage-engines-and-plugins/storage-engines/connect/connect-system-variables). Direct links to many of them can be found below.
+Some options and system variables related to the [CONNECT](/columns-storage-engines-and-plugins/storage-engines/connect/) storage engine can be found [here](/columns-storage-engines-and-plugins/storage-engines/connect/connect-system-variables/). Direct links to many of them can be found below.
 
 - [connect-class-path](/kb/en/connect-system-variables/#connect_class_path)
 - [connect-cond-push](/kb/en/connect-system-variables/#connect_cond_push)
@@ -1087,26 +1087,26 @@ Some options and system variables related to the [CONNECT](/columns-storage-engi
 
 ### Spider Storage Engine Options
 
-The options and system variables related to the [Spider](/columns-storage-engines-and-plugins/storage-engines/spider) storage engine can be found [here](/columns-storage-engines-and-plugins/storage-engines/spider/spider-server-system-variables).
+The options and system variables related to the [Spider](/columns-storage-engines-and-plugins/storage-engines/spider/) storage engine can be found [here](/columns-storage-engines-and-plugins/storage-engines/spider/spider-server-system-variables/).
 
 ### Mroonga Storage Engine Options
 
-The options and system variables related to the [Mroonga](/columns-storage-engines-and-plugins/storage-engines/mroonga) storage engine can be found [here](/columns-storage-engines-and-plugins/storage-engines/mroonga/mroonga-system-variables).
+The options and system variables related to the [Mroonga](/columns-storage-engines-and-plugins/storage-engines/mroonga/) storage engine can be found [here](/columns-storage-engines-and-plugins/storage-engines/mroonga/mroonga-system-variables/).
 
 ### TokuDB Storage Engine Options
 
-The options and system variables related to the [TokuDB](/columns-storage-engines-and-plugins/storage-engines/tokudb) storage engine can be found [here](/columns-storage-engines-and-plugins/storage-engines/tokudb/tokudb-system-variables).
+The options and system variables related to the [TokuDB](/columns-storage-engines-and-plugins/storage-engines/tokudb/) storage engine can be found [here](/columns-storage-engines-and-plugins/storage-engines/tokudb/tokudb-system-variables/).
 
 ## Performance Schema Options
 
-The options related to the [Performance Schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema) are described below.
+The options related to the [Performance Schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/) are described below.
 
 
 
 #### `--performance-schema-consumer-events-stages-current`
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--performance-schema-consumer-events-stages-current</code>
-- <strong>Description:</strong> Enable the [events-stages-current](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_current-table) consumer.
+- <strong>Description:</strong> Enable the [events-stages-current](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_current-table/) consumer.
 - <strong>Default:</strong> `OFF`
 
 ---
@@ -1114,7 +1114,7 @@ The options related to the [Performance Schema](/sql-statements-structure/sql-st
 #### `--performance-schema-consumer-events-stages-history`
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--performance-schema-consumer-events-stages-history</code>
-- <strong>Description:</strong> Enable the [events-stages-history](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_history-table) consumer.
+- <strong>Description:</strong> Enable the [events-stages-history](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_history-table/) consumer.
 - <strong>Default:</strong> `OFF`
 
 ---
@@ -1122,7 +1122,7 @@ The options related to the [Performance Schema](/sql-statements-structure/sql-st
 #### `--performance-schema-consumer-events-stages-history-long`
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--performance-schema-consumer-events-stages-history-long</code>
-- <strong>Description:</strong> Enable the [events-stages-history-long](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_history_long-table) consumer.
+- <strong>Description:</strong> Enable the [events-stages-history-long](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_history_long-table/) consumer.
 - <strong>Default:</strong> `OFF`
 
 ---
@@ -1130,7 +1130,7 @@ The options related to the [Performance Schema](/sql-statements-structure/sql-st
 #### `--performance-schema-consumer-events-statements-current`
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--performance-schema-consumer-events-statements-current</code>
-- <strong>Description:</strong> Enable the [events-statements-current](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_current-table) consumer. Use `--skip-performance-schema-consumer-events-statements-current` to disable.
+- <strong>Description:</strong> Enable the [events-statements-current](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_current-table/) consumer. Use `--skip-performance-schema-consumer-events-statements-current` to disable.
 - <strong>Default:</strong> `ON`
 
 ---
@@ -1138,7 +1138,7 @@ The options related to the [Performance Schema](/sql-statements-structure/sql-st
 #### `--performance-schema-consumer-events-statements-history`
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--performance-schema-consumer-events-statements-history</code>
-- <strong>Description:</strong> Enable the [events-statements-history](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_history-table) consumer.
+- <strong>Description:</strong> Enable the [events-statements-history](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_history-table/) consumer.
 - <strong>Default:</strong> `OFF`
 
 ---
@@ -1146,7 +1146,7 @@ The options related to the [Performance Schema](/sql-statements-structure/sql-st
 #### `--performance-schema-consumer-events-statements-history-long`
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--performance-schema-consumer-events-statements-history-long</code>
-- <strong>Description:</strong> Enable the [events-statements-history-long](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_history_long-table) consumer.
+- <strong>Description:</strong> Enable the [events-statements-history-long](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_history_long-table/) consumer.
 - <strong>Default:</strong> `OFF`
 
 ---
@@ -1154,7 +1154,7 @@ The options related to the [Performance Schema](/sql-statements-structure/sql-st
 #### `--performance-schema-consumer-events-waits-current`
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--performance-schema-consumer-events-waits-current</code>
-- <strong>Description:</strong> Enable the [events-waits-current](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_current-table) consumer.
+- <strong>Description:</strong> Enable the [events-waits-current](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_current-table/) consumer.
 - <strong>Default:</strong> `OFF`
 
 ---
@@ -1162,7 +1162,7 @@ The options related to the [Performance Schema](/sql-statements-structure/sql-st
 #### `--performance-schema-consumer-events-waits-history`
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--performance-schema-consumer-events-waits-history</code>
-- <strong>Description:</strong> Enable the [events-waits-history](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_history-table) consumer.
+- <strong>Description:</strong> Enable the [events-waits-history](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_history-table/) consumer.
 - <strong>Default:</strong> `OFF`
 
 ---
@@ -1170,7 +1170,7 @@ The options related to the [Performance Schema](/sql-statements-structure/sql-st
 #### `--performance-schema-consumer-events-waits-history-long`
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--performance-schema-consumer-events-waits-history-long</code>
-- <strong>Description:</strong> Enable the [events-waits-history-long](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_history_long-table) consumer.
+- <strong>Description:</strong> Enable the [events-waits-history-long](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_history_long-table/) consumer.
 - <strong>Default:</strong> `OFF`
 
 ---
@@ -1219,7 +1219,7 @@ The options related to the [Performance Schema](/sql-statements-structure/sql-st
 
 ### Performance Schema Options and System Variables
 
-Some options and system variables related to the [Performance Schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema) can be found [here](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables). Direct links to many of them can be found below.
+Some options and system variables related to the [Performance Schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/) can be found [here](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables/). Direct links to many of them can be found below.
 
 - [performance-schema](/kb/en/performance-schema-system-variables/#performance_schema)
 - [performance-schema-accounts-size](/kb/en/performance-schema-system-variables/#performance_schema_accounts_size)
@@ -1267,7 +1267,7 @@ The options related to [Galera Cluster](/kb/en/galera/) are described below.
 
 ### Galera Cluster Options and System Variables
 
-Some options and system variables related to [Galera Cluster](/kb/en/galera/) can be found [here](/replication/galera-cluster/galera-cluster-system-variables). Direct links to many of them can be found below.
+Some options and system variables related to [Galera Cluster](/kb/en/galera/) can be found [here](/replication/galera-cluster/galera-cluster-system-variables/). Direct links to many of them can be found below.
 
 - [wsrep-auto-increment-control](/kb/en/galera-cluster-system-variables/#wsrep_auto_increment_control)
 - [wsrep-causal-reads](/kb/en/galera-cluster-system-variables/#wsrep_causal_reads)
@@ -1327,7 +1327,7 @@ Some options and system variables related to [Galera Cluster](/kb/en/galera/) ca
 
 #### `--debug-binlog-fsync-sleep`
 
-- <strong>Description:</strong> <code class="fixed" style="white-space:pre-wrap">--debug-binlog-fsync-sleep=#</code>If not set to zero, sets the number of micro-seconds to sleep after running fsync() on the [binary log](/mariadb-administration/server-monitoring-logs/binary-log) to flush transactions to disk. This can thus be used to artificially increase the perceived cost of such an fsync().
+- <strong>Description:</strong> <code class="fixed" style="white-space:pre-wrap">--debug-binlog-fsync-sleep=#</code>If not set to zero, sets the number of micro-seconds to sleep after running fsync() on the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) to flush transactions to disk. This can thus be used to artificially increase the perceived cost of such an fsync().
 
 ---
 
@@ -1363,7 +1363,7 @@ Some options and system variables related to [Galera Cluster](/kb/en/galera/) ca
 
 #### `--silent-startup`
 
-- <strong>Description:</strong> Don't print Notes to the [error log](/mariadb-administration/server-monitoring-logs/error-log) during startup.
+- <strong>Description:</strong> Don't print Notes to the [error log](/mariadb-administration/server-monitoring-logs/error-log/) during startup.
 - <strong>Introduced:</strong> [MariaDB 10.1.8](/kb/en/mariadb-1018-release-notes/)
 
 ---
@@ -1392,14 +1392,14 @@ Some options and system variables related to [Galera Cluster](/kb/en/galera/) ca
 #### `--allow-suspicious-udfs`
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--allow-suspicious-udfs</code>
-- <strong>Description:</strong> Allows use of [user-defined functions](/programming-customizing-mariadb/user-defined-functions) consisting of only one symbol `x()` without corresponding `x_init()` or `x_deinit()`. That also means that one can load any function from any library, for example `exit()` from `libc.so`. Not recommended unless you require old UDF's with one symbol that cannot be recompiled
+- <strong>Description:</strong> Allows use of [user-defined functions](/programming-customizing-mariadb/user-defined-functions/) consisting of only one symbol `x()` without corresponding `x_init()` or `x_deinit()`. That also means that one can load any function from any library, for example `exit()` from `libc.so`. Not recommended unless you require old UDF's with one symbol that cannot be recompiled
 
 ---
 
 #### `--bootstrap`
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--bootstrap</code>
-- <strong>Description:</strong> Used by mysql installation scripts, such as [mysql_install_db](/clients-utilities/mysql_install_db) to execute SQL scripts before any privilege or system tables exist. Do no use while an existing MariaDB instance is running.
+- <strong>Description:</strong> Used by mysql installation scripts, such as [mysql_install_db](/clients-utilities/mysql_install_db/) to execute SQL scripts before any privilege or system tables exist. Do no use while an existing MariaDB instance is running.
 
 ---
 
@@ -1413,7 +1413,7 @@ Some options and system variables related to [Galera Cluster](/kb/en/galera/) ca
 #### `--des-key-file`
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--des-key-file=name</code>
-- <strong>Description:</strong> Load keys for [des_encrypt()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/des_encrypt) and des_encrypt from given file.
+- <strong>Description:</strong> Load keys for [des_encrypt()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/des_encrypt/) and des_encrypt from given file.
 
 ---
 
@@ -1443,14 +1443,14 @@ Some options and system variables related to [Galera Cluster](/kb/en/galera/) ca
 #### `--log-short-format`
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--log-short-format</code>
-- <strong>Description:</strong>  Don't log extra information to update and [slow-query](/mariadb-administration/server-monitoring-logs/slow-query-log) logs.
+- <strong>Description:</strong>  Don't log extra information to update and [slow-query](/mariadb-administration/server-monitoring-logs/slow-query-log/) logs.
 
 ---
 
 #### `--log-slow-file`
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--log-slow-file=name</code>
-- <strong>Description:</strong> Log [slow queries](/mariadb-administration/server-monitoring-logs/slow-query-log) to given log file. Defaults logging to hostname-slow.log
+- <strong>Description:</strong> Log [slow queries](/mariadb-administration/server-monitoring-logs/slow-query-log/) to given log file. Defaults logging to hostname-slow.log
 
 ---
 
@@ -1464,7 +1464,7 @@ Some options and system variables related to [Galera Cluster](/kb/en/galera/) ca
 #### `--log-tc`
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--log-tc=name</code>
-- <strong>Description:</strong> Defines the path to the memory-mapped file-based transaction coordinator log, which is only used if the [binary log](/mariadb-administration/server-monitoring-logs/binary-log) is disabled. If you have two or more XA-capable storage engines enabled, then a transaction coordinator log must be available. See [Transaction Coordinator Log](/mariadb-administration/server-monitoring-logs/transaction-coordinator-log) for more information. Also see the the <a undefined>log_tc_size</a> system variable and the <a undefined>--tc-heuristic-recover</a> option.
+- <strong>Description:</strong> Defines the path to the memory-mapped file-based transaction coordinator log, which is only used if the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) is disabled. If you have two or more XA-capable storage engines enabled, then a transaction coordinator log must be available. See [Transaction Coordinator Log](/mariadb-administration/server-monitoring-logs/transaction-coordinator-log/) for more information. Also see the the <a undefined>log_tc_size</a> system variable and the <a undefined>--tc-heuristic-recover</a> option.
 - <strong>Default Value:</strong> `tc.log`
 
 ---
@@ -1559,7 +1559,7 @@ Some options and system variables related to [Galera Cluster](/kb/en/galera/) ca
 #### `--skip-grant-tables`
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--skip-grant-tables</code>
-- <strong>Description:</strong> Start without grant tables. This gives all users FULL ACCESS to all tables, which is useful in case of a lost root password. Use [mysqladmin flush-privileges](/clients-utilities/mysqladmin), [mysqladmin reload](/clients-utilities/mysqladmin)  or [FLUSH PRIVILEGES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush) to resume using the grant tables.
+- <strong>Description:</strong> Start without grant tables. This gives all users FULL ACCESS to all tables, which is useful in case of a lost root password. Use [mysqladmin flush-privileges](/clients-utilities/mysqladmin/), [mysqladmin reload](/clients-utilities/mysqladmin/)  or [FLUSH PRIVILEGES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/) to resume using the grant tables.
 
 ---
 
@@ -1573,7 +1573,7 @@ Some options and system variables related to [Galera Cluster](/kb/en/galera/) ca
 #### `--skip-partition`
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--skip-partition</code>, <code class="fixed" style="white-space:pre-wrap">--disable-partition</code>
-- <strong>Description:</strong> Disables user-defined [partitioning](/kb/en/managing-mariadb-partitioning/). Previously partitioned tables cannot be accessed or modifed. Tables can still be seen with [SHOW TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-tables) or by viewing the [INFORMATION_SCHEMA.TABLES table](/kb/en/information-schema-tables-table/). Tables can be dropped with [DROP TABLE](/sql-statements-structure/sql-statements/data-definition/drop/drop-table), but this only removes .frm files, not the associated .par files, which will need to be removed manually.
+- <strong>Description:</strong> Disables user-defined [partitioning](/kb/en/managing-mariadb-partitioning/). Previously partitioned tables cannot be accessed or modifed. Tables can still be seen with [SHOW TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-tables/) or by viewing the [INFORMATION_SCHEMA.TABLES table](/kb/en/information-schema-tables-table/). Tables can be dropped with [DROP TABLE](/sql-statements-structure/sql-statements/data-definition/drop/drop-table/), but this only removes .frm files, not the associated .par files, which will need to be removed manually.
 
 ---
 
@@ -1587,7 +1587,7 @@ Some options and system variables related to [Galera Cluster](/kb/en/galera/) ca
 #### `--skip-ssl`
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--skip-ssl</code>
-- <strong>Description:</strong> Disable [TLS connections](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview).
+- <strong>Description:</strong> Disable [TLS connections](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview/).
 
 ---
 
@@ -1610,7 +1610,7 @@ Some options and system variables related to [Galera Cluster](/kb/en/galera/) ca
 #### `--sql-bin-update-same`
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--sql-bin-update-same=#</code>
-- <strong>Description:</strong> The update log was deprecated in version 5.0 and replaced by the [binary log](/mariadb-administration/server-monitoring-logs/binary-log), so this option did nothing since then. Deprecated and removed in [MariaDB 5.5](/kb/en/what-is-mariadb-55/).
+- <strong>Description:</strong> The update log was deprecated in version 5.0 and replaced by the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/), so this option did nothing since then. Deprecated and removed in [MariaDB 5.5](/kb/en/what-is-mariadb-55/).
 - <strong>Removed:</strong> [MariaDB 5.5](/kb/en/what-is-mariadb-55/)
 
 ---
@@ -1618,7 +1618,7 @@ Some options and system variables related to [Galera Cluster](/kb/en/galera/) ca
 #### `--ssl`
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--ssl</code>
-- <strong>Description:</strong> Enable [TLS for connection](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview) (automatically enabled with other flags). Disable with '`<code>--`skip-ssl</code>'.
+- <strong>Description:</strong> Enable [TLS for connection](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview/) (automatically enabled with other flags). Disable with '`<code>--`skip-ssl</code>'.
 
 ---
 
@@ -1639,7 +1639,7 @@ Some options and system variables related to [Galera Cluster](/kb/en/galera/) ca
 #### `--tc-heuristic-recover`
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--tc-heuristic-recover=name</code>
-- <strong>Description:</strong> If [manual heuristic recovery](/mariadb-administration/server-monitoring-logs/transaction-coordinator-log/heuristic-recovery-with-the-transaction-coordinator-log) is needed, this option defines the decision to use in the heuristic recovery process. Manual heuristic recovery may be needed if the [transaction coordination log](/mariadb-administration/server-monitoring-logs/transaction-coordinator-log) is missing or if it doesn't contain all prepared transactions. This option can be set to `OFF`, `COMMIT`, or `ROLLBACK`. The default is `OFF`. See also the <a undefined>--log-tc</a> server option and the <a undefined>log_tc_size</a> system variable.
+- <strong>Description:</strong> If [manual heuristic recovery](/mariadb-administration/server-monitoring-logs/transaction-coordinator-log/heuristic-recovery-with-the-transaction-coordinator-log/) is needed, this option defines the decision to use in the heuristic recovery process. Manual heuristic recovery may be needed if the [transaction coordination log](/mariadb-administration/server-monitoring-logs/transaction-coordinator-log/) is missing or if it doesn't contain all prepared transactions. This option can be set to `OFF`, `COMMIT`, or `ROLLBACK`. The default is `OFF`. See also the <a undefined>--log-tc</a> server option and the <a undefined>log_tc_size</a> system variable.
 
 ---
 
@@ -1873,27 +1873,27 @@ Some options and system variables related to [Galera Cluster](/kb/en/galera/) ca
 
 ### Authentication Plugin - `ed25519`
 
-The options related to the [ed25519](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-ed25519) authentication plugin can be found [here](/kb/en/authentication-plugin-ed25519/#options).
+The options related to the [ed25519](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-ed25519/) authentication plugin can be found [here](/kb/en/authentication-plugin-ed25519/#options).
 
 ### Authentication Plugin - `gssapi`
 
-The system variables related to the [gssapi](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-gssapi) authentication plugin can be found [here](/kb/en/authentication-plugin-gssapi/#system-variables).
+The system variables related to the [gssapi](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-gssapi/) authentication plugin can be found [here](/kb/en/authentication-plugin-gssapi/#system-variables).
 
-The options related to the [gssapi](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-gssapi) authentication plugin can be found [here](/kb/en/authentication-plugin-gssapi/#options).
+The options related to the [gssapi](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-gssapi/) authentication plugin can be found [here](/kb/en/authentication-plugin-gssapi/#options).
 
 ### Authentication Plugin - `named_pipe`
 
-The options related to the [named_pipe](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-named-pipe) authentication plugin can be found [here](/kb/en/authentication-plugin-named-pipe/#options).
+The options related to the [named_pipe](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-named-pipe/) authentication plugin can be found [here](/kb/en/authentication-plugin-named-pipe/#options).
 
 ### Authentication Plugin - `pam`
 
-The system variables related to the [pam](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam) authentication plugin can be found [here](/kb/en/authentication-plugin-pam/#system-variables).
+The system variables related to the [pam](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam/) authentication plugin can be found [here](/kb/en/authentication-plugin-pam/#system-variables).
 
-The options related to the [pam](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam) authentication plugin can be found [here](/kb/en/authentication-plugin-pam/#options).
+The options related to the [pam](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam/) authentication plugin can be found [here](/kb/en/authentication-plugin-pam/#options).
 
 ### Authentication Plugin - `unix_socket`
 
-The options related to the [unix_socket](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-unix-socket) authentication plugin can be found [here](/kb/en/authentication-plugin-unix-socket/#options).
+The options related to the [unix_socket](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-unix-socket/) authentication plugin can be found [here](/kb/en/authentication-plugin-unix-socket/#options).
 
 ## Encryption Plugins - Options and System Variables
 
@@ -1905,9 +1905,9 @@ The options elated to the <a undefined>aws_key_management</a> encryption plugin 
 
 ### Encryption Plugin - `file_key_management`
 
-The system variables related to the [file_key_management](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin) encryption plugin can be found [here](/kb/en/file-key-management-encryption-plugin/#system-variables).
+The system variables related to the [file_key_management](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin/) encryption plugin can be found [here](/kb/en/file-key-management-encryption-plugin/#system-variables).
 
-The options related to the [file_key_management](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin) encryption plugin can be found [here](/kb/en/file-key-management-encryption-plugin/#options).
+The options related to the [file_key_management](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin/) encryption plugin can be found [here](/kb/en/file-key-management-encryption-plugin/#options).
 
 ## Password Validation Plugins - Options and System Variables
 
@@ -1927,39 +1927,39 @@ The options related to the <a undefined>cracklib_password_check</a> password val
 
 ### Audit Plugin - `server_audit`
 
-Options and system variables related to the [server_audit](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin) audit plugin can be found [here](/kb/en/server_audit-system-variables/).
+Options and system variables related to the [server_audit](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/) audit plugin can be found [here](/kb/en/server_audit-system-variables/).
 
 ### Audit Plugin - `SQL_ERROR_LOG`
 
-The system variables related to the [SQL_ERROR_LOG](/mariadb-administration/server-monitoring-logs/sql-error-log-plugin) audit plugin can be found [here](/kb/en/sql-error-log-plugin/#system-variables).
+The system variables related to the [SQL_ERROR_LOG](/mariadb-administration/server-monitoring-logs/sql-error-log-plugin/) audit plugin can be found [here](/kb/en/sql-error-log-plugin/#system-variables).
 
-The options related to the [SQL_ERROR_LOG](/mariadb-administration/server-monitoring-logs/sql-error-log-plugin) audit plugin can be found [here](/kb/en/sql-error-log-plugin/#options).
+The options related to the [SQL_ERROR_LOG](/mariadb-administration/server-monitoring-logs/sql-error-log-plugin/) audit plugin can be found [here](/kb/en/sql-error-log-plugin/#options).
 
 ### Audit Plugin - QUERY_RESPONSE_TIME_AUDIT
 
-The options related to the [QUERY_RESPONSE_TIME_AUDIT](/columns-storage-engines-and-plugins/plugins/other-plugins/query-response-time-plugin) audit plugin can be found [here](/kb/en/query-response-time-plugin/#options).
+The options related to the [QUERY_RESPONSE_TIME_AUDIT](/columns-storage-engines-and-plugins/plugins/other-plugins/query-response-time-plugin/) audit plugin can be found [here](/kb/en/query-response-time-plugin/#options).
 
 ## Daemon Plugins - Options and System Variables
 
 ### Daemon Plugin - `handlersocket`
 
-The options for the HandlerSocket plugin are all described on the [HandlerSocket Configuration Option](/sql-statements-structure/nosql/handlersocket/handlersocket-configuration-options) page.
+The options for the HandlerSocket plugin are all described on the [HandlerSocket Configuration Option](/sql-statements-structure/nosql/handlersocket/handlersocket-configuration-options/) page.
 
 ## Information Schema Plugins - Options and System Variables
 
 ### Information Schema Plugin - `DISKS`
 
-The options related to the [DISKS](/columns-storage-engines-and-plugins/plugins/other-plugins/disks-plugin) information schema plugin can be found [here](/kb/en/disks-plugin/#options).
+The options related to the [DISKS](/columns-storage-engines-and-plugins/plugins/other-plugins/disks-plugin/) information schema plugin can be found [here](/kb/en/disks-plugin/#options).
 
 ### Information Schema Plugin - `feedback`
 
-The system variables related to the [feedback](/columns-storage-engines-and-plugins/plugins/other-plugins/feedback-plugin) plugin can be found [here](/kb/en/feedback-plugin/#system-variables).
+The system variables related to the [feedback](/columns-storage-engines-and-plugins/plugins/other-plugins/feedback-plugin/) plugin can be found [here](/kb/en/feedback-plugin/#system-variables).
 
-The options related to the [feedback](/columns-storage-engines-and-plugins/plugins/other-plugins/feedback-plugin) plugin can be found [here](/kb/en/feedback-plugin/#options).
+The options related to the [feedback](/columns-storage-engines-and-plugins/plugins/other-plugins/feedback-plugin/) plugin can be found [here](/kb/en/feedback-plugin/#options).
 
 ### Information Schema Plugin - `LOCALES`
 
-The options related to the [LOCALES](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/locales-plugin) information schema plugin can be found [here](/kb/en/locales-plugin/#options).
+The options related to the [LOCALES](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/locales-plugin/) information schema plugin can be found [here](/kb/en/locales-plugin/#options).
 
 ### Information Schema Plugin - `METADATA_LOCK_INFO`
 
@@ -1967,39 +1967,39 @@ The options related to the <a undefined>METADATA_LOCK_INFO</a> information schem
 
 ### Information Schema Plugin - `QUERY_CACHE_INFO`
 
-The options related to the [QUERY_CACHE_INFO](/columns-storage-engines-and-plugins/plugins/other-plugins/query-cache-information-plugin) information schema plugin can be found [here](/kb/en/query-cache-information-plugin/#options).
+The options related to the [QUERY_CACHE_INFO](/columns-storage-engines-and-plugins/plugins/other-plugins/query-cache-information-plugin/) information schema plugin can be found [here](/kb/en/query-cache-information-plugin/#options).
 
 ### Information Schema Plugin - `QUERY_RESPONSE_TIME`
 
-The system variables related to the [QUERY_RESPONSE_TIME](/columns-storage-engines-and-plugins/plugins/other-plugins/query-response-time-plugin) information schema plugin can be found [here](/kb/en/query-response-time-plugin/#system-variables).
+The system variables related to the [QUERY_RESPONSE_TIME](/columns-storage-engines-and-plugins/plugins/other-plugins/query-response-time-plugin/) information schema plugin can be found [here](/kb/en/query-response-time-plugin/#system-variables).
 
-The options related to the [QUERY_RESPONSE_TIME](/columns-storage-engines-and-plugins/plugins/other-plugins/query-response-time-plugin) information schema plugin can be found [here](/kb/en/query-response-time-plugin/#options).
+The options related to the [QUERY_RESPONSE_TIME](/columns-storage-engines-and-plugins/plugins/other-plugins/query-response-time-plugin/) information schema plugin can be found [here](/kb/en/query-response-time-plugin/#options).
 
 ### Information Schema Plugin - `user_variables`
 
-The options related to the [user_variables](/columns-storage-engines-and-plugins/plugins/other-plugins/user-variables-plugin) information schema plugin can be found [here](/kb/en/user-variables-plugin/#options).
+The options related to the [user_variables](/columns-storage-engines-and-plugins/plugins/other-plugins/user-variables-plugin/) information schema plugin can be found [here](/kb/en/user-variables-plugin/#options).
 
 ### Information Schema Plugin - `WSREP_MEMBERSHIP`
 
-The options related to the [WSREP_MEMBERSHIP](/columns-storage-engines-and-plugins/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin) information schema plugin can be found [here](/kb/en/wsrep_info-plugin/#options).
+The options related to the [WSREP_MEMBERSHIP](/columns-storage-engines-and-plugins/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin/) information schema plugin can be found [here](/kb/en/wsrep_info-plugin/#options).
 
 ### Information Schema Plugin - `WSREP_STATUS`
 
-The options related to the [WSREP_STATUS](/columns-storage-engines-and-plugins/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin) information schema plugin can be found [here](/kb/en/wsrep_info-plugin/#options).
+The options related to the [WSREP_STATUS](/columns-storage-engines-and-plugins/plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin/) information schema plugin can be found [here](/kb/en/wsrep_info-plugin/#options).
 
 ## Replication Plugins - Options and System Variables
 
 ### Replication Plugin - `rpl_semi_sync_master`
 
-The system variables related to the [rpl_semi_sync_master](/replication/standard-replication/semisynchronous-replication) replication plugin can be found [here](/kb/en/semisynchronous-replication/#system-variables).
+The system variables related to the [rpl_semi_sync_master](/replication/standard-replication/semisynchronous-replication/) replication plugin can be found [here](/kb/en/semisynchronous-replication/#system-variables).
 
-The options related to the [rpl_semi_sync_master](/replication/standard-replication/semisynchronous-replication) replication plugin can be found [here](/kb/en/semisynchronous-replication/#options).
+The options related to the [rpl_semi_sync_master](/replication/standard-replication/semisynchronous-replication/) replication plugin can be found [here](/kb/en/semisynchronous-replication/#options).
 
 ### Replication Plugin - `rpl_semi_sync_slave`
 
-The system variables related to the [rpl_semi_sync_slave](/replication/standard-replication/semisynchronous-replication) replication plugin can be found [here](/kb/en/semisynchronous-replication/#system-variables).
+The system variables related to the [rpl_semi_sync_slave](/replication/standard-replication/semisynchronous-replication/) replication plugin can be found [here](/kb/en/semisynchronous-replication/#system-variables).
 
-The options related to the [rpl_semi_sync_slave](/replication/standard-replication/semisynchronous-replication) replication plugin can be found [here](/kb/en/semisynchronous-replication/#options).
+The options related to the [rpl_semi_sync_slave](/replication/standard-replication/semisynchronous-replication/) replication plugin can be found [here](/kb/en/semisynchronous-replication/#options).
 
 ## Default Values
 

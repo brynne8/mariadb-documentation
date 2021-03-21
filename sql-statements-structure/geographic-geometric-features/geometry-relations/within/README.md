@@ -9,7 +9,7 @@ Within(g1,g2)
 ## Description
 
 Returns `1` or `0` to indicate whether `g1` is spatially within `g2`.
-This tests the opposite relationship as [Contains()](/sql-statements-structure/geographic-geometric-features/geometry-relations/contains).
+This tests the opposite relationship as [Contains()](/sql-statements-structure/geographic-geometric-features/geometry-relations/contains/).
 
 WITHIN() is based on the original MySQL implementation, and uses object bounding rectangles, while [ST_WITHIN()](/kb/en/st_within/) uses object shapes.
 

@@ -12,8 +12,8 @@ SHOW CREATE USER user_name
 
 ## Description
 
-Shows the [CREATE USER](/sql-statements-structure/sql-statements/account-management-sql-commands/create-user) statement that created the given
-user. The statement requires the [SELECT](/kb/en/grant/#table-privileges) privilege for the [mysql](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables) database, except for the current user.
+Shows the [CREATE USER](/sql-statements-structure/sql-statements/account-management-sql-commands/create-user/) statement that created the given
+user. The statement requires the [SELECT](/kb/en/grant/#table-privileges) privilege for the [mysql](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database, except for the current user.
 
 ## Examples
 
@@ -29,7 +29,7 @@ CREATE USER 'foo4'@'test'
   CIPHER 'text'
 ```
 
-[User Password Expiry](/mariadb-administration/user-server-security/user-account-management/user-password-expiry):
+[User Password Expiry](/mariadb-administration/user-server-security/user-account-management/user-password-expiry/):
 
 ```sql
 CREATE USER 'monty'@'localhost' PASSWORD EXPIRE INTERVAL 120 DAY;
@@ -44,7 +44,7 @@ SHOW CREATE USER 'monty'@'localhost';
 
 ## See Also
 
-- [CREATE USER](/sql-statements-structure/sql-statements/account-management-sql-commands/create-user)
-- [ALTER USER](/sql-statements-structure/sql-statements/account-management-sql-commands/alter-user)
-- [SHOW GRANTS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-grants) shows the `GRANTS/PRIVILEGES` for a user.
-- [SHOW PRIVILEGES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-privileges) shows the privileges supported by MariaDB.
+- [CREATE USER](/sql-statements-structure/sql-statements/account-management-sql-commands/create-user/)
+- [ALTER USER](/sql-statements-structure/sql-statements/account-management-sql-commands/alter-user/)
+- [SHOW GRANTS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-grants/) shows the `GRANTS/PRIVILEGES` for a user.
+- [SHOW PRIVILEGES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-privileges/) shows the privileges supported by MariaDB.

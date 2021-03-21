@@ -8,7 +8,7 @@ Point(x,y)
 
 ## Description
 
-Constructs a [WKB](/sql-statements-structure/geographic-geometric-features/wkb) Point using the given coordinates.
+Constructs a [WKB](/sql-statements-structure/geographic-geometric-features/wkb/) Point using the given coordinates.
 
 ## Examples
 

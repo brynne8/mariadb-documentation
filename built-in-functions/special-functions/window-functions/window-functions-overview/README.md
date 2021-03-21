@@ -38,41 +38,41 @@ frame_border:
 
 ### Description
 
-In some ways, window functions are similar to [aggregate functions](/built-in-functions/aggregate-functions) in that they perform calculations across a set of rows. However, unlike aggregate functions, the output is not grouped into a single row.
+In some ways, window functions are similar to [aggregate functions](/built-in-functions/aggregate-functions/) in that they perform calculations across a set of rows. However, unlike aggregate functions, the output is not grouped into a single row.
 
 Non-aggregate window functions include
 
-- [CUME_DIST](/built-in-functions/special-functions/window-functions/cume_dist)
-- [DENSE_RANK](/built-in-functions/special-functions/window-functions/dense_rank)
-- [FIRST_VALUE](/built-in-functions/special-functions/window-functions/first_value)
-- [LAG](/built-in-functions/special-functions/window-functions/lag)
-- [LAST_VALUE](/built-in-functions/secondary-functions/information-functions/last_value)
-- [LEAD](/built-in-functions/special-functions/window-functions/lead)
-- [MEDIAN](/built-in-functions/special-functions/window-functions/median)
-- [NTH_VALUE](/built-in-functions/special-functions/window-functions/nth_value)
-- [NTILE](/built-in-functions/special-functions/window-functions/ntile)
-- [PERCENT_RANK](/built-in-functions/special-functions/window-functions/percent_rank)
-- [PERCENTILE_CONT](/built-in-functions/special-functions/window-functions/percentile_cont)
-- [PERCENTILE_DISC](/built-in-functions/special-functions/window-functions/percentile_disc)
-- [RANK](/built-in-functions/special-functions/window-functions/rank), [ROW_NUMBER](/built-in-functions/special-functions/window-functions/row_number)
+- [CUME_DIST](/built-in-functions/special-functions/window-functions/cume_dist/)
+- [DENSE_RANK](/built-in-functions/special-functions/window-functions/dense_rank/)
+- [FIRST_VALUE](/built-in-functions/special-functions/window-functions/first_value/)
+- [LAG](/built-in-functions/special-functions/window-functions/lag/)
+- [LAST_VALUE](/built-in-functions/secondary-functions/information-functions/last_value/)
+- [LEAD](/built-in-functions/special-functions/window-functions/lead/)
+- [MEDIAN](/built-in-functions/special-functions/window-functions/median/)
+- [NTH_VALUE](/built-in-functions/special-functions/window-functions/nth_value/)
+- [NTILE](/built-in-functions/special-functions/window-functions/ntile/)
+- [PERCENT_RANK](/built-in-functions/special-functions/window-functions/percent_rank/)
+- [PERCENTILE_CONT](/built-in-functions/special-functions/window-functions/percentile_cont/)
+- [PERCENTILE_DISC](/built-in-functions/special-functions/window-functions/percentile_disc/)
+- [RANK](/built-in-functions/special-functions/window-functions/rank/), [ROW_NUMBER](/built-in-functions/special-functions/window-functions/row_number/)
 
-[Aggregate functions](/built-in-functions/aggregate-functions) that can also be used as window functions include
+[Aggregate functions](/built-in-functions/aggregate-functions/) that can also be used as window functions include
 
-- [AVG](/built-in-functions/aggregate-functions/avg)
-- [BIT_AND](/built-in-functions/aggregate-functions/bit_and)
-- [BIT_OR](/built-in-functions/aggregate-functions/bit_or)
-- [BIT_XOR](/built-in-functions/aggregate-functions/bit_xor)
-- [COUNT](/built-in-functions/aggregate-functions/count)
-- [MAX](/built-in-functions/aggregate-functions/max)
-- [MIN](/built-in-functions/aggregate-functions/min)
-- [STD](/built-in-functions/aggregate-functions/std)
-- [STDDEV](/built-in-functions/aggregate-functions/stddev)
-- [STDDEV_POP](/built-in-functions/aggregate-functions/stddev_pop)
-- [STDDEV_SAMP](/built-in-functions/aggregate-functions/stddev_samp)
-- [SUM](/built-in-functions/aggregate-functions/sum)
-- [VAR_POP](/built-in-functions/aggregate-functions/var_pop)
-- [VAR_SAMP](/built-in-functions/aggregate-functions/var_samp)
-- [VARIANCE](/built-in-functions/aggregate-functions/variance)
+- [AVG](/built-in-functions/aggregate-functions/avg/)
+- [BIT_AND](/built-in-functions/aggregate-functions/bit_and/)
+- [BIT_OR](/built-in-functions/aggregate-functions/bit_or/)
+- [BIT_XOR](/built-in-functions/aggregate-functions/bit_xor/)
+- [COUNT](/built-in-functions/aggregate-functions/count/)
+- [MAX](/built-in-functions/aggregate-functions/max/)
+- [MIN](/built-in-functions/aggregate-functions/min/)
+- [STD](/built-in-functions/aggregate-functions/std/)
+- [STDDEV](/built-in-functions/aggregate-functions/stddev/)
+- [STDDEV_POP](/built-in-functions/aggregate-functions/stddev_pop/)
+- [STDDEV_SAMP](/built-in-functions/aggregate-functions/stddev_samp/)
+- [SUM](/built-in-functions/aggregate-functions/sum/)
+- [VAR_POP](/built-in-functions/aggregate-functions/var_pop/)
+- [VAR_SAMP](/built-in-functions/aggregate-functions/var_samp/)
+- [VARIANCE](/built-in-functions/aggregate-functions/variance/)
 
 Window function queries are characterised by the OVER keyword, following which the set of rows used for the calculation is specified. By default, the set of rows used for the calculation (the "window) is the entire dataset, which can be ordered with the ORDER BY clause. The PARTITION BY clause is used to reduce the window to a particular group within the dataset.
 
@@ -122,7 +122,7 @@ SELECT name, test, score, AVG(score) OVER (PARTITION BY name)
 +---------+--------+-------+-----------------+
 ```
 
-It is also possible to specify which rows to include for the window function (for example, the current row and all preceding rows). See [Window Frames](/built-in-functions/special-functions/window-functions/window-frames) for more details.
+It is also possible to specify which rows to include for the window function (for example, the current row and all preceding rows). See [Window Frames](/built-in-functions/special-functions/window-functions/window-frames/) for more details.
 
 ## Scope
 
@@ -143,11 +143,11 @@ MariaDB:
 - Does not support nested navigation in window functions (this is `VALUE_OF(expr AT row_marker [, default_value)` syntax)
 
 - The following window functions are supported:
-<ul start="1"><li>"Streamable" window functions: [ROW_NUMBER](/built-in-functions/special-functions/window-functions/row_number), [RANK](/built-in-functions/special-functions/window-functions/rank), [DENSE_RANK](/built-in-functions/special-functions/window-functions/dense_rank), 
-</li><li>Window functions that can be streamed once the number of rows in partition is known: [PERCENT_RANK](/built-in-functions/special-functions/window-functions/percent_rank), [CUME_DIST](/built-in-functions/special-functions/window-functions/cume_dist), [NTILE](/built-in-functions/special-functions/window-functions/ntile)
+<ul start="1"><li>"Streamable" window functions: [ROW_NUMBER](/built-in-functions/special-functions/window-functions/row_number/), [RANK](/built-in-functions/special-functions/window-functions/rank/), [DENSE_RANK](/built-in-functions/special-functions/window-functions/dense_rank/), 
+</li><li>Window functions that can be streamed once the number of rows in partition is known: [PERCENT_RANK](/built-in-functions/special-functions/window-functions/percent_rank/), [CUME_DIST](/built-in-functions/special-functions/window-functions/cume_dist/), [NTILE](/built-in-functions/special-functions/window-functions/ntile/)
 </li></ul>
 
-- Aggregate functions that are currently supported as window functions are: [COUNT](/built-in-functions/aggregate-functions/count), [SUM](/built-in-functions/aggregate-functions/sum), [AVG](/built-in-functions/aggregate-functions/avg), [BIT_OR](/built-in-functions/aggregate-functions/bit_or), [BIT_AND](/built-in-functions/aggregate-functions/bit_and), [BIT_XOR](/built-in-functions/aggregate-functions/bit_xor).
+- Aggregate functions that are currently supported as window functions are: [COUNT](/built-in-functions/aggregate-functions/count/), [SUM](/built-in-functions/aggregate-functions/sum/), [AVG](/built-in-functions/aggregate-functions/avg/), [BIT_OR](/built-in-functions/aggregate-functions/bit_or/), [BIT_AND](/built-in-functions/aggregate-functions/bit_and/), [BIT_XOR](/built-in-functions/aggregate-functions/bit_xor/).
 - Aggregate functions with the `DISTINCT` specifier (e.g. `COUNT( DISTINCT x)`) are not supported as window functions.
 
 ## Links
@@ -176,7 +176,7 @@ INSERT INTO users VALUES
   ('root@boss.org', 'Root', 'Chief', 'admin')
 ```
 
-First, let's order the records by email alphabetically, giving each an ascending  <em>rnum</em> value starting with 1. This will make use of the [ROW_NUMBER](/built-in-functions/special-functions/window-functions/row_number) window function:
+First, let's order the records by email alphabetically, giving each an ascending  <em>rnum</em> value starting with 1. This will make use of the [ROW_NUMBER](/built-in-functions/special-functions/window-functions/row_number/) window function:
 
 ```sql
 SELECT row_number() OVER (ORDER BY email) AS rnum,
@@ -263,7 +263,7 @@ This has a number of disadvantages:
 - if there is no index, the query could take a long time if the employee_salary_table is large
 - Adding and maintaining indexes adds overhead, and even with indexes on <em>dept</em> and <em>salary</em>, each subquery execution adds overhead by performing a lookup through the index.
 
-Let's try achieve the same with window functions. First, generate a rank for all employees, using the [RANK](/built-in-functions/special-functions/window-functions/rank) function.
+Let's try achieve the same with window functions. First, generate a rank for all employees, using the [RANK](/built-in-functions/special-functions/window-functions/rank/) function.
 
 ```sql
 select rank() over (partition by dept order by salary desc) as ranking,
@@ -331,5 +331,5 @@ where (salary_ranks.ranking <= 5)
 
 ## See Also
 
-- [Window Frames](/built-in-functions/special-functions/window-functions/window-frames)
+- [Window Frames](/built-in-functions/special-functions/window-functions/window-frames/)
 - [Introduction to Window Functions in MariaDB Server 10.2](https://mariadb.com/resources/blog/introduction-window-functions-mariadb-server-102)

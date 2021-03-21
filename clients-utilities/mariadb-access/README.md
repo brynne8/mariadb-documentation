@@ -8,4 +8,4 @@ From [MariaDB 10.4.6](/kb/en/mariadb-1046-release-notes/),  `mariadb-access` is 
 
 From [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/), `mariadb-access` is the name of the tool, with `mysqlaccess` a symlink .
 
-See [mysqlaccess](/clients-utilities/mysqlaccess) for details.
+See [mysqlaccess](/clients-utilities/mysqlaccess/) for details.

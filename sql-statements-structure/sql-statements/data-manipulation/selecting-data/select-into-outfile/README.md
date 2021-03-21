@@ -46,8 +46,8 @@ SELECT customer_id, firstname, surname INTO OUTFILE '/exportdata/customers.txt'
 
 ## See Also
 
-- [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select)
-- [LOAD_DATA()](/built-in-functions/string-functions/load_file) function
+- [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/)
+- [LOAD_DATA()](/built-in-functions/string-functions/load_file/) function
 - [LOAD DATA INFILE](/kb/en/load-data-infile/)
 - [SELECT INTO Variable](/kb/en/select-into-variable/)
-- [SELECT INTO DUMPFILE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select-into-dumpfile)
+- [SELECT INTO DUMPFILE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select-into-dumpfile/)

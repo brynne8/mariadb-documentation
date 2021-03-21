@@ -12,9 +12,9 @@ END WHILE [end_label]
 
 The statement list within a `WHILE` statement is repeated as long as the
 `search_condition` is true. statement_list consists of one or more
-statements. If the loop must be executed at least once, [REPEAT ... LOOP](/programming-customizing-mariadb/programmatic-compound-statements/repeat-loop) can be used instead.
+statements. If the loop must be executed at least once, [REPEAT ... LOOP](/programming-customizing-mariadb/programmatic-compound-statements/repeat-loop/) can be used instead.
 
-A `WHILE` statement can be [labeled](/programming-customizing-mariadb/programmatic-compound-statements/labels). end_label cannot be given unless
+A `WHILE` statement can be [labeled](/programming-customizing-mariadb/programmatic-compound-statements/labels/). end_label cannot be given unless
 begin_label also is present. If both are present, they must be the
 same.
 

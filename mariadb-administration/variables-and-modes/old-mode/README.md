@@ -6,9 +6,9 @@
 
 MariaDB supports several different modes which allow you to tune it to suit your needs.
 
-The most important ways for doing this are with [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode) and `OLD_MODE`.
+The most important ways for doing this are with [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode/) and `OLD_MODE`.
 
-[SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode) is used for getting MariaDB to emulate behavior from other SQL servers, while <code class="fixed" style="white-space:pre-wrap">OLD_MODE</code> is used for emulating behavior from older MariaDB or MySQL versions.
+[SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode/) is used for getting MariaDB to emulate behavior from other SQL servers, while <code class="fixed" style="white-space:pre-wrap">OLD_MODE</code> is used for emulating behavior from older MariaDB or MySQL versions.
 
 <code class="fixed" style="white-space:pre-wrap">OLD_MODE</code> is a string with different options separated by commas ('`,`') without spaces. The options are case insensitive.
 
@@ -36,7 +36,7 @@ The different values of `OLD_MODE` are:
 
 ## OLD_MODE and Stored Programs
 
-In contrast to [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode), [stored programs](/kb/en/stored-programs-and-views/) use the current user's <code class="fixed" style="white-space:pre-wrap">OLD_MODE</code>value.
+In contrast to [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode/), [stored programs](/kb/en/stored-programs-and-views/) use the current user's <code class="fixed" style="white-space:pre-wrap">OLD_MODE</code>value.
 
 Changes to <code class="fixed" style="white-space:pre-wrap">OLD_MODE</code> are not replicated to slaves.
 

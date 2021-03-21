@@ -1,6 +1,6 @@
 # Rotating Logs on Unix and Linux
 
-Unix and Linux distributions offer the <a undefined>logrotate</a> utility, which makes it very easy to rotate log files. This page will describe how to configure log rotation for the [error log](/mariadb-administration/server-monitoring-logs/error-log), [general query log](/mariadb-administration/server-monitoring-logs/general-query-log), and the [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log).
+Unix and Linux distributions offer the <a undefined>logrotate</a> utility, which makes it very easy to rotate log files. This page will describe how to configure log rotation for the [error log](/mariadb-administration/server-monitoring-logs/error-log/), [general query log](/mariadb-administration/server-monitoring-logs/general-query-log/), and the [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log/).
 
 ## Configuring Locations and File Names of Logs
 
@@ -8,16 +8,16 @@ The first step is to configure the locations and file names of logs. To make the
 
 We will need to configure the following:
 
-- The [error log](/mariadb-administration/server-monitoring-logs/error-log) location and file name is configured with the <a undefined>log_error</a> system variable.
-- The [general query log](/mariadb-administration/server-monitoring-logs/general-query-log) location and file name is configured with the <a undefined>general_log_file</a> system variable.
-- The [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log) location and file name is configured with the <a undefined>slow_query_log_file</a> system variable.
+- The [error log](/mariadb-administration/server-monitoring-logs/error-log/) location and file name is configured with the <a undefined>log_error</a> system variable.
+- The [general query log](/mariadb-administration/server-monitoring-logs/general-query-log/) location and file name is configured with the <a undefined>general_log_file</a> system variable.
+- The [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log/) location and file name is configured with the <a undefined>slow_query_log_file</a> system variable.
 
-If you want to enable the [general query log](/mariadb-administration/server-monitoring-logs/general-query-log) and [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log) immediately, then you will also have to configure the following:
+If you want to enable the [general query log](/mariadb-administration/server-monitoring-logs/general-query-log/) and [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log/) immediately, then you will also have to configure the following:
 
-- The [general query log](/mariadb-administration/server-monitoring-logs/general-query-log) is enabled with the <a undefined>general_log</a> system variable.
-- The [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log) is enabled with the <a undefined>slow_query_log</a> system variable.
+- The [general query log](/mariadb-administration/server-monitoring-logs/general-query-log/) is enabled with the <a undefined>general_log</a> system variable.
+- The [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log/) is enabled with the <a undefined>slow_query_log</a> system variable.
 
-These options can be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example, if we wanted to put our log files in `/var/log/mysql/`, then we could configure the following:
+These options can be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example, if we wanted to put our log files in `/var/log/mysql/`, then we could configure the following:
 
 ```sql
 [mariadb]
@@ -38,7 +38,7 @@ sudo chown mysql:mysql /var/log/mysql/
 sudo chmod 0770 /var/log/mysql/
 ```
 
-If you are using [SELinux](/mariadb-administration/user-server-security/securing-mariadb/selinux), then you may also need to set the SELinux context for the directory. See [SELinux: Setting the File Context for Log Files](/kb/en/selinux/#setting-the-file-context-for-log-files) for more information. For example:
+If you are using [SELinux](/mariadb-administration/user-server-security/securing-mariadb/selinux/), then you may also need to set the SELinux context for the directory. See [SELinux: Setting the File Context for Log Files](/kb/en/selinux/#setting-the-file-context-for-log-files) for more information. For example:
 
 ```sql
 sudo semanage fcontext -a -t mysqld_log_t "/var/log/mysql(/.*)?"
@@ -51,15 +51,15 @@ After MariaDB is [restarted](/kb/en/starting-and-stopping-mariadb-starting-and-s
 
 The <a undefined>logrotate</a> utility needs to be able to authenticate with MariaDB in order to flush the log files.
 
-The easiest way to allow the <a undefined>logrotate</a> utility to authenticate with MariaDB is to configure the `root@localhost` user account to use [unix_socket](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-unix-socket) authentication.
+The easiest way to allow the <a undefined>logrotate</a> utility to authenticate with MariaDB is to configure the `root@localhost` user account to use [unix_socket](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-unix-socket/) authentication.
 
 ##### MariaDB starting with [10.4](/kb/en/what-is-mariadb-104/)
 
-In [MariaDB 10.4](/kb/en/what-is-mariadb-104/) and later, the the `root@localhost` user account is configured to use [unix_socket](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-unix-socket) authentication by default, so this part can be skipped in those versions.
+In [MariaDB 10.4](/kb/en/what-is-mariadb-104/) and later, the the `root@localhost` user account is configured to use [unix_socket](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-unix-socket/) authentication by default, so this part can be skipped in those versions.
 
 ##### MariaDB until [10.3](/kb/en/what-is-mariadb-103/)
 
-In [MariaDB 10.3](/kb/en/what-is-mariadb-103/) and before, a user account is only able to have one authentication method at a time. In these versions, this means that once you enable [unix_socket](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-unix-socket) authentication for the `root@localhost` user account, you will no longer be able to use a password to log in with that user account. The user account will only be able to use [unix_socket](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-unix-socket) authentication.
+In [MariaDB 10.3](/kb/en/what-is-mariadb-103/) and before, a user account is only able to have one authentication method at a time. In these versions, this means that once you enable [unix_socket](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-unix-socket/) authentication for the `root@localhost` user account, you will no longer be able to use a password to log in with that user account. The user account will only be able to use [unix_socket](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-unix-socket/) authentication.
 
 In [MariaDB 10.3](/kb/en/what-is-mariadb-103/) and before, you need to [install the unix_socket plugin](/kb/en/authentication-plugin-unix-socket/#installing-the-plugin) before you can configure the `root@localhost` user account to use it. For example:
 
@@ -67,11 +67,11 @@ In [MariaDB 10.3](/kb/en/what-is-mariadb-103/) and before, you need to [install 
 INSTALL SONAME 'auth_socket';
 ```
 
-After the plugin is installed, the `root@localhost` user account can be configured to use [unix_socket](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-unix-socket) authentication. How this is done depends on the version of MariaDB.
+After the plugin is installed, the `root@localhost` user account can be configured to use [unix_socket](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-unix-socket/) authentication. How this is done depends on the version of MariaDB.
 
 ##### MariaDB starting with [10.2](/kb/en/what-is-mariadb-102/)
 
-In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, the `root@localhost` user account can be altered to use [unix_socket](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-unix-socket) authentication with the [ALTER USER](/sql-statements-structure/sql-statements/account-management-sql-commands/alter-user) statement. For example:
+In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, the `root@localhost` user account can be altered to use [unix_socket](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-unix-socket/) authentication with the [ALTER USER](/sql-statements-structure/sql-statements/account-management-sql-commands/alter-user/) statement. For example:
 
 ```sql
 ALTER USER 'root'@'localhost' IDENTIFIED VIA unix_socket;
@@ -79,7 +79,7 @@ ALTER USER 'root'@'localhost' IDENTIFIED VIA unix_socket;
 
 ##### MariaDB until [10.1](/kb/en/what-is-mariadb-101/)
 
-In [MariaDB 10.1](/kb/en/what-is-mariadb-101/) and before, the `root@localhost` user account can be altered to use [unix_socket](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-unix-socket) authentication with the [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant) statement. For example:
+In [MariaDB 10.1](/kb/en/what-is-mariadb-101/) and before, the `root@localhost` user account can be altered to use [unix_socket](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-unix-socket/) authentication with the [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/) statement. For example:
 
 ```sql
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' IDENTIFIED VIA unix_socket WITH GRANT OPTION;
@@ -148,7 +148,7 @@ Each specific configuration directive does the following:
 - <strong>`olddir archive/`</strong>: This directive configures it to archive the rotated log files in `/var/log/mysql/archive/`.
 - <strong>`createolddir 770 mysql mysql`</strong>: This directive configures it to create the directory specified by the `olddir` directive with the specified permissions and owner, if the directory does not already exist. This directive is only available with <a undefined>logrotate</a> 3.8.9 and later.
 - <strong>`sharedscripts`</strong>: This directive configures it to run the `postrotate` script just once, rather than once for each rotated log file.
-- <strong>`postrotate`</strong>: This directive configures it to execute a script after log rotation. This particular script executes the [mysqladmin](/clients-utilities/mysqladmin) utility, which executes the [FLUSH](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush) statement, which tells the MariaDB server to flush its various log files. When MariaDB server flushes a log file, it closes its existing file handle and reopens a new one. This ensure that MariaDB server does not continue writing to a log file after it has been rotated. This is an important component of the log rotation process.
+- <strong>`postrotate`</strong>: This directive configures it to execute a script after log rotation. This particular script executes the [mysqladmin](/clients-utilities/mysqladmin/) utility, which executes the [FLUSH](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/) statement, which tells the MariaDB server to flush its various log files. When MariaDB server flushes a log file, it closes its existing file handle and reopens a new one. This ensure that MariaDB server does not continue writing to a log file after it has been rotated. This is an important component of the log rotation process.
 
 If our system does not have <a undefined>logrotate</a> 3.8.9 or later, which is needed to support the `createolddir` directive, then we will also need to create the relevant directory specified by the `olddir` directive:
 
@@ -268,4 +268,4 @@ mariadb_logrotate_old_dir: /var/mysql/old-logs
 
 After setting up logrotate in Ansible, you may want to deploy it to a non-production server and test it manually as explained above. Once you're sure that it works fine on one server, you can be confident in the new Ansible tasks and deploy them on all servers.
 
-For more information on how to use Ansible to automate MariaDB configuration, see [Ansible and MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb).
+For more information on how to use Ansible to automate MariaDB configuration, see [Ansible and MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/).

@@ -2,7 +2,7 @@
 
 ## The task
 
-You have decided to change one or more tables from [MyISAM](/kb/en/myisam/) to [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb). That should be
+You have decided to change one or more tables from [MyISAM](/kb/en/myisam/) to [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/). That should be
 as simple as `ALTER TABLE foo ENGINE=InnoDB`. But you have heard that there might
 be some subtle issues.
 
@@ -127,7 +127,7 @@ bytes are in the record, the rest is in some other block. So, it may (or may
 not) be worth putting the tables back together. Caution: An InnoDB row is
 limited to 8KB, and the 767 counts against that.
 
-<em>Fact.</em> FULLTEXT (prior to [MariaDB 10.0.5](/kb/en/mariadb-1005-release-notes/)) and SPATIAL indexes are not available in InnoDB. Note that MyISAM and InnoDB [FULLTEXT indexes](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes) use different [stopword](stopword) lists and different system variables.
+<em>Fact.</em> FULLTEXT (prior to [MariaDB 10.0.5](/kb/en/mariadb-1005-release-notes/)) and SPATIAL indexes are not available in InnoDB. Note that MyISAM and InnoDB [FULLTEXT indexes](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) use different [stopword](stopword) lists and different system variables.
 
 <em>Recommendation.</em> Search for such indexes. Keep such tables in MyISAM.
 Better yet, do Vertical Partitioning (see above) to split out the minimum
@@ -205,7 +205,7 @@ from your maintenance scripts. (No real harm if you keep them.)
 Backup scripts may need checking. A MyISAM table can be backed up by copying
 three files. With InnoDB this is only possible if [innodb_file_per_table](/kb/en/xtradbinnodb-server-system-variables/#innodb_file_per_table) is set to 1. Before [MariaDB 10.0](/kb/en/what-is-mariadb-100/),
 capturing a table or database for copying from production to a development
-environment was not possible. Change to [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump). Since [MariaDB 10.0](/kb/en/what-is-mariadb-100/) a hot copy can be created - see [Backup and restore overview](/mariadb-administration/backing-up-and-restoring-databases/backup-and-restore-overview).
+environment was not possible. Change to [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump/). Since [MariaDB 10.0](/kb/en/what-is-mariadb-100/) a hot copy can be created - see [Backup and restore overview](/mariadb-administration/backing-up-and-restoring-databases/backup-and-restore-overview/).
 
 Before [MariaDB 5.5](/kb/en/what-is-mariadb-55/), the DATA DIRECTORY [table option](/kb/en/create-table/#table-options) was not supported for InnoDB. Since [MariaDB 5.5](/kb/en/what-is-mariadb-55/) it is supported, but only in CREATE TABLE. INDEX DIRECTORY has no effect, since InnoDB does not use separate files for indexes. To better balance the workload through several disks, the paths of some InnoDB log files can also be changed.
 

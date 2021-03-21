@@ -1,8 +1,8 @@
 # Event Scheduler Thread States
 
-This article documents thread states that are related to [event](/programming-customizing-mariadb/triggers-events/event-scheduler/events) scheduling and execution. These include the Event Scheduler thread, threads that terminate the Event Scheduler, and threads for executing events.
+This article documents thread states that are related to [event](/programming-customizing-mariadb/triggers-events/event-scheduler/events/) scheduling and execution. These include the Event Scheduler thread, threads that terminate the Event Scheduler, and threads for executing events.
 
-These correspond to the `STATE` values listed by the [SHOW PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist) statement or in the [Information Schema PROCESSLIST Table](/kb/en/information-schema-processlist-table/) as well as the `PROCESSLIST_STATE` value listed in the [Performance Schema threads Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table)
+These correspond to the `STATE` values listed by the [SHOW PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist/) statement or in the [Information Schema PROCESSLIST Table](/kb/en/information-schema-processlist-table/) as well as the `PROCESSLIST_STATE` value listed in the [Performance Schema threads Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table/)
 
 <table><tbody><tr><th>Value</th><th>Description</th></tr>
 <tr><td>Clearing</td><td>Thread is terminating.</td></tr>

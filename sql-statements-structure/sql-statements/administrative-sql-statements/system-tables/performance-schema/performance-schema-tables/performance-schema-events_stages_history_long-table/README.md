@@ -2,7 +2,7 @@
 
 ##### MariaDB starting with [10.0](/kb/en/what-is-mariadb-100/)
 
-The `events_stages_history_long` table, along with many other new [Performance Schema tables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/list-of-performance-schema-tables), was added in [MariaDB 10.0](/kb/en/what-is-mariadb-100/)
+The `events_stages_history_long` table, along with many other new [Performance Schema tables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/list-of-performance-schema-tables/), was added in [MariaDB 10.0](/kb/en/what-is-mariadb-100/)
 
 The `events_stages_history_long` table by default contains the ten thousand most recent completed stage events. This number can be adjusted by setting the [performance_schema_events_stages_history_long_size](/kb/en/performance-schema-system-variables/#performance_schema_events_stages_history_long_size) system variable when the server starts up.
 
@@ -23,4 +23,4 @@ The table structure is identical to the `events_stage_current` table structure, 
 
 It is possible to empty this table with a `TRUNCATE TABLE` statement.
 
-[events_stages_current](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_current-table) and [events_stages_history](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_history-table) are related tables.
+[events_stages_current](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_current-table/) and [events_stages_history](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_history-table/) are related tables.

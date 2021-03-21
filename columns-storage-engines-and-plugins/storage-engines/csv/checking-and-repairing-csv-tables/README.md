@@ -1,6 +1,6 @@
 # Checking and Repairing CSV Tables
 
-[CSV tables](/columns-storage-engines-and-plugins/storage-engines/csv) support the [CHECK TABLE](/sql-statements-structure/sql-statements/table-statements/check-table) and [REPAIR TABLE](/sql-statements-structure/sql-statements/table-statements/repair-table) statements.
+[CSV tables](/columns-storage-engines-and-plugins/storage-engines/csv/) support the [CHECK TABLE](/sql-statements-structure/sql-statements/table-statements/check-table/) and [REPAIR TABLE](/sql-statements-structure/sql-statements/table-statements/repair-table/) statements.
 
 CHECK TABLE will mark the table as corrupt if it finds a problem, while REPAIR TABLE will restore rows until the first corrupted row, discarding the rest.
 

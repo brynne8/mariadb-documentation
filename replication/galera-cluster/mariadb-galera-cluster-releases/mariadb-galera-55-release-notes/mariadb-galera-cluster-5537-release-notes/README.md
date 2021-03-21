@@ -1,12 +1,12 @@
 # MariaDB Galera Cluster 5.5.37 Release Notes
 
 The most recent [MariaDB Galera Cluster 5.5](/kb/en/galera/) release is:<br>
-<span class="cstm-style lead"><strong>[MariaDB Galera Cluster 5.5.63](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5563-release-notes)</strong> [Download<span>&nbsp;</span>Now](https://downloads.mariadb.org/mariadb-galera/5.5)</span>
+<span class="cstm-style lead"><strong>[MariaDB Galera Cluster 5.5.63](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5563-release-notes/)</strong> [Download<span>&nbsp;</span>Now](https://downloads.mariadb.org/mariadb-galera/5.5)</span>
 
 [Download](http://downloads.mariadb.org/mariadb-galera/5.5.37) |
 <strong>Release Notes</strong> |
-[Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5537-changelog) |
-[Overview of MariaDB Galera Cluster](/replication/galera-cluster/what-is-mariadb-galera-cluster)
+[Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5537-changelog/) |
+[Overview of MariaDB Galera Cluster](/replication/galera-cluster/what-is-mariadb-galera-cluster/)
 
 <strong>Release date:</strong> 30 Apr 2014
 
@@ -16,13 +16,13 @@ It is a merge of [MariaDB 5.5.37](/kb/en/mariadb-5537-release-notes/) and
 additional bug fixes.
 
 Various articles about MariaDB Galera Cluster, including
-[known limitations](/replication/galera-cluster/mariadb-galera-cluster-known-limitations) and
-[how to get started](/replication/galera-cluster/getting-started-with-mariadb-galera-cluster) are
+[known limitations](/replication/galera-cluster/mariadb-galera-cluster-known-limitations/) and
+[how to get started](/replication/galera-cluster/getting-started-with-mariadb-galera-cluster/) are
 available in the <strong>[Galera](/kb/en/galera/)</strong> section of the Knowledge Base.
 
 For a list of changes made in MariaDB Galera Cluster 5.5.37, with links to detailed
 information on each push, see the
-[MariaDB Galera Cluster 5.5.37 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5537-changelog).
+[MariaDB Galera Cluster 5.5.37 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5537-changelog/).
 
 ## Notes about this release
 
@@ -59,7 +59,7 @@ Important: wsrep_sst_rsync (sst script) in MariaDB Galera Cluster 5.5.37 uses `l
 This release contains fixes for bugs, compiler errors/warnings and improvements
 in existing scripts.
 
-A list of all the bugs fixed can be found in the [changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5537-changelog).
+A list of all the bugs fixed can be found in the [changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5537-changelog/).
 
 - Fixes for the following security vulnerabilities:
 <ul start="1"><li>[CVE-2014-2436](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-2436)
@@ -77,5 +77,5 @@ Be notified of new MariaDB Server releases automatically by [subscribing](https:
 <br><br>
 MariaDB may already be included in your favorite OS distribution. More
 information can be found on the
-[Distributions which Include MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/distributions-which-include-mariadb)
+[Distributions which Include MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/distributions-which-include-mariadb/)
 page.

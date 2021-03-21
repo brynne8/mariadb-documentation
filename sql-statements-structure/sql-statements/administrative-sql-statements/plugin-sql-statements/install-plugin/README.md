@@ -7,7 +7,7 @@ INSTALL PLUGIN [IF NOT EXISTS] plugin_name SONAME 'plugin_library'```
 
 ## Description
 
-This statement installs an individual [plugin](/kb/en/mariadb-plugins/) from the specified library. To install the whole library (which could be required), use [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname). See also [Installing a Plugin](/kb/en/plugin-overview/#installing-a-plugin).
+This statement installs an individual [plugin](/kb/en/mariadb-plugins/) from the specified library. To install the whole library (which could be required), use [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname/). See also [Installing a Plugin](/kb/en/plugin-overview/#installing-a-plugin).
 
 `plugin_name` is the name of the plugin as defined in the
 plugin declaration structure contained in the library file. Plugin names are
@@ -51,7 +51,7 @@ initialization function, which handles any setup that the plugin must perform
 before it can be used.
 
 To use `INSTALL PLUGIN`, you must have the
-[INSERT privilege](/sql-statements-structure/sql-statements/account-management-sql-commands/grant) for the `mysql.plugin` table.
+[INSERT privilege](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/) for the `mysql.plugin` table.
 
 At server startup, the server loads and initializes any plugin that is
 listed in the `mysql.plugin` table. This means that a plugin is installed
@@ -72,7 +72,7 @@ not to read system tables), use the
 
 #### IF NOT EXISTS
 
-When the `IF NOT EXISTS` clause is used, MariaDB will return a note instead of an error if the specified plugin already exists. See [SHOW WARNINGS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-warnings).
+When the `IF NOT EXISTS` clause is used, MariaDB will return a note instead of an error if the specified plugin already exists. See [SHOW WARNINGS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-warnings/).
 
 ## Examples
 
@@ -105,11 +105,11 @@ SHOW WARNINGS;
 
 ## See Also
 
-- [List of Plugins](/columns-storage-engines-and-plugins/plugins/information-on-plugins/list-of-plugins)
-- [Plugin Overview](/columns-storage-engines-and-plugins/plugins/plugin-overview)
-- [INFORMATION_SCHEMA.PLUGINS Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema)
-- [mysql_plugin](/clients-utilities/mysql_plugin)
-- [SHOW PLUGINS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-plugins)
-- [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname)
-- [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin)
-- [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname)
+- [List of Plugins](/columns-storage-engines-and-plugins/plugins/information-on-plugins/list-of-plugins/)
+- [Plugin Overview](/columns-storage-engines-and-plugins/plugins/plugin-overview/)
+- [INFORMATION_SCHEMA.PLUGINS Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema/)
+- [mysql_plugin](/clients-utilities/mysql_plugin/)
+- [SHOW PLUGINS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-plugins/)
+- [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname/)
+- [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin/)
+- [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname/)

@@ -2,13 +2,13 @@
 
 This page documents system variables related to the [MyISAM](/kb/en/myisam/) storage engine. For options, see [MyISAM Options](/kb/en/mysqld-options/#myisam-options).
 
-See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables) for a complete list of system variables and instructions on setting them.
+See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables/) for a complete list of system variables and instructions on setting them.
 
-See also the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables).
+See also the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables/).
 
 #### `key_buffer_size`
 
-- <strong>Description:</strong> Size of the buffer for the index blocks used by MyISAM tables and shared for all threads. See [Optimizing key_buffer_size](/replication/optimization-and-tuning/system-variables/optimizing-key_buffer_size) for more on selecting the best value.
+- <strong>Description:</strong> Size of the buffer for the index blocks used by MyISAM tables and shared for all threads. See [Optimizing key_buffer_size](/replication/optimization-and-tuning/system-variables/optimizing-key_buffer_size/) for more on selecting the best value.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--key-buffer-size=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -69,7 +69,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `key_cache_segments`
 
-- <strong>Description:</strong> The number of segments in a key cache. See [Segmented Key Cache](/replication/optimization-and-tuning/system-variables/segmented-key-cache).
+- <strong>Description:</strong> The number of segments in a key cache. See [Segmented Key Cache](/replication/optimization-and-tuning/system-variables/segmented-key-cache/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--key-cache-segments=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -92,7 +92,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `myisam_data_pointer_size`
 
-- <strong>Description:</strong> Size in bytes of the default pointer, used in a [MyISAM](/kb/en/myisam/) [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table) with no MAX_ROWS option.
+- <strong>Description:</strong> Size in bytes of the default pointer, used in a [MyISAM](/kb/en/myisam/) [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/) with no MAX_ROWS option.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--myisam-data-pointer-size=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -185,7 +185,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `myisam_stats_method`
 
-- <strong>Description:</strong> Determines how NULLs are treated for [MyISAM](/kb/en/myisam/) index statistics purposes. If set to `nulls_equal`, the default, all NULL index values are treated as a single group. This is usually fine, but if you have large numbers of NULLs the average group size is slanted higher, and the optimizer may miss using the index for ref accesses when it would be useful. If set to `nulls_unequal`, the opposite approach is taken, with each NULL forming its own group of one. Conversely, the average group size is slanted lower, and the optimizer may use the index for ref accesses when not suitable. Setting to `nulls_ignored` ignores NULLs altogether from index group calculations. See also [Index Statistics](/replication/optimization-and-tuning/optimization-and-indexes/index-statistics), [aria_stats_method](/kb/en/aria-server-system-variables/#aria_stats_method), [innodb_stats_method](/kb/en/xtradbinnodb-server-system-variables/#innodb_stats_method).
+- <strong>Description:</strong> Determines how NULLs are treated for [MyISAM](/kb/en/myisam/) index statistics purposes. If set to `nulls_equal`, the default, all NULL index values are treated as a single group. This is usually fine, but if you have large numbers of NULLs the average group size is slanted higher, and the optimizer may miss using the index for ref accesses when it would be useful. If set to `nulls_unequal`, the opposite approach is taken, with each NULL forming its own group of one. Conversely, the average group size is slanted lower, and the optimizer may use the index for ref accesses when not suitable. Setting to `nulls_ignored` ignores NULLs altogether from index group calculations. See also [Index Statistics](/replication/optimization-and-tuning/optimization-and-indexes/index-statistics/), [aria_stats_method](/kb/en/aria-server-system-variables/#aria_stats_method), [innodb_stats_method](/kb/en/xtradbinnodb-server-system-variables/#innodb_stats_method).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--myisam-stats-method=name</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes

@@ -9,8 +9,8 @@ StartPoint(ls)
 
 ## Description
 
-Returns the [Point](/sql-statements-structure/geographic-geometric-features/geometry-constructors/point) that is the start point of the
-[LineString](/sql-statements-structure/geographic-geometric-features/geometry-constructors/linestring) value `ls`.
+Returns the [Point](/sql-statements-structure/geographic-geometric-features/geometry-constructors/point/) that is the start point of the
+[LineString](/sql-statements-structure/geographic-geometric-features/geometry-constructors/linestring/) value `ls`.
 
 `ST_StartPoint()` and `StartPoint()` are synonyms.
 

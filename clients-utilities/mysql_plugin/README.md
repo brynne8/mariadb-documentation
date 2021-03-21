@@ -10,7 +10,7 @@ From [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/), `mysql_plugin` is the
 
 `mysql_plugin` is a tool for enabling or disabling [plugins](/kb/en/mariadb-plugins/).
 
-It is a commandline alternative to the [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin) and [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin) statements, and the `--plugin-load option` to [mysqld](/kb/en/mysqld-options-full-list/).
+It is a commandline alternative to the [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin/) and [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin/) statements, and the `--plugin-load option` to [mysqld](/kb/en/mysqld-options-full-list/).
 
 `mysql_plugin` must be run while the server is offline, and works by adding or removing rows from the [mysql.plugin](/kb/en/mysqlplugin-table/) table.
 
@@ -57,10 +57,10 @@ The following options can be specified on the command line, while some can be sp
 
 ## See Also
 
-- [List of Plugins](/columns-storage-engines-and-plugins/plugins/information-on-plugins/list-of-plugins)
-- [Plugin Overview](/columns-storage-engines-and-plugins/plugins/plugin-overview)
-- [INFORMATION_SCHEMA.PLUGINS Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema)
-- [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin)
-- [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname)
-- [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin)
-- [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname)
+- [List of Plugins](/columns-storage-engines-and-plugins/plugins/information-on-plugins/list-of-plugins/)
+- [Plugin Overview](/columns-storage-engines-and-plugins/plugins/plugin-overview/)
+- [INFORMATION_SCHEMA.PLUGINS Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema/)
+- [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin/)
+- [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname/)
+- [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin/)
+- [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname/)

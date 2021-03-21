@@ -4,7 +4,7 @@
 
 This document starts out trivial and perhaps boring, but builds up to more interesting information, perhaps things you did not realize about how MariaDB and MySQL indexing works.
 
-This also explains [EXPLAIN](/sql-statements-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain) (to some extent).
+This also explains [EXPLAIN](/sql-statements-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain/) (to some extent).
 
 (Most of this applies to non-MySQL brands of databases, too.)
 

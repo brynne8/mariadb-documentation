@@ -10,7 +10,7 @@ MBRWithin(g1,g2)
 
 Returns 1 or 0 to indicate whether the Minimum Bounding Rectangle of
 g1 is within the Minimum Bounding Rectangle of g2. This tests the
-opposite relationship as [MBRContains()](/sql-statements-structure/geographic-geometric-features/mbr-minimum-bounding-rectangle/mbrcontains).
+opposite relationship as [MBRContains()](/sql-statements-structure/geographic-geometric-features/mbr-minimum-bounding-rectangle/mbrcontains/).
 
 ## Examples
 

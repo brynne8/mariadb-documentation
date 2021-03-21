@@ -1,7 +1,7 @@
 # Copying Tables Between Different MariaDB Databases and MariaDB Servers
 
 With MariaDB it's very easy to copy tables between different MariaDB databases
-and different MariaDB servers. This works for tables created with the [Archive](/columns-storage-engines-and-plugins/storage-engines/archive), [Aria](/columns-storage-engines-and-plugins/storage-engines/aria), [CSV](/columns-storage-engines-and-plugins/storage-engines/csv), [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb), [MyISAM](/kb/en/myisam/), [MERGE](/columns-storage-engines-and-plugins/storage-engines/merge), and [XtraDB](/columns-storage-engines-and-plugins/storage-engines/innodb) engines.
+and different MariaDB servers. This works for tables created with the [Archive](/columns-storage-engines-and-plugins/storage-engines/archive/), [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/), [CSV](/columns-storage-engines-and-plugins/storage-engines/csv/), [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/), [MyISAM](/kb/en/myisam/), [MERGE](/columns-storage-engines-and-plugins/storage-engines/merge/), and [XtraDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) engines.
 
 The normal procedures to copy a table is:
 
@@ -18,12 +18,12 @@ The table files can be found in [datadir](/kb/en/server-system-variables/#datadi
 When copying the files, you should copy all files with the same
 table_name + various extensions. For example, for an Aria table of
 name foo, you will have files foo.frm, foo.MAI, foo.MAD and possibly
-foo.TRG if you have [triggers](/programming-customizing-mariadb/triggers-events/triggers).
+foo.TRG if you have [triggers](/programming-customizing-mariadb/triggers-events/triggers/).
 
 If one wants to distribute a table to a user that doesn't need write
 access to the table and one wants to minimize the storage size of the
 table, the recommended engine to use is Aria or MyISAM as one can
-pack the table with [aria_pack](/clients-utilities/aria-clients-and-utilities/aria_pack) or [myisampack](/clients-utilities/myisam-clients-and-utilities/myisampack) respectively to make it notablly
+pack the table with [aria_pack](/clients-utilities/aria-clients-and-utilities/aria_pack/) or [myisampack](/clients-utilities/myisam-clients-and-utilities/myisampack/) respectively to make it notablly
 smaller. MyISAM is the most portable format as it's not dependent on
 whether the server settings are different. Aria and InnoDB require the same
 block size on both servers.
@@ -47,7 +47,7 @@ For all of the above storage engines (Archive, Aria, CSV, MyISAM and MERGE), one
 - You have done a `FLUSH TABLES` or `FLUSH TABLE table_name` for the specific table.
 - The server is not accessing the tables during the copy process.
 
-The advantage of [FLUSH TABLES table_name FOR EXPORT](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export) is that the table is read locked until [UNLOCK TABLES](/lock-tables-and-unlock-tables) is executed.
+The advantage of [FLUSH TABLES table_name FOR EXPORT](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export/) is that the table is read locked until [UNLOCK TABLES](/lock-tables-and-unlock-tables) is executed.
 
 <strong>Warning</strong>: If you do the above live copy, you are doing this on <strong>your own risk</strong> as if you do something wrong, the copied table is very likely to be corrupted. The original table will of course be fine.
 
@@ -100,7 +100,7 @@ State updated
 ```
 
 The procedure for MyISAM tables is identical, except that
-[myisamchk](/clients-utilities/myisam-clients-and-utilities/myisamchk) doesn't have the `--ignore-control-file` option.
+[myisamchk](/clients-utilities/myisam-clients-and-utilities/myisamchk/) doesn't have the `--ignore-control-file` option.
 
 ## Copying InnoDB's Transportable Tablespaces
 
@@ -110,12 +110,12 @@ InnoDB's file-per-table tablespaces are transportable, which means that you can 
 
 Tables that use most storage engines are immediately usable when their files are copied to the new <a undefined>datadir</a>.
 
-However, this is not true for tables that use [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb). InnoDB tables have to be imported with <a undefined>ALTER TABLE ... IMPORT TABLESPACE</a>. See [Copying Transportable Tablespaces](/kb/en/innodb-file-per-table-tablespaces/#copying-transportable-tablespaces) for more information.
+However, this is not true for tables that use [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/). InnoDB tables have to be imported with <a undefined>ALTER TABLE ... IMPORT TABLESPACE</a>. See [Copying Transportable Tablespaces](/kb/en/innodb-file-per-table-tablespaces/#copying-transportable-tablespaces) for more information.
 
 ## See Also
 
-- [FLUSH TABLES FOR EXPORT](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export)
-- [FLUSH TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush)
-- [myisampack](/clients-utilities/myisam-clients-and-utilities/myisampack) - Compressing the MyISAM data file for easier distribution.
-- [aria_pack](/clients-utilities/aria-clients-and-utilities/aria_pack) - Compressing the Aria data file for easier distribution
-- [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump) - Copying tables to other SQL servers. You can use the `--tab` to create a CSV file of your table content.
+- [FLUSH TABLES FOR EXPORT](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export/)
+- [FLUSH TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/)
+- [myisampack](/clients-utilities/myisam-clients-and-utilities/myisampack/) - Compressing the MyISAM data file for easier distribution.
+- [aria_pack](/clients-utilities/aria-clients-and-utilities/aria_pack/) - Compressing the Aria data file for easier distribution
+- [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump/) - Copying tables to other SQL servers. You can use the `--tab` to create a CSV file of your table content.

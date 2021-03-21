@@ -32,6 +32,6 @@ SELECT COLLATION(_utf8'abc');
 
 ## See Also
 
-- [String literals](/sql-statements-structure/sql-language-structure/string-literals)
-- [CAST()](/built-in-functions/string-functions/cast)
-- [CONVERT()](/built-in-functions/string-functions/convert)
+- [String literals](/sql-statements-structure/sql-language-structure/string-literals/)
+- [CAST()](/built-in-functions/string-functions/cast/)
+- [CONVERT()](/built-in-functions/string-functions/convert/)

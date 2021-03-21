@@ -6,18 +6,18 @@
 
 ## Overview
 
-When rows are deleted from an [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) table, the rows are simply marked as deleted and not physically deleted. The free space is not returned to the operating system for re-use.
+When rows are deleted from an [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) table, the rows are simply marked as deleted and not physically deleted. The free space is not returned to the operating system for re-use.
 
 The purge thread will physically delete index keys and rows, but the free space introduced is still not returned to operating system. This can lead to gaps in the pages. If you have variable length rows, new rows may be larger than old rows and cannot make use of the available space.
 
-You can run [OPTIMIZE TABLE](/replication/optimization-and-tuning/optimizing-tables/optimize-table) or [ALTER TABLE &lt;table&gt; ENGINE=InnoDB](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) to reconstruct the table. Unfortunately running `OPTIMIZE TABLE` against an InnoDB table stored in the shared table-space file `ibdata1` does two things:
+You can run [OPTIMIZE TABLE](/replication/optimization-and-tuning/optimizing-tables/optimize-table/) or [ALTER TABLE &lt;table&gt; ENGINE=InnoDB](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) to reconstruct the table. Unfortunately running `OPTIMIZE TABLE` against an InnoDB table stored in the shared table-space file `ibdata1` does two things:
 
 - Makes the table’s data and indexes contiguous inside `ibdata1`.
 - Increases the size of `ibdata1` because the contiguous data and index pages are appended to `ibdata1`.
 
 ## InnoDB Defragmentation from 10.1.1
 
-[MariaDB 10.1](/kb/en/what-is-mariadb-101/) merged Facebook's defragmentation code prepared for MariaDB by Matt, Seong Uck Lee from Kakao. The only major difference to Facebook's code and Matt’s patch is that MariaDB does not introduce new literals to SQL and makes no changes to the server code. Instead, [OPTIMIZE TABLE](/replication/optimization-and-tuning/optimizing-tables/optimize-table) is used and all code changes are inside the InnoDB/XtraDB storage engines.
+[MariaDB 10.1](/kb/en/what-is-mariadb-101/) merged Facebook's defragmentation code prepared for MariaDB by Matt, Seong Uck Lee from Kakao. The only major difference to Facebook's code and Matt’s patch is that MariaDB does not introduce new literals to SQL and makes no changes to the server code. Instead, [OPTIMIZE TABLE](/replication/optimization-and-tuning/optimizing-tables/optimize-table/) is used and all code changes are inside the InnoDB/XtraDB storage engines.
 
 The behaviour of `OPTIMIZE TABLE` is unchanged by default, and to enable this new feature, you need to set the [innodb_defragment](/kb/en/xtradbinnodb-server-system-variables/#innodb_defragment) system variable to `1`.
 

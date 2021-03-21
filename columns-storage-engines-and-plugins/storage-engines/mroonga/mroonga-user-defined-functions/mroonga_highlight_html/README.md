@@ -10,7 +10,7 @@ mroonga_highlight_html(text[[, keyword1, ..., keywordN]])
 
 ## Description
 
-`mroonga_highlight_html` is a [user-defined function](/programming-customizing-mariadb/user-defined-functions) (UDF) included with the [Mroonga storage engine](/columns-storage-engines-and-plugins/storage-engines/mroonga). It highlights the specified keywords in the target text. See [Creating Mroonga User-Defined Functions](/columns-storage-engines-and-plugins/storage-engines/mroonga/mroonga-user-defined-functions/creating-mroonga-user-defined-functions) for details on creating this UDF if required.
+`mroonga_highlight_html` is a [user-defined function](/programming-customizing-mariadb/user-defined-functions/) (UDF) included with the [Mroonga storage engine](/columns-storage-engines-and-plugins/storage-engines/mroonga/). It highlights the specified keywords in the target text. See [Creating Mroonga User-Defined Functions](/columns-storage-engines-and-plugins/storage-engines/mroonga/mroonga-user-defined-functions/creating-mroonga-user-defined-functions/) for details on creating this UDF if required.
 
 The optional parameter can either be one or more <em>keywords</em>, or a Groonga <em>query</em>.
 
@@ -56,4 +56,4 @@ SELECT mroonga_highlight_html('MariaDB includes the Mroonga storage engine.', 'M
 
 ## See Also
 
-- [Creating Mroonga User-Defined Functions](/columns-storage-engines-and-plugins/storage-engines/mroonga/mroonga-user-defined-functions/creating-mroonga-user-defined-functions)
+- [Creating Mroonga User-Defined Functions](/columns-storage-engines-and-plugins/storage-engines/mroonga/mroonga-user-defined-functions/creating-mroonga-user-defined-functions/)

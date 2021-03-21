@@ -2,7 +2,7 @@
 
 ## Description
 
-The [Aria](/columns-storage-engines-and-plugins/storage-engines/aria) storage engine can automatically detect and deal with deadlocks (see the [Wikipedia deadlocks article](http://en.wikipedia.org/wiki/Deadlock)).
+The [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/) storage engine can automatically detect and deal with deadlocks (see the [Wikipedia deadlocks article](http://en.wikipedia.org/wiki/Deadlock)).
 
 This feature is controlled by four configuration variables, two that control the search depth and two that control the timeout.
 

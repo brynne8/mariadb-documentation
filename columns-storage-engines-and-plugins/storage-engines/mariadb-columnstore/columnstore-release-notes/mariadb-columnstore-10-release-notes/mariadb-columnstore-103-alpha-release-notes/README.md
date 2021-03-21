@@ -2,16 +2,16 @@
 
 <strong>Release date:</strong> 20 September 2016
 
-[MariaDB ColumnStore 1.0.3](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore) is an alpha release of MariaDB ColumnStore. This is the third alpha release of  MariaDB ColumnStore with improvements over previous alpha release of 1.0.2.
+[MariaDB ColumnStore 1.0.3](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/) is an alpha release of MariaDB ColumnStore. This is the third alpha release of  MariaDB ColumnStore with improvements over previous alpha release of 1.0.2.
 
 MariaDB ColumnStore 1.0.3 is an <strong><em>[Alpha](/kb/en/release-criteria/)</em></strong> release.
 
 <strong>Do not use <em>alpha</em> releases on production systems!</strong>
 
-For an overview of [MariaDB ColumnStore](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore) see [MariaDB ColumnStore Architectural Overview](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-architectural-overview)
+For an overview of [MariaDB ColumnStore](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/) see [MariaDB ColumnStore Architectural Overview](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-architectural-overview/)
 
 Please provide feedback in [JIRA](https://jira.mariadb.org/browse/MCOL) for anything that is not working as expected so that we can fix it before we make the release available for the larger community.
-For general "how to questions" ask questions [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore) or subscribe to mariadb-columnstore@googlegroups.com
+For general "how to questions" ask questions [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/) or subscribe to mariadb-columnstore@googlegroups.com
 
 ## Notable Changes
 
@@ -69,7 +69,7 @@ There are some known security issues. They are listed [here](https://mariadb.com
 
 ## Documentation
 
-[MariaDB ColumnStore Documentation](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore)
+[MariaDB ColumnStore Documentation](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/)
 
 ## Packaging
 

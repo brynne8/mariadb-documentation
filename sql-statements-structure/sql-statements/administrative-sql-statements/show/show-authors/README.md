@@ -50,4 +50,4 @@ SHOW AUTHORS;
 
 ### See Also
 
-- [SHOW CONTRIBUTORS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-contributors). This list [all members and sponsors of the MariaDB Foundation](https://mariadb.org/en/supporters) and other sponsors.
+- [SHOW CONTRIBUTORS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-contributors/). This list [all members and sponsors of the MariaDB Foundation](https://mariadb.org/en/supporters) and other sponsors.

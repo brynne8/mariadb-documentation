@@ -35,7 +35,7 @@ for <code class="highlight fixed" style="white-space:pre-wrap">SHOW ENGINE INNOD
 
 <code class="highlight fixed" style="white-space:pre-wrap">SHOW ENGINE INNODB STATUS</code> displays extensive information
 from the standard InnoDB Monitor about the state of the InnoDB storage engine.
-See [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) for more.
+See [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) for more.
 
 ### SHOW ENGINE INNODB MUTEX
 
@@ -70,11 +70,11 @@ Information from this statement can be used to diagnose system problems. For
 example, large values of spin_waits and spin_rounds may indicate scalability
 problems.
 
-The [information_schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema).<a undefined>INNODB_MUTEXES</a> table provides similar information.
+The [information_schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/).<a undefined>INNODB_MUTEXES</a> table provides similar information.
 
 ### SHOW ENGINE PERFORMANCE_SCHEMA STATUS
 
-This statement shows how much memory is used for [performance_schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema) tables and internal buffers.
+This statement shows how much memory is used for [performance_schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/) tables and internal buffers.
 
 The output contains the following fields:
 
@@ -95,4 +95,4 @@ For internal buffers, the attributes are:
 
 ### SHOW ENGINE ROCKSDB STATUS
 
-See also [MyRocks Performance Troubleshooting](/columns-storage-engines-and-plugins/storage-engines/myrocks/myrocks-performance-troubleshooting)
+See also [MyRocks Performance Troubleshooting](/columns-storage-engines-and-plugins/storage-engines/myrocks/myrocks-performance-troubleshooting/)

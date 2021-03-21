@@ -91,7 +91,7 @@ This step should remove the InfiniDB alias's from the /root/.bashrc file. But do
 
 - Run postConfigure following the either the Single Server Or Multi Server install guides, based on the type of system being upgraded. Provide the same module and storage configuration settings that were display from the InfiniDB system.
 
-[https://mariadb.com/kb/en/mariadb/installing-and-configuring-mariadb-columnstore/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-10x/installing-and-configuring-mariadb-columnstore)
+[https://mariadb.com/kb/en/mariadb/installing-and-configuring-mariadb-columnstore/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-10x/installing-and-configuring-mariadb-columnstore/)
 
 [https://mariadb.com/kb/en/mariadb/installing-and-configuring-a-multi-server-columnstore-system/](https://mariadb.com/kb/en/mariadb/installing-and-configuring-a-multi-server-columnstore-system/)
 
@@ -155,7 +155,7 @@ This step should remove the InfiniDB alias's from the /root/.bashrc file. But do
 
 - Run postConfigure following the either the Single Server Or Multi Server install guides, based on the type of system being upgraded. Provide the same module and storage configuration settings that were display from the InfiniDB system.
 
-[https://mariadb.com/kb/en/mariadb/installing-and-configuring-mariadb-columnstore/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-10x/installing-and-configuring-mariadb-columnstore)
+[https://mariadb.com/kb/en/mariadb/installing-and-configuring-mariadb-columnstore/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-10x/installing-and-configuring-mariadb-columnstore/)
 
 [https://mariadb.com/kb/en/mariadb/installing-and-configuring-a-multi-server-columnstore-system/](https://mariadb.com/kb/en/mariadb/installing-and-configuring-a-multi-server-columnstore-system/)
 
@@ -225,7 +225,7 @@ This step should remove the InfiniDB alias's from the /root/.bashrc file. But do
 
 - Run postConfigure following the either the Single Server Or Multi Server install guides, based on the type of system being upgraded. Provide the same module and storage configuration settings that were display from the InfiniDB system.
 
-[https://mariadb.com/kb/en/mariadb/installing-and-configuring-mariadb-columnstore/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-10x/installing-and-configuring-mariadb-columnstore)
+[https://mariadb.com/kb/en/mariadb/installing-and-configuring-mariadb-columnstore/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-10x/installing-and-configuring-mariadb-columnstore/)
 
 [https://mariadb.com/kb/en/mariadb/installing-and-configuring-a-multi-server-columnstore-system/](https://mariadb.com/kb/en/mariadb/installing-and-configuring-a-multi-server-columnstore-system/)
 
@@ -292,7 +292,7 @@ This step should remove the InfiniDB alias's from the /root/.bashrc file. But do
 
 - Run postConfigure following the either the Single Server Or Multi Server install guides, based on the type of system being upgraded. Provide the same module and storage configuration settings that were display from the InfiniDB system.
 
-[https://mariadb.com/kb/en/mariadb/installing-and-configuring-mariadb-columnstore/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-10x/installing-and-configuring-mariadb-columnstore)
+[https://mariadb.com/kb/en/mariadb/installing-and-configuring-mariadb-columnstore/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-10x/installing-and-configuring-mariadb-columnstore/)
 
 [https://mariadb.com/kb/en/mariadb/installing-and-configuring-a-multi-server-columnstore-system/](https://mariadb.com/kb/en/mariadb/installing-and-configuring-a-multi-server-columnstore-system/)
 

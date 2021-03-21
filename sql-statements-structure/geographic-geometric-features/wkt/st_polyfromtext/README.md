@@ -11,7 +11,7 @@ PolygonFromText(wkt[,srid])
 
 ## Description
 
-Constructs a [POLYGON](/sql-statements-structure/geographic-geometric-features/geometry-constructors/polygon) value using its [WKT](/sql-statements-structure/geographic-geometric-features/wkt/wkt-definition) representation and [SRID](/kb/en/srid/).
+Constructs a [POLYGON](/sql-statements-structure/geographic-geometric-features/geometry-constructors/polygon/) value using its [WKT](/sql-statements-structure/geographic-geometric-features/wkt/wkt-definition/) representation and [SRID](/kb/en/srid/).
 
 `ST_PolyFromText()`, `ST_PolygonFromText()`, `PolyFromText()` and `ST_PolygonFromText()` are all synonyms.
 

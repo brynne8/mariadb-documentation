@@ -1,10 +1,10 @@
 # Configuring MariaDB with Option Files
 
-You can configure MariaDB to run the way you want by configuring the server with MariaDB's option files. The default MariaDB option file is called `my.cnf` on Unix-like operating systems and `my.ini` on Windows. Depending on how you've [installed](/mariadb-administration/getting-installing-and-upgrading-mariadb) MariaDB, the default option file may be in a number of places, or it may not exist at all.
+You can configure MariaDB to run the way you want by configuring the server with MariaDB's option files. The default MariaDB option file is called `my.cnf` on Unix-like operating systems and `my.ini` on Windows. Depending on how you've [installed](/mariadb-administration/getting-installing-and-upgrading-mariadb/) MariaDB, the default option file may be in a number of places, or it may not exist at all.
 
 ## Global Options Related to Option Files
 
-The following options relate to how MariaDB handles option files. These options can be used with most of MariaDB's command-line tools, not just [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options). They must be given as the first argument on the command-line:
+The following options relate to how MariaDB handles option files. These options can be used with most of MariaDB's command-line tools, not just [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/). They must be given as the first argument on the command-line:
 
 <table><tbody><tr><th>Option</th><th>Description</th></tr>
 <tr><td><code><a href="/kb/en/mysqld-options/#-print-defaults">--print-defaults</a></code></td><td>Read options from option files, print all option values, and then exit the program.</td></tr>
@@ -49,7 +49,7 @@ On Linux, Unix, or Mac OS X, the default option file is called `my.cnf`. MariaDB
 
 ##### MariaDB starting with [10.0.13](/kb/en/mariadb-10013-release-notes/)
 
-In [MariaDB 10.0.13](/kb/en/mariadb-10013-release-notes/) and later, the locations are dependent on whether the `DEFAULT_SYSCONFDIR` <a undefined>cmake</a> option was defined when MariaDB was built. This option is usually defined as `/etc` when building [RPM packages](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm), but it is usually not defined when building [DEB packages](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files) or [binary tarballs](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-binary-tarballs).
+In [MariaDB 10.0.13](/kb/en/mariadb-10013-release-notes/) and later, the locations are dependent on whether the `DEFAULT_SYSCONFDIR` <a undefined>cmake</a> option was defined when MariaDB was built. This option is usually defined as `/etc` when building [RPM packages](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/), but it is usually not defined when building [DEB packages](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files/) or [binary tarballs](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-binary-tarballs/).
 
 - When the `DEFAULT_SYSCONFDIR` <a undefined>cmake</a> option was <strong>not</strong> defined, MariaDB looks for the MariaDB option file in the following locations in the following order:
 
@@ -81,7 +81,7 @@ In [MariaDB 10.0.13](/kb/en/mariadb-10013-release-notes/) and later, the locatio
 <tr><td><code>~/.my.cnf</code></td><td>User</td></tr>
 </tbody></table>
 
-- `MYSQL_HOME` is the [environment variable](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-environment-variables) containing the path to the directory holding the server-specific `my.cnf` file. If `MYSQL_HOME` is not set, and the server is started with [mysqld_safe](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld_safe), `MYSQL_HOME` is set as follows:
+- `MYSQL_HOME` is the [environment variable](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-environment-variables/) containing the path to the directory holding the server-specific `my.cnf` file. If `MYSQL_HOME` is not set, and the server is started with [mysqld_safe](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld_safe/), `MYSQL_HOME` is set as follows:
 <ul start="1" style="list-style: circle"><li>If there is a `my.cnf` file in the MariaDB data directory, but not in the MariaDB base directory, `MYSQL_HOME` is set to the MariaDB data directory.
 </li><li>Else, `MYSQL_HOME` is set to the MariaDB base directory.
 </li></ul>
@@ -109,7 +109,7 @@ On Windows, the option file can be called either `my.ini` or `my.cnf`. MariaDB l
 - The `System Windows Directory` is the directory returned by the <a undefined>GetSystemWindowsDirectory</a> function. The value is usually `C:\Windows`. To find its specific value on your system, open <a undefined>cmd.exe</a> and execute: <span class="cstm-style" style="display:block; margin-top:3px; margin-bottom:-17px;"><pre class="fixed">echo %WINDIR%</pre></span>
 - The `Windows Directory` is the directory returned by the <a undefined>GetWindowsDirectory</a> function. The value may be a private `Windows Directory` for the application, or it may be the same as the `System Windows Directory` returned by the <a undefined>GetSystemWindowsDirectory</a> function.
 - `INSTALLDIR` is the parent directory of the directory where `mysqld.exe` is located. For example, if `mysqld.exe` is in C:\Program Files\<a undefined>MariaDB 10.3</a>\bin, then `INSTALLDIR` would be C:\Program Files\<a undefined>MariaDB 10.3</a>.
-- `MYSQL_HOME` is the [environment variable](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-environment-variables) containing the path to the directory holding the server-specific `my.cnf` file.
+- `MYSQL_HOME` is the [environment variable](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-environment-variables/) containing the path to the directory holding the server-specific `my.cnf` file.
 
 ### Default Option File Hierarchy
 
@@ -117,11 +117,11 @@ MariaDB will look in all of the above locations, in order, even if has already f
 
 Option files are usually optional. However, if the <a undefined>--defaults-file</a> option is set, and if the file does not exist, then MariaDB will raise an error. If the <a undefined>--defaults-file</a> option is set, then MariaDB will <em>only</em> read the option file referred to by this option.
 
-If an option or system variable is not explicitly set, then it will be set to its default value. See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables) for a full list of all server system variables and their default values.
+If an option or system variable is not explicitly set, then it will be set to its default value. See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables/) for a full list of all server system variables and their default values.
 
 ## Custom Option File Locations
 
-MariaDB can be configured to read options from custom options files with the following command-line arguments. These command-line arguments can be used with most of MariaDB's command-line tools, not just [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options). They must be given as the first argument on the command-line:
+MariaDB can be configured to read options from custom options files with the following command-line arguments. These command-line arguments can be used with most of MariaDB's command-line tools, not just [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/). They must be given as the first argument on the command-line:
 
 <table><tbody><tr><th>Option</th><th>Description</th></tr>
 <tr><td><code><a href="/kb/en/mysqld-options/#-defaults-file">--defaults-file</a></code> <code>=path</code></td><td>Only read options from the given option file.</td></tr>
@@ -232,13 +232,13 @@ Many MariaDB tools reads options from their own option groups as well. Many of t
 
 ### Custom Option Group Suffixes
 
-MariaDB can be configured to read options from option groups with a custom suffix by providing the following command-line argument. This command-line argument can be used with most of MariaDB's command-line tools, not just [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options). It must be given as the first argument on the command-line:
+MariaDB can be configured to read options from option groups with a custom suffix by providing the following command-line argument. This command-line argument can be used with most of MariaDB's command-line tools, not just [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/). It must be given as the first argument on the command-line:
 
 <table><tbody><tr><th>Option</th><th>Description</th></tr>
 <tr><td><code><a href="/kb/en/mysqld-options/#-defaults-group-suffix">--defaults-group-suffix</a></code> <code>=suffix</code></td><td>In addition to the default option groups, also read option groups with the given suffix.</td></tr>
 </tbody></table>
 
-The default group suffix can also be specified via the `MYSQL_GROUP_SUFFIX` [environment variable](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-environment-variables).
+The default group suffix can also be specified via the `MYSQL_GROUP_SUFFIX` [environment variable](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-environment-variables/).
 
 ## Including Option Files
 
@@ -272,7 +272,7 @@ You can check which options a given program is going to use by using the <a unde
 <tr><td><code><a href="/kb/en/mysqld-options/#-print-defaults">--print-defaults</a></code></td><td>Read options from option files, print all option values, and then exit the program.</td></tr>
 </tbody></table>
 
-This command-line argument can be used with most of MariaDB's command-line tools, not just [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options). It must be given as the first argument on the command-line. For example:
+This command-line argument can be used with most of MariaDB's command-line tools, not just [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/). It must be given as the first argument on the command-line. For example:
 
 ```sql
 $ mysqldump --print-defaults
@@ -280,7 +280,7 @@ mysqldump would have been started with the following arguments:
 --ssl_cert=/etc/my.cnf.d/certificates/client-cert.pem --ssl_key=/etc/my.cnf.d/certificates/client-key.pem --ssl_ca=/etc/my.cnf.d/certificates/ca.pem --ssl-verify-server-cert --max_allowed_packet=1GB
 ```
 
-You can also check which options a given program is going to use by using the [my_print_defaults](/clients-utilities/my_print_defaults) utility and providing the names of the option groups that the program reads. For example:
+You can also check which options a given program is going to use by using the [my_print_defaults](/clients-utilities/my_print_defaults/) utility and providing the names of the option groups that the program reads. For example:
 
 ```sql
 $ my_print_defaults mysqldump client client-server client-mariadb
@@ -291,7 +291,7 @@ $ my_print_defaults mysqldump client client-server client-mariadb
 --max_allowed_packet=1GB
 ```
 
-The [my_print_defaults](/clients-utilities/my_print_defaults) utility's `--mysqld` command-line option provides a shortcut to refer to all of the [server option groups](#server-option-groups):
+The [my_print_defaults](/clients-utilities/my_print_defaults/) utility's `--mysqld` command-line option provides a shortcut to refer to all of the [server option groups](#server-option-groups):
 
 ```sql
 $ my_print_defaults --mysqld
@@ -357,15 +357,15 @@ If an option is not explicitly set, then the server or client will simply use th
 
 MariaDB Server options can be set in [server option groups](#server-option-groups).
 
-For a list of options that can be set for MariaDB Server, see the list of options available for [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options).
+For a list of options that can be set for MariaDB Server, see the list of options available for [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/).
 
-Most of the [server system variables](/replication/optimization-and-tuning/system-variables/server-system-variables) can also be set in MariaDB's option file.
+Most of the [server system variables](/replication/optimization-and-tuning/system-variables/server-system-variables/) can also be set in MariaDB's option file.
 
 ### MariaDB Client Options
 
 MariaDB client options can be set in [client option groups](#client-option-groups).
 
-See the specific page for each [client program](/clients-utilities) to determine what options are available for that program.
+See the specific page for each [client program](/clients-utilities/) to determine what options are available for that program.
 
 ## Example Option Files
 

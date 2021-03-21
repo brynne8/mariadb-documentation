@@ -10,7 +10,7 @@ IGNORE INDEX [{FOR {JOIN|ORDER BY|GROUP BY}] ([index_list])
 
 You can tell the optimizer to not consider a particular index with the IGNORE INDEX option.
 
-The benefit of using IGNORE_INDEX instead of [USE_INDEX](/replication/optimization-and-tuning/query-optimizations/use-index) is that it will not disable a new index which you may add later.
+The benefit of using IGNORE_INDEX instead of [USE_INDEX](/replication/optimization-and-tuning/query-optimizations/use-index/) is that it will not disable a new index which you may add later.
 
 ### Index Prefixes
 
@@ -36,6 +36,6 @@ id	select_type	table	type	possible_keys	key	key_len	ref	rows	Extra
 
 ## See Also
 
-- See [Index Hints: How to Force Query Plans](/replication/optimization-and-tuning/query-optimizations/index-hints-how-to-force-query-plans) for more details
-- [USE INDEX](/replication/optimization-and-tuning/query-optimizations/use-index)
-- [FORCE INDEX](/replication/optimization-and-tuning/query-optimizations/force-index)
+- See [Index Hints: How to Force Query Plans](/replication/optimization-and-tuning/query-optimizations/index-hints-how-to-force-query-plans/) for more details
+- [USE INDEX](/replication/optimization-and-tuning/query-optimizations/use-index/)
+- [FORCE INDEX](/replication/optimization-and-tuning/query-optimizations/force-index/)

@@ -1,19 +1,19 @@
 # GROUP BY
 
-Use the `GROUP BY` clause in a [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) statement to group rows together that have the same value in one or more column, or the same computed value using expressions with any
+Use the `GROUP BY` clause in a [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) statement to group rows together that have the same value in one or more column, or the same computed value using expressions with any
 [functions and operators](/kb/en/functions-and-operators/) except
 [grouping functions](/kb/en/functions-and-modifiers-for-use-with-group-by/). When you
 use a `GROUP BY` clause, you will get a single result row for each group of rows
 that have the same value for the expression given in `GROUP BY`.
 
-When grouping rows, grouping values are compared as if by the [=](/sql-statements-structure/operators/comparison-operators/equal) operator.
+When grouping rows, grouping values are compared as if by the [=](/sql-statements-structure/operators/comparison-operators/equal/) operator.
 For string values, the `=` operator ignores trailing whitespace and may normalize
 characters and ignore case, depending on the [collation](/kb/en/data-types-character-sets-and-collations/) in use.
 
 You can use any of the grouping functions in your select expression. Their values will
 be calculated based on all the rows that have been grouped together for each result
 row. If you select a non-grouped column or a value computed from a non-grouped
-column, it is undefined which row the returned value is taken from. This is not permitted if the `ONLY_FULL_GROUP_BY` [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode) is used.
+column, it is undefined which row the returned value is taken from. This is not permitted if the `ONLY_FULL_GROUP_BY` [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode/) is used.
 
 You can use multiple expressions in the `GROUP BY` clause, separated by commas.
 Rows are grouped together if they match on each of the expressions.
@@ -28,13 +28,13 @@ a boolean, just like the `WHERE` clause. You can use grouping functions in the `
 clause. As with the select expression, if you reference non-grouped columns in the `HAVING`
 clause, the behavior is undefined.
 
-By default, if a `GROUP BY` clause is present, the rows in the output will be sorted by the expressions used in the `GROUP BY`. You can also specify `ASC` or `DESC` (ascending, descending) after those expressions, like in [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by). The default is `ASC`.
+By default, if a `GROUP BY` clause is present, the rows in the output will be sorted by the expressions used in the `GROUP BY`. You can also specify `ASC` or `DESC` (ascending, descending) after those expressions, like in [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by/). The default is `ASC`.
 
-If you want the rows to be sorted by another field, you can add an explicit [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by). If you don't want the result to be ordered, you can add [ORDER BY NULL](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by).
+If you want the rows to be sorted by another field, you can add an explicit [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by/). If you don't want the result to be ordered, you can add [ORDER BY NULL](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by/).
 
 ### WITH ROLLUP
 
-The `WITH ROLLUP` modifer adds extra rows to the resultset that represent super-aggregate summaries. For a full description with examples, see [SELECT WITH ROLLUP](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select-with-rollup).
+The `WITH ROLLUP` modifer adds extra rows to the resultset that represent super-aggregate summaries. For a full description with examples, see [SELECT WITH ROLLUP](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select-with-rollup/).
 
 ### GROUP BY Examples
 
@@ -114,14 +114,14 @@ SELECT (wins / plays) AS winavg, AVG(plays) FROM plays
 
 ### See Also
 
-- [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select)
-- [Joins and Subqueries](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries)
-- [LIMIT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/limit)
-- [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by)
-- [Common Table Expressions](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/common-table-expressions)
-- [SELECT WITH ROLLUP](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select-with-rollup)
-- [SELECT INTO OUTFILE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select-into-outfile)
-- [SELECT INTO DUMPFILE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select-into-dumpfile)
-- [FOR UPDATE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/for-update)
-- [LOCK IN SHARE MODE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/lock-in-share-mode)
-- [Optimizer Hints](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/optimizer-hints)
+- [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/)
+- [Joins and Subqueries](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/)
+- [LIMIT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/limit/)
+- [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by/)
+- [Common Table Expressions](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/common-table-expressions/)
+- [SELECT WITH ROLLUP](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select-with-rollup/)
+- [SELECT INTO OUTFILE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select-into-outfile/)
+- [SELECT INTO DUMPFILE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select-into-dumpfile/)
+- [FOR UPDATE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/for-update/)
+- [LOCK IN SHARE MODE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/lock-in-share-mode/)
+- [Optimizer Hints](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/optimizer-hints/)

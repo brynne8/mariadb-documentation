@@ -144,4 +144,4 @@ When the `MariaDB-server` RPM package is installed, it will create a user and gr
 
 ## See also
 
-- [Installing MariaDB with yum](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum)
+- [Installing MariaDB with yum](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum/)

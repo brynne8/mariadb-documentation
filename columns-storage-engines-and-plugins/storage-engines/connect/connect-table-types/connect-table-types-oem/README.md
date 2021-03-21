@@ -32,7 +32,7 @@ implementer(s).
 
 ## An OEM Table Example
 
-The OEM table REST described in [Adding the REST Feature as a Library Called by an OEM Table](/columns-storage-engines-and-plugins/storage-engines/connect/connect-adding-the-rest-feature-as-a-library-called-by-an-oem-table) permits using REST-like tables with MariaDB binary distributions containing but not enabling the [REST table type](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-files-retrieved-using-rest-queries)
+The OEM table REST described in [Adding the REST Feature as a Library Called by an OEM Table](/columns-storage-engines-and-plugins/storage-engines/connect/connect-adding-the-rest-feature-as-a-library-called-by-an-oem-table/) permits using REST-like tables with MariaDB binary distributions containing but not enabling the [REST table type](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-files-retrieved-using-rest-queries/)
 
 Of course, the mongo (dll or so) exporting the GetREST and colREST functions must be available in the plugin directory for all this to work.
 

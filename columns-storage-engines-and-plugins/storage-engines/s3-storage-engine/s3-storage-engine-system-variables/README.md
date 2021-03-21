@@ -2,13 +2,13 @@
 
 ##### MariaDB starting with [10.5](/kb/en/what-is-mariadb-105/)
 
-The [S3 storage engine](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine) has been available since [MariaDB 10.5.4](/kb/en/mariadb-1054-release-notes/).
+The [S3 storage engine](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/) has been available since [MariaDB 10.5.4](/kb/en/mariadb-1054-release-notes/).
 
-This page documents system variables related to the [S3 storage engine](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine).
+This page documents system variables related to the [S3 storage engine](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/).
 
-See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables) for a complete list of system variables and instructions on setting system variables.
+See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables/) for a complete list of system variables and instructions on setting system variables.
 
-Also see the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables)
+Also see the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables/)
 
 ## Variables
 
@@ -26,7 +26,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `s3_block_size`
 
-- <strong>Description:</strong> The default block size for a table, if not specified in [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table). Set to 4M as default. See [mysqld startup options for S3](/kb/en/using-the-s3-storage-engine/#mysqld-startup-options-for-s3).
+- <strong>Description:</strong> The default block size for a table, if not specified in [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/). Set to 4M as default. See [mysqld startup options for S3](/kb/en/using-the-s3-storage-engine/#mysqld-startup-options-for-s3).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--s3-block-size=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -214,4 +214,4 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 ## See Also
 
-[Using the S3 Storage Engine](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/using-the-s3-storage-engine)
+[Using the S3 Storage Engine](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/using-the-s3-storage-engine/)

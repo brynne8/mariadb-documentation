@@ -2,7 +2,7 @@
 
 The terms <em>master</em> and <em>slave</em> have historically been used in replication, but the terms terms <em>primary</em> and <em>replica</em> are now preferred. The old terms are used throughout the documentation, and in MariaDB commands, although [MariaDB 10.5](/kb/en/what-is-mariadb-105/) has begun the process of renaming. The documentation will follow over time. See [MDEV-18777](https://jira.mariadb.org/browse/MDEV-18777) to follow progress on this effort.
 
-Normally, all changes that are logged as events in the [binary log](/mariadb-administration/server-monitoring-logs/binary-log) are also
+Normally, all changes that are logged as events in the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) are also
 replicated to all slaves (though still subject to filtering by
 [replicate-do-db](/kb/en/replication-and-binary-log-system-variables/#replicate_do_db), [replicate-ignore-db](/kb/en/replication-and-binary-log-system-variables/#replicate_ignore_db),
 and similar options). However, sometimes it may be desirable to have certain
@@ -14,11 +14,11 @@ This could be useful if an application does some replication external to the
 server outside of the built-in replication, or if it has some data that should
 not be replicated for whatever reason.
 
-This is possible with the following [system variables](/replication/optimization-and-tuning/system-variables/server-system-variables).
+This is possible with the following [system variables](/replication/optimization-and-tuning/system-variables/server-system-variables/).
 
 ## Master Session Variable: skip_replication
 
-When the [skip_replication](/kb/en/replication-and-binary-log-server-system-variables/#skip_replication) variable is set to true, changes are logged into the [binary log](/mariadb-administration/server-monitoring-logs/binary-log) with the flag `@@skip_replication` set. Such events will not be replicated by slaves that run with
+When the [skip_replication](/kb/en/replication-and-binary-log-server-system-variables/#skip_replication) variable is set to true, changes are logged into the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) with the flag `@@skip_replication` set. Such events will not be replicated by slaves that run with
 <code class="fixed" style="white-space:pre-wrap">--replicate-events-marked-for-skip</code> set different from its default of `REPLICATE`.
 
 <table><tbody><tr><th>Variable Name</th><td><code>skip_replication</code></td></tr>
@@ -28,7 +28,7 @@ When the [skip_replication](/kb/en/replication-and-binary-log-server-system-vari
 <tr><th>Default Value</th><td><code>OFF</code></td></tr>
 </tbody></table>
 
-The `skip_replication` option only has effect if [binary logging](/mariadb-administration/server-monitoring-logs/binary-log) is enabled
+The `skip_replication` option only has effect if [binary logging](/mariadb-administration/server-monitoring-logs/binary-log/) is enabled
 and [sql_log_bin](/kb/en/replication-and-binary-log-server-system-variables/#skip_replication) is true.
 
 Attempting to change `@@skip_replication` in the middle of a transaction will
@@ -86,7 +86,7 @@ replicated.
 
 ## skip_replication and sql_log_bin
 
-[@@sql_log_bin](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set-sql_log_bin) and `@@skip_replication` are somewhat
+[@@sql_log_bin](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set-sql_log_bin/) and `@@skip_replication` are somewhat
 related, as they can both be used to prevent a change on the master from being
 replicated to the slave. The difference is that with `@@skip_replication`,
 changes are still written into the binlog, and replication of the events is
@@ -98,10 +98,10 @@ and so are not replicated by any slave.
 ## skip_replication and the Binlog
 
 When events in the binlog are marked with the `@@skip_replication` flag, the
-flag will be preserved if the events are dumped by the [mysqlbinlog](/clients-utilities/mysqlbinlog)
+flag will be preserved if the events are dumped by the [mysqlbinlog](/clients-utilities/mysqlbinlog/)
 program and re-applied against a server with the
-[mysql client](/clients-utilities/mysql-client/mysql-command-line-client) program. Similarly, the
-[BINLOG](/sql-statements-structure/sql-statements/administrative-sql-statements/binlog) statement will preserve the flag from the
+[mysql client](/clients-utilities/mysql-client/mysql-command-line-client/) program. Similarly, the
+[BINLOG](/sql-statements-structure/sql-statements/administrative-sql-statements/binlog/) statement will preserve the flag from the
 event being replayed. And a slave which runs with
 <code class="fixed" style="white-space:pre-wrap">--log-slave-updates</code> and does not filter events
 (<code class="fixed" style="white-space:pre-wrap">--replicate-events-marked-for-skip=REPLICATE</code>) will also
@@ -109,4 +109,4 @@ preserve the flag in the events logged into the binlog on the slave.
 
 ## See Also
 
-- [Using SQL_SLAVE_SKIP_COUNTER](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/set-global-sql_slave_skip_counter) - How to skip a number of events on the slave
+- [Using SQL_SLAVE_SKIP_COUNTER](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/set-global-sql_slave_skip_counter/) - How to skip a number of events on the slave

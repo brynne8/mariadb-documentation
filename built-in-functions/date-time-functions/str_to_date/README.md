@@ -8,14 +8,14 @@ STR_TO_DATE(str,format)
 
 ## Description
 
-This is the inverse of the [DATE_FORMAT](/built-in-functions/date-time-functions/date_format)() function. It takes
+This is the inverse of the [DATE_FORMAT](/built-in-functions/date-time-functions/date_format/)() function. It takes
 a string `str` and a format string `format`. `STR_TO_DATE()` returns a
 `DATETIME` value if the format string contains both date and time parts, or a
 `DATE` or `TIME` value if the string contains only date or time parts.
 
 The date, time, or datetime values contained in `str` should be given in the format indicated by format. If str contains an illegal date, time, or datetime value, `STR_TO_DATE()` returns `NULL`. An illegal value also produces a warning.
 
-The options that can be used by STR_TO_DATE(), as well as its inverse [DATE_FORMAT()](/built-in-functions/date-time-functions/date_format) and the [FROM_UNIXTIME()](/built-in-functions/date-time-functions/from_unixtime) function, are:
+The options that can be used by STR_TO_DATE(), as well as its inverse [DATE_FORMAT()](/built-in-functions/date-time-functions/date_format/) and the [FROM_UNIXTIME()](/built-in-functions/date-time-functions/from_unixtime/) function, are:
 
 <table><tbody><tr><th>Option</th><th>Description</th></tr>
 <tr><td><code>%a</code></td><td>Short weekday name in current locale (Variable <a href="/kb/en/server-system-variables/#lc_time_names">lc_time_names</a>).</td></tr>
@@ -91,5 +91,5 @@ SELECT STR_TO_DATE('Wednesday23423, June 2, 2014', '%W%#, %M %e, %Y');
 
 ## See Also
 
-- [DATE_FORMAT()](/built-in-functions/date-time-functions/date_format)
-- [FROM_UNIXTIME()](/built-in-functions/date-time-functions/from_unixtime)
+- [DATE_FORMAT()](/built-in-functions/date-time-functions/date_format/)
+- [FROM_UNIXTIME()](/built-in-functions/date-time-functions/from_unixtime/)

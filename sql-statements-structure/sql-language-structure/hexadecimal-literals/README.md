@@ -51,7 +51,7 @@ SELECT * FROM t1;
 +------+------+
 ```
 
-The reason for the differing results above is that when 0x31 is inserted directly to the column, it's treated as a number, while when 0x31 is passed to [COALESCE()](/sql-statements-structure/operators/comparison-operators/coalesce), it's treated as a string, because:
+The reason for the differing results above is that when 0x31 is inserted directly to the column, it's treated as a number, while when 0x31 is passed to [COALESCE()](/sql-statements-structure/operators/comparison-operators/coalesce/), it's treated as a string, because:
 
 - HEX values have a string data type by default.
 - COALESCE() has the same data type as the argument.
@@ -116,5 +116,5 @@ SELECT 0x0a+0;
 
 ## See also
 
-- [HEX()](/built-in-functions/string-functions/hex)
-- [UNHEX()](/built-in-functions/string-functions/unhex)
+- [HEX()](/built-in-functions/string-functions/hex/)
+- [UNHEX()](/built-in-functions/string-functions/unhex/)

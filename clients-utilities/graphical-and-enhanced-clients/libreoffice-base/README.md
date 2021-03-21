@@ -109,7 +109,7 @@ It consists of three windows/panels:
 
 As we can see, there are system tables in the <em>“mysql”</em> database as well as <em>“test”</em> database.
 
-Let’s say we create a table using the REST API from JSON data from [http://jsonplaceholder.typicode.com/posts](http://jsonplaceholder.typicode.com/posts), and another table using the same mechanism from [http://jsonplaceholder.typicode.com/users](http://jsonplaceholder.typicode.com/users), and let’s call them <em>webposts</em> and <em>webusers</em>. In order to do so, we have to enable the <strong>CONNECT</strong> storage engine plugin and start with REST_API. See more in the [CONNECT - Files Retrieved Using Rest Queries](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-files-retrieved-using-rest-queries) article.
+Let’s say we create a table using the REST API from JSON data from [http://jsonplaceholder.typicode.com/posts](http://jsonplaceholder.typicode.com/posts), and another table using the same mechanism from [http://jsonplaceholder.typicode.com/users](http://jsonplaceholder.typicode.com/users), and let’s call them <em>webposts</em> and <em>webusers</em>. In order to do so, we have to enable the <strong>CONNECT</strong> storage engine plugin and start with REST_API. See more in the [CONNECT - Files Retrieved Using Rest Queries](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-files-retrieved-using-rest-queries/) article.
 
 The queries we need to run in MariaDB are:
 

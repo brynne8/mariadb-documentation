@@ -10,7 +10,7 @@ In [MariaDB 10.4](/kb/en/what-is-mariadb-104/) and later, InnoDB supports adding
 
 When this operation is performed with <a undefined>ALGORITHM</a> set to `INSTANT`, the tablespace file will have a non-canonical storage format. See [Non-canonical Storage Format Caused by Some Operations](#non-canonical-storage-format-caused-by-some-operations) for more information.
 
-With the exception of adding an [auto-increment](/columns-storage-engines-and-plugins/data-types/auto_increment) column, this operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the <a undefined>LOCK</a> clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
+With the exception of adding an [auto-increment](/columns-storage-engines-and-plugins/data-types/auto_increment/) column, this operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the <a undefined>LOCK</a> clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
 For example, this succeeds:
 
@@ -38,9 +38,9 @@ ALTER TABLE tab ADD COLUMN c varchar(50) AFTER a;
 Query OK, 0 rows affected (0.004 sec)
 ```
 
-This applies to <a undefined>ALTER TABLE ... ADD COLUMN</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... ADD COLUMN</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
-See [Instant ADD COLUMN for InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-online-ddl/instant-add-column-for-innodb) for more information.
+See [Instant ADD COLUMN for InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-online-ddl/instant-add-column-for-innodb/) for more information.
 
 ### `ALTER TABLE ... DROP COLUMN`
 
@@ -64,11 +64,11 @@ ALTER TABLE tab DROP COLUMN c;
 Query OK, 0 rows affected (0.004 sec)
 ```
 
-This applies to <a undefined>ALTER TABLE ... DROP COLUMN</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... DROP COLUMN</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... MODIFY COLUMN`
 
-This applies to <a undefined>ALTER TABLE ... MODIFY COLUMN</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... MODIFY COLUMN</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 #### Reordering Columns
 
@@ -251,7 +251,7 @@ ERROR 1845 (0A000): ALGORITHM=INSTANT is not supported for this operation. Try A
 
 #### Adding a New `ENUM` Option
 
-InnoDB supports adding a new [ENUM](/columns-storage-engines-and-plugins/data-types/string-data-types/enum) option to a column with <a undefined>ALGORITHM</a> set to `INSTANT`. In order to add a new [ENUM](/columns-storage-engines-and-plugins/data-types/string-data-types/enum) option with <a undefined>ALGORITHM</a> set to `INSTANT`, the following requirements must be met:
+InnoDB supports adding a new [ENUM](/columns-storage-engines-and-plugins/data-types/string-data-types/enum/) option to a column with <a undefined>ALGORITHM</a> set to `INSTANT`. In order to add a new [ENUM](/columns-storage-engines-and-plugins/data-types/string-data-types/enum/) option with <a undefined>ALGORITHM</a> set to `INSTANT`, the following requirements must be met:
 
 - It must be added to the end of the list.
 - The storage requirements must not change.
@@ -288,7 +288,7 @@ ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: Cannot change co
 
 #### Adding a New `SET` Option
 
-InnoDB supports adding a new [SET](/columns-storage-engines-and-plugins/data-types/string-data-types/set-data-type) option to a column with <a undefined>ALGORITHM</a> set to `INSTANT`. In order to add a new [SET](/columns-storage-engines-and-plugins/data-types/string-data-types/set-data-type) option with <a undefined>ALGORITHM</a> set to `INSTANT`, the following requirements must be met:
+InnoDB supports adding a new [SET](/columns-storage-engines-and-plugins/data-types/string-data-types/set-data-type/) option to a column with <a undefined>ALGORITHM</a> set to `INSTANT`. In order to add a new [SET](/columns-storage-engines-and-plugins/data-types/string-data-types/set-data-type/) option with <a undefined>ALGORITHM</a> set to `INSTANT`, the following requirements must be met:
 
 - It must be added to the end of the list.
 - The storage requirements must not change.
@@ -325,7 +325,7 @@ ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: Cannot change co
 
 #### Removing System Versioning from a Column
 
-In [MariaDB 10.3.8](/kb/en/mariadb-1038-release-notes/) and later, InnoDB supports removing [system versioning](/sql-statements-structure/temporal-tables/system-versioned-tables) from a column with <a undefined>ALGORITHM</a> set to `INSTANT`. In order for this to work, the <a undefined>system_versioning_alter_history</a> system variable must be set to `KEEP`. See [MDEV-16330](https://jira.mariadb.org/browse/MDEV-16330) for more information.
+In [MariaDB 10.3.8](/kb/en/mariadb-1038-release-notes/) and later, InnoDB supports removing [system versioning](/sql-statements-structure/temporal-tables/system-versioned-tables/) from a column with <a undefined>ALGORITHM</a> set to `INSTANT`. In order for this to work, the <a undefined>system_versioning_alter_history</a> system variable must be set to `KEEP`. See [MDEV-16330](https://jira.mariadb.org/browse/MDEV-16330) for more information.
 
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the <a undefined>LOCK</a> clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
@@ -346,7 +346,7 @@ Query OK, 0 rows affected (0.004 sec)
 
 ### `ALTER TABLE ... ALTER COLUMN`
 
-This applies to <a undefined>ALTER TABLE ... ALTER COLUMN</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... ALTER COLUMN</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 #### Setting a Column's Default Value
 
@@ -420,7 +420,7 @@ ALTER TABLE tab CHANGE COLUMN c num int;
 ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: Cannot change column type INPLACE. Try ALGORITHM=COPY
 ```
 
-This applies to <a undefined>ALTER TABLE ... CHANGE COLUMN</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... CHANGE COLUMN</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ## Index Operations
 
@@ -443,7 +443,7 @@ ALTER TABLE tab ADD PRIMARY KEY (a);
 ERROR 1845 (0A000): ALGORITHM=INSTANT is not supported for this operation. Try ALGORITHM=INPLACE
 ```
 
-This applies to <a undefined>ALTER TABLE ... ADD PRIMARY KEY</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... ADD PRIMARY KEY</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... DROP PRIMARY KEY`
 
@@ -463,11 +463,11 @@ ALTER TABLE tab DROP PRIMARY KEY;
 ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: Dropping a primary key is not allowed without also adding a new primary key. Try ALGORITHM=COPY
 ```
 
-This applies to <a undefined>ALTER TABLE ... DROP PRIMARY KEY</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... DROP PRIMARY KEY</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... ADD INDEX` and `CREATE INDEX`
 
-This applies to <a undefined>ALTER TABLE ... ADD INDEX</a> and [CREATE INDEX](/sql-statements-structure/sql-statements/data-definition/create/create-index) for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... ADD INDEX</a> and [CREATE INDEX](/sql-statements-structure/sql-statements/data-definition/create/create-index/) for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 #### Adding a Plain Index
 
@@ -503,7 +503,7 @@ ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: ADD INDEX. Try A
 
 #### Adding a Fulltext Index
 
-InnoDB does <strong>not</strong> support adding a [FULLTEXT](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes) index to a table with <a undefined>ALGORITHM</a> set to `INSTANT`.
+InnoDB does <strong>not</strong> support adding a [FULLTEXT](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) index to a table with <a undefined>ALGORITHM</a> set to `INSTANT`.
 
 For example, this fails:
 
@@ -543,7 +543,7 @@ ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: ADD INDEX. Try A
 
 #### Adding a Spatial Index
 
-InnoDB does <strong>not</strong> support adding a [SPATIAL](/sql-statements-structure/geographic-geometric-features/spatial-index) index to a table with <a undefined>ALGORITHM</a> set to `INSTANT`.
+InnoDB does <strong>not</strong> support adding a [SPATIAL](/sql-statements-structure/geographic-geometric-features/spatial-index/) index to a table with <a undefined>ALGORITHM</a> set to `INSTANT`.
 
 For example, this fails:
 
@@ -609,7 +609,7 @@ DROP INDEX b_index ON tab;
 Query OK, 0 rows affected (0.007 sec)
 ```
 
-This applies to <a undefined>ALTER TABLE ... DROP INDEX</a> and [DROP INDEX](/sql-statements-structure/sql-statements/data-definition/drop/drop-index) for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... DROP INDEX</a> and [DROP INDEX](/sql-statements-structure/sql-statements/data-definition/drop/drop-index/) for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... ADD FOREIGN KEY`
 
@@ -636,7 +636,7 @@ ALTER TABLE tab1 ADD FOREIGN KEY tab2_fk (d) REFERENCES tab2 (a);
 ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: ADD INDEX. Try ALGORITHM=NOCOPY
 ```
 
-This applies to <a undefined>ALTER TABLE ... ADD FOREIGN KEY</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... ADD FOREIGN KEY</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... DROP FOREIGN KEY`
 
@@ -665,13 +665,13 @@ ALTER TABLE tab1 DROP FOREIGN KEY tab2_fk;
 Query OK, 0 rows affected (0.004 sec)
 ```
 
-This applies to <a undefined>ALTER TABLE ... DROP FOREIGN KEY</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... DROP FOREIGN KEY</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ## Table Operations
 
 ### `ALTER TABLE ... AUTO_INCREMENT=...`
 
-InnoDB supports changing a table's [AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment) value with <a undefined>ALGORITHM</a> set to `INSTANT`.
+InnoDB supports changing a table's [AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment/) value with <a undefined>ALGORITHM</a> set to `INSTANT`.
 
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the <a undefined>LOCK</a> clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
@@ -689,7 +689,7 @@ ALTER TABLE tab AUTO_INCREMENT=100;
 Query OK, 0 rows affected (0.002 sec)
 ```
 
-This applies to <a undefined>ALTER TABLE ... AUTO_INCREMENT=...</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... AUTO_INCREMENT=...</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... ROW_FORMAT=...`
 
@@ -709,7 +709,7 @@ ALTER TABLE tab ROW_FORMAT=COMPRESSED;
 ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: Changing table options requires the table to be rebuilt. Try ALGORITHM=INPLACE
 ```
 
-This applies to <a undefined>ALTER TABLE ... ROW_FORMAT=...</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... ROW_FORMAT=...</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... KEY_BLOCK_SIZE=...`
 
@@ -730,7 +730,7 @@ ALTER TABLE tab KEY_BLOCK_SIZE=2;
 ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: Changing table options requires the table to be rebuilt. Try ALGORITHM=INPLACE
 ```
 
-This applies to <a undefined>KEY_BLOCK_SIZE=...</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>KEY_BLOCK_SIZE=...</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... PAGE_COMPRESSED=1` and `ALTER TABLE ... PAGE_COMPRESSION_LEVEL=...`
 
@@ -785,11 +785,11 @@ ALTER TABLE tab PAGE_COMPRESSED=0;
 ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: Changing table options requires the table to be rebuilt. Try ALGORITHM=INPLACE
 ```
 
-This applies to <a undefined>ALTER TABLE ... PAGE_COMPRESSED=...</a> and <a undefined>ALTER TABLE ... PAGE_COMPRESSION_LEVEL=...</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... PAGE_COMPRESSED=...</a> and <a undefined>ALTER TABLE ... PAGE_COMPRESSION_LEVEL=...</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... DROP SYSTEM VERSIONING`
 
-InnoDB does <strong>not</strong> support dropping [system versioning](/sql-statements-structure/temporal-tables/system-versioned-tables) from a table with <a undefined>ALGORITHM</a> set to `INSTANT`.
+InnoDB does <strong>not</strong> support dropping [system versioning](/sql-statements-structure/temporal-tables/system-versioned-tables/) from a table with <a undefined>ALGORITHM</a> set to `INSTANT`.
 
 For example:
 
@@ -805,7 +805,7 @@ ALTER TABLE tab DROP SYSTEM VERSIONING;
 ERROR 1845 (0A000): ALGORITHM=INSTANT is not supported for this operation. Try ALGORITHM=INPLACE
 ```
 
-This applies to <a undefined>ALTER TABLE ... DROP SYSTEM VERSIONING</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... DROP SYSTEM VERSIONING</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... DROP CONSTRAINT`
 
@@ -828,7 +828,7 @@ ALTER TABLE tab DROP CONSTRAINT b_not_empty;
 Query OK, 0 rows affected (0.002 sec)
 ```
 
-This applies to <a undefined>ALTER TABLE ... DROP CONSTRAINT</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... DROP CONSTRAINT</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... FORCE`
 
@@ -848,7 +848,7 @@ ALTER TABLE tab FORCE;
 ERROR 1845 (0A000): ALGORITHM=INSTANT is not supported for this operation. Try ALGORITHM=INPLACE
 ```
 
-This applies to <a undefined>ALTER TABLE ... FORCE</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... FORCE</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... ENGINE=InnoDB`
 
@@ -868,7 +868,7 @@ ALTER TABLE tab ENGINE=InnoDB;
 ERROR 1845 (0A000): ALGORITHM=INSTANT is not supported for this operation. Try ALGORITHM=INPLACE
 ```
 
-This applies to <a undefined>ALTER TABLE ... ENGINE=InnoDB</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... ENGINE=InnoDB</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `OPTIMIZE TABLE ...`
 
@@ -904,7 +904,7 @@ OPTIMIZE TABLE tab;
 3 rows in set, 1 warning (0.002 sec)
 ```
 
-This applies to [OPTIMIZE TABLE](/replication/optimization-and-tuning/optimizing-tables/optimize-table) for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to [OPTIMIZE TABLE](/replication/optimization-and-tuning/optimizing-tables/optimize-table/) for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... RENAME TO` and `RENAME TABLE ...`
 
@@ -940,13 +940,13 @@ RENAME TABLE tab TO old_tab;
 Query OK, 0 rows affected (0.008 sec)
 ```
 
-This applies to <a undefined>ALTER TABLE ... RENAME TO</a> and [RENAME TABLE](/sql-statements-structure/sql-statements/data-definition/rename-table) for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... RENAME TO</a> and [RENAME TABLE](/sql-statements-structure/sql-statements/data-definition/rename-table/) for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ## Limitations
 
 ### Limitations Related to Generated (Virtual and Persistent/Stored) Columns
 
-[Generated columns](/sql-statements-structure/sql-statements/data-definition/create/generated-columns) do not currently support online DDL for all of the same operations that are supported for "real" columns.
+[Generated columns](/sql-statements-structure/sql-statements/data-definition/create/generated-columns/) do not currently support online DDL for all of the same operations that are supported for "real" columns.
 
 See [Generated (Virtual and Persistent/Stored) Columns: Statement Support](/kb/en/generated-columns/#statement-support) for more information on the limitations.
 
@@ -960,9 +960,9 @@ Some operations cause a table's tablespace file to use a non-canonical storage f
 
 These operations require the following non-canonical changes to the storage format:
 
-- A hidden metadata record at the start of the clustered index is used to store each column's [DEFAULT](/built-in-functions/secondary-functions/information-functions/default) value. This makes it possible to add new columns that have default values without rebuilding the table.
-- A [BLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/blob) in the hidden metadata record is used to store column mappings. This makes it possible to drop or reorder columns without rebuilding the table. This also makes it possible to add columns to any position or drop columns from any position in the table without rebuilding the table.
-- If a column is dropped, old records will contain garbage in that column's former position, and new records will be written with [NULL](/columns-storage-engines-and-plugins/data-types/null-values) values, empty strings, or dummy values.
+- A hidden metadata record at the start of the clustered index is used to store each column's [DEFAULT](/built-in-functions/secondary-functions/information-functions/default/) value. This makes it possible to add new columns that have default values without rebuilding the table.
+- A [BLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/blob/) in the hidden metadata record is used to store column mappings. This makes it possible to drop or reorder columns without rebuilding the table. This also makes it possible to add columns to any position or drop columns from any position in the table without rebuilding the table.
+- If a column is dropped, old records will contain garbage in that column's former position, and new records will be written with [NULL](/columns-storage-engines-and-plugins/data-types/null-values/) values, empty strings, or dummy values.
 
 This non-canonical storage format has the potential to incur some performance or storage overhead for all subsequent DML operations. If you notice some issues like this and you want to normalize a table's storage format to avoid this problem, then you can do so by forcing a table rebuild by executing <a undefined>ALTER TABLE ... FORCE</a> with <a undefined>ALGORITHM</a> set to `INPLACE`. For example:
 
@@ -988,7 +988,7 @@ ALTER TABLE tab FORCE;
 Query OK, 0 rows affected (0.008 sec)
 ```
 
-If you are concerned about these bugs, and you want to perform an operation that supports the <a undefined>INSTANT</a> algorithm, but you want to avoid using that algorithm, then you can set the algorithm to <a undefined>INPLACE</a> and add the `FORCE` keyword to the [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) statement:
+If you are concerned about these bugs, and you want to perform an operation that supports the <a undefined>INSTANT</a> algorithm, but you want to avoid using that algorithm, then you can set the algorithm to <a undefined>INPLACE</a> and add the `FORCE` keyword to the [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) statement:
 
 ```sql
 SET SESSION alter_algorithm='INPLACE';

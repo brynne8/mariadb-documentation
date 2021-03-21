@@ -6,7 +6,7 @@ If you specify a filename with an extension (for example `.log`), the extension 
 
 If you don't provide a name (which can, optionally, include an absolute path), the default will be `datadir/log-basename-bin`, `datadir/mysql-bin` or `datadir/mariadb-bin` (the latter two if [--log-basename](/kb/en/mysqld-options-full-list/#-log-basename) is not specified, and dependent on server version). Datadir is determined by the value of the [datadir](/kb/en/server-system-variables/#datadir) system variable.
 
-We strongly recommend you use either [--log-basename](/kb/en/mysqld-options-full-list/#-log-basename) or specify a filename to ensure that [replication](/replication) doesn't stop if the hostname of the computer changes.
+We strongly recommend you use either [--log-basename](/kb/en/mysqld-options-full-list/#-log-basename) or specify a filename to ensure that [replication](/replication/) doesn't stop if the hostname of the computer changes.
 
 The directory storing the binary logs will contain a binary log index, as well as the individual binary log files.
 
@@ -45,10 +45,10 @@ SET sql_log_bin = 1;
 
 ## Binary Log Format
 
-There are three formats for the binary log. The default is statement-based logging, while row-based logging and a mix of the two formats are also possible. See [Binary Log Formats](/mariadb-administration/server-monitoring-logs/binary-log/binary-log-formats) for a full discussion.
+There are three formats for the binary log. The default is statement-based logging, while row-based logging and a mix of the two formats are also possible. See [Binary Log Formats](/mariadb-administration/server-monitoring-logs/binary-log/binary-log-formats/) for a full discussion.
 
 ## See Also
 
-- [Setting sql_log_bin](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set-sql_log_bin)
+- [Setting sql_log_bin](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set-sql_log_bin/)
 - [PURGE LOGS](/kb/en/sql-commands-purge-logs/) - Delete logs
-- [FLUSH LOGS](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush)  - Close and rotate logs
+- [FLUSH LOGS](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/)  - Close and rotate logs

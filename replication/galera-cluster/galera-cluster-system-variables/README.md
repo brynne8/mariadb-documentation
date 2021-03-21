@@ -2,13 +2,13 @@
 
 This page documents system variables related to [Galera Cluster](/kb/en/galera/). For options that are not system variables, see [Galera Options](/kb/en/mysqld-options/#galera-options).
 
-See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables) for a complete list of system variables and instructions on setting them.
+See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables/) for a complete list of system variables and instructions on setting them.
 
-Also see the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables).
+Also see the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables/).
 
 #### `wsrep_auto_increment_control`
 
-- <strong>Description:</strong> If set to `1` (the default), will automatically adjust the [auto_increment_increment](/kb/en/replication-and-binary-log-server-system-variables/#auto_increment_increment) and [auto_increment_offset](/kb/en/replication-and-binary-log-server-system-variables/#auto_increment_offset) variables according to the size of the cluster, and when the cluster size changes. This avoids replication conflicts due to [auto_increment](/columns-storage-engines-and-plugins/data-types/auto_increment). In a master-slave environment, can be set to `OFF`.
+- <strong>Description:</strong> If set to `1` (the default), will automatically adjust the [auto_increment_increment](/kb/en/replication-and-binary-log-server-system-variables/#auto_increment_increment) and [auto_increment_offset](/kb/en/replication-and-binary-log-server-system-variables/#auto_increment_offset) variables according to the size of the cluster, and when the cluster size changes. This avoids replication conflicts due to [auto_increment](/columns-storage-engines-and-plugins/data-types/auto_increment/). In a master-slave environment, can be set to `OFF`.
 - <strong>Commandline:</strong> `--wsrep-auto-increment-control[={0|1}]`
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -78,7 +78,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `wsrep_convert_LOCK_to_trx`
 
-- <strong>Description:</strong> Converts [LOCK/UNLOCK TABLES](/kb/en/lock-tables-and-unlock-tables/) statements to [BEGIN](/sql-statements-structure/sql-statements/transactions/start-transaction) and [COMMIT](/sql-statements-structure/sql-statements/transactions/commit). Used mainly for getting older applications to work with a multi-master setup, use carefully, as can result in extremely large writesets.
+- <strong>Description:</strong> Converts [LOCK/UNLOCK TABLES](/kb/en/lock-tables-and-unlock-tables/) statements to [BEGIN](/sql-statements-structure/sql-statements/transactions/start-transaction/) and [COMMIT](/sql-statements-structure/sql-statements/transactions/commit/). Used mainly for getting older applications to work with a multi-master setup, use carefully, as can result in extremely large writesets.
 - <strong>Commandline:</strong> `--wsrep-convert-LOCK-to-trx[={0|1}]`
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -110,7 +110,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `wsrep_debug`
 
-- <strong>Description:</strong> WSREP debug level logging. Before [MariaDB 10.4.3](/kb/en/mariadb-1043-release-notes/) was a boolean, which when set to `ON` (`OFF` was default), ensured debug messages would be logged to the [error log](/mariadb-administration/server-monitoring-logs/error-log) as well.
+- <strong>Description:</strong> WSREP debug level logging. Before [MariaDB 10.4.3](/kb/en/mariadb-1043-release-notes/) was a boolean, which when set to `ON` (`OFF` was default), ensured debug messages would be logged to the [error log](/mariadb-administration/server-monitoring-logs/error-log/) as well.
 - <strong>Commandline:</strong> `--wsrep-debug[={0|1}]`
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -140,13 +140,13 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 - <strong>Data Type:</strong> Boolean
 - <strong>Default Value:</strong> `OFF`
 - <strong>Valid Values:</strong> `ON`, `OFF`
-- <strong>Introduced:</strong> [MariaDB Galera 5.5.42](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5542-release-notes), [MariaDB Galera 10.0.16](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10016-release-notes), [MariaDB 10.1.3](/kb/en/mariadb-1013-release-notes/)
+- <strong>Introduced:</strong> [MariaDB Galera 5.5.42](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5542-release-notes/), [MariaDB Galera 10.0.16](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10016-release-notes/), [MariaDB 10.1.3](/kb/en/mariadb-1013-release-notes/)
 
 ---
 
 #### `wsrep_drupal_282555_workaround`
 
-- <strong>Description:</strong> If set to `ON`, a workaround for [Drupal/MySQL/InnoDB bug #282555](https://www.drupal.org/node/282555) is enabled. This is a bug where, in some cases, when inserting a `DEFAULT` value into an [AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment) column, a duplicate key error may be returned.
+- <strong>Description:</strong> If set to `ON`, a workaround for [Drupal/MySQL/InnoDB bug #282555](https://www.drupal.org/node/282555) is enabled. This is a bug where, in some cases, when inserting a `DEFAULT` value into an [AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment/) column, a duplicate key error may be returned.
 - <strong>Commandline:</strong> `--wsrep-drupal-282555-workaround[={0|1}]`
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -157,7 +157,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `wsrep_forced_binlog_format`
 
-- <strong>Description:</strong> A [binary log format](/mariadb-administration/server-monitoring-logs/binary-log/binary-log-formats) that will override any session binlog format settings.
+- <strong>Description:</strong> A [binary log format](/mariadb-administration/server-monitoring-logs/binary-log/binary-log-formats/) that will override any session binlog format settings.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--wsrep-forced-binlog-format=value</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -169,10 +169,10 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `wsrep_gtid_domain_id`
 
-- <strong>Description:</strong> This system variable defines the [GTID](/replication/standard-replication/gtid) domain ID that is used for [wsrep GTID mode](/kb/en/using-mariadb-gtids-with-mariadb-galera-cluster/#wsrep-gtid-mode).
+- <strong>Description:</strong> This system variable defines the [GTID](/replication/standard-replication/gtid/) domain ID that is used for [wsrep GTID mode](/kb/en/using-mariadb-gtids-with-mariadb-galera-cluster/#wsrep-gtid-mode).
 <ul start="1"><li>When <a undefined>wsrep_gtid_mode</a> is set to `ON`, `wsrep_gtid_domain_id` is used in place of <a undefined>gtid_domain_id</a> for all Galera Cluster write sets.
 </li><li>When <a undefined>wsrep_gtid_mode</a> is set to `OFF`, `wsrep_gtid_domain_id` is simply ignored to allow for backward compatibility.
-</li><li>There are some additional requirements that need to be met in order for this mode to generate consistent [GTIDs](/replication/standard-replication/gtid). For more information, see [Using MariaDB GTIDs with MariaDB Galera Cluster](/replication/galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster).
+</li><li>There are some additional requirements that need to be met in order for this mode to generate consistent [GTIDs](/replication/standard-replication/gtid/). For more information, see [Using MariaDB GTIDs with MariaDB Galera Cluster](/replication/galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster/).
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--wsrep-gtid-domain-id=#</code>
 - <strong>Scope:</strong> Global
@@ -186,10 +186,10 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `wsrep_gtid_mode`
 
-- <strong>Description:</strong> [Wsrep GTID mode](/kb/en/using-mariadb-gtids-with-mariadb-galera-cluster/#wsrep-gtid-mode) attempts to keep [GTIDs](/replication/standard-replication/gtid) consistent for Galera Cluster write sets on all cluster nodes. [GTID](/replication/standard-replication/gtid) state is initially copied to a joiner node during an [SST](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts). If you are planning to use Galera Cluster with [MariaDB replication](/kb/en/high-availability-performance-tuning-mariadb-replication/), then wsrep GTID mode can be helpful.
+- <strong>Description:</strong> [Wsrep GTID mode](/kb/en/using-mariadb-gtids-with-mariadb-galera-cluster/#wsrep-gtid-mode) attempts to keep [GTIDs](/replication/standard-replication/gtid/) consistent for Galera Cluster write sets on all cluster nodes. [GTID](/replication/standard-replication/gtid/) state is initially copied to a joiner node during an [SST](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts/). If you are planning to use Galera Cluster with [MariaDB replication](/kb/en/high-availability-performance-tuning-mariadb-replication/), then wsrep GTID mode can be helpful.
 <ul start="1"><li>When `wsrep_gtid_mode` is set to `ON`, <a undefined>wsrep_gtid_domain_id</a> is used in place of <a undefined>gtid_domain_id</a> for all Galera Cluster write sets.
 </li><li>When `wsrep_gtid_mode` is set to `OFF`, <a undefined>wsrep_gtid_domain_id</a> is simply ignored to allow for backward compatibility.
-</li><li>There are some additional requirements that need to be met in order for this mode to generate consistent [GTIDs](/replication/standard-replication/gtid). For more information, see [Using MariaDB GTIDs with MariaDB Galera Cluster](/replication/galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster).
+</li><li>There are some additional requirements that need to be met in order for this mode to generate consistent [GTIDs](/replication/standard-replication/gtid/). For more information, see [Using MariaDB GTIDs with MariaDB Galera Cluster](/replication/galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster/).
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--wsrep-gtid-mode[={0|1}]</code>
 - <strong>Scope:</strong> Global
@@ -238,7 +238,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 - <strong>Dynamic:</strong> Yes
 - <strong>Data Type:</strong> Boolean
 - <strong>Default Value:</strong> `OFF` (&gt;= [MariaDB 10.4.3](/kb/en/mariadb-1043-release-notes/)), `ON` (&lt;= [MariaDB 10.4.2](/kb/en/mariadb-1042-release-notes/))
-- <strong>Introduced:</strong> [MariaDB Galera 5.5.32](/kb/en/mariadb-galera-cluster-5532-release-notes/), [MariaDB Galera 10.0.7](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-1007-release-notes), [MariaDB 10.1.3](/kb/en/mariadb-1013-release-notes/)
+- <strong>Introduced:</strong> [MariaDB Galera 5.5.32](/kb/en/mariadb-galera-cluster-5532-release-notes/), [MariaDB Galera 10.0.7](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-1007-release-notes/), [MariaDB 10.1.3](/kb/en/mariadb-1013-release-notes/)
 
 ---
 
@@ -255,14 +255,14 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `wsrep_max_ws_rows`
 
-- <strong>Description:</strong> Maximum permitted number of rows per writeset. Before [MariaDB Galera 10.0.27](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10027-release-notes) and [MariaDB 10.1.17](/kb/en/mariadb-10117-release-notes/) this variable was ignored internally and had no effect on the node. From [MariaDB Galera 10.0.27](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10027-release-notes) and [MariaDB 10.1.17](/kb/en/mariadb-10117-release-notes/) support for this variable has been added and in order to be backward compatible the default value has been changed to `0`, which essentially allows writesets to be any size.
+- <strong>Description:</strong> Maximum permitted number of rows per writeset. Before [MariaDB Galera 10.0.27](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10027-release-notes/) and [MariaDB 10.1.17](/kb/en/mariadb-10117-release-notes/) this variable was ignored internally and had no effect on the node. From [MariaDB Galera 10.0.27](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10027-release-notes/) and [MariaDB 10.1.17](/kb/en/mariadb-10117-release-notes/) support for this variable has been added and in order to be backward compatible the default value has been changed to `0`, which essentially allows writesets to be any size.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--wsrep-max-ws-rows=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
 - <strong>Data Type:</strong> Numeric
 - <strong>Default Value:</strong> 
-<ul start="1"><li>`0` (&gt;= [MariaDB Galera 10.0.27](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10027-release-notes), [MariaDB 10.1.17](/kb/en/mariadb-10117-release-notes/)) 
-</li><li>`131072` (&lt;= [MariaDB Galera 10.0.26](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10026-release-notes), [MariaDB 10.1.16](/kb/en/mariadb-10116-release-notes/))
+<ul start="1"><li>`0` (&gt;= [MariaDB Galera 10.0.27](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10027-release-notes/), [MariaDB 10.1.17](/kb/en/mariadb-10117-release-notes/)) 
+</li><li>`131072` (&lt;= [MariaDB Galera 10.0.26](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10026-release-notes/), [MariaDB 10.1.16](/kb/en/mariadb-10116-release-notes/))
 </li></ul>
 - <strong>Range:</strong> `0` to `1048576`
 
@@ -270,14 +270,14 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `wsrep_max_ws_size`
 
-- <strong>Description:</strong> Maximum permitted size in bytes per writeset. Writesets exceeding this will be rejected. Note that versions from and before [MariaDB 10.1.17](/kb/en/mariadb-10117-release-notes/) and [MariaDB Galera 10.0.27](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10027-release-notes) permitted the maximum to be set beyond 2GB, which was rejected by Galera.
+- <strong>Description:</strong> Maximum permitted size in bytes per writeset. Writesets exceeding this will be rejected. Note that versions from and before [MariaDB 10.1.17](/kb/en/mariadb-10117-release-notes/) and [MariaDB Galera 10.0.27](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10027-release-notes/) permitted the maximum to be set beyond 2GB, which was rejected by Galera.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--wsrep-max-ws-size=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
 - <strong>Data Type:</strong> Numeric
 - <strong>Default Value:</strong> 
-<ul start="1"><li>`2147483647` (2GB, &gt;= [MariaDB Galera 10.0.27](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10027-release-notes), [MariaDB 10.1.17](/kb/en/mariadb-10117-release-notes/))
-</li><li>`1073741824` (1GB, &lt;= [MariaDB Galera 10.0.26](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10026-release-notes), [MariaDB 10.1.16](/kb/en/mariadb-10116-release-notes/))
+<ul start="1"><li>`2147483647` (2GB, &gt;= [MariaDB Galera 10.0.27](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10027-release-notes/), [MariaDB 10.1.17](/kb/en/mariadb-10117-release-notes/))
+</li><li>`1073741824` (1GB, &lt;= [MariaDB Galera 10.0.26](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10026-release-notes/), [MariaDB 10.1.16](/kb/en/mariadb-10116-release-notes/))
 </li></ul>
 - <strong>Range:</strong> `1024` to `2147483647`
 
@@ -286,13 +286,13 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 #### `wsrep_mode`
 
 - <strong>Description:</strong> Turns on WSREP features which are not part of default behavior.
-<ul><li>BINLOG_ROW_FORMAT_ONLY: Only ROW [binlog format](/mariadb-administration/server-monitoring-logs/binary-log/binary-log-formats) is supported.
+<ul><li>BINLOG_ROW_FORMAT_ONLY: Only ROW [binlog format](/mariadb-administration/server-monitoring-logs/binary-log/binary-log-formats/) is supported.
 </li><li>DISALLOW_LOCAL_GTID: Nodes can have GTIDs for local transactions in a number of scenarios. If DISALLOW_LOCAL_GTID is set, these operations produce an error ERROR HY000: Galera replication not supported. Scenarios include:
 <ul><li>A DDL statement is executed with wsrep_OSU_method=RSU set.
 </li><li>A DML statement writes to a non-InnoDB table.
 </li><li>A DML statement writes to an InnoDB table with wsrep_on=OFF set.
 </li></ul>
-</li><li>REPLICATE_ARIA: Whether or not DML updates for [Aria](/columns-storage-engines-and-plugins/storage-engines/aria) tables will be replicated. This functionality is experimental and should not be relied upon in production systems.
+</li><li>REPLICATE_ARIA: Whether or not DML updates for [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/) tables will be replicated. This functionality is experimental and should not be relied upon in production systems.
 </li><li>REPLICATE_MYISAM: Whether or not DML updates for [MyISAM](/kb/en/myisam/) tables will be replicated. This functionality is experimental and should not be relied upon in production systems.
 </li><li>REQUIRED_PRIMARY_KEY: Table should have PRIMARY KEY defined.
 </li><li>STRICT_REPLICATION: Same as the old [wsrep_strict_ddl](#wsrep_strict_ddl) setting.
@@ -389,10 +389,10 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 - <strong>Description:</strong> Online schema upgrade method. The default is `TOI`, specifying the setting without the optional parameter will set to `RSU`.
 <ul start="1"><li>`TOI`: Total Order Isolation. In each cluster node, DDL is processed in the same order regarding other transactions, guaranteeing data consistency. However, affected parts of the database will be locked for the whole cluster.
-</li><li>`RSU`: Rolling Schema Upgrade. DDL processing is only done locally on the node, and the user needs perform the changes manually on each node. The node is desynced from the rest of the cluster while the processing takes place to avoid the blocking other nodes. Schema changes [<em>must</em> be backwards compatible in the same way as for ROW based replication](/replication/standard-replication/replication-when-the-master-and-slave-have-different-table-definitions) to avoid breaking replication when the DDL processing is complete on the single node, and replication recommences.
+</li><li>`RSU`: Rolling Schema Upgrade. DDL processing is only done locally on the node, and the user needs perform the changes manually on each node. The node is desynced from the rest of the cluster while the processing takes place to avoid the blocking other nodes. Schema changes [<em>must</em> be backwards compatible in the same way as for ROW based replication](/replication/standard-replication/replication-when-the-master-and-slave-have-different-table-definitions/) to avoid breaking replication when the DDL processing is complete on the single node, and replication recommences.
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--wsrep-OSU-method[=value]</code>
-- <strong>Scope:</strong> Global, Session (since [MariaDB Galera 10.0.19](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10019-release-notes))
+- <strong>Scope:</strong> Global, Session (since [MariaDB Galera 10.0.19](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10019-release-notes/))
 - <strong>Dynamic:</strong> Yes
 - <strong>Data Type:</strong> Enum
 - <strong>Default Value:</strong> `TOI`
@@ -427,7 +427,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `wsrep_provider_options`
 
-- <strong>Description:</strong>  Semicolon (;) separated list of wsrep options (see [wsrep_provider_options](/replication/galera-cluster/wsrep_provider_options)).
+- <strong>Description:</strong>  Semicolon (;) separated list of wsrep options (see [wsrep_provider_options](/replication/galera-cluster/wsrep_provider_options/)).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--wsrep-provider-options=value</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -438,7 +438,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `wsrep_recover`
 
-- <strong>Description:</strong> If set to `ON` when the server starts, the server will recover the sequence number of the most recent write set applied by Galera, and it will be output to `stderr`, which is usually redirected to the [error log](/mariadb-administration/server-monitoring-logs/error-log). At that point, the server will exit. This sequence number can be provided to the <a undefined>wsrep_start_position</a> system variable.
+- <strong>Description:</strong> If set to `ON` when the server starts, the server will recover the sequence number of the most recent write set applied by Galera, and it will be output to `stderr`, which is usually redirected to the [error log](/mariadb-administration/server-monitoring-logs/error-log/). At that point, the server will exit. This sequence number can be provided to the <a undefined>wsrep_start_position</a> system variable.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--wsrep-recover[={0|1}]</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -485,7 +485,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 - <strong>Dynamic:</strong> Yes
 - <strong>Default Value:</strong> `OFF`
 - <strong>Data Type:</strong> Boolean
-- <strong>Introduced:</strong> [MariaDB Galera 5.5.39](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5539-release-notes), [MariaDB Galera 10.0.10](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10010-release-notes)
+- <strong>Introduced:</strong> [MariaDB Galera 5.5.39](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5539-release-notes/), [MariaDB Galera 10.0.10](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10010-release-notes/)
 
 ---
 
@@ -509,7 +509,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 - <strong>Dynamic:</strong> Yes
 - <strong>Data Type:</strong> Boolean
 - <strong>Default Value:</strong> ON
-- <strong>Introduced:</strong> [MariaDB Galera 5.5.39](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5539-release-notes), [MariaDB Galera 10.0.12](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10012-release-notes)
+- <strong>Introduced:</strong> [MariaDB Galera 5.5.39](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5539-release-notes/), [MariaDB Galera 10.0.12](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10012-release-notes/)
 
 ---
 
@@ -533,7 +533,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 - <strong>Dynamic:</strong> Yes
 - <strong>Data Type:</strong> Boolean
 - <strong>Default Value:</strong> OFF
-- <strong>Introduced:</strong> [MariaDB Galera 5.5.39](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5539-release-notes), [MariaDB Galera 10.0.12](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10012-release-notes)
+- <strong>Introduced:</strong> [MariaDB Galera 5.5.39](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5539-release-notes/), [MariaDB Galera 10.0.12](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10012-release-notes/)
 
 ---
 
@@ -552,7 +552,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `wsrep_sst_auth`
 
-- <strong>Description:</strong> Username and password of the user to use for replication. Unused if [wsrep_sst_method](#wsrep_sst_method) is set to `rsync`, while for other methods it should be in the format `&lt;user&gt;:&lt;password&gt;`. The contents are masked in logs and when querying the value with [SHOW VARIABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-variables). See [Introduction to State Snapshot Transfers (SSTs)](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts) for more information.
+- <strong>Description:</strong> Username and password of the user to use for replication. Unused if [wsrep_sst_method](#wsrep_sst_method) is set to `rsync`, while for other methods it should be in the format `&lt;user&gt;:&lt;password&gt;`. The contents are masked in logs and when querying the value with [SHOW VARIABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-variables/). See [Introduction to State Snapshot Transfers (SSTs)](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts/) for more information.
 - <strong>Commandline:</strong> `--wsrep-sst-auth=value`
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -563,7 +563,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `wsrep_sst_donor`
 
-- <strong>Description:</strong> Comma-separated list (from 5.5.33) or name (as per [wsrep_node_name](/kb/en/galera-cluster-system-variables/#wsrep_node_name)) of the servers as donors, or the source of the state transfer, in order of preference. The donor-selection algorithm, in general, prefers a donor capable of transferring only the missing transactions (IST) to the joiner node, instead of the complete state (SST). Thus, it starts by looking for an IST-capable node in the given donor list followed by rest of the nodes in the cluster. In case multiple candidate nodes are found outside the specified donor list, the node in the same segment ([gmcast.segment](/kb/en/wsrep_provider_options/#gmcastsegment)) as the joiner is preferred. If none of the existing nodes in the cluster can serve the missing transactions through IST, the algorithm moves on to look for a suitable node to transfer the entire state (SST). It first looks at the nodes specified in the donor list (irrespective of their segment). If no suitable donor is still found, the rest of the donor nodes are checked for suitability only if the donor list has a "terminating-comma". Note that a stateless node (the Galera arbitrator) can never be a donor. See [Introduction to State Snapshot Transfers (SSTs)](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts) for more information.
+- <strong>Description:</strong> Comma-separated list (from 5.5.33) or name (as per [wsrep_node_name](/kb/en/galera-cluster-system-variables/#wsrep_node_name)) of the servers as donors, or the source of the state transfer, in order of preference. The donor-selection algorithm, in general, prefers a donor capable of transferring only the missing transactions (IST) to the joiner node, instead of the complete state (SST). Thus, it starts by looking for an IST-capable node in the given donor list followed by rest of the nodes in the cluster. In case multiple candidate nodes are found outside the specified donor list, the node in the same segment ([gmcast.segment](/kb/en/wsrep_provider_options/#gmcastsegment)) as the joiner is preferred. If none of the existing nodes in the cluster can serve the missing transactions through IST, the algorithm moves on to look for a suitable node to transfer the entire state (SST). It first looks at the nodes specified in the donor list (irrespective of their segment). If no suitable donor is still found, the rest of the donor nodes are checked for suitability only if the donor list has a "terminating-comma". Note that a stateless node (the Galera arbitrator) can never be a donor. See [Introduction to State Snapshot Transfers (SSTs)](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts/) for more information.
 - <strong>Commandline:</strong> `--wsrep-sst-donor=value`
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -585,7 +585,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `wsrep_sst_method`
 
-- <strong>Description:</strong> Method used for taking the [state snapshot transfer (SST)](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts).  See [Introduction to State Snapshot Transfers (SSTs): SST Methods](/kb/en/introduction-to-state-snapshot-transfers-ssts/#sst-methods) for more information.
+- <strong>Description:</strong> Method used for taking the [state snapshot transfer (SST)](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts/).  See [Introduction to State Snapshot Transfers (SSTs): SST Methods](/kb/en/introduction-to-state-snapshot-transfers-ssts/#sst-methods) for more information.
 - <strong>Commandline:</strong> `--wsrep-sst-method=value`
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -597,7 +597,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `wsrep_sst_receive_address`
 
-- <strong>Description:</strong> This is the address where other nodes (donor) in the cluster connect to in order to send the state-transfer updates. If an address is not specified or its set to `AUTO` (default), mysqld uses [--wsrep_node_address](/kb/en/galera-cluster-system-variables/#wsrep_node_address)'s value as the receiving address.  However, if [--wsrep_node_address](/kb/en/galera-cluster-system-variables/#wsrep_node_address) is not set, it uses address from either [--bind-address](/kb/en/server-system-variables/#bind_address) or tries to get one from the list of available network interfaces, in the same order. Note: setting it to `localhost` will make it impossible for nodes running on other hosts to reach this node. See [Introduction to State Snapshot Transfers (SSTs)](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts) for more information.
+- <strong>Description:</strong> This is the address where other nodes (donor) in the cluster connect to in order to send the state-transfer updates. If an address is not specified or its set to `AUTO` (default), mysqld uses [--wsrep_node_address](/kb/en/galera-cluster-system-variables/#wsrep_node_address)'s value as the receiving address.  However, if [--wsrep_node_address](/kb/en/galera-cluster-system-variables/#wsrep_node_address) is not set, it uses address from either [--bind-address](/kb/en/server-system-variables/#bind_address) or tries to get one from the list of available network interfaces, in the same order. Note: setting it to `localhost` will make it impossible for nodes running on other hosts to reach this node. See [Introduction to State Snapshot Transfers (SSTs)](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts/) for more information.
 - <strong>Commandline:</strong> `--wsrep-sst-receive-address=value`
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -620,16 +620,16 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 #### `wsrep_strict_ddl`
 
 - <strong>Description:</strong> If set, reject DDL statements on affected tables not supporting Galera replication. This is done by checking if the table is InnoDB, which is the only table currently fully supporting Galera replication. MyISAM tables will not trigger the error if the experimental [wsrep_replicate_myisam](#wsrep_replicate_myisam) setting is `ON`. If set, should be set on all tables in the cluster. Affected DDL statements include:<br>
-[CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table) (e.g. CREATE TABLE t1(a int) engine=Aria)<br>
-[ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table)<br>
-[TRUNCATE TABLE](/sql-statements-structure/sql-statements/table-statements/truncate-table)<br>
-[CREATE VIEW](/programming-customizing-mariadb/views/create-view)<br>
-[CREATE TRIGGER](/programming-customizing-mariadb/triggers-events/triggers/create-trigger)<br>
-[CREATE INDEX](/sql-statements-structure/sql-statements/data-definition/create/create-index)<br>
-[DROP INDEX](/sql-statements-structure/sql-statements/data-definition/drop/drop-index)<br>
-[RENAME TABLE](/sql-statements-structure/sql-statements/data-definition/rename-table)<br>
-[DROP TABLE](/sql-statements-structure/sql-statements/data-definition/drop/drop-table)<br>
-Statements in [procedures](/programming-customizing-mariadb/stored-routines/stored-procedures), [events](/programming-customizing-mariadb/triggers-events/event-scheduler), and [functions](/programming-customizing-mariadb/stored-routines/stored-functions) are permitted as the affected
+[CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/) (e.g. CREATE TABLE t1(a int) engine=Aria)<br>
+[ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/)<br>
+[TRUNCATE TABLE](/sql-statements-structure/sql-statements/table-statements/truncate-table/)<br>
+[CREATE VIEW](/programming-customizing-mariadb/views/create-view/)<br>
+[CREATE TRIGGER](/programming-customizing-mariadb/triggers-events/triggers/create-trigger/)<br>
+[CREATE INDEX](/sql-statements-structure/sql-statements/data-definition/create/create-index/)<br>
+[DROP INDEX](/sql-statements-structure/sql-statements/data-definition/drop/drop-index/)<br>
+[RENAME TABLE](/sql-statements-structure/sql-statements/data-definition/rename-table/)<br>
+[DROP TABLE](/sql-statements-structure/sql-statements/data-definition/drop/drop-table/)<br>
+Statements in [procedures](/programming-customizing-mariadb/stored-routines/stored-procedures/), [events](/programming-customizing-mariadb/triggers-events/event-scheduler/), and [functions](/programming-customizing-mariadb/stored-routines/stored-functions/) are permitted as the affected
 tables are only known at execution. Furthermore, the various USER, ROLE, SERVER and 
 DATABASE statements are also allowed as they do not have an affected table. Deprecated in [MariaDB 10.6.0](/kb/en/mariadb-1060-release-notes/). Use [wsrep_mode=STRICT_REPLICATION](#wsrep_mode) instead.
 - <strong>Commandline:</strong> `--wsrep-strict-ddl[={0|1}`
@@ -646,21 +646,21 @@ DATABASE statements are also allowed as they do not have an affected table. Depr
 
 - <strong>Description:</strong> Setting this variable ensures causality checks will take place before executing an operation of the type specified by the value, ensuring that the statement is executed on a fully synced node. While the check is taking place, new queries are blocked on the node to allow the server to catch up with all updates made in the cluster up to the point where the check was begun. Once reached, the original query is executed on the node. This can result in higher latency. Note that when [wsrep_dirty_reads](#wsrep_dirty_reads) is ON, values of wsrep_sync_wait become irrelevant. Sample usage (for a critical read that must have the most up-to-date data) `SET SESSION wsrep_sync_wait=1; SELECT ...; SET SESSION wsrep_sync_wait=0;`
 <ul><li>`0` - Disabled (default)
-</li><li>`1` - READ (SELECT and BEGIN/START TRANSACTION). Up until [MariaDB 10.2.8](/kb/en/mariadb-1028-release-notes/), [MariaDB 10.1.26](/kb/en/mariadb-10126-release-notes/), [MariaDB Galera 10.0.31](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10031-release-notes) and [MariaDB Galera 5.5.56](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5556-release-notes), also SHOW). This is the same as [wsrep_causal_reads=1](#wsrep_causal_reads).
+</li><li>`1` - READ (SELECT and BEGIN/START TRANSACTION). Up until [MariaDB 10.2.8](/kb/en/mariadb-1028-release-notes/), [MariaDB 10.1.26](/kb/en/mariadb-10126-release-notes/), [MariaDB Galera 10.0.31](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10031-release-notes/) and [MariaDB Galera 5.5.56](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5556-release-notes/), also SHOW). This is the same as [wsrep_causal_reads=1](#wsrep_causal_reads).
 </li><li>`2` - UPDATE and DELETE; 
 </li><li>`3` - READ, UPDATE and DELETE;
 </li><li>`4` - INSERT and REPLACE;
 </li><li>`5` - READ, INSERT and REPLACE;
 </li><li>`6` - UPDATE, DELETE, INSERT and REPLACE;
 </li><li>`7` - READ, UPDATE, DELETE, INSERT and REPLACE;
-</li><li>`8` - SHOW (from [MariaDB 10.2.9](/kb/en/mariadb-1029-release-notes/), [MariaDB 10.1.27](/kb/en/mariadb-10127-release-notes/), [MariaDB Galera 10.0.32](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10032-release-notes), [MariaDB Galera 5.5.57](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5557-release-notes))
-</li><li>`9` - READ and SHOW (from [MariaDB 10.2.9](/kb/en/mariadb-1029-release-notes/), [MariaDB 10.1.27](/kb/en/mariadb-10127-release-notes/), [MariaDB Galera 10.0.32](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10032-release-notes), [MariaDB Galera 5.5.57](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5557-release-notes))
-</li><li>`10` - UPDATE, DELETE and SHOW (from [MariaDB 10.2.9](/kb/en/mariadb-1029-release-notes/), [MariaDB 10.1.27](/kb/en/mariadb-10127-release-notes/), [MariaDB Galera 10.0.32](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10032-release-notes), [MariaDB Galera 5.5.57](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5557-release-notes))
-</li><li>`11` - READ, UPDATE, DELETE and SHOW (from [MariaDB 10.2.9](/kb/en/mariadb-1029-release-notes/), [MariaDB 10.1.27](/kb/en/mariadb-10127-release-notes/), [MariaDB Galera 10.0.32](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10032-release-notes), [MariaDB Galera 5.5.57](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5557-release-notes))
-</li><li>`12` - INSERT, REPLACE and SHOW (from [MariaDB 10.2.9](/kb/en/mariadb-1029-release-notes/), [MariaDB 10.1.27](/kb/en/mariadb-10127-release-notes/), [MariaDB Galera 10.0.32](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10032-release-notes), [MariaDB Galera 5.5.57](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5557-release-notes))
-</li><li>`13` - READ, INSERT, REPLACE and SHOW (from [MariaDB 10.2.9](/kb/en/mariadb-1029-release-notes/), [MariaDB 10.1.27](/kb/en/mariadb-10127-release-notes/), [MariaDB Galera 10.0.32](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10032-release-notes), [MariaDB Galera 5.5.57](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5557-release-notes))
-</li><li>`14` - UPDATE, DELETE, INSERT, REPLACE and SHOW (from [MariaDB 10.2.9](/kb/en/mariadb-1029-release-notes/), [MariaDB 10.1.27](/kb/en/mariadb-10127-release-notes/), [MariaDB Galera 10.0.32](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10032-release-notes), [MariaDB Galera 5.5.57](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5557-release-notes))
-</li><li>`15` - READ, UPDATE, DELETE, INSERT, REPLACE and SHOW (from [MariaDB 10.2.9](/kb/en/mariadb-1029-release-notes/), [MariaDB 10.1.27](/kb/en/mariadb-10127-release-notes/), [MariaDB Galera 10.0.32](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10032-release-notes), [MariaDB Galera 5.5.57](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5557-release-notes))
+</li><li>`8` - SHOW (from [MariaDB 10.2.9](/kb/en/mariadb-1029-release-notes/), [MariaDB 10.1.27](/kb/en/mariadb-10127-release-notes/), [MariaDB Galera 10.0.32](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10032-release-notes/), [MariaDB Galera 5.5.57](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5557-release-notes/))
+</li><li>`9` - READ and SHOW (from [MariaDB 10.2.9](/kb/en/mariadb-1029-release-notes/), [MariaDB 10.1.27](/kb/en/mariadb-10127-release-notes/), [MariaDB Galera 10.0.32](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10032-release-notes/), [MariaDB Galera 5.5.57](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5557-release-notes/))
+</li><li>`10` - UPDATE, DELETE and SHOW (from [MariaDB 10.2.9](/kb/en/mariadb-1029-release-notes/), [MariaDB 10.1.27](/kb/en/mariadb-10127-release-notes/), [MariaDB Galera 10.0.32](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10032-release-notes/), [MariaDB Galera 5.5.57](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5557-release-notes/))
+</li><li>`11` - READ, UPDATE, DELETE and SHOW (from [MariaDB 10.2.9](/kb/en/mariadb-1029-release-notes/), [MariaDB 10.1.27](/kb/en/mariadb-10127-release-notes/), [MariaDB Galera 10.0.32](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10032-release-notes/), [MariaDB Galera 5.5.57](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5557-release-notes/))
+</li><li>`12` - INSERT, REPLACE and SHOW (from [MariaDB 10.2.9](/kb/en/mariadb-1029-release-notes/), [MariaDB 10.1.27](/kb/en/mariadb-10127-release-notes/), [MariaDB Galera 10.0.32](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10032-release-notes/), [MariaDB Galera 5.5.57](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5557-release-notes/))
+</li><li>`13` - READ, INSERT, REPLACE and SHOW (from [MariaDB 10.2.9](/kb/en/mariadb-1029-release-notes/), [MariaDB 10.1.27](/kb/en/mariadb-10127-release-notes/), [MariaDB Galera 10.0.32](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10032-release-notes/), [MariaDB Galera 5.5.57](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5557-release-notes/))
+</li><li>`14` - UPDATE, DELETE, INSERT, REPLACE and SHOW (from [MariaDB 10.2.9](/kb/en/mariadb-1029-release-notes/), [MariaDB 10.1.27](/kb/en/mariadb-10127-release-notes/), [MariaDB Galera 10.0.32](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10032-release-notes/), [MariaDB Galera 5.5.57](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5557-release-notes/))
+</li><li>`15` - READ, UPDATE, DELETE, INSERT, REPLACE and SHOW (from [MariaDB 10.2.9](/kb/en/mariadb-1029-release-notes/), [MariaDB 10.1.27](/kb/en/mariadb-10127-release-notes/), [MariaDB Galera 10.0.32](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10032-release-notes/), [MariaDB Galera 5.5.57](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5557-release-notes/))
 </li></ul>
 - <strong>Commandline:</strong> `--wsrep-sync-wait=`#
 - <strong>Scope:</strong> Global, Session
@@ -668,10 +668,10 @@ DATABASE statements are also allowed as they do not have an affected table. Depr
 - <strong>Data Type:</strong> Numeric
 - <strong>Default Value:</strong> `0`
 - <strong>Range:</strong> 
-<ul start="1"><li>`0` to `15` (&gt;= [MariaDB 10.2.9](/kb/en/mariadb-1029-release-notes/), [MariaDB 10.1.27](/kb/en/mariadb-10127-release-notes/), [MariaDB Galera 10.0.32](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10032-release-notes), [MariaDB Galera 5.5.57](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5557-release-notes))
-</li><li>`0` to `7` (&lt;= [MariaDB 10.2.8](/kb/en/mariadb-1028-release-notes/), [MariaDB 10.1.26](/kb/en/mariadb-10126-release-notes/), [MariaDB Galera 10.0.31](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10031-release-notes), [MariaDB Galera 5.5.56](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5556-release-notes))
+<ul start="1"><li>`0` to `15` (&gt;= [MariaDB 10.2.9](/kb/en/mariadb-1029-release-notes/), [MariaDB 10.1.27](/kb/en/mariadb-10127-release-notes/), [MariaDB Galera 10.0.32](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10032-release-notes/), [MariaDB Galera 5.5.57](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5557-release-notes/))
+</li><li>`0` to `7` (&lt;= [MariaDB 10.2.8](/kb/en/mariadb-1028-release-notes/), [MariaDB 10.1.26](/kb/en/mariadb-10126-release-notes/), [MariaDB Galera 10.0.31](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10031-release-notes/), [MariaDB Galera 5.5.56](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5556-release-notes/))
 </li></ul>
-- <strong>Introduced:</strong> [MariaDB Galera 10.0.13](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10013-release-notes), [MariaDB Galera 5.5.39](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5539-release-notes)
+- <strong>Introduced:</strong> [MariaDB Galera 10.0.13](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10013-release-notes/), [MariaDB Galera 5.5.39](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5539-release-notes/)
 
 ---
 

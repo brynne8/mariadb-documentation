@@ -1,6 +1,6 @@
 # myisamchk Table Information
 
-[myisamchk](/clients-utilities/myisam-clients-and-utilities/myisamchk) can be used to obtain information about MyISAM tables, particularly with the <em>-d</em>, <em>-e</em>, <em>-i</em> and <em>-v</em> options.
+[myisamchk](/clients-utilities/myisam-clients-and-utilities/myisamchk/) can be used to obtain information about MyISAM tables, particularly with the <em>-d</em>, <em>-e</em>, <em>-i</em> and <em>-v</em> options.
 
 Common options for gathering information include:
 

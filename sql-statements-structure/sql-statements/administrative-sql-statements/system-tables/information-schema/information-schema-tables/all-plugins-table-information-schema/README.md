@@ -26,7 +26,7 @@ It contains the following columns:
 <tr><td><code>PLUGIN_AUTH_VERSION</code></td><td>Plugin's version as determined by the plugin author. An example would be '0.99 beta 1'.</td></tr>
 </tbody></table>
 
-It provides a superset of the information shown by the [SHOW PLUGINS SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-plugins-soname) statement, as well as the <a undefined>information_schema.PLUGINS</a> table. For specific information about storage engines (a particular type of plugin), see the [Information Schema ENGINES table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-engines-table) and the [SHOW ENGINES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engines) statement.
+It provides a superset of the information shown by the [SHOW PLUGINS SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-plugins-soname/) statement, as well as the <a undefined>information_schema.PLUGINS</a> table. For specific information about storage engines (a particular type of plugin), see the [Information Schema ENGINES table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-engines-table/) and the [SHOW ENGINES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engines/) statement.
 
 The table is not a standard Information Schema table, and is a MariaDB extension.
 

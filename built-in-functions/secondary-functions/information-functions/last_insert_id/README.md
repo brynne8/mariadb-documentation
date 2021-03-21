@@ -10,7 +10,7 @@ LAST_INSERT_ID(), LAST_INSERT_ID(expr)
 
 LAST_INSERT_ID() (no arguments) returns
 the first automatically generated value successfully inserted for an
-[AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment) column as a result of the most recently executed INSERT
+[AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment/) column as a result of the most recently executed INSERT
 statement. The value of LAST_INSERT_ID() remains unchanged if no rows
 are successfully inserted.
 
@@ -39,7 +39,7 @@ DELETE FROM product WHERE id = LAST_INSERT_ID();
 If no rows were successfully inserted, LAST_INSERT_ID() returns 0.
 
 The value of LAST_INSERT_ID() will be consistent across all versions
-if all rows in the [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert) or [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update) statement were successful.
+if all rows in the [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/) or [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/) statement were successful.
 
 The currently executing statement does not affect the value of
 LAST_INSERT_ID(). Suppose that you generate an AUTO_INCREMENT value
@@ -54,7 +54,7 @@ effect is undefined.)
 If the previous statement returned an error, the value of
 LAST_INSERT_ID() is undefined. For transactional tables, if the
 statement is rolled back due to an error, the value of
-LAST_INSERT_ID() is left undefined. For manual [ROLLBACK](/sql-statements-structure/sql-statements/transactions/rollback), the value of
+LAST_INSERT_ID() is left undefined. For manual [ROLLBACK](/sql-statements-structure/sql-statements/transactions/rollback/), the value of
 LAST_INSERT_ID() is not restored to that before the transaction; it
 remains as it was at the point of the ROLLBACK.
 
@@ -65,9 +65,9 @@ effect of a stored routine or trigger upon the value of
 LAST_INSERT_ID() that is seen by following statements depends on the
 kind of routine:
 
-- If a [stored procedure](/programming-customizing-mariadb/stored-routines/stored-procedures) executes statements that change the value of LAST_INSERT_ID(), the new value will be seen by statements that follow the procedure call.
+- If a [stored procedure](/programming-customizing-mariadb/stored-routines/stored-procedures/) executes statements that change the value of LAST_INSERT_ID(), the new value will be seen by statements that follow the procedure call.
 
-- For [stored functions](/programming-customizing-mariadb/stored-routines/stored-functions) and [triggers](/programming-customizing-mariadb/triggers-events/triggers) that change the value, the value is restored when the function or trigger ends, so following statements will not see a changed value.
+- For [stored functions](/programming-customizing-mariadb/stored-routines/stored-functions/) and [triggers](/programming-customizing-mariadb/triggers-events/triggers/) that change the value, the value is restored when the function or trigger ends, so following statements will not see a changed value.
 
 ## Examples
 
@@ -178,6 +178,6 @@ SELECT * FROM t;
 ## See Also
 
 - [mysql_insert_id](/kb/en/mysql_insert_id/)
-- [AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment)
-- [AUTO_INCREMENT handling in InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/auto_increment-handling-in-innodb)
-- [Sequences](/sql-statements-structure/sequences) - an alternative to auto_increment available from [MariaDB 10.3](/kb/en/what-is-mariadb-103/)
+- [AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment/)
+- [AUTO_INCREMENT handling in InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/auto_increment-handling-in-innodb/)
+- [Sequences](/sql-statements-structure/sequences/) - an alternative to auto_increment available from [MariaDB 10.3](/kb/en/what-is-mariadb-103/)

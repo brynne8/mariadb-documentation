@@ -103,7 +103,7 @@ Select the type of System Module Install [1=separate, 2=combined] (2) &gt; 1
 Seperate Server Installation will be performed.
 
 NOTE: Local Query Feature allows the ability to query data from a single Performance
-      Module. See [Local PM Query Mode](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-database-environment/configuring-columnstore-local-pm-query-mode) for additional information.
+      Module. See [Local PM Query Mode](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-database-environment/configuring-columnstore-local-pm-query-mode/) for additional information.
 
 ```sql
 Enable Local Query feature? [y,n] (n) > n

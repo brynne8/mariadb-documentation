@@ -8,7 +8,7 @@ The most recent release of [MariaDB 10.5](/kb/en/what-is-mariadb-105/) is:<br>
 
 <img src="/kb/en/about-mariadb-galera-cluster/+image/galera_small" alt="galera_small" title="galera_small">
 
-MariaDB Galera Cluster is a [virtually synchronous](/replication/galera-cluster/about-galera-replication) multi-master cluster for MariaDB. It is available on Linux only, and only supports the
+MariaDB Galera Cluster is a [virtually synchronous](/replication/galera-cluster/about-galera-replication/) multi-master cluster for MariaDB. It is available on Linux only, and only supports the
 [XtraDB/InnoDB](/kb/en/xtradb-and-innodb/) storage engines (although there is
 experimental support for [MyISAM](/kb/en/myisam/) - see the
 [wsrep_replicate_myisam](/kb/en/galera-cluster-system-variables/#wsrep_replicate_myisam)
@@ -16,7 +16,7 @@ system variable).
 
 ## Features
 
-- [Virtually synchronous replication](/replication/galera-cluster/about-galera-replication)
+- [Virtually synchronous replication](/replication/galera-cluster/about-galera-replication/)
 - Active-active multi-master topology
 - Read and write to any cluster node
 - Automatic membership control, failed nodes drop from the cluster
@@ -34,7 +34,7 @@ The above features yield several benefits for a DBMS clustering solution, includ
 - Smaller client latencies
 
 The [Getting Started with MariaDB
-Galera Cluster](/replication/galera-cluster/getting-started-with-mariadb-galera-cluster) page has instructions on how to get up and running with
+Galera Cluster](/replication/galera-cluster/getting-started-with-mariadb-galera-cluster/) page has instructions on how to get up and running with
 MariaDB Galera Cluster.
 
 A great resource for Galera users is [Codership on Google Groups](https://groups.google.com/forum/?fromgroups#!forum/codership-team) (<em>`codership-team` `'at'` `googlegroups` `(dot)` `com`</em>) - If you use Galera it is recommended you subscribe.
@@ -56,7 +56,7 @@ See [Deciphering Galera Version Numbers](https://mariadb.com/resources/blog/deci
 
 ### Galera 4 Versions
 
-The following table lists each version of the [Galera](/kb/en/galera/) 4 wsrep provider, and it lists which version of MariaDB each one was first released in. If you would like to install [Galera](/kb/en/galera/) 4 using [yum](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum), [apt](/kb/en/installing-mariadb-deb-files/#installing-mariadb-with-apt), or [zypper](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper), then the package is called `galera-4`.
+The following table lists each version of the [Galera](/kb/en/galera/) 4 wsrep provider, and it lists which version of MariaDB each one was first released in. If you would like to install [Galera](/kb/en/galera/) 4 using [yum](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum/), [apt](/kb/en/installing-mariadb-deb-files/#installing-mariadb-with-apt), or [zypper](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper/), then the package is called `galera-4`.
 
 <table><tbody><tr><th>Galera Version</th><th>Released in MariaDB Version</th></tr>
 <tr><td><strong>26.4.7</strong></td><td><a href="/kb/en/mariadb-1059-release-notes/">MariaDB 10.5.9</a>, <a href="/kb/en/mariadb-10418-release-notes/">MariaDB 10.4.18</a></td></tr>
@@ -71,7 +71,7 @@ The following table lists each version of the [Galera](/kb/en/galera/) 4 wsrep p
 
 ### Galera 3 Versions
 
-The following table lists each version of the [Galera](/kb/en/galera/) 3 wsrep provider, and it lists which version of MariaDB each one was first released in. If you would like to install [Galera](/kb/en/galera/) 3 using [yum](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum), [apt](/kb/en/installing-mariadb-deb-files/#installing-mariadb-with-apt), or [zypper](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper), then the package is called `galera`.
+The following table lists each version of the [Galera](/kb/en/galera/) 3 wsrep provider, and it lists which version of MariaDB each one was first released in. If you would like to install [Galera](/kb/en/galera/) 3 using [yum](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum/), [apt](/kb/en/installing-mariadb-deb-files/#installing-mariadb-with-apt), or [zypper](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper/), then the package is called `galera`.
 
 <table><tbody><tr><th>Galera Version</th><th>Released in MariaDB Version</th></tr>
 <tr><td><strong>25.3.32</strong></td><td><a href="/kb/en/mariadb-10328-release-notes/">MariaDB 10.3.28</a>, <a href="/kb/en/mariadb-10237-release-notes/">MariaDB 10.2.37</a></td></tr>
@@ -109,8 +109,8 @@ The following table lists each version of the [Galera](/kb/en/galera/) 3 wsrep p
 ## See Also
 
 - [Codership on Google Groups](https://groups.google.com/forum/?fromgroups#!forum/codership-team) (<em>`codership-team 'at' googlegroups (dot) com`</em>) - A great mailing list for Galera users.
-- [About Galera Replication](/replication/galera-cluster/about-galera-replication)
+- [About Galera Replication](/replication/galera-cluster/about-galera-replication/)
 - [Codership: Using Galera Cluster](http://codership.com/content/using-galera-cluster)
-- [Galera Use Cases](/replication/galera-cluster/galera-use-cases)
-- [Getting Started with MariaDB Galera Cluster](/replication/galera-cluster/getting-started-with-mariadb-galera-cluster)
-- [MariaDB Galera Cluster - Known Limitations](/replication/galera-cluster/mariadb-galera-cluster-known-limitations)
+- [Galera Use Cases](/replication/galera-cluster/galera-use-cases/)
+- [Getting Started with MariaDB Galera Cluster](/replication/galera-cluster/getting-started-with-mariadb-galera-cluster/)
+- [MariaDB Galera Cluster - Known Limitations](/replication/galera-cluster/mariadb-galera-cluster-known-limitations/)

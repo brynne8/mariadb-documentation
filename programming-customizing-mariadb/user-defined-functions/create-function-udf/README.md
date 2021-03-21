@@ -11,17 +11,17 @@ CREATE [OR REPLACE] [AGGREGATE] FUNCTION [IF NOT EXISTS] function_name
 ## Description
 
 A user-defined function (UDF) is a way to extend MariaDB with a new function
-that works like a native (built-in) MariaDB function such as [ABS()](/built-in-functions/numeric-functions/abs) or
-[CONCAT()](/built-in-functions/string-functions/concat).
+that works like a native (built-in) MariaDB function such as [ABS()](/built-in-functions/numeric-functions/abs/) or
+[CONCAT()](/built-in-functions/string-functions/concat/).
 
 `function_name` is the name that should be used in SQL statements to invoke
 the function.
 
-To create a function, you must have the [INSERT privilege](/sql-statements-structure/sql-statements/account-management-sql-commands/grant) for the
+To create a function, you must have the [INSERT privilege](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/) for the
 mysql database. This is necessary because `CREATE FUNCTION` adds a row to the
-[mysql.func system table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlfunc-table) that records the function's name,
+[mysql.func system table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlfunc-table/) that records the function's name,
 type, and shared library name. If you do not have this table, you should run
-the [mysql_upgrade](/sql-statements-structure/sql-statements/table-statements/mysql_upgrade) command to create it.
+the [mysql_upgrade](/sql-statements-structure/sql-statements/table-statements/mysql_upgrade/) command to create it.
 
 UDFs need to be written in C, C++ or another language that uses C calling
 conventions, MariaDB needs to have been dynamically compiled, and your
@@ -33,14 +33,14 @@ Statements making use of user-defined functions are not
 [safe for replication](/kb/en/unsafe-statements-for-replication/).
 
 For creating a stored function as opposed to a user-defined function, see
-[CREATE FUNCTION](/sql-statements-structure/sql-statements/data-definition/create/create-function).
+[CREATE FUNCTION](/sql-statements-structure/sql-statements/data-definition/create/create-function/).
 
-For valid identifiers to use as function names, see [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names).
+For valid identifiers to use as function names, see [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names/).
 
 #### RETURNS
 
 The `RETURNS` clause indicates the type of the function's
-return value, and can be one of [STRING](string), [INTEGER](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/integer), [REAL](real) or [DECIMAL](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/decimal). `DECIMAL` functions currently return string values and should be written like [STRING](/columns-storage-engines-and-plugins/data-types/string-data-types) functions.
+return value, and can be one of [STRING](string), [INTEGER](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/integer/), [REAL](real) or [DECIMAL](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/decimal/). `DECIMAL` functions currently return string values and should be written like [STRING](/columns-storage-engines-and-plugins/data-types/string-data-types/) functions.
 
 #### shared_library_name
 
@@ -53,12 +53,12 @@ that was searched by your system's dynamic linker.
 
 #### AGGREGATE
 
-Aggregate functions are summary functions such as [SUM()](/built-in-functions/aggregate-functions/sum) and
-[AVG()](/built-in-functions/aggregate-functions/avg).
+Aggregate functions are summary functions such as [SUM()](/built-in-functions/aggregate-functions/sum/) and
+[AVG()](/built-in-functions/aggregate-functions/avg/).
 
 ##### MariaDB starting with [10.4](/kb/en/what-is-mariadb-104/)
 
-Aggregate UDF functions can be used as [window functions](/built-in-functions/special-functions/window-functions).
+Aggregate UDF functions can be used as [window functions](/built-in-functions/special-functions/window-functions/).
 
 #### OR REPLACE
 
@@ -84,7 +84,7 @@ When the IF NOT EXISTS clause is used, MariaDB will return a warning instead of 
 ### Upgrading a UDF
 
 To upgrade the UDF's shared library, first run a
-[DROP FUNCTION](/programming-customizing-mariadb/stored-routines/stored-functions/drop-function) statement, then upgrade the shared library and
+[DROP FUNCTION](/programming-customizing-mariadb/stored-routines/stored-functions/drop-function/) statement, then upgrade the shared library and
 finally run the CREATE FUNCTION statement. If you upgrade without following
 this process, you may crash the server.
 
@@ -117,6 +117,6 @@ SHOW WARNINGS;
 
 ## See Also
 
-- [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names)
-- [DROP FUNCTION](/programming-customizing-mariadb/stored-routines/stored-functions/drop-function)
-- [CREATE FUNCTION](/sql-statements-structure/sql-statements/data-definition/create/create-function)
+- [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names/)
+- [DROP FUNCTION](/programming-customizing-mariadb/stored-routines/stored-functions/drop-function/)
+- [CREATE FUNCTION](/sql-statements-structure/sql-statements/data-definition/create/create-function/)

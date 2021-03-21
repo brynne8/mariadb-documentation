@@ -17,7 +17,7 @@ If called with two parameters, it returns the logarithm of X to the base B. If  
 If any argument is `NULL`, the function returns `NULL`.
 
 The inverse of this function (when called with a single argument) is
-the [EXP()](/built-in-functions/numeric-functions/exp) function.
+the [EXP()](/built-in-functions/numeric-functions/exp/) function.
 
 ## Examples
 

@@ -1,6 +1,6 @@
 # System-Versioned Tables
 
-MariaDB supports temporal data tables in the form of system-versioning tables (allowing you to query and operate on historic data, discussed below), [application-time periods](/sql-statements-structure/temporal-tables/application-time-periods) (allow you to query and operate on a temporal range of data), and [bitemporal tables](/sql-statements-structure/temporal-tables/bitemporal-tables) (which combine both system-versioning and [application-time periods](/sql-statements-structure/temporal-tables/application-time-periods)).
+MariaDB supports temporal data tables in the form of system-versioning tables (allowing you to query and operate on historic data, discussed below), [application-time periods](/sql-statements-structure/temporal-tables/application-time-periods/) (allow you to query and operate on a temporal range of data), and [bitemporal tables](/sql-statements-structure/temporal-tables/bitemporal-tables/) (which combine both system-versioning and [application-time periods](/sql-statements-structure/temporal-tables/application-time-periods/)).
 
 ## System-Versioned Tables
 
@@ -22,7 +22,7 @@ System-versioned tables were first introduced in the SQL:2011 standard.
 ### Creating a System-Versioned Table
 
 <br>
-The [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table) syntax has been extended to permit creating a system-versioned table. To be system-versioned, according to SQL:2011, a table must have two generated columns, a period, and a special table option clause:
+The [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/) syntax has been extended to permit creating a system-versioned table. To be system-versioned, according to SQL:2011, a table must have two generated columns, a period, and a special table option clause:
 <br><br>
 
 ```sql
@@ -50,7 +50,7 @@ SELECT x, ROW_START, ROW_END FROM t;
 
 ### Adding or Removing System Versioning To/From a Table
 
-An existing table can be [altered](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) to enable system versioning for it.
+An existing table can be [altered](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) to enable system versioning for it.
 
 ```sql
 CREATE TABLE t(
@@ -170,7 +170,7 @@ A point in time when a row was inserted or deleted does not necessarily mean tha
 
 For some applications — for example, when doing data analytics on one-year-old data — this distinction does not matter much. For others — forensic analysis — it might be crucial.
 
-MariaDB supports transaction-precise history (only for the [InnoDB storage engine](/columns-storage-engines-and-plugins/storage-engines/innodb)) that allows seeing the data exactly as it would've been seen by a new connection doing a `SELECT` at the specified point in time — rows inserted <em>before</em> that point, but committed <em>after</em> will not be shown.
+MariaDB supports transaction-precise history (only for the [InnoDB storage engine](/columns-storage-engines-and-plugins/storage-engines/innodb/)) that allows seeing the data exactly as it would've been seen by a new connection doing a `SELECT` at the specified point in time — rows inserted <em>before</em> that point, but committed <em>after</em> will not be shown.
 
 To use transaction-precise history, InnoDB needs to remember not timestamps, but transaction identifier per row. This is done by creating generated columns as `BIGINT UNSIGNED`, not `TIMESTAMP(6)`:
 
@@ -183,7 +183,7 @@ CREATE TABLE t(
 ) WITH SYSTEM VERSIONING;
 ```
 
-These columns must be specified explicitly, but they can be made [INVISIBLE](/sql-statements-structure/sql-statements/data-definition/create/invisible-columns) to avoid cluttering `SELECT *` output.
+These columns must be specified explicitly, but they can be made [INVISIBLE](/sql-statements-structure/sql-statements/data-definition/create/invisible-columns/) to avoid cluttering `SELECT *` output.
 
 When one uses transaction-precise history, one can optionally use transaction identifiers in the `FOR SYSTEM_TIME` clause:
 
@@ -197,7 +197,7 @@ This will show the data, exactly as it was seen by the transaction with the iden
 
 When the history is stored together with the current data, it increases the size of the table, so current data queries — table scans and index searches — will take more time, because they will need to skip over historical data. If most queries on that table use only current data, it might make sense to store the history separately, to reduce the overhead from versioning.
 
-This is done by partitioning the table by `SYSTEM_TIME`. Because of the [partition pruning](/mariadb-administration/partitioning-tables/partition-pruning-and-selection) optimization, all current data queries will only access one partition, the one that stores current data.
+This is done by partitioning the table by `SYSTEM_TIME`. Because of the [partition pruning](/mariadb-administration/partitioning-tables/partition-pruning-and-selection/) optimization, all current data queries will only access one partition, the one that stores current data.
 
 This example shows how to create such a partitioned table:
 
@@ -319,7 +319,7 @@ ALTER TABLE t DROP PARTITION p0;
 
 Note, that one cannot drop a current partition or the only historical partition.
 
-And the third option; one can use a variant of the [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete) statement to prune the history:
+And the third option; one can use a variant of the [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/) statement to prune the history:
 
 ```sql
 DELETE HISTORY FROM t;
@@ -335,7 +335,7 @@ or to a specific transaction (with `BEFORE SYSTEM_TIME TRANSACTION xxx`).
 
 To protect the integrity of the history, this statement requires a special [`DELETE HISTORY`](/kb/en/grant/#table-privileges) privilege.
 
-The [TRUNCATE TABLE](/sql-statements-structure/sql-statements/table-statements/truncate-table) statement drops all historical records from a system-versioned-table.
+The [TRUNCATE TABLE](/sql-statements-structure/sql-statements/table-statements/truncate-table/) statement drops all historical records from a system-versioned-table.
 
 ### Excluding Columns From Versioning
 
@@ -358,13 +358,13 @@ CREATE TABLE t (
 ```
 
 Changes in other sections:
-[https://mariadb.com/kb/en/create-table/](/sql-statements-structure/sql-statements/data-definition/create/create-table)
-[https://mariadb.com/kb/en/alter-table/](/sql-statements-structure/sql-statements/data-definition/alter/alter-table)
+[https://mariadb.com/kb/en/create-table/](/sql-statements-structure/sql-statements/data-definition/create/create-table/)
+[https://mariadb.com/kb/en/alter-table/](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/)
 [https://mariadb.com/kb/en/join-syntax/](https://mariadb.com/kb/en/join-syntax/)
-[https://mariadb.com/kb/en/partitioning-types-overview/](/mariadb-administration/partitioning-tables/partitioning-types/partitioning-types-overview)
-[https://mariadb.com/kb/en/date-and-time-units/](/built-in-functions/date-time-functions/date-and-time-units)
-[https://mariadb.com/kb/en/delete/](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete)
-[https://mariadb.com/kb/en/library/grant/](/sql-statements-structure/sql-statements/account-management-sql-commands/grant)
+[https://mariadb.com/kb/en/partitioning-types-overview/](/mariadb-administration/partitioning-tables/partitioning-types/partitioning-types-overview/)
+[https://mariadb.com/kb/en/date-and-time-units/](/built-in-functions/date-time-functions/date-and-time-units/)
+[https://mariadb.com/kb/en/delete/](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/)
+[https://mariadb.com/kb/en/library/grant/](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/)
 
 they all reference back to this page
 
@@ -378,7 +378,7 @@ There are a number of system variables related to system-versioned tables:
 
 #### `system_versioning_alter_history`
 
-- <strong>Description:</strong> SQL:2011 does not allow [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) on system-versioned tables. When this variable is set to `ERROR`, an attempt to alter a system-versioned table will result in an error. When this variable is set to `KEEP`, ALTER TABLE will be allowed, but the history will become incorrect — querying historical data will show the new table structure. This mode is still useful, for example, when adding new columns to a table. Note that if historical data contains or would contain nulls, attempting to ALTER these columns to be `NOT NULL` will return an error (or warning if [strict_mode](/kb/en/sql-mode/#strict-mode) is not set).
+- <strong>Description:</strong> SQL:2011 does not allow [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) on system-versioned tables. When this variable is set to `ERROR`, an attempt to alter a system-versioned table will result in an error. When this variable is set to `KEEP`, ALTER TABLE will be allowed, but the history will become incorrect — querying historical data will show the new table structure. This mode is still useful, for example, when adding new columns to a table. Note that if historical data contains or would contain nulls, attempting to ALTER these columns to be `NOT NULL` will return an error (or warning if [strict_mode](/kb/en/sql-mode/#strict-mode) is not set).
 - <strong>Commandline:</strong> `--system-versioning-alter-history=value`
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -391,7 +391,7 @@ There are a number of system variables related to system-versioned tables:
 
 #### `system_versioning_asof`
 
-- <strong>Description:</strong> If set to a specific timestamp value, an implicit `FOR SYSTEM_TIME AS OF` clause will be applied to all queries. This is useful if one wants to do many queries for history at the specific point in time. Set it to `DEFAULT` to restore the default behavior. Has no effect on DML, so queries such as [INSERT .. SELECT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-select) and [REPLACE .. SELECT](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/replace) need to state AS OF explicitly.
+- <strong>Description:</strong> If set to a specific timestamp value, an implicit `FOR SYSTEM_TIME AS OF` clause will be applied to all queries. This is useful if one wants to do many queries for history at the specific point in time. Set it to `DEFAULT` to restore the default behavior. Has no effect on DML, so queries such as [INSERT .. SELECT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-select/) and [REPLACE .. SELECT](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/replace/) need to state AS OF explicitly.
 - <strong>Commandline:</strong> None
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -416,12 +416,12 @@ There are a number of system variables related to system-versioned tables:
 
 ## Limitations
 
-- Versioning clauses can not be applied to [generated (virtual and persistent) columns](/sql-statements-structure/sql-statements/data-definition/create/generated-columns).
-- [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump) does not read historical rows from versioned tables, and so historical data will not be backed up. Also, a restore of the timestamps would not be possible as they cannot be defined by an insert/a user.
+- Versioning clauses can not be applied to [generated (virtual and persistent) columns](/sql-statements-structure/sql-statements/data-definition/create/generated-columns/).
+- [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump/) does not read historical rows from versioned tables, and so historical data will not be backed up. Also, a restore of the timestamps would not be possible as they cannot be defined by an insert/a user.
 
 ## See Also
 
-- [Application-Time Periods](/sql-statements-structure/temporal-tables/application-time-periods)
-- [Bitemporal Tables](/sql-statements-structure/temporal-tables/bitemporal-tables)
+- [Application-Time Periods](/sql-statements-structure/temporal-tables/application-time-periods/)
+- [Bitemporal Tables](/sql-statements-structure/temporal-tables/bitemporal-tables/)
 - [mysql.transaction_registry Table](/kb/en/mysqltransaction_registry-table/)
 - [MariaDB Temporal Tables](https://youtu.be/uBoUlTsU1Tk) (video)

@@ -37,25 +37,25 @@ sorting them, and then creating the index blocks. This is an order of magnitude
 faster than creating the index one row at a time and it also uses less key
 buffer memory.
 
-<strong>Note:</strong> When you insert into an <strong>empty table</strong> with [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert) or
+<strong>Note:</strong> When you insert into an <strong>empty table</strong> with [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/) or
 [LOAD DATA](/kb/en/load-data-infile/), MariaDB <strong>automatically</strong> does an
-[DISABLE KEYS](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) before and an [ENABLE KEYS](/sql-statements-structure/sql-statements/data-definition/alter/alter-table)
+[DISABLE KEYS](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) before and an [ENABLE KEYS](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/)
 afterwards.
 
-When inserting big amounts of data, integrity checks are sensibly time-consuming. It is possible to disable the `UNIQUE` indexes and the [foreign keys](/replication/optimization-and-tuning/optimization-and-indexes/foreign-keys) checks using the [unique_checks](/kb/en/server-system-variables/#unique_checks) and the [foreign_key_checks](/kb/en/server-system-variables/#foreign_key_checks) system variables:
+When inserting big amounts of data, integrity checks are sensibly time-consuming. It is possible to disable the `UNIQUE` indexes and the [foreign keys](/replication/optimization-and-tuning/optimization-and-indexes/foreign-keys/) checks using the [unique_checks](/kb/en/server-system-variables/#unique_checks) and the [foreign_key_checks](/kb/en/server-system-variables/#foreign_key_checks) system variables:
 
 ```sql
 SET @@session.unique_checks = 0;
 SET @@session.foreign_key_checks = 0;
 ```
 
-For InnoDB tables, the [AUTO_INCREMENT lock mode](/columns-storage-engines-and-plugins/storage-engines/innodb/auto_increment-handling-in-innodb) can be temporarily set to 2, which is the fastest setting:
+For InnoDB tables, the [AUTO_INCREMENT lock mode](/columns-storage-engines-and-plugins/storage-engines/innodb/auto_increment-handling-in-innodb/) can be temporarily set to 2, which is the fastest setting:
 
 ```sql
 SET @@global.innodb_autoinc_lock_mode = 2;
 ```
 
-Also, if the table has [INSERT triggers](/programming-customizing-mariadb/triggers-events/triggers) or [PERSISTENT](/kb/en/virtual-columns/) columns, you may want to drop them, insert all data, and recreate them.
+Also, if the table has [INSERT triggers](/programming-customizing-mariadb/triggers-events/triggers/) or [PERSISTENT](/kb/en/virtual-columns/) columns, you may want to drop them, insert all data, and recreate them.
 
 ## Loading Text Files
 
@@ -88,7 +88,7 @@ is not that big.
   least MyISAM and Aria support this).
 5 for empty tables, some transactional engines (like Aria) do not log the
   inserted data in the transaction log because one can rollback the operation
-  by just doing a [TRUNCATE](/sql-statements-structure/sql-statements/table-statements/truncate-table) on the table.
+  by just doing a [TRUNCATE](/sql-statements-structure/sql-statements/table-statements/truncate-table/) on the table.
 
 Because of the above speed advantages there are many cases, when you need to
 insert <strong>many</strong> rows at a time, where it may be faster to create a file
@@ -100,13 +100,13 @@ You will also get [progress reporting](/kb/en/progress-reporting/) for
 
 ### mariadb-import/mysqlimport
 
-You can import many files in parallel with [mariadb-import](/clients-utilities/backup-restore-and-import-clients/mysqlimport) (`mysqlimport` before [MariaDB 10.5](/kb/en/what-is-mariadb-105/)). For example:
+You can import many files in parallel with [mariadb-import](/clients-utilities/backup-restore-and-import-clients/mysqlimport/) (`mysqlimport` before [MariaDB 10.5](/kb/en/what-is-mariadb-105/)). For example:
 
 ```sql
 mysqlimport --use-threads=10 database text-file-name [text-file-name...]
 ```
 
-Internally [mariadb-import/mysqlimport](/clients-utilities/backup-restore-and-import-clients/mysqlimport) uses [LOAD DATA INFILE](/kb/en/load-data-infile/) to read
+Internally [mariadb-import/mysqlimport](/clients-utilities/backup-restore-and-import-clients/mysqlimport/) uses [LOAD DATA INFILE](/kb/en/load-data-infile/) to read
 in the data.
 
 ## Inserting Data with INSERT Statements
@@ -154,7 +154,7 @@ INSERT INTO table_name_1 (auto_increment_key, data) VALUES (NULL,"row 1");
 INSERT INTO table_name_2 (auto_increment, reference, data) values (NULL, LAST_INSERT_ID(), "row 2");
 ```
 
-[LAST_INSERT_ID()](/built-in-functions/secondary-functions/information-functions/last_insert_id) is a function that returns the last
+[LAST_INSERT_ID()](/built-in-functions/secondary-functions/information-functions/last_insert_id/) is a function that returns the last
 `auto_increment` value inserted.
 
 By default, the command line `mysql` client will send the above as
@@ -180,5 +180,5 @@ delimiter ;
 <tr><td><a href="/kb/en/server-system-variables/#read_buffer_size">read_buffer_size</a></td><td>Read block size when reading a file with <code>LOAD DATA</code></td></tr>
 </tbody></table>
 
-See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables) for the full list of server
+See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables/) for the full list of server
 variables.

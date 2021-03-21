@@ -2,7 +2,7 @@
 
 The `events_waits_history_long` table by default contains the ten thousand most recent completed wait events. This number can be adjusted by setting the [performance_schema_events_waits_history_long_size](/kb/en/performance-schema-system-variables/#performance_schema_events_waits_history_long_size) system variable when the server starts up.
 
-The table structure is identical to the [events_waits_current](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_current-table) table structure, and contains the following columns:
+The table structure is identical to the [events_waits_current](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_current-table/) table structure, and contains the following columns:
 
 <table><tbody><tr><th>Column</th><th>Description</th></tr>
 <tr><td><code>THREAD_ID</code></td><td>Thread associated with the event. Together with <code>EVENT_ID</code> uniquely identifies the row.</td></tr>

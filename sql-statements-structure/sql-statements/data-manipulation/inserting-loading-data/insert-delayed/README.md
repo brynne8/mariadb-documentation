@@ -8,7 +8,7 @@ INSERT DELAYED ...
 
 ## Description
 
-The <code class="highlight fixed" style="white-space:pre-wrap">DELAYED</code> option for the [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert)
+The <code class="highlight fixed" style="white-space:pre-wrap">DELAYED</code> option for the [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/)
 statement is a MariaDB/MySQL extension to standard SQL that is very useful if you have
 clients that cannot or need not wait for the <code class="highlight fixed" style="white-space:pre-wrap">INSERT</code> to
 complete. This is a common situation when you use MariaDB for logging and you
@@ -41,8 +41,8 @@ The number of concurrent `INSERT DELAYED` threads is limited by the <a undefined
 
 There are some limitations on the use of <code class="highlight fixed" style="white-space:pre-wrap">DELAYED</code>:
 
-- <code class="highlight fixed" style="white-space:pre-wrap">INSERT DELAYED</code> works only with [MyISAM](/columns-storage-engines-and-plugins/storage-engines/myisam-storage-engine), [MEMORY](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/memory-storage-engine), [ARCHIVE](/columns-storage-engines-and-plugins/storage-engines/archive),
-  and [BLACKHOLE](/columns-storage-engines-and-plugins/storage-engines/blackhole) tables. If you execute INSERT DELAYED with another storage engine, you will get an error like this: `ERROR 1616 (HY000): DELAYED option not supported for table 'tab_name'`
+- <code class="highlight fixed" style="white-space:pre-wrap">INSERT DELAYED</code> works only with [MyISAM](/columns-storage-engines-and-plugins/storage-engines/myisam-storage-engine/), [MEMORY](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/memory-storage-engine/), [ARCHIVE](/columns-storage-engines-and-plugins/storage-engines/archive/),
+  and [BLACKHOLE](/columns-storage-engines-and-plugins/storage-engines/blackhole/) tables. If you execute INSERT DELAYED with another storage engine, you will get an error like this: `ERROR 1616 (HY000): DELAYED option not supported for table 'tab_name'`
 - For MyISAM tables, if there are no free blocks in the middle of the data
   file, concurrent SELECT and INSERT statements are supported. Under these
   circumstances, you very seldom need to use <code class="highlight fixed" style="white-space:pre-wrap">INSERT DELAYED</code>
@@ -57,7 +57,7 @@ There are some limitations on the use of <code class="highlight fixed" style="wh
   <code class="highlight fixed" style="white-space:pre-wrap">AUTO_INCREMENT</code> value that the statement might generate.
 - <code class="highlight fixed" style="white-space:pre-wrap">DELAYED</code> rows are not visible to <code class="highlight fixed" style="white-space:pre-wrap">SELECT</code>
   statements until they actually have been inserted.
-- After <code class="highlight fixed" style="white-space:pre-wrap">INSERT DELAYED</code>, [ROW_COUNT()](/built-in-functions/secondary-functions/information-functions/row_count) returns the number of the rows you tried to insert, not the number of the successful writes.
+- After <code class="highlight fixed" style="white-space:pre-wrap">INSERT DELAYED</code>, [ROW_COUNT()](/built-in-functions/secondary-functions/information-functions/row_count/) returns the number of the rows you tried to insert, not the number of the successful writes.
 - <code class="highlight fixed" style="white-space:pre-wrap">DELAYED</code> is ignored on slave replication servers, so that 
   <code class="highlight fixed" style="white-space:pre-wrap">INSERT DELAYED</code> is treated as a normal
   <code class="highlight fixed" style="white-space:pre-wrap">INSERT</code> on slaves. This is because
@@ -68,16 +68,16 @@ There are some limitations on the use of <code class="highlight fixed" style="wh
 - <code class="highlight fixed" style="white-space:pre-wrap">INSERT DELAYED</code> is not supported for views. If you try, you will get an error like this: `ERROR 1347 (HY000): 'view_name' is not BASE TABLE`
 - <code class="highlight fixed" style="white-space:pre-wrap">INSERT DELAYED</code> is not supported for [partitioned tables](/kb/en/managing-mariadb-partitioning/).
 - <code class="highlight fixed" style="white-space:pre-wrap">INSERT DELAYED</code> is not supported within [stored programs](/kb/en/stored-programs-and-views/).
-- <code class="highlight fixed" style="white-space:pre-wrap">INSERT DELAYED</code> does not work with [triggers](/programming-customizing-mariadb/triggers-events/triggers).
+- <code class="highlight fixed" style="white-space:pre-wrap">INSERT DELAYED</code> does not work with [triggers](/programming-customizing-mariadb/triggers-events/triggers/).
 - <code class="highlight fixed" style="white-space:pre-wrap">INSERT DELAYED</code> does not work if there is a check constraint in place.
 - <code class="highlight fixed" style="white-space:pre-wrap">INSERT DELAYED</code> does not work if [skip-new](/kb/en/mysqld-options/#-skip-new) mode is active.
 
 ## See Also
 
-- [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert)
-- [INSERT SELECT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-select)
-- [HIGH_PRIORITY and LOW_PRIORITY](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/high_priority-and-low_priority)
-- [Concurrent Inserts](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/concurrent-inserts)
-- [INSERT - Default &amp; Duplicate Values](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-default-duplicate-values)
-- [INSERT IGNORE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-ignore)
-- [INSERT ON DUPLICATE KEY UPDATE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update)
+- [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/)
+- [INSERT SELECT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-select/)
+- [HIGH_PRIORITY and LOW_PRIORITY](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/high_priority-and-low_priority/)
+- [Concurrent Inserts](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/concurrent-inserts/)
+- [INSERT - Default &amp; Duplicate Values](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-default-duplicate-values/)
+- [INSERT IGNORE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-ignore/)
+- [INSERT ON DUPLICATE KEY UPDATE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update/)

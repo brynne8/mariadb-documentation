@@ -3,7 +3,7 @@
 The instructions on this page were used to create the <em>galera</em> package on the Fedora Linux distribution. This package contains the wsrep provider for [MariaDB Galera Cluster](/kb/en/galera/).
 <br><br>
 
-The following table lists each version of the [Galera](/kb/en/galera/) 4 wsrep provider, and it lists which version of MariaDB each one was first released in. If you would like to install [Galera](/kb/en/galera/) 4 using [yum](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum), [apt](/kb/en/installing-mariadb-deb-files/#installing-mariadb-with-apt), or [zypper](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper), then the package is called `galera-4`.
+The following table lists each version of the [Galera](/kb/en/galera/) 4 wsrep provider, and it lists which version of MariaDB each one was first released in. If you would like to install [Galera](/kb/en/galera/) 4 using [yum](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum/), [apt](/kb/en/installing-mariadb-deb-files/#installing-mariadb-with-apt), or [zypper](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper/), then the package is called `galera-4`.
 
 <table><tbody><tr><th>Galera Version</th><th>Released in MariaDB Version</th></tr>
 <tr><td><strong>26.4.7</strong></td><td><a href="/kb/en/mariadb-1059-release-notes/">MariaDB 10.5.9</a>, <a href="/kb/en/mariadb-10418-release-notes/">MariaDB 10.4.18</a></td></tr>
@@ -16,7 +16,7 @@ The following table lists each version of the [Galera](/kb/en/galera/) 4 wsrep p
 <tr><td><strong>26.4.0</strong></td><td><a href="/kb/en/mariadb-1042-release-notes/">MariaDB 10.4.2</a></td></tr>
 </tbody></table>
 
-The following table lists each version of the [Galera](/kb/en/galera/) 3 wsrep provider, and it lists which version of MariaDB each one was first released in. If you would like to install [Galera](/kb/en/galera/) 3 using [yum](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum), [apt](/kb/en/installing-mariadb-deb-files/#installing-mariadb-with-apt), or [zypper](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper), then the package is called `galera`.
+The following table lists each version of the [Galera](/kb/en/galera/) 3 wsrep provider, and it lists which version of MariaDB each one was first released in. If you would like to install [Galera](/kb/en/galera/) 3 using [yum](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum/), [apt](/kb/en/installing-mariadb-deb-files/#installing-mariadb-with-apt), or [zypper](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper/), then the package is called `galera`.
 
 <table><tbody><tr><th>Galera Version</th><th>Released in MariaDB Version</th></tr>
 <tr><td><strong>25.3.32</strong></td><td><a href="/kb/en/mariadb-10328-release-notes/">MariaDB 10.3.28</a>, <a href="/kb/en/mariadb-10237-release-notes/">MariaDB 10.2.37</a></td></tr>

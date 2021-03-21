@@ -158,7 +158,7 @@ Fast DDL operations can usually be executed in TOI mode:
 - DDL operations that support the `INPLACE` algorithm may be fast or slow, depending on whether the table needs to be rebuilt.
 - DDL operations that only support the `COPY` algorithm are usually very slow.
 
-For a list of which operations support which algorithms, see [InnoDB Online DDL](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-online-ddl).
+For a list of which operations support which algorithms, see [InnoDB Online DDL](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-online-ddl/).
 
 If you need to use RSU mode, then do the following separately for each node:
 
@@ -205,7 +205,7 @@ Until recently, FOREIGN KEYs were buggy.
 
 LOAD DATA is auto-chunked. That is, it is passed to other nodes piecemeal, not all at once.
 
-[MariaDB's known issues with Galera](/replication/galera-cluster/mariadb-galera-cluster-known-limitations)
+[MariaDB's known issues with Galera](/replication/galera-cluster/mariadb-galera-cluster-known-limitations/)
 
 DROP USER may not replicate?
 
@@ -221,12 +221,12 @@ WAN: May need to increase (from the defaults) wsrep_provider_options = evs...
 
 MySQL/Perona 5.6 or MariaDB 10 is recommended when going to Galera.
 
-[Cluster limitations](/replication/galera-cluster/mariadb-galera-cluster-known-limitations)
+[Cluster limitations](/replication/galera-cluster/mariadb-galera-cluster-known-limitations/)
 [Slide show](https://www.percona.com/files/presentations/percona-live/nyc-2012/PLNY12-galera-cluster-best-practices.pdf)
 
 ## GTIDs
 
-See [Using MariaDB GTIDs with MariaDB Galera Cluster](/replication/galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster).
+See [Using MariaDB GTIDs with MariaDB Galera Cluster](/replication/galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster/).
 
 ## How many nodes to have in a cluster
 

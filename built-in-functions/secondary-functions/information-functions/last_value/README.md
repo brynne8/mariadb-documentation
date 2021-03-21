@@ -17,9 +17,9 @@ LAST_VALUE(expr) OVER (
 
 <code class="highlight fixed" style="white-space:pre-wrap">LAST_VALUE()</code> evaluates all expressions and returns the last.
 
-This is useful together with [setting user variables to a value with @var:=expr](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set), for example when you want to get data of rows updated/deleted without having to do two queries against the table.
+This is useful together with [setting user variables to a value with @var:=expr](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set/), for example when you want to get data of rows updated/deleted without having to do two queries against the table.
 
-Since [MariaDB 10.2.2](/kb/en/mariadb-1022-release-notes/), LAST_VALUE can be used as a [window function](/built-in-functions/special-functions/window-functions).
+Since [MariaDB 10.2.2](/kb/en/mariadb-1022-release-notes/), LAST_VALUE can be used as a [window function](/built-in-functions/special-functions/window-functions/).
 
 Returns NULL if no last value exists.
 
@@ -37,7 +37,7 @@ SELECT @a,@b;
 +------+------+
 ```
 
-As a [window function](/built-in-functions/special-functions/window-functions):
+As a [window function](/built-in-functions/special-functions/window-functions/):
 
 ```sql
 CREATE TABLE t1 (
@@ -119,4 +119,4 @@ FROM t1;
 
 ## See Also
 
-- [Setting a variable to a value](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set)
+- [Setting a variable to a value](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set/)

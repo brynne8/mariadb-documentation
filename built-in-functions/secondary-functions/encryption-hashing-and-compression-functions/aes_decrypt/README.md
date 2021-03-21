@@ -10,4 +10,4 @@ AES_DECRYPT(crypt_str,key_str)
 
 This function allows decryption of data using the official AES
 (Advanced Encryption Standard) algorithm. For more information, see
-the description of [AES_ENCRYPT()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/aes_encrypt).
+the description of [AES_ENCRYPT()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/aes_encrypt/).

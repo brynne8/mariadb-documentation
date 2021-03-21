@@ -9,12 +9,12 @@ There are no changes in table or index formats between [MariaDB 5.3](/kb/en/what
 
 The suggested upgrade procedure is:
 
-1 For Windows, see [Upgrading MariaDB on Windows](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-mariadb-on-windows) instead.
+1 For Windows, see [Upgrading MariaDB on Windows](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-mariadb-on-windows/) instead.
 2 Shutdown [MariaDB 5.3](/kb/en/what-is-mariadb-53/)
 3 Take a backup (this is the perfect time to take a backup of your databases)
 4 Uninstall [MariaDB 5.3](/kb/en/what-is-mariadb-53/)
 5 Install [MariaDB 5.5](/kb/en/what-is-mariadb-55/) <sup class="reference" id="_ref-0">[[1](#_note-0)]</sup>
-6 Run [mysql_upgrade](/sql-statements-structure/sql-statements/table-statements/mysql_upgrade)
+6 Run [mysql_upgrade](/sql-statements-structure/sql-statements/table-statements/mysql_upgrade/)
 <ul start="1"><li>Ubuntu and Debian packages do this automatically when they are installed; Red Hat, CentOS, and Fedora packages do not
 </li><li>`mysql_upgrade` does two things:
 <ol start="1"><li>Upgrades the permission tables in the `mysql` database with some new fields

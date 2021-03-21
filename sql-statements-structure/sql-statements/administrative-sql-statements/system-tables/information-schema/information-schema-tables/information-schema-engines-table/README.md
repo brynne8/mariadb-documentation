@@ -13,7 +13,7 @@ It contains the following columns:
 <tr><td><code>SAVEPOINTS</code></td><td>Whether or not <a href="/kb/en/savepoint/">savepoints</a> are supported.</td></tr>
 </tbody></table>
 
-It provides identical information to the [SHOW ENGINES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engines) statement. Since storage engines are plugins, different information about them is also shown in the <a undefined>information_schema.PLUGINS</a> table and by the [SHOW PLUGINS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-plugins) statement.
+It provides identical information to the [SHOW ENGINES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engines/) statement. Since storage engines are plugins, different information about them is also shown in the <a undefined>information_schema.PLUGINS</a> table and by the [SHOW PLUGINS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-plugins/) statement.
 
 The table is not a standard Information Schema table, and is a MySQL and MariaDB extension.
 

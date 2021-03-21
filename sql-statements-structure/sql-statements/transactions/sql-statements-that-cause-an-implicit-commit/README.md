@@ -1,6 +1,6 @@
 # SQL statements That Cause an Implicit Commit
 
-Some SQL statements cause an implicit commit. As a rule of thumb, such statements are DDL statements. The same statements (except for [SHUTDOWN](/sql-statements-structure/sql-statements/administrative-sql-statements/shutdown)) produce a 1400 error ([SQLSTATE](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate) 'XAE09') if a XA transaction is in effect.
+Some SQL statements cause an implicit commit. As a rule of thumb, such statements are DDL statements. The same statements (except for [SHUTDOWN](/sql-statements-structure/sql-statements/administrative-sql-statements/shutdown/)) produce a 1400 error ([SQLSTATE](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate/) 'XAE09') if a XA transaction is in effect.
 
 Here is the list:
 
@@ -63,7 +63,7 @@ All these statements cause an implicit commit before execution. This means that,
 
 If you are not sure whether a statement has implicitly committed the current transaction, you can query the [in_transaction](/kb/en/server-system-variables/#in_transaction) server system variable.
 
-Note that when a transaction starts (not in autocommit mode), all locks acquired with [LOCK TABLES](/kb/en/lock-tables-and-unlock-tables/) are released. And acquiring such locks always commits the current transaction. To preserve the data integrity between transactional and non-transactional tables, the [GET_LOCK()](/built-in-functions/secondary-functions/miscellaneous-functions/get_lock) function can be used.
+Note that when a transaction starts (not in autocommit mode), all locks acquired with [LOCK TABLES](/kb/en/lock-tables-and-unlock-tables/) are released. And acquiring such locks always commits the current transaction. To preserve the data integrity between transactional and non-transactional tables, the [GET_LOCK()](/built-in-functions/secondary-functions/miscellaneous-functions/get_lock/) function can be used.
 
 ## Exceptions
 

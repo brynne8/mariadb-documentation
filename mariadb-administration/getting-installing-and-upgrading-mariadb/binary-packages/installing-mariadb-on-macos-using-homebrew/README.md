@@ -16,7 +16,7 @@ After installation, start MariaDB Server:
 mysql.server start
 ```
 
-To auto-start MariaDB Server, use Homebrew's services functionality, which configures auto-start with the launchctl utility from [launchd](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/launchd):
+To auto-start MariaDB Server, use Homebrew's services functionality, which configures auto-start with the launchctl utility from [launchd](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/launchd/):
 
 ```sql
 brew services start mariadb

@@ -1,16 +1,16 @@
 # mysql.event Table
 
-The `mysql.event` table contains information about MariaDB [events](/kb/en/stored-programs-and-views-events/). Similar information can be obtained by viewing the [INFORMATION_SCHEMA.EVENTS](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-events-table) table, or with the [SHOW EVENTS](show-event) and [SHOW CREATE EVENT](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-event) statements.
+The `mysql.event` table contains information about MariaDB [events](/kb/en/stored-programs-and-views-events/). Similar information can be obtained by viewing the [INFORMATION_SCHEMA.EVENTS](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-events-table/) table, or with the [SHOW EVENTS](show-event) and [SHOW CREATE EVENT](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-event/) statements.
 
 Since [MariaDB 10.0.22](/kb/en/mariadb-10022-release-notes/) and [MariaDB 10.1.9](/kb/en/mariadb-1019-release-notes/), the table is upgraded live, and there is no need to restart the server if the table has changed.
 
 ##### MariaDB starting with [10.4](/kb/en/what-is-mariadb-104/)
 
-In [MariaDB 10.4](/kb/en/what-is-mariadb-104/) and later, this table uses the [Aria](/columns-storage-engines-and-plugins/storage-engines/aria) storage engine.
+In [MariaDB 10.4](/kb/en/what-is-mariadb-104/) and later, this table uses the [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/) storage engine.
 
 ##### MariaDB until [10.3](/kb/en/what-is-mariadb-103/)
 
-In [MariaDB 10.3](/kb/en/what-is-mariadb-103/) and before, this table uses the [MyISAM](/columns-storage-engines-and-plugins/storage-engines/myisam-storage-engine) storage engine.
+In [MariaDB 10.3](/kb/en/what-is-mariadb-103/) and before, this table uses the [MyISAM](/columns-storage-engines-and-plugins/storage-engines/myisam-storage-engine/) storage engine.
 
 The `mysql.event` table contains the following fields:
 

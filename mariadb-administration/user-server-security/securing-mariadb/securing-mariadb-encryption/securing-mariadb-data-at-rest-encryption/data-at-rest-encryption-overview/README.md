@@ -34,32 +34,32 @@ These limitations exist in the data-at-rest encryption implementation in [MariaD
 
 - Only <strong>data</strong> and only <strong>at rest</strong> is encrypted. Metadata (for example `.frm` files) and data sent to the client are not encrypted (but see [Secure Connections](/kb/en/secure-connections/)).
 - Only the MariaDB server knows how to decrypt the data, in particular
-<ul start="1"><li>[mysqlbinlog](/clients-utilities/mysqlbinlog) can read encrypted binary logs only when --read-from-remote-server is used ([MDEV-8813](https://jira.mariadb.org/browse/MDEV-8813)).
+<ul start="1"><li>[mysqlbinlog](/clients-utilities/mysqlbinlog/) can read encrypted binary logs only when --read-from-remote-server is used ([MDEV-8813](https://jira.mariadb.org/browse/MDEV-8813)).
 </li><li>[Percona XtraBackup](/kb/en/percona-xtrabackup/) cannot back up instances that use encrypted InnoDB. However, MariaDB's fork, [MariaDB Backup](/kb/en/mariadb-backup/), can back up encrypted instances.
 </li></ul>
 - The disk-based [Galera gcache](https://galeracluster.com/library/documentation/state-transfer.html#write-set-cache-gcache) is not encrypted in the community version of MariaDB Server ([MDEV-9639](https://jira.mariadb.org/browse/MDEV-9639)). However, this file is encrypted in [MariaDB Enterprise Server 10.4](https://mariadb.com/docs/features/mariadb-enterprise-server/).
-- The [Audit plugin](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin) cannot create encrypted output. Send it to syslog and configure the protection there instead.
-- File-based [general query log](/mariadb-administration/server-monitoring-logs/general-query-log) and [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log) cannot be encrypted ([MDEV-9639](https://jira.mariadb.org/browse/MDEV-9639)).
+- The [Audit plugin](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/) cannot create encrypted output. Send it to syslog and configure the protection there instead.
+- File-based [general query log](/mariadb-administration/server-monitoring-logs/general-query-log/) and [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log/) cannot be encrypted ([MDEV-9639](https://jira.mariadb.org/browse/MDEV-9639)).
 - The Aria log is not encrypted ([MDEV-8587](https://jira.mariadb.org/browse/MDEV-8587)). This affects only non-temporary Aria tables though.
-- The MariaDB [error log](/mariadb-administration/server-monitoring-logs/error-log) is not encrypted. The error log can contain query text and data in some cases, including crashes, assertion failures, and cases where InnoDB/XtraDB write monitor output to the log to aid in debugging. It can be sent to syslog too, if needed.
+- The MariaDB [error log](/mariadb-administration/server-monitoring-logs/error-log/) is not encrypted. The error log can contain query text and data in some cases, including crashes, assertion failures, and cases where InnoDB/XtraDB write monitor output to the log to aid in debugging. It can be sent to syslog too, if needed.
 
 ## Encryption Key Management
 
-MariaDB's data-at-rest encryption requires the use of a [key management and encryption plugin](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management). These plugins are responsible both for the management of encryption keys and for the actual encryption and decryption of data.
+MariaDB's data-at-rest encryption requires the use of a [key management and encryption plugin](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management/). These plugins are responsible both for the management of encryption keys and for the actual encryption and decryption of data.
 
 MariaDB supports the use of [multiple encryption keys](/kb/en/encryption-key-management/#using-multiple-encryption-keys). Each encryption key uses a 32-bit integer as a key identifier. If the specific plugin supports [key rotation](/kb/en/encryption-key-management/#rotating-keys), then encryption keys can also be rotated, which creates a new version of the encryption key.
 
 How MariaDB manages encryption keys depends on which encryption key management solution you choose. Currently, MariaDB has three options:
 
-- [File Key Management Plugin](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin)
+- [File Key Management Plugin](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin/)
 - [AWS Key Management Plugin](/kb/en/aws-key-management-encryption-plugin/)
-- [Eperi Key Management Plugin](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/key-management-and-encryption-plugins/eperi-key-management-encryption-plugin)
+- [Eperi Key Management Plugin](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/key-management-and-encryption-plugins/eperi-key-management-encryption-plugin/)
 
 Once you have an key management and encryption plugin set up and configured for your server, you can begin using encryption options to better secure your data.
 
 ## Encrypting Data
 
-Encryption occurs whenever MariaDB writes pages to disk. Encrypting table data requires that you install a [key management and encryption plugin](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management), such as the [File Key Management](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin) plugin.  Once you have a plugin set up and configured, you can enable encryption for your InnoDB and Aria tables.
+Encryption occurs whenever MariaDB writes pages to disk. Encrypting table data requires that you install a [key management and encryption plugin](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management/), such as the [File Key Management](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin/) plugin.  Once you have a plugin set up and configured, you can enable encryption for your InnoDB and Aria tables.
 
 ### Encrypting Table Data
 
@@ -76,9 +76,9 @@ Since [MariaDB 10.1.27](/kb/en/mariadb-10127-release-notes/), [MariaDB 10.2.9](/
 
 ### Encrypting Binary Logs
 
-Since [MariaDB 10.1.7](/kb/en/mariadb-1017-release-notes/), MariaDB can also encrypt [binary logs](/mariadb-administration/server-monitoring-logs/binary-log) (including [relay logs](/mariadb-administration/server-monitoring-logs/binary-log/relay-log)).
+Since [MariaDB 10.1.7](/kb/en/mariadb-1017-release-notes/), MariaDB can also encrypt [binary logs](/mariadb-administration/server-monitoring-logs/binary-log/) (including [relay logs](/mariadb-administration/server-monitoring-logs/binary-log/relay-log/)).
 
-- [Encrypting Binary Logs](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/encrypting-binary-logs)
+- [Encrypting Binary Logs](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/encrypting-binary-logs/)
 
 ## Encryption and Page Compression
 
@@ -96,6 +96,6 @@ We are grateful to these companies for their support of MariaDB!
 ## See Also
 
 - [Encryption functions](/kb/en/encryption-functions/)
-- [DES_DECRYPT()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/des_decrypt)
-- [DES_ENCRYPT()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/des_encrypt)
+- [DES_DECRYPT()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/des_decrypt/)
+- [DES_ENCRYPT()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/des_encrypt/)
 - A [blog post about table encryption](https://mariadb.com/blog/table-and-tablespace-encryption-mariadb-101/) with benchmark results

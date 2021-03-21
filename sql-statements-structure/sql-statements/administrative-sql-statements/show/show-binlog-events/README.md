@@ -9,7 +9,7 @@ SHOW BINLOG EVENTS
 
 ## Description
 
-Shows the events in the [binary log](/mariadb-administration/server-monitoring-logs/binary-log). If you do not specify '`log_name`',
+Shows the events in the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/). If you do not specify '`log_name`',
 the first binary log is displayed.
 
 Requires the [BINLOG MONITOR](/kb/en/grant/#binlog-monitor) privilege (&gt;= [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/)) or the [REPLICATION SLAVE](/kb/en/grant/#replication-slave) privilege (&lt;= [MariaDB 10.5.1](/kb/en/mariadb-1051-release-notes/)).

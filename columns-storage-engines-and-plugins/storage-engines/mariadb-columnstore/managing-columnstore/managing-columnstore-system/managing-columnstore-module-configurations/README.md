@@ -2,7 +2,7 @@
 
 # Configuring modules
 
-A Module ([UM](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-user-module) or [PM](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module)) can be added or removed from MariaDB ColumnStore.
+A Module ([UM](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-user-module/) or [PM](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module/)) can be added or removed from MariaDB ColumnStore.
 
 ## Before adding modules or DBRoots
 
@@ -25,11 +25,11 @@ The system assigns the module id as they are added
 
 ## Adding DBRoots
 
-To add dbroots (storage files) into your system requires two operations: creating the physical dbroots and assigning them to a [Performance Module](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module).
+To add dbroots (storage files) into your system requires two operations: creating the physical dbroots and assigning them to a [Performance Module](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module/).
 
 NOTE: Anytime you add a DBRoot to an existing system, its recommended that you run the Redistribute Data command. This will re-balance the data onto the new DBRoot.
 
-[https://mariadb.com/kb/en/mariadb/columnstore-redistribute-data/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/columnstore-redistribute-data)
+[https://mariadb.com/kb/en/mariadb/columnstore-redistribute-data/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/columnstore-redistribute-data/)
 
 ### Creating the physical dbroot
 
@@ -63,8 +63,8 @@ DBRoot IDs unassigned = 3, 4
 
 ### Assign DBRoots to Performance Module
 
-After adding a DBRoot, it must be assigned to a [Performance Module](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module) before it can be used.  Use the `mcsadmin assignDbrootPmConfig` command to do so.
-Note: The  [Performance Module](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module) that the DBRoot is being assigned to must to Manually Offline. The system must be in a STOPPED state
+After adding a DBRoot, it must be assigned to a [Performance Module](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module/) before it can be used.  Use the `mcsadmin assignDbrootPmConfig` command to do so.
+Note: The  [Performance Module](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module/) that the DBRoot is being assigned to must to Manually Offline. The system must be in a STOPPED state
 
 #### Syntax
 
@@ -112,11 +112,11 @@ Once completed, start the system back up with the [startsystem](https://mariadb.
 
 ### Unassign DBRoots to Performance Module
 
-You can also unassign DBRoot from a [Performance Module](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module).  Use the `mcsadmin unassignDbrootPmConfig` command to do so.
+You can also unassign DBRoot from a [Performance Module](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module/).  Use the `mcsadmin unassignDbrootPmConfig` command to do so.
 
-Note: The  [Performance Module](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module) that the DBRoot is being unassigned from must to Manually Offline. The system must be in a STOPPED state
+Note: The  [Performance Module](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module/) that the DBRoot is being unassigned from must to Manually Offline. The system must be in a STOPPED state
 
-Note: You can't unassigned DBROOT #1. It always has to be assigned to the Active Parent [Performance Module](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module).
+Note: You can't unassigned DBROOT #1. It always has to be assigned to the Active Parent [Performance Module](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module/).
 
 #### Syntax
 
@@ -180,7 +180,7 @@ ColumnStore.xml is updated to add new modules and the appropriate files are inst
 
 NOTE: When adding Performance Modules with multiple NICs, you must add the host name for all NICs. If you do not, the add module process will fail with invalid parameters.
 
-This example will add 1 [User Module](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module) into the system and will assign the ID to be the next available ID. So if you system has a um1 and um2, the new module will be 'um3'.
+This example will add 1 [User Module](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module/) into the system and will assign the ID to be the next available ID. So if you system has a um1 and um2, the new module will be 'um3'.
 
 ```sql
  # mcsadmin addModule um 1 hosthameUm3 'password'
@@ -192,7 +192,7 @@ This example will add um3 into the system. So you can also specify the name of t
  # mcsadmin addModule um3 hosthameUm3 'password'
 ```
 
-This example will add 2 [Performance Modules](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module) into the system and will assign the ID to be the next available ID. So if you system has a pm1 and pm2, the new modules will be 'pm3' and 'pm4'
+This example will add 2 [Performance Modules](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module/) into the system and will assign the ID to be the next available ID. So if you system has a pm1 and pm2, the new modules will be 'pm3' and 'pm4'
 
 ```sql
  # mcsadmin addModule pm 2 hosthamePm3,hosthamePm4 'password'
@@ -208,8 +208,8 @@ If a new module has been added or if a module was previously disable, use this c
 #mcsadmin alterSystem-EnableModule pm3
 ```
 
-NOTE: Enabling a [User Module](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module) will automatically bring it Active and it will be part of the running system.
-NOTE: Enabling a [Permorance Module](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module) will ONLY be automatically brought into the system if it has a DBRoot assigned to it. If it doesn't, it will be in the MAN_OFFLINE state. So at this point, user would need to move or assign a DBRoot to it. Then it could be made ACTIVE with the startSystem command.
+NOTE: Enabling a [User Module](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module/) will automatically bring it Active and it will be part of the running system.
+NOTE: Enabling a [Permorance Module](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module/) will ONLY be automatically brought into the system if it has a DBRoot assigned to it. If it doesn't, it will be in the MAN_OFFLINE state. So at this point, user would need to move or assign a DBRoot to it. Then it could be made ACTIVE with the startSystem command.
 
 ### Adding module to AWS EC2 instances.
 

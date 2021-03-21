@@ -9,8 +9,8 @@
 ## Description
 
 <code class="highlight fixed" style="white-space:pre-wrap">DESCRIBE</code> provides information about the columns in a table.
-It is a shortcut for <code class="highlight fixed" style="white-space:pre-wrap">[SHOW COLUMNS FROM](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-columns)</code>.
-These statements also display information for [views](/programming-customizing-mariadb/views).
+It is a shortcut for <code class="highlight fixed" style="white-space:pre-wrap">[SHOW COLUMNS FROM](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-columns/)</code>.
+These statements also display information for [views](/programming-customizing-mariadb/views/).
 
 <code class="highlight fixed" style="white-space:pre-wrap">col_name</code> can be a column name, or a string containing the
 SQL "<code class="highlight fixed" style="white-space:pre-wrap">%</code>" and "<code class="highlight fixed" style="white-space:pre-wrap">_</code>" wildcard characters to
@@ -31,11 +31,11 @@ DESCRIBE city;
 +------------+----------+------+-----+---------+----------------+
 ```
 
-The description for <code class="highlight fixed" style="white-space:pre-wrap">[SHOW COLUMNS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-columns)</code> provides
+The description for <code class="highlight fixed" style="white-space:pre-wrap">[SHOW COLUMNS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-columns/)</code> provides
 more information about the output columns.
 
 ## See Also
 
-- [SHOW COLUMNS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-columns)
+- [SHOW COLUMNS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-columns/)
 - [INFORMATION_SCHEMA.COLUMNS Table](/kb/en/information-schema-columns-table/)
-- [mysqlshow](/clients-utilities/mysqlshow)
+- [mysqlshow](/clients-utilities/mysqlshow/)

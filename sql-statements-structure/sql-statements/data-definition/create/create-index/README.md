@@ -32,17 +32,17 @@ lock_option:
 
 ## Description
 
-CREATE INDEX is mapped to an ALTER TABLE statement to create [indexes](/replication/optimization-and-tuning/optimization-and-indexes).
-See [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table). CREATE INDEX cannot be used to create a
+CREATE INDEX is mapped to an ALTER TABLE statement to create [indexes](/replication/optimization-and-tuning/optimization-and-indexes/).
+See [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/). CREATE INDEX cannot be used to create a
 PRIMARY KEY; use ALTER TABLE instead.
 
-If another connection is using the table, a [metadata lock](/sql-statements-structure/sql-statements/transactions/metadata-locking) is active, and this statement will wait until the lock is released. This is also true for non-transactional tables.
+If another connection is using the table, a [metadata lock](/sql-statements-structure/sql-statements/transactions/metadata-locking/) is active, and this statement will wait until the lock is released. This is also true for non-transactional tables.
 
-Another shortcut, [DROP INDEX](/sql-statements-structure/sql-statements/data-definition/drop/drop-index), allows the removal of an index.
+Another shortcut, [DROP INDEX](/sql-statements-structure/sql-statements/data-definition/drop/drop-index/), allows the removal of an index.
 
-For valid identifiers to use as index names, see [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names).
+For valid identifiers to use as index names, see [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names/).
 
-Note that KEY_BLOCK_SIZE is currently ignored in CREATE INDEX, although it is included in the output of [SHOW CREATE TABLE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-table).
+Note that KEY_BLOCK_SIZE is currently ignored in CREATE INDEX, although it is included in the output of [SHOW CREATE TABLE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-table/).
 
 ## Privileges
 
@@ -52,7 +52,7 @@ Executing the `CREATE INDEX` statement requires the <a undefined>INDEX</a> privi
 
 In [MariaDB 10.0](/kb/en/what-is-mariadb-100/) and later, online DDL is supported with the <a undefined>ALGORITHM</a> and <a undefined>LOCK</a> clauses.
 
-See [InnoDB Online DDL Overview](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview) for more information on online DDL with [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb).
+See [InnoDB Online DDL Overview](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview/) for more information on online DDL with [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/).
 
 ## `CREATE OR REPLACE INDEX ...`
 
@@ -74,7 +74,7 @@ See [CREATE TABLE: Index Definitions](/kb/en/create-table/#index-definitions) fo
 
 ##### MariaDB starting with [10.3.0](/kb/en/mariadb-1030-release-notes/)
 
-Set the lock wait timeout. See [WAIT and NOWAIT](/sql-statements-structure/sql-statements/transactions/wait-and-nowait).
+Set the lock wait timeout. See [WAIT and NOWAIT](/sql-statements-structure/sql-statements/transactions/wait-and-nowait/).
 
 ## `ALGORITHM`
 
@@ -87,14 +87,14 @@ See [ALTER TABLE: LOCK](/kb/en/alter-table/#lock) for more information.
 ## Progress Reporting
 
 MariaDB provides progress reporting for `CREATE INDEX` statement for clients
-that support the new progress reporting protocol. For example, if you were using the [mysql](/clients-utilities/mysql-client/mysql-command-line-client) client, then the progress report might look like this::
+that support the new progress reporting protocol. For example, if you were using the [mysql](/clients-utilities/mysql-client/mysql-command-line-client/) client, then the progress report might look like this::
 
 ```sql
 CREATE INDEX ON tab (num);;
 Stage: 1 of 2 'copy to tmp table'    46% of stage
 ```
 
-The progress report is also shown in the output of the [SHOW PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist) statement and in the contents of the <a undefined>information_schema.PROCESSLIST</a> table.
+The progress report is also shown in the output of the [SHOW PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist/) statement and in the contents of the <a undefined>information_schema.PROCESSLIST</a> table.
 
 See [Progress Reporting](/kb/en/progress-reporting/) for more information.
 
@@ -102,7 +102,7 @@ See [Progress Reporting](/kb/en/progress-reporting/) for more information.
 
 ##### MariaDB starting with [10.5.3](/kb/en/mariadb-1053-release-notes/)
 
-The [WITHOUT OVERLAPS](/kb/en/application-time-periods/#without-overlaps) clause allows one to constrain a primary or unique index such that [application-time periods](/sql-statements-structure/temporal-tables/application-time-periods) cannot overlap.
+The [WITHOUT OVERLAPS](/kb/en/application-time-periods/#without-overlaps) clause allows one to constrain a primary or unique index such that [application-time periods](/sql-statements-structure/temporal-tables/application-time-periods/) cannot overlap.
 
 ## Examples
 
@@ -135,7 +135,7 @@ SHOW WARNINGS;
 +-------+------+-------------------------+
 ```
 
-From [MariaDB 10.5.3](/kb/en/mariadb-1053-release-notes/), creating a unique index for an [application-time period table](/sql-statements-structure/temporal-tables/application-time-periods) with a [WITHOUT OVERLAPS](/kb/en/application-time-periods/#without-overlaps) constraint:
+From [MariaDB 10.5.3](/kb/en/mariadb-1053-release-notes/), creating a unique index for an [application-time period table](/sql-statements-structure/temporal-tables/application-time-periods/) with a [WITHOUT OVERLAPS](/kb/en/application-time-periods/#without-overlaps) constraint:
 
 ```sql
 CREATE UNIQUE INDEX u ON rooms (room_number, p WITHOUT OVERLAPS);
@@ -143,11 +143,11 @@ CREATE UNIQUE INDEX u ON rooms (room_number, p WITHOUT OVERLAPS);
 
 ## See Also
 
-- [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names)
-- [Getting Started with Indexes](/replication/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes)
+- [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names/)
+- [Getting Started with Indexes](/replication/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes/)
 - [What is an Index?](/kb/en/what-is-an-index/)
-- [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table)
-- [DROP INDEX](/sql-statements-structure/sql-statements/data-definition/drop/drop-index)
-- [SPATIAL INDEX](/sql-statements-structure/geographic-geometric-features/spatial-index)
-- [Full-text Indexes](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes)
+- [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/)
+- [DROP INDEX](/sql-statements-structure/sql-statements/data-definition/drop/drop-index/)
+- [SPATIAL INDEX](/sql-statements-structure/geographic-geometric-features/spatial-index/)
+- [Full-text Indexes](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/)
 - [WITHOUT OVERLAPS](/kb/en/application-time-periods/#without-overlaps)

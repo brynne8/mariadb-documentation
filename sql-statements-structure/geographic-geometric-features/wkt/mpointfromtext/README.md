@@ -9,7 +9,7 @@ MultiPointFromText(wkt[,srid])
 
 ## Description
 
-Constructs a [MULTIPOINT](/sql-statements-structure/geographic-geometric-features/geometry-constructors/multipoint) value using its [WKT](/sql-statements-structure/geographic-geometric-features/wkt/wkt-definition) representation and [SRID](/kb/en/srid/).
+Constructs a [MULTIPOINT](/sql-statements-structure/geographic-geometric-features/geometry-constructors/multipoint/) value using its [WKT](/sql-statements-structure/geographic-geometric-features/wkt/wkt-definition/) representation and [SRID](/kb/en/srid/).
 
 `MPointFromText()` and `MultiPointFromText()` are synonyms.
 

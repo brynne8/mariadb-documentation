@@ -2,7 +2,7 @@
 
 ## Which filesystem is best?
 
-The filesystem is not the most important aspect of MariaDB performance. Far more important are available RAM, drive speed, the system variable settings (see [Hardware Optimization](/replication/optimization-and-tuning/hardware-optimization) and [System Variables](/replication/optimization-and-tuning/system-variables)).
+The filesystem is not the most important aspect of MariaDB performance. Far more important are available RAM, drive speed, the system variable settings (see [Hardware Optimization](/replication/optimization-and-tuning/hardware-optimization/) and [System Variables](/replication/optimization-and-tuning/system-variables/)).
 
 Optimizing the filesystem can however in some cases make a noticeable difference. Currently, the best Linux filesystems are generally regarded as ext4, XFS and Btrfs. They are all included in the mainline Linux kernel, and are widely supported and available on most Linux distributions. Red Hat though regards Brtfs as a technology preview, not yet ready for production systems.
 

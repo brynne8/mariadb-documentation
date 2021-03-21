@@ -4,7 +4,7 @@
 
 The `ed25519` authentication plugin was first released in [MariaDB 10.1.22](/kb/en/mariadb-10122-release-notes/) and [MariaDB 10.2.5](/kb/en/mariadb-1025-release-notes/).
 
-MySQL has used SHA-1 based authentication since version 4.1. Since [MariaDB 5.2](/kb/en/what-is-mariadb-52/) this authentication plugin has been called [mysql_native_password](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-mysql_native_password). Over the years as computers became faster, new attacks on SHA-1 were being developed. Nowadays SHA-1 is no longer considered as secure as it was in 2001. That's why the `ed25519` authentication plugin was created.
+MySQL has used SHA-1 based authentication since version 4.1. Since [MariaDB 5.2](/kb/en/what-is-mariadb-52/) this authentication plugin has been called [mysql_native_password](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-mysql_native_password/). Over the years as computers became faster, new attacks on SHA-1 were being developed. Nowadays SHA-1 is no longer considered as secure as it was in 2001. That's why the `ed25519` authentication plugin was created.
 
 The `ed25519` authentication plugin uses [Elliptic Curve Digital Signature Algorithm (ECDSA)](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm) to securely store users' passwords and to authenticate users. The [ed25519](https://en.wikipedia.org/wiki/EdDSA#Ed25519) algorithm is the same one that is [used by OpenSSH](https://www.openssh.com/txt/release-6.5). It is based on the elliptic curve and code created by [Daniel J. Bernstein](https://en.wikipedia.org/wiki/Daniel_J._Bernstein).
 
@@ -14,13 +14,13 @@ From a user's perspective, the `ed25519` authentication plugin still provides co
 
 Although the plugin's shared library is distributed with MariaDB by default as `auth_ed25519.so` or `auth_ed25519.dll` depending on the operating system, the plugin is not actually installed by MariaDB by default. There are two methods that can be used to install the plugin with MariaDB.
 
-The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname) or [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin). For example:
+The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname/) or [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin/). For example:
 
 ```sql
 INSTALL SONAME 'auth_ed25519';
 ```
 
-The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the <a undefined>--plugin-load</a> or the <a undefined>--plugin-load-add</a> options. This can be specified as a command-line argument to [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options) or it can be specified in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files). For example:
+The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the <a undefined>--plugin-load</a> or the <a undefined>--plugin-load-add</a> options. This can be specified as a command-line argument to [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/) or it can be specified in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/). For example:
 
 ```sql
 [mariadb]
@@ -30,25 +30,25 @@ plugin_load_add = auth_ed25519
 
 ## Uninstalling the Plugin
 
-You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname) or [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin). For example:
+You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname/) or [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin/). For example:
 
 ```sql
 UNINSTALL SONAME 'auth_ed25519';
 ```
 
-If you installed the plugin by providing the <a undefined>--plugin-load</a> or the <a undefined>--plugin-load-add</a> options in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
+If you installed the plugin by providing the <a undefined>--plugin-load</a> or the <a undefined>--plugin-load-add</a> options in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
 
 ## Creating Users
 
 ##### MariaDB starting with [10.4](/kb/en/what-is-mariadb-104/)
 
-In [MariaDB 10.4](/kb/en/what-is-mariadb-104/) and later, you can create a user account by executing the [CREATE USER](/sql-statements-structure/sql-statements/account-management-sql-commands/create-user) statement and providing the <a undefined>IDENTIFIED VIA</a> clause followied by the the name of the plugin, which is `ed25519`, and providing the the `USING` clause followed by the [PASSWORD()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password) function with the plain-text password as an argument. For example:
+In [MariaDB 10.4](/kb/en/what-is-mariadb-104/) and later, you can create a user account by executing the [CREATE USER](/sql-statements-structure/sql-statements/account-management-sql-commands/create-user/) statement and providing the <a undefined>IDENTIFIED VIA</a> clause followied by the the name of the plugin, which is `ed25519`, and providing the the `USING` clause followed by the [PASSWORD()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password/) function with the plain-text password as an argument. For example:
 
 ```sql
 CREATE USER username@hostname IDENTIFIED VIA ed25519 USING PASSWORD('secret');
 ```
 
-If [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode) does not have `NO_AUTO_CREATE_USER` set, then you can also create the user account via [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant). For example:
+If [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode/) does not have `NO_AUTO_CREATE_USER` set, then you can also create the user account via [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/). For example:
 
 ```sql
 GRANT SELECT ON db.* TO username@hostname IDENTIFIED VIA ed25519 USING PASSWORD('secret');
@@ -56,7 +56,7 @@ GRANT SELECT ON db.* TO username@hostname IDENTIFIED VIA ed25519 USING PASSWORD(
 
 ##### MariaDB until [10.3](/kb/en/what-is-mariadb-103/)
 
-In [MariaDB 10.3](/kb/en/what-is-mariadb-103/) and before, the [PASSWORD()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password) function and [SET PASSWORD](/sql-statements-structure/sql-statements/account-management-sql-commands/set-password) statement did not work with the `ed25519` authentication plugin. Instead, you would have to use the [UDF](/programming-customizing-mariadb/user-defined-functions) that comes with the authentication plugin to calculate the password hash. For example:
+In [MariaDB 10.3](/kb/en/what-is-mariadb-103/) and before, the [PASSWORD()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password/) function and [SET PASSWORD](/sql-statements-structure/sql-statements/account-management-sql-commands/set-password/) statement did not work with the `ed25519` authentication plugin. Instead, you would have to use the [UDF](/programming-customizing-mariadb/user-defined-functions/) that comes with the authentication plugin to calculate the password hash. For example:
 
 ```sql
 CREATE FUNCTION ed25519_password RETURNS STRING SONAME "auth_ed25519.so";
@@ -75,13 +75,13 @@ SELECT ed25519_password("secret");
 
 Now you can use it to create the user account using the new password hash.
 
-To create a user account via [CREATE USER](/sql-statements-structure/sql-statements/account-management-sql-commands/create-user), specify the name of the plugin in the <a undefined>IDENTIFIED VIA</a> clause while providing the password hash as the `USING` clause. For example:
+To create a user account via [CREATE USER](/sql-statements-structure/sql-statements/account-management-sql-commands/create-user/), specify the name of the plugin in the <a undefined>IDENTIFIED VIA</a> clause while providing the password hash as the `USING` clause. For example:
 
 ```sql
 CREATE USER username@hostname IDENTIFIED VIA ed25519 USING 'ZIgUREUg5PVgQ6LskhXmO+eZLS0nC8be6HPjYWR4YJY';
 ```
 
-If [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode) does not have `NO_AUTO_CREATE_USER` set, then you can also create the user account via [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant). For example:
+If [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode/) does not have `NO_AUTO_CREATE_USER` set, then you can also create the user account via [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/). For example:
 
 ```sql
 GRANT SELECT ON db.* TO username@hostname IDENTIFIED VIA ed25519 USING 'ZIgUREUg5PVgQ6LskhXmO+eZLS0nC8be6HPjYWR4YJY';
@@ -93,13 +93,13 @@ Note that users require a password in order to be able to connect. It is possibl
 
 ##### MariaDB starting with [10.4](/kb/en/what-is-mariadb-104/)
 
-In [MariaDB 10.4](/kb/en/what-is-mariadb-104/) and later, you can change a user account's password by executing the [SET PASSWORD](/sql-statements-structure/sql-statements/account-management-sql-commands/set-password) statement followed by the [PASSWORD()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password) function and providing the plain-text password as an argument. For example:
+In [MariaDB 10.4](/kb/en/what-is-mariadb-104/) and later, you can change a user account's password by executing the [SET PASSWORD](/sql-statements-structure/sql-statements/account-management-sql-commands/set-password/) statement followed by the [PASSWORD()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password/) function and providing the plain-text password as an argument. For example:
 
 ```sql
 SET PASSWORD =  PASSWORD('new_secret')
 ```
 
-You can also change the user account's password with the [ALTER USER](/sql-statements-structure/sql-statements/account-management-sql-commands/alter-user) statement. You would have to specify the name of the plugin in the <a undefined>IDENTIFIED VIA</a> clause while providing the plain-text password as an argument to the [PASSWORD()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password) function in the `USING` clause. For example:
+You can also change the user account's password with the [ALTER USER](/sql-statements-structure/sql-statements/account-management-sql-commands/alter-user/) statement. You would have to specify the name of the plugin in the <a undefined>IDENTIFIED VIA</a> clause while providing the plain-text password as an argument to the [PASSWORD()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password/) function in the `USING` clause. For example:
 
 ```sql
 ALTER USER username@hostname IDENTIFIED VIA ed25519 USING PASSWORD('new_secret');
@@ -107,7 +107,7 @@ ALTER USER username@hostname IDENTIFIED VIA ed25519 USING PASSWORD('new_secret')
 
 ##### MariaDB until [10.3](/kb/en/what-is-mariadb-103/)
 
-In [MariaDB 10.3](/kb/en/what-is-mariadb-103/) and before, the [PASSWORD()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password) function and [SET PASSWORD](/sql-statements-structure/sql-statements/account-management-sql-commands/set-password) statement did not work with the `ed25519` authentication plugin. Instead, you would have to use the [UDF](/programming-customizing-mariadb/user-defined-functions) that comes with the authentication plugin to calculate the password hash. For example:
+In [MariaDB 10.3](/kb/en/what-is-mariadb-103/) and before, the [PASSWORD()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password/) function and [SET PASSWORD](/sql-statements-structure/sql-statements/account-management-sql-commands/set-password/) statement did not work with the `ed25519` authentication plugin. Instead, you would have to use the [UDF](/programming-customizing-mariadb/user-defined-functions/) that comes with the authentication plugin to calculate the password hash. For example:
 
 ```sql
 CREATE FUNCTION ed25519_password RETURNS STRING SONAME "auth_ed25519.so";
@@ -126,7 +126,7 @@ SELECT ed25519_password("secret");
 
 Now you can change the user account's password using the new password hash.
 
-You can change the user account's password with the [ALTER USER](/sql-statements-structure/sql-statements/account-management-sql-commands/alter-user) statement. You would have to specify the name of the plugin in the <a undefined>IDENTIFIED VIA</a> clause while providing the password hash as the `USING` clause. For example:
+You can change the user account's password with the [ALTER USER](/sql-statements-structure/sql-statements/account-management-sql-commands/alter-user/) statement. You would have to specify the name of the plugin in the <a undefined>IDENTIFIED VIA</a> clause while providing the password hash as the `USING` clause. For example:
 
 ```sql
 ALTER USER username@hostname IDENTIFIED VIA ed25519 USING 'ZIgUREUg5PVgQ6LskhXmO+eZLS0nC8be6HPjYWR4YJY';
@@ -138,7 +138,7 @@ For clients that use the `libmysqlclient` or [MariaDB Connector/C](/kb/en/mariad
 
 - `client_ed25519`
 
-When connecting with a [client or utility](/clients-utilities) to a server as a user account that authenticates with the `ed25519` authentication plugin, you may need to tell the client where to find the relevant client authentication plugin by specifying the `--plugin-dir` option. For example:
+When connecting with a [client or utility](/clients-utilities/) to a server as a user account that authenticates with the `ed25519` authentication plugin, you may need to tell the client where to find the relevant client authentication plugin by specifying the `--plugin-dir` option. For example:
 
 ```sql
 mysql --plugin-dir=/usr/local/mysql/lib64/mysql/plugin --user=alice
@@ -189,7 +189,7 @@ The connector implemented support for this authentication plugin in a separate [
 <ul start="1"><li>`OFF` - Disables the plugin without removing it from the <a undefined>mysql.plugins</a> table.
 </li><li>`ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
 </li><li>`FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
-</li><li>`FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname) or [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin) while the server is running.
+</li><li>`FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname/) or [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin/) while the server is running.
 </li></ul>
 </li><li>See [Plugin Overview: Configuring Plugin Activation at Server Startup](/kb/en/plugin-overview/#configuring-plugin-activation-at-server-startup) for more information.
 </li></ul>

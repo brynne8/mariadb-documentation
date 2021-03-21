@@ -25,13 +25,13 @@ executed by the Event Scheduler, diagnostics messages (not only
 errors, but also warnings) are written to the error log, and, on
 Windows, to the application event log.
 
-This statement can be used with both [local variables](/programming-customizing-mariadb/programmatic-compound-statements/declare-variable) and [user-defined variables](/sql-statements-structure/sql-language-structure/user-defined-variables).
+This statement can be used with both [local variables](/programming-customizing-mariadb/programmatic-compound-statements/declare-variable/) and [user-defined variables](/sql-statements-structure/sql-language-structure/user-defined-variables/).
 
-For the complete syntax, see [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select).
+For the complete syntax, see [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/).
 
-Another way to set a variable's value is the [SET](/programming-customizing-mariadb/programmatic-compound-statements/set-variable) statement.
+Another way to set a variable's value is the [SET](/programming-customizing-mariadb/programmatic-compound-statements/set-variable/) statement.
 
-`SELECT ... INTO` results are not stored in the [query cache](/replication/optimization-and-tuning/buffers-caches-and-threads/query-cache) even if `SQL_CACHE` is specified.
+`SELECT ... INTO` results are not stored in the [query cache](/replication/optimization-and-tuning/buffers-caches-and-threads/query-cache/) even if `SQL_CACHE` is specified.
 
 ## Examples
 
@@ -42,6 +42,6 @@ FROM test.t1 LIMIT 1;
 
 ## See Also
 
-- [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) - full SELECT syntax.
-- [SELECT INTO OUTFILE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select-into-outfile) - formatting and writing the result to an external file.
-- [SELECT INTO DUMPFILE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select-into-dumpfile) - binary-safe writing of the unformatted results to an external file.
+- [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) - full SELECT syntax.
+- [SELECT INTO OUTFILE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select-into-outfile/) - formatting and writing the result to an external file.
+- [SELECT INTO DUMPFILE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select-into-dumpfile/) - binary-safe writing of the unformatted results to an external file.

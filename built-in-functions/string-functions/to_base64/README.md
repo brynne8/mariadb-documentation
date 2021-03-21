@@ -16,7 +16,7 @@ Converts the string argument `str` to its base-64 encoded form, returning the re
 
 The argument `str` will be converted to string first if it is not a string. A NULL argument will return a NULL result.
 
-The reverse function, [FROM_BASE64()](/built-in-functions/string-functions/from_base64), decodes an encoded base-64 string.
+The reverse function, [FROM_BASE64()](/built-in-functions/string-functions/from_base64/), decodes an encoded base-64 string.
 
 There are a numerous different methods to base-64 encode a string. The following are used by MariaDB and MySQL:
 

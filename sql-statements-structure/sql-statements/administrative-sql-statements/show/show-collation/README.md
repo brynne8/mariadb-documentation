@@ -10,11 +10,11 @@ SHOW COLLATION
 ## Description
 
 The output from <code class="highlight fixed" style="white-space:pre-wrap">SHOW COLLATION</code> includes all available
-[collations](/kb/en/data-types-character-sets-and-collations/). The <code class="highlight fixed" style="white-space:pre-wrap">LIKE</code> clause, if present on its own, indicates which collation names to match. The <code class="highlight fixed" style="white-space:pre-wrap">WHERE</code> and <code class="highlight fixed" style="white-space:pre-wrap">LIKE</code> clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](/sql-statements-structure/sql-statements/administrative-sql-statements/show/extended-show).
+[collations](/kb/en/data-types-character-sets-and-collations/). The <code class="highlight fixed" style="white-space:pre-wrap">LIKE</code> clause, if present on its own, indicates which collation names to match. The <code class="highlight fixed" style="white-space:pre-wrap">WHERE</code> and <code class="highlight fixed" style="white-space:pre-wrap">LIKE</code> clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](/sql-statements-structure/sql-statements/administrative-sql-statements/show/extended-show/).
 
-The same information can be queried from the [information_schema.COLLATIONS](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-collations-table) table.
+The same information can be queried from the [information_schema.COLLATIONS](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-collations-table/) table.
 
-See [Setting Character Sets and Collations](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/setting-character-sets-and-collations) for details on specifying the collation at the server, database, table and column levels.
+See [Setting Character Sets and Collations](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/setting-character-sets-and-collations/) for details on specifying the collation at the server, database, table and column levels.
 
 ## Examples
 

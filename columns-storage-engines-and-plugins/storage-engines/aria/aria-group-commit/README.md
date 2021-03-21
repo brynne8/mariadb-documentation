@@ -1,11 +1,11 @@
 # Aria Group Commit
 
-Since [MariaDB 5.2](/kb/en/what-is-mariadb-52/), the [Aria storage engine](/columns-storage-engines-and-plugins/storage-engines/aria) has included a feature to group commits to speed up concurrent threads doing many inserts into the same or different Aria tables.
+Since [MariaDB 5.2](/kb/en/what-is-mariadb-52/), the [Aria storage engine](/columns-storage-engines-and-plugins/storage-engines/aria/) has included a feature to group commits to speed up concurrent threads doing many inserts into the same or different Aria tables.
 
 By default, group commit for Aria is turned off. It is controlled by the 
 [aria_group_commit](/kb/en/aria-server-system-variables/#aria_group_commit) and [aria_group_commit_interval](/kb/en/aria-server-system-variables/#aria_group_commit_interval) system variables.
 
-Information on setting server variables can be found on the [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables) page.
+Information on setting server variables can be found on the [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables/) page.
 
 ## Terminology
 

@@ -20,7 +20,7 @@ Note that MEDIUMINT columns will require 4 bytes in memory (for example, in Inno
 
 ### Decimal
 
-[Decimals](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/decimal) are stored using a binary format, with the integer and the fraction stored separately. Each nine-digit multiple requires 4 bytes, followed by a number of bytes for whatever remains, as follows:
+[Decimals](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/decimal/) are stored using a binary format, with the integer and the fraction stored separately. Each nine-digit multiple requires 4 bytes, followed by a number of bytes for whatever remains, as follows:
 
 <table><tbody><tr><th>Remaining digits</th><th>Storage Requirement</th></tr>
 <tr><td>0</td><td>0 bytes</td></tr>
@@ -76,7 +76,7 @@ Assuming a single-byte character-set:
 
 ### Microseconds
 
-[MariaDB 5.3](/kb/en/what-is-mariadb-53/) and MySQL 5.6 introduced [microseconds](/built-in-functions/date-time-functions/microseconds-in-mariadb). The underlying storage implementations were different, but from [MariaDB 10.1](/kb/en/what-is-mariadb-101/), MariaDB defaults to the MySQL format (by means of the [mysql56_temporal_format](/kb/en/server-system-variables/#mysql56_temporal_format) variable). Microseconds have the following additional storage requirements:
+[MariaDB 5.3](/kb/en/what-is-mariadb-53/) and MySQL 5.6 introduced [microseconds](/built-in-functions/date-time-functions/microseconds-in-mariadb/). The underlying storage implementations were different, but from [MariaDB 10.1](/kb/en/what-is-mariadb-101/), MariaDB defaults to the MySQL format (by means of the [mysql56_temporal_format](/kb/en/server-system-variables/#mysql56_temporal_format) variable). Microseconds have the following additional storage requirements:
 
 #### MySQL 5.6+ and [MariaDB 10.1](/kb/en/what-is-mariadb-101/)+
 

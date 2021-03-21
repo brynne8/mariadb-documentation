@@ -1,6 +1,6 @@
 # Installing MariaDB with zypper
 
-On SLES, OpenSUSE, and other similar Linux distributions, it is highly recommended to install the relevant [RPM packages](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm) from MariaDB's
+On SLES, OpenSUSE, and other similar Linux distributions, it is highly recommended to install the relevant [RPM packages](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/) from MariaDB's
 repository using <a undefined>zypper</a>.
 
 This page walks you through the simple installation steps using `zypper`.
@@ -16,9 +16,9 @@ We currently have ZYpp repositories for the following Linux distributions:
 
 ### Using the MariaDB Package Repository Setup Script
 
-If you want to install MariaDB with `zypper`, then you can configure `zypper` to install from MariaDB Corporation's MariaDB Package Repository by using the [MariaDB Package Repository setup script](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/mariadb-package-repository-setup-and-usage).
+If you want to install MariaDB with `zypper`, then you can configure `zypper` to install from MariaDB Corporation's MariaDB Package Repository by using the [MariaDB Package Repository setup script](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/mariadb-package-repository-setup-and-usage/).
 
-MariaDB Corporation provides a MariaDB Package Repository for several Linux distributions that use `zypper` to manage packages. This repository contains software packages related to MariaDB Server, including the server itself, [clients and utilities](/clients-utilities), [client libraries](/kb/en/client-libraries/), [plugins](/columns-storage-engines-and-plugins/plugins), and [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup). The MariaDB Package Repository setup script automatically configures your system to install packages from the MariaDB Package Repository.
+MariaDB Corporation provides a MariaDB Package Repository for several Linux distributions that use `zypper` to manage packages. This repository contains software packages related to MariaDB Server, including the server itself, [clients and utilities](/clients-utilities/), [client libraries](/kb/en/client-libraries/), [plugins](/columns-storage-engines-and-plugins/plugins/), and [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/). The MariaDB Package Repository setup script automatically configures your system to install packages from the MariaDB Package Repository.
 
 To use the script, execute the following command:
 
@@ -26,15 +26,15 @@ To use the script, execute the following command:
 curl -sS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash
 ```
 
-Note that this script also configures a repository for [MariaDB MaxScale](/mariadb-platform-x3/sample-platform-x3-implementation-for-transactional-and-analytical-workloads/mariadb-enterprise/maxscale) and a repository for MariaDB Tools, which currently only contains [Percona XtraBackup](/kb/en/percona-xtrabackup/) and its dependencies.
+Note that this script also configures a repository for [MariaDB MaxScale](/mariadb-platform-x3/sample-platform-x3-implementation-for-transactional-and-analytical-workloads/mariadb-enterprise/maxscale/) and a repository for MariaDB Tools, which currently only contains [Percona XtraBackup](/kb/en/percona-xtrabackup/) and its dependencies.
 
-See [MariaDB Package Repository Setup and Usage](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/mariadb-package-repository-setup-and-usage) for more information.
+See [MariaDB Package Repository Setup and Usage](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/mariadb-package-repository-setup-and-usage/) for more information.
 
 ### Using the MariaDB Repository Configuration Tool
 
 If you want to install MariaDB with `zypper`, then you can configure `zypper` to install from MariaDB Foundation's MariaDB Repository by using the [MariaDB Repository Configuration Tool](https://downloads.mariadb.org/mariadb/repositories/).
 
-The MariaDB Foundation provides a MariaDB repository for several Linux distributions that use `zypper` to manage packages. This repository contains software packages related to MariaDB Server, including the server itself, [clients and utilities](/clients-utilities), [client libraries](/kb/en/client-libraries/), [plugins](/columns-storage-engines-and-plugins/plugins), and [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup). The MariaDB Repository Configuration Tool can easily generate the appropriate commands to add the repository for your distribution.
+The MariaDB Foundation provides a MariaDB repository for several Linux distributions that use `zypper` to manage packages. This repository contains software packages related to MariaDB Server, including the server itself, [clients and utilities](/clients-utilities/), [client libraries](/kb/en/client-libraries/), [plugins](/columns-storage-engines-and-plugins/plugins/), and [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/). The MariaDB Repository Configuration Tool can easily generate the appropriate commands to add the repository for your distribution.
 
 For example, if you wanted to use the repository to install [MariaDB 10.3](/kb/en/what-is-mariadb-103/) on SLES 15, then you could use the following commands to add the MariaDB `zypper` repository:
 
@@ -67,7 +67,7 @@ MariaDB's `zypper` repository can be updated to a new major release. How this is
 
 ### Updating the Major Release with the MariaDB Package Repository Setup Script
 
-If you configured `zypper` to install from MariaDB Corporation's MariaDB Package Repository by using the [MariaDB Package Repository setup script](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/mariadb-package-repository-setup-and-usage), then you can update the major release that the repository uses by running the script again.
+If you configured `zypper` to install from MariaDB Corporation's MariaDB Package Repository by using the [MariaDB Package Repository setup script](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/mariadb-package-repository-setup-and-usage/), then you can update the major release that the repository uses by running the script again.
 
 ### Updating the Major Release with the MariaDB Repository Configuration Tool
 
@@ -180,7 +180,7 @@ sudo zypper install MariaDB-client MariaDB-shared
 
 ### Installing Mariabackup with ZYpp
 
-To install [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup), execute the following command:
+To install [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/), execute the following command:
 
 ```sql
 sudo zypper install MariaDB-backup
@@ -188,9 +188,9 @@ sudo zypper install MariaDB-backup
 
 ### Installing Plugins with ZYpp
 
-Some [plugins](/columns-storage-engines-and-plugins/plugins) may also need to be installed.
+Some [plugins](/columns-storage-engines-and-plugins/plugins/) may also need to be installed.
 
-For example, to install the [cracklib_password_check](/columns-storage-engines-and-plugins/plugins/password-validation-plugins/cracklib-password-check-plugin) password validation plugin, execute the following command:
+For example, to install the [cracklib_password_check](/columns-storage-engines-and-plugins/plugins/password-validation-plugins/cracklib-password-check-plugin/) password validation plugin, execute the following command:
 
 ```sql
 sudo zypper install MariaDB-cracklib-password-check
@@ -232,7 +232,7 @@ sudo zypper install MariaDB-client-debuginfo MariaDB-shared-debuginfo
 
 #### Installing Debug Info for Mariabackup with ZYpp
 
-To install <a undefined>debuginfo</a> for [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup), execute the following command:
+To install <a undefined>debuginfo</a> for [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/), execute the following command:
 
 ```sql
 sudo zypper install MariaDB-backup-debuginfo
@@ -240,9 +240,9 @@ sudo zypper install MariaDB-backup-debuginfo
 
 #### Installing Debug Info for Plugins with ZYpp
 
-For some [plugins](/columns-storage-engines-and-plugins/plugins),  <a undefined>debuginfo</a> may also need to be installed.
+For some [plugins](/columns-storage-engines-and-plugins/plugins/),  <a undefined>debuginfo</a> may also need to be installed.
 
-For example, to install <a undefined>debuginfo</a> for the [cracklib_password_check](/columns-storage-engines-and-plugins/plugins/password-validation-plugins/cracklib-password-check-plugin) password validation plugin, execute the following command:
+For example, to install <a undefined>debuginfo</a> for the [cracklib_password_check](/columns-storage-engines-and-plugins/plugins/password-validation-plugins/cracklib-password-check-plugin/) password validation plugin, execute the following command:
 
 ```sql
 sudo zypper install MariaDB-cracklib-password-check-debuginfo

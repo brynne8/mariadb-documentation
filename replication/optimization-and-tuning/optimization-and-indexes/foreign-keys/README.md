@@ -4,7 +4,7 @@
 
 A foreign key is a constraint which can be used to enforce data integrity. It is composed by a column (or a set of columns) in a table called the child table, which references to a column (or a set of columns) in a table called the parent table. If foreign keys are used, MariaDB performs some checks to enforce that some integrity rules are always enforced. For a more exhaustive explanation, see [Relational databases: Foreign Keys](/kb/en/relational-databases-foreign-keys/).
 
-Foreign keys can only be used with storage engines that support them. The default [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) and the obsolete [PBXT](/kb/en/pbxt/) support foreign keys.
+Foreign keys can only be used with storage engines that support them. The default [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) and the obsolete [PBXT](/kb/en/pbxt/) support foreign keys.
 
 [Partitioned tables](/kb/en/managing-mariadb-partitioning/) cannot contain foreign keys, and cannot be referenced by a foreign key.
 
@@ -12,7 +12,7 @@ Foreign keys can only be used with storage engines that support them. The defaul
 
 <strong>Note:</strong> MariaDB accepts the REFERENCES clause in ALTER TABLE and CREATE TABLE statements, but that syntax does nothing. MariaDB simply parses it without returning any error or warning, for compatibility with other DBMS's. However, only the syntax described below creates foreign keys.
 
-Foreign keys are created with [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table) or [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table). The definition must follow this syntax:
+Foreign keys are created with [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/) or [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/). The definition must follow this syntax:
 
 ```sql
 [CONSTRAINT [symbol]] FOREIGN KEY
@@ -27,7 +27,7 @@ reference_option:
 
 The `symbol` clause, if specified, is used in error messages and must be unique in the database.
 
-The columns in the child table must be an index, or the leftmost part of an index. Index prefixes are not supported (thus, [TEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/text) and [BLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/blob) columns cannot be used as foreign keys). If MariaDB automatically creates an index for the foreign key (because it does not exist and is not explicitly created), its name will be `index_name`.
+The columns in the child table must be an index, or the leftmost part of an index. Index prefixes are not supported (thus, [TEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/text/) and [BLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/blob/) columns cannot be used as foreign keys). If MariaDB automatically creates an index for the foreign key (because it does not exist and is not explicitly created), its name will be `index_name`.
 
 The referenced columns must be a PRIMARY KEY or a UNIQUE index.
 
@@ -43,21 +43,21 @@ If a foreign keys exists, each row in the child table must match a row in the pa
 
 MariaDB performs certain checks to guarantee that the data integrity is enforced:
 
-- Trying to insert non-matching rows (or update matching rows in a way that makes them non-matching rows) in the child table produces a 1452 error ([SQLSTATE](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate) '23000').
+- Trying to insert non-matching rows (or update matching rows in a way that makes them non-matching rows) in the child table produces a 1452 error ([SQLSTATE](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate/) '23000').
 - When a row in the parent table is deleted and at least one child row exists, MariaDB performs an action which depends on the `ON DELETE` clause of the foreign key.
 - When a value in the column referenced by a foreign key changes and at least one child row exists, MariaDB performs an action which depends on the `ON UPDATE` clause of the foreign key.
-- Trying to drop a table that is referenced by a foreign key produces a 1217 error ([SQLSTATE](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate) '23000').
-- A [TRUNCATE TABLE](/sql-statements-structure/sql-statements/table-statements/truncate-table) against a table containing one or more foreign keys is executed as a [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete) without WHERE, so that the foreign keys are enforced for each row.
+- Trying to drop a table that is referenced by a foreign key produces a 1217 error ([SQLSTATE](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate/) '23000').
+- A [TRUNCATE TABLE](/sql-statements-structure/sql-statements/table-statements/truncate-table/) against a table containing one or more foreign keys is executed as a [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/) without WHERE, so that the foreign keys are enforced for each row.
 
 The allowed actions for `ON DELETE` and `ON UPDATE` are:
 
-- `RESTRICT`: The change on the parent table is prevented. The statement terminates with a 1451 error ([SQLSTATE](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate) '2300'). This is the default behavior for both `ON DELETE` and `ON UPDATE`.
+- `RESTRICT`: The change on the parent table is prevented. The statement terminates with a 1451 error ([SQLSTATE](/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate/) '2300'). This is the default behavior for both `ON DELETE` and `ON UPDATE`.
 - `NO ACTION`: Synonym for `RESTRICT`.
 - `CASCADE`: The change is allowed and propagates on the child table. For example, if a parent row is deleted, the child row is also deleted; if a parent row's ID changes, the child row's ID will also change.
 - `SET NULL`: The change is allowed, and the child row's foreign key columns are set to `NULL`.
 - `SET DEFAULT`: Only worked with PBXT. Similar to `SET NULL`, but the foreign key columns were set to their default values. If default values do not exist, an error is produced.
 
-The delete or update operations triggered by foreign keys do not activate [triggers](/programming-customizing-mariadb/triggers-events/triggers) and are not counted in the [Com_delete](/kb/en/server-status-variables/#com_delete) and [Com_update](/kb/en/server-status-variables/#com_update) status variables.
+The delete or update operations triggered by foreign keys do not activate [triggers](/programming-customizing-mariadb/triggers-events/triggers/) and are not counted in the [Com_delete](/kb/en/server-status-variables/#com_delete) and [Com_update](/kb/en/server-status-variables/#com_update) status variables.
 
 Foreign key constraints can be disabled by setting the [foreign_key_checks](/kb/en/server-system-variables/#foreign_key_checks) server system variable to 0. This speeds up the insertion of large quantities of data.
 
@@ -67,7 +67,7 @@ The [Information Schema](/kb/en/information_schema/) <a undefined>REFERENTIAL_CO
 
 The InnoDB-specific Information Schema tables also contain information about the InnoDB foreign keys. The foreign key information is stored in the <a undefined>INNODB_SYS_FOREIGN</a>. Data about the individual columns are stored in <a undefined>INNODB_SYS_FOREIGN_COLS</a>.
 
-The most human-readable way to get information about a table's foreign keys sometimes is the [SHOW CREATE TABLE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-table) statement.
+The most human-readable way to get information about a table's foreign keys sometimes is the [SHOW CREATE TABLE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-table/) statement.
 
 ## Limitations
 
@@ -76,7 +76,7 @@ Foreign keys have the following limitations in MariaDB:
 - Currently, foreign keys are only supported by InnoDB.
 - Cannot be used with views.
 - The `SET DEFAULT` action is not supported.
-- Foreign keys actions do not activate [triggers](/programming-customizing-mariadb/triggers-events/triggers).
+- Foreign keys actions do not activate [triggers](/programming-customizing-mariadb/triggers-events/triggers/).
 
 ## Examples
 

@@ -2,13 +2,13 @@
 
 The terms <em>master</em> and <em>slave</em> have historically been used in replication, but the terms terms <em>primary</em> and <em>replica</em> are now preferred. The old terms are used throughout the documentation, and in MariaDB commands, although [MariaDB 10.5](/kb/en/what-is-mariadb-105/) has begun the process of renaming. The documentation will follow over time. See [MDEV-18777](https://jira.mariadb.org/browse/MDEV-18777) to follow progress on this effort.
 
-The following status variables are useful in [binary logging](/mariadb-administration/server-monitoring-logs/binary-log) and [replication](/replication). See [Server Status Variables](/replication/optimization-and-tuning/system-variables/server-status-variables) for a complete list of status variables that can be viewed with [SHOW STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-status).
+The following status variables are useful in [binary logging](/mariadb-administration/server-monitoring-logs/binary-log/) and [replication](/replication/). See [Server Status Variables](/replication/optimization-and-tuning/system-variables/server-status-variables/) for a complete list of status variables that can be viewed with [SHOW STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-status/).
 
-See also the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables).
+See also the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables/).
 
 #### `Binlog_bytes_written`
 
-- <strong>Description:</strong> The number of bytes written to the [binary log](/mariadb-administration/server-monitoring-logs/binary-log).
+- <strong>Description:</strong> The number of bytes written to the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/).
 - <strong>Scope:</strong> Global
 - <strong>Data Type:</strong> `numeric`
 
@@ -16,7 +16,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Binlog_cache_disk_use`
 
-- <strong>Description:</strong> Number of transactions which used a temporary disk cache because they could not fit in the regular [binary log](/mariadb-administration/server-monitoring-logs/binary-log) cache, being larger than [binlog_cache_size](/kb/en/server-system-variables/#binlog_cache_size). The global value can be flushed by [FLUSH STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush).
+- <strong>Description:</strong> Number of transactions which used a temporary disk cache because they could not fit in the regular [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) cache, being larger than [binlog_cache_size](/kb/en/server-system-variables/#binlog_cache_size). The global value can be flushed by [FLUSH STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/).
 - <strong>Scope:</strong> Global
 - <strong>Data Type:</strong> `numeric`
 
@@ -24,7 +24,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Binlog_cache_use`
 
-- <strong>Description:</strong> Number of transaction which used the regular [binary log](/mariadb-administration/server-monitoring-logs/binary-log) cache, being smaller than [binlog_cache_size](/kb/en/server-system-variables/#binlog_cache_size). The global value can be flushed by [FLUSH STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush).
+- <strong>Description:</strong> Number of transaction which used the regular [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) cache, being smaller than [binlog_cache_size](/kb/en/server-system-variables/#binlog_cache_size). The global value can be flushed by [FLUSH STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/).
 - <strong>Scope:</strong> Global
 - <strong>Data Type:</strong> `numeric`
 
@@ -40,7 +40,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Binlog_group_commit_trigger_count`
 
-- <strong>Description:</strong> Total number of group commits triggered because of the number of binary log commits in the group reached the limit set by the variable [binlog_commit_wait_count](/kb/en/replication-and-binary-log-server-system-variables/#binlog_commit_wait_count). See [Group commit for the binary log](/mariadb-administration/server-monitoring-logs/binary-log/group-commit-for-the-binary-log).
+- <strong>Description:</strong> Total number of group commits triggered because of the number of binary log commits in the group reached the limit set by the variable [binlog_commit_wait_count](/kb/en/replication-and-binary-log-server-system-variables/#binlog_commit_wait_count). See [Group commit for the binary log](/mariadb-administration/server-monitoring-logs/binary-log/group-commit-for-the-binary-log/).
 - <strong>Scope:</strong> Global
 - <strong>Data Type:</strong> `numeric`
 - <strong>Introduced:</strong> [MariaDB 10.1.5](/kb/en/mariadb-1015-release-notes/), [MariaDB 10.0.18](/kb/en/mariadb-10018-release-notes/)
@@ -49,7 +49,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Binlog_group_commit_trigger_lock_wait`
 
-- <strong>Description:</strong> Total number of group commits triggered because a binary log commit was being delayed because of a lock wait where the lock was held by a prior binary log commit. When this happens the later binary log commit is placed in the next group commit. See [Group commit for the binary log](/mariadb-administration/server-monitoring-logs/binary-log/group-commit-for-the-binary-log).
+- <strong>Description:</strong> Total number of group commits triggered because a binary log commit was being delayed because of a lock wait where the lock was held by a prior binary log commit. When this happens the later binary log commit is placed in the next group commit. See [Group commit for the binary log](/mariadb-administration/server-monitoring-logs/binary-log/group-commit-for-the-binary-log/).
 - <strong>Scope:</strong> Global
 - <strong>Data Type:</strong> `numeric`
 - <strong>Introduced:</strong> [MariaDB 10.1.5](/kb/en/mariadb-1015-release-notes/), [MariaDB 10.0.18](/kb/en/mariadb-10018-release-notes/)
@@ -58,7 +58,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Binlog_group_commit_trigger_timeout`
 
-- <strong>Description:</strong> Total number of group commits triggered because of the time since the first binary log commit reached the limit set by the variable [binlog_commit_wait_usec](/kb/en/replication-and-binary-log-server-system-variables/#binlog_commit_wait_usec). See [Group commit for the binary log](/mariadb-administration/server-monitoring-logs/binary-log/group-commit-for-the-binary-log).
+- <strong>Description:</strong> Total number of group commits triggered because of the time since the first binary log commit reached the limit set by the variable [binlog_commit_wait_usec](/kb/en/replication-and-binary-log-server-system-variables/#binlog_commit_wait_usec). See [Group commit for the binary log](/mariadb-administration/server-monitoring-logs/binary-log/group-commit-for-the-binary-log/).
 - <strong>Scope:</strong> Global
 - <strong>Data Type:</strong> `numeric`
 - <strong>Introduced:</strong> [MariaDB 10.1.5](/kb/en/mariadb-1015-release-notes/), [MariaDB 10.0.18](/kb/en/mariadb-10018-release-notes/)
@@ -67,7 +67,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Binlog_group_commits`
 
-- <strong>Description:</strong> Total number of group commits done to the binary log. See [Group commit for the binary log](/mariadb-administration/server-monitoring-logs/binary-log/group-commit-for-the-binary-log).
+- <strong>Description:</strong> Total number of group commits done to the binary log. See [Group commit for the binary log](/mariadb-administration/server-monitoring-logs/binary-log/group-commit-for-the-binary-log/).
 - <strong>Scope:</strong> Global
 - <strong>Data Type:</strong> `numeric`
 
@@ -75,7 +75,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Binlog_snapshot_file`
 
-- <strong>Description:</strong> The binary log file. Unlike [SHOW MASTER STATUS](/kb/en/show-master-status/), can be queried in a transactionally consistent way, irrespective of which other transactions have been committed since the snapshot was taken. See [Enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT](/replication/standard-replication/enhancements-for-start-transaction-with-consistent-snapshot).
+- <strong>Description:</strong> The binary log file. Unlike [SHOW MASTER STATUS](/kb/en/show-master-status/), can be queried in a transactionally consistent way, irrespective of which other transactions have been committed since the snapshot was taken. See [Enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT](/replication/standard-replication/enhancements-for-start-transaction-with-consistent-snapshot/).
 - <strong>Scope:</strong> Global
 - <strong>Data Type:</strong> `string`
 
@@ -83,7 +83,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Binlog_snapshot_position`
 
-- <strong>Description:</strong> The binary log position. Unlike [SHOW MASTER STATUS](/kb/en/show-master-status/), can be queried in a transactionally consistent way, irrespective of which other transactions have been committed since the snapshot was taken. See [Enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT](/replication/standard-replication/enhancements-for-start-transaction-with-consistent-snapshot).
+- <strong>Description:</strong> The binary log position. Unlike [SHOW MASTER STATUS](/kb/en/show-master-status/), can be queried in a transactionally consistent way, irrespective of which other transactions have been committed since the snapshot was taken. See [Enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT](/replication/standard-replication/enhancements-for-start-transaction-with-consistent-snapshot/).
 - <strong>Scope:</strong> Global
 - <strong>Data Type:</strong> `numeric`
 
@@ -91,7 +91,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Binlog_stmt_cache_disk_use`
 
-- <strong>Description:</strong> Number of non-transaction statements which used a temporary disk cache because they could not fit in the regular [binary log](/mariadb-administration/server-monitoring-logs/binary-log) cache, being larger than [binlog_stmt_cache_size](/kb/en/server-system-variables/#binlog_stmt_cache_size). The global value can be flushed by [FLUSH STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush).
+- <strong>Description:</strong> Number of non-transaction statements which used a temporary disk cache because they could not fit in the regular [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) cache, being larger than [binlog_stmt_cache_size](/kb/en/server-system-variables/#binlog_stmt_cache_size). The global value can be flushed by [FLUSH STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/).
 - <strong>Scope:</strong> Global
 - <strong>Data Type:</strong> `numeric`
 
@@ -99,7 +99,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Binlog_stmt_cache_use`
 
-- <strong>Description:</strong> Number of non-transaction statement which used the regular [binary log](/mariadb-administration/server-monitoring-logs/binary-log) cache, being smaller than [binlog_stmt_cache_size](/kb/en/server-system-variables/#binlog_stmt_cache_size). The global value can be flushed by [FLUSH STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush).
+- <strong>Description:</strong> Number of non-transaction statement which used the regular [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) cache, being smaller than [binlog_stmt_cache_size](/kb/en/server-system-variables/#binlog_stmt_cache_size). The global value can be flushed by [FLUSH STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/).
 - <strong>Scope:</strong> Global
 - <strong>Data Type:</strong> `numeric`
 
@@ -107,7 +107,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Com_change_master`
 
-- <strong>Description:</strong> Number of [CHANGE MASTER TO](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to) statements executed.
+- <strong>Description:</strong> Number of [CHANGE MASTER TO](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to/) statements executed.
 - <strong>Scope:</strong> Global, Session
 - <strong>Data Type:</strong> `numeric`
 
@@ -245,7 +245,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Rpl_transactions_multi_engine`
 
-- <strong>Description:</strong> Number of replicated transactions that involved changes in multiple (transactional) storage engines, before considering the update of `mysql.gtid_slave_pos`. These are transactions that were already cross-engine, independent of the GTID position update introduced by replication. The global value can be flushed by [FLUSH STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush).
+- <strong>Description:</strong> Number of replicated transactions that involved changes in multiple (transactional) storage engines, before considering the update of `mysql.gtid_slave_pos`. These are transactions that were already cross-engine, independent of the GTID position update introduced by replication. The global value can be flushed by [FLUSH STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/).
 - <strong>Scope:</strong> Global
 - <strong>Data Type:</strong> `numeric`
 - <strong>Introduced:</strong> [MariaDB 10.3.1](/kb/en/mariadb-1031-release-notes/)
@@ -287,7 +287,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Slave_retried_transactions`
 
-- <strong>Description:</strong> Number of times the slave has retried transactions since the server started. The global value can be flushed by [FLUSH STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush).
+- <strong>Description:</strong> Number of times the slave has retried transactions since the server started. The global value can be flushed by [FLUSH STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/).
 - <strong>Scope:</strong> Global
 - <strong>Data Type:</strong> `numeric`
 
@@ -330,7 +330,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Transactions_gtid_foreign_engine`
 
-- <strong>Description:</strong> Number of replicated transactions where the update of the `gtid_slave_pos` table had to choose a storage engine that did not otherwise participate in the transaction. This can indicate that setting [gtid_pos_auto_engines](/kb/en/global-transaction-id/#gtid_pos_auto_engines) might be useful. The global value can be flushed by [FLUSH STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush).
+- <strong>Description:</strong> Number of replicated transactions where the update of the `gtid_slave_pos` table had to choose a storage engine that did not otherwise participate in the transaction. This can indicate that setting [gtid_pos_auto_engines](/kb/en/global-transaction-id/#gtid_pos_auto_engines) might be useful. The global value can be flushed by [FLUSH STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/).
 - <strong>Scope:</strong> Global
 - <strong>Data Type:</strong> `numeric`
 - <strong>Introduced:</strong> [MariaDB 10.3.1](/kb/en/mariadb-1031-release-notes/)
@@ -339,7 +339,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Transactions_multi_engine`
 
-- <strong>Description:</strong> Number of transactions that changed data in multiple (transactional) storage engines. If this is significantly larger than [Rpl_transactions_multi_engine](#rpl_transactions_multi_engine), it indicates that setting [gtid_pos_auto_engines](gtid_pos_auto_engines) could reduce the need for cross-engine transactions. The global value can be flushed by [FLUSH STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush).
+- <strong>Description:</strong> Number of transactions that changed data in multiple (transactional) storage engines. If this is significantly larger than [Rpl_transactions_multi_engine](#rpl_transactions_multi_engine), it indicates that setting [gtid_pos_auto_engines](gtid_pos_auto_engines) could reduce the need for cross-engine transactions. The global value can be flushed by [FLUSH STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/).
 - <strong>Scope:</strong> Global
 - <strong>Data Type:</strong> `numeric`
 - <strong>Introduced:</strong> [MariaDB 10.3.1](/kb/en/mariadb-1031-release-notes/)

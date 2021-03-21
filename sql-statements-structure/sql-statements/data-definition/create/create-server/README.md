@@ -19,8 +19,8 @@ option:
 
 ## Description
 
-This statement creates the definition of a server for use with the [Spider](/columns-storage-engines-and-plugins/storage-engines/spider),
-[FEDERATED](/columns-storage-engines-and-plugins/storage-engines/legacy-storage-engines/federated-storage-engine) or [FederatedX](/kb/en/federatedx/) storage
+This statement creates the definition of a server for use with the [Spider](/columns-storage-engines-and-plugins/storage-engines/spider/),
+[FEDERATED](/columns-storage-engines-and-plugins/storage-engines/legacy-storage-engines/federated-storage-engine/) or [FederatedX](/kb/en/federatedx/) storage
 engine. The CREATE SERVER statement creates a new row within the
 [servers](/kb/en/mysqlservers-table/) table within the mysql database. This statement
 requires the [SUPER](/kb/en/grant/#super) privilege or, from [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/), the [FEDERATED ADMIN](/kb/en/grant/#federated-admin) privilege.
@@ -47,17 +47,17 @@ the ownership or operation of the server connection that is created.
 
 The CREATE SERVER statement creates an entry in the
 [mysql.servers](/kb/en/mysqlservers-table/) table that can later be used with the
-CREATE TABLE statement when creating a [Spider](/columns-storage-engines-and-plugins/storage-engines/spider), [FederatedX](/kb/en/federatedx/) or
-[FEDERATED](/columns-storage-engines-and-plugins/storage-engines/legacy-storage-engines/federated-storage-engine) table. The options that you specify will
+CREATE TABLE statement when creating a [Spider](/columns-storage-engines-and-plugins/storage-engines/spider/), [FederatedX](/kb/en/federatedx/) or
+[FEDERATED](/columns-storage-engines-and-plugins/storage-engines/legacy-storage-engines/federated-storage-engine/) table. The options that you specify will
 be used to populate the columns in the mysql.servers table. The table columns
 are Server_name, Host, Db, Username, Password, Port and Socket.
 
-[DROP SERVER](/sql-statements-structure/sql-statements/data-definition/drop/drop-server) removes a previously created server definition.
+[DROP SERVER](/sql-statements-structure/sql-statements/data-definition/drop/drop-server/) removes a previously created server definition.
 
-CREATE SERVER is not written to the [binary log](/mariadb-administration/server-monitoring-logs/binary-log), irrespective of
-the [binary log format](/mariadb-administration/server-monitoring-logs/binary-log/binary-log-formats) being used.
+CREATE SERVER is not written to the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/), irrespective of
+the [binary log format](/mariadb-administration/server-monitoring-logs/binary-log/binary-log-formats/) being used.
 
-For valid identifiers to use as server names, see [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names).
+For valid identifiers to use as server names, see [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names/).
 
 #### OR REPLACE
 
@@ -112,7 +112,7 @@ SHOW WARNINGS;
 
 ## See Also
 
-- [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names)
-- [ALTER SERVER](/sql-statements-structure/sql-statements/data-definition/alter/alter-server)
-- [DROP SERVER](/sql-statements-structure/sql-statements/data-definition/drop/drop-server)
-- [Spider Storage Engine](/columns-storage-engines-and-plugins/storage-engines/spider)
+- [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names/)
+- [ALTER SERVER](/sql-statements-structure/sql-statements/data-definition/alter/alter-server/)
+- [DROP SERVER](/sql-statements-structure/sql-statements/data-definition/drop/drop-server/)
+- [Spider Storage Engine](/columns-storage-engines-and-plugins/storage-engines/spider/)

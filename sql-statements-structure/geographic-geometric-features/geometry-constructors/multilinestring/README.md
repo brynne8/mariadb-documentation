@@ -8,7 +8,7 @@ MultiLineString(ls1,ls2,...)
 
 ## Description
 
-Constructs a WKB MultiLineString value using [WKB](/sql-statements-structure/geographic-geometric-features/wkb) [LineString](/sql-statements-structure/geographic-geometric-features/geometry-constructors/linestring) arguments.  If any argument is not a WKB LineString, the return value is
+Constructs a WKB MultiLineString value using [WKB](/sql-statements-structure/geographic-geometric-features/wkb/) [LineString](/sql-statements-structure/geographic-geometric-features/geometry-constructors/linestring/) arguments.  If any argument is not a WKB LineString, the return value is
 `NULL`.
 
 ## Example

@@ -2,7 +2,7 @@
 
 Locks are acquired by a transaction to prevent concurrent transactions from modifying, or even reading, some rows or ranges of rows. This is done to make sure that concurrent write operations never collide.
 
-[XtraDB/InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) supports a number of lock modes.
+[XtraDB/InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) supports a number of lock modes.
 
 ## Shared and Exclusive Locks
 

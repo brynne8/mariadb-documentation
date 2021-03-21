@@ -155,7 +155,7 @@ Cassandra also allows individual rows to have their own sets of columns. In
 other words, each row can have its own unique columns.
 
 These columns can be accessed through MariaDB's
-[Dynamic Columns](/sql-statements-structure/nosql/dynamic-columns) feature. To do so, one must define a
+[Dynamic Columns](/sql-statements-structure/nosql/dynamic-columns/) feature. To do so, one must define a
 column:
 
 - with an arbitrary name
@@ -276,7 +276,7 @@ looked-up, and how many results were produced with these status variables:
 
 ## System and status variables
 
-The following [system variables](/columns-storage-engines-and-plugins/storage-engines/legacy-storage-engines/cassandra/cassandra-system-variables) are available:
+The following [system variables](/columns-storage-engines-and-plugins/storage-engines/legacy-storage-engines/cassandra/cassandra-system-variables/) are available:
 
 <table><tbody><tr><th>Variable name</th><th>Description</th></tr>
 <tr><td><a href="/kb/en/cassandra-system-variables/#cassandra_default_thrift_host">cassandra_default_thrift_host</a></td><td>Host to connect to, if not specified on per-table basis</td></tr>
@@ -288,7 +288,7 @@ The following [system variables](/columns-storage-engines-and-plugins/storage-en
 <tr><td><a href="/kb/en/cassandra-system-variables/#cassandra_write_consistency">cassandra_write_consistency</a></td><td>Consistency to use for writing</td></tr>
 </tbody></table>
 
-The following [status variables](/columns-storage-engines-and-plugins/storage-engines/legacy-storage-engines/cassandra/cassandra-status-variables) are available:
+The following [status variables](/columns-storage-engines-and-plugins/storage-engines/legacy-storage-engines/cassandra/cassandra-status-variables/) are available:
 
 <table><tbody><tr><th>Variable name</th><th>Description</th></tr>
 <tr><td><a href="/kb/en/cassandra-status-variables/#cassandra_row_inserts">Cassandra_row_inserts</a></td><td>Number of rows inserted</td></tr>
@@ -315,8 +315,8 @@ that were defined `WITH COMPACT STORAGE` attribute.
 
 - Slides from talk at Percona Live 2013:[MariaDB Cassandra Interoperability](http://www.percona.com/live/mysql-conference-2013/sessions/mariadb-cassandra-interoperability)
 - [MDEV-431](https://jira.mariadb.org/browse/MDEV-431) - JIRA task for Cassandra SE work
-- [Instructions for creating binary tarball in MariaDB 5.5](/columns-storage-engines-and-plugins/storage-engines/legacy-storage-engines/cassandra/building-cassandra-storage-engine-for-packaging)
-- [Cassandra Storage Engine - Future Plans](/columns-storage-engines-and-plugins/storage-engines/legacy-storage-engines/cassandra/cassandra-storage-engine-future-plans)
-- [Cassandra Storage Engine - Use Example](/columns-storage-engines-and-plugins/storage-engines/legacy-storage-engines/cassandra/cassandra-storage-engine-use-example)
-- [Cassandra Storage Engine - Issues](/columns-storage-engines-and-plugins/storage-engines/legacy-storage-engines/cassandra/cassandra-storage-engine-issues)
+- [Instructions for creating binary tarball in MariaDB 5.5](/columns-storage-engines-and-plugins/storage-engines/legacy-storage-engines/cassandra/building-cassandra-storage-engine-for-packaging/)
+- [Cassandra Storage Engine - Future Plans](/columns-storage-engines-and-plugins/storage-engines/legacy-storage-engines/cassandra/cassandra-storage-engine-future-plans/)
+- [Cassandra Storage Engine - Use Example](/columns-storage-engines-and-plugins/storage-engines/legacy-storage-engines/cassandra/cassandra-storage-engine-use-example/)
+- [Cassandra Storage Engine - Issues](/columns-storage-engines-and-plugins/storage-engines/legacy-storage-engines/cassandra/cassandra-storage-engine-issues/)
 - [HBase Storage Engine](/kb/en/hbase-storage-engine/)

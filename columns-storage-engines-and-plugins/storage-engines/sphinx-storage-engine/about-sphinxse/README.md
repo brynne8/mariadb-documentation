@@ -1,6 +1,6 @@
 # About SphinxSE
 
-The Sphinx storage engine (SphinxSE) is a storage engine that talks to searchd (the Sphinx daemon) to enable text searching. Sphinx and SphinxSE is used as a faster and more customizable alternative to MariaDB's [built-in full-text search](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes).
+The Sphinx storage engine (SphinxSE) is a storage engine that talks to searchd (the Sphinx daemon) to enable text searching. Sphinx and SphinxSE is used as a faster and more customizable alternative to MariaDB's [built-in full-text search](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/).
 
 Sphinx does not depend on MariaDB, and can run independently, but SphinxSE provides a convenient interface to the underlying Sphinx daemon.
 
@@ -18,7 +18,7 @@ Sphinx does not depend on MariaDB, and can run independently, but SphinxSE provi
 As of [MariaDB 5.2.2](/kb/en/mariadb-522-release-notes/), the Sphinx storage engine is included in the source,
 binaries, and packages of MariaDB. SphinxSE is built as a dynamically loadable
 .so plugin. To use it you need to perform a one-time 
-<code class="highlight fixed" style="white-space:pre-wrap">[INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin)</code>:
+<code class="highlight fixed" style="white-space:pre-wrap">[INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin/)</code>:
 
 ```sql
 INSTALL SONAME 'ha_sphinx';
@@ -44,7 +44,7 @@ SHOW ENGINES;
 This is a one-time step and will not need to be performed again.
 
 <strong>Note:</strong> SphinxSE is just the storage engine part of Sphinx. You will have to
-[install Sphinx](/columns-storage-engines-and-plugins/storage-engines/sphinx-storage-engine/installing-sphinx) itself in order to make use of
+[install Sphinx](/columns-storage-engines-and-plugins/storage-engines/sphinx-storage-engine/installing-sphinx/) itself in order to make use of
 SphinxSE in MariaDB.
 
 Despite the name, SphinxSE does not actually store any data itself. It is

@@ -2,28 +2,28 @@
 
 <strong>Release date:</strong> 18th September 2017
 
-[MariaDB ColumnStore 1.1.0](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore) is a Beta release of MariaDB ColumnStore. This is the first release of the MariaDB ColumnStore 1.1 series. The MariaDB ColumnStore 1.1 series  provides several new features and improvements over the MariaDB ColumnStore 1.0 release.
+[MariaDB ColumnStore 1.1.0](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/) is a Beta release of MariaDB ColumnStore. This is the first release of the MariaDB ColumnStore 1.1 series. The MariaDB ColumnStore 1.1 series  provides several new features and improvements over the MariaDB ColumnStore 1.0 release.
 
 MariaDB ColumnStore 1.1.0 is a <strong><em>[Beta](/kb/en/release-criteria/)</em></strong> release.
 
 <strong>Do not use <em>beta</em> releases on production systems!</strong>
 
-For an overview of [MariaDB ColumnStore](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore) see [MariaDB ColumnStore Architectural Overview](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-architectural-overview)
+For an overview of [MariaDB ColumnStore](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/) see [MariaDB ColumnStore Architectural Overview](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-architectural-overview/)
 
 ## New Features
 
 1 MariaDB ColumnStore 1.1.0 is based on MariaDB Server 10.2.8
 2 The Window functions have been re-implemented with MariaDB Server 10.2.8 code.
-3 [MariaDB ColumnStore Data API to programmatically load data into PM nodes](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk).
+3 [MariaDB ColumnStore Data API to programmatically load data into PM nodes](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk/).
 4 Text and Blob Data Types.
-5 [User defined distributed aggregate and window functions.](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-sql-structure-and-commands/columnstore-user-defined-aggregate-and-window-functions)
+5 [User defined distributed aggregate and window functions.](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-sql-structure-and-commands/columnstore-user-defined-aggregate-and-window-functions/)
 6 [ColumnStore Backup/Restore Tool](https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/).
-7 MariaDB Server [Audit Plugin Integration](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/columnstore-audit-plugin).
+7 MariaDB Server [Audit Plugin Integration](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/columnstore-audit-plugin/).
 8 Built-in data redundancy using GlusterFS integration for installations that use local disks for data storage on PMs. Please refer to [Preparing ColumnStore Installation](https://mariadb.com/kb/en/library/preparing-for-columnstore-installation-110-beta/) for using GlusterFS with MariaDB ColumnStore.
 9 Several performance improvements in string handling, memory utilization and general area.
 
 Please provide feedback in [JIRA](https://jira.mariadb.org/browse/MCOL) for anything that is not working as expected so that we can fix it before we make the release available for the larger community.
-For general "how to questions" ask questions [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore) or subscribe to mariadb-columnstore@googlegroups.com
+For general "how to questions" ask questions [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/) or subscribe to mariadb-columnstore@googlegroups.com
 
 ## Bugs and issues fixed
 
@@ -95,7 +95,7 @@ There are a number bugs and known limitations within this version of MariaDB Col
 - [MCOL-912](https://jira.mariadb.org/browse/MCOL-912) : fter adding two PMs with gluster, cpimport failed on newly added PMs. The system must be restarted after adding PM modules with data redundancy / gluster storage.
 - [MCOL-916](https://jira.mariadb.org/browse/MCOL-916) : Gluster failover: Stack did not recover completely after PM1 reboot. Under certain topologies (replication count &lt; pm count) failover may not work correctly. Recommend limiting testing to replication count = pm count.
 - [MCOL-926](https://jira.mariadb.org/browse/MCOL-926) : multiple application of a UDAF on the same column will result in a null value except for the first occurence.
-- The current logging default generates full verbose debug logs. This can be controlled by making logging configuration changes as described [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/columnstore-system-monitoring-configuration).
+- The current logging default generates full verbose debug logs. This can be controlled by making logging configuration changes as described [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/columnstore-system-monitoring-configuration/).
 - While Millisecond and Microsecond storage is supported for datetime, time and timestamp columns, at this time the query results cannot return millisecond and microseconds.
 - UTF-8 Limitation
 <ul start="1"><li>UTF-8 must be declared at the table level if the instance has been set up with a UTF-8 profile. Tables created with a non-matching character set will yield indeterminate results. 
@@ -106,7 +106,7 @@ There are a number bugs and known limitations within this version of MariaDB Col
 
 ## Documentation
 
-[MariaDB ColumnStore Documentation](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore)
+[MariaDB ColumnStore Documentation](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/)
 
 ## Packaging
 
@@ -114,7 +114,7 @@ RPM, Debian, and binary packages are provided for the Linux distributions suppor
 
 - The supported OS for the GA version are CentOS 6, CentOS 7, Debian 8.6, Debian 9.1, RedHat 6, RedHat 7, SUSE 12, and Ubuntu 16.0.4.
 - Packages can be downloaded [here](https://mariadb.com/downloads/columnstore)
-- An Amazon AWS AMI Image is available for this release, please search for AMI name "MariaDB-ColumnStore-1.1.0". AMI specific installation instructions can be found [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/installing-and-configuring-a-columnstore-system-using-the-amazon-ami).
+- An Amazon AWS AMI Image is available for this release, please search for AMI name "MariaDB-ColumnStore-1.1.0". AMI specific installation instructions can be found [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/installing-and-configuring-a-columnstore-system-using-the-amazon-ami/).
 - Certified to run in Google Cloud Environment in the GA OSs.
 
 ## Source code

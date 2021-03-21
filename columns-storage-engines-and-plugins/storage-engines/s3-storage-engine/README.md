@@ -2,7 +2,7 @@
 
 ##### MariaDB starting with [10.5](/kb/en/what-is-mariadb-105/)
 
-The [S3 storage engine](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine) has been available since [MariaDB 10.5.4](/kb/en/mariadb-1054-release-notes/).
+The [S3 storage engine](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/) has been available since [MariaDB 10.5.4](/kb/en/mariadb-1054-release-notes/).
 
 S3 is a read-only storage engine that stores its data in Amazon S3.
 

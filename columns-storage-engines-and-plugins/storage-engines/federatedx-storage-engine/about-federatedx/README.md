@@ -6,7 +6,7 @@ The FederatedX storage engine was first released in [MariaDB 5.1](/kb/en/what-is
 
 The FederatedX storage engine is a fork of MySQL's [Federated storage engine](https://dev.mysql.com/doc/refman/5.5/en/federated-storage-engine.html), which is no longer being developed by Oracle. The original purpose of FederatedX was to keep this storage engine's development progressing-- to both add new features as well as fix old bugs.
 
-Since [MariaDB 10.0](/kb/en/what-is-mariadb-100/), the [CONNECT](/columns-storage-engines-and-plugins/storage-engines/connect) storage engine also allows access to a remote database via MySQL or ODBC connection (table types: [MYSQL](/kb/en/connect-table-types-mysql-table-type-accessing-mysqlmariadb-tables/), [ODBC](/kb/en/connect-table-types-odbc-table-type-accessing-tables-from-other-dbms/)). However, in the current implementation there are several limitations.
+Since [MariaDB 10.0](/kb/en/what-is-mariadb-100/), the [CONNECT](/columns-storage-engines-and-plugins/storage-engines/connect/) storage engine also allows access to a remote database via MySQL or ODBC connection (table types: [MYSQL](/kb/en/connect-table-types-mysql-table-type-accessing-mysqlmariadb-tables/), [ODBC](/kb/en/connect-table-types-odbc-table-type-accessing-tables-from-other-dbms/)). However, in the current implementation there are several limitations.
 
 ## What is the FederatedX storage engine?
 
@@ -23,19 +23,19 @@ When MySQL 5.1 became the production release of MySQL, Federated had more featur
 - Various bugs that needed to be fixed from MySQL 5.0
 - Plugin capability
 
-In [MariaDB 10.0.2](/kb/en/mariadb-1002-release-notes/) FederatedX got support for assisted [table discovery](/columns-storage-engines-and-plugins/storage-engines/storage-engines-storage-engine-development/table-discovery).
+In [MariaDB 10.0.2](/kb/en/mariadb-1002-release-notes/) FederatedX got support for assisted [table discovery](/columns-storage-engines-and-plugins/storage-engines/storage-engines-storage-engine-development/table-discovery/).
 
 ## Installing the Plugin
 
 Although the plugin's shared library is distributed with MariaDB by default, the plugin is not actually installed by MariaDB by default. There are two methods that can be used to install the plugin with MariaDB.
 
-The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname) or [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin). For example:
+The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname/) or [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin/). For example:
 
 ```sql
 INSTALL SONAME 'ha_federatedx';
 ```
 
-The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the <a undefined>--plugin-load</a> or the <a undefined>--plugin-load-add</a> options. This can be specified as a command-line argument to [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options) or it can be specified in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files). For example:
+The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the <a undefined>--plugin-load</a> or the <a undefined>--plugin-load-add</a> options. This can be specified as a command-line argument to [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/) or it can be specified in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/). For example:
 
 ```sql
 [mariadb]
@@ -45,13 +45,13 @@ plugin_load_add = ha_federatedx
 
 ## Uninstalling the Plugin
 
-You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname) or [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin). For example:
+You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname/) or [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin/). For example:
 
 ```sql
 UNINSTALL SONAME 'ha_federatedx';
 ```
 
-If you installed the plugin by providing the <a undefined>--plugin-load</a> or the <a undefined>--plugin-load-add</a> options in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
+If you installed the plugin by providing the <a undefined>--plugin-load</a> or the <a undefined>--plugin-load-add</a> options in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
 
 ## How FederatedX works
 

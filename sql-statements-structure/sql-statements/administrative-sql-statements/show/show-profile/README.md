@@ -22,7 +22,7 @@ type:
 ## Description
 
 The <code class="highlight fixed" style="white-space:pre-wrap">SHOW PROFILE</code> and 
-<code class="highlight fixed" style="white-space:pre-wrap">[SHOW PROFILES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-profiles)</code> statements display profiling
+<code class="highlight fixed" style="white-space:pre-wrap">[SHOW PROFILES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-profiles/)</code> statements display profiling
 information that indicates resource usage for statements executed during the
 course of the current session.
 
@@ -57,7 +57,7 @@ rows into the full set of rows.
 
 By default, <code class="highlight fixed" style="white-space:pre-wrap">SHOW PROFILE</code> displays Status and Duration
 columns. The Status values are like the State values displayed by 
-<code class="highlight fixed" style="white-space:pre-wrap">[SHOW PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist)</code>,
+<code class="highlight fixed" style="white-space:pre-wrap">[SHOW PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist/)</code>,
 although there might be some minor differences in interpretation for
 the two statements for some status values (see
 [http://dev.mysql.com/doc/refman/5.6/en/thread-information.html](http://dev.mysql.com/doc/refman/5.6/en/thread-information.html)).

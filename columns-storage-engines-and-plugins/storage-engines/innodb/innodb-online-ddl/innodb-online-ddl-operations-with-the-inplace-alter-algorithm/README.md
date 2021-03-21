@@ -17,7 +17,7 @@ InnoDB supports adding columns to a table with <a undefined>ALGORITHM</a> set to
 
 The table is rebuilt, which means that all of the data is reorganized substantially, and the indexes are rebuilt. As a result, the operation is quite expensive.
 
-With the exception of adding an [auto-increment](/columns-storage-engines-and-plugins/data-types/auto_increment) column, this operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the <a undefined>LOCK</a> clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
+With the exception of adding an [auto-increment](/columns-storage-engines-and-plugins/data-types/auto_increment/) column, this operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the <a undefined>LOCK</a> clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
 For example:
 
@@ -32,7 +32,7 @@ ALTER TABLE tab ADD COLUMN c varchar(50);
 Query OK, 0 rows affected (0.006 sec)
 ```
 
-This applies to <a undefined>ALTER TABLE ... ADD COLUMN</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... ADD COLUMN</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... DROP COLUMN`
 
@@ -56,11 +56,11 @@ ALTER TABLE tab DROP COLUMN c;
 Query OK, 0 rows affected (0.021 sec)
 ```
 
-This applies to <a undefined>ALTER TABLE ... DROP COLUMN</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... DROP COLUMN</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... MODIFY COLUMN`
 
-This applies to <a undefined>ALTER TABLE ... MODIFY COLUMN</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... MODIFY COLUMN</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 #### Reordering Columns
 
@@ -160,7 +160,7 @@ Query OK, 0 rows affected (0.021 sec)
 
 #### Changing a Column to NOT NULL
 
-InnoDB supports modifying a column to <strong>not</strong> allow <a undefined>NULL</a> values with <a undefined>ALGORITHM</a> set to `INPLACE`. It is required for [strict mode](/kb/en/sql-mode/#strict-mode) to be enabled in [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode). The operation will fail if the column contains any `NULL` values. Changes that would interfere with referential integrity are also not permitted.
+InnoDB supports modifying a column to <strong>not</strong> allow <a undefined>NULL</a> values with <a undefined>ALGORITHM</a> set to `INPLACE`. It is required for [strict mode](/kb/en/sql-mode/#strict-mode) to be enabled in [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode/). The operation will fail if the column contains any `NULL` values. Changes that would interfere with referential integrity are also not permitted.
 
 The table is rebuilt, which means that all of the data is reorganized substantially, and the indexes are rebuilt. As a result, the operation is quite expensive.
 
@@ -182,7 +182,7 @@ Query OK, 0 rows affected (0.021 sec)
 
 #### Adding a New `ENUM` Option
 
-InnoDB supports adding a new [ENUM](/columns-storage-engines-and-plugins/data-types/string-data-types/enum) option to a column with <a undefined>ALGORITHM</a> set to `INPLACE`. In order to add a new [ENUM](/columns-storage-engines-and-plugins/data-types/string-data-types/enum) option with <a undefined>ALGORITHM</a> set to `INPLACE`, the following requirements must be met:
+InnoDB supports adding a new [ENUM](/columns-storage-engines-and-plugins/data-types/string-data-types/enum/) option to a column with <a undefined>ALGORITHM</a> set to `INPLACE`. In order to add a new [ENUM](/columns-storage-engines-and-plugins/data-types/string-data-types/enum/) option with <a undefined>ALGORITHM</a> set to `INPLACE`, the following requirements must be met:
 
 - It must be added to the end of the list.
 - The storage requirements must not change.
@@ -221,7 +221,7 @@ ERROR 1846 (0A000): ALGORITHM=INPLACE is not supported. Reason: Cannot change co
 
 #### Adding a New `SET` Option
 
-InnoDB supports adding a new [SET](/columns-storage-engines-and-plugins/data-types/string-data-types/set-data-type) option to a column with <a undefined>ALGORITHM</a> set to `INPLACE`. In order to add a new [SET](/columns-storage-engines-and-plugins/data-types/string-data-types/set-data-type) option with <a undefined>ALGORITHM</a> set to `INPLACE`, the following requirements must be met:
+InnoDB supports adding a new [SET](/columns-storage-engines-and-plugins/data-types/string-data-types/set-data-type/) option to a column with <a undefined>ALGORITHM</a> set to `INPLACE`. In order to add a new [SET](/columns-storage-engines-and-plugins/data-types/string-data-types/set-data-type/) option with <a undefined>ALGORITHM</a> set to `INPLACE`, the following requirements must be met:
 
 - It must be added to the end of the list.
 - The storage requirements must not change.
@@ -260,7 +260,7 @@ ERROR 1846 (0A000): ALGORITHM=INPLACE is not supported. Reason: Cannot change co
 
 #### Removing System Versioning from a Column
 
-In [MariaDB 10.3.8](/kb/en/mariadb-1038-release-notes/) and later, InnoDB supports removing [system versioning](/sql-statements-structure/temporal-tables/system-versioned-tables) from a column with <a undefined>ALGORITHM</a> set to `INPLACE`. In order for this to work, the <a undefined>system_versioning_alter_history</a> system variable must be set to `KEEP`. See [MDEV-16330](https://jira.mariadb.org/browse/MDEV-16330) for more information.
+In [MariaDB 10.3.8](/kb/en/mariadb-1038-release-notes/) and later, InnoDB supports removing [system versioning](/sql-statements-structure/temporal-tables/system-versioned-tables/) from a column with <a undefined>ALGORITHM</a> set to `INPLACE`. In order for this to work, the <a undefined>system_versioning_alter_history</a> system variable must be set to `KEEP`. See [MDEV-16330](https://jira.mariadb.org/browse/MDEV-16330) for more information.
 
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the <a undefined>LOCK</a> clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
@@ -281,7 +281,7 @@ Query OK, 0 rows affected (0.005 sec)
 
 ### `ALTER TABLE ... ALTER COLUMN`
 
-This applies to <a undefined>ALTER TABLE ... ALTER COLUMN</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... ALTER COLUMN</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 #### Setting a Column's Default Value
 
@@ -362,7 +362,7 @@ ALTER TABLE tab CHANGE COLUMN c num int;
 ERROR 1846 (0A000): ALGORITHM=INPLACE is not supported. Reason: Cannot change column type INPLACE. Try ALGORITHM=COPY
 ```
 
-This applies to <a undefined>ALTER TABLE ... CHANGE COLUMN</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... CHANGE COLUMN</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ## Index Operations
 
@@ -370,7 +370,7 @@ This applies to <a undefined>ALTER TABLE ... CHANGE COLUMN</a> for [InnoDB](/col
 
 InnoDB supports adding a primary key to a table with <a undefined>ALGORITHM</a> set to `INPLACE`.
 
-If the new primary key column is not defined as <a undefined>NOT NULL</a>, then it is highly recommended for [strict mode](/kb/en/sql-mode/#strict-mode) to be enabled in [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode). Otherwise, `NULL` values will be silently converted to the default value for the given data type, which is probably not the desired behavior in this scenario.
+If the new primary key column is not defined as <a undefined>NOT NULL</a>, then it is highly recommended for [strict mode](/kb/en/sql-mode/#strict-mode) to be enabled in [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode/). Otherwise, `NULL` values will be silently converted to the default value for the given data type, which is probably not the desired behavior in this scenario.
 
 The table is rebuilt, which means that all of the data is reorganized substantially, and the indexes are rebuilt. As a result, the operation is quite expensive.
 
@@ -426,7 +426,7 @@ ALTER TABLE tab ADD PRIMARY KEY (a);
 ERROR 1062 (23000): Duplicate entry '1' for key 'PRIMARY'
 ```
 
-This applies to <a undefined>ALTER TABLE ... ADD PRIMARY KEY</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... ADD PRIMARY KEY</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... DROP PRIMARY KEY`
 
@@ -465,11 +465,11 @@ ALTER TABLE tab DROP PRIMARY KEY, ADD PRIMARY KEY (b);
 Query OK, 0 rows affected (0.020 sec)
 ```
 
-This applies to <a undefined>ALTER TABLE ... DROP PRIMARY KEY</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... DROP PRIMARY KEY</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... ADD INDEX` and `CREATE INDEX`
 
-This applies to <a undefined>ALTER TABLE ... ADD INDEX</a> and [CREATE INDEX](/sql-statements-structure/sql-statements/data-definition/create/create-index) for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... ADD INDEX</a> and [CREATE INDEX](/sql-statements-structure/sql-statements/data-definition/create/create-index/) for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 #### Adding a Plain Index
 
@@ -507,17 +507,17 @@ Query OK, 0 rows affected (0.011 sec)
 
 #### Adding a Fulltext Index
 
-InnoDB supports adding a [FULLTEXT](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes) index to a table with <a undefined>ALGORITHM</a> set to `INPLACE`. The table is not rebuilt in some cases.
+InnoDB supports adding a [FULLTEXT](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) index to a table with <a undefined>ALGORITHM</a> set to `INPLACE`. The table is not rebuilt in some cases.
 
 However, there are some limitations, such as:
 
-- Adding a [FULLTEXT](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes) index to a table that does not have a user-defined `FTS_DOC_ID` column will require the table to be rebuilt once. When the table is rebuilt, the system adds a hidden `FTS_DOC_ID` column. From that point forward, adding additional [FULLTEXT](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes) indexes to the same table will not require the table to be rebuilt when <a undefined>ALGORITHM</a> is set to `INPLACE`.
+- Adding a [FULLTEXT](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) index to a table that does not have a user-defined `FTS_DOC_ID` column will require the table to be rebuilt once. When the table is rebuilt, the system adds a hidden `FTS_DOC_ID` column. From that point forward, adding additional [FULLTEXT](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) indexes to the same table will not require the table to be rebuilt when <a undefined>ALGORITHM</a> is set to `INPLACE`.
 
-- Only one [FULLTEXT](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes) index may be added at a time when <a undefined>ALGORITHM</a> is set to `INPLACE`.
+- Only one [FULLTEXT](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) index may be added at a time when <a undefined>ALGORITHM</a> is set to `INPLACE`.
 
-- If a table has more than one [FULLTEXT](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes) index, then it cannot be rebuilt by any [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) operations when <a undefined>ALGORITHM</a> is set to `INPLACE`.
+- If a table has more than one [FULLTEXT](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) index, then it cannot be rebuilt by any [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) operations when <a undefined>ALGORITHM</a> is set to `INPLACE`.
 
-- If a table has a [FULLTEXT](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes) index, then it cannot be rebuilt by any [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) operations when the <a undefined>LOCK</a> clause is set to `NONE`.
+- If a table has a [FULLTEXT](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) index, then it cannot be rebuilt by any [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) operations when the <a undefined>LOCK</a> clause is set to `NONE`.
 
 This operation supports a read-only locking strategy. This strategy can be explicitly chosen by setting the <a undefined>LOCK</a> clause to `SHARED`. When this strategy is used, read-only concurrent DML is permitted.
 
@@ -566,7 +566,7 @@ ALTER TABLE tab ADD FULLTEXT INDEX c_index (c);
 Query OK, 0 rows affected (0.017 sec)
 ```
 
-But this second command fails, because only one [FULLTEXT](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes) index can be added at a time:
+But this second command fails, because only one [FULLTEXT](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) index can be added at a time:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
@@ -584,7 +584,7 @@ ALTER TABLE tab ADD FULLTEXT INDEX c_index (c), ADD FULLTEXT INDEX d_index (d);
 ERROR 1846 (0A000): ALGORITHM=INPLACE is not supported. Reason: InnoDB presently supports one FULLTEXT index creation at a time. Try ALGORITHM=COPY
 ```
 
-And this third command fails, because a table cannot be rebuilt when it has more than one [FULLTEXT](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes) index:
+And this third command fails, because a table cannot be rebuilt when it has more than one [FULLTEXT](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) index:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
@@ -606,11 +606,11 @@ ERROR 1846 (0A000): ALGORITHM=INPLACE is not supported. Reason: InnoDB presently
 
 #### Adding a Spatial Index
 
-InnoDB supports adding a [SPATIAL](/sql-statements-structure/geographic-geometric-features/spatial-index) index to a table with <a undefined>ALGORITHM</a> set to `INPLACE`.
+InnoDB supports adding a [SPATIAL](/sql-statements-structure/geographic-geometric-features/spatial-index/) index to a table with <a undefined>ALGORITHM</a> set to `INPLACE`.
 
 However, there are some limitations, such as:
 
-- If a table has a [SPATIAL](/sql-statements-structure/geographic-geometric-features/spatial-index) index, then it cannot be rebuilt by any [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) operations when the <a undefined>LOCK</a> clause is set to `NONE`.
+- If a table has a [SPATIAL](/sql-statements-structure/geographic-geometric-features/spatial-index/) index, then it cannot be rebuilt by any [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) operations when the <a undefined>LOCK</a> clause is set to `NONE`.
 
 This operation supports a read-only locking strategy. This strategy can be explicitly chosen by setting the <a undefined>LOCK</a> clause to `SHARED`. When this strategy is used, read-only concurrent DML is permitted.
 
@@ -678,7 +678,7 @@ SET SESSION alter_algorithm='INPLACE';
 DROP INDEX b_index ON tab;
 ```
 
-This applies to <a undefined>ALTER TABLE ... DROP INDEX</a> and [DROP INDEX](/sql-statements-structure/sql-statements/data-definition/drop/drop-index) for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... DROP INDEX</a> and [DROP INDEX](/sql-statements-structure/sql-statements/data-definition/drop/drop-index/) for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... ADD FOREIGN KEY`
 
@@ -729,7 +729,7 @@ ALTER TABLE tab1 ADD FOREIGN KEY tab2_fk (d) REFERENCES tab2 (a);
 Query OK, 0 rows affected (0.011 sec)
 ```
 
-This applies to <a undefined>ALTER TABLE ... ADD FOREIGN KEY</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... ADD FOREIGN KEY</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... DROP FOREIGN KEY`
 
@@ -760,13 +760,13 @@ ALTER TABLE tab1 DROP FOREIGN KEY tab2_fk;
 Query OK, 0 rows affected (0.005 sec)
 ```
 
-This applies to <a undefined>ALTER TABLE ... DROP FOREIGN KEY</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... DROP FOREIGN KEY</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ## Table Operations
 
 ### `ALTER TABLE ... AUTO_INCREMENT=...`
 
-InnoDB supports changing a table's [AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment) value with <a undefined>ALGORITHM</a> set to `INPLACE`. This operation should finish instantly. The table is not rebuilt.
+InnoDB supports changing a table's [AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment/) value with <a undefined>ALGORITHM</a> set to `INPLACE`. This operation should finish instantly. The table is not rebuilt.
 
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the <a undefined>LOCK</a> clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
@@ -784,7 +784,7 @@ ALTER TABLE tab AUTO_INCREMENT=100;
 Query OK, 0 rows affected (0.004 sec)
 ```
 
-This applies to <a undefined>ALTER TABLE ... AUTO_INCREMENT=...</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... AUTO_INCREMENT=...</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... ROW_FORMAT=...`
 
@@ -808,7 +808,7 @@ ALTER TABLE tab ROW_FORMAT=COMPRESSED;
 Query OK, 0 rows affected (0.025 sec)
 ```
 
-This applies to <a undefined>ALTER TABLE ... ROW_FORMAT=...</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... ROW_FORMAT=...</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... KEY_BLOCK_SIZE=...`
 
@@ -833,7 +833,7 @@ ALTER TABLE tab KEY_BLOCK_SIZE=2;
 Query OK, 0 rows affected (0.021 sec)
 ```
 
-This applies to <a undefined>KEY_BLOCK_SIZE=...</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>KEY_BLOCK_SIZE=...</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... PAGE_COMPRESSED=...` and `ALTER TABLE ... PAGE_COMPRESSION_LEVEL=...`
 
@@ -888,11 +888,11 @@ ALTER TABLE tab PAGE_COMPRESSION_LEVEL=4;
 Query OK, 0 rows affected (0.006 sec)
 ```
 
-This applies to <a undefined>PAGE_COMPRESSED=...</a> and <a undefined>PAGE_COMPRESSION_LEVEL=...</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>PAGE_COMPRESSED=...</a> and <a undefined>PAGE_COMPRESSION_LEVEL=...</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... DROP SYSTEM VERSIONING`
 
-InnoDB supports dropping [system versioning](/sql-statements-structure/temporal-tables/system-versioned-tables) from a table with <a undefined>ALGORITHM</a> set to `INPLACE`.
+InnoDB supports dropping [system versioning](/sql-statements-structure/temporal-tables/system-versioned-tables/) from a table with <a undefined>ALGORITHM</a> set to `INPLACE`.
 
 This operation supports the read-only locking strategy. This strategy can be explicitly chosen by setting the <a undefined>LOCK</a> clause to `SHARED`. When this strategy is used, read-only concurrent DML is permitted.
 
@@ -909,7 +909,7 @@ SET SESSION alter_algorithm='INPLACE';
 ALTER TABLE tab DROP SYSTEM VERSIONING;
 ```
 
-This applies to <a undefined>ALTER TABLE ... DROP SYSTEM VERSIONING</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... DROP SYSTEM VERSIONING</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... DROP CONSTRAINT`
 
@@ -932,7 +932,7 @@ ALTER TABLE tab DROP CONSTRAINT b_not_empty;
 Query OK, 0 rows affected (0.004 sec)
 ```
 
-This applies to <a undefined>ALTER TABLE ... DROP CONSTRAINT</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... DROP CONSTRAINT</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... FORCE`
 
@@ -956,7 +956,7 @@ ALTER TABLE tab FORCE;
 Query OK, 0 rows affected (0.022 sec)
 ```
 
-This applies to <a undefined>ALTER TABLE ... FORCE</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... FORCE</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... ENGINE=InnoDB`
 
@@ -980,7 +980,7 @@ ALTER TABLE tab ENGINE=InnoDB;
 Query OK, 0 rows affected (0.022 sec)
 ```
 
-This applies to <a undefined>ALTER TABLE ... ENGINE=InnoDB</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... ENGINE=InnoDB</a> for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `OPTIMIZE TABLE ...`
 
@@ -1048,7 +1048,7 @@ OPTIMIZE TABLE tab;
 1 row in set (0.004 sec)
 ```
 
-This applies to [OPTIMIZE TABLE](/replication/optimization-and-tuning/optimizing-tables/optimize-table) for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to [OPTIMIZE TABLE](/replication/optimization-and-tuning/optimizing-tables/optimize-table/) for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ### `ALTER TABLE ... RENAME TO` and `RENAME TABLE ...`
 
@@ -1085,22 +1085,22 @@ SET SESSION alter_algorithm='INPLACE';
 RENAME TABLE tab TO old_tab;
 ```
 
-This applies to <a undefined>ALTER TABLE ... RENAME TO</a> and [RENAME TABLE](/sql-statements-structure/sql-statements/data-definition/rename-table) for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables.
+This applies to <a undefined>ALTER TABLE ... RENAME TO</a> and [RENAME TABLE](/sql-statements-structure/sql-statements/data-definition/rename-table/) for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.
 
 ## Limitations
 
 ### Limitations Related to Fulltext Indexes
 
-- If a table has more than one [FULLTEXT](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes) index, then it cannot be rebuilt by any [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) operations when <a undefined>ALGORITHM</a> is set to `INPLACE`.
+- If a table has more than one [FULLTEXT](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) index, then it cannot be rebuilt by any [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) operations when <a undefined>ALGORITHM</a> is set to `INPLACE`.
 
-- If a table has a [FULLTEXT](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes) index, then it cannot be rebuilt by any [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) operations when the <a undefined>LOCK</a> clause is set to `NONE`.
+- If a table has a [FULLTEXT](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) index, then it cannot be rebuilt by any [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) operations when the <a undefined>LOCK</a> clause is set to `NONE`.
 
 ### Limitations Related to Spatial Indexes
 
-- If a table has a [SPATIAL](/sql-statements-structure/geographic-geometric-features/spatial-index) index, then it cannot be rebuilt by any [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) operations when the <a undefined>LOCK</a> clause is set to `NONE`.
+- If a table has a [SPATIAL](/sql-statements-structure/geographic-geometric-features/spatial-index/) index, then it cannot be rebuilt by any [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) operations when the <a undefined>LOCK</a> clause is set to `NONE`.
 
 ### Limitations Related to Generated (Virtual and Persistent/Stored) Columns
 
-[Generated columns](/sql-statements-structure/sql-statements/data-definition/create/generated-columns) do not currently support online DDL for all of the same operations that are supported for "real" columns.
+[Generated columns](/sql-statements-structure/sql-statements/data-definition/create/generated-columns/) do not currently support online DDL for all of the same operations that are supported for "real" columns.
 
 See [Generated (Virtual and Persistent/Stored) Columns: Statement Support](/kb/en/generated-columns/#statement-support) for more information on the limitations.

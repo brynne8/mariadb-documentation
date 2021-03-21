@@ -1,16 +1,16 @@
 # Using and Maintaining the Binary Log
 
-See [Overview of the Binary Log](/mariadb-administration/server-monitoring-logs/binary-log/overview-of-the-binary-log) for a general overview of what the binary log is, and [Activating the Binary Log](/mariadb-administration/server-monitoring-logs/binary-log/activating-the-binary-log) for how to make sure it's running on your system.
+See [Overview of the Binary Log](/mariadb-administration/server-monitoring-logs/binary-log/overview-of-the-binary-log/) for a general overview of what the binary log is, and [Activating the Binary Log](/mariadb-administration/server-monitoring-logs/binary-log/activating-the-binary-log/) for how to make sure it's running on your system.
 
-For details on using the binary log for replication, see the [Replication](/replication) section.
+For details on using the binary log for replication, see the [Replication](/replication/) section.
 
 ## Purging Log Files
 
-To delete all binary log files on the server, run the [RESET MASTER](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/reset-master) command. To delete all binary logs before a certain datetime, or up to a certain number, use [PURGE BINARY LOGS](/kb/en/sql-commands-purge-logs/).
+To delete all binary log files on the server, run the [RESET MASTER](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/reset-master/) command. To delete all binary logs before a certain datetime, or up to a certain number, use [PURGE BINARY LOGS](/kb/en/sql-commands-purge-logs/).
 
 If a slave is active but has yet to read from a binary log file you attempt to delete, the statement will fail with an error. However, if the slave is not connected and has yet to read from a log file you delete, the file will be deleted, but the slave will be unable to continue replicating once it connects again.
 
-Log files can also be removed automatically with the [expire_logs_days](/kb/en/replication-and-binary-log-system-variables/#expire_logs_days) system variable. This is set to 0 by default (no removal), but can be set to a time, in days, after which a binary log file will be automatically removed. Log files will only be checked for being older than [expire_logs_days](/kb/en/replication-and-binary-log-system-variables/#expire_logs_days) upon log rotation, so if your binary log only fills up slowly and does not reach [max_binlog_size](/kb/en/replication-and-binary-log-system-variables/#max_binlog_size) on a daily basis, you may see older log files still being kept. You can also force log rotation, and so expiry deletes, by running [FLUSH BINARY LOGS](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush) on a regular basis.
+Log files can also be removed automatically with the [expire_logs_days](/kb/en/replication-and-binary-log-system-variables/#expire_logs_days) system variable. This is set to 0 by default (no removal), but can be set to a time, in days, after which a binary log file will be automatically removed. Log files will only be checked for being older than [expire_logs_days](/kb/en/replication-and-binary-log-system-variables/#expire_logs_days) upon log rotation, so if your binary log only fills up slowly and does not reach [max_binlog_size](/kb/en/replication-and-binary-log-system-variables/#max_binlog_size) on a daily basis, you may see older log files still being kept. You can also force log rotation, and so expiry deletes, by running [FLUSH BINARY LOGS](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/) on a regular basis.
 Always set [expire_logs_days](/kb/en/replication-and-binary-log-system-variables/#expire_logs_days) higher than any possible slave lag.
 
 If the binary log index file has been removed, or incorrectly manually edited, all of the above forms of purging log files will fail. The .index file is a plain text file, and can be manually recreated or edited so that it lists only the binary log files that are present, in numeric/age order.
@@ -29,7 +29,7 @@ PURGE BINARY LOGS BEFORE '2013-04-22 09:55:22';
 
 To be sure replication is not broken while deleting log files, perform the following steps:
 
-- Get a listing of binary log files on the master by running [SHOW BINARY LOGS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-binary-logs).
+- Get a listing of binary log files on the master by running [SHOW BINARY LOGS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-binary-logs/).
 - Go to each slave server and run [SHOW SLAVE STATUS](/kb/en/show-slave-status/) to check which binary log file each slave is currently reading.
 - Find the earliest log file still being read by a slave. No log files before this one will be needed.
 - If you wish, make a backup of the log files to be deleted
@@ -37,7 +37,7 @@ To be sure replication is not broken while deleting log files, perform the follo
 
 ## Binary Log Format
 
-There are three formats for the binary log. The default is statement-based logging, while row-based logging and a mix of the two formats are also possible. See [Binary Log Formats](/mariadb-administration/server-monitoring-logs/binary-log/binary-log-formats) for a full discussion.
+There are three formats for the binary log. The default is statement-based logging, while row-based logging and a mix of the two formats are also possible. See [Binary Log Formats](/mariadb-administration/server-monitoring-logs/binary-log/binary-log-formats/) for a full discussion.
 
 ## Selectively Logging to the Binary Log
 
@@ -47,11 +47,11 @@ By default, all changes to data or data structure are logged. This behavior can 
 
 Neither option accepts comma-delimited lists of multiple databases as an option, since a database name can contain a comma. To apply to multiple databases, use the option multiple times.
 
-`--binlog-ignore-db=database_name` behaves differently depending on whether statement-based or row-based logging is used. For statement-based logging, the server will not log any statement where the <em>default database</em> is database_name. The default database is set with the [USE](/sql-statements-structure/sql-statements/administrative-sql-statements/use) statement.
+`--binlog-ignore-db=database_name` behaves differently depending on whether statement-based or row-based logging is used. For statement-based logging, the server will not log any statement where the <em>default database</em> is database_name. The default database is set with the [USE](/sql-statements-structure/sql-statements/administrative-sql-statements/use/) statement.
 
 Similarly, `--binlog-do-db=database_name` also behaves differently depending on whether statement-based or row-based logging is used.
 
-For statement-based logging, the server will only log statement where the <em>default database</em> is database_name. The default database is set with the [USE](/sql-statements-structure/sql-statements/administrative-sql-statements/use) statement.
+For statement-based logging, the server will only log statement where the <em>default database</em> is database_name. The default database is set with the [USE](/sql-statements-structure/sql-statements/administrative-sql-statements/use/) statement.
 
 For row-based logging, the server will log any updates to any tables in the named database/s, irrespective of the current database.
 

@@ -9,7 +9,7 @@ GLength(ls)
 ## Description
 
 Returns as a double-precision number the length of the
-[LineString](/sql-statements-structure/geographic-geometric-features/geometry-constructors/linestring) value <em>`ls`</em> in its associated spatial reference.
+[LineString](/sql-statements-structure/geographic-geometric-features/geometry-constructors/linestring/) value <em>`ls`</em> in its associated spatial reference.
 
 ## Examples
 
@@ -26,4 +26,4 @@ SELECT GLength(GeomFromText(@ls));
 
 ## See Also
 
-- [ST_LENGTH()](/sql-statements-structure/geographic-geometric-features/geometry-relations/st_length) is the OpenGIS equivalent.
+- [ST_LENGTH()](/sql-statements-structure/geographic-geometric-features/geometry-relations/st_length/) is the OpenGIS equivalent.

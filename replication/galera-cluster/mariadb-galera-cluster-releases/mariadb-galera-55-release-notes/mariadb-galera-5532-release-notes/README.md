@@ -1,12 +1,12 @@
 # MariaDB Galera 5.5.32 Release Notes
 
 The most recent [MariaDB Galera Cluster 5.5](/kb/en/galera/) release is:<br>
-<span class="cstm-style lead"><strong>[MariaDB Galera Cluster 5.5.63](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5563-release-notes)</strong> [Download<span>&nbsp;</span>Now](https://downloads.mariadb.org/mariadb-galera/5.5)</span>
+<span class="cstm-style lead"><strong>[MariaDB Galera Cluster 5.5.63](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5563-release-notes/)</strong> [Download<span>&nbsp;</span>Now](https://downloads.mariadb.org/mariadb-galera/5.5)</span>
 
 [Download](http://downloads.mariadb.org/mariadb-galera/5.5.32) |
 <strong>Release Notes</strong> |
-[Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-5532-changelog) |
-[Overview of Galera](/replication/galera-cluster/what-is-mariadb-galera-cluster)
+[Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-5532-changelog/) |
+[Overview of Galera](/replication/galera-cluster/what-is-mariadb-galera-cluster/)
 
 <strong>Release date:</strong> 30 Aug 2013
 
@@ -16,13 +16,13 @@ It is a merge of [MariaDB 5.5.32](/kb/en/what-is-mariadb-55/) and
 additional bug fixes.
 
 Various articles about MariaDB Galera Cluster, including
-[known limitations](/replication/galera-cluster/mariadb-galera-cluster-known-limitations) and
-[how to get started](/replication/galera-cluster/getting-started-with-mariadb-galera-cluster) are
+[known limitations](/replication/galera-cluster/mariadb-galera-cluster-known-limitations/) and
+[how to get started](/replication/galera-cluster/getting-started-with-mariadb-galera-cluster/) are
 available in the <strong>[Galera](/kb/en/galera/)</strong> section of the Knowledgebase.
 
 For a list of changes made in [MariaDB Galera 5.5.32](/kb/en/mariadb-galera-cluster-5532-release-notes/), with links to detailed
 information on each push, see the
-[MariaDB Galera 5.5.32 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-5532-changelog).
+[MariaDB Galera 5.5.32 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-5532-changelog/).
 
 ## Includes [MariaDB 5.5.32](/kb/en/mariadb-5532-release-notes/) and Galera Cluster
 
@@ -60,5 +60,5 @@ Be notified of new MariaDB Server releases automatically by [subscribing](https:
 <br><br>
 MariaDB may already be included in your favorite OS distribution. More
 information can be found on the
-[Distributions which Include MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/distributions-which-include-mariadb)
+[Distributions which Include MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/distributions-which-include-mariadb/)
 page.

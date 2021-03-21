@@ -2,7 +2,7 @@
 
 ##### MariaDB starting with [10.2.2](/kb/en/mariadb-1022-release-notes/)
 
-From [MariaDB 10.2.2](/kb/en/mariadb-1022-release-notes/), the [InnoDB Buffer Pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool) size can be set dynamically.
+From [MariaDB 10.2.2](/kb/en/mariadb-1022-release-notes/), the [InnoDB Buffer Pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool/) size can be set dynamically.
 
 Resizing the buffer pool is performed in chunks determined by the size of the [innodb_buffer_pool_chunk_size](/kb/en/innodb-system-variables/#innodb_buffer_pool_chunk_size) variable.
 
@@ -36,4 +36,4 @@ SHOW STATUS LIKE 'Innodb_buffer_pool_resize_status';
 +----------------------------------+----------------------------------------------------+
 ```
 
-Progress is also logged in the [error log](/mariadb-administration/server-monitoring-logs/error-log).
+Progress is also logged in the [error log](/mariadb-administration/server-monitoring-logs/error-log/).

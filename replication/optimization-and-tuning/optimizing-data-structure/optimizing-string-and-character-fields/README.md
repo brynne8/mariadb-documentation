@@ -6,4 +6,4 @@ When values from different columns are compared, the comparison runs more quickl
 
 ## VARCHAR vs BLOB
 
-ORDER BY and GROUP BY clauses can generate temporary tables in memory (see [MEMORY Storage Engine](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/memory-storage-engine)) if the original table doesn't contain any BLOB fields. If a column is less than 8KB, you can make use of a Binary VARCHAR rather than a BLOB.
+ORDER BY and GROUP BY clauses can generate temporary tables in memory (see [MEMORY Storage Engine](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/memory-storage-engine/)) if the original table doesn't contain any BLOB fields. If a column is less than 8KB, you can make use of a Binary VARCHAR rather than a BLOB.

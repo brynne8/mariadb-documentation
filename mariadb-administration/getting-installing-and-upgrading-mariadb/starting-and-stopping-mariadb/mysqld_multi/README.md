@@ -15,7 +15,7 @@ The `mysqld_multi` startup script is in MariaDB distributions on Linux and Unix.
 - Use different Unix socket files for local connections.
 - Use different TCP/IP ports for network connections.
 - Use different data directories.
-- Use different process ID files (specified by the `--pid-file` option) if using [mysqld_safe](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld_safe) to start `mysqld`.
+- Use different process ID files (specified by the `--pid-file` option) if using [mysqld_safe](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld_safe/) to start `mysqld`.
 
 `mysqld_multi` can start or stop servers, or report their current status.
 
@@ -69,7 +69,7 @@ mysqld_multi stop 8,10-13
 
 ### Option Files
 
-In addition to reading options from the command-line, `mysqld_multi` can also read options from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files). If an unknown option is provided to `mysqld_multi` in an option file, then it is ignored.
+In addition to reading options from the command-line, `mysqld_multi` can also read options from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/). If an unknown option is provided to `mysqld_multi` in an option file, then it is ignored.
 
 The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
 
@@ -82,13 +82,13 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 #### Option Groups
 
-`mysqld_safe` reads options from the following [option groups](/kb/en/configuring-mariadb-with-option-files/#option-groups) from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files):
+`mysqld_safe` reads options from the following [option groups](/kb/en/configuring-mariadb-with-option-files/#option-groups) from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/):
 
 <table><tbody><tr><th>Group</th><th>Description</th></tr>
 <tr><td><code>[mysqld_multi]</code></td><td>&nbsp;Options read by <code>mysqld_multi</code>, which includes both MariaDB Server and MySQL Server.</td></tr>
 </tbody></table>
 
-`mysqld_multi` also searches [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) for [option groups](/kb/en/configuring-mariadb-with-option-files/#option-groups) with names like `[mysqldN]`, where `N` can be any positive integer. This number is referred to in the following discussion as the option group number, or `GNR`:
+`mysqld_multi` also searches [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) for [option groups](/kb/en/configuring-mariadb-with-option-files/#option-groups) with names like `[mysqldN]`, where `N` can be any positive integer. This number is referred to in the following discussion as the option group number, or `GNR`:
 
 <table><tbody><tr><th>Group</th><th>Description</th></tr>
 <tr><td><code>[mysqldN]</code></td><td>&nbsp;Options read by a <code>mysqld</code> instance managed by <code>mysqld_multi</code>, which includes both MariaDB Server and MySQL Server. The <code>N</code> refers to the instance's <code>GNR</code>.</td></tr>
@@ -120,7 +120,7 @@ mysqld_multi --example
 
 ### Authentication and Privileges
 
-Make sure that the MariaDB account used for stopping the `mysqld` processes (with the [mysqladmin](/clients-utilities/mysqladmin) utility) has the same user name and password for each server. Also, make sure that the account has the `SHUTDOWN` privilege. If the servers that you want to manage have different user names or passwords for the administrative accounts, you might want to create an account on each server that has the same user name and password. For example, you might set up a common `multi_admin` account by executing the following commands for each server:
+Make sure that the MariaDB account used for stopping the `mysqld` processes (with the [mysqladmin](/clients-utilities/mysqladmin/) utility) has the same user name and password for each server. Also, make sure that the account has the `SHUTDOWN` privilege. If the servers that you want to manage have different user names or passwords for the administrative accounts, you might want to create an account on each server that has the same user name and password. For example, you might set up a common `multi_admin` account by executing the following commands for each server:
 
 ```sql
 shell> mysql -u root -S /tmp/mysql.sock -p

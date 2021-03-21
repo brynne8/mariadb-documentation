@@ -1,6 +1,6 @@
 # InnoDB Monitors
 
-The [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) Monitor refers to particular kinds of monitors included in MariaDB and since the early versions of MySQL.
+The [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) Monitor refers to particular kinds of monitors included in MariaDB and since the early versions of MySQL.
 
 There are four types: the standard InnoDB monitor, the InnoDB Lock Monitor, InnoDB Tablespace Monitor and the InnoDB Table Monitor.
 
@@ -22,7 +22,7 @@ DROP TABLE innodb_monitor;
 
 The CREATE TABLE and DROP TABLE method of enabling and disabling the InnoDB Monitor has been deprecated, and may be removed in a future version of MariaDB.
 
-For a description of the output, see [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status).
+For a description of the output, see [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/).
 
 ## InnoDB Lock Monitor
 
@@ -81,4 +81,4 @@ DROP TABLE innodb_table_monitor;
 
 ## SHOW ENGINE INNODB STATUS
 
-The [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) statement can be used to obtain the standard InnoDB Monitor output when required, rather than sending it to the error log. It will also display the InnoDB Lock Monitor information if the [innodb_status_output_locks](/kb/en/xtradbinnodb-server-system-variables/#innodb_status_output_locks) system variable is set to `1`.
+The [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) statement can be used to obtain the standard InnoDB Monitor output when required, rather than sending it to the error log. It will also display the InnoDB Lock Monitor information if the [innodb_status_output_locks](/kb/en/xtradbinnodb-server-system-variables/#innodb_status_output_locks) system variable is set to `1`.

@@ -17,7 +17,7 @@ The syntax is
 ANALYZE explainable_statement;
 ```
 
-where the statement is any statement for which one can run [EXPLAIN](/sql-statements-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain).
+where the statement is any statement for which one can run [EXPLAIN](/sql-statements-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain/).
 
 ## Command Output
 
@@ -81,7 +81,7 @@ Here, one can see that
 - For table customer, <strong>customer.rows=149095,  customer.r_rows=150000</strong>. The estimate for number of rows we will read was fairly precise
 - <strong>customer.filtered=18.08, customer.r_filtered=9.13</strong>.  The optimizer somewhat overestimated the number of records that will match selectivity of condition attached to `customer` table (in general, when you have a full scan and r_filtered is less than 15%, it's time to consider adding an appropriate index).
 - For table orders,  <strong>orders.rows=7, orders.r_rows=10</strong>.  This means that on average, there are 7 orders for a given c_custkey, but in our case there were 10, which is close to the expectation (when this number is consistently far from the expectation, it may be time to run ANALYZE TABLE, or even edit the table statistics manually to get better query plans).
-- <strong>orders.filtered=100, orders.r_filtered=30.03</strong>. The optimizer didn't have any way to estimate which fraction of records will be left after it checks the condition that is attached to table orders (it's orders.o_totalprice &gt; 200*1000). So, it used 100%. In reality, it is 30%. 30% is typically not selective enough to warrant adding new indexes. For joins with many tables, it might be worth to collect and use [column statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics) for columns in question, this may help the optimizer to pick a better query plan.
+- <strong>orders.filtered=100, orders.r_filtered=30.03</strong>. The optimizer didn't have any way to estimate which fraction of records will be left after it checks the condition that is attached to table orders (it's orders.o_totalprice &gt; 200*1000). So, it used 100%. In reality, it is 30%. 30% is typically not selective enough to warrant adding new indexes. For joins with many tables, it might be worth to collect and use [column statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics/) for columns in question, this may help the optimizer to pick a better query plan.
 
 ### Meaning of NULL in r_rows and r_filtered
 
@@ -117,10 +117,10 @@ Indeed, we can also see customer.r_filtered=0.00. This shows that a part of WHER
 
 - `ANALYZE UPDATE` or `ANALYZE DELETE` will actually make updates/deletes (`ANALYZE SELECT` will perform the select operation and then discard the resultset).
 - PostgreSQL has a similar command, `EXPLAIN ANALYZE`.
-- The [EXPLAIN in the slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log/explain-in-the-slow-query-log) feature allows MariaDB to have `ANALYZE` output of slow queries printed into the [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log) (see [MDEV-6388](https://jira.mariadb.org/browse/MDEV-6388)).
+- The [EXPLAIN in the slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log/explain-in-the-slow-query-log/) feature allows MariaDB to have `ANALYZE` output of slow queries printed into the [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log/) (see [MDEV-6388](https://jira.mariadb.org/browse/MDEV-6388)).
 
 ## See Also
 
 - [ANALYZE FORMAT=JSON](/kb/en/analyze-formatjson/)
-- [ANALYZE TABLE](/sql-statements-structure/sql-statements/table-statements/analyze-table)
+- [ANALYZE TABLE](/sql-statements-structure/sql-statements/table-statements/analyze-table/)
 - JIRA task for ANALYZE statement, [MDEV-406](https://jira.mariadb.org/browse/MDEV-406)

@@ -17,14 +17,14 @@ Patterns may use the following wildcard characters:
 - `_` matches any single character.
 
 Use `NOT LIKE` to test if a string does not match a pattern. This is equivalent to using
-the [NOT](/sql-statements-structure/operators/logical-operators/not) operator on the entire `LIKE` expression.
+the [NOT](/sql-statements-structure/operators/logical-operators/not/) operator on the entire `LIKE` expression.
 
 If either the expression or the pattern is `NULL`, the result is `NULL`.
 
 <code class="fixed" style="white-space:pre-wrap">LIKE</code> performs case-insensitive substring matches if the collation for the
 expression and pattern is case-insensitive. For case-sensitive matches, declare either argument
-to use a binary collation using <a undefined>COLLATE</a>, or coerce either of them to a [BINARY](/columns-storage-engines-and-plugins/data-types/string-data-types/binary)
-string using [CAST](/built-in-functions/string-functions/cast). Use [SHOW COLLATION](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-collation) to get a list of
+to use a binary collation using <a undefined>COLLATE</a>, or coerce either of them to a [BINARY](/columns-storage-engines-and-plugins/data-types/string-data-types/binary/)
+string using [CAST](/built-in-functions/string-functions/cast/). Use [SHOW COLLATION](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-collation/) to get a list of
 available collations. Collations ending in `_bin` are case-sensitive.
 
 Numeric arguments are coerced to binary strings.
@@ -32,7 +32,7 @@ Numeric arguments are coerced to binary strings.
 The `_` wildcard matches a single character, not byte. It will only match a multi-byte character
 if it is valid in the expression's character set. For example, `_` will match `_utf8"€"`, but it
 will not match `_latin1"€"` because the Euro sign is not a valid latin1 character. If necessary,
-use [CONVERT](/built-in-functions/string-functions/convert) to use the expression in a different character set.
+use [CONVERT](/built-in-functions/string-functions/convert/) to use the expression in a different character set.
 
 If you need to match the characters `_` or `%`, you must escape them. By default,
 you can prefix the wildcard characters the backslash character `\` to escape them.
@@ -159,5 +159,5 @@ SELECT * FROM t2 WHERE DAYNAME(d) LIKE "T%";
 
 ## See Also
 
-- For searches on text columns, with results sorted by relevance, see [full-text](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes) indexes.
-- For more complex searches and operations on strings, you can use [regular expressions](/built-in-functions/string-functions/regular-expressions-functions), which were enhanced in MariaDB 10 (see [PCRE Regular Expressions](/kb/en/pcre-regular-expressions/)).
+- For searches on text columns, with results sorted by relevance, see [full-text](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) indexes.
+- For more complex searches and operations on strings, you can use [regular expressions](/built-in-functions/string-functions/regular-expressions-functions/), which were enhanced in MariaDB 10 (see [PCRE Regular Expressions](/kb/en/pcre-regular-expressions/)).

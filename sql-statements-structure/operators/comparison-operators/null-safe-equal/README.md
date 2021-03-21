@@ -9,7 +9,7 @@
 ## Description
 
 NULL-safe equal operator. It performs an equality comparison like
-the [= operator](/sql-statements-structure/operators/comparison-operators/equal), but returns 1 rather than NULL if both operands are
+the [= operator](/sql-statements-structure/operators/comparison-operators/equal/), but returns 1 rather than NULL if both operands are
 NULL, and 0 rather than NULL if one operand is NULL.
 
 `a &lt;=&gt; b` is equivalent to `a = b OR (a IS NULL AND b IS NULL)`.

@@ -4,7 +4,7 @@
 
 Since [MariaDB 10.1](/kb/en/what-is-mariadb-101/), the [MySQL-wsrep](https://github.com/codership/mysql-wsrep) patch has been merged into MariaDB Server. Therefore, in [MariaDB 10.1](/kb/en/what-is-mariadb-101/) and above, the functionality of MariaDB Galera Cluster can be obtained by installing the standard MariaDB Server packages and the Galera wsrep provider library package.
 
-Beginning in [MariaDB 10.1](/kb/en/what-is-mariadb-101/), [Galera Cluster](/replication/galera-cluster/what-is-mariadb-galera-cluster) ships with the MariaDB Server.  Upgrading a Galera Cluster node is very similar to upgrading a server from [MariaDB 10.1](/kb/en/what-is-mariadb-101/) to [MariaDB 10.2](/kb/en/what-is-mariadb-102/).  For more information on that process as well as incompatibilities between versions, see the [Upgrade Guide](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-from-mariadb-101-to-mariadb-102).
+Beginning in [MariaDB 10.1](/kb/en/what-is-mariadb-101/), [Galera Cluster](/replication/galera-cluster/what-is-mariadb-galera-cluster/) ships with the MariaDB Server.  Upgrading a Galera Cluster node is very similar to upgrading a server from [MariaDB 10.1](/kb/en/what-is-mariadb-101/) to [MariaDB 10.2](/kb/en/what-is-mariadb-102/).  For more information on that process as well as incompatibilities between versions, see the [Upgrade Guide](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-from-mariadb-101-to-mariadb-102/).
 
 ## Performing a Rolling Upgrade
 
@@ -12,7 +12,7 @@ The following steps can be used to perform a rolling upgrade from [MariaDB 10.1]
 
 First, before you get started:
 
-1 First, take a look at [Upgrading from MariaDB 10.1 to MariaDB 10.2](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-from-mariadb-101-to-mariadb-102) to see what has changed between the major versions.
+1 First, take a look at [Upgrading from MariaDB 10.1 to MariaDB 10.2](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-from-mariadb-101-to-mariadb-102/) to see what has changed between the major versions.
 <ol start="1"><li>Check whether any system variables or options have been changed or removed. Make sure that your server's configuration is compatible with the new MariaDB version before upgrading.
 </li><li>Check whether replication has changed in the new MariaDB version in any way that could cause issues while the cluster contains upgraded and non-upgraded nodes.
 </li><li>Check whether any new features have been added to the new MariaDB version. If a new feature in the new MariaDB version cannot be replicated to the old MariaDB version, then do not use that feature until all cluster nodes have been upgrades to the new MariaDB version.
@@ -21,10 +21,10 @@ First, before you get started:
 <ol start="1"><li>If you are upgrading from the most recent [MariaDB 10.1](/kb/en/what-is-mariadb-101/) release to [MariaDB 10.2](/kb/en/what-is-mariadb-102/), then the versions will be compatible. Both [MariaDB 10.1](/kb/en/what-is-mariadb-101/) and [MariaDB 10.2](/kb/en/what-is-mariadb-102/) use Galera 3 (i.e. Galera wsrep provider versions 25.3.x), so they should be compatible.
 </li><li>See [What is MariaDB Galera Cluster?: Galera wsrep provider Versions](/kb/en/what-is-mariadb-galera-cluster/#galera-wsrep-provider-versions) for information on which MariaDB releases uses which Galera wsrep provider versions.
 </li></ol>
-3 Ideally, you want to have a large enough gcache to avoid a [State Snapshot Transfer (SST)](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts) during the rolling upgrade. The gcache size can be configured by setting <a undefined>gcache.size</a>  For example: <br>
+3 Ideally, you want to have a large enough gcache to avoid a [State Snapshot Transfer (SST)](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts/) during the rolling upgrade. The gcache size can be configured by setting <a undefined>gcache.size</a>  For example: <br>
 <code class="fixed" style="white-space:pre-wrap">wsrep_provider_options="gcache.size=2G"</code>
 
-Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup).
+Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/).
 
 Then, for each node, perform the following steps:
 
@@ -52,14 +52,14 @@ Then, for each node, perform the following steps:
 </li><li>On RHEL, CentOS, Fedora, and other similar Linux distributions, see [Installing MariaDB Packages with YUM](/kb/en/yum/#installing-mariadb-packages-with-yum) for more information.
 </li><li>On SLES, OpenSUSE, and other similar Linux distributions, see [Installing MariaDB Packages with ZYpp](/kb/en/installing-mariadb-with-zypper/#installing-mariadb-packages-with-zypp) for more information.
 </li></ul>
-7 Make any desired changes to configuration options in [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files), such as `my.cnf`. This includes removing any system variables or options that are no longer supported.
+7 Make any desired changes to configuration options in [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/), such as `my.cnf`. This includes removing any system variables or options that are no longer supported.
 <ul start="1"><li>In order to use Galera Cluster without problems in [MariaDB 10.2](/kb/en/what-is-mariadb-102/), the <a undefined>innodb_lock_schedule_algorithm</a> system variable must be set to `FCFS`. In [MariaDB 10.2.12](/kb/en/mariadb-10212-release-notes/) and later, this system variable is automatically set to this value when Galera Cluster is enabled. In [MariaDB 10.2.11](/kb/en/mariadb-10211-release-notes/) and before, this system variable must be set to this value manually. See [MDEV-12837](https://jira.mariadb.org/browse/MDEV-12837) for more information.
 </li></ul>
 8 On Linux distributions that use `systemd` you may need to increase the service startup timeout as the default timeout of 90 seconds may not be sufficient. See [Systemd: Configuring the Systemd Service Timeout](/kb/en/systemd/#configuring-the-systemd-service-timeout) for more information.
 9 [Start MariaDB](/kb/en/starting-and-stopping-mariadb-starting-and-stopping-mariadb/).
-10 Run [mysql_upgrade](/sql-statements-structure/sql-statements/table-statements/mysql_upgrade) with the `--skip-write-binlog` option.
+10 Run [mysql_upgrade](/sql-statements-structure/sql-statements/table-statements/mysql_upgrade/) with the `--skip-write-binlog` option.
 <ul start="1"><li>`mysql_upgrade` does two things:
-<ol start="1"><li>Ensures that the system tables in the [mysq](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables)l database are fully compatible with the new version.
+<ol start="1"><li>Ensures that the system tables in the [mysq](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/)l database are fully compatible with the new version.
 </li><li>Does a very quick check of all tables and marks them as compatible with the new version of MariaDB .
 </li></ol>
 </li></ul>
@@ -72,11 +72,11 @@ Note that when upgrading the Galera wsrep provider, sometimes the Galera protoco
 
 #### Checking Status of the State Transfer
 
-When a node rejoins the cluster after being upgraded, it may have to perform a state transfer, such as an [Incremental State Transfer (IST)](/kb/en/getting-started-with-mariadb-galera-cluster/#incremental-state-transfers-ists) or a [State Snapshot Transfer(SST)](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts). It is recommended to ensure that the node's state transfer is complete before upgrading the next node in the cluster.
+When a node rejoins the cluster after being upgraded, it may have to perform a state transfer, such as an [Incremental State Transfer (IST)](/kb/en/getting-started-with-mariadb-galera-cluster/#incremental-state-transfers-ists) or a [State Snapshot Transfer(SST)](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts/). It is recommended to ensure that the node's state transfer is complete before upgrading the next node in the cluster.
 
 ##### State Transfers that Provide Access to the Server
 
-If the node is synchronizing with the cluster by performing a state transfer that allows access to the server, such as an [Incremental State Transfer (IST)](/kb/en/getting-started-with-mariadb-galera-cluster/#incremental-state-transfers-ists) or a [State Snapshot Transfer(SST)](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts) that uses the [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump) SST method, then you can check the status of the state transfer by connecting to the server through the `mysql` client, then checking the <a undefined>wsrep_local_state_uuid</a> and <a undefined>wsrep_cluster_state_uuid</a> status variables.  When they equal each other, the node is in sync with the cluster.
+If the node is synchronizing with the cluster by performing a state transfer that allows access to the server, such as an [Incremental State Transfer (IST)](/kb/en/getting-started-with-mariadb-galera-cluster/#incremental-state-transfers-ists) or a [State Snapshot Transfer(SST)](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts/) that uses the [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump/) SST method, then you can check the status of the state transfer by connecting to the server through the `mysql` client, then checking the <a undefined>wsrep_local_state_uuid</a> and <a undefined>wsrep_cluster_state_uuid</a> status variables.  When they equal each other, the node is in sync with the cluster.
 
 ```sql
 SELECT IF(cluster.uuid = local.uuid, "Synced", "Not Synced") AS "Cluster Status"
@@ -100,7 +100,7 @@ When the local and cluster UUID's come into sync, the node is again online and f
 
 ##### State Transfers that Require the Server to be Down
 
-Some state transfers require the server to be unavailable, such as all [State Snapshot Transfer(SST)](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts) methods other than `mysqldump`, so `mysql` client access is unavailable while the state transfer is happening. In those cases, you may have to monitor the progress of the state transfer in the [error log](/mariadb-administration/server-monitoring-logs/error-log). You'll know when the SST is complete when the joiner node changes its state to `SYNCED`. For example:
+Some state transfers require the server to be unavailable, such as all [State Snapshot Transfer(SST)](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts/) methods other than `mysqldump`, so `mysql` client access is unavailable while the state transfer is happening. In those cases, you may have to monitor the progress of the state transfer in the [error log](/mariadb-administration/server-monitoring-logs/error-log/). You'll know when the SST is complete when the joiner node changes its state to `SYNCED`. For example:
 
 ```sql
 2018-08-30 14:44:15 140694729484032 [Note] WSREP: Shifting JOINED -> SYNCED (TO: 210248566)

@@ -4,11 +4,11 @@
 
 ### How to Upgrade
 
-For Windows, see [Upgrading MariaDB on Windows](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-mariadb-on-windows).
+For Windows, see [Upgrading MariaDB on Windows](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-mariadb-on-windows/).
 
 For MariaDB Galera Cluster, see [Upgrading from MariaDB 10.5 to MariaDB 10.6 with Galera Cluster](upgrading-from-mariadb-105-to-mariadb-106-with-galera-cluster) instead.
 
-Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup).
+Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/).
 
 The suggested upgrade procedure is:
 
@@ -17,7 +17,7 @@ The suggested upgrade procedure is:
 </li><li>On RHEL, CentOS, Fedora, and other similar Linux distributions, see [Updating the MariaDB YUM repository to a New Major Release](/kb/en/yum/#updating-the-mariadb-yum-repository-to-a-new-major-release) for more information.
 </li><li>On SLES, OpenSUSE, and other similar Linux distributions, see [Updating the MariaDB ZYpp repository to a New Major Release](/kb/en/installing-mariadb-with-zypper/#updating-the-mariadb-zypp-repository-to-a-new-major-release) for more information.
 </li></ul>
-2 [Stop MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically).
+2 [Stop MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically/).
 3 Uninstall the old version of MariaDB.
 <ul start="1"><li>On Debian, Ubuntu, and other similar Linux distributions, execute the following: <br>
 <code class="fixed" style="white-space:pre-wrap">sudo apt-get remove mariadb-server</code>
@@ -31,11 +31,11 @@ The suggested upgrade procedure is:
 </li><li>On RHEL, CentOS, Fedora, and other similar Linux distributions, see [Installing MariaDB Packages with YUM](/kb/en/yum/#installing-mariadb-packages-with-yum) for more information.
 </li><li>On SLES, OpenSUSE, and other similar Linux distributions, see [Installing MariaDB Packages with ZYpp](/kb/en/installing-mariadb-with-zypper/#installing-mariadb-packages-with-zypp) for more information.
 </li></ul>
-5 Make any desired changes to configuration options in [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files), such as `my.cnf`. This includes removing any options that are no longer supported.
-6 [Start MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically).
-7 Run [mariadb-upgrade](/clients-utilities/mariadb-upgrade).
+5 Make any desired changes to configuration options in [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/), such as `my.cnf`. This includes removing any options that are no longer supported.
+6 [Start MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically/).
+7 Run [mariadb-upgrade](/clients-utilities/mariadb-upgrade/).
 <ul start="1"><li>`mariadb-upgrade` does two things:
-<ol start="1"><li>Ensures that the system tables in the [mysql](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables) database are fully compatible with the new version.
+<ol start="1"><li>Ensures that the system tables in the [mysql](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database are fully compatible with the new version.
 </li><li>Does a very quick check of all tables and marks them as compatible with the new version of MariaDB .
 </li></ol>
 </li></ul>
@@ -46,7 +46,7 @@ On most servers upgrading from 10.5 should be painless. However, there are some 
 
 #### InnoDB COMPRESSED Row Format
 
-From [MariaDB 10.6.0](/kb/en/mariadb-1060-release-notes/), tables that are of the [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format) row format are read-only by default. This is the first step towards removing write support and deprecating the feature.
+From [MariaDB 10.6.0](/kb/en/mariadb-1060-release-notes/), tables that are of the [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format/) row format are read-only by default. This is the first step towards removing write support and deprecating the feature.
 
 Set the  [innodb_read_only_compressed](/kb/en/innodb-system-variables/#innodb_read_only_compressed) variable to `OFF` to make the tables writable.
 
@@ -58,7 +58,7 @@ Set the  [innodb_read_only_compressed](/kb/en/innodb-system-variables/#innodb_re
 
 #### Options That Have Been Removed or Renamed
 
-The following options should be removed or renamed if you use them in your [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files):
+The following options should be removed or renamed if you use them in your [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/):
 
 <table><tbody><tr><th>Option</th><th>Reason</th></tr>
 <tr><td><a href="/kb/en/innodb-system-variables/#innodb_adaptive_max_sleep_delay">innodb_adaptive_max_sleep_delay</a></td><td></td></tr>
@@ -96,7 +96,7 @@ The following options have been deprecated. They have not yet been removed, but 
 
 ### Major New Features To Consider
 
-- See also [System Variables Added in MariaDB 10.6](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-106).
+- See also [System Variables Added in MariaDB 10.6](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-106/).
 
 ### See Also
 
@@ -104,6 +104,6 @@ The following options have been deprecated. They have not yet been removed, but 
 
 - [Upgrading from MariaDB 10.5 to MariaDB 10.6 with Galera Cluster](upgrading-from-mariadb-105-to-mariadb-106-with-galera-cluster)
 
-- [Upgrading from MariaDB 10.4 to MariaDB 10.5](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-from-mariadb-104-to-mariadb-105)
-- [Upgrading from MariaDB 10.3 to MariaDB 10.4](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-from-mariadb-103-to-mariadb-104)
-- [Upgrading from MariaDB 10.2 to MariaDB 10.3](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-from-mariadb-102-to-mariadb-103)
+- [Upgrading from MariaDB 10.4 to MariaDB 10.5](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-from-mariadb-104-to-mariadb-105/)
+- [Upgrading from MariaDB 10.3 to MariaDB 10.4](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-from-mariadb-103-to-mariadb-104/)
+- [Upgrading from MariaDB 10.2 to MariaDB 10.3](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-from-mariadb-102-to-mariadb-103/)

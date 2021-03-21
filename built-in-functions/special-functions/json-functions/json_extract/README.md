@@ -18,7 +18,7 @@ Returns NULL if no paths match or if any of the arguments are NULL.
 
 An error will occur if any path argument is not a valid path, or if the json_doc argument is not a valid JSON document.
 
-The path expression be a [JSONPath expression](/built-in-functions/special-functions/json-functions/jsonpath-expressions) as supported by MariaDB
+The path expression be a [JSONPath expression](/built-in-functions/special-functions/json-functions/jsonpath-expressions/) as supported by MariaDB
 
 ## Examples
 

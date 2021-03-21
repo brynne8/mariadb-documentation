@@ -105,7 +105,7 @@ Currently Puppet has many MariaDB modules.
 
 For more information about the systems mentioned in this page, from MariaDB users perspective:
 
-- [Ansible and MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb).
+- [Ansible and MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/).
 - [Puppet and MariaDB](/kb/en/automated-mariadb-deployment-and-administration-puppet-and-mariadb/).
 
 ---

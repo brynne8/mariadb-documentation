@@ -17,7 +17,7 @@ In the following text, a transactional table means InnoDB or "InnoDB-like engine
 ## Goals with BACKUP STAGE Commands
 
 - To be able to do a majority of the backup with the minimum possible server locks. Especially for transactional tables (InnoDB, MyRocks etc) there is only need for a very short block of new commits while copying statistics and log tables.
-- DDL are only needed to be blocked for a very short duration of the backup while [mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup) is copying the tables affected by DDL during the initial part of the backup.
+- DDL are only needed to be blocked for a very short duration of the backup while [mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/) is copying the tables affected by DDL during the initial part of the backup.
 - Most non transactional tables (those that are not in use) will be copied during `BACKUP STAGE START`.  The exceptions are system statistic and log tables that are not blocked during the backup until `BLOCK_COMMIT`.
 - Should work efficiently with backup tools that use disk snapshots.
 - Should work as efficiently as possible for all table types that store data on the local disks.
@@ -47,8 +47,8 @@ DDLs don't have to be blocked at this stage as they can't cause the table to be 
 The `BLOCK_DDL` stage is designed for the following tasks:
 
 - Wait for all statements using write locked non-transactional tables to end.
-- Blocks [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table), [DROP TABLE](/sql-statements-structure/sql-statements/data-definition/drop/drop-table), [TRUNCATE TABLE](/sql-statements-structure/sql-statements/table-statements/truncate-table), and [RENAME TABLE](/sql-statements-structure/sql-statements/data-definition/rename-table).
-- Blocks also start off a <strong>new</strong> [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) and the <strong>final rename phase</strong> of [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table). Running ALTER TABLES are not blocked.
+- Blocks [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/), [DROP TABLE](/sql-statements-structure/sql-statements/data-definition/drop/drop-table/), [TRUNCATE TABLE](/sql-statements-structure/sql-statements/table-statements/truncate-table/), and [RENAME TABLE](/sql-statements-structure/sql-statements/data-definition/rename-table/).
+- Blocks also start off a <strong>new</strong> [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) and the <strong>final rename phase</strong> of [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/). Running ALTER TABLES are not blocked.
 
 ### `BACKUP STAGE BLOCK_COMMIT`
 
@@ -73,17 +73,17 @@ The `END` stage is designed for the following tasks:
 
 ### Using `BACKUP STAGE` Commands with Mariabackup
 
-The `BACKUP STAGE` commands are a set of commands to make it possible to make an efficient external backup tool. How [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup) uses these commands depends on whether you are using the version that is bundled with MariaDB Community Server or the version that is bundled with [MariaDB Enterprise Server](https://mariadb.com/docs/products/mariadb-enterprise-server/). See [Mariabackup and BACKUP STAGE Commands](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands) for some examples on how [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup) uses these commands.
+The `BACKUP STAGE` commands are a set of commands to make it possible to make an efficient external backup tool. How [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/) uses these commands depends on whether you are using the version that is bundled with MariaDB Community Server or the version that is bundled with [MariaDB Enterprise Server](https://mariadb.com/docs/products/mariadb-enterprise-server/). See [Mariabackup and BACKUP STAGE Commands](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands/) for some examples on how [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/) uses these commands.
 
-If you would like to use a version of [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup) that uses the [BACKUP STAGE](/sql-statements-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage) commands in an efficient way, then one option is to use [MariaDB Enterprise Backup](https://mariadb.com/docs/usage/mariadb-enterprise-backup/) that is bundled with [MariaDB Enterprise Server](https://mariadb.com/docs/products/mariadb-enterprise-server/).
+If you would like to use a version of [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/) that uses the [BACKUP STAGE](/sql-statements-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage/) commands in an efficient way, then one option is to use [MariaDB Enterprise Backup](https://mariadb.com/docs/usage/mariadb-enterprise-backup/) that is bundled with [MariaDB Enterprise Server](https://mariadb.com/docs/products/mariadb-enterprise-server/).
 
 ### Using `BACKUP STAGE` Commands with Storage Snapshots
 
-The `BACKUP STAGE` commands are a set of commands to make it possible to make an efficient external backup tool. These commands could even be used by tools that perform backups by taking a snapshot of a file system, SAN, or some other kind of storage device. See [Storage Snapshots and BACKUP STAGE Commands](/sql-statements-structure/sql-statements/administrative-sql-statements/backup-commands/storage-snapshots-and-backup-stage-commands) for some examples on how to use each `BACKUP STAGE` command in an efficient way.
+The `BACKUP STAGE` commands are a set of commands to make it possible to make an efficient external backup tool. These commands could even be used by tools that perform backups by taking a snapshot of a file system, SAN, or some other kind of storage device. See [Storage Snapshots and BACKUP STAGE Commands](/sql-statements-structure/sql-statements/administrative-sql-statements/backup-commands/storage-snapshots-and-backup-stage-commands/) for some examples on how to use each `BACKUP STAGE` command in an efficient way.
 
 ## Privileges
 
-`BACKUP STAGE` requires the [RELOAD](/sql-statements-structure/sql-statements/account-management-sql-commands/grant) privilege.
+`BACKUP STAGE` requires the [RELOAD](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/) privilege.
 
 ## Notes
 
@@ -94,5 +94,5 @@ The `BACKUP STAGE` commands are a set of commands to make it possible to make an
 
 ## See Also
 
-- [BACKUP LOCK](/sql-statements-structure/sql-statements/administrative-sql-statements/backup-commands/backup-lock) Locking a table from DDL's.
+- [BACKUP LOCK](/sql-statements-structure/sql-statements/administrative-sql-statements/backup-commands/backup-lock/) Locking a table from DDL's.
 - [MDEV-5336](https://jira.mariadb.org/browse/MDEV-5336). Implement BACKUP STAGE for safe external backups.

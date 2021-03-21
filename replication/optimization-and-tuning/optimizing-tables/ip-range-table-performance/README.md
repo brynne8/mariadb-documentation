@@ -73,7 +73,7 @@ The Ips table's size is proportional to the number of blocks. A million 'owned' 
 
 - number of 'free' gaps (between zero and the number of owned blocks)
 - datatypes used for `ip` and `owner`
-- [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) overhead
+- [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) overhead
 Even 100M blocks is quite manageable in today's hardware. Once things are cached, most operations would take only a few milliseconds. A trillion blocks would work, but most operations would hit the disk a few times -- only a few times.
 
 ## Reference implementation of IPv4
@@ -83,7 +83,7 @@ This specific to IPv4 (32 bit, a la '196.168.1.255'). It can handle anywhere fro
 Notes on the [Reference implementation for IPv4](http://mysql.rjweb.org/doc.php/ipv4.sql):
 
 - Externally, the user may use the dotted quad notation (11.22.33.44), but needs to convert to INT UNSIGNED for calling the Stored Procs.
-- The user is responsible for converting to/from the calling datatype (INT UNSIGNED) when accessing the stored routine; suggest [INET_ATON](/built-in-functions/secondary-functions/miscellaneous-functions/inet_aton)/[INET_NTOA](/built-in-functions/secondary-functions/miscellaneous-functions/inet_ntoa).
+- The user is responsible for converting to/from the calling datatype (INT UNSIGNED) when accessing the stored routine; suggest [INET_ATON](/built-in-functions/secondary-functions/miscellaneous-functions/inet_aton/)/[INET_NTOA](/built-in-functions/secondary-functions/miscellaneous-functions/inet_ntoa/).
 - The internal datatype for addresses is the same as the calling datatype (INT UNSIGNED).
 - Adding and subtracting 1 (simple arithmetic).
 - The datatype of an 'owner' (MEDIUMINT UNSIGNED: 0..16M) -- adjust if needed.
@@ -100,7 +100,7 @@ The code for handling IP address is more complex, but the overall structure is t
 Notes on the [reference implementation for IPv6](http://mysql.rjweb.org/doc.php/ipv6.sql):
 
 - Externally, IPv6 has a complex string, VARCHAR(39) CHARACTER SET ASCII. The Stored Procedure IpStr2Hex() is provided.
-- The user is responsible for converting to/from the calling datatype (BINARY(16)) when accessing the stored routine; suggest [INET6_ATON](/built-in-functions/secondary-functions/miscellaneous-functions/inet6_aton)/[INET6_NTOA](/built-in-functions/secondary-functions/miscellaneous-functions/inet6_ntoa).
+- The user is responsible for converting to/from the calling datatype (BINARY(16)) when accessing the stored routine; suggest [INET6_ATON](/built-in-functions/secondary-functions/miscellaneous-functions/inet6_aton/)/[INET6_NTOA](/built-in-functions/secondary-functions/miscellaneous-functions/inet6_ntoa/).
 - The internal datatype for addresses is the same as the calling datatype (BINARY(16)).
 - Communication with the Stored routines is via 32-char hex strings.
 - Inside the Procedures, and in the Ips table, an address is stored as BINARY(16) for efficiency. HEX() and UNHEX() are used at the boundaries.

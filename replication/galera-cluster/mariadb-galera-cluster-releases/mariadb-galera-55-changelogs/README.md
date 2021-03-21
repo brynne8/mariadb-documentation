@@ -1,6 +1,6 @@
 # MariaDB Galera 5.5 Changelogs
 
-Changelogs for [MariaDB Galera 5.5](/replication/galera-cluster/what-is-mariadb-galera-cluster) releases.
+Changelogs for [MariaDB Galera 5.5](/replication/galera-cluster/what-is-mariadb-galera-cluster/) releases.
 
 - [MariaDB Galera Cluster 5.5.63 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5563-changelog/) — Status: Stable (GA) | Release Date: 1 Feb 2019
 - [MariaDB Galera Cluster 5.5.62 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5562-changelog/) — Status: Stable (GA) | Release Date: 31 Oct 2018

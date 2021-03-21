@@ -10,14 +10,14 @@ Functions and procedures in MariaDB
 - [Function and Operator Reference](/built-in-functions/function-and-operator-reference/) — A complete list of MariaDB functions and operators in alphabetical order.
 - [Pseudo Columns](/built-in-functions/pseudo-columns/) — MariaDB has pseudo columns that can be used for different purposes.
 
-### [Secondary Functions](/built-in-functions/secondary-functions)
+### [Secondary Functions](/built-in-functions/secondary-functions/)
 
 - [Bit Functions and Operators](/built-in-functions/secondary-functions/bit-functions-and-operators/) — Operators for comparison and setting of values, and related functions.
 - [Encryption, Hashing and Compression Functions](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/) — Functions used for encryption, hashing and compression.
 - [Information Functions](/built-in-functions/secondary-functions/information-functions/) — Functions which return information on the server, the user, or a given query.
 - [Miscellaneous Functions](/built-in-functions/secondary-functions/miscellaneous-functions/) — Functions for very singular and specific needs.
 
-### [Special Functions](/built-in-functions/special-functions)
+### [Special Functions](/built-in-functions/special-functions/)
 
 - [Dynamic Columns Functions](/built-in-functions/special-functions/dynamic-columns-functions/) — Functions for storing key/value pairs of data within a column.
 - [Geographic Functions](/built-in-functions/special-functions/geographic-functions/) — Geographic, as well as geometric functions.

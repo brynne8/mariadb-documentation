@@ -8,7 +8,7 @@ GeometryCollection(g1,g2,...)
 
 ## Description
 
-Constructs a [WKB](/sql-statements-structure/geographic-geometric-features/wkb) GeometryCollection. If any argument is not a well-formed WKB representation of a geometry, the return value is `NULL`.
+Constructs a [WKB](/sql-statements-structure/geographic-geometric-features/wkb/) GeometryCollection. If any argument is not a well-formed WKB representation of a geometry, the return value is `NULL`.
 
 ## Examples
 

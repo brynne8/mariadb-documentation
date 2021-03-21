@@ -15,7 +15,7 @@ operands are NULL, the result is NULL.
 
 For this operator, [short-circuit evaluation](/kb/en/operator-precedence/#short-circuit-evaluation) can be used.
 
-Note that, if the `PIPES_AS_CONCAT` [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode) is set, `||` is used as a string concatenation operator. This means that `a || b` is the same as `CONCAT(a,b)`. See [CONCAT()](/built-in-functions/string-functions/concat) for details.
+Note that, if the `PIPES_AS_CONCAT` [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode/) is set, `||` is used as a string concatenation operator. This means that `a || b` is the same as `CONCAT(a,b)`. See [CONCAT()](/built-in-functions/string-functions/concat/) for details.
 
 ### Oracle Mode
 

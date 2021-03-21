@@ -11,7 +11,7 @@ BENCHMARK(count,expr)
 The BENCHMARK() function executes the expression `expr` repeatedly `count`
 times. It may be used to time how quickly MariaDB processes the
 expression. The result value is always 0. The intended use is from
-within the [mysql client](/clients-utilities/mysql-client/mysql-command-line-client), which reports query execution times.
+within the [mysql client](/clients-utilities/mysql-client/mysql-command-line-client/), which reports query execution times.
 
 ## Examples
 

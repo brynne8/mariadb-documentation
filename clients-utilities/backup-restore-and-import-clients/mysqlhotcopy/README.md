@@ -11,11 +11,11 @@ From [MariaDB 10.4.6](/kb/en/mariadb-1046-release-notes/),  `mariadb-hotcopy` is
 From [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/), `mariadb-hotcopy` is the name of the script, with `mysqlhotcopy` a symlink .
 
 `mysqlhotcopy` is a Perl script that was originally written
-and contributed by Tim Bunce. It uses [FLUSH TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush), [LOCK TABLES](/sql-statements-structure/sql-statements/transactions/lock-tables), and cp or scp to make a database backup. It is a fast way to make a backup of the database or single tables, but it can be run only on the same machine where the database
-directories are located. `mysqlhotcopy`&gt; works only for backing up [MyISAM](/kb/en/myisam/) and [ARCHIVE](/columns-storage-engines-and-plugins/storage-engines/archive) tables. It runs on Unix and NetWare.
+and contributed by Tim Bunce. It uses [FLUSH TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/), [LOCK TABLES](/sql-statements-structure/sql-statements/transactions/lock-tables/), and cp or scp to make a database backup. It is a fast way to make a backup of the database or single tables, but it can be run only on the same machine where the database
+directories are located. `mysqlhotcopy`&gt; works only for backing up [MyISAM](/kb/en/myisam/) and [ARCHIVE](/columns-storage-engines-and-plugins/storage-engines/archive/) tables. It runs on Unix and NetWare.
 
 To use <code class="highlight fixed" style="white-space:pre-wrap">mysqlhotcopy</code>, you must have read access to the files
-for the tables that you are backing up, the SELECT [privilege](/sql-statements-structure/sql-statements/account-management-sql-commands/grant) for
+for the tables that you are backing up, the SELECT [privilege](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/) for
 those tables, the RELOAD privilege (to be able to execute FLUSH TABLES), and
 the LOCK TABLES privilege (to be able to lock the tables).
 
@@ -78,5 +78,5 @@ shell> perldoc mysqlhotcopy
 
 ## See Also
 
-- [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump)
-- [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup)
+- [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump/)
+- [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/)

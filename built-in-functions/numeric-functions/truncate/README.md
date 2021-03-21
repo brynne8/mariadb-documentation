@@ -1,6 +1,6 @@
 # TRUNCATE
 
-This page documents the TRUNCATE function. See [TRUNCATE TABLE](/sql-statements-structure/sql-statements/table-statements/truncate-table) for the DDL statement.
+This page documents the TRUNCATE function. See [TRUNCATE TABLE](/sql-statements-structure/sql-statements/table-statements/truncate-table/) for the DDL statement.
 
 ## Syntax
 
@@ -63,4 +63,4 @@ SELECT TRUNCATE(10.28*100,0);
 
 ## See Also
 
-- [TRUNCATE TABLE](/sql-statements-structure/sql-statements/table-statements/truncate-table)
+- [TRUNCATE TABLE](/sql-statements-structure/sql-statements/table-statements/truncate-table/)

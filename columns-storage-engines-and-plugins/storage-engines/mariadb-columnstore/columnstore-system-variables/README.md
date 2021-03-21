@@ -90,7 +90,7 @@ where <em>n</em> is the amount of precision desired for calculations.
 
 ### Introduction
 
-Joins are performed in-memory on the [UM](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-user-module) node. When a join operation exceeds the memory allocated on the UM for query joins, the query is aborted with an error code IDB-2001.
+Joins are performed in-memory on the [UM](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-user-module/) node. When a join operation exceeds the memory allocated on the UM for query joins, the query is aborted with an error code IDB-2001.
 Disk-based joins enable such queries to use disk for intermediate join data in case when the memory needed for join exceeds the memory limit on the UM. Although slower in performance as compared to a fully in-memory join, and bound by the temporary space on disk, it does allow such queries to complete.  
 <br><strong>Note:Disk-based joins does not include aggregation and DML joins.</strong>
 
@@ -130,7 +130,7 @@ set infinidb_um_mem_limit = value
 
 ### Introduction
 
-MariaDB ColumnStore has the ability to utilize the cpimport fast data import tool for non-transactional [LOAD DATA INFILE](/kb/en/load-data-infile/) and [INSERT INTO SELECT FROM](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert) SQL statements. Using this method results in a significant increase in performance in loading data through these two SQL statements. This optimization is independent of the storage engine used for the tables in the select statement.
+MariaDB ColumnStore has the ability to utilize the cpimport fast data import tool for non-transactional [LOAD DATA INFILE](/kb/en/load-data-infile/) and [INSERT INTO SELECT FROM](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/) SQL statements. Using this method results in a significant increase in performance in loading data through these two SQL statements. This optimization is independent of the storage engine used for the tables in the select statement.
 
 ### Enable/disable using cpimport for batch insert
 
@@ -170,7 +170,7 @@ The VersionBufferFileSize setting is updated in the ColumnStore.xml typically lo
 
 ## Local PM query mode
 
-MariaDB ColumnStore has the ability to query data from just a single [PM](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module) instead of the whole database through the [UM](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-user-module). In order to accomplish this, the infinidb_local_query variable in the my.cnf configuration file is used and maybe set as a default at system wide or set at the session level.
+MariaDB ColumnStore has the ability to query data from just a single [PM](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module/) instead of the whole database through the [UM](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-user-module/). In order to accomplish this, the infinidb_local_query variable in the my.cnf configuration file is used and maybe set as a default at system wide or set at the session level.
 
 <code class="unknown_macro">&lt;&lt;<span class="macro_name">toc</span><span class="macro_arg_string"> title=''  layout=standalone</span>&gt;&gt;</code>
 
@@ -185,7 +185,7 @@ NOTE: Local Query Feature allows the ability to query data from a single Perform
 Enable Local Query feature? [y,n] (n) > 
 ```
 
-[https://mariadb.com/kb/en/library/installing-and-configuring-a-multi-server-columnstore-system-11x/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-11x/installing-and-configuring-a-multi-server-columnstore-system-11x)
+[https://mariadb.com/kb/en/library/installing-and-configuring-a-multi-server-columnstore-system-11x/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-11x/installing-and-configuring-a-multi-server-columnstore-system-11x/)
 
 ### Enable local PM query systemwide
 
@@ -202,7 +202,7 @@ where n is:
 * 1 (enabled)
 ```
 
-At the session level, this variable applies only to executing a query on an individual [PM](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module) and will error if executed on the [UM](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-user-module). The PM must be set up with the local query option during installation.
+At the session level, this variable applies only to executing a query on an individual [PM](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-performance-module/) and will error if executed on the [UM](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-user-module/). The PM must be set up with the local query option during installation.
 
 ### Local PM Query Examples
 
@@ -229,7 +229,7 @@ where idbPm(fact.key) = idbLocalPm();
 
 The infinidb_local_query is set to 0 to allow query across all PMs.
 
-The query is structured so that the UM process on the PM node gets the fact table data locally from the PM node (as indicated by the use of the [idbLocalPm()](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-sql-structure-and-commands/columnstore-information-functions) function), while the dimension table data is extracted from all the PM nodes.
+The query is structured so that the UM process on the PM node gets the fact table data locally from the PM node (as indicated by the use of the [idbLocalPm()](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-sql-structure-and-commands/columnstore-information-functions/) function), while the dimension table data is extracted from all the PM nodes.
 
 Then you can execute the script to pipe it directly into cpimport:
 

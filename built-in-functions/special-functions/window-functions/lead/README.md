@@ -2,7 +2,7 @@
 
 ##### MariaDB starting with [10.2.2](/kb/en/mariadb-1022-release-notes/)
 
-The LEAD() function was first introduced with other [window functions](/built-in-functions/special-functions/window-functions) in [MariaDB 10.2](/kb/en/what-is-mariadb-102/).
+The LEAD() function was first introduced with other [window functions](/built-in-functions/special-functions/window-functions/) in [MariaDB 10.2](/kb/en/what-is-mariadb-102/).
 
 ## Syntax
 
@@ -61,4 +61,4 @@ FROM t1;
 
 ## See Also
 
-- [LAG](/built-in-functions/special-functions/window-functions/lag)  - Window function to access a previous row
+- [LAG](/built-in-functions/special-functions/window-functions/lag/)  - Window function to access a previous row

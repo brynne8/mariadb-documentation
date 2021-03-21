@@ -8,7 +8,7 @@ collection of identical [MyISAM](/kb/en/myisam/) tables that can be used as one.
 information. You cannot merge MyISAM tables in which the columns are
 listed in a different order, do not have exactly the same columns, or
 have the indexes in different order. However, any or all of the MyISAM
-tables can be compressed with [myisampack](/clients-utilities/myisam-clients-and-utilities/myisampack). Columns names and indexes names can be different, as long as data types and NULL/NOT NULL clauses are the same. Differences in
+tables can be compressed with [myisampack](/clients-utilities/myisam-clients-and-utilities/myisampack/). Columns names and indexes names can be different, as long as data types and NULL/NOT NULL clauses are the same. Differences in
 table options such as AVG_ROW_LENGTH, MAX_ROWS, or PACK_KEYS do not
 matter.
 
@@ -26,7 +26,7 @@ ERROR 1168 (HY000): Unable to open underlying table which is differently defined
   or of non-MyISAM type or doesn't exist
 ```
 
-A [CHECK TABLE](/sql-statements-structure/sql-statements/table-statements/check-table) will show more information about the problem.
+A [CHECK TABLE](/sql-statements-structure/sql-statements/table-statements/check-table/) will show more information about the problem.
 
 The error is also produced if the table is properly define, but an underlying table's definition changes at some point in time.
 

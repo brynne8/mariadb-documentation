@@ -1,14 +1,14 @@
 # mysql.func Table
 
-The `mysql.func` table stores information about [user-defined functions](/programming-customizing-mariadb/user-defined-functions) (UDFs) created with the [CREATE FUNCTION UDF](/programming-customizing-mariadb/user-defined-functions/create-function-udf) statement.
+The `mysql.func` table stores information about [user-defined functions](/programming-customizing-mariadb/user-defined-functions/) (UDFs) created with the [CREATE FUNCTION UDF](/programming-customizing-mariadb/user-defined-functions/create-function-udf/) statement.
 
 ##### MariaDB starting with [10.4](/kb/en/what-is-mariadb-104/)
 
-In [MariaDB 10.4](/kb/en/what-is-mariadb-104/) and later, this table uses the [Aria](/columns-storage-engines-and-plugins/storage-engines/aria) storage engine.
+In [MariaDB 10.4](/kb/en/what-is-mariadb-104/) and later, this table uses the [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/) storage engine.
 
 ##### MariaDB until [10.3](/kb/en/what-is-mariadb-103/)
 
-In [MariaDB 10.3](/kb/en/what-is-mariadb-103/) and before, this table uses the [MyISAM](/columns-storage-engines-and-plugins/storage-engines/myisam-storage-engine) storage engine.
+In [MariaDB 10.3](/kb/en/what-is-mariadb-103/) and before, this table uses the [MyISAM](/columns-storage-engines-and-plugins/storage-engines/myisam-storage-engine/) storage engine.
 
 The `mysql.func` table contains the following fields:
 

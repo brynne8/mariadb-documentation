@@ -30,7 +30,7 @@ SHOW GLOBAL VARIABLES LIKE 'server_audit%';
 +-------------------------------+-----------------------+
 ```
 
-The values of these variables can be changed by an administrator with the `SUPER` privilege, using the [`SET`](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set) statement. Below is an example of how to disable audit logging:
+The values of these variables can be changed by an administrator with the `SUPER` privilege, using the [`SET`](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set/) statement. Below is an example of how to disable audit logging:
 
 ```sql
 SET GLOBAL server_audit_logging=OFF;
@@ -45,10 +45,10 @@ server_audit_logging=OFF
 …
 ```
 
-For the reason given in the paragraph above, you would not generally set variables related to the auditing plugin using the [`SET`](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set) statement. However, you might do so to test settings before making them more permanent. Since one cannot always restart the server, you would use the [`SET`](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set) statement to change immediately the variables and then include the same settings in the configuration file so that the variables are set again as you prefer when the server is restarted.
+For the reason given in the paragraph above, you would not generally set variables related to the auditing plugin using the [`SET`](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set/) statement. However, you might do so to test settings before making them more permanent. Since one cannot always restart the server, you would use the [`SET`](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set/) statement to change immediately the variables and then include the same settings in the configuration file so that the variables are set again as you prefer when the server is restarted.
 
 #### Configuring Logs and Setting Other Variables
 
-Of all of the server variables you can set, you may want to set initially the [server_audit_events](/kb/en/server_audit-system-variables/#server_audit_events) variable to tell the Audit Plugin which events to log. The [Log Settings documentation page](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/mariadb-audit-plugin-log-settings) describes in detail the choices you have and provides examples of log entries related to them.
+Of all of the server variables you can set, you may want to set initially the [server_audit_events](/kb/en/server_audit-system-variables/#server_audit_events) variable to tell the Audit Plugin which events to log. The [Log Settings documentation page](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/mariadb-audit-plugin-log-settings/) describes in detail the choices you have and provides examples of log entries related to them.
 
-You can see a detailed list of system variables related to the MariaDB Audit Plugin on the [System Variables documentation page](/kb/en/mariadb-audit-plugin-system-variables/).  Status variables related to the Audit Plugin are listed and explained on the [Status Variables documentation page](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/mariadb-audit-plugin-status-variables).
+You can see a detailed list of system variables related to the MariaDB Audit Plugin on the [System Variables documentation page](/kb/en/mariadb-audit-plugin-system-variables/).  Status variables related to the Audit Plugin are listed and explained on the [Status Variables documentation page](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/mariadb-audit-plugin-status-variables/).

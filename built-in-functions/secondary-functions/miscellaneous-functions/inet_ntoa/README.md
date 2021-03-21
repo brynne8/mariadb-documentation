@@ -26,5 +26,5 @@ SELECT INET_NTOA(3232235777);
 
 ## See Also
 
-- [INET6_NTOA()](/built-in-functions/secondary-functions/miscellaneous-functions/inet6_ntoa)
-- [INET_ATON()](/built-in-functions/secondary-functions/miscellaneous-functions/inet_aton)
+- [INET6_NTOA()](/built-in-functions/secondary-functions/miscellaneous-functions/inet6_ntoa/)
+- [INET_ATON()](/built-in-functions/secondary-functions/miscellaneous-functions/inet_aton/)

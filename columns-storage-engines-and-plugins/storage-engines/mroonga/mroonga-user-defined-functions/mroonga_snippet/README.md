@@ -18,7 +18,7 @@ mroonga_snippet document,
 
 ## Description
 
-`mroonga_snippet` is a [user-defined function](/programming-customizing-mariadb/user-defined-functions) (UDF) included with the [Mroonga storage engine](/columns-storage-engines-and-plugins/storage-engines/mroonga). It provides a keyword with surrounding text, or the keyword in context. See [Creating Mroonga User-Defined Functions](/columns-storage-engines-and-plugins/storage-engines/mroonga/mroonga-user-defined-functions/creating-mroonga-user-defined-functions) for details on creating this UDF if required.
+`mroonga_snippet` is a [user-defined function](/programming-customizing-mariadb/user-defined-functions/) (UDF) included with the [Mroonga storage engine](/columns-storage-engines-and-plugins/storage-engines/mroonga/). It provides a keyword with surrounding text, or the keyword in context. See [Creating Mroonga User-Defined Functions](/columns-storage-engines-and-plugins/storage-engines/mroonga/mroonga-user-defined-functions/creating-mroonga-user-defined-functions/) for details on creating this UDF if required.
 
 The required parameters include:
 
@@ -48,4 +48,4 @@ Returns the snippet string.
 
 ## See Also
 
-- [Creating Mroonga User-Defined Functions](/columns-storage-engines-and-plugins/storage-engines/mroonga/mroonga-user-defined-functions/creating-mroonga-user-defined-functions)
+- [Creating Mroonga User-Defined Functions](/columns-storage-engines-and-plugins/storage-engines/mroonga/mroonga-user-defined-functions/creating-mroonga-user-defined-functions/)

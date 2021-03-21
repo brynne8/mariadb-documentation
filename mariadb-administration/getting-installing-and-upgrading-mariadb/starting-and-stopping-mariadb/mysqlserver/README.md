@@ -1,6 +1,6 @@
 # mysql.server
 
-The [mysql.server](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqlserver) startup script is in MariaDB distributions on Linux and Unix. It is a wrapper that works as a standard [sysVinit](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/sysvinit) script. However, it can be used independently of [sysVinit](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/sysvinit) as a regular `sh` script. The script starts the [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options) server process by first changing its current working directory to the MariaDB install directory and then starting [mysqld_safe](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld_safe). The script requires the standard [sysVinit](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/sysvinit) arguments, such as `start`, `stop`, `restart`, and `status`. For example:
+The [mysql.server](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqlserver/) startup script is in MariaDB distributions on Linux and Unix. It is a wrapper that works as a standard [sysVinit](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/sysvinit/) script. However, it can be used independently of [sysVinit](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/sysvinit/) as a regular `sh` script. The script starts the [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/) server process by first changing its current working directory to the MariaDB install directory and then starting [mysqld_safe](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld_safe/). The script requires the standard [sysVinit](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/sysvinit/) arguments, such as `start`, `stop`, `restart`, and `status`. For example:
 
 ```sql
 mysql.server start
@@ -11,7 +11,7 @@ mysql.server status
 
 It can be used on systems such as Linux, Solaris, and Mac OS X.
 
-The `mysql.server` script starts [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options) by first changing to the MariaDB install directory and then calling <a undefined>mysqld_safe</a>.
+The `mysql.server` script starts [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/) by first changing to the MariaDB install directory and then calling <a undefined>mysqld_safe</a>.
 
 ## Using mysql.server
 
@@ -39,7 +39,7 @@ If an unknown option is provided to `mysqld_safe` on the command-line, then it i
 
 ### Option Files
 
-In addition to reading options from the command-line, `mysql.server` can also read options from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files).
+In addition to reading options from the command-line, `mysql.server` can also read options from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/).
 
 The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
 
@@ -52,13 +52,13 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 #### Option Groups
 
-`mysql.server` reads options from the following [option groups](/kb/en/configuring-mariadb-with-option-files/#option-groups) from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files):
+`mysql.server` reads options from the following [option groups](/kb/en/configuring-mariadb-with-option-files/#option-groups) from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/):
 
 <table><tbody><tr><th>Group</th><th>Description</th></tr>
 <tr><td><code>[mysql.server]</code></td><td>&nbsp;Options read by <code>mysql.server</code>, which includes both MariaDB Server and MySQL Server.</td></tr>
 </tbody></table>
 
-`mysql.server` also reads options from the following server [option groups](/kb/en/configuring-mariadb-with-option-files/#option-groups) from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files):
+`mysql.server` also reads options from the following server [option groups](/kb/en/configuring-mariadb-with-option-files/#option-groups) from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/):
 
 <table><tbody><tr><th>Group</th><th>Description</th></tr>
 <tr><td><code>[mysqld]</code></td><td>&nbsp;Options read by <code>mysqld</code>, which includes both MariaDB Server and MySQL Server.</td></tr>
@@ -86,14 +86,14 @@ If you do not want to edit the `mysql.server` script itself, then `mysql.server`
 
 ### Installed SysVinit Locations
 
-On systems that use [sysVinit](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/sysvinit), `mysql.server` may also be installed in other locations and with other names.
+On systems that use [sysVinit](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/sysvinit/), `mysql.server` may also be installed in other locations and with other names.
 
-If you installed MariaDB on Linux using [RPMs](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm), then the `mysql.server` script will be installed into the `/etc/init.d` directory with the name `mysql`. You need not install it manually.
+If you installed MariaDB on Linux using [RPMs](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/), then the `mysql.server` script will be installed into the `/etc/init.d` directory with the name `mysql`. You need not install it manually.
 
 #### Manually Installing with SysVinit
 
-If you install MariaDB from [source](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source) or from a [binary tarball](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-binary-tarballs) that does not install [mysql.server](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqlserver)
-automatically, and if you are on a system that uses [sysVinit](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/sysvinit), then you can manually install `mysql.server` with [sysVinit](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/sysvinit). This is usually done by copying it to <code class="highlight fixed" style="white-space:pre-wrap">/etc/init.d/</code> and then creating specially named symlinks in the appropriate <code class="highlight fixed" style="white-space:pre-wrap">/etc/rcX.d/</code> directories (where 'X' is a number between 0 and 6).
+If you install MariaDB from [source](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/) or from a [binary tarball](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-binary-tarballs/) that does not install [mysql.server](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqlserver/)
+automatically, and if you are on a system that uses [sysVinit](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/sysvinit/), then you can manually install `mysql.server` with [sysVinit](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/sysvinit/). This is usually done by copying it to <code class="highlight fixed" style="white-space:pre-wrap">/etc/init.d/</code> and then creating specially named symlinks in the appropriate <code class="highlight fixed" style="white-space:pre-wrap">/etc/rcX.d/</code> directories (where 'X' is a number between 0 and 6).
 
 In the examples below we will follow the historical convention of renaming the
  <code class="highlight fixed" style="white-space:pre-wrap">mysql.server</code> script to '<code class="highlight fixed" style="white-space:pre-wrap">mysql</code>' when we copy it to <code class="highlight fixed" style="white-space:pre-wrap">/etc/init.d/</code>.

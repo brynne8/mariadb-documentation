@@ -8,11 +8,11 @@ AVG([DISTINCT] expr)
 
 ## Description
 
-Returns the average value of expr. The DISTINCT option can be used to return the average of the distinct values of expr. NULL values are ignored. It is an [aggregate function](/built-in-functions/aggregate-functions), and so can be used with the [GROUP BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/group-by) clause.
+Returns the average value of expr. The DISTINCT option can be used to return the average of the distinct values of expr. NULL values are ignored. It is an [aggregate function](/built-in-functions/aggregate-functions/), and so can be used with the [GROUP BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/group-by/) clause.
 
 AVG() returns NULL if there were no matching rows.
 
-From [MariaDB 10.2.0](/kb/en/mariadb-1020-release-notes/), AVG() can be used as a [window function](/built-in-functions/special-functions/window-functions).
+From [MariaDB 10.2.0](/kb/en/mariadb-1020-release-notes/), AVG() can be used as a [window function](/built-in-functions/special-functions/window-functions/).
 
 ## Examples
 
@@ -69,7 +69,7 @@ SELECT name,test,AVG(score) FROM student;
 +------+------+------------+
 ```
 
-As a [window function](/built-in-functions/special-functions/window-functions):
+As a [window function](/built-in-functions/special-functions/window-functions/):
 
 ```sql
 CREATE TABLE student_test (name CHAR(10), test CHAR(10), score TINYINT); 
@@ -98,6 +98,6 @@ SELECT name, test, score, AVG(score) OVER (PARTITION BY test)
 
 ## See Also
 
-- [MAX](/built-in-functions/aggregate-functions/max) (maximum)
-- [MIN](/built-in-functions/aggregate-functions/min) (minimum)
-- [SUM](/built-in-functions/aggregate-functions/sum) (sum total)
+- [MAX](/built-in-functions/aggregate-functions/max/) (maximum)
+- [MIN](/built-in-functions/aggregate-functions/min/) (minimum)
+- [SUM](/built-in-functions/aggregate-functions/sum/) (sum total)

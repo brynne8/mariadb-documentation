@@ -16,7 +16,7 @@ If a column has been set to ZEROFILL, all values will be prepended by zeros so t
 
 `INT2` is a synonym for `SMALLINT`.
 
-For more details on the attributes, see [Numeric Data Type Overview](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/numeric-data-type-overview).
+For more details on the attributes, see [Numeric Data Type Overview](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/numeric-data-type-overview/).
 
 ## Examples
 
@@ -83,8 +83,8 @@ SELECT * FROM smallints;
 
 ## See Also
 
-- [Numeric Data Type Overview](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/numeric-data-type-overview)
-- [TINYINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/tinyint)
-- [MEDIUMINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/mediumint)
-- [INTEGER](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int)
-- [BIGINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/bigint)
+- [Numeric Data Type Overview](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/numeric-data-type-overview/)
+- [TINYINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/tinyint/)
+- [MEDIUMINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/mediumint/)
+- [INTEGER](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int/)
+- [BIGINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/bigint/)

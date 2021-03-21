@@ -28,4 +28,4 @@ The table contains the following columns:
 
 It is possible to empty this table with a `TRUNCATE TABLE` statement.
 
-The related tables, [events_waits_history](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_history-table) and [events_waits_history_long](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_history_long-table) derive their values from the current events.
+The related tables, [events_waits_history](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_history-table/) and [events_waits_history_long](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_history_long-table/) derive their values from the current events.

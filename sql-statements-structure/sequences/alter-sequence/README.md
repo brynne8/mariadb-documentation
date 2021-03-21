@@ -14,7 +14,7 @@ ALTER SEQUENCE [IF EXISTS] sequence_name
 [ START [ WITH | = ] start ] [ CACHE [=] cache ] [ [ NO ] CYCLE ]
 [ RESTART [[WITH | =] restart]```
 
-`ALTER SEQUENCE` allows one to change any values for a `SEQUENCE` created with [CREATE SEQUENCE](/sql-statements-structure/sequences/create-sequence).
+`ALTER SEQUENCE` allows one to change any values for a `SEQUENCE` created with [CREATE SEQUENCE](/sql-statements-structure/sequences/create-sequence/).
 
 The options for `ALTER SEQUENCE` can be given in any order.
 
@@ -22,7 +22,7 @@ The options for `ALTER SEQUENCE` can be given in any order.
 
 `ALTER SEQUENCE` changes the parameters of an existing sequence generator. Any parameters not specifically set in the `ALTER SEQUENCE` command retain their prior settings.
 
-`ALTER SEQUENCE` requires the [ALTER privilege](/sql-statements-structure/sql-statements/account-management-sql-commands/grant).
+`ALTER SEQUENCE` requires the [ALTER privilege](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/).
 
 ### Arguments to `ALTER SEQUENCE`
 
@@ -38,9 +38,9 @@ The following options may be used:
 <tr><td><code>RESTART</code></td><td><code>START</code> if <code>restart</code> value not is given</td><td>&nbsp;If  <code>RESTART</code> option is used, <code>NEXT VALUE</code> will return the restart value.</td></tr>
 </tbody></table>
 
-The optional clause `RESTART [ WITH restart ]` sets the next value for the sequence. This is equivalent to calling the [SETVAL()](/sql-statements-structure/sequences/sequence-functions/setval) function with the `is_used` argument as 0. The specified value will be returned by the next call of nextval.  Using `RESTART` with no restart value is
+The optional clause `RESTART [ WITH restart ]` sets the next value for the sequence. This is equivalent to calling the [SETVAL()](/sql-statements-structure/sequences/sequence-functions/setval/) function with the `is_used` argument as 0. The specified value will be returned by the next call of nextval.  Using `RESTART` with no restart value is
 equivalent to supplying the start value that was recorded by
-[CREATE SEQUENCE](/sql-statements-structure/sequences/create-sequence) or last set by `ALTER SEQUENCE START WITH`.
+[CREATE SEQUENCE](/sql-statements-structure/sequences/create-sequence/) or last set by `ALTER SEQUENCE START WITH`.
 
 `ALTER SEQUENCE` will not allow you to change the sequence so that it's inconsistent. For example:
 
@@ -57,7 +57,7 @@ ALTER SEQUENCE s1 MINVALUE 10 START 10 RESTART 10;
 
 ### INSERT
 
-To allow `SEQUENCE` objects to be backed up by old tools, like [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump), one can use `SELECT` to read the current state of a `SEQUENCE` object and use an `INSERT` to update the `SEQUENCE` object.  `INSERT` is only allowed if all fields are specified:
+To allow `SEQUENCE` objects to be backed up by old tools, like [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump/), one can use `SELECT` to read the current state of a `SEQUENCE` object and use an `INSERT` to update the `SEQUENCE` object.  `INSERT` is only allowed if all fields are specified:
 
 ```sql
 CREATE SEQUENCE s1;
@@ -85,18 +85,18 @@ SHOW CREATE SEQUENCE s1;
 `ALTER SEQUENCE` will take a full table lock of the sequence object during
 its (brief) operation. This ensures that `ALTER SEQUENCE` is replicated
 correctly.  If you only want to set the next sequence value to a
-higher value than current, then you should use [SETVAL()](/sql-statements-structure/sequences/sequence-functions/setval)
+higher value than current, then you should use [SETVAL()](/sql-statements-structure/sequences/sequence-functions/setval/)
 instead, as this is not blocking.
 
-If you want to change storage engine, sequence comment or rename the sequence, you can use [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) for this.
+If you want to change storage engine, sequence comment or rename the sequence, you can use [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) for this.
 
 ## See Also
 
-- [Sequence Overview](/sql-statements-structure/sequences/sequence-overview)
-- [CREATE SEQUENCE](/sql-statements-structure/sequences/create-sequence)
-- [DROP SEQUENCE](/sql-statements-structure/sequences/drop-sequence)
-- [NEXT VALUE FOR](/sql-statements-structure/sequences/sequence-functions/next-value-for-sequence_name)
-- [PREVIOUS VALUE FOR](/sql-statements-structure/sequences/sequence-functions/previous-value-for-sequence_name)
-- [SETVAL()](/sql-statements-structure/sequences/sequence-functions/setval).  Set next value for the sequence.
-- [AUTO INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment)
-- [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table)
+- [Sequence Overview](/sql-statements-structure/sequences/sequence-overview/)
+- [CREATE SEQUENCE](/sql-statements-structure/sequences/create-sequence/)
+- [DROP SEQUENCE](/sql-statements-structure/sequences/drop-sequence/)
+- [NEXT VALUE FOR](/sql-statements-structure/sequences/sequence-functions/next-value-for-sequence_name/)
+- [PREVIOUS VALUE FOR](/sql-statements-structure/sequences/sequence-functions/previous-value-for-sequence_name/)
+- [SETVAL()](/sql-statements-structure/sequences/sequence-functions/setval/).  Set next value for the sequence.
+- [AUTO INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment/)
+- [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/)

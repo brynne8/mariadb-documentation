@@ -2,7 +2,7 @@
 
 ## Direct SQL
 
-Direct SQL is a way to map reduced execution on remote backends and store the results in a local table. This can either be sequential, using the UDF function [spider_direct_sql](/columns-storage-engines-and-plugins/storage-engines/spider/spider-functions/spider_direct_sql), or concurrently, using [spider_bg_direct_sql](/columns-storage-engines-and-plugins/storage-engines/spider/spider-functions/spider_bg_direct_sql).
+Direct SQL is a way to map reduced execution on remote backends and store the results in a local table. This can either be sequential, using the UDF function [spider_direct_sql](/columns-storage-engines-and-plugins/storage-engines/spider/spider-functions/spider_direct_sql/), or concurrently, using [spider_bg_direct_sql](/columns-storage-engines-and-plugins/storage-engines/spider/spider-functions/spider_bg_direct_sql/).
 
 ```sql
 spider1 backend << EOF 
@@ -28,7 +28,7 @@ SELECT * FROM res;
 EOF
 ```
 
-Or if you are using a [SERVER](/sql-statements-structure/sql-statements/data-definition/create/create-server):
+Or if you are using a [SERVER](/sql-statements-structure/sql-statements/data-definition/create/create-server/):
 
 ```sql
 SELECT spider_direct_sql( 
@@ -40,7 +40,7 @@ SELECT spider_direct_sql(
   WHERE db_name = 'backend' and table_name like 'sbtest#P#pt%' ;
 ```
 
-The default for [spider_bg_direct_sql](/columns-storage-engines-and-plugins/storage-engines/spider/spider-functions/spider_bg_direct_sql) is to access concurrently all backends. If you have multiple partitions store inside a single backend, you still can increase parallelism affecting different channels to each partitions.
+The default for [spider_bg_direct_sql](/columns-storage-engines-and-plugins/storage-engines/spider/spider-functions/spider_bg_direct_sql/) is to access concurrently all backends. If you have multiple partitions store inside a single backend, you still can increase parallelism affecting different channels to each partitions.
 
 ```sql
 CREATE TEMPORARY TABLE res
@@ -55,7 +55,7 @@ SELECT spider_bg_direct_sql( 'SELECT count(*) ,min(NOW(6)),min(DATABASE())) FROM
 
 ## Direct Handler Socket
 
-Check that [Handler Socket](/sql-statements-structure/nosql/handlersocket) is running on the backend nodes
+Check that [Handler Socket](/sql-statements-structure/nosql/handlersocket/) is running on the backend nodes
 
 ```sql
 :~# backend2 -e "show variables like 'handler%'"
@@ -96,7 +96,7 @@ SELECT spider_direct_sql('1\t=\t1\t2\t100000\t0','res', 'host "192.168.0.202", t
 
 ## Inter Nodes Copy Table
 
-The UDF function [spider_copy_tables](/columns-storage-engines-and-plugins/storage-engines/spider/spider-functions/spider_copy_tables) is available for copying table data from the source link ID to the destination link ID list without stopping your service for copying
+The UDF function [spider_copy_tables](/columns-storage-engines-and-plugins/storage-engines/spider/spider-functions/spider_copy_tables/) is available for copying table data from the source link ID to the destination link ID list without stopping your service for copying
 
 `spider_copy_tables(Spider table name, source link ID, destination link ID list[, parameters])`
 
@@ -156,7 +156,7 @@ Note that Spider UDF functions will not work with such settings.
 
 ## Status Variables
 
-A number of new [status variables](/replication/optimization-and-tuning/system-variables/server-status-variables) have been introduced:
+A number of new [status variables](/replication/optimization-and-tuning/system-variables/server-status-variables/) have been introduced:
 
 - [Spider_direct_aggregate](/kb/en/spider-server-status-variables/#spider_direct_aggregate)
 - [Spider_direct_order_limit](/kb/en/spider-server-status-variables/#spider_direct_order_limit)
@@ -165,7 +165,7 @@ A number of new [status variables](/replication/optimization-and-tuning/system-v
 
 ## Information Schema Tables
 
-- A new [Information Schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema) table is installed - [SPIDER_ALLOC_MEM](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-spider_alloc_mem-table).
+- A new [Information Schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/) table is installed - [SPIDER_ALLOC_MEM](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-spider_alloc_mem-table/).
 
 ```sql
 +-------------------+---------------------+------+-----+---------+-------+
@@ -184,7 +184,7 @@ A number of new [status variables](/replication/optimization-and-tuning/system-v
 
 ## Performance Schema
 
-The [Performance schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema) is commonly used to troubleshoot issues that consume time inside your workload. The Performance schema should not be activated for servers that are experimenting constant heavy load, but most of time it is acceptable to lose 5% to 20% additional CPU to keep track of server internals execution.
+The [Performance schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/) is commonly used to troubleshoot issues that consume time inside your workload. The Performance schema should not be activated for servers that are experimenting constant heavy load, but most of time it is acceptable to lose 5% to 20% additional CPU to keep track of server internals execution.
 
 To activate the performance schema, use the [performance_schema](/kb/en/performance-schema-system-variables/#performance_schema) system variable and add the following to the server section of the [MariaDB configuration file](/kb/en/configuring-mariadb-with-mycnf/).
 

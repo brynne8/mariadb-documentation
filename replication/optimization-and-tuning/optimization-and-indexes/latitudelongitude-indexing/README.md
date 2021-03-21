@@ -10,7 +10,7 @@ You might have tried
 - INDEX(lat,lon) -- but it still had to work too hard
 - Sometimes you ended up with a full table scan -- Yuck.
 
-WHERE [SQRT(...)](/built-in-functions/numeric-functions/sqrt)&lt; ... -- No chance of using any index.
+WHERE [SQRT(...)](/built-in-functions/numeric-functions/sqrt/)&lt; ... -- No chance of using any index.
 
 WHERE lat BETWEEN ... AND lng BETWEEN... -- This has some chance of using such indexes.
 
@@ -30,7 +30,7 @@ How many PARTITIONs? It does not matter a lot. Some thoughts:
 - 50-100 - evenly populated. (This requires code. For 2.7M placenames, 85 partitions varied from 0.5 degrees to very wide partitions at the poles.)
 - Don't have more than 100 partitions, there are inefficiencies in the partition implementation.
 
-How to PARTITION? Well, MariaDB and MySQL are very picky. So [FLOAT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/float)/[DOUBLE](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/double) are out. [DECIMAL](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/decimal) is out. So, we are stuck with some kludge. Essentially, we need to convert Lat/Lng to some size of [INT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int) and use PARTITION BY RANGE.
+How to PARTITION? Well, MariaDB and MySQL are very picky. So [FLOAT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/float/)/[DOUBLE](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/double/) are out. [DECIMAL](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/decimal/) is out. So, we are stuck with some kludge. Essentially, we need to convert Lat/Lng to some size of [INT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int/) and use PARTITION BY RANGE.
 
 ## Representation choices
 
@@ -55,17 +55,17 @@ To get to a datatype that can be used in PARTITION, you need to "scale" the lati
 
 What these mean...
 
-Deg*100 ([SMALLINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/smallint)) -- you take the lat/lng, multiply by 100, round, and store into a SMALLINT. That will take 2 bytes for each dimension, for a total of 4 bytes. Two items might be 1570 meters apart, but register as having the same latitude and longitude.
+Deg*100 ([SMALLINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/smallint/)) -- you take the lat/lng, multiply by 100, round, and store into a SMALLINT. That will take 2 bytes for each dimension, for a total of 4 bytes. Two items might be 1570 meters apart, but register as having the same latitude and longitude.
 
-[DECIMAL(4,2)](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/decimal) for latitude and DECIMAL(5,2) for longitude will take 2+3 bytes and have no better resolution than Deg*100.
+[DECIMAL(4,2)](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/decimal/) for latitude and DECIMAL(5,2) for longitude will take 2+3 bytes and have no better resolution than Deg*100.
 
 SMALLINT scaled -- Convert latitude into a SMALLINT SIGNED by doing (degrees / 90 * 32767) and rounding; longitude by (degrees / 180 * 32767).
 
-[FLOAT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/float) has 24 significant bits; [DOUBLE](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/double) has 53. (They don't work with PARTITIONing but are included for completeness. Often people use DOUBLE without realizing how much an overkill it is, and how much space it takes.)
+[FLOAT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/float/) has 24 significant bits; [DOUBLE](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/double/) has 53. (They don't work with PARTITIONing but are included for completeness. Often people use DOUBLE without realizing how much an overkill it is, and how much space it takes.)
 
 Sure, you could do DEG*1000 and other "in between" cases, but there is no advantage. DEG*1000 takes as much space as DEG*10000, but has less resolution.
 
-So, go down the list to see how much resolution you need, then pick an encoding you are comfortable with. However, since we are about to use latitude as a "partition key", it must be limited to one of the INTs. For the sample code, I will use Deg*10000 ([MEDIUMINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/mediumint)).
+So, go down the list to see how much resolution you need, then pick an encoding you are comfortable with. However, since we are about to use latitude as a "partition key", it must be limited to one of the INTs. For the sample code, I will use Deg*10000 ([MEDIUMINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/mediumint/)).
 
 ## GCDist -- compute "great circle distance"
 
@@ -98,8 +98,8 @@ Fields and indexes
 - lon -- scaled longitude
 - PRIMARY KEY(lon, lat, ...) -- lon must be first; something must be added to make it UNIQUE
 - id -- (optional) you may need to identify the rows for your purposes; AUTO_INCREMENT if you like
-- INDEX(id) -- if `id` is [AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment), then this plain INDEX (not UNIQUE, not PRIMARY KEY) is necessary
-- ENGINE=[InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) -- so the PRIMARY KEY will be "clustered"
+- INDEX(id) -- if `id` is [AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment/), then this plain INDEX (not UNIQUE, not PRIMARY KEY) is necessary
+- ENGINE=[InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) -- so the PRIMARY KEY will be "clustered"
 - Other indexes -- keep to a minimum (this is a general performance rule for large tables)
 
 For most of this discussion, lat is assumed to be MEDIUMINT -- scaled from -90 to +90 by multiplying by 10000. Similarly for lon and -180 to +180.
@@ -129,13 +129,13 @@ This design leads to very few disk blocks needing to be read, which is the main 
 
 Note that this does not even call GCDist. That comes in the last pass when the ORDER BY and LIMIT are used.
 
-The [stored procedure](/programming-customizing-mariadb/stored-routines/stored-procedures) has a loop. At least two SELECTs will be executed, but with proper tuning; usually no more than about 6 SELECTs will be performed. Because of searching by the PRIMARY KEY, each SELECT hits only one block, sometimes more, of the table. Counting the number of blocks hit is a crude, but effective way, of comparing the performance of multiple designs. By comparison, a full table scan will probably touch thousands of blocks. A simple INDEX(lat) probably leads to hitting hundreds of blocks.
+The [stored procedure](/programming-customizing-mariadb/stored-routines/stored-procedures/) has a loop. At least two SELECTs will be executed, but with proper tuning; usually no more than about 6 SELECTs will be performed. Because of searching by the PRIMARY KEY, each SELECT hits only one block, sometimes more, of the table. Counting the number of blocks hit is a crude, but effective way, of comparing the performance of multiple designs. By comparison, a full table scan will probably touch thousands of blocks. A simple INDEX(lat) probably leads to hitting hundreds of blocks.
 
 Filtering... An argument to the FindNearest procedure includes a boolean expression ("condition") for a WHERE clause. If you don't need any filtering, pass in "1". To avoid "SQL injection", do not let web users put arbitrary expressions; instead, construct the "condition" from inputs they provide, thereby making sure it is safe.
 
 ## The algorithm
 
-The algorithm is embodied in a [stored procedure](/programming-customizing-mariadb/stored-routines/stored-procedures) because of its complexity.
+The algorithm is embodied in a [stored procedure](/programming-customizing-mariadb/stored-routines/stored-procedures/) because of its complexity.
 
 - You feed it a starting width for a "square" and a number of items to find.
 - It builds a "square" around where you are.
@@ -172,7 +172,7 @@ First, note that this 'last' SELECT is hitting the same block(s) that the iterat
 
 ## Discussion of reference code
 
-Here's the gist of the [stored procedure](/programming-customizing-mariadb/stored-routines/stored-procedures) FindNearest().
+Here's the gist of the [stored procedure](/programming-customizing-mariadb/stored-routines/stored-procedures/) FindNearest().
 
 - Make a guess at how close to "me" to look.
 - See how many items are in a 'square' around me, after filtering.

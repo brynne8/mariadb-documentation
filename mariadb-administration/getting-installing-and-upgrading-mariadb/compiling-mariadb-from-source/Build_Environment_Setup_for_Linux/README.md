@@ -2,7 +2,7 @@
 
 ## Required Tools
 
-The following is a list of tools that are required for building MariaDB on Linux and Mac OS X. Most, if not all, of these will exist as packages in your distribution's package repositories, so check there first. See [Building MariaDB on Ubuntu](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/building-mariadb-on-ubuntu), [Building MariaDB on CentOS](/kb/en/building-mariadb-on-centos/), and [Building MariaDB on Gentoo](/kb/en/building-mariadb-on-gentoo/) pages for specific requirements for those platforms.
+The following is a list of tools that are required for building MariaDB on Linux and Mac OS X. Most, if not all, of these will exist as packages in your distribution's package repositories, so check there first. See [Building MariaDB on Ubuntu](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/building-mariadb-on-ubuntu/), [Building MariaDB on CentOS](/kb/en/building-mariadb-on-centos/), and [Building MariaDB on Gentoo](/kb/en/building-mariadb-on-gentoo/) pages for specific requirements for those platforms.
 
 - [git](https://git-scm.com/)
 - [gunzip](http://www.gzip.org/)
@@ -81,7 +81,7 @@ sudo zypper mr -er repo-source
 
 After enabling it, you will be able to run the zypper command to install the build dependencies.
 
-You should now have your build environment set up and can proceed to [Getting the MariaDB Source Code](/kb/en/Getting_the_MariaDB_Source_Code/) and then using the [Generic Build Instructions](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/generic-build-instructions) to build MariadB (or following the steps for your Linux distribution or [Creating a MariaDB Binary Tarball](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/creating-the-mariadb-binary-tarball)).
+You should now have your build environment set up and can proceed to [Getting the MariaDB Source Code](/kb/en/Getting_the_MariaDB_Source_Code/) and then using the [Generic Build Instructions](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/generic-build-instructions/) to build MariadB (or following the steps for your Linux distribution or [Creating a MariaDB Binary Tarball](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/creating-the-mariadb-binary-tarball/)).
 
 ## See Also
 

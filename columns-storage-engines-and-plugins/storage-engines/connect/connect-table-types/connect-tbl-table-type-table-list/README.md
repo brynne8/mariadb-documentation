@@ -2,7 +2,7 @@
 
 This type allows defining a table as a list of tables of any engine and type.
 This is more flexible than multiple tables that must be all of the same file
-type. This type does, but is more powerful than, what is done with the [MERGE](/columns-storage-engines-and-plugins/storage-engines/merge)
+type. This type does, but is more powerful than, what is done with the [MERGE](/columns-storage-engines-and-plugins/storage-engines/merge/)
 engine.
 
 The list of the columns of the TBL table may not necessarily include all the

@@ -6,7 +6,7 @@ Histograms were introduced in [MariaDB 10.0.2](/kb/en/mariadb-1002-release-notes
 
 Histogram-based statistics were introduced in [MariaDB 10.0.2](/kb/en/mariadb-1002-release-notes/) as a mechanism to improve the query plan chosen by the optimizer in certain situations. Until then, all conditions on non-indexed columns were ignored when searching for the best execution plan. Histograms can be collected for both indexed and non-indexed columns, and are made available to the optimizer.
 
-Histogram statistics are stored in the [mysql.column_stats](/kb/en/mysqlcolumn_stats-table/) table, which stores data for [engine-independent table statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics), and so are essentially a subset of engine-independent table statistics.
+Histogram statistics are stored in the [mysql.column_stats](/kb/en/mysqlcolumn_stats-table/) table, which stores data for [engine-independent table statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics/), and so are essentially a subset of engine-independent table statistics.
 
 Consider this example, using the following query:
 
@@ -45,7 +45,7 @@ There are a number of system variables that affect histograms.
 
 ### histogram_size
 
-The [histogram_size](/kb/en/server-system-variables/#histogram_size) variable determines the size, in bytes, from 0 to 255, used for a histogram. This is effectively the number of bins for `histogram_type=SINGLE_PREC_HB` or number of bins/2 for `histogram_type=DOUBLE_PREC_HB`. If it is set to 0 (the default for [MariaDB 10.4.2](/kb/en/mariadb-1042-release-notes/) and below), no histograms are created when running an [ANALYZE TABLE](/sql-statements-structure/sql-statements/table-statements/analyze-table).
+The [histogram_size](/kb/en/server-system-variables/#histogram_size) variable determines the size, in bytes, from 0 to 255, used for a histogram. This is effectively the number of bins for `histogram_type=SINGLE_PREC_HB` or number of bins/2 for `histogram_type=DOUBLE_PREC_HB`. If it is set to 0 (the default for [MariaDB 10.4.2](/kb/en/mariadb-1042-release-notes/) and below), no histograms are created when running an [ANALYZE TABLE](/sql-statements-structure/sql-statements/table-statements/analyze-table/).
 
 ### histogram_type
 
@@ -123,7 +123,7 @@ Next, a really bad plan, yet one sometimes chosen:
 (7 min 33.42 sec)
 ```
 
-[Persistent statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics) don't improve matters:
+[Persistent statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics/) don't improve matters:
 
 ```sql
 set use_stat_tables='preferably';
@@ -228,7 +228,7 @@ set join_buffer_space_limit=1024*1024*32;
 
 ## See Also
 
-- [DECODE_HISTOGRAM()](/built-in-functions/secondary-functions/information-functions/decode_histogram)
-- [Index Statistics](/replication/optimization-and-tuning/optimization-and-indexes/index-statistics)
-- [InnoDB Persistent Statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics)
-- [Engine-independent Statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics)
+- [DECODE_HISTOGRAM()](/built-in-functions/secondary-functions/information-functions/decode_histogram/)
+- [Index Statistics](/replication/optimization-and-tuning/optimization-and-indexes/index-statistics/)
+- [InnoDB Persistent Statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics/)
+- [Engine-independent Statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics/)

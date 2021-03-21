@@ -2,15 +2,15 @@
 
 ##### MariaDB starting with [10.2](/kb/en/what-is-mariadb-102/)
 
-The use of the temporary tablespaces in InnoDB was introduced in [MariaDB 10.2](/kb/en/what-is-mariadb-102/).  In earlier versions, temporary tablespaces exist as part of the InnoDB [system](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces) tablespace or were file-per-table depending on the configuration of the <a undefined>innodb_file_per_table</a> system variable.
+The use of the temporary tablespaces in InnoDB was introduced in [MariaDB 10.2](/kb/en/what-is-mariadb-102/).  In earlier versions, temporary tablespaces exist as part of the InnoDB [system](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces/) tablespace or were file-per-table depending on the configuration of the <a undefined>innodb_file_per_table</a> system variable.
 
-When the user creates a temporary table using the [CREATE TEMPORARY TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table) statement and the engine is set as InnoDB, MariaDB creates a temporary tablespace file.  When the table is not compressed, MariaDB writes to a shared temporary tablespace as defined by the <a undefined>innodb_temp_data_file_path</a> system variable.  When compressed, the temporary table is written to a dedicated temporary tablespace for that table.  MariaDB deletes temporary tablespaces when the server shuts down gracefully and is recreated when it starts again.  It cannot be placed on a raw device.
+When the user creates a temporary table using the [CREATE TEMPORARY TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/) statement and the engine is set as InnoDB, MariaDB creates a temporary tablespace file.  When the table is not compressed, MariaDB writes to a shared temporary tablespace as defined by the <a undefined>innodb_temp_data_file_path</a> system variable.  When compressed, the temporary table is written to a dedicated temporary tablespace for that table.  MariaDB deletes temporary tablespaces when the server shuts down gracefully and is recreated when it starts again.  It cannot be placed on a raw device.
 
 Internal temporary tablespaces, (that is, temporary tables that cannot be kept in memory) use either Aria or MyISAM, depending on the <a undefined>aria_used_for_temp_tables</a> system variable.  You can set the default storage engine for user-created temporary tables using the <a undefined>default_tmp_storage_engine</a> system variable.
 
 ## Sizing Temporary Tablespaces
 
-In order to size temporary tablespaces, use the <a undefined>innodb_temp_data_file_path</a> system variable. This system variable can be specified as a command-line argument to [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options) or it can be specified in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files). For example:
+In order to size temporary tablespaces, use the <a undefined>innodb_temp_data_file_path</a> system variable. This system variable can be specified as a command-line argument to [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/) or it can be specified in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/). For example:
 
 ```sql
 [mariadb]

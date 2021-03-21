@@ -17,7 +17,7 @@ _utf8 'Foundation' COLLATE utf8_unicode_ci;
 
 Strings can either be enclosed in single quotes or in double quotes (the same character must be used to both open and close the string).
 
-The ANSI SQL-standard does not permit double quotes for enclosing strings, and although MariaDB does by default, if the MariaDB server has enabled the [ANSI_QUOTES_SQL](/kb/en/sql-mode/#ansi_quotes) [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode), double quotes will be treated as being used for [identifiers](/sql-statements-structure/sql-language-structure/identifier-names) instead of strings.
+The ANSI SQL-standard does not permit double quotes for enclosing strings, and although MariaDB does by default, if the MariaDB server has enabled the [ANSI_QUOTES_SQL](/kb/en/sql-mode/#ansi_quotes) [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode/), double quotes will be treated as being used for [identifiers](/sql-statements-structure/sql-language-structure/identifier-names/) instead of strings.
 
 Strings that are next to each other are automatically concatenated. For example:
 
@@ -33,7 +33,7 @@ and
 
 are equivalent.
 
-The `\` (backslash character) is used to escape characters (unless the [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode) hasn't been set to [NO_BACKSLASH_ESCAPES](/kb/en/sql-mode/#no_backslash_escapes)). For example:
+The `\` (backslash character) is used to escape characters (unless the [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode/) hasn't been set to [NO_BACKSLASH_ESCAPES](/kb/en/sql-mode/#no_backslash_escapes)). For example:
 
 ```sql
 'MariaDB's new features'
@@ -85,7 +85,7 @@ There are other escape sequences also. Here is a full list:
 <tr><td><code>\_</code></td><td>A “_” character. See note following the table.</td></tr>
 </tbody></table>
 
-Escaping the `%` and `_` characters can be necessary when using the [LIKE](/built-in-functions/string-functions/like) operator, which treats them as special characters.
+Escaping the `%` and `_` characters can be necessary when using the [LIKE](/built-in-functions/string-functions/like/) operator, which treats them as special characters.
 
 The ASCII 26 character (`\Z`) needs to be escaped when included in a batch file which needs to be executed in Windows. The reason is that ASCII 26, in Windows, is the end of file (EOF).
 

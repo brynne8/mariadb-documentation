@@ -2,9 +2,9 @@
 
 ##### MariaDB starting with [10.5.2](/kb/en/mariadb-1052-release-notes/)
 
-The `events_statements_summary_by_program` table, along with many other new [Performance Schema tables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/list-of-performance-schema-tables), was added in [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/).
+The `events_statements_summary_by_program` table, along with many other new [Performance Schema tables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/list-of-performance-schema-tables/), was added in [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/).
 
-The [Performance Schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema) events_statements_summary_by_program table contains the following fields.
+The [Performance Schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/) events_statements_summary_by_program table contains the following fields.
 
 ```sql
 DESC performance_schema.events_statements_summary_by_program;

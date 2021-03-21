@@ -2,11 +2,11 @@
 
 ### How to Upgrade
 
-For Windows, see [Upgrading MariaDB on Windows](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-mariadb-on-windows) instead.
+For Windows, see [Upgrading MariaDB on Windows](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-mariadb-on-windows/) instead.
 
-For MariaDB Galera Cluster, see [Upgrading from MariaDB 10.2 to MariaDB 10.3 with Galera Cluster](/replication/galera-cluster/upgrading-galera-cluster/upgrading-from-mariadb-102-to-mariadb-103-with-galera-cluster) instead.
+For MariaDB Galera Cluster, see [Upgrading from MariaDB 10.2 to MariaDB 10.3 with Galera Cluster](/replication/galera-cluster/upgrading-galera-cluster/upgrading-from-mariadb-102-to-mariadb-103-with-galera-cluster/) instead.
 
-Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup).
+Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/).
 
 The suggested upgrade procedure is:
 
@@ -15,7 +15,7 @@ The suggested upgrade procedure is:
 </li><li>On RHEL, CentOS, Fedora, and other similar Linux distributions, see [Updating the MariaDB YUM repository to a New Major Release](/kb/en/yum/#updating-the-mariadb-yum-repository-to-a-new-major-release) for more information.
 </li><li>On SLES, OpenSUSE, and other similar Linux distributions, see [Updating the MariaDB ZYpp repository to a New Major Release](/kb/en/installing-mariadb-with-zypper/#updating-the-mariadb-zypp-repository-to-a-new-major-release) for more information.
 </li></ul>
-2 [Stop MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically).
+2 [Stop MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically/).
 3 Uninstall the old version of MariaDB.
 <ul start="1"><li>On Debian, Ubuntu, and other similar Linux distributions, execute the following: <br>
 <code class="fixed" style="white-space:pre-wrap">sudo apt-get remove mariadb-server</code>
@@ -29,11 +29,11 @@ The suggested upgrade procedure is:
 </li><li>On RHEL, CentOS, Fedora, and other similar Linux distributions, see [Installing MariaDB Packages with YUM](/kb/en/yum/#installing-mariadb-packages-with-yum) for more information.
 </li><li>On SLES, OpenSUSE, and other similar Linux distributions, see [Installing MariaDB Packages with ZYpp](/kb/en/installing-mariadb-with-zypper/#installing-mariadb-packages-with-zypp) for more information.
 </li></ul>
-5 Make any desired changes to configuration options in [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files), such as `my.cnf`. This includes removing any options that are no longer supported.
-6 [Start MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically).
-7 Run [mysql_upgrade](/sql-statements-structure/sql-statements/table-statements/mysql_upgrade).
+5 Make any desired changes to configuration options in [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/), such as `my.cnf`. This includes removing any options that are no longer supported.
+6 [Start MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically/).
+7 Run [mysql_upgrade](/sql-statements-structure/sql-statements/table-statements/mysql_upgrade/).
 <ul start="1"><li>`mysql_upgrade` does two things:
-<ol start="1"><li>Ensures that the system tables in the [mysq](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables)l database are fully compatible with the new version.
+<ol start="1"><li>Ensures that the system tables in the [mysq](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/)l database are fully compatible with the new version.
 </li><li>Does a very quick check of all tables and marks them as compatible with the new version of MariaDB .
 </li></ol>
 </li></ul>
@@ -53,7 +53,7 @@ On most servers upgrading from 10.2 should be painless. However, there are some 
 
 #### Options That Have Been Removed or Renamed
 
-The following options should be removed or renamed if you use them in your [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files):
+The following options should be removed or renamed if you use them in your [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/):
 
 <table><tbody><tr><th>Option</th><th>Reason</th></tr>
 <tr><td><a href="/kb/en/innodb-system-variables/#innodb_buffer_pool_populate">innodb_buffer_pool_populate</a></td><td>Used in XtraDB-only</td></tr>
@@ -88,7 +88,7 @@ The following options should be removed or renamed if you use them in your [opti
 
 #### Reserved Words
 
-- New [reserved words](/sql-statements-structure/sql-language-structure/reserved-words): EXCEPT and INTERSECT. These can no longer be used as [identifiers](/sql-statements-structure/sql-language-structure/identifier-names) without being quoted.
+- New [reserved words](/sql-statements-structure/sql-language-structure/reserved-words/): EXCEPT and INTERSECT. These can no longer be used as [identifiers](/sql-statements-structure/sql-language-structure/identifier-names/) without being quoted.
 
 #### SQL_MODE=ORACLE
 
@@ -101,7 +101,7 @@ The following options should be removed or renamed if you use them in your [opti
 
 #### mysqldump
 
-- [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump) in [MariaDB 10.3](/kb/en/what-is-mariadb-103/) includes logic to cater for the [mysql.transaction_registry table](/kb/en/mysqltransaction_registry-table/). `mysqldump` from an earlier MariaDB release cannot be used on [MariaDB 10.3](/kb/en/what-is-mariadb-103/) and beyond.
+- [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump/) in [MariaDB 10.3](/kb/en/what-is-mariadb-103/) includes logic to cater for the [mysql.transaction_registry table](/kb/en/mysqltransaction_registry-table/). `mysqldump` from an earlier MariaDB release cannot be used on [MariaDB 10.3](/kb/en/what-is-mariadb-103/) and beyond.
 
 #### MariaDB Backup and Percona XtraBackup
 
@@ -109,19 +109,19 @@ The following options should be removed or renamed if you use them in your [opti
 
 #### Privileges
 
-- If a user has the [SUPER privilege](/sql-statements-structure/sql-statements/account-management-sql-commands/grant) but not the `DELETE HISTORY` privilege, running [mysql_upgrade](/sql-statements-structure/sql-statements/table-statements/mysql_upgrade) will grant `DELETE HISTORY` as well.
+- If a user has the [SUPER privilege](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/) but not the `DELETE HISTORY` privilege, running [mysql_upgrade](/sql-statements-structure/sql-statements/table-statements/mysql_upgrade/) will grant `DELETE HISTORY` as well.
 
 ### Major New Features To Consider
 
 You might consider using the following major new features in [MariaDB 10.3](/kb/en/what-is-mariadb-103/):
 
-- [System-versioned tables](/sql-statements-structure/temporal-tables/system-versioned-tables)
-- [Sequences](/sql-statements-structure/sequences)
-- See also [System Variables Added in MariaDB 10.3](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-103).
+- [System-versioned tables](/sql-statements-structure/temporal-tables/system-versioned-tables/)
+- [Sequences](/sql-statements-structure/sequences/)
+- See also [System Variables Added in MariaDB 10.3](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-103/).
 
 ### See Also
 
 - [The features in MariaDB 10.3](/kb/en/what-is-mariadb-103/)
-- [Upgrading from MariaDB 10.2 to MariaDB 10.3 with Galera Cluster](/replication/galera-cluster/upgrading-galera-cluster/upgrading-from-mariadb-102-to-mariadb-103-with-galera-cluster)
-- [Upgrading from MariaDB 10.1 to MariaDB 10.2](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-from-mariadb-101-to-mariadb-102)
-- [Upgrading from MariaDB 10.0 to MariaDB 10.1](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-from-mariadb-100-to-mariadb-101)
+- [Upgrading from MariaDB 10.2 to MariaDB 10.3 with Galera Cluster](/replication/galera-cluster/upgrading-galera-cluster/upgrading-from-mariadb-102-to-mariadb-103-with-galera-cluster/)
+- [Upgrading from MariaDB 10.1 to MariaDB 10.2](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-from-mariadb-101-to-mariadb-102/)
+- [Upgrading from MariaDB 10.0 to MariaDB 10.1](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-from-mariadb-100-to-mariadb-101/)

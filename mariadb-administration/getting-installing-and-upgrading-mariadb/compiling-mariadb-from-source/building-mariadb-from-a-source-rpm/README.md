@@ -1,6 +1,6 @@
 # Building MariaDB from a Source RPM
 
-For some distributions you can build MariaDB from a source RPM. (See also [Why Source RPMs (SRPMs) Aren't Packaged For Some Platforms](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/why-source-rpms-srpms-arent-packaged-for-some-platforms)).
+For some distributions you can build MariaDB from a source RPM. (See also [Why Source RPMs (SRPMs) Aren't Packaged For Some Platforms](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/why-source-rpms-srpms-arent-packaged-for-some-platforms/)).
 
 You can build it as follows:
 

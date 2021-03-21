@@ -1,8 +1,8 @@
 # CONNECT System Variables
 
-This page documents system variables related to the [CONNECT storage engine](/columns-storage-engines-and-plugins/storage-engines/connect). See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables) for a complete list of system variables and instructions on setting them.
+This page documents system variables related to the [CONNECT storage engine](/columns-storage-engines-and-plugins/storage-engines/connect/). See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables/) for a complete list of system variables and instructions on setting them.
 
-See also the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables).
+See also the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables/).
 
 #### `connect_class_path`
 
@@ -29,7 +29,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `connect_conv_size`
 
-- <strong>Description:</strong> The size of the [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar) created when converting from a [TEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/text) type. See [connect_type_conv](#connect_type_conv).
+- <strong>Description:</strong> The size of the [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar/) created when converting from a [TEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/text/) type. See [connect_type_conv](#connect_type_conv).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--connect-conv-size=#</code>
 - <strong>Scope:</strong> Global, Session (&gt; [MariaDB 10.0.17](/kb/en/mariadb-10017-release-notes/)), Global (&lt;= [MariaDB 10.0.16](/kb/en/mariadb-10016-release-notes/))
 - <strong>Dynamic:</strong> Yes
@@ -70,7 +70,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `connect_enable_mongo`
 
-- <strong>Description:</strong> Enable the [Mongo table type](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-mongo-table-type).
+- <strong>Description:</strong> Enable the [Mongo table type](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-mongo-table-type/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--connect-enable-mongo={0|1}</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong>
@@ -179,7 +179,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `connect_type_conv`
 
-- <strong>Description:</strong> Determines the handling of [TEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/text) columns.
+- <strong>Description:</strong> Determines the handling of [TEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/text/) columns.
 <ul start="1"><li>`NO`: The default until Connect 1.06.005, no conversion takes place, and a TYPE_ERROR is returned, resulting in a “not supported” message.
 </li><li>`YES`: The default from Connect 1.06.006. The column is internally converted to a column declared as VARCHAR(n), `n` being the value of [connect_conv_size](#connect_conv_size).
 </li><li>`FORCE` (&gt;= Connect 1.06.006): Also convert ODBC blob columns to TYPE_STRING.
@@ -236,7 +236,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 </li><li>`STMT` or `64`: Currently executing statement
 </li><li>`HANDLER` or `128`: Creating and dropping CONNECT handlers 
 </li><li>`BLOCK` or `256`: Creating and dropping CONNECT objects
-</li><li>`MONGO` or `512`: Mongo and REST (from [Connect 1.06.0010](/columns-storage-engines-and-plugins/storage-engines/connect)) tracing
+</li><li>`MONGO` or `512`: Mongo and REST (from [Connect 1.06.0010](/columns-storage-engines-and-plugins/storage-engines/connect/)) tracing
 </li></ul>
 - For example: 
 <ul><li>`set global connect_xtrace=0;                <em> No trace</em>`

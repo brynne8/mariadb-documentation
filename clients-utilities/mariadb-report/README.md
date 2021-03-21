@@ -8,4 +8,4 @@ From [MariaDB 10.4.6](/kb/en/mariadb-1046-release-notes/), `mariadb-report` is a
 
 From [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/), `mariadb-report` is the name of the binary, with `mysqlreport` a symlink .
 
-See [mysqlreport](/clients-utilities/mysqlreport) for details.
+See [mysqlreport](/clients-utilities/mysqlreport/) for details.

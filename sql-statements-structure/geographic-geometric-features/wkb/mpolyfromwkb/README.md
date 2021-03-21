@@ -9,7 +9,7 @@ MultiPolygonFromWKB(wkb[,srid])
 
 ## Description
 
-Constructs a [MULTIPOLYGON](/sql-statements-structure/geographic-geometric-features/geometry-constructors/multipolygon) value using its [WKB](/sql-statements-structure/geographic-geometric-features/wkb/well-known-binary-wkb-format)  representation and [SRID](/kb/en/srid/).
+Constructs a [MULTIPOLYGON](/sql-statements-structure/geographic-geometric-features/geometry-constructors/multipolygon/) value using its [WKB](/sql-statements-structure/geographic-geometric-features/wkb/well-known-binary-wkb-format/)  representation and [SRID](/kb/en/srid/).
 
 `MPolyFromWKB()` and `MultiPolygonFromWKB()` are synonyms.
 

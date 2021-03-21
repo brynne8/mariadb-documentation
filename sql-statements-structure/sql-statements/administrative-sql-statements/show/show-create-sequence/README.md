@@ -12,7 +12,7 @@ SHOW CREATE SEQUENCE sequence_name;
 
 ## Description
 
-Shows the [CREATE SEQUENCE](/sql-statements-structure/sequences/create-sequence) statement that created the given sequence. The statement requires the `SELECT` privilege for the table.
+Shows the [CREATE SEQUENCE](/sql-statements-structure/sequences/create-sequence/) statement that created the given sequence. The statement requires the `SELECT` privilege for the table.
 
 ## Example
 
@@ -28,7 +28,7 @@ Create Table: CREATE SEQUENCE `s1` start with 50 minvalue 1 maxvalue 92233720368
 ## Notes
 
 If you want to see the underlying table structure used for the `SEQUENCE`
-you can use [SHOW CREATE TABLE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-table) on the `SEQUENCE`. You can also use `SELECT` to read the current recorded state of the `SEQUENCE`:
+you can use [SHOW CREATE TABLE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-table/) on the `SEQUENCE`. You can also use `SELECT` to read the current recorded state of the `SEQUENCE`:
 
 ```sql
 SHOW CREATE TABLE s1\G
@@ -61,5 +61,5 @@ next_not_cached_value: 50
 
 ## See Also
 
-- [CREATE SEQUENCE](/sql-statements-structure/sequences/create-sequence)
-- [ALTER SEQUENCE](/sql-statements-structure/sequences/alter-sequence)
+- [CREATE SEQUENCE](/sql-statements-structure/sequences/create-sequence/)
+- [ALTER SEQUENCE](/sql-statements-structure/sequences/alter-sequence/)

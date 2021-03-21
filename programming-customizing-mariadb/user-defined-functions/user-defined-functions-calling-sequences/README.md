@@ -1,6 +1,6 @@
 # User-Defined Functions Calling Sequences
 
-The functions described in [Creating User-defined Functions](/programming-customizing-mariadb/user-defined-functions/creating-user-defined-functions) are expanded on this page. They are declared as follows:
+The functions described in [Creating User-defined Functions](/programming-customizing-mariadb/user-defined-functions/creating-user-defined-functions/) are expanded on this page. They are declared as follows:
 
 ## Simple Functions
 
@@ -107,6 +107,6 @@ void x_remove(UDF_INIT* initid, UDF_ARGS* args,
                char* is_null, char *error );
 ```
 
-It adds more efficient support of aggregate UDFs as [window functions](/built-in-functions/special-functions/window-functions). <em>x_remove()</em> should "subtract" the row (reverse <em>x_add()</em>). In [MariaDB 10.4](/kb/en/what-is-mariadb-104/) aggregate UDFs will work as WINDOW functions without <em>x_remove()</em> but it will not be so efficient.
+It adds more efficient support of aggregate UDFs as [window functions](/built-in-functions/special-functions/window-functions/). <em>x_remove()</em> should "subtract" the row (reverse <em>x_add()</em>). In [MariaDB 10.4](/kb/en/what-is-mariadb-104/) aggregate UDFs will work as WINDOW functions without <em>x_remove()</em> but it will not be so efficient.
 
 If <em>x_remove()</em> supported (defined) detected automatically.

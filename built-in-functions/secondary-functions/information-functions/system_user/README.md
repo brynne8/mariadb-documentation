@@ -8,4 +8,4 @@ SYSTEM_USER()
 
 ## Description
 
-SYSTEM_USER() is a synonym for [USER()](/built-in-functions/secondary-functions/information-functions/user).
+SYSTEM_USER() is a synonym for [USER()](/built-in-functions/secondary-functions/information-functions/user/).

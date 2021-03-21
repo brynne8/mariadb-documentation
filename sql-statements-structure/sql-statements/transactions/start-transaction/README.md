@@ -19,7 +19,7 @@ transaction_property:
 The <code class="highlight fixed" style="white-space:pre-wrap">START TRANSACTION</code> or <code class="highlight fixed" style="white-space:pre-wrap">BEGIN</code> statement
 begins a new transaction. [COMMIT](/kb/en/transactions-commit-statement/) commits the current
 transaction, making its changes permanent. [ROLLBACK](/kb/en/rollback-statement/) rolls
-back the current transaction, canceling its changes. The [SET](/programming-customizing-mariadb/programmatic-compound-statements/set-variable)
+back the current transaction, canceling its changes. The [SET](/programming-customizing-mariadb/programmatic-compound-statements/set-variable/)
 [autocommit](/kb/en/server-system-variables/#autocommit) statement disables or enables the default autocommit mode for the current session.
 
 START TRANSACTION and SET autocommit = 1 implicitly commit the current transaction, if any.
@@ -49,7 +49,7 @@ The access mode specifies whether the transaction is allowed to write data or no
 
 It is not permitted to specify both `READ WRITE` and `READ ONLY` in the same statement.
 
-`READ WRITE` and `READ ONLY` can also be specified in the [SET TRANSACTION](/sql-statements-structure/sql-statements/transactions/set-transaction) statement, in which case the specified mode is valid for all sessions, or for all subsequent transaction used by the current session.
+`READ WRITE` and `READ ONLY` can also be specified in the [SET TRANSACTION](/sql-statements-structure/sql-statements/transactions/set-transaction/) statement, in which case the specified mode is valid for all sessions, or for all subsequent transaction used by the current session.
 
 ### autocommit
 
@@ -70,7 +70,7 @@ DDL statements (CREATE, ALTER, DROP) and administrative statements (`FLUSH`, `RE
 
 Transactions cannot be used in Stored Functions or Triggers. In Stored Procedures and Events BEGIN is not allowed, so you should use START TRANSACTION instead.
 
-A transaction acquires a [metadata lock](/sql-statements-structure/sql-statements/transactions/metadata-locking) on every table it accesses to prevent other connections from altering their structure. The lock is released at the end of the transaction. This happens even with non-transactional storage engines (like [MEMORY](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/memory-storage-engine) or [CONNECT](/columns-storage-engines-and-plugins/storage-engines/connect)), so it makes sense to use transactions with non-transactional tables.
+A transaction acquires a [metadata lock](/sql-statements-structure/sql-statements/transactions/metadata-locking/) on every table it accesses to prevent other connections from altering their structure. The lock is released at the end of the transaction. This happens even with non-transactional storage engines (like [MEMORY](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/memory-storage-engine/) or [CONNECT](/columns-storage-engines-and-plugins/storage-engines/connect/)), so it makes sense to use transactions with non-transactional tables.
 
 ### in_transaction
 
@@ -82,11 +82,11 @@ It is a session-only, read-only variable that returns `1` inside a transaction, 
 
 ### WITH CONSISTENT SNAPSHOT
 
-The `WITH CONSISTENT SNAPSHOT` option starts a consistent read for storage engines such as [XtraDB and InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) that can do so, the same as if a START TRANSACTION followed by a SELECT from any InnoDB table was issued.
+The `WITH CONSISTENT SNAPSHOT` option starts a consistent read for storage engines such as [XtraDB and InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) that can do so, the same as if a START TRANSACTION followed by a SELECT from any InnoDB table was issued.
 
 ##### MariaDB starting with [5.3](/kb/en/what-is-mariadb-53/)
 
-[MariaDB 5.3](/kb/en/what-is-mariadb-53/) introduced enhancements to this feature. See [Enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT](/replication/standard-replication/enhancements-for-start-transaction-with-consistent-snapshot).
+[MariaDB 5.3](/kb/en/what-is-mariadb-53/) introduced enhancements to this feature. See [Enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT](/replication/standard-replication/enhancements-for-start-transaction-with-consistent-snapshot/).
 
 ## Examples
 
@@ -99,5 +99,5 @@ COMMIT;
 
 ## See Also
 
-- [Enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT](/replication/standard-replication/enhancements-for-start-transaction-with-consistent-snapshot)
-- [MyRocks and START TRANSACTION WITH CONSISTENT SNAPSHOT](/columns-storage-engines-and-plugins/storage-engines/myrocks/myrocks-and-start-transaction-with-consistent-snapshot)
+- [Enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT](/replication/standard-replication/enhancements-for-start-transaction-with-consistent-snapshot/)
+- [MyRocks and START TRANSACTION WITH CONSISTENT SNAPSHOT](/columns-storage-engines-and-plugins/storage-engines/myrocks/myrocks-and-start-transaction-with-consistent-snapshot/)

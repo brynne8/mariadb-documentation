@@ -16,10 +16,10 @@ both. However, `mysqldump` can also be used to generate files in CSV, other
 delimited text, or XML format.
 
 If you are doing a backup on the server and your tables all are [MyISAM](/kb/en/myisam/) tables,
-consider using [mysqlhotcopy](/clients-utilities/backup-restore-and-import-clients/mysqlhotcopy) instead because it can accomplish faster
+consider using [mysqlhotcopy](/clients-utilities/backup-restore-and-import-clients/mysqlhotcopy/) instead because it can accomplish faster
 backups and faster restores.
 
-mysqldump dumps triggers along with tables, as these are part of the table definition. However, [stored procedures](/programming-customizing-mariadb/stored-routines/stored-procedures), [views](/programming-customizing-mariadb/views), and [events](/programming-customizing-mariadb/triggers-events/event-scheduler/events) are not, and need extra parameters to be recreated explicitly (for example, `--routines` and `--events`). [Procedures](/programming-customizing-mariadb/stored-routines/stored-procedures) and [functions](functions) are however also part of the system tables (for example [mysql.proc](/kb/en/mysqlproc-table/)).
+mysqldump dumps triggers along with tables, as these are part of the table definition. However, [stored procedures](/programming-customizing-mariadb/stored-routines/stored-procedures/), [views](/programming-customizing-mariadb/views/), and [events](/programming-customizing-mariadb/triggers-events/event-scheduler/events/) are not, and need extra parameters to be recreated explicitly (for example, `--routines` and `--events`). [Procedures](/programming-customizing-mariadb/stored-routines/stored-procedures/) and [functions](functions) are however also part of the system tables (for example [mysql.proc](/kb/en/mysqlproc-table/)).
 
 `mysqldump` supports the [enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT](/kb/en/enhancements-for-start-transaction-with-consistent-snapshot/#mysqldump).
 
@@ -262,7 +262,7 @@ An alternative to specify the hexadecimal value of a character. For example, the
 
 ### Option Files
 
-In addition to reading options from the command-line, `mysqldump` can also read options from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files). If an unknown option is provided to `mysqldump` in an option file, then it is ignored.
+In addition to reading options from the command-line, `mysqldump` can also read options from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/). If an unknown option is provided to `mysqldump` in an option file, then it is ignored.
 
 The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
 
@@ -278,7 +278,7 @@ In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, `mysqldump` is linked 
 
 #### Option Groups
 
-`mysqldump` reads options from the following [option groups](/kb/en/configuring-mariadb-with-option-files/#option-groups) from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files):
+`mysqldump` reads options from the following [option groups](/kb/en/configuring-mariadb-with-option-files/#option-groups) from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/):
 
 <table><tbody><tr><th>Group</th><th>Description</th></tr>
 <tr><td><code>[mysqldump]</code></td><td>&nbsp;Options read by <code>mysqldump</code>, which includes both MariaDB Server and MySQL Server.</td></tr>
@@ -350,7 +350,7 @@ Collation="latin1_swedish_ci" Create_options="" Comment="" />
 
 ### Restoring
 
-To restore a backup created with mysqldump, use the [mysql client](/clients-utilities/mysql-client/mysql-command-line-client) to import the dump, for example:
+To restore a backup created with mysqldump, use the [mysql client](/clients-utilities/mysql-client/mysql-command-line-client/) to import the dump, for example:
 
 ```sql
 mysql db_name < backup-file.sql
@@ -494,7 +494,7 @@ noticeable, even with many updates.
 
 For point-in-time recovery (also known as “roll-forward,” when you need to
 restore an old backup and replay the changes that happened since that backup),
-it is often useful to rotate the [binary log](/mariadb-administration/server-monitoring-logs/binary-log) or at least know the binary log coordinates to which the dump corresponds:
+it is often useful to rotate the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) or at least know the binary log coordinates to which the dump corresponds:
 
 ```sql
 shell> mysqldump --all-databases --master-data=2 > all_databases.sql
@@ -513,6 +513,6 @@ stored using the InnoDB storage engine.
 
 ## See Also
 
-- [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup)
+- [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/)
 - [MariaDB Enterprise Backup](https://mariadb.com/docs/usage/mariadb-enterprise-backup/)
 - [Upgrading to a newer major version of MariaDB](https://www.youtube.com/watch?v=1kLIXN2DoEo) (video)

@@ -6,9 +6,9 @@ PBXT is no longer maintained, and is not part of [MariaDB 5.5](/kb/en/what-is-ma
 
 This page documents system variables related to the [PrimeBase XT  storage engine (PBXT)](/kb/en/pbxt/). PBXT is no longer maintained, and is not part of [MariaDB 5.5](/kb/en/what-is-mariadb-55/) or later.
 
-See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables) for a complete list of system variables and instructions on setting them.
+See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables/) for a complete list of system variables and instructions on setting them.
 
-See also the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables).
+See also the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables/).
 
 Variables that specify a number of bytes may include a unit indication after
 the value. For example: 100KB, 64MB, etc. There should be no space between the

@@ -9,8 +9,8 @@ SHOW [GLOBAL | SESSION] VARIABLES
 
 ## Description
 
-`SHOW VARIABLES` shows the values of MariaDB [system variables](/replication/optimization-and-tuning/system-variables/server-system-variables). This
-information also can be obtained using the [mysqladmin](/clients-utilities/mysqladmin) variables
+`SHOW VARIABLES` shows the values of MariaDB [system variables](/replication/optimization-and-tuning/system-variables/server-system-variables/). This
+information also can be obtained using the [mysqladmin](/clients-utilities/mysqladmin/) variables
 command. The `LIKE` clause, if present, indicates which variable names
 to match. The `WHERE` clause can be given to select rows using more
 general conditions.
@@ -41,11 +41,11 @@ be matched. Strictly speaking, because "`_`" is a wildcard that matches
 any single character, you should escape it as "`\_`" to match it
 literally. In practice, this is rarely necessary.
 
-The <code class="highlight fixed" style="white-space:pre-wrap">WHERE</code> and <code class="highlight fixed" style="white-space:pre-wrap">LIKE</code> clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](/sql-statements-structure/sql-statements/administrative-sql-statements/show/extended-show).
+The <code class="highlight fixed" style="white-space:pre-wrap">WHERE</code> and <code class="highlight fixed" style="white-space:pre-wrap">LIKE</code> clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](/sql-statements-structure/sql-statements/administrative-sql-statements/show/extended-show/).
 
-See [SET](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set) for information on setting server system variables.
+See [SET](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set/) for information on setting server system variables.
 
-See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables) for a list of all the variables that can be set.
+See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables/) for a list of all the variables that can be set.
 
 You can also see the server variables by querying the [Information Schema GLOBAL_VARIABLES and SESSION_VARIABLES](/kb/en/information-schema-global_variables-and-session_variables-tables/) tables.
 

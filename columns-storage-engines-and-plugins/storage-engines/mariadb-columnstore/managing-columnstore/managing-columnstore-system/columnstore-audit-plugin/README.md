@@ -2,7 +2,7 @@
 
 # Introduction
 
-MariaDB server includes an optional [Audit Plugin](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin) that enables logging and tracking of all user access and statements. This is included and can be enabled for ColumnStore
+MariaDB server includes an optional [Audit Plugin](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/) that enables logging and tracking of all user access and statements. This is included and can be enabled for ColumnStore
 
 # Installation
 
@@ -22,7 +22,7 @@ $ vi /usr/local/mariadb/columnstore/mysql/my.cnf
 plugin_load=server_audit=server_audit.so 
 ```
 
-For more details see the [audit plugin installation guide](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/mariadb-audit-plugin-installation)
+For more details see the [audit plugin installation guide](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/mariadb-audit-plugin-installation/)
 
 # Enabling the audit plugin
 
@@ -53,4 +53,4 @@ To have the log entries written to syslog the global variable server_audit_outpu
 Sep 14 17:46:51 centos mysql-server_auditing: columnstore-1 centos,root,localhost,11,117,QUERY,loans,'SELECT grade, AVG(loan_amnt) avg,FROM loanstats GROUP BY grade ORDER BY grade',0
 ```
 
-For additional configuration and customization options see the [Audit Plugin](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin) documentation.
+For additional configuration and customization options see the [Audit Plugin](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/) documentation.

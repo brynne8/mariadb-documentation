@@ -8,7 +8,7 @@ LONGBLOB
 
 ## Description
 
-A [BLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/blob) column with a 
+A [BLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/blob/) column with a 
 maximum length of 4,294,967,295 bytes or 4GB (2<sup>32</sup> - 1). The effective maximum length of LONGBLOB columns depends on the
 configured maximum packet size in the client/server protocol and
 available memory. Each LONGBLOB value is stored using a four-byte
@@ -22,7 +22,7 @@ In [Oracle mode from MariaDB 10.3](/kb/en/sql_modeoracle-from-mariadb-103/#synon
 
 ## See Also
 
-- [BLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/blob)
-- [BLOB and TEXT Data Types](/columns-storage-engines-and-plugins/data-types/string-data-types/blob-and-text-data-types)
-- [Data Type Storage Requirements](/columns-storage-engines-and-plugins/data-types/data-type-storage-requirements)
+- [BLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/blob/)
+- [BLOB and TEXT Data Types](/columns-storage-engines-and-plugins/data-types/string-data-types/blob-and-text-data-types/)
+- [Data Type Storage Requirements](/columns-storage-engines-and-plugins/data-types/data-type-storage-requirements/)
 - [Oracle mode from MariaDB 10.3](/kb/en/sql_modeoracle-from-mariadb-103/#synonyms-for-basic-sql-types)

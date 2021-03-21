@@ -18,7 +18,7 @@ To enable the slow query log, set the [slow_query_log](/kb/en/server-system-vari
 SET GLOBAL slow_query_log=1;
 ```
 
-It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]
@@ -36,7 +36,7 @@ One way to configure the slow query log filename is to set the [slow_query_log_f
 SET GLOBAL slow_query_log_file='mariadb-slow.log';
 ```
 
-It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]
@@ -56,7 +56,7 @@ slow_query_log
 slow_query_log_file=/var/log/mysql/mariadb-slow.log
 ```
 
-Another way to configure the slow query log filename is to set the [log-basename](/kb/en/mysqld-options/#-log-basename) option, which configures MariaDB to use a common prefix for all log files (e.g. slow query log, [general query log](/mariadb-administration/server-monitoring-logs/general-query-log), [error log](/mariadb-administration/server-monitoring-logs/error-log), [binary logs](/mariadb-administration/server-monitoring-logs/binary-log), etc.). The slow query log filename will be built by adding `-slow.log` to this prefix. This option cannot be set dynamically. It can be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+Another way to configure the slow query log filename is to set the [log-basename](/kb/en/mysqld-options/#-log-basename) option, which configures MariaDB to use a common prefix for all log files (e.g. slow query log, [general query log](/mariadb-administration/server-monitoring-logs/general-query-log/), [error log](/mariadb-administration/server-monitoring-logs/error-log/), [binary logs](/mariadb-administration/server-monitoring-logs/binary-log/), etc.). The slow query log filename will be built by adding `-slow.log` to this prefix. This option cannot be set dynamically. It can be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]
@@ -69,7 +69,7 @@ The [log-basename](/kb/en/mysqld-options/#-log-basename) cannot be an absolute p
 
 ## Choosing the Slow Query Log Output Destination
 
-The slow query log can either be written to a file on disk, or it can be written to the [slow_log](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlslow_log-table) table in the [mysql](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables) database. To choose the slow query log output destination, set the [log_output](/kb/en/server-system-variables/#log_output) system variable.
+The slow query log can either be written to a file on disk, or it can be written to the [slow_log](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlslow_log-table/) table in the [mysql](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database. To choose the slow query log output destination, set the [log_output](/kb/en/server-system-variables/#log_output) system variable.
 
 ### Writing the Slow Query Log to a File
 
@@ -79,7 +79,7 @@ The slow query log is output to a file by default. However, it can be explicitly
 SET GLOBAL log_output='FILE';
 ```
 
-It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]
@@ -91,13 +91,13 @@ slow_query_log_file=slow-queries.log
 
 ### Writing the Slow Query Log to a Table
 
-The slow query log can either be written to the [slow_log](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlslow_log-table) table in the [mysql](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables) database by setting the [log_output](/kb/en/server-system-variables/#log_output) system variable to `TABLE`. It can be changed dynamically with [SET GLOBAL](/kb/en/set/#global-session). For example:
+The slow query log can either be written to the [slow_log](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlslow_log-table/) table in the [mysql](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database by setting the [log_output](/kb/en/server-system-variables/#log_output) system variable to `TABLE`. It can be changed dynamically with [SET GLOBAL](/kb/en/set/#global-session). For example:
 
 ```sql
 SET GLOBAL log_output='TABLE';
 ```
 
-It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]
@@ -127,7 +127,7 @@ last_insert_id: 0
 ...
 ```
 
-See [Writing logs into tables](/mariadb-administration/server-monitoring-logs/writing-logs-into-tables) for more information.
+See [Writing logs into tables](/mariadb-administration/server-monitoring-logs/writing-logs-into-tables/) for more information.
 
 ## Disabling the Slow Query Log for a Session
 
@@ -139,7 +139,7 @@ SET SESSION slow_query_log=0;
 
 ## Disabling the Slow Query Log for Specific Statements
 
-In [MariaDB 10.3.1](/kb/en/mariadb-1031-release-notes/) and later, it is possible to disable logging to the slow query log for specific types of statements by setting the [log_slow_disabled_statements](/kb/en/server-system-variables/#log_slow_disabled_statements) system variable. This option cannot be set dynamically. It can be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+In [MariaDB 10.3.1](/kb/en/mariadb-1031-release-notes/) and later, it is possible to disable logging to the slow query log for specific types of statements by setting the [log_slow_disabled_statements](/kb/en/server-system-variables/#log_slow_disabled_statements) system variable. This option cannot be set dynamically. It can be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]
@@ -158,7 +158,7 @@ The time that defines a slow query can be configured by setting the [long_query_
 SET GLOBAL long_query_time=5.0;
 ```
 
-It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]
@@ -177,7 +177,7 @@ It can be beneficial to log queries that don't use indexes to the slow query log
 SET GLOBAL log_queries_not_using_indexes=ON;
 ```
 
-It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]
@@ -199,7 +199,7 @@ It can be beneficial to log queries that examine a minimum number of rows. The s
 SET GLOBAL min_examined_row_limit=100000;
 ```
 
-It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]
@@ -213,7 +213,7 @@ min_examined_row_limit=100000
 
 ## Logging Slow Administrative Statements
 
-By default, the Slow Query Log only logs slow non-administrative statements.  To log administrative statements, set the [log_slow_admin_statements](/kb/en/server-system-variables/#log_slow_admin_statements) system variable.  The Slow Query Log considers the following statements administrative: [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table), [ANALYZE TABLE](/sql-statements-structure/sql-statements/table-statements/analyze-table), [CHECK TABLE](/kb/en/sql-commands-check-table/), [CREATE INDEX](/sql-statements-structure/sql-statements/data-definition/create/create-index), [DROP INDEX](/sql-statements-structure/sql-statements/data-definition/drop/drop-index), [OPTIMIZE TABLE](/replication/optimization-and-tuning/optimizing-tables/optimize-table), and [REPAIR TABLE](/sql-statements-structure/sql-statements/table-statements/repair-table).  In [MariaDB 10.3](/kb/en/what-is-mariadb-103/) and later, this also includes [ALTER SEQUENCE](/sql-statements-structure/sequences/alter-sequence) statements.
+By default, the Slow Query Log only logs slow non-administrative statements.  To log administrative statements, set the [log_slow_admin_statements](/kb/en/server-system-variables/#log_slow_admin_statements) system variable.  The Slow Query Log considers the following statements administrative: [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/), [ANALYZE TABLE](/sql-statements-structure/sql-statements/table-statements/analyze-table/), [CHECK TABLE](/kb/en/sql-commands-check-table/), [CREATE INDEX](/sql-statements-structure/sql-statements/data-definition/create/create-index/), [DROP INDEX](/sql-statements-structure/sql-statements/data-definition/drop/drop-index/), [OPTIMIZE TABLE](/replication/optimization-and-tuning/optimizing-tables/optimize-table/), and [REPAIR TABLE](/sql-statements-structure/sql-statements/table-statements/repair-table/).  In [MariaDB 10.3](/kb/en/what-is-mariadb-103/) and later, this also includes [ALTER SEQUENCE](/sql-statements-structure/sequences/alter-sequence/) statements.
 
 In [MariaDB 10.1](/kb/en/what-is-mariadb-101/) and later, you can dynamically enable this feature using a [SET GLOBAL](/kb/en/set/#global-session) statement.  For example:
 
@@ -221,7 +221,7 @@ In [MariaDB 10.1](/kb/en/what-is-mariadb-101/) and later, you can dynamically en
 SET GLOBAL log_slow_admin_statements=ON;
 ```
 
-It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]
@@ -241,7 +241,7 @@ It is possible to enable logging to the slow query log for queries that meet spe
 SET GLOBAL log_slow_filter='filesort,filesort_on_disk,tmp_table,tmp_table_on_disk';
 ```
 
-It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]
@@ -261,7 +261,7 @@ The slow query log can create a lot of I/O, so it can be beneficial to throttle 
 SET GLOBAL log_slow_rate_limit=5;
 ```
 
-It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]
@@ -281,7 +281,7 @@ There are a few optional pieces of information that can be included in the slow 
 SET GLOBAL log_slow_verbosity='query_plan,explain';
 ```
 
-It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]
@@ -295,17 +295,17 @@ log_slow_verbosity=query_plan,explain
 
 ##### MariaDB starting with [10.0.5](/kb/en/mariadb-1005-release-notes/)
 
-Starting from [MariaDB 10.0.5](/kb/en/mariadb-1005-release-notes/), it is possible to have [EXPLAIN output printed in the slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log/explain-in-the-slow-query-log).
+Starting from [MariaDB 10.0.5](/kb/en/mariadb-1005-release-notes/), it is possible to have [EXPLAIN output printed in the slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log/explain-in-the-slow-query-log/).
 
 ## Viewing the Slow Query Log
 
-Slow query logs written to file can be viewed with any text editor, or you can use the [mysqldumpslow](/clients-utilities/mysqldumpslow) tool to ease the process by summarizing the information.
+Slow query logs written to file can be viewed with any text editor, or you can use the [mysqldumpslow](/clients-utilities/mysqldumpslow/) tool to ease the process by summarizing the information.
 
-Queries that you find in the log are key queries to try to optimize by constructing a [more efficient query](/replication/optimization-and-tuning/query-optimizations) or by making [better use of indexes](/replication/optimization-and-tuning/optimization-and-indexes).
+Queries that you find in the log are key queries to try to optimize by constructing a [more efficient query](/replication/optimization-and-tuning/query-optimizations/) or by making [better use of indexes](/replication/optimization-and-tuning/optimization-and-indexes/).
 
 For queries that appear in the log that cannot be optimized in the above ways, perhaps because they are simply very large selects, due to slow hardware, or very high lock/cpu/io contention, using shard/clustering/load balancing solutions, better hardware, or stats tables may help to improve these queries.
 
-Slow query logs written to table can be viewed by querying the [slow_log](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlslow_log-table) table.
+Slow query logs written to table can be viewed by querying the [slow_log](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlslow_log-table/) table.
 
 ## Variables Related to the Slow Query Log
 
@@ -323,4 +323,4 @@ Slow query logs written to table can be viewed by querying the [slow_log](/sql-s
 
 ## Rotating the Slow Query Log on Unix and Linux
 
-Unix and Linux distributions offer the [logrotate](https://linux.die.net/man/8/logrotate) utility, which makes it very easy to rotate log files. See [Rotating Logs on Unix and Linux](/mariadb-administration/server-monitoring-logs/rotating-logs-on-unix-and-linux) for more information on how to use this utility to rotate the slow query log.
+Unix and Linux distributions offer the [logrotate](https://linux.die.net/man/8/logrotate) utility, which makes it very easy to rotate log files. See [Rotating Logs on Unix and Linux](/mariadb-administration/server-monitoring-logs/rotating-logs-on-unix-and-linux/) for more information on how to use this utility to rotate the slow query log.

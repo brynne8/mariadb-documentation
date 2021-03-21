@@ -14,7 +14,7 @@ JSON_VALID(value)
 
 Indicates whether the given value is a valid JSON document or not. Returns `1` if valid, `0` if not, and NULL if the argument is NULL.
 
-From [MariaDB 10.4.3](/kb/en/mariadb-1043-release-notes/), the JSON_VALID function is automatically used as a [CHECK constraint](/kb/en/constraint/#check-constraints) for the [JSON data type alias](/columns-storage-engines-and-plugins/data-types/string-data-types/json-data-type) in order to ensure that a valid json document is inserted.
+From [MariaDB 10.4.3](/kb/en/mariadb-1043-release-notes/), the JSON_VALID function is automatically used as a [CHECK constraint](/kb/en/constraint/#check-constraints) for the [JSON data type alias](/columns-storage-engines-and-plugins/data-types/string-data-types/json-data-type/) in order to ensure that a valid json document is inserted.
 
 ## Examples
 

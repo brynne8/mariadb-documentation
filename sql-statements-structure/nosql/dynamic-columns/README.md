@@ -150,7 +150,7 @@ UPDATE t1 SET dyncol_blob=COLUMN_ADD(dyncol_blob, "column_name", "value") WHERE 
 ```
 
 Note: `COLUMN_ADD()` is a regular function (just like
- [CONCAT()](/built-in-functions/string-functions/concat)), hence, in order to update the value in the table
+ [CONCAT()](/built-in-functions/string-functions/concat/)), hence, in order to update the value in the table
  you have to use the <code>UPDATE ... SET dynamic_col=COLUMN_ADD(dynamic_col,
  ....) </code> pattern.
 
@@ -314,7 +314,7 @@ column 'weight', it should be integer" is not possible).  However, each
 particular dynamic column value is stored together with its datatype.
 
 The set of possible datatypes is mostly the same as that used by the SQL
-[CAST](/built-in-functions/string-functions/cast) and [CONVERT](/built-in-functions/string-functions/convert) functions. However, note that there are currently some differences - see [MDEV-597](https://jira.mariadb.org/browse/MDEV-597).
+[CAST](/built-in-functions/string-functions/cast/) and [CONVERT](/built-in-functions/string-functions/convert/) functions. However, note that there are currently some differences - see [MDEV-597](https://jira.mariadb.org/browse/MDEV-597).
 
 <table><tbody><tr><th>type</th><th>dynamic column internal type</th><th>description</th></tr>
 <tr><td><code>BINARY[(N)]</code></td><td><code>DYN_COL_STRING</code></td><td>(variable length string with binary charset)</td></tr>
@@ -358,7 +358,7 @@ See also [Dynamic Columns in MariaDB 10](/kb/en/dynamic-columns-in-mariadb-10/).
 
 ### Client-side API
 
-It is also possible to create or parse dynamic columns blobs on the client side. `libmysql` client library now includes an API for writing/reading dynamic column blobs.  See [dynamic-columns-api](/sql-statements-structure/nosql/dynamic-columns-api) for details.
+It is also possible to create or parse dynamic columns blobs on the client side. `libmysql` client library now includes an API for writing/reading dynamic column blobs.  See [dynamic-columns-api](/sql-statements-structure/nosql/dynamic-columns-api/) for details.
 
 ### Limitations
 

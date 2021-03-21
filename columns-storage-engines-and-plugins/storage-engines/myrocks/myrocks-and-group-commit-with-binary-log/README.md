@@ -1,6 +1,6 @@
 # MyRocks and Group Commit with Binary log
 
-MyRocks supports group commit with the [binary log](/mariadb-administration/server-monitoring-logs/binary-log)  ([MDEV-11934](https://jira.mariadb.org/browse/MDEV-11934)).
+MyRocks supports group commit with the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/)  ([MDEV-11934](https://jira.mariadb.org/browse/MDEV-11934)).
 
 ## Counter Values to Watch
 

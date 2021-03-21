@@ -10,7 +10,7 @@ When setting the <a undefined>thread_pool_size</a> system variable's value at sy
 SET GLOBAL thread_pool_size=32;
 ```
 
-It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]
@@ -35,7 +35,7 @@ When a new client connection is created, its thread group is determined using th
 thread_group_id = connection_id %  thread_pool_size
 ```
 
-The `connection_id` value in the above calculation is the same monotonically increasing number that you can use to identify connections in [SHOW PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist) output or the <a undefined>information_schema.PROCESSLIST</a> table.
+The `connection_id` value in the above calculation is the same monotonically increasing number that you can use to identify connections in [SHOW PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist/) output or the <a undefined>information_schema.PROCESSLIST</a> table.
 
 This calculation should assign client connections to each thread group in a round-robin manner. In general, this should result in an even distribution of client connections among thread groups.
 
@@ -83,7 +83,7 @@ A thread group's <strong>worker thread</strong> can create a new <strong>worker 
 
 A thread group's <strong>worker thread</strong> creates a new thread if all of the following conditions are met:
 
-- The <strong>worker thread</strong> has to wait on some request. For example, it might be waiting on disk I/O, or it might be waiting on a lock, or it might just be waiting for a query that called the [SLEEP()](/built-in-functions/secondary-functions/miscellaneous-functions/sleep) function to finish.
+- The <strong>worker thread</strong> has to wait on some request. For example, it might be waiting on disk I/O, or it might be waiting on a lock, or it might just be waiting for a query that called the [SLEEP()](/built-in-functions/secondary-functions/miscellaneous-functions/sleep/) function to finish.
 - There are no active <strong>worker threads</strong> in the thread group.
 - There are no sleeping <strong>worker threads</strong> in the thread group that the <strong>worker thread</strong> can wake up.
 - And one of the following conditions is also met:
@@ -167,7 +167,7 @@ This stall detection feature is implemented by creating a <strong>timer thread</
 SET GLOBAL thread_pool_stall_limit=300;
 ```
 
-It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]
@@ -201,7 +201,7 @@ You might expect that the thread pool would shutdown one of the <strong>worker t
 SET GLOBAL thread_pool_oversubscribe=10;
 ```
 
-It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]

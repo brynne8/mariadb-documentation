@@ -37,4 +37,4 @@ SELECT ABS(DATE '1994-01-01');
 
 ## See Also
 
-- [SIGN()](/built-in-functions/numeric-functions/sign)
+- [SIGN()](/built-in-functions/numeric-functions/sign/)

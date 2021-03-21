@@ -2,7 +2,7 @@
 
 The binary log contains a record of all changes to the databases, both data and structure. It consists of a set of binary log files and an index.
 
-It is necessary for [replication](/replication), and can also be used to restore data after a backup.
+It is necessary for [replication](/replication/), and can also be used to restore data after a backup.
 
 - [Overview of the Binary Log](/mariadb-administration/server-monitoring-logs/binary-log/overview-of-the-binary-log/) — The binary log contains a record of all changes to the databases
 - [Activating the Binary Log](/mariadb-administration/server-monitoring-logs/binary-log/activating-the-binary-log/) — Activating the Binary Log.

@@ -1,10 +1,10 @@
 # Aria System Variables
 
-This page documents system variables related to the [Aria storage engine](/columns-storage-engines-and-plugins/storage-engines/aria). For options that are not system variables, see [Aria Options](/kb/en/mysqld-options/#aria-storage-engine-options).
+This page documents system variables related to the [Aria storage engine](/columns-storage-engines-and-plugins/storage-engines/aria/). For options that are not system variables, see [Aria Options](/kb/en/mysqld-options/#aria-storage-engine-options).
 
-See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables) for a complete list of system variables and instructions on setting system variables.
+See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables/) for a complete list of system variables and instructions on setting system variables.
 
-Also see the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables).
+Also see the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables/).
 
 #### `aria_block_size`
 
@@ -66,7 +66,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `aria_group_commit`
 
-- <strong>Description:</strong> Specifies Aria [group commit mode](/columns-storage-engines-and-plugins/storage-engines/aria/aria-group-commit).
+- <strong>Description:</strong> Specifies Aria [group commit mode](/columns-storage-engines-and-plugins/storage-engines/aria/aria-group-commit/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--aria_group_commit="value"</code>
 - <strong>Alias:</strong> `maria_group_commit`
 - <strong>Scope:</strong> Global
@@ -89,7 +89,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `aria_group_commit_interval`
 
-- <strong>Description:</strong> Interval between [Aria group commits](/columns-storage-engines-and-plugins/storage-engines/aria/aria-group-commit) in microseconds (1/1000000 second) for other threads to come and do a commit in "hard" mode and sync()/commit at all in "soft" mode. Option only has effect if [aria_group_commit](#aria_group_commit) is used.
+- <strong>Description:</strong> Interval between [Aria group commits](/columns-storage-engines-and-plugins/storage-engines/aria/aria-group-commit/) in microseconds (1/1000000 second) for other threads to come and do a commit in "hard" mode and sync()/commit at all in "soft" mode. Option only has effect if [aria_group_commit](#aria_group_commit) is used.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--aria_group_commit_interval=#</code>
 - <strong>Alias:</strong> `maria_group_commit_interval`
 - <strong>Scope:</strong> Global
@@ -115,7 +115,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `aria_log_purge_type`
 
-- <strong>Description:</strong> Specifies how the Aria transactional log will be purged. Set to `at_flush` to keep a copy of the transaction logs (good as an extra backup). The logs will stay until the next [FLUSH LOGS](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush);
+- <strong>Description:</strong> Specifies how the Aria transactional log will be purged. Set to `at_flush` to keep a copy of the transaction logs (good as an extra backup). The logs will stay until the next [FLUSH LOGS](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/);
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--aria-log-purge-type=name</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -139,7 +139,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `aria_page_checksum`
 
-- <strong>Description:</strong> Determines whether index and data should use page checksums for extra safety. Can be overridden per table with PAGE_CHECKSUM clause in [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table).
+- <strong>Description:</strong> Determines whether index and data should use page checksums for extra safety. Can be overridden per table with PAGE_CHECKSUM clause in [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--aria-page-checksum=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -238,7 +238,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `aria_sort_buffer_size`
 
-- <strong>Description:</strong> The buffer that is allocated when sorting the index when doing a [REPAIR](/sql-statements-structure/sql-statements/table-statements/repair-table) or when creating indexes with [CREATE INDEX](/sql-statements-structure/sql-statements/data-definition/create/create-index) or [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table).
+- <strong>Description:</strong> The buffer that is allocated when sorting the index when doing a [REPAIR](/sql-statements-structure/sql-statements/table-statements/repair-table/) or when creating indexes with [CREATE INDEX](/sql-statements-structure/sql-statements/data-definition/create/create-index/) or [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--aria-sort-buffer-size=#</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -249,7 +249,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `aria_stats_method`
 
-- <strong>Description:</strong> Determines how NULLs are treated for Aria index statistics purposes. If set to `nulls_equal`, all NULL index values are treated as a single group. This is usually fine, but if you have large numbers of NULLs the average group size is slanted higher, and the optimizer may miss using the index for ref accesses when it would be useful. If set to `nulls_unequal`, the default, the opposite approach is taken, with each NULL forming its own group of one. Conversely, the average group size is slanted lower, and the optimizer may use the index for ref accesses when not suitable. Setting to `nulls_ignored` ignores NULLs altogether from index group calculations. Statistics need to be recalculated after this method is changed. See also [Index Statistics](/replication/optimization-and-tuning/optimization-and-indexes/index-statistics), [myisam_stats_method](/kb/en/myisam-server-system-variables/#myisam_stats_method) and [innodb_stats_method](/kb/en/xtradbinnodb-server-system-variables/#innodb_stats_method).
+- <strong>Description:</strong> Determines how NULLs are treated for Aria index statistics purposes. If set to `nulls_equal`, all NULL index values are treated as a single group. This is usually fine, but if you have large numbers of NULLs the average group size is slanted higher, and the optimizer may miss using the index for ref accesses when it would be useful. If set to `nulls_unequal`, the default, the opposite approach is taken, with each NULL forming its own group of one. Conversely, the average group size is slanted lower, and the optimizer may use the index for ref accesses when not suitable. Setting to `nulls_ignored` ignores NULLs altogether from index group calculations. Statistics need to be recalculated after this method is changed. See also [Index Statistics](/replication/optimization-and-tuning/optimization-and-indexes/index-statistics/), [myisam_stats_method](/kb/en/myisam-server-system-variables/#myisam_stats_method) and [innodb_stats_method](/kb/en/xtradbinnodb-server-system-variables/#innodb_stats_method).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--aria-stats-method=#</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -273,7 +273,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `aria_used_for_temp_tables`
 
-- <strong>Description:</strong> Readonly variable indicating whether the [Aria](/columns-storage-engines-and-plugins/storage-engines/aria) storage engine is used for temporary tables. If set to `ON`, the default, the Aria storage engine is used. If set to `OFF`, MariaDB reverts to using [MyISAM](/kb/en/myisam/) for on-disk temporary tables. The [MEMORY](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/memory-storage-engine) storage engine is used for temporary tables regardless of this variable's setting where appropriate. The default can be changed by not using the `--with-aria-tmp-tables` option when building MariaDB.
+- <strong>Description:</strong> Readonly variable indicating whether the [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/) storage engine is used for temporary tables. If set to `ON`, the default, the Aria storage engine is used. If set to `OFF`, MariaDB reverts to using [MyISAM](/kb/en/myisam/) for on-disk temporary tables. The [MEMORY](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/memory-storage-engine/) storage engine is used for temporary tables regardless of this variable's setting where appropriate. The default can be changed by not using the `--with-aria-tmp-tables` option when building MariaDB.
 - <strong>Commandline:</strong> No
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No
@@ -284,7 +284,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `deadlock_search_depth_long`
 
-- <strong>Description:</strong> Long search depth for the [two-step deadlock detection](/columns-storage-engines-and-plugins/storage-engines/aria/aria-two-step-deadlock-detection). Only used by the [Aria](/columns-storage-engines-and-plugins/storage-engines/aria) storage engine.
+- <strong>Description:</strong> Long search depth for the [two-step deadlock detection](/columns-storage-engines-and-plugins/storage-engines/aria/aria-two-step-deadlock-detection/). Only used by the [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/) storage engine.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--deadlock-search-depth-long=#</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -296,7 +296,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `deadlock_search_depth_short`
 
-- <strong>Description:</strong> Short search depth for the [two-step deadlock detection](/columns-storage-engines-and-plugins/storage-engines/aria/aria-two-step-deadlock-detection). Only used by the [Aria](/columns-storage-engines-and-plugins/storage-engines/aria) storage engine.
+- <strong>Description:</strong> Short search depth for the [two-step deadlock detection](/columns-storage-engines-and-plugins/storage-engines/aria/aria-two-step-deadlock-detection/). Only used by the [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/) storage engine.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--deadlock-search-depth-short=#</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -308,7 +308,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `deadlock_timeout_long`
 
-- <strong>Description:</strong> Long timeout in microseconds for the [two-step deadlock detection](/columns-storage-engines-and-plugins/storage-engines/aria/aria-two-step-deadlock-detection). Only used by the [Aria](/columns-storage-engines-and-plugins/storage-engines/aria) storage engine.
+- <strong>Description:</strong> Long timeout in microseconds for the [two-step deadlock detection](/columns-storage-engines-and-plugins/storage-engines/aria/aria-two-step-deadlock-detection/). Only used by the [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/) storage engine.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--deadlock-timeout-long=# </code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -320,7 +320,7 @@ Also see the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `deadlock_timeout_short`
 
-- <strong>Description:</strong> Short timeout in microseconds for the [two-step deadlock detection](/columns-storage-engines-and-plugins/storage-engines/aria/aria-two-step-deadlock-detection). Only used by the [Aria](/columns-storage-engines-and-plugins/storage-engines/aria) storage engine.
+- <strong>Description:</strong> Short timeout in microseconds for the [two-step deadlock detection](/columns-storage-engines-and-plugins/storage-engines/aria/aria-two-step-deadlock-detection/). Only used by the [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/) storage engine.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--deadlock-timeout-short=# </code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes

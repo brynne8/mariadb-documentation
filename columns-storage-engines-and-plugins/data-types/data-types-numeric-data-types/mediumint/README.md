@@ -15,7 +15,7 @@ unsigned range is 0 to 16777215.
 
 `INT3` is a synonym for `MEDIUMINT`.
 
-For details on the attributes, see [Numeric Data Type Overview](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/numeric-data-type-overview).
+For details on the attributes, see [Numeric Data Type Overview](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/numeric-data-type-overview/).
 
 ## Examples
 
@@ -92,8 +92,8 @@ SELECT * FROM mediumints;
 
 ## See Also
 
-- [Numeric Data Type Overview](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/numeric-data-type-overview)
-- [TINYINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/tinyint)
-- [SMALLINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/smallint)
-- [INTEGER](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int)
-- [BIGINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/bigint)
+- [Numeric Data Type Overview](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/numeric-data-type-overview/)
+- [TINYINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/tinyint/)
+- [SMALLINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/smallint/)
+- [INTEGER](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int/)
+- [BIGINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/bigint/)

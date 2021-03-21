@@ -2,7 +2,7 @@
 
 The terms <em>master</em> and <em>slave</em> have historically been used in replication, but the terms terms <em>primary</em> and <em>replica</em> are now preferred. The old terms are used throughout the documentation, and in MariaDB commands, although [MariaDB 10.5](/kb/en/what-is-mariadb-105/) has begun the process of renaming. The documentation will follow over time. See [MDEV-18777](https://jira.mariadb.org/browse/MDEV-18777) to follow progress on this effort.
 
-A list of replication-related commands. See [replication](/replication) for more replication-related information.
+A list of replication-related commands. See [replication](/replication/) for more replication-related information.
 
 - [CHANGE MASTER TO](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to/) — Set or change replica parameters for connecting to the primary.
 - [START SLAVE](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/start-replica/) — Start replica threads.

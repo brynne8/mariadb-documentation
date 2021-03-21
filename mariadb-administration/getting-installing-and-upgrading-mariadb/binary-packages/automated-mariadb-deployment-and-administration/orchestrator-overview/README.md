@@ -5,7 +5,7 @@ Orchestrator is a MySQL and MariaDB high availability and replication management
 Orchestrator provides automation for MariaDB replication in the following ways:
 
 - It can be used to perform certain operations, like repairing broken replication or moving a replica from one master to another. These operations can be requested using CLI commands, or via the GUI provided with Orchestrator. The actual commands sent to MariaDB are automated by Orchestrator, and the user doesn't have to worry about the details.
-- Orchestrator can also automatically perform a failover in case a master crashes or is unreachable by its replicas. If that is the case, Orchestrator will promote one of the replicas to a master. The replica to promote is chosen based on several criteria, like the server versions, the [binary log](/mariadb-administration/server-monitoring-logs/binary-log) formats in use and the datacenters locations.
+- Orchestrator can also automatically perform a failover in case a master crashes or is unreachable by its replicas. If that is the case, Orchestrator will promote one of the replicas to a master. The replica to promote is chosen based on several criteria, like the server versions, the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) formats in use and the datacenters locations.
 
 To install Orchestrator, see:
 
@@ -14,7 +14,7 @@ To install Orchestrator, see:
 
 ## Supported Topologies
 
-Currently, Orchestrator fully supports MariaDB [GTID](/replication/standard-replication/gtid), [replication](/replication), and [semi-synchronous replication](/replication/standard-replication/semisynchronous-replication). While Orchestrator does not support Galera specific logic, it works with Galera clusters. For details, see [Supported Topologies and Versions](https://github.com/openark/orchestrator/blob/master/docs/supported-topologies-and-versions.md) in Orchestrator documentation.
+Currently, Orchestrator fully supports MariaDB [GTID](/replication/standard-replication/gtid/), [replication](/replication/), and [semi-synchronous replication](/replication/standard-replication/semisynchronous-replication/). While Orchestrator does not support Galera specific logic, it works with Galera clusters. For details, see [Supported Topologies and Versions](https://github.com/openark/orchestrator/blob/master/docs/supported-topologies-and-versions.md) in Orchestrator documentation.
 
 ## Architecture
 

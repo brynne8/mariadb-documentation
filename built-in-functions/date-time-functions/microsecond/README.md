@@ -54,4 +54,4 @@ SHOW WARNINGS;
 
 ## See Also
 
-- [Microseconds in MariaDB](/built-in-functions/date-time-functions/microseconds-in-mariadb)
+- [Microseconds in MariaDB](/built-in-functions/date-time-functions/microseconds-in-mariadb/)

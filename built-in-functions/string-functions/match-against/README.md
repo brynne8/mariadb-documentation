@@ -10,7 +10,7 @@ MATCH (col1,col2,...) AGAINST (expr [search_modifier])
 
 A special construct used to perform a fulltext search on a fulltext index.
 
-See [Fulltext Index Overview](/kb/en/fulltext-index-overview/) for a full description, and [Full-text Indexes](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes) for more articles on the topic.
+See [Fulltext Index Overview](/kb/en/fulltext-index-overview/) for a full description, and [Full-text Indexes](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) for more articles on the topic.
 
 ## Examples
 

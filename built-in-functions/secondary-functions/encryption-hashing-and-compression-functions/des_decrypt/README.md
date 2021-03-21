@@ -8,11 +8,11 @@ DES_DECRYPT(crypt_str[,key_str])
 
 ## Description
 
-Decrypts a string encrypted with [DES_ENCRYPT()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/des_encrypt). If an error occurs,
+Decrypts a string encrypted with [DES_ENCRYPT()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/des_encrypt/). If an error occurs,
 this function returns `NULL`.
 
 This function works only if MariaDB has been configured with [TLS
-support](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview).
+support](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview/).
 
 If no `key_str` argument is given, `DES_DECRYPT()` examines the first byte
 of the encrypted string to determine the DES key number that was used

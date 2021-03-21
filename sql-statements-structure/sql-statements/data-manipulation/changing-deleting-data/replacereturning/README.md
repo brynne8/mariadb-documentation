@@ -97,6 +97,6 @@ Aggregate functions cannot be used in the RETURNING clause. Since aggregate func
 
 ## See Also
 
-- [INSERT ... RETURNING](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insertreturning)
+- [INSERT ... RETURNING](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insertreturning/)
 - [DELETE ... RETURNING](/kb/en/delete/#returning)
 - [Returning clause](https://www.youtube.com/watch?v=n-LTdEBeAT4) (video)

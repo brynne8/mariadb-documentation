@@ -25,7 +25,7 @@ the [log_slow_verbosity](/kb/en/server-system-variables/#log_slow_verbosity) var
    "Filesort_on_disk" and number of "Merge_passes during sorting"
 </li></ul>
 - <code class="highlight fixed" style="white-space:pre-wrap">explain</code> (Starting from 10.0.5)
-<ul start="1"><li>EXPLAIN output is logged in the slow query log. See [explain-in-the-slow-query-log](/mariadb-administration/server-monitoring-logs/slow-query-log/explain-in-the-slow-query-log) for details.
+<ul start="1"><li>EXPLAIN output is logged in the slow query log. See [explain-in-the-slow-query-log](/mariadb-administration/server-monitoring-logs/slow-query-log/explain-in-the-slow-query-log/) for details.
 </li></ul>
 - <code class="highlight fixed" style="white-space:pre-wrap">Innodb</code>
 <ul start="1"><li>Reserved for future use.

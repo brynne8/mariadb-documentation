@@ -63,7 +63,7 @@ The `CREATE PACKAGE` statement can be used when [Oracle SQL_MODE](/kb/en/sql_mod
 
 The `CREATE PACKAGE` creates the specification for a stored package (a collection of logically related stored objects). A stored package specification declares public routines (procedures and functions) of the package, but does not implement these routines.
 
-A package whose specification was created by the `CREATE PACKAGE` statement, should later be implemented using the [CREATE PACKAGE BODY](/sql-statements-structure/sql-statements/data-definition/create/create-package-body) statement.
+A package whose specification was created by the `CREATE PACKAGE` statement, should later be implemented using the [CREATE PACKAGE BODY](/sql-statements-structure/sql-statements/data-definition/create/create-package-body/) statement.
 
 ## Examples
 
@@ -82,7 +82,7 @@ DELIMITER ;
 
 ## See Also
 
-- [CREATE PACKAGE BODY](/sql-statements-structure/sql-statements/data-definition/create/create-package-body)
-- [SHOW CREATE PACKAGE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-package)
-- [DROP PACKAGE](/sql-statements-structure/sql-statements/data-definition/drop/drop-package)
+- [CREATE PACKAGE BODY](/sql-statements-structure/sql-statements/data-definition/create/create-package-body/)
+- [SHOW CREATE PACKAGE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-package/)
+- [DROP PACKAGE](/sql-statements-structure/sql-statements/data-definition/drop/drop-package/)
 - [Oracle SQL_MODE](/kb/en/sql_modeoracle-from-mariadb-103/)

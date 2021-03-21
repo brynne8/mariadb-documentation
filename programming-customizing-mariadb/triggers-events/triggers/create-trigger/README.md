@@ -13,7 +13,7 @@ CREATE [OR REPLACE]
 
 ## Description
 
-This statement creates a new [trigger](/programming-customizing-mariadb/triggers-events/triggers). A trigger is a named database
+This statement creates a new [trigger](/programming-customizing-mariadb/triggers-events/triggers/). A trigger is a named database
 object that is associated with a table, and that activates when a
 particular event occurs for the table. The trigger becomes associated
 with the table named `tbl_name`, which must refer to a permanent table.
@@ -26,7 +26,7 @@ with the trigger.
 
 You can have multiple triggers for the same `trigger_time` and `trigger_event`.
 
-For valid identifiers to use as trigger names, see [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names).
+For valid identifiers to use as trigger names, see [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names/).
 
 ### OR REPLACE
 
@@ -56,9 +56,9 @@ modified.
 `trigger_event` indicates the kind of statement that activates the
 trigger. The `trigger_event` can be one of the following:
 
-- `INSERT`: The trigger is activated whenever a new row is inserted into the table; for example, through [INSERT](/kb/en/insert-commands/), [LOAD DATA](/kb/en/load-data-infile/), and [REPLACE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/replace) statements.
-- `UPDATE`: The trigger is activated whenever a row is modified; for example, through [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update) statements.
-- `DELETE`: The trigger is activated whenever a row is deleted from the table; for example, through [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete) and [REPLACE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/replace) statements. However, `DROP TABLE` and `TRUNCATE` statements on the table do not activate this trigger, because they do not use `DELETE`. Dropping a partition does not activate `DELETE` triggers, either.
+- `INSERT`: The trigger is activated whenever a new row is inserted into the table; for example, through [INSERT](/kb/en/insert-commands/), [LOAD DATA](/kb/en/load-data-infile/), and [REPLACE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/replace/) statements.
+- `UPDATE`: The trigger is activated whenever a row is modified; for example, through [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/) statements.
+- `DELETE`: The trigger is activated whenever a row is deleted from the table; for example, through [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/) and [REPLACE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/replace/) statements. However, `DROP TABLE` and `TRUNCATE` statements on the table do not activate this trigger, because they do not use `DELETE`. Dropping a partition does not activate `DELETE` triggers, either.
 
 #### FOLLOWS/PRECEDES other_trigger_name
 
@@ -69,8 +69,8 @@ This is the same syntax used by MySQL 5.7, although MySQL 5.7 does not have mult
 
 `FOLLOWS` adds the new trigger after another trigger while `PRECEDES` adds the new trigger before another trigger.  If neither option is used, the new trigger is added last for the given action and time.
 
-`FOLLOWS` and `PRECEDES` are not stored in the trigger definition. However the trigger order is guaranteed to not change over time. [mariadb-dump/mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump) and other backup methods will not change trigger order.
-You can verify the trigger order from the `ACTION_ORDER` column in [INFORMATION_SCHEMA.TRIGGERS](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-triggers-table) table.
+`FOLLOWS` and `PRECEDES` are not stored in the trigger definition. However the trigger order is guaranteed to not change over time. [mariadb-dump/mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump/) and other backup methods will not change trigger order.
+You can verify the trigger order from the `ACTION_ORDER` column in [INFORMATION_SCHEMA.TRIGGERS](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-triggers-table/) table.
 
 ```sql
 SELECT trigger_name, action_order FROM information_schema.triggers 
@@ -114,10 +114,10 @@ SHOW WARNINGS;
 
 ## See Also
 
-- [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names)
-- [Trigger Overview](/programming-customizing-mariadb/triggers-events/triggers/trigger-overview)
-- [DROP TRIGGER](/sql-statements-structure/sql-statements/data-definition/drop/drop-trigger)
-- [Information Schema TRIGGERS Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-triggers-table)
-- [SHOW TRIGGERS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-triggers)
-- [SHOW CREATE TRIGGER](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-trigger)
-- [Trigger Limitations](/programming-customizing-mariadb/triggers-events/triggers/trigger-limitations)
+- [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names/)
+- [Trigger Overview](/programming-customizing-mariadb/triggers-events/triggers/trigger-overview/)
+- [DROP TRIGGER](/sql-statements-structure/sql-statements/data-definition/drop/drop-trigger/)
+- [Information Schema TRIGGERS Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-triggers-table/)
+- [SHOW TRIGGERS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-triggers/)
+- [SHOW CREATE TRIGGER](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-trigger/)
+- [Trigger Limitations](/programming-customizing-mariadb/triggers-events/triggers/trigger-limitations/)

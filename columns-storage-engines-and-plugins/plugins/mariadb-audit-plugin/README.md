@@ -10,14 +10,14 @@ The MariaDB Audit Plugin works with MariaDB, MySQL (as of, version 5.5.34 and 10
 
 Below are links to additional documentation on the MariaDB Audit Plugin. They explain in detail how to install, configure and use the Audit Plugin.
 
-- [Installation](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/mariadb-audit-plugin-installation)
-- [Configuration](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/mariadb-audit-plugin-configuration)
-- [Log Settings](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/mariadb-audit-plugin-log-settings)
-- [Log Location &amp; Rotation](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/mariadb-audit-plugin-location-and-rotation-of-logs)
-- [Log Format](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/mariadb-audit-plugin-log-format)
-- [Status Variables](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/mariadb-audit-plugin-status-variables)
+- [Installation](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/mariadb-audit-plugin-installation/)
+- [Configuration](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/mariadb-audit-plugin-configuration/)
+- [Log Settings](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/mariadb-audit-plugin-log-settings/)
+- [Log Location &amp; Rotation](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/mariadb-audit-plugin-location-and-rotation-of-logs/)
+- [Log Format](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/mariadb-audit-plugin-log-format/)
+- [Status Variables](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/mariadb-audit-plugin-status-variables/)
 - [System Variables](/kb/en/mariadb-audit-plugin-system-variables/)
-- [Release Notes](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/release-notes-mariadb-audit-plugin)
+- [Release Notes](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/release-notes-mariadb-audit-plugin/)
 <br>
 <br>
 

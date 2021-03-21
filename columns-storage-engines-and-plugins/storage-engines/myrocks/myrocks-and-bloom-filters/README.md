@@ -1,6 +1,6 @@
 # MyRocks and Bloom Filters
 
-Bloom filters are used to reduce read amplification. Bloom filters can be set on a per-column family basis (see [myrocks-column-families](/columns-storage-engines-and-plugins/storage-engines/myrocks/myrocks-column-families)).
+Bloom filters are used to reduce read amplification. Bloom filters can be set on a per-column family basis (see [myrocks-column-families](/columns-storage-engines-and-plugins/storage-engines/myrocks/myrocks-column-families/)).
 
 ## Bloom Filter Parameters
 

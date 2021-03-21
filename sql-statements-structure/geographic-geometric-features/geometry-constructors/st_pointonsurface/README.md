@@ -13,6 +13,6 @@ PointOnSurface(g)
 
 ## Description
 
-Given a geometry, returns a [POINT](/sql-statements-structure/geographic-geometric-features/geometry-constructors/point) guaranteed to intersect a surface. However, see [MDEV-7514](https://jira.mariadb.org/browse/MDEV-7514).
+Given a geometry, returns a [POINT](/sql-statements-structure/geographic-geometric-features/geometry-constructors/point/) guaranteed to intersect a surface. However, see [MDEV-7514](https://jira.mariadb.org/browse/MDEV-7514).
 
 ST_PointOnSurface() and PointOnSurface() are synonyms.

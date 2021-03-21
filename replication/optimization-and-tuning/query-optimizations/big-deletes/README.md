@@ -2,7 +2,7 @@
 
 ## The problem
 
-How to [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete) lots of rows from a large table? Here is an example of purging items older than 30 days:
+How to [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/) lots of rows from a large table? Here is an example of purging items older than 30 days:
 
 ```sql
 DELETE FROM tbl WHERE 
@@ -16,9 +16,9 @@ Any suggestions on how to speed this up?
 ## Why it is a problem
 
 - [MyISAM](/kb/en/myisam/) will lock the table during the entire operation, thereby nothing else can be done with the table.
-- [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) won't lock the table, but it will chew up a lot of resources, leading to sluggishness.
+- [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) won't lock the table, but it will chew up a lot of resources, leading to sluggishness.
 - InnoDB has to write the undo information to its transaction logs; this significantly increases the I/O required.
-- [Replication](/replication), being asynchronous, will effectively be delayed (on Slaves) while the DELETE is running.
+- [Replication](/replication/), being asynchronous, will effectively be delayed (on Slaves) while the DELETE is running.
 
 ## InnoDB and undo
 
@@ -38,7 +38,7 @@ Solutions
 
 ## PARTITION
 
-The idea here is to have a sliding window of [partitions](/kb/en/managing-mariadb-partitioning/). Let's say you need to purge news articles after 30 days. The "partition key" would be the [datetime](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/datetime) (or [timestamp](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/timestamp)) that is to be used for purging, and the PARTITIONs would be "range". Every night, a cron job would come along and build a new partition for the next day, and drop the oldest partition.
+The idea here is to have a sliding window of [partitions](/kb/en/managing-mariadb-partitioning/). Let's say you need to purge news articles after 30 days. The "partition key" would be the [datetime](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/datetime/) (or [timestamp](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/timestamp/)) that is to be used for purging, and the PARTITIONs would be "range". Every night, a cron job would come along and build a new partition for the next day, and drop the oldest partition.
 
 Dropping a partition is essentially instantaneous, much faster than deleting that many rows. However, you must design the table so that the entire partition can be dropped. That is, you cannot have some items living longer than others.
 
@@ -174,7 +174,7 @@ A caution about using @variables for strings. If, instead of '$g', you use @g, y
 
 This is costly. (Switch to the PARTITION solution if practical.)
 
-MyISAM leaves gaps in the table (.MYD file); [OPTIMIZE TABLE](/replication/optimization-and-tuning/optimizing-tables/optimize-table) will reclaim the freed space after a big delete. But it may take a long time and lock the table.
+MyISAM leaves gaps in the table (.MYD file); [OPTIMIZE TABLE](/replication/optimization-and-tuning/optimizing-tables/optimize-table/) will reclaim the freed space after a big delete. But it may take a long time and lock the table.
 
 InnoDB is block-structured, organized in a BTree on the PRIMARY KEY. An isolated deleted row leaves a block less full. A lot of deleted rows can lead to coalescing of adjacent blocks. (Blocks are normally 16KB - see [innodb_page_size](/kb/en/xtradbinnodb-server-system-variables/#innodb_page_size).)
 
@@ -223,7 +223,7 @@ Notes:
 
 ## Non-deterministic replication
 
-Any UPDATE, DELETE, etc with LIMIT that is replicated to slaves (via [Statement Based Replication](/mariadb-administration/server-monitoring-logs/binary-log/binary-log-formats)) <em>may</em> cause inconsistencies between the Master and Slaves. This is because the actual order of the records discovered for updating/deleting may be different on the slave, thereby leading to a different subset being modified. To be safe, add ORDER BY to such statements. Moreover, be sure the ORDER BY is deterministic -- that is, the fields/expressions in the ORDER BY are unique.
+Any UPDATE, DELETE, etc with LIMIT that is replicated to slaves (via [Statement Based Replication](/mariadb-administration/server-monitoring-logs/binary-log/binary-log-formats/)) <em>may</em> cause inconsistencies between the Master and Slaves. This is because the actual order of the records discovered for updating/deleting may be different on the slave, thereby leading to a different subset being modified. To be safe, add ORDER BY to such statements. Moreover, be sure the ORDER BY is deterministic -- that is, the fields/expressions in the ORDER BY are unique.
 
 An example of an ORDER BY that does not quite work: Assume there are multiple rows for each 'date':
 
@@ -263,7 +263,7 @@ In MyISAM, rows are DELETEd as the statement is executed, and there is no provis
 
 Then (presumably) re-executing the DELETE will finish the aborted task.
 
-(That is yet another reason to move all your tables [from MyISAM to InnoDB](/columns-storage-engines-and-plugins/storage-engines/converting-tables-from-myisam-to-innodb).)
+(That is yet another reason to move all your tables [from MyISAM to InnoDB](/columns-storage-engines-and-plugins/storage-engines/converting-tables-from-myisam-to-innodb/).)
 
 ## SBR vs RBR; Galera
 

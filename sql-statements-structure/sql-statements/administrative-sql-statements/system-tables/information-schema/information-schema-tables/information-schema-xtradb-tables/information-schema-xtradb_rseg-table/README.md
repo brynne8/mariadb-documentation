@@ -6,7 +6,7 @@ The `XTRADB_RSEG` table was added in [MariaDB 10.0.9](/kb/en/mariadb-1009-releas
 
 The [Information Schema](/kb/en/information_schema/) `XTRADB_RSEG` table contains information about the XtraDB rollback segments.
 
-The `PROCESS` [privilege](/sql-statements-structure/sql-statements/account-management-sql-commands/grant) is required to view the table.
+The `PROCESS` [privilege](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/) is required to view the table.
 
 It has the following columns:
 

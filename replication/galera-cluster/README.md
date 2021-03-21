@@ -1,6 +1,6 @@
 # MariaDB Galera Cluster
 
-MariaDB Galera Cluster is a [virtually synchronous](/replication/galera-cluster/about-galera-replication) multi-master cluster that runs on Linux only. It has been a standard part of the server since [MariaDB 10.1](/kb/en/what-is-mariadb-101/).
+MariaDB Galera Cluster is a [virtually synchronous](/replication/galera-cluster/about-galera-replication/) multi-master cluster that runs on Linux only. It has been a standard part of the server since [MariaDB 10.1](/kb/en/what-is-mariadb-101/).
 
 - [What is MariaDB Galera Cluster?](/replication/galera-cluster/what-is-mariadb-galera-cluster/) — Basic information on MariaDB Galera Cluster.
 - [About Galera Replication](/replication/galera-cluster/about-galera-replication/) — About Galera replication.

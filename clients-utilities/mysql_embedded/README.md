@@ -8,7 +8,7 @@ From [MariaDB 10.4.6](/kb/en/mariadb-1046-release-notes/), `mariadb-embedded` is
 
 From [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/), `mariadb-embedded` is the name of the tool, with `mysql_embedded` a symlink.
 
-`mysql_embedded` is a [mysql client](/clients-utilities/mysql-client/mysql-command-line-client) statically linked to libmysqld, the embedded server. Upon execution, an embedded MariaDB server is instantiated and you can execute statements just as you would using the normal mysql client, using the same options.
+`mysql_embedded` is a [mysql client](/clients-utilities/mysql-client/mysql-command-line-client/) statically linked to libmysqld, the embedded server. Upon execution, an embedded MariaDB server is instantiated and you can execute statements just as you would using the normal mysql client, using the same options.
 
 Do not run <em>mysql_embedded</em> while MariaDB is running, as effectively it starts a new instance of the server.
 

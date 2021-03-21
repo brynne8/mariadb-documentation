@@ -91,13 +91,13 @@ creation, an indirect reference can only be tested when executing a query on
 the table. However, this is possible only for local tables. When using remote
 tables or views, a problem can occur if the remote table or the view refers 
 back to one of the local tables of the chain. The same caution should be used
-than when using [FEDERATEDX](/columns-storage-engines-and-plugins/storage-engines/federatedx-storage-engine) tables.
+than when using [FEDERATEDX](/columns-storage-engines-and-plugins/storage-engines/federatedx-storage-engine/) tables.
 
 <strong>Note:</strong> All `PROXY` or `PROXY`-based tables are read-only in this
 version.
 
 ## Modifying Operations
 
-All [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert) / [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update) / [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete) operations can be used with proxy tables. However, the same restrictions applying to the source table also apply to the proxy table.
+All [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/) / [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/) / [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/) operations can be used with proxy tables. However, the same restrictions applying to the source table also apply to the proxy table.
 
 Note: All PROXY and PROXY-based table types are not indexable.

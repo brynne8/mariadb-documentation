@@ -2,7 +2,7 @@
 
 ##### MariaDB starting with [5.3](/kb/en/what-is-mariadb-53/)
 
-The [Dynamic columns](/sql-statements-structure/nosql/dynamic-columns) feature was introduced in [MariaDB 5.3](/kb/en/what-is-mariadb-53/).
+The [Dynamic columns](/sql-statements-structure/nosql/dynamic-columns/) feature was introduced in [MariaDB 5.3](/kb/en/what-is-mariadb-53/).
 
 ## Syntax
 
@@ -13,7 +13,7 @@ COLUMN_ADD(dyncol_blob, column_name, value [as type], [column_name, value [as ty
 
 ## Description
 
-Adds or updates [dynamic columns](/sql-statements-structure/nosql/dynamic-columns).
+Adds or updates [dynamic columns](/sql-statements-structure/nosql/dynamic-columns/).
 
 - <strong>`dyncol_blob`</strong> must be either a valid dynamic columns blob (for example, `COLUMN_CREATE` returns such blob), or an empty string.
 - <strong>`column_name`</strong> specifies the name of the column to be added. If `dyncol_blob` already has a column with this name, it will be overwritten.
@@ -32,6 +32,6 @@ UPDATE t1 SET dyncol_blob=COLUMN_ADD(dyncol_blob, "column_name", "value") WHERE 
 ```
 
 Note: `COLUMN_ADD()` is a regular function (just like
-[CONCAT()](/built-in-functions/string-functions/concat)), hence, in order to update the value in the table
+[CONCAT()](/built-in-functions/string-functions/concat/)), hence, in order to update the value in the table
 you have to use the <code>UPDATE ... SET dynamic_col=COLUMN_ADD(dynamic_col,
 ....) </code> pattern.

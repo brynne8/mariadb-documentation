@@ -12,7 +12,7 @@ Mroonga, formerly named Groonga storage engine, was included in the [MariaDB 5.3
 
 Mroonga is a full text search storage engine based on Groonga, which is an open-source CJK-ready fulltext search engine using column base. See [http://groonga.org](http://groonga.org) for more.
 
-With Mroonga, you can have a CJK-ready full text search feature, and it is faster than the [MyISAM](/kb/en/myisam/) and [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) [full text search](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes) for both updating and searching.
+With Mroonga, you can have a CJK-ready full text search feature, and it is faster than the [MyISAM](/kb/en/myisam/) and [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) [full text search](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) for both updating and searching.
 
 Mroonga also supports Groonga's fast geolocation search by using MariaDB's geolocation SQL syntax.
 
@@ -32,9 +32,9 @@ On Debian and Ubuntu mroonga engine will be installed with
 sudo apt-get install mariadb-plugin-mroonga
 ```
 
-See [Plugin overview](/columns-storage-engines-and-plugins/plugins/plugin-overview) for details on installing and uninstalling plugins.
+See [Plugin overview](/columns-storage-engines-and-plugins/plugins/plugin-overview/) for details on installing and uninstalling plugins.
 
-[SHOW ENGINES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engines) can be used to check whether Mroonga is installed correctly:
+[SHOW ENGINES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engines/) can be used to check whether Mroonga is installed correctly:
 
 ```sql
 SHOW ENGINES;

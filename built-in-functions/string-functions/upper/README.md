@@ -24,7 +24,7 @@ SELECT UPPER(surname), givenname FROM users ORDER BY surname;
 +----------------+------------+
 ```
 
-`UPPER()` is ineffective when applied to binary strings ([BINARY](/columns-storage-engines-and-plugins/data-types/string-data-types/binary),
-[VARBINARY](/columns-storage-engines-and-plugins/data-types/string-data-types/varbinary), [BLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/blob)). The description of 
-[LOWER](/built-in-functions/string-functions/lower)() shows how to
+`UPPER()` is ineffective when applied to binary strings ([BINARY](/columns-storage-engines-and-plugins/data-types/string-data-types/binary/),
+[VARBINARY](/columns-storage-engines-and-plugins/data-types/string-data-types/varbinary/), [BLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/blob/)). The description of 
+[LOWER](/built-in-functions/string-functions/lower/)() shows how to
 perform lettercase conversion of binary strings.

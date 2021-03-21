@@ -1,26 +1,26 @@
 # Extended Show
 
-The following [SHOW](/sql-statements-structure/sql-statements/administrative-sql-statements/show) statements can be extended by using a `WHERE` clause and a `LIKE` clause to refine the results:
+The following [SHOW](/sql-statements-structure/sql-statements/administrative-sql-statements/show/) statements can be extended by using a `WHERE` clause and a `LIKE` clause to refine the results:
 
-- [SHOW CHARACTER SET](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-character-set)
-- [SHOW COLLATION](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-collation)
-- [SHOW COLUMNS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-columns)
-- [SHOW DATABASES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-databases)
-- [SHOW FUNCTION STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-function-status)
-- [SHOW INDEX](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-index)<code>
+- [SHOW CHARACTER SET](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-character-set/)
+- [SHOW COLLATION](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-collation/)
+- [SHOW COLUMNS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-columns/)
+- [SHOW DATABASES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-databases/)
+- [SHOW FUNCTION STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-function-status/)
+- [SHOW INDEX](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-index/)<code>
 </code>
-- [SHOW OPEN TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-open-tables)
-- [SHOW PACKAGE STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-package-status)
-- [SHOW PACKAGE BODY STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-package-body-status)
-- [SHOW INDEX](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-index)
-- [SHOW PROCEDURE STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-procedure-status)
-- [SHOW STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-status)
-- [SHOW TABLE STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-table-status)
-- [SHOW TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-tables)
-- [SHOW TRIGGERS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-triggers)
-- [SHOW VARIABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-variables)
+- [SHOW OPEN TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-open-tables/)
+- [SHOW PACKAGE STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-package-status/)
+- [SHOW PACKAGE BODY STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-package-body-status/)
+- [SHOW INDEX](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-index/)
+- [SHOW PROCEDURE STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-procedure-status/)
+- [SHOW STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-status/)
+- [SHOW TABLE STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-table-status/)
+- [SHOW TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-tables/)
+- [SHOW TRIGGERS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-triggers/)
+- [SHOW VARIABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-variables/)
 
-As with a regular [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select), the `WHERE` clause can be used for the specific columns returned, and the [LIKE](/built-in-functions/string-functions/like) clause with the regular wildcards.
+As with a regular [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/), the `WHERE` clause can be used for the specific columns returned, and the [LIKE](/built-in-functions/string-functions/like/) clause with the regular wildcards.
 
 ## Examples
 

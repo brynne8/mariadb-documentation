@@ -12,21 +12,21 @@ A date and time combination.
 
 MariaDB displays `DATETIME` values in '`YYYY-MM-DD HH:MM:SS.ffffff`' format, but
 allows assignment of values to `DATETIME` columns using either strings or
-numbers. For details, see [date and time literals](/sql-statements-structure/sql-language-structure/date-and-time-literals).
+numbers. For details, see [date and time literals](/sql-statements-structure/sql-language-structure/date-and-time-literals/).
 
-DATETIME columns also accept [CURRENT_TIMESTAMP](/built-in-functions/date-time-functions/now) as the default value.
+DATETIME columns also accept [CURRENT_TIMESTAMP](/built-in-functions/date-time-functions/now/) as the default value.
 
 [MariaDB 10.1.2](/kb/en/mariadb-1012-release-notes/) introduced the [--mysql56-temporal-format](/kb/en/server-system-variables/#mysql56_temporal_format) option, on by default, which allows MariaDB to store DATETMEs using the same low-level format MySQL 5.6 uses.  For more information, see [Internal Format](#internal-format), below.
 
-For storage requirements, see [Data Type Storage Requirements](/columns-storage-engines-and-plugins/data-types/data-type-storage-requirements).
+For storage requirements, see [Data Type Storage Requirements](/columns-storage-engines-and-plugins/data-types/data-type-storage-requirements/).
 
 ## Supported Values
 
 MariaDB stores values that use the `DATETIME` data type in a format that supports values between `1000-01-01 00:00:00.000000` and `9999-12-31 23:59:59.999999`.
 
-MariaDB can also store [microseconds](/built-in-functions/date-time-functions/microseconds-in-mariadb) with a precision between 0 and 6. If no microsecond precision is specified, then 0 is used by default.
+MariaDB can also store [microseconds](/built-in-functions/date-time-functions/microseconds-in-mariadb/) with a precision between 0 and 6. If no microsecond precision is specified, then 0 is used by default.
 
-MariaDB also supports '`0000-00-00`' as a special <em>zero-date</em> value, unless [NO_ZERO_DATE](/kb/en/sql-mode/#no_zero_date) is specified in the [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode). Similarly, individual components of a date can be set to `0` (for example: '`2015-00-12`'), unless [NO_ZERO_DATE](/kb/en/sql-mode/#no_zero_date) is specified in the [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode). In many cases, the result of en expression involving a zero-date, or a date with zero-parts, is `NULL`. If the [ALLOW_INVALID_DATES](/kb/en/sql-mode/#allow_invalid_dates) SQL_MODE is enabled, if the day part is in the range between 1 and 31, the date does not produce any error, even for months that have less than 31 days.
+MariaDB also supports '`0000-00-00`' as a special <em>zero-date</em> value, unless [NO_ZERO_DATE](/kb/en/sql-mode/#no_zero_date) is specified in the [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode/). Similarly, individual components of a date can be set to `0` (for example: '`2015-00-12`'), unless [NO_ZERO_DATE](/kb/en/sql-mode/#no_zero_date) is specified in the [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode/). In many cases, the result of en expression involving a zero-date, or a date with zero-parts, is `NULL`. If the [ALLOW_INVALID_DATES](/kb/en/sql-mode/#allow_invalid_dates) SQL_MODE is enabled, if the day part is in the range between 1 and 31, the date does not produce any error, even for months that have less than 31 days.
 
 ## Time Zones
 
@@ -46,7 +46,7 @@ INSERT INTO timestamp_test VALUES ('2019-03-10 02:55:05');
 ERROR 1292 (22007): Incorrect datetime value: '2019-03-10 02:55:05' for column `db1`.`timestamp_test`.`timestamp_test` at row 1
 ```
 
-But that same time range is fine in other time zones, such as [Coordinated Universal Time (UTC)](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time). For example:
+But that same time range is fine in other time zones, such as [Coordinated Universal Time (UTC)](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time/). For example:
 
 ```sql
 SET time_zone = 'UTC';
@@ -60,7 +60,7 @@ Query OK, 1 row affected (0.002 sec)
 
 ##### MariaDB starting with [10.3](/kb/en/what-is-mariadb-103/)
 
-In [Oracle mode from MariaDB 10.3](/kb/en/sql_modeoracle-from-mariadb-103/#synonyms-for-basic-sql-types), `DATE` with a time portion is a synonym for `DATETIME`. See also [mariadb_schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/mariadb_schema).
+In [Oracle mode from MariaDB 10.3](/kb/en/sql_modeoracle-from-mariadb-103/#synonyms-for-basic-sql-types), `DATE` with a time portion is a synonym for `DATETIME`. See also [mariadb_schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/mariadb_schema/).
 
 ## Internal Format
 
@@ -84,11 +84,11 @@ SHOW VARIABLES LIKE 'mysql56_temporal_format';
 ALTER TABLE example_table MODIFY ts_col DATETIME;
 ```
 
-When MariaDB executes the [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) statement, it converts the data from the older temporal format to the newer one.
+When MariaDB executes the [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) statement, it converts the data from the older temporal format to the newer one.
 
 In the event that you have several tables and columns using temporal data types that you want to switch over to the new format, make sure the system variable is enabled, then perform a dump and restore using `mysqldump`.  The columns using relevant temporal data types are restored using the new temporal format.
 
-Starting from [MariaDB 10.5.1](/kb/en/mariadb-1051-release-notes/) columns with old temporal formats are marked with a `/* mariadb-5.3 */`  comment in the output of [SHOW CREATE TABLE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-table), [SHOW COLUMNS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-columns), [DESCRIBE](/sql-statements-structure/sql-statements/administrative-sql-statements/describe) statements, as well as in the `COLUMN_TYPE` column of the [INFORMATION_SCHEMA.COLUMNS Table](/kb/en/information-schema-columns-table/).
+Starting from [MariaDB 10.5.1](/kb/en/mariadb-1051-release-notes/) columns with old temporal formats are marked with a `/* mariadb-5.3 */`  comment in the output of [SHOW CREATE TABLE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-table/), [SHOW COLUMNS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-columns/), [DESCRIBE](/sql-statements-structure/sql-statements/administrative-sql-statements/describe/) statements, as well as in the `COLUMN_TYPE` column of the [INFORMATION_SCHEMA.COLUMNS Table](/kb/en/information-schema-columns-table/).
 
 ```sql
 SHOW CREATE TABLE mariadb5312_datetime\G
@@ -134,7 +134,7 @@ SELECT * FROM t2;
 +----------------------------++
 ```
 
-Strings used in datetime context are automatically converted to datetime(6). If you want to have a datetime without seconds, you should use [CONVERT(..,datetime)](/built-in-functions/string-functions/convert).
+Strings used in datetime context are automatically converted to datetime(6). If you want to have a datetime without seconds, you should use [CONVERT(..,datetime)](/built-in-functions/string-functions/convert/).
 
 ```sql
 SELECT CONVERT('2007-11-30 10:30:19',datetime);
@@ -154,7 +154,7 @@ SELECT CONVERT('2007-11-30 10:30:19',datetime(6));
 
 ## See Also
 
-- [Data Type Storage Requirements](/columns-storage-engines-and-plugins/data-types/data-type-storage-requirements)
-- [CONVERT()](/built-in-functions/string-functions/convert)
+- [Data Type Storage Requirements](/columns-storage-engines-and-plugins/data-types/data-type-storage-requirements/)
+- [CONVERT()](/built-in-functions/string-functions/convert/)
 - [Oracle mode from MariaDB 10.3](/kb/en/sql_modeoracle-from-mariadb-103/#synonyms-for-basic-sql-types)
-- [mariadb_schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/mariadb_schema) data type qualifier
+- [mariadb_schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/mariadb_schema/) data type qualifier

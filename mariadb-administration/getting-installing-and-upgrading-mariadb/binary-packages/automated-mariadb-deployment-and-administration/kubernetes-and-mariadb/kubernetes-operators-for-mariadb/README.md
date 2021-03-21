@@ -4,7 +4,7 @@ Operators basically instruct Kubernetes about how to manage a certain technology
 
 ## Custom Operators
 
-Kubernetes provides a declarative API. To support a specific (i.e. MariaDB) technology or implement a desired behavior (i.e. provisioning a [replica](/replication/standard-replication)), we extend Kubernetes API. This involves creating two main components:
+Kubernetes provides a declarative API. To support a specific (i.e. MariaDB) technology or implement a desired behavior (i.e. provisioning a [replica](/replication/standard-replication/)), we extend Kubernetes API. This involves creating two main components:
 
 - A custom resource.
 - A custom controller.
@@ -22,7 +22,7 @@ MariaDB operator is open source and is released under the terms of the MIT licen
 It defines the following custom resources:
 
 - MariaDB server.
-- MariaDB Backup. [mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup) is used.
+- MariaDB Backup. [mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/) is used.
 - MariaDB Monitor. Prometheus metrics are exposed on port 9090.
 
 ## Other Operators

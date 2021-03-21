@@ -1,6 +1,6 @@
 # Information Schema InnoDB Tables
 
-List of Information Schema tables specifically related to [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb). Tables that are specific to XtraDB shares with InnoDB are listed in [Information Schema XtraDB Tables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-xtradb-tables).
+List of Information Schema tables specifically related to [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/). Tables that are specific to XtraDB shares with InnoDB are listed in [Information Schema XtraDB Tables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-xtradb-tables/).
 
 - [Information Schema INNODB_BUFFER_PAGE Table](/kb/en/library/documentation/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_buffer_page-table/) — Buffer pool page information.
 - [Information Schema INNODB_BUFFER_PAGE_LRU Table](/kb/en/library/documentation/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_buffer_page_lru-table/) — Buffer pool pages and their eviction order.

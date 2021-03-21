@@ -2,18 +2,18 @@
 
 ##### MariaDB starting with [10.0.5](/kb/en/mariadb-1005-release-notes/)
 
-Starting from [MariaDB 10.0.5](/kb/en/mariadb-1005-release-notes/), it is possible to have EXPLAIN output printed in the [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log).
+Starting from [MariaDB 10.0.5](/kb/en/mariadb-1005-release-notes/), it is possible to have EXPLAIN output printed in the [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log/).
 
 ## Switching it On
 
-[EXPLAIN](/sql-statements-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain) output can be switched on by specifying the "<code class="highlight fixed" style="white-space:pre-wrap">explain</code>" keyword in the [log_slow_verbosity](/kb/en/server-system-variables/#log_slow_verbosity) system variable. Alternatively, you can set with the <code class="highlight fixed" style="white-space:pre-wrap">log-slow-verbosity</code> command line argument.
+[EXPLAIN](/sql-statements-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain/) output can be switched on by specifying the "<code class="highlight fixed" style="white-space:pre-wrap">explain</code>" keyword in the [log_slow_verbosity](/kb/en/server-system-variables/#log_slow_verbosity) system variable. Alternatively, you can set with the <code class="highlight fixed" style="white-space:pre-wrap">log-slow-verbosity</code> command line argument.
 
 ```sql
 [mysqld]
 log-slow-verbosity=query_plan,explain
 ```
 
-EXPLAIN output will only be recorded if the slow query log is written to a file (and not to a table - see [Writing logs into tables](/mariadb-administration/server-monitoring-logs/writing-logs-into-tables)). This limitation also applies to other extended statistics that are written into the slow query log.
+EXPLAIN output will only be recorded if the slow query log is written to a file (and not to a table - see [Writing logs into tables](/mariadb-administration/server-monitoring-logs/writing-logs-into-tables/)). This limitation also applies to other extended statistics that are written into the slow query log.
 
 ## What it Looks Like
 

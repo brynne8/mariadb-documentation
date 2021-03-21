@@ -10,7 +10,7 @@ It is responsible for the following core functions:
 
 - Transforming the MariaDB query plan into a ColumnStore Job List.
 - Performing InfiniDB Object ID lookups from the MariaDB ColumnStore system catalog.
-- Inspecting the Extent Map to reduce I/O.  It accomplishes this through the elimination of unnecessary extents.  For more information, see [Storage Architecture](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-storage-architecture).
+- Inspecting the Extent Map to reduce I/O.  It accomplishes this through the elimination of unnecessary extents.  For more information, see [Storage Architecture](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-storage-architecture/).
 - Issuing instructions (sometimes called 'primitive operation'), to Performance Modules.
 - Executing hash joins as needed, depending on the size of smaller tables in the join.  Helps manage distributed hash joins by sending needed hash maps to the Performance Modules.
 - Executing cross-table-scope functions and expressions that occur after a hash join.
@@ -36,7 +36,7 @@ Job Lists represent the sequence of instructions necessary to answer the query. 
 
 The major categories of job steps are the application of a column filter, processing table joins, and the projection of returned columns.  Each operation in the query plan executes in parallel by the Job List itself and has the capability of running entirely on the User Module, entirely on the Performance Module or in some combination.
 
-Each node uses the Extent Map to determine which Performance Modules to send work orders.  For more information on Extent Maps, see [Storage Architecture](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-storage-architecture).
+Each node uses the Extent Map to determine which Performance Modules to send work orders.  For more information on Extent Maps, see [Storage Architecture](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-storage-architecture/).
 
 ### Distribution Managers
 

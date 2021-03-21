@@ -17,7 +17,7 @@ second version returns the result for the first condition that is
 true.  If there was no matching result value, the result after ELSE is
 returned, or NULL if there is no ELSE part.
 
-There is also a [CASE statement](/programming-customizing-mariadb/programmatic-compound-statements/case-statement), which differs from the CASE operator described here.
+There is also a [CASE statement](/programming-customizing-mariadb/programmatic-compound-statements/case-statement/), which differs from the CASE operator described here.
 
 ## Examples
 

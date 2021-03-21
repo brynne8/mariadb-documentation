@@ -11,7 +11,7 @@ GeometryCollectionFromWKB(wkb[,srid])
 
 ## Description
 
-Constructs a GEOMETRYCOLLECTION value using its [WKB](/sql-statements-structure/geographic-geometric-features/wkb/well-known-binary-wkb-format)  representation and SRID.
+Constructs a GEOMETRYCOLLECTION value using its [WKB](/sql-statements-structure/geographic-geometric-features/wkb/well-known-binary-wkb-format/)  representation and SRID.
 
 `ST_GeomCollFromWKB()`, `ST_GeometryCollectionFromWKB()`, `GeomCollFromWKB()` and `GeometryCollectionFromWKB()` are synonyms.
 

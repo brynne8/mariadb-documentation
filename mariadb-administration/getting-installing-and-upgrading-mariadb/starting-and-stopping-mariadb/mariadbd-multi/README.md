@@ -8,4 +8,4 @@ From [MariaDB 10.4.6](/kb/en/mariadb-1046-release-notes/), `mariadbd-multi` is a
 
 From [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/), `mariadbd-multi` is the name of the server, with `mysqld_multi` a symlink .
 
-See [mysqld_multi](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld_multi) for details.
+See [mysqld_multi](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld_multi/) for details.

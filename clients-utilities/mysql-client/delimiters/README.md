@@ -1,8 +1,8 @@
 # Delimiters
 
-The default delimiter in the [mysql](/clients-utilities/mysql-client) client (from [MariaDB 10.4.6](/kb/en/mariadb-1046-release-notes/), [also called mariadb](/clients-utilities/mysql-client/mariadb-command-line-client)) is the semicolon.
+The default delimiter in the [mysql](/clients-utilities/mysql-client/) client (from [MariaDB 10.4.6](/kb/en/mariadb-1046-release-notes/), [also called mariadb](/clients-utilities/mysql-client/mariadb-command-line-client/)) is the semicolon.
 
-When creating [stored programs](/kb/en/stored-programs-and-views/) from the command-line, it is likely you will need to differentiate between the regular delimiter and a delimiter inside a [BEGIN END](/programming-customizing-mariadb/programmatic-compound-statements/begin-end) block.  To understand better, consider the following example:
+When creating [stored programs](/kb/en/stored-programs-and-views/) from the command-line, it is likely you will need to differentiate between the regular delimiter and a delimiter inside a [BEGIN END](/programming-customizing-mariadb/programmatic-compound-statements/begin-end/) block.  To understand better, consider the following example:
 
 ```sql
 CREATE FUNCTION FortyTwo() RETURNS TINYINT DETERMINISTIC

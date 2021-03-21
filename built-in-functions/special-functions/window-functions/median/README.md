@@ -2,7 +2,7 @@
 
 ##### MariaDB starting with [10.3.3](/kb/en/mariadb-1033-release-notes/)
 
-The MEDIAN() [window function](/built-in-functions/special-functions/window-functions) was first introduced with in [MariaDB 10.3.3](/kb/en/mariadb-1033-release-notes/).
+The MEDIAN() [window function](/built-in-functions/special-functions/window-functions/) was first introduced with in [MariaDB 10.3.3](/kb/en/mariadb-1033-release-notes/).
 
 ## Syntax
 
@@ -14,9 +14,9 @@ MEDIAN(median expression) OVER (
 
 ## Description
 
-MEDIAN() is a [window function](/built-in-functions/special-functions/window-functions) that returns the median value of a range of values.
+MEDIAN() is a [window function](/built-in-functions/special-functions/window-functions/) that returns the median value of a range of values.
 
-It is a specific case of [PERCENTILE_CONT](/built-in-functions/special-functions/window-functions/percentile_cont), with an argument of 0.5 and the [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by) column the one in `MEDIAN`'s argument. <br>
+It is a specific case of [PERCENTILE_CONT](/built-in-functions/special-functions/window-functions/percentile_cont/), with an argument of 0.5 and the [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by/) column the one in `MEDIAN`'s argument. <br>
 
 ```sql
 MEDIAN(<median-arg>) OVER ( [ PARTITION BY partition_expression] )
@@ -54,4 +54,4 @@ SELECT name, median(star_rating) OVER (PARTITION BY name) FROM book_rating;
 
 ## See Also
 
-- [PERCENTILE_CONT](/built-in-functions/special-functions/window-functions/percentile_cont)
+- [PERCENTILE_CONT](/built-in-functions/special-functions/window-functions/percentile_cont/)

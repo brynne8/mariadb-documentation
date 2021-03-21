@@ -8,11 +8,11 @@ From [MariaDB 10.4.6](/kb/en/mariadb-1046-release-notes/), `mariadb-binlog` is a
 
 From [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/), `mariadb-binlog` is the name of the tool, with `mysqlbinlog` a symlink .
 
-[mysqlbinlog](/clients-utilities/mysqlbinlog) is a utility included with MariaDB for processing [binary log](/mariadb-administration/server-monitoring-logs/binary-log) and [relay log](/mariadb-administration/server-monitoring-logs/binary-log/relay-log) files.
+[mysqlbinlog](/clients-utilities/mysqlbinlog/) is a utility included with MariaDB for processing [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) and [relay log](/mariadb-administration/server-monitoring-logs/binary-log/relay-log/) files.
 
 ## Options
 
-The following options are supported by [mysqlbinlog](/clients-utilities/mysqlbinlog). They can be specified on
+The following options are supported by [mysqlbinlog](/clients-utilities/mysqlbinlog/). They can be specified on
 the command line or in option files:
 
 <table><tbody><tr><th>Option</th><th>default value</th><th>Description</th><th>Introduced<span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span></th></tr>
@@ -80,7 +80,7 @@ the command line or in option files:
 
 ## Option Files
 
-In addition to reading options from the command-line, `mysqlbinlog` can also read options from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files). If an unknown option is provided to `mysqlbinlog` in an option file, then it is ignored.
+In addition to reading options from the command-line, `mysqlbinlog` can also read options from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/). If an unknown option is provided to `mysqlbinlog` in an option file, then it is ignored.
 
 The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
 
@@ -96,7 +96,7 @@ In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, `mysqlbinlog` is linke
 
 ### Option Groups
 
-`mysqlbinlog` reads options from the following [option groups](/kb/en/configuring-mariadb-with-option-files/#option-groups) from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files):
+`mysqlbinlog` reads options from the following [option groups](/kb/en/configuring-mariadb-with-option-files/#option-groups) from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/):
 
 <table><tbody><tr><th>Group</th><th>Description</th></tr>
 <tr><td><code>[mysqlbinlog]</code></td><td>&nbsp;Options read by <code>mysqlbinlog</code>, which includes both MariaDB Server and MySQL Server.</td></tr>
@@ -110,4 +110,4 @@ In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, `mysqlbinlog` is linke
 
 ## See Also
 
-- [Using mysqlbinlog](/clients-utilities/mysqlbinlog/using-mysqlbinlog)
+- [Using mysqlbinlog](/clients-utilities/mysqlbinlog/using-mysqlbinlog/)

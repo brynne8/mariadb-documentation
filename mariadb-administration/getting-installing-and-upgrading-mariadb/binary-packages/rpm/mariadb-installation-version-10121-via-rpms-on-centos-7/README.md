@@ -76,6 +76,6 @@ The solution for this is to import the key:
 #rpm --import http://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 ```
 
-After step 4, the installation will be completed. The last step will be to run [mysql_secure_installation](/clients-utilities/mysql_secure_installation) to secure the production server by dis allowing remote login for root, creating root password and  removing the test database.
+After step 4, the installation will be completed. The last step will be to run [mysql_secure_installation](/clients-utilities/mysql_secure_installation/) to secure the production server by dis allowing remote login for root, creating root password and  removing the test database.
 
 - 5) mysql_secure_installation

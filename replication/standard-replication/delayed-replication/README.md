@@ -16,7 +16,7 @@ slave will reflect the state of the master some time back in the past.
 
 The default is zero, or no delay, and the maximum value is 2147483647, or about 68 years.
 
-Delayed replication is enabled using the MASTER_DELAY option to [CHANGE MASTER](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to):
+Delayed replication is enabled using the MASTER_DELAY option to [CHANGE MASTER](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to/):
 
 ```sql
   CHANGE MASTER TO master_delay=3600;
@@ -33,6 +33,6 @@ Three fields in [SHOW SLAVE STATUS](/kb/en/show-slave-status/) are associated wi
 due to MASTER_DELAY, this is the number of seconds of delay remaining before
 the event will be applied. Otherwise, the value is NULL.
 3 Slave_SQL_Running_State. This shows the state of the SQL driver threads,
-same as in [SHOW PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist). When the slave is delaying the execution of an
+same as in [SHOW PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist/). When the slave is delaying the execution of an
 event due to MASTER_DELAY, this fields displays: "Waiting until MASTER_DELAY
 seconds after master executed event".

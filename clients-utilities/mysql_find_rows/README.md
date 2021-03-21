@@ -8,7 +8,7 @@ From [MariaDB 10.4.6](/kb/en/mariadb-1046-release-notes/), `mariadb-find-rows` i
 
 From [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/), `mariadb-find-rows` is the name of the binary, with `mysql_find_rows` a symlink .
 
-`mysql_find_rows` reads files containing SQL statements and extracts statements that match a given regular expression or that contain [USE db_name](/sql-statements-structure/sql-statements/administrative-sql-statements/use) or [SET](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set) statements. The utility was written for use with update log files (as used prior to MySQL 5.0) and as such expects statements to be terminated with semicolon (;) characters. It may be useful with other files that contain SQL statements as long as statements are terminated with semicolons.
+`mysql_find_rows` reads files containing SQL statements and extracts statements that match a given regular expression or that contain [USE db_name](/sql-statements-structure/sql-statements/administrative-sql-statements/use/) or [SET](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set/) statements. The utility was written for use with update log files (as used prior to MySQL 5.0) and as such expects statements to be terminated with semicolon (;) characters. It may be useful with other files that contain SQL statements as long as statements are terminated with semicolons.
 
 ## Usage
 

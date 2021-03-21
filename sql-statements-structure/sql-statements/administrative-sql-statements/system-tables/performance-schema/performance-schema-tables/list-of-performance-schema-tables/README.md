@@ -1,6 +1,6 @@
 # List of Performance Schema Tables
 
-Below is a list of all [Performance Schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema) tables as well as a brief description of each of them.
+Below is a list of all [Performance Schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/) tables as well as a brief description of each of them.
 
 <table><tbody><tr><th>Table</th><th>Description</th></tr>
 <tr><td><code><a href="/kb/en/performance-schema-accounts-table/">accounts</a></code></td><td>Client account connection statistics.</td></tr>

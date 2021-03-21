@@ -1,6 +1,6 @@
 # Plugin SQL Statements
 
-[Plugin](/columns-storage-engines-and-plugins/plugins/plugin-overview) commands.
+[Plugin](/columns-storage-engines-and-plugins/plugins/plugin-overview/) commands.
 
 - [SHOW PLUGINS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-plugins/) — Display information about installed plugins.
 - [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin/) — Install a plugin.

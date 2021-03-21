@@ -37,5 +37,5 @@ SELECT 2 = TRUE, 2 IS TRUE;
 
 ## See Also
 
-- [Boolean Literals](/sql-statements-structure/sql-language-structure/sql-language-structure-boolean-literals)
-- [BOOLEAN Data Type](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/boolean)
+- [Boolean Literals](/sql-statements-structure/sql-language-structure/sql-language-structure-boolean-literals/)
+- [BOOLEAN Data Type](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/boolean/)

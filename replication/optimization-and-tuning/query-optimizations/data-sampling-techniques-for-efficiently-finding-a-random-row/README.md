@@ -7,7 +7,7 @@
 One would like to do "SELECT ... ORDER BY RAND() LIMIT 10" to get 10 rows at random. But this is slow. The optimizer does
 
 - Fetch all the rows -- this is costly
-- Append [RAND()](/built-in-functions/numeric-functions/rand) to the rows
+- Append [RAND()](/built-in-functions/numeric-functions/rand/) to the rows
 - Sort the rows -- also costly
 - Pick the first 10.
 
@@ -49,7 +49,7 @@ SELECT *
 
 ### Case: Consecutive AUTO_INCREMENT without gaps, 1 row returned
 
-- Requirement: [AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment) id
+- Requirement: [AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment/) id
 - Requirement: No gaps in id
 
 ```sql

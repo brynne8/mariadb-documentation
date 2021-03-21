@@ -12,7 +12,7 @@ If expr is greater than or equal to min and expr is less than or equal
 to max, BETWEEN returns 1, otherwise it returns 0. This is equivalent
 to the expression (min &lt;= expr AND expr &lt;= max) if all the arguments
 are of the same type. Otherwise type conversion takes place according
-to the rules described at [Type Conversion](/built-in-functions/string-functions/type-conversion), but
+to the rules described at [Type Conversion](/built-in-functions/string-functions/type-conversion/), but
 applied to all the three arguments.
 
 ## Examples

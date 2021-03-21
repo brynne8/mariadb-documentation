@@ -8,11 +8,11 @@ There are two conceptually different ways to transfer a state from one MariaDB s
 
 1 <strong>Logical</strong>
 
-The only SST method of this type is the `mysqldump` SST method, which actually uses the [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump) utility to get a logical dump of the donor. This SST method requires the joiner node to be fully initialized and ready to accept connections before the transfer. This method is, by definition, blocking, in that it blocks the donor node from modifying its own state for the duration of the transfer. It is also the slowest of all, and that might be an issue in a cluster with a lot of load.
+The only SST method of this type is the `mysqldump` SST method, which actually uses the [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump/) utility to get a logical dump of the donor. This SST method requires the joiner node to be fully initialized and ready to accept connections before the transfer. This method is, by definition, blocking, in that it blocks the donor node from modifying its own state for the duration of the transfer. It is also the slowest of all, and that might be an issue in a cluster with a lot of load.
 
 1 <strong>Physical</strong>
 
-SST methods of this type physically copy the data files from the donor node to the joiner node. This requires that the joiner node is initialized after the transfer. The [mariabackup](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/mariabackup-sst-method) SST method and other a few other SST methods fall into this category. These SST methods are much faster than the `mysqldump` SST method, but they have certain limitations. For example, they can be used only on server startup and the joiner node must be configured very similarly to the donor node (e.g. [innodb_file_per_table](/kb/en/xtradbinnodb-server-system-variables/#innodb_file_per_table) should be the same and so on). Some of the SST methods in this category are non-blocking on the donor node, meaning that the donor node is still able to process queries while donating the SST (e.g. the [mariabackup](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/mariabackup-sst-method) SST method is non-blocking).
+SST methods of this type physically copy the data files from the donor node to the joiner node. This requires that the joiner node is initialized after the transfer. The [mariabackup](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/mariabackup-sst-method/) SST method and other a few other SST methods fall into this category. These SST methods are much faster than the `mysqldump` SST method, but they have certain limitations. For example, they can be used only on server startup and the joiner node must be configured very similarly to the donor node (e.g. [innodb_file_per_table](/kb/en/xtradbinnodb-server-system-variables/#innodb_file_per_table) should be the same and so on). Some of the SST methods in this category are non-blocking on the donor node, meaning that the donor node is still able to process queries while donating the SST (e.g. the [mariabackup](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/mariabackup-sst-method/) SST method is non-blocking).
 
 ## SST Methods
 
@@ -24,7 +24,7 @@ You can choose your SST method by setting the <a undefined>wsrep_sst_method</a> 
 SET GLOBAL wsrep_sst_method='mariabackup';
 ```
 
-It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up a node:
+It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up a node:
 
 ```sql
 [mariadb]
@@ -40,19 +40,19 @@ MariaDB Galera Cluster comes with the following built-in SST methods:
 
 This SST method uses the [Mariabackup](/kb/en/backup-restore-and-import-clients-mariadb-backup/) utility for performing SSTs. It is one of the two non-locking methods. This is the recommended SST method if you require the ability to run queries on the donor node during the SST. Note that if you use the `mariabackup` SST method, then you also need to have `socat` installed on the server. This is needed to stream the backup from the donor to the joiner. This is a limitation inherited from the `xtrabackup-v2` SST method.
 
-This SST method supports [GTID](/replication/standard-replication/gtid).
+This SST method supports [GTID](/replication/standard-replication/gtid/).
 
 This SST method supports [Data at Rest Encryption](/kb/en/data-at-rest-encryption/).
 
 This SST method is available from [MariaDB 10.1.26](/kb/en/mariadb-10126-release-notes/) and [MariaDB 10.2.10](/kb/en/mariadb-10210-release-notes/).
 
-See [mariabackup SST method](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/mariabackup-sst-method) for more information.
+See [mariabackup SST method](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/mariabackup-sst-method/) for more information.
 
 ### rsync
 
 This is the default method. This method uses the <a undefined>rsync</a> utility to create a snapshot of the donor node. `rsync` should be available by default on all modern Linux distributions. The donor node is blocked with a read lock during the SST. This is the fastest SST method, especially for large datasets since it copies binary data. Because of that, this is the recommended SST method if you do not need to allow the donor node to execute queries during the SST.
 
-This SST method supports [GTID](/replication/standard-replication/gtid).
+This SST method supports [GTID](/replication/standard-replication/gtid/).
 
 This SST method supports [Data at Rest Encryption](/kb/en/data-at-rest-encryption/).
 
@@ -68,17 +68,17 @@ You also need to run the certificate directory through <a undefined>openssl reha
 
 ### mysqldump
 
-This SST method runs [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump) on the donor node and pipes
-the output to the [mysql](/clients-utilities/mysql-client) client connected to the joiner node. The `mysqldump` SST method
+This SST method runs [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump/) on the donor node and pipes
+the output to the [mysql](/clients-utilities/mysql-client/) client connected to the joiner node. The `mysqldump` SST method
 needs a username/password pair set in the [wsrep_sst_auth](/kb/en/galera-cluster-system-variables/#wsrep_sst_auth) variable in order to get the dump. The donor node is blocked with a read lock during the SST. This is the slowest SST method.
 
-This SST method supports [GTID](/replication/standard-replication/gtid).
+This SST method supports [GTID](/replication/standard-replication/gtid/).
 
 This SST method supports [Data at Rest Encryption](/kb/en/data-at-rest-encryption/).
 
 ### xtrabackup-v2
 
-In [MariaDB 10.1](/kb/en/what-is-mariadb-101/) and later, [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup) is the recommended backup method to use instead of Percona XtraBackup.
+In [MariaDB 10.1](/kb/en/what-is-mariadb-101/) and later, [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/) is the recommended backup method to use instead of Percona XtraBackup.
 
 In [MariaDB 10.3](/kb/en/what-is-mariadb-103/), Percona XtraBackup is <strong>not supported</strong>. See [Percona XtraBackup Overview: Compatibility with MariaDB](/kb/en/percona-xtrabackup-overview/#compatibility-with-mariadb) for more information.
 
@@ -86,17 +86,17 @@ In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and [MariaDB 10.1](/kb/en/what-is
 
 This SST method uses the [Percona XtraBackup](/kb/en/backup-restore-and-import-clients-percona-xtrabackup/) utility for performing SSTs. It is one of the two non-blocking methods. Note that if you use the `xtrabackup-v2` SST method, you also need to have `socat` installed on the server. Since Percona XtraBackup is a third party product, this SST method requires an additional installation some additional configuration. Please refer to [Percona's xtrabackup SST documentation](http://www.percona.com/doc/percona-xtradb-cluster/5.7/manual/xtrabackup_sst.html) for information from the vendor.
 
-This SST method does <strong>not</strong> support [GTID](/replication/standard-replication/gtid).
+This SST method does <strong>not</strong> support [GTID](/replication/standard-replication/gtid/).
 
 This SST method does <strong>not</strong> support [Data at Rest Encryption](/kb/en/data-at-rest-encryption/).
 
 This SST method is available from MariaDB Galera Cluster 5.5.37 and MariaDB Galera Cluster 10.0.10.
 
-See [xtrabackup-v2 SST method](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/xtrabackup-v2-sst-method) for more information.
+See [xtrabackup-v2 SST method](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/xtrabackup-v2-sst-method/) for more information.
 
 ### xtrabackup
 
-In [MariaDB 10.1](/kb/en/what-is-mariadb-101/) and later, [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup) is the recommended backup method to use instead of Percona XtraBackup.
+In [MariaDB 10.1](/kb/en/what-is-mariadb-101/) and later, [Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/) is the recommended backup method to use instead of Percona XtraBackup.
 
 In [MariaDB 10.3](/kb/en/what-is-mariadb-103/), Percona XtraBackup is <strong>not supported</strong>. See [Percona XtraBackup Overview: Compatibility with MariaDB](/kb/en/percona-xtrabackup-overview/#compatibility-with-mariadb) for more information.
 
@@ -104,7 +104,7 @@ In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and [MariaDB 10.1](/kb/en/what-is
 
 This SST method is an older SST method that uses the [Percona XtraBackup](/kb/en/backup-restore-and-import-clients-percona-xtrabackup/) utility for performing SSTs. The `xtrabackup-v2` SST method should be used instead of the `xtrabackup` SST method starting from [MariaDB 5.5.33](/kb/en/mariadb-5533-release-notes/).
 
-This SST method does <strong>not</strong> support [GTID](/replication/standard-replication/gtid).
+This SST method does <strong>not</strong> support [GTID](/replication/standard-replication/gtid/).
 
 This SST method does <strong>not</strong> support [Data at Rest Encryption](/kb/en/data-at-rest-encryption/).
 
@@ -116,7 +116,7 @@ All SST methods except `rsync` require authentication via username and password.
 SET GLOBAL wsrep_sst_auth = 'mariabackup:password';
 ```
 
-It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up a node:
+It can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up a node:
 
 ```sql
 [mariadb]
@@ -124,7 +124,7 @@ It can also be set in a server [option group](/kb/en/configuring-mariadb-with-op
 wsrep_sst_auth = mariabackup:password
 ```
 
-Some [authentication plugins](/columns-storage-engines-and-plugins/plugins/authentication-plugins) do not require a password. For example, the [unix_socket](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-unix-socket) and [gssapi](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-gssapi) authentication plugins do not require a password. If you are using a user account that does not require a password in order to log in, then you can just leave the password component of <a undefined>wsrep_sst_auth</a> empty. For example:
+Some [authentication plugins](/columns-storage-engines-and-plugins/plugins/authentication-plugins/) do not require a password. For example, the [unix_socket](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-unix-socket/) and [gssapi](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-gssapi/) authentication plugins do not require a password. If you are using a user account that does not require a password in order to log in, then you can just leave the password component of <a undefined>wsrep_sst_auth</a> empty. For example:
 
 ```sql
 [mariadb]
@@ -132,11 +132,11 @@ Some [authentication plugins](/columns-storage-engines-and-plugins/plugins/authe
 wsrep_sst_auth = mariabackup:
 ```
 
-See the relevant description or page for each SST method to find out what privileges need to be [granted](/sql-statements-structure/sql-statements/account-management-sql-commands/grant) to the user and whether the privileges are needed on the donor node or joiner node for that method.
+See the relevant description or page for each SST method to find out what privileges need to be [granted](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/) to the user and whether the privileges are needed on the donor node or joiner node for that method.
 
 ## SSTs and Systemd
 
-MariaDB's [systemd](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd) unit file has a default startup timeout of about 90 seconds on most systems. If an SST takes longer than this default startup timeout on a joiner node, then `systemd` will assume that `mysqld` has failed to startup, which causes `systemd` to kill the `mysqld` process on the joiner node. To work around this, you can reconfigure the MariaDB `systemd` unit to have an infinite timeout, such as by executing one of the following commands:
+MariaDB's [systemd](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd/) unit file has a default startup timeout of about 90 seconds on most systems. If an SST takes longer than this default startup timeout on a joiner node, then `systemd` will assume that `mysqld` has failed to startup, which causes `systemd` to kill the `mysqld` process on the joiner node. To work around this, you can reconfigure the MariaDB `systemd` unit to have an infinite timeout, such as by executing one of the following commands:
 
 If you are using `systemd` 228 or older, then you can execute the following to set an infinite timeout:
 
@@ -186,14 +186,14 @@ When using an SST method that blocks the donor, there is yet another reason to r
 
 In some cases, if Galera Cluster's automatic SSTs repeatedly fail, then it can be helpful to perform a "manual SST". See the following pages on how to do that:
 
-- [Manual SST of Galera Cluster node with Mariabackup](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/manual-sst-of-galera-cluster-node-with-mariabackup)
-- [Manual SST of Galera Cluster node with Percona XtraBackup](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/manual-sst-of-galera-cluster-node-with-percona-xtrabackup)
+- [Manual SST of Galera Cluster node with Mariabackup](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/manual-sst-of-galera-cluster-node-with-mariabackup/)
+- [Manual SST of Galera Cluster node with Percona XtraBackup](/replication/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/manual-sst-of-galera-cluster-node-with-percona-xtrabackup/)
 
 ## Known Issues
 
 ### mysqld_multi
 
-SST scripts can't currently read the `[mysqldN]` [option groups](/kb/en/configuring-mariadb-with-option-files/#option-groups) in [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) that are read by instances managed by [mysqld_multi](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld_multi).
+SST scripts can't currently read the `[mysqldN]` [option groups](/kb/en/configuring-mariadb-with-option-files/#option-groups) in [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) that are read by instances managed by [mysqld_multi](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld_multi/).
 
 See [MDEV-18863](https://jira.mariadb.org/browse/MDEV-18863) for more information.
 

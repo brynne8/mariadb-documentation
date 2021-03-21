@@ -1,6 +1,6 @@
 # InnoDB File Format
 
-Prior to [MariaDB 10.3](/kb/en/what-is-mariadb-103/), the [XtraDB/InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) storage engine supports two different file formats.
+Prior to [MariaDB 10.3](/kb/en/what-is-mariadb-103/), the [XtraDB/InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) storage engine supports two different file formats.
 
 ## Setting a Table's File Format
 
@@ -12,7 +12,7 @@ A table's tablespace is tagged with the lowest InnoDB file format that supports 
 
 ## Supported File Formats
 
-The [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) storage engine supports two different file formats:
+The [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) storage engine supports two different file formats:
 
 - `Antelope`
 - `Barracuda`
@@ -45,7 +45,7 @@ Each tablespace is tagged with the id of the most recent file format used by one
 
 This check can be skipped via the [innodb_file_format_check](/kb/en/xtradbinnodb-server-system-variables/#innodb_file_format_check) variable. Beware that, is XtraDB/InnoDB tries to repair a table in an unknown format, the table will be corrupted! This happens on restart if innodb_file_format_check is disabled and the server crashed, or it was closed with fast shutdown.
 
-To downgrade a table from the Barracuda format to Antelope, the table's `ROW_FORMAT` can be set to a value supported by Antelope, via an [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) statement. This recreates the indexes.
+To downgrade a table from the Barracuda format to Antelope, the table's `ROW_FORMAT` can be set to a value supported by Antelope, via an [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) statement. This recreates the indexes.
 
 The Antelope format can be used to make sure that tables work on MariaDB and MySQL servers which are older than 5.5.
 

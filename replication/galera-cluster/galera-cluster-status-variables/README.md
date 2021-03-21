@@ -2,13 +2,13 @@
 
 ## Viewing Galera Cluster Status variables
 
-Galera Status variables can be viewed with the [SHOW STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-status) statement.
+Galera Status variables can be viewed with the [SHOW STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-status/) statement.
 
 ```sql
 SHOW STATUS LIKE 'wsrep%';
 ```
 
-See also the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables).
+See also the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables/).
 
 ## List of Galera Cluster Status variables
 

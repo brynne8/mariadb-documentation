@@ -2,7 +2,7 @@
 
 ## Overview
 
-When a [transaction](/sql-statements-structure/sql-statements/transactions) writes data, it always inserts them in the table indexes or data (in the buffer pool or in physical files). No private copies are created. The old versions of data being modified by active [XtraDB/InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) transactions are stored in the undo log. The original data can then be restored, or viewed by a consistent read.
+When a [transaction](/sql-statements-structure/sql-statements/transactions/) writes data, it always inserts them in the table indexes or data (in the buffer pool or in physical files). No private copies are created. The old versions of data being modified by active [XtraDB/InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) transactions are stored in the undo log. The original data can then be restored, or viewed by a consistent read.
 
 ## Implementation Details
 
@@ -31,7 +31,7 @@ Also, long transactions can more likely result in deadlocks, but this problem is
 
 ## Configuration
 
-The undo log is not a log file that can be viewed on disk in the usual sense, such as the [error log](/mariadb-administration/server-monitoring-logs/error-log) or [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log), rather an area of storage.
+The undo log is not a log file that can be viewed on disk in the usual sense, such as the [error log](/mariadb-administration/server-monitoring-logs/error-log/) or [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log/), rather an area of storage.
 
 The undo log is usually part of the physical system tablespace, but from [MariaDB 10.0](/kb/en/what-is-mariadb-100/), the [innodb_undo_directory](/kb/en/xtradbinnodb-server-system-variables/#innodb_undo_directory) and [innodb_undo_tablespaces](/kb/en/xtradbinnodb-server-system-variables/#innodb_undo_tablespaces) system variables can be used to split into different tablespaces and store in a different location (perhaps on a different storage device).
 

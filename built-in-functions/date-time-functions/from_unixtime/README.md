@@ -11,16 +11,16 @@ FROM_UNIXTIME(unix_timestamp), FROM_UNIXTIME(unix_timestamp,format)
 Returns a representation of the unix_timestamp argument as a value in
 'YYYY-MM-DD HH:MM:SS' or YYYYMMDDHHMMSS.uuuuuu format, depending on
 whether the function is used in a string or numeric context. The value
-is expressed in the current [time zone](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones). unix_timestamp is an internal
-timestamp value such as is produced by the [UNIX_TIMESTAMP()](/built-in-functions/date-time-functions/unix_timestamp) function.
+is expressed in the current [time zone](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones/). unix_timestamp is an internal
+timestamp value such as is produced by the [UNIX_TIMESTAMP()](/built-in-functions/date-time-functions/unix_timestamp/) function.
 
 If format is given, the result is formatted according to the format
 string, which is used the same way as listed in the entry for the
-[DATE_FORMAT()](/built-in-functions/date-time-functions/date_format) function.
+[DATE_FORMAT()](/built-in-functions/date-time-functions/date_format/) function.
 
-Timestamps in MariaDB have a maximum value of 2147483647, equivalent to 2038-01-19 05:14:07. This is due to the underlying 32-bit limitation. Using the function on a timestamp beyond this will result in NULL being returned. Use [DATETIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/datetime) as a storage type if you require dates beyond this.
+Timestamps in MariaDB have a maximum value of 2147483647, equivalent to 2038-01-19 05:14:07. This is due to the underlying 32-bit limitation. Using the function on a timestamp beyond this will result in NULL being returned. Use [DATETIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/datetime/) as a storage type if you require dates beyond this.
 
-The options that can be used by FROM_UNIXTIME(), as well as [DATE_FORMAT()](/built-in-functions/date-time-functions/date_format) and [STR_TO_DATE()](/built-in-functions/date-time-functions/str_to_date), are:
+The options that can be used by FROM_UNIXTIME(), as well as [DATE_FORMAT()](/built-in-functions/date-time-functions/date_format/) and [STR_TO_DATE()](/built-in-functions/date-time-functions/str_to_date/), are:
 
 <table><tbody><tr><th>Option</th><th>Description</th></tr>
 <tr><td><code>%a</code></td><td>Short weekday name in current locale (Variable <a href="/kb/en/server-system-variables/#lc_time_names">lc_time_names</a>).</td></tr>
@@ -93,6 +93,6 @@ SELECT FROM_UNIXTIME(UNIX_TIMESTAMP(), '%Y %D %M %h:%i:%s %x');
 
 ## See Also
 
-- [UNIX_TIMESTAMP()](/built-in-functions/date-time-functions/unix_timestamp)
-- [DATE_FORMAT()](/built-in-functions/date-time-functions/date_format)
-- [STR_TO_DATE()](/built-in-functions/date-time-functions/str_to_date)
+- [UNIX_TIMESTAMP()](/built-in-functions/date-time-functions/unix_timestamp/)
+- [DATE_FORMAT()](/built-in-functions/date-time-functions/date_format/)
+- [STR_TO_DATE()](/built-in-functions/date-time-functions/str_to_date/)

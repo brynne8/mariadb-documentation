@@ -24,7 +24,7 @@ func_body:
 
 ## Description
 
-Use the `CREATE FUNCTION` statement to create a new [stored function](/programming-customizing-mariadb/stored-routines/stored-functions). You must have
+Use the `CREATE FUNCTION` statement to create a new [stored function](/programming-customizing-mariadb/stored-routines/stored-functions/). You must have
 the [CREATE ROUTINE](/kb/en/grant/#database-privileges) database privilege to use `CREATE FUNCTION`.
 A function takes any number of arguments and returns a value from the function body. The
 function body can be any valid SQL expression as you would use, for example, in any select
@@ -32,16 +32,16 @@ expression. If you have the appropriate privileges, you can call the function ex
 would any built-in function. See [Security](#security) below for details on privileges.
 
 You can also use a variant of the `CREATE FUNCTION` statement to install a user-defined
-function (UDF) defined by a plugin. See [CREATE FUNCTION (UDF)](/programming-customizing-mariadb/user-defined-functions/create-function-udf)
+function (UDF) defined by a plugin. See [CREATE FUNCTION (UDF)](/programming-customizing-mariadb/user-defined-functions/create-function-udf/)
 for details.
 
-You can use a [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) statement for the function body by enclosing it in
+You can use a [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) statement for the function body by enclosing it in
 parentheses, exactly as you would to use a subselect for any other expression. The `SELECT`
 statement must return a single value. If more than one column is returned when the function is called,
 error 1241 results. If more than one row is returned when the function is called, error 1242
 results. Use a `LIMIT` clause to ensure only one row is returned.
 
-You can also replace the `RETURN` clause with a [BEGIN...END](/programming-customizing-mariadb/programmatic-compound-statements/begin-end) compound
+You can also replace the `RETURN` clause with a [BEGIN...END](/programming-customizing-mariadb/programmatic-compound-statements/begin-end/) compound
 statement. The compound statement must contain a `RETURN` statement. When the function is
 called, the `RETURN` statement immediately returns its result, and any statements after `RETURN`
 are effectively ignored.
@@ -58,19 +58,19 @@ used. Parameter names are not case sensitive.
 Each parameter can be declared to use any valid data type, except that
 the COLLATE attribute cannot be used.
 
-For valid identifiers to use as function names, see [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names).
+For valid identifiers to use as function names, see [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names/).
 
 #### AGGREGATE
 
 ##### MariaDB starting with [10.3.3](/kb/en/mariadb-1033-release-notes/)
 
-From [MariaDB 10.3.3](/kb/en/mariadb-1033-release-notes/), it is possible to create stored aggregate functions as well. See [Stored Aggregate Functions](/programming-customizing-mariadb/stored-routines/stored-functions/stored-aggregate-functions) for details.
+From [MariaDB 10.3.3](/kb/en/mariadb-1033-release-notes/), it is possible to create stored aggregate functions as well. See [Stored Aggregate Functions](/programming-customizing-mariadb/stored-routines/stored-functions/stored-aggregate-functions/) for details.
 
 #### RETURNS
 
 The `RETURNS` clause specifies the return type of the function. `NULL` values are permitted with all return types.
 
-What happens if the `RETURN` clause returns a value of a different type? It depends on the [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode) in effect at the moment of the function creation.
+What happens if the `RETURN` clause returns a value of a different type? It depends on the [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode/) in effect at the moment of the function creation.
 
 If the SQL_MODE is strict (STRICT_ALL_TABLES or STRICT_TRANS_TABLES flags are specified), a 1366 error will be produced.
 
@@ -87,7 +87,7 @@ force, regardless of the server SQL mode in effect when the routine is invoked.
 
 `LANGUAGE SQL` is a standard SQL clause, and it can be used in MariaDB for portability. However that clause has no meaning, because SQL is the only supported language for stored functions.
 
-A function is deterministic if it can produce only one result for a given list of parameters. If the result may be affected by stored data, server variables, random numbers or any value that is not explicitly passed, then the function is not deterministic. Also, a function is non-deterministic if it uses non-deterministic functions like [NOW()](/built-in-functions/date-time-functions/now) or [CURRENT_TIMESTAMP()](/built-in-functions/secondary-functions/information-functions/current_user). The optimizer may choose a faster execution plan if it known that the function is deterministic. In such cases, you should declare the routine using the `DETERMINISTIC` keyword. If you want to explicitly state that the function is not deterministic (which is the default) you can use the `NOT DETERMINISTIC` keywords.
+A function is deterministic if it can produce only one result for a given list of parameters. If the result may be affected by stored data, server variables, random numbers or any value that is not explicitly passed, then the function is not deterministic. Also, a function is non-deterministic if it uses non-deterministic functions like [NOW()](/built-in-functions/date-time-functions/now/) or [CURRENT_TIMESTAMP()](/built-in-functions/secondary-functions/information-functions/current_user/). The optimizer may choose a faster execution plan if it known that the function is deterministic. In such cases, you should declare the routine using the `DETERMINISTIC` keyword. If you want to explicitly state that the function is not deterministic (which is the default) you can use the `NOT DETERMINISTIC` keywords.
 
 If you declare a non-deterministic function as `DETERMINISTIC`, you may get incorrect results. If you declare a deterministic function as `NOT DETERMINISTIC`, in some cases the queries will be slower.
 
@@ -102,7 +102,7 @@ DROP FUNCTION IF EXISTS function_name;
 CREATE FUNCTION function_name ...;
 ```
 
-with the exception that any existing [privileges](/programming-customizing-mariadb/stored-routines/stored-functions/stored-routine-privileges) for the function are not dropped.
+with the exception that any existing [privileges](/programming-customizing-mariadb/stored-routines/stored-functions/stored-routine-privileges/) for the function are not dropped.
 
 #### IF NOT EXISTS
 
@@ -112,21 +112,21 @@ If the IF NOT EXISTS clause is used, MariaDB will return a warning instead of an
 
 #### [NOT] DETERMINISTIC
 
-The `[NOT] DETERMINISTIC` clause also affects [binary logging](/mariadb-administration/server-monitoring-logs/binary-log), because the `STATEMENT` format can not be used to store or replicate non-deterministic statements.
+The `[NOT] DETERMINISTIC` clause also affects [binary logging](/mariadb-administration/server-monitoring-logs/binary-log/), because the `STATEMENT` format can not be used to store or replicate non-deterministic statements.
 
 `CONTAINS SQL`, `NO SQL`, `READS SQL DATA`, and `MODIFIES SQL DATA` are informative clauses that tell the server what the function does. MariaDB does not check in any way whether the specified clause is correct. If none of these clauses are specified, `CONTAINS SQL` is used by default.
 
 #### MODIFIES SQL DATA
 
-`MODIFIES SQL DATA` means that the function contains statements that may modify data stored in databases. This happens if the function contains statements like [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete), [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update), [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert), [REPLACE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/replace) or DDL.
+`MODIFIES SQL DATA` means that the function contains statements that may modify data stored in databases. This happens if the function contains statements like [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/), [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/), [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/), [REPLACE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/replace/) or DDL.
 
 #### READS SQL DATA
 
-`READS SQL DATA` means that the function reads data stored in databases, but does not modify any data. This happens if [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) statements are used, but there no write operations are executed.
+`READS SQL DATA` means that the function reads data stored in databases, but does not modify any data. This happens if [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) statements are used, but there no write operations are executed.
 
 #### CONTAINS SQL
 
-`CONTAINS SQL` means that the function contains at least one SQL statement, but it does not read or write any data stored in a database. Examples include [SET](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set) or [DO](/sql-statements-structure/sql-statements/stored-routine-statements/do).
+`CONTAINS SQL` means that the function contains at least one SQL statement, but it does not read or write any data stored in a database. Examples include [SET](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set/) or [DO](/sql-statements-structure/sql-statements/stored-routine-statements/do/).
 
 #### NO SQL
 
@@ -179,7 +179,7 @@ salary for each department without being able to see individual salaries.
 
 ## Character sets and collations
 
-Function return types can be declared to use any valid [character set and collation](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets). If used, the COLLATE attribute needs to be preceded by a CHARACTER SET attribute.
+Function return types can be declared to use any valid [character set and collation](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/). If used, the COLLATE attribute needs to be preceded by a CHARACTER SET attribute.
 
 If the character set and collation are not specifically set in the statement, the database defaults at the time of creation will be used. If the database defaults change at a later stage, the stored function character set/collation will not be changed at the same time; the stored function needs to be dropped and recreated to ensure the same character set/collation as the database is used.
 
@@ -230,12 +230,12 @@ CREATE FUNCTION hello2 (s CHAR(20))
 
 ## See Also
 
-- [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names)
-- [Stored Aggregate Functions](/programming-customizing-mariadb/stored-routines/stored-functions/stored-aggregate-functions)
-- [CREATE FUNCTION (UDF)](/programming-customizing-mariadb/user-defined-functions/create-function-udf)
-- [SHOW CREATE FUNCTION](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-function)
-- [ALTER FUNCTION](/sql-statements-structure/sql-statements/data-definition/alter/alter-function)
-- [DROP FUNCTION](/programming-customizing-mariadb/stored-routines/stored-functions/drop-function)
-- [SHOW FUNCTION STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-function-status)
-- [Stored Routine Privileges](/programming-customizing-mariadb/stored-routines/stored-functions/stored-routine-privileges)
-- [Information Schema ROUTINES Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table)
+- [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names/)
+- [Stored Aggregate Functions](/programming-customizing-mariadb/stored-routines/stored-functions/stored-aggregate-functions/)
+- [CREATE FUNCTION (UDF)](/programming-customizing-mariadb/user-defined-functions/create-function-udf/)
+- [SHOW CREATE FUNCTION](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-function/)
+- [ALTER FUNCTION](/sql-statements-structure/sql-statements/data-definition/alter/alter-function/)
+- [DROP FUNCTION](/programming-customizing-mariadb/stored-routines/stored-functions/drop-function/)
+- [SHOW FUNCTION STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-function-status/)
+- [Stored Routine Privileges](/programming-customizing-mariadb/stored-routines/stored-functions/stored-routine-privileges/)
+- [Information Schema ROUTINES Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table/)

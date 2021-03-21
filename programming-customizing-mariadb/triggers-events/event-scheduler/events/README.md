@@ -8,7 +8,7 @@ Creating, modifying or deleting events requires the [EVENT privilege](/kb/en/gra
 
 ## Creating events
 
-Events are created with the [CREATE EVENT](/sql-statements-structure/sql-statements/data-definition/create/create-event) statement.
+Events are created with the [CREATE EVENT](/sql-statements-structure/sql-statements/data-definition/create/create-event/) statement.
 
 ### Example
 
@@ -43,13 +43,13 @@ SET GLOBAL event_scheduler = ON;
 
 to activate it. If `event_scheduler` has been set to `Disabled`, you cannot change the value at runtime. Changing the value of the `event_scheduler` variable requires the SUPER privilege.
 
-Since [MariaDB 10.0.22](/kb/en/mariadb-10022-release-notes/), setting the [event_scheduler](/kb/en/server-system-variables/#event_scheduler) system variable will also try to reload the [mysql.event table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlevent-table) if it was not properly loaded at startup.
+Since [MariaDB 10.0.22](/kb/en/mariadb-10022-release-notes/), setting the [event_scheduler](/kb/en/server-system-variables/#event_scheduler) system variable will also try to reload the [mysql.event table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlevent-table/) if it was not properly loaded at startup.
 
 ## Viewing current events
 
-A list of current events can be obtained with the [SHOW EVENTS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-events) statement. This only shows the event name and interval - the full event details, including the SQL, can be seen by querying the [Information Schema EVENTS table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-events-table), or with [SHOW CREATE EVENT](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-event).
+A list of current events can be obtained with the [SHOW EVENTS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-events/) statement. This only shows the event name and interval - the full event details, including the SQL, can be seen by querying the [Information Schema EVENTS table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-events-table/), or with [SHOW CREATE EVENT](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-event/).
 
-If an event is currently being executed, it can be seen by querying the [Information Schema PROCESSLIST table](/kb/en/information-schema-processlist-table/), or with the [SHOW PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist) statement.
+If an event is currently being executed, it can be seen by querying the [Information Schema PROCESSLIST table](/kb/en/information-schema-processlist-table/), or with the [SHOW PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist/) statement.
 
 ### Example
 
@@ -87,7 +87,7 @@ collation_connection: utf8_general_ci
 
 ## Altering events
 
-An event can be changed with the [ALTER EVENT](/programming-customizing-mariadb/triggers-events/event-scheduler/alter-event) statement.
+An event can be changed with the [ALTER EVENT](/programming-customizing-mariadb/triggers-events/event-scheduler/alter-event/) statement.
 
 ### Example
 
@@ -97,7 +97,7 @@ ALTER EVENT test_event ON SCHEDULE EVERY '2:3' DAY_HOUR;
 
 ## Dropping events
 
-Events are dropped with the [DROP EVENT](/sql-statements-structure/sql-statements/data-definition/drop/drop-event) statement. Events are also also automatically dropped once they have run for the final time according to their schedule, unless the ON COMPLETION PRESERVE clause has been specified.
+Events are dropped with the [DROP EVENT](/sql-statements-structure/sql-statements/data-definition/drop/drop-event/) statement. Events are also also automatically dropped once they have run for the final time according to their schedule, unless the ON COMPLETION PRESERVE clause has been specified.
 
 ### Example
 
@@ -108,7 +108,7 @@ Query OK, 0 rows affected (0.00 sec)
 
 ## See also
 
-- [CREATE EVENT](/sql-statements-structure/sql-statements/data-definition/create/create-event)
-- [SHOW CREATE EVENT](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-event)
-- [ALTER EVENT](/programming-customizing-mariadb/triggers-events/event-scheduler/alter-event)
-- [DROP EVENT](/sql-statements-structure/sql-statements/data-definition/drop/drop-event)
+- [CREATE EVENT](/sql-statements-structure/sql-statements/data-definition/create/create-event/)
+- [SHOW CREATE EVENT](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-event/)
+- [ALTER EVENT](/programming-customizing-mariadb/triggers-events/event-scheduler/alter-event/)
+- [DROP EVENT](/sql-statements-structure/sql-statements/data-definition/drop/drop-event/)

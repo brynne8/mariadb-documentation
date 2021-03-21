@@ -6,8 +6,8 @@
 ITERATE label
 ```
 
-`ITERATE` can appear only within [LOOP](/programming-customizing-mariadb/programmatic-compound-statements/loop), [REPEAT](/programming-customizing-mariadb/programmatic-compound-statements/repeat-loop), and [WHILE](/programming-customizing-mariadb/programmatic-compound-statements/while) statements.
-`ITERATE` means "do the loop again", and uses the statement's [label](/programming-customizing-mariadb/programmatic-compound-statements/labels) to determine which statements to repeat. The label must be in the same stored program, not in a caller procedure.
+`ITERATE` can appear only within [LOOP](/programming-customizing-mariadb/programmatic-compound-statements/loop/), [REPEAT](/programming-customizing-mariadb/programmatic-compound-statements/repeat-loop/), and [WHILE](/programming-customizing-mariadb/programmatic-compound-statements/while/) statements.
+`ITERATE` means "do the loop again", and uses the statement's [label](/programming-customizing-mariadb/programmatic-compound-statements/labels/) to determine which statements to repeat. The label must be in the same stored program, not in a caller procedure.
 
 If you try to use `ITERATE` with a non-existing label, or if the label is associated to a construct which is not a loop, the following error will be produced:
 
@@ -31,4 +31,4 @@ END
 
 ## See Also
 
-- [LEAVE](/programming-customizing-mariadb/programmatic-compound-statements/leave) - Exits a loop (or any labeled code block)
+- [LEAVE](/programming-customizing-mariadb/programmatic-compound-statements/leave/) - Exits a loop (or any labeled code block)

@@ -4,9 +4,9 @@
 
 The `query_response_time` plugin was first released in [MariaDB 10.0.4](/kb/en/mariadb-1004-release-notes/).
 
-The `query_response_time` plugin creates the  <a undefined>QUERY_RESPONSE_TIME</a> table in the [INFORMATION_SCHEMA](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema) database. The plugin also adds the [SHOW QUERY_RESPONSE_TIME](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-query_response_time) and [FLUSH  QUERY_RESPONSE_TIME](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush) statements.
+The `query_response_time` plugin creates the  <a undefined>QUERY_RESPONSE_TIME</a> table in the [INFORMATION_SCHEMA](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/) database. The plugin also adds the [SHOW QUERY_RESPONSE_TIME](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-query_response_time/) and [FLUSH  QUERY_RESPONSE_TIME](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/) statements.
 
-The [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log) provides exact information about queries that take a long time to execute. However, sometimes there are a large number of queries that each take a very short amount of time to execute. This feature provides a tool for analyzing that information by counting and displaying the number of queries according to the the length of time they took to execute.
+The [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log/) provides exact information about queries that take a long time to execute. However, sometimes there are a large number of queries that each take a very short amount of time to execute. This feature provides a tool for analyzing that information by counting and displaying the number of queries according to the the length of time they took to execute.
 
 This feature is based on Percona's [Response Time Distribution](http://www.percona.com/doc/percona-server/5.5/diagnostics/response_time_distribution.html).
 
@@ -21,13 +21,13 @@ Both plugins need to be installed to get meaningful statistics.
 
 Although the plugin's shared library is distributed with MariaDB by default, the plugin is not actually installed by MariaDB by default. There are two methods that can be used to install the plugin with MariaDB.
 
-The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname) or [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin). For example:
+The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname/) or [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin/). For example:
 
 ```sql
 INSTALL SONAME 'query_response_time';
 ```
 
-The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the <a undefined>--plugin-load</a> or the <a undefined>--plugin-load-add</a> options. This can be specified as a command-line argument to [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options) or it can be specified in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files). For example:
+The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the <a undefined>--plugin-load</a> or the <a undefined>--plugin-load-add</a> options. This can be specified as a command-line argument to [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/) or it can be specified in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/). For example:
 
 ```sql
 [mariadb]
@@ -37,13 +37,13 @@ plugin_load_add = query_response_time
 
 ## Uninstalling the Plugin
 
-You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname) or [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin). For example:
+You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname/) or [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin/). For example:
 
 ```sql
 UNINSTALL SONAME 'query_response_time';
 ```
 
-If you installed the plugin by providing the <a undefined>--plugin-load</a> or the <a undefined>--plugin-load-add</a> options in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
+If you installed the plugin by providing the <a undefined>--plugin-load</a> or the <a undefined>--plugin-load-add</a> options in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
 
 ## Response Time Distribution
 
@@ -133,7 +133,7 @@ This means there were:
 
 ### Using the Information Schema Table
 
-You can get the distribution by querying the the <a undefined>QUERY_RESPONSE_TIME</a> table in the [INFORMATION_SCHEMA](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema) database. For example:
+You can get the distribution by querying the the <a undefined>QUERY_RESPONSE_TIME</a> table in the [INFORMATION_SCHEMA](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/) database. For example:
 
 ```sql
 SELECT * FROM INFORMATION_SCHEMA.QUERY_RESPONSE_TIME;
@@ -158,7 +158,7 @@ Note: If <a undefined>query_response_time_stats</a> is set to `ON`, then the exe
 
 ##### MariaDB starting with [10.1.1](/kb/en/mariadb-1011-release-notes/)
 
-Starting with [MariaDB 10.1.1](/kb/en/mariadb-1011-release-notes/), as an alternative to the <a undefined>QUERY_RESPONSE_TIME</a> table in the [INFORMATION_SCHEMA](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema) database, you can also use the [SHOW QUERY_RESPONSE_TIME](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-query_response_time) statement. For example:
+Starting with [MariaDB 10.1.1](/kb/en/mariadb-1011-release-notes/), as an alternative to the <a undefined>QUERY_RESPONSE_TIME</a> table in the [INFORMATION_SCHEMA](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/) database, you can also use the [SHOW QUERY_RESPONSE_TIME](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-query_response_time/) statement. For example:
 
 ```sql
 SHOW QUERY_RESPONSE_TIME;
@@ -166,18 +166,18 @@ SHOW QUERY_RESPONSE_TIME;
 
 ##### MariaDB until [10.1.1](/kb/en/mariadb-1011-release-notes/)
 
-Prior to [MariaDB 10.1.1](/kb/en/mariadb-1011-release-notes/), the [SHOW QUERY_RESPONSE_TIME](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-query_response_time) statement is not supported.
+Prior to [MariaDB 10.1.1](/kb/en/mariadb-1011-release-notes/), the [SHOW QUERY_RESPONSE_TIME](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-query_response_time/) statement is not supported.
 
 ### Flushing Plugin Data
 
 Flushing the plugin data does two things:
 
-- Clears the collected times from the <a undefined>QUERY_RESPONSE_TIME</a> table in the [INFORMATION_SCHEMA](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema) database.
+- Clears the collected times from the <a undefined>QUERY_RESPONSE_TIME</a> table in the [INFORMATION_SCHEMA](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/) database.
 - Reads the value of <a undefined>query_response_time_range_base</a> and uses it to set the range base for the table.
 
 ##### MariaDB starting with [10.1.1](/kb/en/mariadb-1011-release-notes/)
 
-Starting with [MariaDB 10.1.1](/kb/en/mariadb-1011-release-notes/), plugin data can be flushed with the [FLUSH  QUERY_RESPONSE_TIME](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush) statement. For example:
+Starting with [MariaDB 10.1.1](/kb/en/mariadb-1011-release-notes/), plugin data can be flushed with the [FLUSH  QUERY_RESPONSE_TIME](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/) statement. For example:
 
 ```sql
 FLUSH QUERY_RESPONSE_TIME;
@@ -191,7 +191,7 @@ SET GLOBAL query_response_time_flush=1;
 
 ##### MariaDB until [10.1.1](/kb/en/mariadb-1011-release-notes/)
 
-Prior to [MariaDB 10.1.1](/kb/en/mariadb-1011-release-notes/), the [FLUSH  QUERY_RESPONSE_TIME](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush) statement is not supported. To flush plugin data, set the <a undefined>query_response_time_flush</a> system variable. For example:
+Prior to [MariaDB 10.1.1](/kb/en/mariadb-1011-release-notes/), the [FLUSH  QUERY_RESPONSE_TIME](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/) statement is not supported. To flush plugin data, set the <a undefined>query_response_time_flush</a> system variable. For example:
 
 ```sql
 SET GLOBAL query_response_time_flush=1;
@@ -263,7 +263,7 @@ SET GLOBAL query_response_time_flush=1;
 <ul start="1"><li>`OFF` - Disables the plugin without removing it from the <a undefined>mysql.plugins</a> table.
 </li><li>`ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
 </li><li>`FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
-</li><li>`FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname) or [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin) while the server is running.
+</li><li>`FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname/) or [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin/) while the server is running.
 </li></ul>
 </li><li>See [Plugin Overview: Configuring Plugin Activation at Server Startup](/kb/en/plugin-overview/#configuring-plugin-activation-at-server-startup) for more information.
 </li></ul>
@@ -281,7 +281,7 @@ SET GLOBAL query_response_time_flush=1;
 <ul start="1"><li>`OFF` - Disables the plugin without removing it from the <a undefined>mysql.plugins</a> table.
 </li><li>`ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
 </li><li>`FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
-</li><li>`FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname) or [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin) while the server is running.
+</li><li>`FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname/) or [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin/) while the server is running.
 </li></ul>
 </li><li>See [Plugin Overview: Configuring Plugin Activation at Server Startup](/kb/en/plugin-overview/#configuring-plugin-activation-at-server-startup) for more information.
 </li></ul>

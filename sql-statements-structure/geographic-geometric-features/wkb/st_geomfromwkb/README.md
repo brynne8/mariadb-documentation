@@ -11,7 +11,7 @@ GeometryFromWKB(wkb[,srid])
 
 ## Description
 
-Constructs a geometry value of any type using its [WKB](/sql-statements-structure/geographic-geometric-features/wkb/well-known-binary-wkb-format)  representation and SRID.
+Constructs a geometry value of any type using its [WKB](/sql-statements-structure/geographic-geometric-features/wkb/well-known-binary-wkb-format/)  representation and SRID.
 
 `ST_GeomFromWKB()`, `ST_GeometryFromWKB()`, `GeomFromWKB()` and `GeometryFromWKB()` are synonyms.
 

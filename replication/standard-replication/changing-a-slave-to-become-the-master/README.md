@@ -10,16 +10,16 @@ upgrade your master to the new version.
 
 In MariaDB replication, a slave should be of a version same or newer than the master. Because of this, one should first upgrades all slaves to the latest version before changing a slave to be a master.  In some cases one can have a slave to be of an older version than the master, as long as one doesn't execute on the master any SQL commands that the slave doesn't understand. This is however not guaranteed between all major MariaDB versions.
 
-Note that in the examples below, <code class="fixed" style="white-space:pre-wrap">[connection_name]</code> is used as the [name of the connection](/replication/standard-replication/multi-source-replication).  If you are not using named connections you can ignore this.
+Note that in the examples below, <code class="fixed" style="white-space:pre-wrap">[connection_name]</code> is used as the [name of the connection](/replication/standard-replication/multi-source-replication/).  If you are not using named connections you can ignore this.
 
 ### Stopping the Original Master.
 
 First one needs to take down the original master in such a way that the slave
 has all information on the master.
 
-If you are using [Semisynchronous Replication](/replication/standard-replication/semisynchronous-replication) you can just stop the server with the [SHUTDOWN](/sql-statements-structure/sql-statements/administrative-sql-statements/shutdown) command as the slaves should be automatically up to date.
+If you are using [Semisynchronous Replication](/replication/standard-replication/semisynchronous-replication/) you can just stop the server with the [SHUTDOWN](/sql-statements-structure/sql-statements/administrative-sql-statements/shutdown/) command as the slaves should be automatically up to date.
 
-If you are using [MariaDB MaxScale proxy](/mariadb-platform-x3/sample-platform-x3-implementation-for-transactional-and-analytical-workloads/mariadb-enterprise/maxscale), then you [can use MaxScale](https://mariadb.com/resources/blog/mariadb-maxscale-2-2-introducing-failover-switchover-and-automatic-rejoin) to handle the whole process of taking down the master and replacing it with one of the slaves.
+If you are using [MariaDB MaxScale proxy](/mariadb-platform-x3/sample-platform-x3-implementation-for-transactional-and-analytical-workloads/mariadb-enterprise/maxscale/), then you [can use MaxScale](https://mariadb.com/resources/blog/mariadb-maxscale-2-2-introducing-failover-switchover-and-automatic-rejoin) to handle the whole process of taking down the master and replacing it with one of the slaves.
 
 If neither of the above is true, you have to do this step manually:
 
@@ -73,7 +73,7 @@ separated with ',' if the slave has been connected to many different
 masters. What is important is that all the sequences that are on the
 master is also on the slave.
 
-When slave is up to date, you can then take the <strong>MASTER</strong> down. This should be on the same connection where you executed [FLUSH TABLES WITH READ LOCK](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush).
+When slave is up to date, you can then take the <strong>MASTER</strong> down. This should be on the same connection where you executed [FLUSH TABLES WITH READ LOCK](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/).
 
 ```sql
 SHUTDOWN;
@@ -139,12 +139,12 @@ START SLAVE;
 ### Moving Applications to Use New Master
 
 You should now point your applications to use the new master.
-If you are using the [MariaDB MaxScale proxy](/mariadb-platform-x3/sample-platform-x3-implementation-for-transactional-and-analytical-workloads/mariadb-enterprise/maxscale), then you don't
+If you are using the [MariaDB MaxScale proxy](/mariadb-platform-x3/sample-platform-x3-implementation-for-transactional-and-analytical-workloads/mariadb-enterprise/maxscale/), then you don't
 have to do this step as MaxScale will take care of sending write request
 to the new master.
 
 ### See Also
 
-- [CHANGE MASTER TO](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to) command
+- [CHANGE MASTER TO](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to/) command
 - [MaxScale Blog about using Switchover to swap a master and slave](https://mariadb.com/resources/blog/mariadb-maxscale-2-2-introducing-failover-switchover-and-automatic-rejoin)
 - [Percona blog about how to upgrade slave to master](https://www.percona.com/blog/2015/12/01/upgrade-master-server-minimal-downtime)

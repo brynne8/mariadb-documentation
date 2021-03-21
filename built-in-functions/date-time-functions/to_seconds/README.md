@@ -8,7 +8,7 @@ TO_SECONDS(expr)
 
 ## Description
 
-Returns the number of seconds from year 0 till `expr`, or NULL if `expr` is not a valid date or [datetime](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/datetime).
+Returns the number of seconds from year 0 till `expr`, or NULL if `expr` is not a valid date or [datetime](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/datetime/).
 
 ## Examples
 

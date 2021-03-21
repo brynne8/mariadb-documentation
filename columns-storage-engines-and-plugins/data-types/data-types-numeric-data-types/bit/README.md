@@ -15,7 +15,7 @@ Bit values can be inserted with `b'value'` notation, where `value` is the bit va
 
 Bit fields are automatically zero-padded from the left to the full length of the bit, so for example in a BIT(4) field, '10' is equivalent to '0010'.
 
-Bits are returned as binary, so to display them, either add 0, or use a function such as [HEX](/built-in-functions/string-functions/hex), [OCT](/built-in-functions/numeric-functions/oct) or [BIN](/built-in-functions/string-functions/bin) to convert them.
+Bits are returned as binary, so to display them, either add 0, or use a function such as [HEX](/built-in-functions/string-functions/hex/), [OCT](/built-in-functions/numeric-functions/oct/) or [BIN](/built-in-functions/string-functions/bin/) to convert them.
 
 ## Examples
 

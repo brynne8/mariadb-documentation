@@ -9,7 +9,7 @@ VARIANCE(expr)
 ## Description
 
 Returns the population standard variance of `expr`. This is an extension to
-standard SQL. The standard SQL function [VAR_POP()](/built-in-functions/aggregate-functions/var_pop) can be used
+standard SQL. The standard SQL function [VAR_POP()](/built-in-functions/aggregate-functions/var_pop/) can be used
 instead.
 
 Variance is calculated by
@@ -18,9 +18,9 @@ Variance is calculated by
 - for each number, subtracting the mean and squaring the result
 - calculate the average of the resulting differences
 
-It is an [aggregate function](/built-in-functions/aggregate-functions), and so can be used with the [GROUP BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/group-by) clause.
+It is an [aggregate function](/built-in-functions/aggregate-functions/), and so can be used with the [GROUP BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/group-by/) clause.
 
-From [MariaDB 10.2.2](/kb/en/mariadb-1022-release-notes/), VARIANCE() can be used as a [window function](/built-in-functions/special-functions/window-functions).
+From [MariaDB 10.2.2](/kb/en/mariadb-1022-release-notes/), VARIANCE() can be used as a [window function](/built-in-functions/special-functions/window-functions/).
 
 VARIANCE() returns `NULL` if there were no matching rows.
 
@@ -48,7 +48,7 @@ SELECT VARIANCE(i) FROM v;
 +-------------+
 ```
 
-As an [aggregate function](/built-in-functions/aggregate-functions):
+As an [aggregate function](/built-in-functions/aggregate-functions/):
 
 ```sql
 CREATE OR REPLACE TABLE stats (category VARCHAR(2), x INT);
@@ -67,7 +67,7 @@ SELECT category, STDDEV_POP(x), STDDEV_SAMP(x), VAR_POP(x)
 +----------+---------------+----------------+------------+
 ```
 
-As a [window function](/built-in-functions/special-functions/window-functions):
+As a [window function](/built-in-functions/special-functions/window-functions/):
 
 ```sql
 CREATE OR REPLACE TABLE student_test (name CHAR(10), test CHAR(10), score TINYINT);
@@ -95,6 +95,6 @@ SELECT name, test, score, VAR_POP(score)
 
 ## See Also
 
-- [VAR_POP](/built-in-functions/aggregate-functions/var_pop) (equivalent, standard SQL)
-- [STDDEV_POP](/built-in-functions/aggregate-functions/stddev_pop) (population standard deviation)
-- [STDDEV_SAMP](/built-in-functions/aggregate-functions/stddev_samp) (sample standard deviation)
+- [VAR_POP](/built-in-functions/aggregate-functions/var_pop/) (equivalent, standard SQL)
+- [STDDEV_POP](/built-in-functions/aggregate-functions/stddev_pop/) (population standard deviation)
+- [STDDEV_SAMP](/built-in-functions/aggregate-functions/stddev_samp/) (sample standard deviation)

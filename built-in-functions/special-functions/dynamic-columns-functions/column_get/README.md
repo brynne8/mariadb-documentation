@@ -2,7 +2,7 @@
 
 ##### MariaDB starting with [5.3](/kb/en/what-is-mariadb-53/)
 
-The [Dynamic columns](/sql-statements-structure/nosql/dynamic-columns) feature was introduced in [MariaDB 5.3](/kb/en/what-is-mariadb-53/).
+The [Dynamic columns](/sql-statements-structure/nosql/dynamic-columns/) feature was introduced in [MariaDB 5.3](/kb/en/what-is-mariadb-53/).
 
 ## Syntax
 

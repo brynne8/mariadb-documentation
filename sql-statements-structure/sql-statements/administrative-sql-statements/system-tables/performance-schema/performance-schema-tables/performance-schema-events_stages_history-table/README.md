@@ -2,11 +2,11 @@
 
 ##### MariaDB starting with [10.0](/kb/en/what-is-mariadb-100/)
 
-The `events_stages_history` table, along with many other new [Performance Schema tables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/list-of-performance-schema-tables), was added in [MariaDB 10.0](/kb/en/what-is-mariadb-100/)
+The `events_stages_history` table, along with many other new [Performance Schema tables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/list-of-performance-schema-tables/), was added in [MariaDB 10.0](/kb/en/what-is-mariadb-100/)
 
 The `events_stages_history` table by default contains the ten most recent completed stage events per thread. This number can be adjusted by setting the [performance_schema_events_stages_history_size](/kb/en/performance-schema-system-variables/#performance_schema_events_stages_history_size) system variable when the server starts up.
 
-The table structure is identical to the [events_stage_current](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_current-table) table structure, and contains the following columns:
+The table structure is identical to the [events_stage_current](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_current-table/) table structure, and contains the following columns:
 
 <table><tbody><tr><th>Column</th><th>Description</th></tr>
 <tr><td><code>THREAD_ID</code></td><td>Thread associated with the event. Together with <code>EVENT_ID</code> uniquely identifies the row.</td></tr>
@@ -23,4 +23,4 @@ The table structure is identical to the [events_stage_current](/sql-statements-s
 
 It is possible to empty this table with a `TRUNCATE TABLE` statement.
 
-[events_stages_current](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_current-table) and [events_stages_history_long](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_history_long-table) are related tables.
+[events_stages_current](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_current-table/) and [events_stages_history_long](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_history_long-table/) are related tables.

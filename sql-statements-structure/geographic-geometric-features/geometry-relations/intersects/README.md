@@ -12,4 +12,4 @@ Returns `1` or `0` to indicate whether geometry <em>`g1`</em> spatially intersec
 
 INTERSECTS() is based on the original MySQL implementation and uses object bounding rectangles, while [ST_INTERSECTS()](/kb/en/st_intersects/) uses object shapes.
 
-INTERSECTS() tests the opposite relationship to [DISJOINT()](/sql-statements-structure/geographic-geometric-features/geometry-relations/disjoint).
+INTERSECTS() tests the opposite relationship to [DISJOINT()](/sql-statements-structure/geographic-geometric-features/geometry-relations/disjoint/).

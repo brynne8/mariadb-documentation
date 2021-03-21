@@ -64,5 +64,5 @@ SELECT TRIM(''),TRIM_ORACLE('');
 
 ## See Also
 
-- [LTRIM](/built-in-functions/string-functions/ltrim) - leading spaces removed
-- [RTRIM](/built-in-functions/string-functions/rtrim) - trailing spaces removed
+- [LTRIM](/built-in-functions/string-functions/ltrim/) - leading spaces removed
+- [RTRIM](/built-in-functions/string-functions/rtrim/) - trailing spaces removed

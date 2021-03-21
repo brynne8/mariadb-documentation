@@ -10,7 +10,7 @@ SHOW [GLOBAL | SESSION] STATUS
 ## Description
 
 <code class="highlight fixed" style="white-space:pre-wrap">SHOW STATUS</code> provides server status information. This
-information also can be obtained using the [mysqladmin extended-status](/clients-utilities/mysqladmin) command, or by querying the [Information Schema GLOBAL_STATUS and SESSION_STATUS](/kb/en/information-schema-global_status-and-session_status-tables/) tables.
+information also can be obtained using the [mysqladmin extended-status](/clients-utilities/mysqladmin/) command, or by querying the [Information Schema GLOBAL_STATUS and SESSION_STATUS](/kb/en/information-schema-global_status-and-session_status-tables/) tables.
 The <code class="highlight fixed" style="white-space:pre-wrap">LIKE</code> clause, if present, indicates which variable names
 to match. The <code class="highlight fixed" style="white-space:pre-wrap">WHERE</code> clause can be given to select rows using
 more general conditions.
@@ -25,11 +25,11 @@ for the current connection. If no modifier is present, the default is
 Some status variables have only a global value. For these, you get the
 same value for both <code class="highlight fixed" style="white-space:pre-wrap">GLOBAL</code> and <code class="highlight fixed" style="white-space:pre-wrap">SESSION</code>.
 
-See [Server Status Variables](/replication/optimization-and-tuning/system-variables/server-status-variables) for a full list, scope and description of the variables that can be viewed with `SHOW STATUS`.
+See [Server Status Variables](/replication/optimization-and-tuning/system-variables/server-status-variables/) for a full list, scope and description of the variables that can be viewed with `SHOW STATUS`.
 
 The <code class="highlight fixed" style="white-space:pre-wrap">LIKE</code> clause, if present on its own, indicates which variable name to match.
 
-The <code class="highlight fixed" style="white-space:pre-wrap">WHERE</code> and <code class="highlight fixed" style="white-space:pre-wrap">LIKE</code> clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](/sql-statements-structure/sql-statements/administrative-sql-statements/show/extended-show).
+The <code class="highlight fixed" style="white-space:pre-wrap">WHERE</code> and <code class="highlight fixed" style="white-space:pre-wrap">LIKE</code> clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](/sql-statements-structure/sql-statements/administrative-sql-statements/show/extended-show/).
 
 ## Examples
 

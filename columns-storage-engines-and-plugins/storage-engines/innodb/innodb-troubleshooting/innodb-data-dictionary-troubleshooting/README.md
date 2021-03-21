@@ -8,7 +8,7 @@ If InnoDB returns something like the following error:
 ERROR 1016: Can't open file: 'x.ibd'. (errno: 1)
 ```
 
-it may be that an orphan `.frm` file exists. Something like the following may also appear in the [error log](/mariadb-administration/server-monitoring-logs/error-log):
+it may be that an orphan `.frm` file exists. Something like the following may also appear in the [error log](/mariadb-administration/server-monitoring-logs/error-log/):
 
 ```sql
 InnoDB: Cannot find table test/x from the internal data dictionary
@@ -49,4 +49,4 @@ DROP TABLE `#mysql50##sql-ib87-856498050`;
 
 ## See Also
 
-- [InnoDB Troubleshooting Overview](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-troubleshooting/innodb-troubleshooting-overview)
+- [InnoDB Troubleshooting Overview](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-troubleshooting/innodb-troubleshooting-overview/)

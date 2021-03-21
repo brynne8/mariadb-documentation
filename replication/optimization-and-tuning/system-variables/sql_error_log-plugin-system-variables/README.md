@@ -1,8 +1,8 @@
 # SQL_ERROR_LOG Plugin System Variables
 
-This page documents system variables related to the [SQL_Error_Log Plugin](/kb/en/sql_error_log-plugin/). See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables) for a complete list of system variables and instructions on setting them.
+This page documents system variables related to the [SQL_Error_Log Plugin](/kb/en/sql_error_log-plugin/). See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables/) for a complete list of system variables and instructions on setting them.
 
-See also the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables).
+See also the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables/).
 
 #### `sql_error_log_filename`
 

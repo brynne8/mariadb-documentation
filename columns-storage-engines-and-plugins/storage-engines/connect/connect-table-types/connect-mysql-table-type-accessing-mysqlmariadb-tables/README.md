@@ -132,7 +132,7 @@ where f.salary > 10000;
 If the <em>id</em> column of the remote table addressed by the <em>cnc_tab</em> MYSQL table is indexed (which is likely
 if it is a key) you should also index the <em>id</em> column of the MYSQL <em>cnc_tab</em> table. If so, using “remote”
 indexing as does FEDERATED, only the useful rows of the remote table will be retrieved during the
-join process. However, because these rows are retrieved by separate [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) statements, this will be
+join process. However, because these rows are retrieved by separate [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) statements, this will be
 useful only when retrieving a few rows of a big table.
 
 In particular, you should not specify an index for columns not used for joining and above all DO NOT
@@ -141,14 +141,14 @@ remote table to retrieve the joined rows one by one.
 
 ## Data Modifying Operations
 
-The CONNECT MYSQL type supports [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) and [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert) and a somewhat limited form
-of [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update) and [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete). These are described below.
+The CONNECT MYSQL type supports [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) and [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/) and a somewhat limited form
+of [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/) and [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/). These are described below.
 
-The MYSQL type uses similar methods than the ODBC type to implement the [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert),
-[UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update) and [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete) commands. Refer to the ODBC chapter for the restrictions
+The MYSQL type uses similar methods than the ODBC type to implement the [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/),
+[UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/) and [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/) commands. Refer to the ODBC chapter for the restrictions
 concerning them.
 
-For the [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update) and [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete) commands, there are fewer restrictions because the
+For the [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/) and [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/) commands, there are fewer restrictions because the
 remote server being a MySQL server, the syntax of the command will be always
 acceptable by the remote server.
 
@@ -323,27 +323,27 @@ There is a maximum key.index length of 255 bytes. You may be able to declare the
 
 The following types can't be used:
 
-- [BIT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/bit)
-- [BINARY](/columns-storage-engines-and-plugins/data-types/string-data-types/binary)
-- [TINYBLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/tinyblob), [BLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/blob), [MEDIUMBLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/mediumblob), [LONGBLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/longblob)
-- [TINYTEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/tinytext), [MEDIUMTEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/mediumtext), [LONGTEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/longtext)
-- [ENUM](/columns-storage-engines-and-plugins/data-types/string-data-types/enum)
-- [SET](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set)
-- [Geometry types](/sql-statements-structure/geographic-geometric-features/geometry-types)
+- [BIT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/bit/)
+- [BINARY](/columns-storage-engines-and-plugins/data-types/string-data-types/binary/)
+- [TINYBLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/tinyblob/), [BLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/blob/), [MEDIUMBLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/mediumblob/), [LONGBLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/longblob/)
+- [TINYTEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/tinytext/), [MEDIUMTEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/mediumtext/), [LONGTEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/longtext/)
+- [ENUM](/columns-storage-engines-and-plugins/data-types/string-data-types/enum/)
+- [SET](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set/)
+- [Geometry types](/sql-statements-structure/geographic-geometric-features/geometry-types/)
 
-Note: [TEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/text) is allowed. However, the handling depends on the values given to the [connect_type_conv](/kb/en/connect-system-variables/#connect_type_conv) and [connect_conv_size](/kb/en/connect-system-variables/#connect_conv_size) system variables, and by default no conversion of TEXT columns is permitted.
+Note: [TEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/text/) is allowed. However, the handling depends on the values given to the [connect_type_conv](/kb/en/connect-system-variables/#connect_type_conv) and [connect_conv_size](/kb/en/connect-system-variables/#connect_conv_size) system variables, and by default no conversion of TEXT columns is permitted.
 
 ### SQL Limitations
 
 The following SQL queries are not supported
 
-- [REPLACE INTO](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/replace)
-- [INSERT ... ON  DUPLICATE KEY UPDATE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update)
+- [REPLACE INTO](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/replace/)
+- [INSERT ... ON  DUPLICATE KEY UPDATE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update/)
 
 ## CONNECT MYSQL versus FEDERATED
 
 The CONNECT MYSQL table type should not be regarded as a replacement for the
-[FEDERATED(X)](/columns-storage-engines-and-plugins/storage-engines/federatedx-storage-engine) engine. The main use of the MYSQL type is to access other engine tables as if they were CONNECT tables. This was necessary when accessing tables
+[FEDERATED(X)](/columns-storage-engines-and-plugins/storage-engines/federatedx-storage-engine/) engine. The main use of the MYSQL type is to access other engine tables as if they were CONNECT tables. This was necessary when accessing tables
 from some CONNECT table types such as [TBL](/kb/en/connect-table-types-tbl-table-type-table-list/), [XCOL](/kb/en/connect-table-types-xcol-table-type/), [OCCUR](/kb/en/connect-table-types-occur-table-type/), or [PIVOT](/kb/en/connect-table-types-pivot-table-type/) that are
 designed to access CONNECT tables only. When their target table is not a
 CONNECT table, these types are silently using internally an intermediate MYSQL

@@ -8,7 +8,7 @@ SHOW CREATE VIEW view_name
 
 ## Description
 
-This statement shows a <code class="highlight fixed" style="white-space:pre-wrap">[CREATE VIEW](/programming-customizing-mariadb/views/create-view)</code> statement that creates the given [view](/programming-customizing-mariadb/views), as well as the character set used by the connection when the view was created. This statement
+This statement shows a <code class="highlight fixed" style="white-space:pre-wrap">[CREATE VIEW](/programming-customizing-mariadb/views/create-view/)</code> statement that creates the given [view](/programming-customizing-mariadb/views/), as well as the character set used by the connection when the view was created. This statement
 also works with views.
 
 <code class="highlight fixed" style="white-space:pre-wrap">SHOW CREATE VIEW</code> quotes table, column and stored function names according to the value of the <a undefined>sql_quote_show_create</a> server system variable.

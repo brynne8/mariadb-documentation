@@ -14,9 +14,9 @@ create_specification:
 
 ## Description
 
-`CREATE DATABASE` creates a database with the given name. To use this statement, you need the [CREATE privilege](/sql-statements-structure/sql-statements/account-management-sql-commands/grant) for the database. `CREATE SCHEMA` is a synonym for `CREATE DATABASE`.
+`CREATE DATABASE` creates a database with the given name. To use this statement, you need the [CREATE privilege](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/) for the database. `CREATE SCHEMA` is a synonym for `CREATE DATABASE`.
 
-For valid identifiers to use as database names, see [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names).
+For valid identifiers to use as database names, see [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names/).
 
 #### OR REPLACE
 
@@ -64,7 +64,7 @@ SHOW WARNINGS;
 +-------+------+----------------------------------------------+
 ```
 
-Setting the [character sets and collation](/kb/en/data-types-character-sets-and-collations/). See [Setting Character Sets and Collations](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/setting-character-sets-and-collations) for more details.
+Setting the [character sets and collation](/kb/en/data-types-character-sets-and-collations/). See [Setting Character Sets and Collations](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/setting-character-sets-and-collations/) for more details.
 
 ```sql
 CREATE DATABASE czech_slovak_names 
@@ -80,10 +80,10 @@ CREATE DATABASE presentations COMMENT 'Presentations for conferences';
 
 ## See Also
 
-- [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names)
-- [DROP DATABASE](/sql-statements-structure/sql-statements/data-definition/drop/drop-database)
-- [SHOW CREATE DATABASE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-database)
-- [ALTER DATABASE](/sql-statements-structure/sql-statements/data-definition/alter/alter-database)
-- [SHOW DATABASES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-databases)
+- [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names/)
+- [DROP DATABASE](/sql-statements-structure/sql-statements/data-definition/drop/drop-database/)
+- [SHOW CREATE DATABASE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-database/)
+- [ALTER DATABASE](/sql-statements-structure/sql-statements/data-definition/alter/alter-database/)
+- [SHOW DATABASES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-databases/)
 - [Character Sets and Collations](/kb/en/character-sets-and-collations/)
 - [Information Schema SCHEMATA Table](/kb/en/information-schema-schemata-table/)

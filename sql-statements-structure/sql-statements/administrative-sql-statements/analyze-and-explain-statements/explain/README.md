@@ -21,22 +21,22 @@ executes a <code class="highlight fixed" style="white-space:pre-wrap">SELECT</co
 
 - <code class="highlight fixed" style="white-space:pre-wrap">'EXPLAIN tbl_name'</code> is synonymous with 
   <code class="highlight fixed" style="white-space:pre-wrap">'[DESCRIBE](/kb/en/describe-command/) tbl_name'</code> or 
-  <code class="highlight fixed" style="white-space:pre-wrap">'[SHOW COLUMNS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-columns) FROM tbl_name'</code>.
+  <code class="highlight fixed" style="white-space:pre-wrap">'[SHOW COLUMNS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-columns/) FROM tbl_name'</code>.
 - When you precede a <code class="highlight fixed" style="white-space:pre-wrap">SELECT</code> statement (or, since [MariaDB 10.0.5](/kb/en/mariadb-1005-release-notes/), an `UPDATE` or a `DELETE` as well) with the keyword 
   <code class="highlight fixed" style="white-space:pre-wrap">EXPLAIN</code>, MariaDB displays information from the optimizer
   about the query execution plan. That is, MariaDB explains how it would
   process the <code class="highlight fixed" style="white-space:pre-wrap">SELECT</code>, `UPDATE` or `DELETE`, including information about how tables
   are joined and in which order. <code class="highlight fixed" style="white-space:pre-wrap">EXPLAIN EXTENDED</code> can be
   used to provide additional information.<br>
-- <code class="highlight fixed" style="white-space:pre-wrap">EXPLAIN PARTITIONS</code> has been available since MySQL 5.1.5. It is useful only when examining queries involving partitioned tables.<br> For details, see [Partition pruning and selection](/mariadb-administration/partitioning-tables/partition-pruning-and-selection).
-- [ANALYZE statement](/sql-statements-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/analyze-statement), which performs the query as well as producing EXPLAIN output, and provides actual as well as estimated statistics, has been available from [MariaDB 10.1.0](/kb/en/mariadb-1010-release-notes/).
-- Since [MariaDB 10.0.5](/kb/en/mariadb-1005-release-notes/), it has been possible to have `EXPLAIN` output printed in the [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log). See [EXPLAIN in the Slow Query Log](/mariadb-administration/server-monitoring-logs/slow-query-log/explain-in-the-slow-query-log) for details.
+- <code class="highlight fixed" style="white-space:pre-wrap">EXPLAIN PARTITIONS</code> has been available since MySQL 5.1.5. It is useful only when examining queries involving partitioned tables.<br> For details, see [Partition pruning and selection](/mariadb-administration/partitioning-tables/partition-pruning-and-selection/).
+- [ANALYZE statement](/sql-statements-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/analyze-statement/), which performs the query as well as producing EXPLAIN output, and provides actual as well as estimated statistics, has been available from [MariaDB 10.1.0](/kb/en/mariadb-1010-release-notes/).
+- Since [MariaDB 10.0.5](/kb/en/mariadb-1005-release-notes/), it has been possible to have `EXPLAIN` output printed in the [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log/). See [EXPLAIN in the Slow Query Log](/mariadb-administration/server-monitoring-logs/slow-query-log/explain-in-the-slow-query-log/) for details.
 
-Since [MariaDB 10.0](/kb/en/what-is-mariadb-100/), [SHOW EXPLAIN](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-explain) shows the output of a running statement. In some cases, its output can be closer to reality than `EXPLAIN`.
+Since [MariaDB 10.0](/kb/en/what-is-mariadb-100/), [SHOW EXPLAIN](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-explain/) shows the output of a running statement. In some cases, its output can be closer to reality than `EXPLAIN`.
 
-Since [MariaDB 10.1](/kb/en/what-is-mariadb-101/), the [ANALYZE statement](/sql-statements-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/analyze-statement) runs a statement and returns information about its execution plan. It also shows additional columns, to check how much the optimizer's estimation about filtering and found rows are close to reality.
+Since [MariaDB 10.1](/kb/en/what-is-mariadb-101/), the [ANALYZE statement](/sql-statements-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/analyze-statement/) runs a statement and returns information about its execution plan. It also shows additional columns, to check how much the optimizer's estimation about filtering and found rows are close to reality.
 
-There is an online [EXPLAIN Analyzer](/clients-utilities/explain-analyzer) that you can use to share `EXPLAIN` and `EXPLAIN EXTENDED` output with others.
+There is an online [EXPLAIN Analyzer](/clients-utilities/explain-analyzer/) that you can use to share `EXPLAIN` and `EXPLAIN EXTENDED` output with others.
 
 `EXPLAIN` can acquire metadata locks in the same way that `SELECT` does, as it needs to know table metadata and, sometimes, data as well.
 
@@ -162,7 +162,7 @@ The optimization phase can do the following changes to the `WHERE` clause:
 
 The `EXTENDED` keyword adds another column, <em>filtered</em>, to the output. This is a percentage estimate of the table rows that will be filtered by the condition.
 
-An `EXPLAIN EXTENDED` will always throw a warning, as it adds extra <em>Message</em> information to a subsequent [SHOW WARNINGS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-warnings) statement. This includes what the `SELECT` query would look like after optimizing and rewriting rules are applied and how the optimizer qualifies columns and tables.
+An `EXPLAIN EXTENDED` will always throw a warning, as it adds extra <em>Message</em> information to a subsequent [SHOW WARNINGS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-warnings/) statement. This includes what the `SELECT` query would look like after optimizing and rewriting rules are applied and how the optimizer qualifies columns and tables.
 
 ## Examples
 
@@ -242,7 +242,7 @@ EXPLAIN SELECT * FROM employees_example WHERE home_phone='326-555-3492';
 
 Here, the type is <em>All</em>, which means no index could be used. Looking at the rows count, a full table scan (all six rows) had to be performed in order to retrieve the record. If it's a requirement to search by phone number, an index will have to be created.
 
-[SHOW EXPLAIN](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-explain) example:
+[SHOW EXPLAIN](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-explain/) example:
 
 ```sql
 SHOW EXPLAIN FOR 1;
@@ -265,4 +265,4 @@ SELECT * FROM table_name
 
 ## See Also
 
-- [SHOW EXPLAIN](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-explain)
+- [SHOW EXPLAIN](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-explain/)

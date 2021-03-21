@@ -76,7 +76,7 @@ mysqladmin [options] command [command-arg] [command [command-arg]] ...
 
 ### Option Files
 
-In addition to reading options from the command-line, `mysqladmin` can also read options from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files). If an unknown option is provided to `mysqladmin` in an option file, then it is ignored.
+In addition to reading options from the command-line, `mysqladmin` can also read options from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/). If an unknown option is provided to `mysqladmin` in an option file, then it is ignored.
 
 The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
 
@@ -92,7 +92,7 @@ In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, `mysqladmin` is linked
 
 #### Option Groups
 
-`mysqladmin` reads options from the following [option groups](/kb/en/configuring-mariadb-with-option-files/#option-groups) from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files):
+`mysqladmin` reads options from the following [option groups](/kb/en/configuring-mariadb-with-option-files/#option-groups) from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/):
 
 <table><tbody><tr><th>Group</th><th>Description</th></tr>
 <tr><td><code>[mysqladmin]</code></td><td>&nbsp;Options read by <code>mysqladmin</code>, which includes both MariaDB Server and MySQL Server.</td></tr>
@@ -190,15 +190,15 @@ mysqladmin [options] command [command-arg] [command [command-arg]] ...
 
 The `--wait-for-all-slaves` option was first added in [MariaDB 10.4.4](/kb/en/mariadb-1044-release-notes/).
 
-When a master server is shutdown and it goes through the normal shutdown process, the master kills client threads in random order. By default, the master also considers its binary log dump threads to be regular client threads. As a consequence, the binary log dump threads can be killed while client threads still exist, and this means that data can be written on the master during a normal shutdown that won't be replicated. This is true even if [semi-synchronous replication](/replication/standard-replication/semisynchronous-replication) is being used.
+When a master server is shutdown and it goes through the normal shutdown process, the master kills client threads in random order. By default, the master also considers its binary log dump threads to be regular client threads. As a consequence, the binary log dump threads can be killed while client threads still exist, and this means that data can be written on the master during a normal shutdown that won't be replicated. This is true even if [semi-synchronous replication](/replication/standard-replication/semisynchronous-replication/) is being used.
 
-In [MariaDB 10.4](/kb/en/what-is-mariadb-104/) and later, this problem can be solved by shutting down the server with the [mysqladmin](/clients-utilities/mysqladmin) utility and by providing the `--wait-for-all-slaves` option to the utility and by executing the `shutdown` command with the utility. For example:
+In [MariaDB 10.4](/kb/en/what-is-mariadb-104/) and later, this problem can be solved by shutting down the server with the [mysqladmin](/clients-utilities/mysqladmin/) utility and by providing the `--wait-for-all-slaves` option to the utility and by executing the `shutdown` command with the utility. For example:
 
 ```sql
 mysqladmin --wait-for-all-slaves shutdown
 ```
 
-When the `--wait-for-all-slaves` option is provided, the server only kills its binary log dump threads after all client threads have been killed, and it only completes the shutdown after the last [binary log](/mariadb-administration/server-monitoring-logs/binary-log) has been sent to all connected slaves.
+When the `--wait-for-all-slaves` option is provided, the server only kills its binary log dump threads after all client threads have been killed, and it only completes the shutdown after the last [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) has been sent to all connected slaves.
 
 See [Replication Threads: Binary Log Dump Threads and the Shutdown Process](/kb/en/replication-threads/#binary-log-dump-threads-and-the-shutdown-process) for more information.
 
@@ -271,11 +271,11 @@ On windows you should use:
 NET STOP MySQL
 ```
 
-With [MariaDB 10.0](/kb/en/what-is-mariadb-100/) and newer you can use the [SHUTDOWN](/sql-statements-structure/sql-statements/administrative-sql-statements/shutdown) command from any client.
+With [MariaDB 10.0](/kb/en/what-is-mariadb-100/) and newer you can use the [SHUTDOWN](/sql-statements-structure/sql-statements/administrative-sql-statements/shutdown/) command from any client.
 
 ## See Also
 
-- [SHUTDOWN command](/sql-statements-structure/sql-statements/administrative-sql-statements/shutdown)
+- [SHUTDOWN command](/sql-statements-structure/sql-statements/administrative-sql-statements/shutdown/)
 - [mytop](http://www.mysqlfanboy.com/mytop-3/), a 'top' like program for
  MariaDB/MySQL that allows you to see what the server is doing. A mytop
  optimized for MariaDB is included in [MariaDB 5.3](/kb/en/what-is-mariadb-53/)

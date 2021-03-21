@@ -2,22 +2,22 @@
 
 <strong>Release date:</strong> 14th December 2016
 
-[MariaDB ColumnStore 1.0.6](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore) is a GA release of MariaDB ColumnStore. This release of MariaDB ColumnStore provides improvements over the previous 1.0.5 RC release.
+[MariaDB ColumnStore 1.0.6](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/) is a GA release of MariaDB ColumnStore. This release of MariaDB ColumnStore provides improvements over the previous 1.0.5 RC release.
 
 MariaDB ColumnStore 1.0.6 is a <strong><em>[GA](/kb/en/release-criteria/)</em></strong> release.
 
-For an overview of [MariaDB ColumnStore](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore) see [MariaDB ColumnStore Architectural Overview](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-architectural-overview)
+For an overview of [MariaDB ColumnStore](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/) see [MariaDB ColumnStore Architectural Overview](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-architectural-overview/)
 
 Please provide feedback in [JIRA](https://jira.mariadb.org/browse/MCOL) for anything that is not working as expected so that we can fix it before we make the release available for the larger community.
-For general "how to questions" ask questions [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore) or subscribe to mariadb-columnstore@googlegroups.com
+For general "how to questions" ask questions [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/) or subscribe to mariadb-columnstore@googlegroups.com
 
 ## Notable Changes
 
 - [MCOL-272](https://jira.mariadb.org/browse/MCOL-272) - generate debian packages: A debian package build is now available for Debian and Ubuntu in addition to the binary install.
-- [MCOL-307](https://jira.mariadb.org/browse/MCOL-307) - implement redistribution logic : An mcsadmin utility command is provided to support redistribution of partitions. For more details see the [columnstore-redistribute-data](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/columnstore-redistribute-data) article.
+- [MCOL-307](https://jira.mariadb.org/browse/MCOL-307) - implement redistribution logic : An mcsadmin utility command is provided to support redistribution of partitions. For more details see the [columnstore-redistribute-data](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/columnstore-redistribute-data/) article.
 - [MCOL-311](https://jira.mariadb.org/browse/MCOL-311) - utility for finding objects file : An mcsadmin utility command is provided to support locating files by table or column. For more details run 'help findObjectFile'
 in the mcsadmin utility.
-- [MCOL-406](https://jira.mariadb.org/browse/MCOL-406) - Stored procedures required for I_S tables : Convenience stored procedures are now provided for common tasks in querying the ColumnStore information schema tables. For more details see the [columnstore-information-schema-tables](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-sql-structure-and-commands/columnstore-information-schema-tables) article.
+- [MCOL-406](https://jira.mariadb.org/browse/MCOL-406) - Stored procedures required for I_S tables : Convenience stored procedures are now provided for common tasks in querying the ColumnStore information schema tables. For more details see the [columnstore-information-schema-tables](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-sql-structure-and-commands/columnstore-information-schema-tables/) article.
 
 ## Bugs and Issues Fixed
 
@@ -42,8 +42,8 @@ in the mcsadmin utility.
 
 Multi version upgrades are not supported, please upgrade versions prior to 1.0.4 before upgrading to 1.0.6:
 
-- [1.0.4 Beta to 1.0.6 upgrade procedure](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/mariadb-columnstore-columnstore/mariadb-columnstore-10-upgrades/mariadb-columnstore-software-upgrade-104-to-106)
-- [1.0.5 RC to 1.0.6 upgrade procedure](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/mariadb-columnstore-columnstore/mariadb-columnstore-10-upgrades/mariadb-columnstore-software-upgrade-105-to-106)
+- [1.0.4 Beta to 1.0.6 upgrade procedure](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/mariadb-columnstore-columnstore/mariadb-columnstore-10-upgrades/mariadb-columnstore-software-upgrade-104-to-106/)
+- [1.0.5 RC to 1.0.6 upgrade procedure](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/mariadb-columnstore-columnstore/mariadb-columnstore-10-upgrades/mariadb-columnstore-software-upgrade-105-to-106/)
 
 Upgrade from MariaDB ColumnStore Alpha versions 1.0.0 to 1.0.2 is not supported, please upgrade to version 1.0.4 or 1.0.5 prior to upgrading to 1.0.6.
 
@@ -61,7 +61,7 @@ There are a number bugs and known limitations within this beta version of MariaD
 - [MCOL-365](https://jira.mariadb.org/browse/MCOL-365): Log files created by load data infile remain in the bulk/data/log and /tmp directories. If storage is a concern these can safely be removed.
 - [MCOL-454](https://jira.mariadb.org/browse/MCOL-454) : columnstore_info's total_usage() and table_usage() reported 0 usage on multi-node configuration. The stored procedures and information_schema.columnstore_files return incorrect path and size information for a multi node install.
 - [MCOL-463](https://jira.mariadb.org/browse/MCOL-463) : gluster storage option in installer fails withe error. The installer option to install optimized for gluster storage will fail with an error. Manually set up gluster volumes can be used with the 'External' storage option.
-- The current logging default generates full verbose debug logs. This can be controlled by making logging configuration changes as described [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/columnstore-system-monitoring-configuration).
+- The current logging default generates full verbose debug logs. This can be controlled by making logging configuration changes as described [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/columnstore-system-monitoring-configuration/).
 - While Millisecond and Microsecond storage is supported for datetime, time and timestamp columns, at this time the query results cannot return millisecond and microseconds.
 - UTF-8 Limitation
 <ul start="1"><li>UTF-8 must be declared at the table level if the instance has been set up with a UTF-8 profile. Tables created with a non-matching character set will yield indeterminate results. 
@@ -72,7 +72,7 @@ There are a number bugs and known limitations within this beta version of MariaD
 
 ## Documentation
 
-[MariaDB ColumnStore Documentation](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore)
+[MariaDB ColumnStore Documentation](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/)
 
 ## Packaging
 
@@ -80,7 +80,7 @@ RPM, Debian, and binary packages are provided for the Linux distributions suppor
 
 - The supported OS for the GA version are CentOS 6, CentOS 7, Debian 8.6, RedHat 6, RedHat 7, and Ubuntu 16.0.4.
 - Packages can be downloaded [here](https://mariadb.com/downloads/columnstore)
-- An Amazon AWS AMI Image is available for this release, please search for AMI name "MariaDB-ColumnStore-1.0.6". AMI specific installation instructions can be found [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/installing-and-configuring-a-columnstore-system-using-the-amazon-ami).
+- An Amazon AWS AMI Image is available for this release, please search for AMI name "MariaDB-ColumnStore-1.0.6". AMI specific installation instructions can be found [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/installing-and-configuring-a-columnstore-system-using-the-amazon-ami/).
 - Instructions for setting up OS software repositories as the download mechanism will be published shortly.
 
 ## Source Code

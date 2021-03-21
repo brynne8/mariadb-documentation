@@ -1,6 +1,6 @@
 # Information Schema ROUTINES Table
 
-The [Information Schema](/kb/en/information_schema/) `ROUTINES` table stores information about [stored procedures](/programming-customizing-mariadb/stored-routines/stored-procedures) and [stored functions](/programming-customizing-mariadb/stored-routines/stored-functions).
+The [Information Schema](/kb/en/information_schema/) `ROUTINES` table stores information about [stored procedures](/programming-customizing-mariadb/stored-routines/stored-procedures/) and [stored functions](/programming-customizing-mariadb/stored-routines/stored-functions/).
 
 It contains the following columns:
 
@@ -38,11 +38,11 @@ It contains the following columns:
 <tr><td><code>DATABASE_COLLATION</code></td><td>The default <a href="/kb/en/data-types-character-sets-and-collations/">collation</a> (and character set) for the database, at the time the routine was created.</td></tr>
 </tbody></table>
 
-It provides information similar to, but more complete, than the [SHOW PROCEDURE STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-procedure-status) and [SHOW FUNCTION STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-function-status) statements.
+It provides information similar to, but more complete, than the [SHOW PROCEDURE STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-procedure-status/) and [SHOW FUNCTION STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-function-status/) statements.
 
 For information about the parameters accepted by the routine, you can query the <a undefined>information_schema.PARAMETERS</a> table.
 
 ## See also
 
-- [Stored Function Overview](/programming-customizing-mariadb/stored-routines/stored-functions/stored-function-overview)
-- [Stored Procedure Overview](/programming-customizing-mariadb/stored-routines/stored-procedures/stored-procedure-overview)
+- [Stored Function Overview](/programming-customizing-mariadb/stored-routines/stored-functions/stored-function-overview/)
+- [Stored Procedure Overview](/programming-customizing-mariadb/stored-routines/stored-procedures/stored-procedure-overview/)

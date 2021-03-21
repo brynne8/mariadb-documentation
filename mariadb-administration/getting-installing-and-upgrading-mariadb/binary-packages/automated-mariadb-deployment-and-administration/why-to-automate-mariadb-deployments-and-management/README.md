@@ -1,6 +1,6 @@
 # Why to Automate MariaDB Deployments and Management
 
-MariaDB includes a powerful [configuration system](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files). This is enough when we need to deploy a single MariaDB instance, or a small number of instances. But many modern organisations have many database servers. Deploying and upgrading them manually could require too much time, and would be error-prone.
+MariaDB includes a powerful [configuration system](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/). This is enough when we need to deploy a single MariaDB instance, or a small number of instances. But many modern organisations have many database servers. Deploying and upgrading them manually could require too much time, and would be error-prone.
 
 ## Infrastructure as Code
 
@@ -16,15 +16,15 @@ This code is not something you write once and never touch again. It is periodica
 
 ## Automated Failover
 
-Once [replication](/replication/standard-replication) is in place, two important aspects to automate are load balancing and failover.
+Once [replication](/replication/standard-replication/) is in place, two important aspects to automate are load balancing and failover.
 
 Proxies can implement load balancing, redirecting the queries they receive to different server, trying to distribute the load equally. They can also monitor that MariaDB servers are running and in good health, thus avoiding sending queries to a server that is down or struggling.
 
-However, this does not solve the problem with replication: if a primary server crashes, its replicas should point to another server. Usually this means that an existing replica is promoted to a master. This kind of changes are possible thanks to MariaDB [GTID](/replication/standard-replication/gtid).
+However, this does not solve the problem with replication: if a primary server crashes, its replicas should point to another server. Usually this means that an existing replica is promoted to a master. This kind of changes are possible thanks to MariaDB [GTID](/replication/standard-replication/gtid/).
 
 One can promote a replica to a primary by making change to existing automation code. This is typically simple and relatively quick to do for a human operator. But this operation takes time, and in the meanwhile the service could be down.
 
-Automating failover will minimise the time to recover. A way to do it is to use Orchestrator, a tool that can automatically promote a replica to a primary. The choice of the replica to promote is done in a smart way, keeping into account things like the servers versions and the [binary log](/mariadb-administration/server-monitoring-logs/binary-log) format.
+Automating failover will minimise the time to recover. A way to do it is to use Orchestrator, a tool that can automatically promote a replica to a primary. The choice of the replica to promote is done in a smart way, keeping into account things like the servers versions and the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) format.
 
 ## Resources
 

@@ -10,7 +10,7 @@ GREATEST(value1,value2,...)
 
 With two or more arguments, returns the largest (maximum-valued)
 argument. The arguments are compared using the same rules as for
-[LEAST()](/sql-statements-structure/operators/comparison-operators/least).
+[LEAST()](/sql-statements-structure/operators/comparison-operators/least/).
 
 ## Examples
 

@@ -20,7 +20,7 @@ For clients that use the [MariaDB Connector/C](/kb/en/mariadb-connector-c/) libr
 - `sha256_password`
 - `caching_sha256_password`
 
-When connecting with a [client or utility](/clients-utilities) to a server as a user account that authenticates with the `sha256_password` or `caching_sha256_password` authentication plugin, you may need to tell the client where to find the relevant client authentication plugin by specifying the `--plugin-dir` option. For example:
+When connecting with a [client or utility](/clients-utilities/) to a server as a user account that authenticates with the `sha256_password` or `caching_sha256_password` authentication plugin, you may need to tell the client where to find the relevant client authentication plugin by specifying the `--plugin-dir` option. For example:
 
 ```sql
 mysql --plugin-dir=/usr/local/mysql/lib64/mysql/plugin --user=alice

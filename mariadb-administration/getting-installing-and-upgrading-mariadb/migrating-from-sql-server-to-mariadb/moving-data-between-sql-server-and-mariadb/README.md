@@ -14,11 +14,11 @@ To copy SQL Server data structures to MariaDB, one has to:
 
 DDL statements are affected by some server system variables.
 
-[sql_mode](/mariadb-administration/variables-and-modes/sql-mode) determines the behavior of some SQL statements and expressions, including how strict error checking is, and some details regarding the syntax. Objects like [stored procedures](/programming-customizing-mariadb/stored-routines/stored-procedures), [stored functions](/programming-customizing-mariadb/stored-routines/stored-functions) [triggers](/programming-customizing-mariadb/triggers-events/triggers) and [views](/programming-customizing-mariadb/views), are always executed with the sql_mode that was in effect during their creation. [sql_mode='MSSQL'](/kb/en/sql_modemssql/) can be used to have MariaDB behaving as close to SQL Server as possible.
+[sql_mode](/mariadb-administration/variables-and-modes/sql-mode/) determines the behavior of some SQL statements and expressions, including how strict error checking is, and some details regarding the syntax. Objects like [stored procedures](/programming-customizing-mariadb/stored-routines/stored-procedures/), [stored functions](/programming-customizing-mariadb/stored-routines/stored-functions/) [triggers](/programming-customizing-mariadb/triggers-events/triggers/) and [views](/programming-customizing-mariadb/views/), are always executed with the sql_mode that was in effect during their creation. [sql_mode='MSSQL'](/kb/en/sql_modemssql/) can be used to have MariaDB behaving as close to SQL Server as possible.
 
-[innodb_strict_mode](/kb/en/innodb-system-variables/#innodb_strict_mode) enables the so-called InnoDB strict mode. Normally some errors in the [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table) options are ignored. When InnoDB strict mode is enabled, the creation of InnoDB tables will fail with an error when certain mistakes are made.
+[innodb_strict_mode](/kb/en/innodb-system-variables/#innodb_strict_mode) enables the so-called InnoDB strict mode. Normally some errors in the [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/) options are ignored. When InnoDB strict mode is enabled, the creation of InnoDB tables will fail with an error when certain mistakes are made.
 
-[updatable_views_with_limit](/kb/en/server-system-variables/#updatable_views_with_limit) determines whether view updates can be made with an [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update) or [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete) statement with a `LIMIT` clause if the view does not contain all primary or not null unique key columns from the underlying table.
+[updatable_views_with_limit](/kb/en/server-system-variables/#updatable_views_with_limit) determines whether view updates can be made with an [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/) or [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/) statement with a `LIMIT` clause if the view does not contain all primary or not null unique key columns from the underlying table.
 
 ### Dumps and sys.sql_modules
 
@@ -28,7 +28,7 @@ Alternatively, the [sp_helptext()](https://docs.microsoft.com/en-us/sql/relation
 
 Remember however that [MariaDB does not support schemas](/kb/en/understanding-mariadb-architecture/#databases). An SQL Server schema is approximately a MariaDB database.
 
-To execute a dump, we can pass the file to [mysql](/clients-utilities/mysql-client/mysql-command-line-client), the MariaDB command-line client.
+To execute a dump, we can pass the file to [mysql](/clients-utilities/mysql-client/mysql-command-line-client/), the MariaDB command-line client.
 
 Provided that a dump file contains syntax that is valid in MariaDB, it can be executed in this way:
 
@@ -71,7 +71,7 @@ SQL Server Management Studio and several other Microsoft tools allow one to expo
 
 MariaDB allows importing CSV files with the [LOAD DATA INFILE](/kb/en/load-data-infile/) statement, which is essentially the MariaDB equivalent of `BULK INSERT`.
 
-It can happen that we don't want to import the whole data, but some filtered or transformed version of it. In that case, we may prefer to use the [CONNECT](/columns-storage-engines-and-plugins/storage-engines/connect) storage engine to access CSV files and query them. The results of a query can be inserted into a table using [INSERT SELECT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-select).
+It can happen that we don't want to import the whole data, but some filtered or transformed version of it. In that case, we may prefer to use the [CONNECT](/columns-storage-engines-and-plugins/storage-engines/connect/) storage engine to access CSV files and query them. The results of a query can be inserted into a table using [INSERT SELECT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-select/).
 
 ## Moving Data from MariaDB to SQL Server
 
@@ -79,11 +79,11 @@ There are several ways to move data from MariaDB to SQL Server:
 
 - If the tables don't exist at all in SQL Server, we need to generate a dump first. The dump can include data or not.
 - If the tables are already in SQL Server, we can use CSV files instead of dumps to move the rows. CSV files are the most concise format to move data between different technologies.
-- With the tables already in SQL Server, another way to move data is to insert the rows into [CONNECT](/columns-storage-engines-and-plugins/storage-engines/connect) tables that "point" to remote SQL Server tables.
+- With the tables already in SQL Server, another way to move data is to insert the rows into [CONNECT](/columns-storage-engines-and-plugins/storage-engines/connect/) tables that "point" to remote SQL Server tables.
 
 ### Using a Dump (Structure)
 
-[mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump) can be used to generate dumps of all databases, a specified database, or a set of tables. It is even possible to only dump a set of rows by specifying the `WHERE` clause.
+[mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump/) can be used to generate dumps of all databases, a specified database, or a set of tables. It is even possible to only dump a set of rows by specifying the `WHERE` clause.
 
 By specifying the `--no-data` option we can dump the table structures without data.
 
@@ -93,7 +93,7 @@ By specifying the `--no-data` option we can dump the table structures without da
 
 mysqldump by default produces an output with both data and structure.
 
-`--no-create-info` can be used to skip the [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table) statements.
+`--no-create-info` can be used to skip the [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/) statements.
 
 `--compatible=mssql` will produce an output that should be usable in SQL Server.
 
@@ -105,17 +105,17 @@ mysqldump by default produces an output with both data and structure.
 
 CSV files can also be used to export data to SQL Server. There are several ways to produce CSV files from MariaDB:
 
-- The [SELECT INTO OUTFILE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select-into-outfile) statement.
-- The [CONNECT](/columns-storage-engines-and-plugins/storage-engines/connect) storage engine, with the [CSV table type](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-csv-and-fmt-table-types).
-- The [CSV](/columns-storage-engines-and-plugins/storage-engines/csv) storage engine (note that it doesn't support `NULL` and indexes).
+- The [SELECT INTO OUTFILE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select-into-outfile/) statement.
+- The [CONNECT](/columns-storage-engines-and-plugins/storage-engines/connect/) storage engine, with the [CSV table type](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-csv-and-fmt-table-types/).
+- The [CSV](/columns-storage-engines-and-plugins/storage-engines/csv/) storage engine (note that it doesn't support `NULL` and indexes).
 
 ### Using CONNECT Tables
 
-The [CONNECT](/columns-storage-engines-and-plugins/storage-engines/connect) storage engine allows one to access external data, in many forms:
+The [CONNECT](/columns-storage-engines-and-plugins/storage-engines/connect/) storage engine allows one to access external data, in many forms:
 
-- [Data files](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-table-types-data-files) ([CSV](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-csv-and-fmt-table-types), [JSON](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-json-table-type), [XML](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-xml-table-type), HTML and more).
-- Remote databases, using the [ODBC](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-odbc-table-type-accessing-tables-from-another-dbms) or [JDBC](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-jdbc-table-type-accessing-tables-from-another-dbms) standards, or [MariaDB/MySQL native protocol](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-mysql-table-type-accessing-mysqlmariadb-tables).
-- Some [special data sources](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-table-types-special-virtual-tables).
+- [Data files](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-table-types-data-files/) ([CSV](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-csv-and-fmt-table-types/), [JSON](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-json-table-type/), [XML](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-xml-table-type/), HTML and more).
+- Remote databases, using the [ODBC](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-odbc-table-type-accessing-tables-from-another-dbms/) or [JDBC](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-jdbc-table-type-accessing-tables-from-another-dbms/) standards, or [MariaDB/MySQL native protocol](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-mysql-table-type-accessing-mysqlmariadb-tables/).
+- Some [special data sources](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-table-types-special-virtual-tables/).
 
 `CONNECT` was mentioned previously because it could allow one to read a CSV file and query it in SQL, filtering and transforming the data that we want to move into regular MariaDB tables.
 
@@ -125,7 +125,7 @@ To enable `CONNECT` to work with SQL Server, we need to fulfill these requiremen
 
 - Install the ODBC driver, downloadable form [Microsoft](https://microsoft.com/) website. The driver is also available for Linux and MacOS.
 - Install [unixODBC](http://www.unixodbc.org/).
-- [Install `CONNECT`](/columns-storage-engines-and-plugins/storage-engines/connect/installing-the-connect-storage-engine) (unless it is already installed).
+- [Install `CONNECT`](/columns-storage-engines-and-plugins/storage-engines/connect/installing-the-connect-storage-engine/) (unless it is already installed).
 
 Here is an example of a `CONNECT` table that points to a SQL Server table:
 
@@ -162,6 +162,6 @@ However, we may prefer to manually specify the MariaDB types, sizes and characte
 
 ### Linked Server
 
-Instead of using MariaDB `CONNECT`, it is possible to use SQL Server Linked Server functionality. This will allow one to read data from a remote MariaDB database and copy it into local SQL Server tables. However, note that `CONNECT` allows more control on [types and character sets](/mariadb-administration/getting-installing-and-upgrading-mariadb/migrating-from-sql-server-to-mariadb/sql-server-and-mariadb-types-comparison) mapping.
+Instead of using MariaDB `CONNECT`, it is possible to use SQL Server Linked Server functionality. This will allow one to read data from a remote MariaDB database and copy it into local SQL Server tables. However, note that `CONNECT` allows more control on [types and character sets](/mariadb-administration/getting-installing-and-upgrading-mariadb/migrating-from-sql-server-to-mariadb/sql-server-and-mariadb-types-comparison/) mapping.
 
 Refer to [Linked Servers](https://docs.microsoft.com/en-us/sql/relational-databases/linked-servers/linked-servers-database-engine?view=sql-server-ver15) section in Microsoft documentation.

@@ -4,7 +4,7 @@
 
 The CONNECT handler was introduced in [MariaDB 10.0](/kb/en/what-is-mariadb-100/).
 
-Exporting data from MariaDB is obviously possible with CONNECT in particular for all formats not supported by the [SELECT INTO OUTFILE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select-into-outfile) statement. Let us consider the query:
+Exporting data from MariaDB is obviously possible with CONNECT in particular for all formats not supported by the [SELECT INTO OUTFILE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select-into-outfile/) statement. Let us consider the query:
 
 ```sql
 select plugin_name handler, plugin_version version, plugin_author

@@ -1,6 +1,6 @@
 # BINARY
 
-This page describes the BINARY data type. For details about the operator, see [Binary Operator](/built-in-functions/string-functions/binary-operator).
+This page describes the BINARY data type. For details about the operator, see [Binary Operator](/built-in-functions/string-functions/binary-operator/).
 
 ## Syntax
 
@@ -10,13 +10,13 @@ BINARY(M)
 
 ## Description
 
-The `BINARY` type is similar to the [CHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/char) type, but stores binary
+The `BINARY` type is similar to the [CHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/char/) type, but stores binary
 byte strings rather than non-binary character strings. `M` represents the
 column length in bytes.
 
 It contains no character set, and comparison and sorting are based on the numeric value of the bytes.
 
-If the maximum length is exceeded, and [SQL strict mode](/mariadb-administration/variables-and-modes/sql-mode) is not enabled , the extra characters will be dropped with a warning. If strict mode is enabled, an error will occur.
+If the maximum length is exceeded, and [SQL strict mode](/mariadb-administration/variables-and-modes/sql-mode/) is not enabled , the extra characters will be dropped with a warning. If strict mode is enabled, an error will occur.
 
 BINARY values are right-padded with `0x00` (the zero byte) to the specified length when inserted. The padding is <em>not</em> removed on select, so this needs to be taken into account when sorting and comparing, where all bytes are significant. The zero byte, `0x00` is less than a space for comparison purposes.
 
@@ -61,7 +61,7 @@ SELECT * FROM bins ORDER BY a;
 +------+
 ```
 
-Using [CAST](/built-in-functions/string-functions/cast) to sort as a [CHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/char) instead:
+Using [CAST](/built-in-functions/string-functions/cast/) to sort as a [CHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/char/) instead:
 
 ```sql
 SELECT * FROM bins ORDER BY CAST(a AS CHAR);
@@ -92,5 +92,5 @@ SELECT a = '12345678', a = '12345678\0\0' from bins;
 
 ## See Also
 
-- [CHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/char)
-- [Data Type Storage Requirements](/columns-storage-engines-and-plugins/data-types/data-type-storage-requirements)
+- [CHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/char/)
+- [Data Type Storage Requirements](/columns-storage-engines-and-plugins/data-types/data-type-storage-requirements/)

@@ -19,14 +19,14 @@ PBXT features include the following:
 - <strong>Fast Rollback and Recovery:</strong> PBXT uses a specialized method to identify garbage which makes "undo" unnecessary. This make both rollback of transactions and recovery after restart very fast.
 - <strong>Deadlock Detection:</strong> PBXT identifies all kinds of deadlocks immediately.
 - <strong>Write-once:</strong> PBXT uses a log-based storage which makes it possible to write transactional data directly to the database, without first being writen to the transaction log.
-- <strong>Referential Integrity:</strong> PBXT supports [foreign key](/replication/optimization-and-tuning/optimization-and-indexes/foreign-keys) definitions, including cascaded updates and deletes.
+- <strong>Referential Integrity:</strong> PBXT supports [foreign key](/replication/optimization-and-tuning/optimization-and-indexes/foreign-keys/) definitions, including cascaded updates and deletes.
 - <strong>BLOB streaming:</strong> In combination with the [BLOB Streaming engine](http://www.blobstreaming.org) PBXT can stream binary and media directly in and out of the database.
 
 PBXT will not take any resources (disk space or CPU processing) until you create your first PBXT table.
 
 ## xtstat
 
-The included <code class="fixed" style="white-space:pre-wrap">xtstat</code> program can be used to monitor all internal activity of PBXT. See [xtstat](/clients-utilities/xtstat) for more information.
+The included <code class="fixed" style="white-space:pre-wrap">xtstat</code> program can be used to monitor all internal activity of PBXT. See [xtstat](/clients-utilities/xtstat/) for more information.
 
 ## More information
 

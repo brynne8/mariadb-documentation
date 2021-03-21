@@ -4,7 +4,7 @@
 
 The metadata_locks table was introduced in [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/).
 
-The `metadata_locks` table contains [metadata lock](/sql-statements-structure/sql-statements/transactions/metadata-locking) information.
+The `metadata_locks` table contains [metadata lock](/sql-statements-structure/sql-statements/transactions/metadata-locking/) information.
 
 To enable metadata lock instrumention, at runtime:
 
@@ -13,7 +13,7 @@ UPDATE performance_schema.setup_instruments SET enabled='YES', timed='YES'
   WHERE name LIKE 'wait/lock/metadata%';
 ```
 
-or in the [configuration file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files):
+or in the [configuration file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/):
 
 ```sql
 performance-schema-instrument='wait/lock/metadata/sql/mdl=ON'
@@ -21,7 +21,7 @@ performance-schema-instrument='wait/lock/metadata/sql/mdl=ON'
 
 The table is by default autosized, but the size can be configured with the [performance_schema_max_metadata_locks](/kb/en/performance-schema-system-variables/#performance_schema_max_metadata_locks) system variabe.
 
-The table is read-only, and [TRUNCATE TABLE](/sql-statements-structure/sql-statements/table-statements/truncate-table) cannot be used to empty the table.
+The table is read-only, and [TRUNCATE TABLE](/sql-statements-structure/sql-statements/table-statements/truncate-table/) cannot be used to empty the table.
 
 The table contains the following columns:
 

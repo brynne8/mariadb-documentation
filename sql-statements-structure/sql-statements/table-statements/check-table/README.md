@@ -11,18 +11,18 @@ option = {FOR UPGRADE | QUICK | FAST | MEDIUM | EXTENDED | CHANGED}
 ## Description
 
 `CHECK TABLE` checks a table or tables for errors. `CHECK TABLE` works for
-[Archive](/columns-storage-engines-and-plugins/storage-engines/archive), [Aria](/columns-storage-engines-and-plugins/storage-engines/aria), [CSV](/columns-storage-engines-and-plugins/storage-engines/csv), [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb), and [MyISAM](/kb/en/myisam/) tables. For Aria and MyISAM tables, the
-key statistics are updated as well. For CSV, see also [Checking and Repairing CSV Tables](/columns-storage-engines-and-plugins/storage-engines/csv/checking-and-repairing-csv-tables).
+[Archive](/columns-storage-engines-and-plugins/storage-engines/archive/), [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/), [CSV](/columns-storage-engines-and-plugins/storage-engines/csv/), [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/), and [MyISAM](/kb/en/myisam/) tables. For Aria and MyISAM tables, the
+key statistics are updated as well. For CSV, see also [Checking and Repairing CSV Tables](/columns-storage-engines-and-plugins/storage-engines/csv/checking-and-repairing-csv-tables/).
 
-As an alternative, [myisamchk](/clients-utilities/myisam-clients-and-utilities/myisamchk) is a commandline tool for checking MyISAM tables when the tables are not being accessed.
+As an alternative, [myisamchk](/clients-utilities/myisam-clients-and-utilities/myisamchk/) is a commandline tool for checking MyISAM tables when the tables are not being accessed.
 
-For checking [dynamic columns](/sql-statements-structure/nosql/dynamic-columns) integrity, <a undefined>COLUMN_CHECK()</a> can be used.
+For checking [dynamic columns](/sql-statements-structure/nosql/dynamic-columns/) integrity, <a undefined>COLUMN_CHECK()</a> can be used.
 
 `CHECK TABLE` can also check views for problems, such as tables
 that are referenced in the view definition that no longer exist.
 
 `CHECK TABLE` is also supported for partitioned tables. You can
-use <code class="highlight fixed" style="white-space:pre-wrap">[ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) ... CHECK PARTITION</code> 
+use <code class="highlight fixed" style="white-space:pre-wrap">[ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) ... CHECK PARTITION</code> 
 to check one or more partitions.
 
 The meaning of the different options are as follows - note that this can vary a bit between
@@ -39,10 +39,10 @@ storage engines:
 For most cases running `CHECK TABLE` without options or `MEDIUM` should be
 good enough.
 
-The [Aria](/columns-storage-engines-and-plugins/storage-engines/aria) storage engine supports [progress reporting](/kb/en/progress-reporting/) for this statement.
+The [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/) storage engine supports [progress reporting](/kb/en/progress-reporting/) for this statement.
 
 If you want to know if two tables are identical, take a look
-at <code class="highlight fixed" style="white-space:pre-wrap">[CHECKSUM TABLE](/sql-statements-structure/sql-statements/table-statements/checksum-table)</code>.
+at <code class="highlight fixed" style="white-space:pre-wrap">[CHECKSUM TABLE](/sql-statements-structure/sql-statements/table-statements/checksum-table/)</code>.
 
 ## XtraDB/InnoDB
 

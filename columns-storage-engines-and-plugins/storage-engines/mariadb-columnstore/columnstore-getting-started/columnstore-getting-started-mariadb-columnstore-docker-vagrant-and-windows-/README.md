@@ -12,7 +12,7 @@ If you have Windows 10 Creators update installed, then you can install the Ubunt
 
 # Docker
 
-[Docker](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb) allows for creation of lightweight containers (running in a virtual machine on a PC or MAC) that allows for creation of lightweight and reproducible containers with a dedicated function.
+[Docker](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/) allows for creation of lightweight containers (running in a virtual machine on a PC or MAC) that allows for creation of lightweight and reproducible containers with a dedicated function.
 
 Since MariaDB ColumnStore relies on a Syslog daemon, the container must start both ColumnStore and rsyslogd and the runit utility is used to achieve this.
 
@@ -33,6 +33,6 @@ docker-compose up -d
 
 # Vagrant
 
-[Vagrant](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/vagrant-and-mariadb) allows for creation of simple and reproducible virtual machine images for development environments.
+[Vagrant](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/vagrant-and-mariadb/) allows for creation of simple and reproducible virtual machine images for development environments.
 
 The basic Vagrant setup can be found at [GitHub](https://github.com/mariadb-corporation/mariadb-columnstore-vagrant). Clone this repository and follow the Readme.md instructions.

@@ -15,7 +15,7 @@ This will be couched in terms of Data Warehousing, with a huge `Fact` table and 
 
 `Staging` is one (or more) tables in which the data lives only long enough to be handed off to Normalization, Summary, and the Fact tables.
 
-Since we are probably talking about a billion-row table, shrinking the width of the Fact table by normalizing (as mentioned here). Changing an [INT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int) to a [MEDIUMINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/mediumint) will save a GB. Replacing a string by an id (normalizing) saves many GB. This helps disk space and cacheability, hence speed.
+Since we are probably talking about a billion-row table, shrinking the width of the Fact table by normalizing (as mentioned here). Changing an [INT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int/) to a [MEDIUMINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/mediumint/) will save a GB. Replacing a string by an id (normalizing) saves many GB. This helps disk space and cacheability, hence speed.
 
 ## Injection speed
 
@@ -29,7 +29,7 @@ Generally the fastest injection rate can be achieved by "staging" the INSERTs in
 
 ## Normalization
 
-Let's say your Input has a [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar) `host_name` column, but you need to turn that into a smaller [MEDIUMINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/mediumint) `host_id` in the Fact table. The "Normalization" table, as I call it, looks something like
+Let's say your Input has a [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar/) `host_name` column, but you need to turn that into a smaller [MEDIUMINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/mediumint/) `host_id` in the Fact table. The "Normalization" table, as I call it, looks something like
 
 ```sql
 CREATE TABLE Hosts (
@@ -70,7 +70,7 @@ SQL #1 (of 2):
 
 By isolating this as its own transaction, we get it finished in a hurry, thereby minimizing blocking. By saying IGNORE, we don't care if other threads are 'simultaneously' inserting the same host_names.
 
-There is a subtle reason for the LEFT JOIN. If, instead, it were INSERT IGNORE..SELECT DISTINCT, then the INSERT would preallocate auto_increment ids for as many rows as the SELECT provides. This is very likely to "burn" a lot of ids, thereby leading to overflowing MEDIUMINT unnecessarily. The LEFT JOIN leads to finding just the new ids that are needed (except for the rare possibility of a 'simultaneous' insert by another thread). More rationale: [Mapping table](/replication/optimization-and-tuning/optimization-and-indexes/building-the-best-index-for-a-given-select)
+There is a subtle reason for the LEFT JOIN. If, instead, it were INSERT IGNORE..SELECT DISTINCT, then the INSERT would preallocate auto_increment ids for as many rows as the SELECT provides. This is very likely to "burn" a lot of ids, thereby leading to overflowing MEDIUMINT unnecessarily. The LEFT JOIN leads to finding just the new ids that are needed (except for the rare possibility of a 'simultaneous' insert by another thread). More rationale: [Mapping table](/replication/optimization-and-tuning/optimization-and-indexes/building-the-best-index-for-a-given-select/)
 
 SQL #2:
 
@@ -86,7 +86,7 @@ This gets the IDs, whether already existing, set by another thread, or set by SQ
 
 If the size of `Staging` changes depending on the busy versus idle times of the day, this pair of SQL statements has another comforting feature. The more rows in `Staging`, the more efficient the SQL runs, thereby helping compensate for the "busy" times.
 
-The companion [Data Warehouse article](/replication/optimization-and-tuning/query-optimizations/data-warehousing-techniques) folds SQL #2 into the INSERT INTO Fact. But you may need host_id for further normalization steps and/or Summarization steps, so this explicit UPDATE shown here is often better.
+The companion [Data Warehouse article](/replication/optimization-and-tuning/query-optimizations/data-warehousing-techniques/) folds SQL #2 into the INSERT INTO Fact. But you may need host_id for further normalization steps and/or Summarization steps, so this explicit UPDATE shown here is often better.
 
 ## Flip-flop staging
 
@@ -120,7 +120,7 @@ The choice depends on which is faster (insertion or processing). There are trade
 
 ## Engine choice
 
-`Fact` table -- [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb), if for no other reason than that a system crash would not need a REPAIR TABLE. (REPAIRing a billion-row [MyISAM](/kb/en/myisam/) table can take hours or days.)
+`Fact` table -- [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/), if for no other reason than that a system crash would not need a REPAIR TABLE. (REPAIRing a billion-row [MyISAM](/kb/en/myisam/) table can take hours or days.)
 
 Normalization tables -- InnoDB, primarily because it can be done efficiently with 2 indexes, whereas, MyISAM would need 4 to achieve the same efficiency.
 
@@ -140,7 +140,7 @@ Should you do "CREATE TEMPORARY TABLE"? Probably not. Consider `Staging` as part
 
 ## Summarization
 
-This is mostly covered here: [Summary Tables](/replication/optimization-and-tuning/query-optimizations/data-warehousing-summary-tables)<br>
+This is mostly covered here: [Summary Tables](/replication/optimization-and-tuning/query-optimizations/data-warehousing-summary-tables/)<br>
 Summarize from the Staging table instead of the Fact table.
 
 ## Replication Issues
@@ -206,8 +206,8 @@ iblog_file_size should be larger than the change in the STATUS "Innodb_os_log_wr
 
 ## See also
 
-- [companion Data Warehouse blog](/replication/optimization-and-tuning/query-optimizations/data-warehousing-techniques)
-- [companion Summary Table blog](/replication/optimization-and-tuning/query-optimizations/data-warehousing-summary-tables)
+- [companion Data Warehouse blog](/replication/optimization-and-tuning/query-optimizations/data-warehousing-techniques/)
+- [companion Summary Table blog](/replication/optimization-and-tuning/query-optimizations/data-warehousing-summary-tables/)
 - [a forum thread that prodded me into writing this blog](http://forums.mysql.com/read.php?106,623744)
 - [StackExchange discussion](http://dba.stackexchange.com/a/108726/1876)
 

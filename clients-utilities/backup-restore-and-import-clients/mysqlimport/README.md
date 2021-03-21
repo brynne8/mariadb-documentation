@@ -82,7 +82,7 @@ mysqlimport [OPTIONS] database textfile1 [textfile2 ...]
 
 ### Option Files
 
-In addition to reading options from the command-line, `mysqlimport` can also read options from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files). If an unknown option is provided to `mysqlimport` in an option file, then it is ignored.
+In addition to reading options from the command-line, `mysqlimport` can also read options from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/). If an unknown option is provided to `mysqlimport` in an option file, then it is ignored.
 
 The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
 
@@ -97,7 +97,7 @@ In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, `mysqlimport` is linke
 
 #### Option Groups
 
-`mysqlimport` reads options from the following [option groups](/kb/en/configuring-mariadb-with-option-files/#option-groups) from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files):
+`mysqlimport` reads options from the following [option groups](/kb/en/configuring-mariadb-with-option-files/#option-groups) from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/):
 
 <table><tbody><tr><th>Group</th><th>Description</th></tr>
 <tr><td><code>[mysqlimport]</code></td><td>&nbsp;Options read by <code>mysqlimport</code>, which includes both MariaDB Server and MySQL Server.</td></tr>

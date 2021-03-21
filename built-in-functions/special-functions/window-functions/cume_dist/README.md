@@ -2,7 +2,7 @@
 
 ##### MariaDB starting with [10.2](/kb/en/what-is-mariadb-102/)
 
-The CUME_DIST() function was first introduced with [window functions](/built-in-functions/special-functions/window-functions) in [MariaDB 10.2.0](/kb/en/mariadb-1020-release-notes/).
+The CUME_DIST() function was first introduced with [window functions](/built-in-functions/special-functions/window-functions/) in [MariaDB 10.2.0](/kb/en/mariadb-1020-release-notes/).
 
 ## Syntax
 
@@ -15,7 +15,7 @@ CUME_DIST() OVER (
 
 ## Description
 
-CUME_DIST() is a [window function](/built-in-functions/special-functions/window-functions) that returns the cumulative distribution of a given row. The following formula is used to calculate the value:
+CUME_DIST() is a [window function](/built-in-functions/special-functions/window-functions/) that returns the cumulative distribution of a given row. The following formula is used to calculate the value:
 
 ```sql
 (number of rows <= current row) / (total rows)
@@ -104,4 +104,4 @@ from t1;
 
 ## See Also
 
-- [PERCENT_RANK()](/built-in-functions/special-functions/window-functions/percent_rank)
+- [PERCENT_RANK()](/built-in-functions/special-functions/window-functions/percent_rank/)

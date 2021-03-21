@@ -50,7 +50,7 @@ lock_option:
 
 ## Description
 
-The `CREATE USER` statement creates new MariaDB accounts. To use it, you must have the global [CREATE USER](/kb/en/grant/#create-user) privilege or the [INSERT](/kb/en/grant/#table-privileges) privilege for the [mysql](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables) database. For each account, `CREATE USER` creates a new row in
+The `CREATE USER` statement creates new MariaDB accounts. To use it, you must have the global [CREATE USER](/kb/en/grant/#create-user) privilege or the [INSERT](/kb/en/grant/#table-privileges) privilege for the [mysql](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database. For each account, `CREATE USER` creates a new row in
 the [mysql.user](/kb/en/mysqluser-table/) table that has no privileges.
 
 If any of the specified accounts, or any permissions for the specified accounts, already exist, then the server returns `ERROR 1396 (HY000)`. If an error occurs, `CREATE USER` will still create the accounts that do not result in an error. Only one error is produced for all users which have not been created:
@@ -60,7 +60,7 @@ ERROR 1396 (HY000):
   Operation CREATE USER failed for 'u1'@'%','u2'@'%'
 ```
 
-`CREATE USER`, [DROP USER](/sql-statements-structure/sql-statements/account-management-sql-commands/drop-user), [CREATE ROLE](/sql-statements-structure/sql-statements/account-management-sql-commands/create-role), and [DROP ROLE](/sql-statements-structure/sql-statements/account-management-sql-commands/drop-role)  all produce the same error code when they fail.
+`CREATE USER`, [DROP USER](/sql-statements-structure/sql-statements/account-management-sql-commands/drop-user/), [CREATE ROLE](/sql-statements-structure/sql-statements/account-management-sql-commands/create-role/), and [DROP ROLE](/sql-statements-structure/sql-statements/account-management-sql-commands/drop-role/)  all produce the same error code when they fail.
 
 See [Account Names](#account-names) below for details on how account names are specified.
 
@@ -113,7 +113,7 @@ SHOW WARNINGS;
 
 ### IDENTIFIED BY 'password'
 
-The optional `IDENTIFIED BY` clause can be used to provide an account with a password. The password should be specified in plain text. It will be hashed by the [PASSWORD](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password) function prior to being stored to the <a undefined>mysql.user</a> table.
+The optional `IDENTIFIED BY` clause can be used to provide an account with a password. The password should be specified in plain text. It will be hashed by the [PASSWORD](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password/) function prior to being stored to the <a undefined>mysql.user</a> table.
 
 For example, if our password is `mariadb`, then we can create the user with:
 
@@ -126,11 +126,11 @@ will be able to connect without a password. A blank password is not a wildcard
 to match any password. The user must connect without providing a password if no
 password is set.
 
-The only [authentication plugins](/columns-storage-engines-and-plugins/plugins/authentication-plugins) that this clause supports are [mysql_native_password](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-mysql_native_password) and [mysql_old_password](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-mysql_old_password).
+The only [authentication plugins](/columns-storage-engines-and-plugins/plugins/authentication-plugins/) that this clause supports are [mysql_native_password](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-mysql_native_password/) and [mysql_old_password](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-mysql_old_password/).
 
 ### IDENTIFIED BY PASSWORD 'password_hash'
 
-The optional `IDENTIFIED BY PASSWORD` clause can be used to provide an account with a password that has already been hashed. The password should be specified as a hash that was provided by the [PASSWORD](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password) function. It will be stored to the <a undefined>mysql.user</a> table as-is.
+The optional `IDENTIFIED BY PASSWORD` clause can be used to provide an account with a password that has already been hashed. The password should be specified as a hash that was provided by the [PASSWORD](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password/) function. It will be stored to the <a undefined>mysql.user</a> table as-is.
 
 For example, if our password is `mariadb`, then we can find the hash with:
 
@@ -155,19 +155,19 @@ will be able to connect without a password. A blank password is not a wildcard
 to match any password. The user must connect without providing a password if no
 password is set.
 
-The only [authentication plugins](/columns-storage-engines-and-plugins/plugins/authentication-plugins) that this clause supports are [mysql_native_password](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-mysql_native_password) and [mysql_old_password](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-mysql_old_password).
+The only [authentication plugins](/columns-storage-engines-and-plugins/plugins/authentication-plugins/) that this clause supports are [mysql_native_password](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-mysql_native_password/) and [mysql_old_password](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-mysql_old_password/).
 
 ### IDENTIFIED {VIA|WITH} authentication_plugin
 
-The optional `IDENTIFIED VIA authentication_plugin` allows you to specify that the account should be authenticated by a specific [authentication plugin](/columns-storage-engines-and-plugins/plugins/authentication-plugins). The plugin name must be an active authentication plugin as per [SHOW PLUGINS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-plugins). If it doesn't show up in that output, then you will need to install it with [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin) or [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname).
+The optional `IDENTIFIED VIA authentication_plugin` allows you to specify that the account should be authenticated by a specific [authentication plugin](/columns-storage-engines-and-plugins/plugins/authentication-plugins/). The plugin name must be an active authentication plugin as per [SHOW PLUGINS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-plugins/). If it doesn't show up in that output, then you will need to install it with [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin/) or [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname/).
 
-For example, this could be used with the [PAM authentication plugin](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam):
+For example, this could be used with the [PAM authentication plugin](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam/):
 
 ```sql
 CREATE USER foo2@test IDENTIFIED VIA pam;
 ```
 
-Some authentication plugins allow additional arguments to be specified after a `USING` or `AS` keyword. For example, the [PAM authentication plugin](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam) accepts a [service name](/kb/en/authentication-plugin-pam/#configuring-the-pam-service):
+Some authentication plugins allow additional arguments to be specified after a `USING` or `AS` keyword. For example, the [PAM authentication plugin](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam/) accepts a [service name](/kb/en/authentication-plugin-pam/#configuring-the-pam-service):
 
 ```sql
 CREATE USER foo2@test IDENTIFIED VIA pam USING 'mariadb';
@@ -177,7 +177,7 @@ The exact meaning of the additional argument would depend on the specific authen
 
 ##### MariaDB starting with [10.4.0](/kb/en/mariadb-1040-release-notes/)
 
-The `USING` or `AS` keyword can also be used to provide a plain-text password to a plugin if it's provided as an argument to the [PASSWORD()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password) function. This is only valid for [authentication plugins](/columns-storage-engines-and-plugins/plugins/authentication-plugins) that have implemented a hook for the [PASSWORD()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password) function. For example, the [ed25519](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-ed25519) authentication plugin supports this:
+The `USING` or `AS` keyword can also be used to provide a plain-text password to a plugin if it's provided as an argument to the [PASSWORD()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password/) function. This is only valid for [authentication plugins](/columns-storage-engines-and-plugins/plugins/authentication-plugins/) that have implemented a hook for the [PASSWORD()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password/) function. For example, the [ed25519](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-ed25519/) authentication plugin supports this:
 
 ```sql
 CREATE USER safe@'%' IDENTIFIED VIA ed25519 USING PASSWORD('secret');
@@ -197,9 +197,9 @@ By default, MariaDB transmits data between the server and clients without encryp
 
 To mitigate this concern, MariaDB allows you to encrypt data in transit between the server and clients using the Transport Layer Security (TLS) protocol. TLS was formerly known as Secure Socket Layer (SSL), but strictly speaking the SSL protocol is a predecessor to TLS and, that version of the protocol is now considered insecure. The documentation still uses the term SSL often and for compatibility reasons TLS-related server system and status variables still use the prefix ssl_, but internally, MariaDB only supports its secure successors.
 
-See [Secure Connections Overview](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview) for more information about how to determine whether your MariaDB server has TLS support.
+See [Secure Connections Overview](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview/) for more information about how to determine whether your MariaDB server has TLS support.
 
-You can set certain TLS-related restrictions for specific user accounts. For instance, you might use this with user accounts that require access to sensitive data while sending it across networks that you do not control. These restrictions can be enabled for a user account with the [CREATE USER](/sql-statements-structure/sql-statements/account-management-sql-commands/create-user), [ALTER USER](/sql-statements-structure/sql-statements/account-management-sql-commands/alter-user), or [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant) statements. The following options are available:
+You can set certain TLS-related restrictions for specific user accounts. For instance, you might use this with user accounts that require access to sensitive data while sending it across networks that you do not control. These restrictions can be enabled for a user account with the [CREATE USER](/sql-statements-structure/sql-statements/account-management-sql-commands/create-user/), [ALTER USER](/sql-statements-structure/sql-statements/account-management-sql-commands/alter-user/), or [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/) statements. The following options are available:
 
 <table><tbody><tr><th>Option</th><th>Description</th></tr>
 <tr><td><code>REQUIRE NONE</code></td><td>TLS is not required for this account, but can still be used.</td></tr>
@@ -223,7 +223,7 @@ CREATE USER 'alice'@'%'
 
 If any of these options are set for a specific user account, then any client who tries to connect with that user account will have to be configured to connect with TLS.
 
-See [Securing Connections for Client and Server](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/securing-connections-for-client-and-server) for information on how to enable TLS on the client and server.
+See [Securing Connections for Client and Server](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/securing-connections-for-client-and-server/) for information on how to enable TLS on the client and server.
 
 ## Resource Limit Options
 
@@ -253,9 +253,9 @@ CREATE USER 'someone'@'localhost' WITH
 
 The resources are tracked per account, which means `'user'@'server'`; not per user name or per connection.
 
-The count can be reset for all users using [FLUSH USER_RESOURCES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush), [FLUSH PRIVILEGES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush) or [mysqladmin reload](/clients-utilities/mysqladmin).
+The count can be reset for all users using [FLUSH USER_RESOURCES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/), [FLUSH PRIVILEGES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/) or [mysqladmin reload](/clients-utilities/mysqladmin/).
 
-Per account resource limits are stored in the <a undefined>user</a> table, in the [mysql](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables) database. Columns used for resources limits are named `max_questions`, `max_updates`, `max_connections` (for `MAX_CONNECTIONS_PER_HOUR`), and `max_user_connections` (for `MAX_USER_CONNECTIONS`).
+Per account resource limits are stored in the <a undefined>user</a> table, in the [mysql](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database. Columns used for resources limits are named `max_questions`, `max_updates`, `max_connections` (for `MAX_CONNECTIONS_PER_HOUR`), and `max_user_connections` (for `MAX_USER_CONNECTIONS`).
 
 ## Account Names
 
@@ -271,7 +271,7 @@ must quote the user name and host name separately (for example `'user_name'@'hos
 If the host name is not provided, it is assumed to be `'%'`.
 
 Host names may contain the wildcard characters `%` and `_`. They are matched as if by
-the [LIKE](/built-in-functions/string-functions/like) clause. If you need to use a wildcard character literally (for example, to
+the [LIKE](/built-in-functions/string-functions/like/) clause. If you need to use a wildcard character literally (for example, to
 match a domain name with an underscore), prefix the character with a backslash. See `LIKE`
 for more information on escaping wildcard characters.
 
@@ -304,7 +304,7 @@ Note that the credentials added when creating a user with the `'%'` wildcard hos
 
 User names must match exactly, including case. A user name that is empty is known as an anonymous account and is allowed to match a login attempt with any user name component. These are described more in the next section.
 
-For valid identifiers to use as user names, see [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names).
+For valid identifiers to use as user names, see [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names/).
 
 It is possible for more than one account to match when a user connects. MariaDB selects
 the first matching account after sorting according to the following criteria:
@@ -380,7 +380,7 @@ CREATE USER ''@'192.168.0.3';
 
 #### Fixing a Legacy Default Anonymous Account
 
-On some systems, the <a undefined>mysql.db</a> table has some entries for the `''@'%'` anonymous account by default. Unfortunately, there is no matching entry in the <a undefined>mysql.user</a> table, which means that this anonymous account doesn't exactly exist, but it does have privileges--usually on the default `test` database created by [mysql_install_db](/clients-utilities/mysql_install_db). These account-less privileges are a legacy that is leftover from a time when MySQL's privilege system was less advanced.
+On some systems, the <a undefined>mysql.db</a> table has some entries for the `''@'%'` anonymous account by default. Unfortunately, there is no matching entry in the <a undefined>mysql.user</a> table, which means that this anonymous account doesn't exactly exist, but it does have privileges--usually on the default `test` database created by [mysql_install_db](/clients-utilities/mysql_install_db/). These account-less privileges are a legacy that is leftover from a time when MySQL's privilege system was less advanced.
 
 This situation means that you will run into errors if you try to create a `''@'%'` account. For example:
 
@@ -389,7 +389,7 @@ CREATE USER ''@'%';
 ERROR 1396 (HY000): Operation CREATE USER failed for ''@'%'
 ```
 
-The fix is to [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete) the row in the <a undefined>mysql.db</a> table and then execute [FLUSH PRIVILEGES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush):
+The fix is to [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/) the row in the <a undefined>mysql.db</a> table and then execute [FLUSH PRIVILEGES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/):
 
 ```sql
 DELETE FROM mysql.db WHERE User='' AND Host='%';
@@ -415,7 +415,7 @@ Besides automatic password expiry, as determined by [default_password_lifetime](
 CREATE USER 'monty'@'localhost' PASSWORD EXPIRE INTERVAL 120 DAY;
 ```
 
-See [User Password Expiry](/mariadb-administration/user-server-security/user-account-management/user-password-expiry) for more details.
+See [User Password Expiry](/mariadb-administration/user-server-security/user-account-management/user-password-expiry/) for more details.
 
 ## Account Locking
 
@@ -427,20 +427,20 @@ Account locking permits privileged administrators to lock/unlock user accounts. 
 CREATE USER 'marijn'@'localhost' ACCOUNT LOCK;
 ```
 
-See [Account Locking](/mariadb-administration/user-server-security/user-account-management/account-locking) for more details.
+See [Account Locking](/mariadb-administration/user-server-security/user-account-management/account-locking/) for more details.
 
 From [MariaDB 10.4.7](/kb/en/mariadb-1047-release-notes/) and [MariaDB 10.5.8](/kb/en/mariadb-1058-release-notes/), the <em>lock_option</em> and <em>password_option</em> clauses can occur in either order.
 
 ## See Also
 
 - [Troubleshooting Connection Issues](/kb/en/troubleshooting-connection-issues/)
-- [Authentication from MariaDB 10.4](/mariadb-administration/user-server-security/user-account-management/authentication-from-mariadb-104)
-- [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names)
-- [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant)
-- [ALTER USER](/sql-statements-structure/sql-statements/account-management-sql-commands/alter-user)
-- [DROP USER](/sql-statements-structure/sql-statements/account-management-sql-commands/drop-user)
-- [SET PASSWORD](/sql-statements-structure/sql-statements/account-management-sql-commands/set-password)
-- [SHOW CREATE USER](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-user)
+- [Authentication from MariaDB 10.4](/mariadb-administration/user-server-security/user-account-management/authentication-from-mariadb-104/)
+- [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names/)
+- [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/)
+- [ALTER USER](/sql-statements-structure/sql-statements/account-management-sql-commands/alter-user/)
+- [DROP USER](/sql-statements-structure/sql-statements/account-management-sql-commands/drop-user/)
+- [SET PASSWORD](/sql-statements-structure/sql-statements/account-management-sql-commands/set-password/)
+- [SHOW CREATE USER](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-user/)
 - [mysql.user table](/kb/en/mysqluser-table/)
-- [Password Validation Plugins](/columns-storage-engines-and-plugins/plugins/password-validation-plugins) - permits the setting of basic criteria for passwords
-- [Authentication Plugins](/columns-storage-engines-and-plugins/plugins/authentication-plugins) - allow various authentication methods to be used, and new ones to be developed.
+- [Password Validation Plugins](/columns-storage-engines-and-plugins/plugins/password-validation-plugins/) - permits the setting of basic criteria for passwords
+- [Authentication Plugins](/columns-storage-engines-and-plugins/plugins/authentication-plugins/) - allow various authentication methods to be used, and new ones to be developed.

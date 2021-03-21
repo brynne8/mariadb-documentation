@@ -1,8 +1,8 @@
 # CONNECT - Using the TBL and MYSQL Table Types Together
 
-Used together, these types lift all the limitations of the [FEDERATED](/columns-storage-engines-and-plugins/storage-engines/legacy-storage-engines/federated-storage-engine) and [MERGE](/columns-storage-engines-and-plugins/storage-engines/merge) engines.
+Used together, these types lift all the limitations of the [FEDERATED](/columns-storage-engines-and-plugins/storage-engines/legacy-storage-engines/federated-storage-engine/) and [MERGE](/columns-storage-engines-and-plugins/storage-engines/merge/) engines.
 
-<strong>MERGE:</strong> Its limitation is obvious, the merged tables must be identical [MyISAM](/columns-storage-engines-and-plugins/storage-engines/myisam-storage-engine) tables,
+<strong>MERGE:</strong> Its limitation is obvious, the merged tables must be identical [MyISAM](/columns-storage-engines-and-plugins/storage-engines/myisam-storage-engine/) tables,
 and MyISAM is not even the default engine for MariaDB. However, [TBL](/kb/en/connect-table-types-tbl-table-type-table-list/) accesses a
 collection of CONNECT tables, but because these tables can be user specified or
 internally created [MYSQL](/kb/en/connect-table-types-mysql-table-type-accessing-mysqlmariadb-tables/) tables, there is no limitation to the type of the

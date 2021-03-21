@@ -11,7 +11,7 @@ PolygonFromWKB(wkb[,srid])
 
 ## Description
 
-Constructs a [POLYGON](/sql-statements-structure/geographic-geometric-features/geometry-constructors/polygon) value using its [WKB](/sql-statements-structure/geographic-geometric-features/wkb/well-known-binary-wkb-format) representation and [SRID](/kb/en/srid/).
+Constructs a [POLYGON](/sql-statements-structure/geographic-geometric-features/geometry-constructors/polygon/) value using its [WKB](/sql-statements-structure/geographic-geometric-features/wkb/well-known-binary-wkb-format/) representation and [SRID](/kb/en/srid/).
 
 `ST_PolyFromWKB()`, `ST_PolygonFromWKB()`, `PolyFromWKB()` and `PolygonFromWKB()` are synonyms.
 

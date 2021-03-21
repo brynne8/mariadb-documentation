@@ -10,10 +10,10 @@ SHOW TABLE STATUS [{FROM | IN} db_name]
 ## Description
 
 <code class="highlight fixed" style="white-space:pre-wrap">SHOW TABLE STATUS</code> works like 
- <code class="highlight fixed" style="white-space:pre-wrap">[SHOW TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-tables)</code>, but provides more extensive information about each non-<code class="highlight fixed" style="white-space:pre-wrap">TEMPORARY</code> table.
+ <code class="highlight fixed" style="white-space:pre-wrap">[SHOW TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-tables/)</code>, but provides more extensive information about each non-<code class="highlight fixed" style="white-space:pre-wrap">TEMPORARY</code> table.
 
 The <code class="highlight fixed" style="white-space:pre-wrap">LIKE</code> clause, if present on its own, indicates which table names to
-match. The <code class="highlight fixed" style="white-space:pre-wrap">WHERE</code> and <code class="highlight fixed" style="white-space:pre-wrap">LIKE</code> clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](/sql-statements-structure/sql-statements/administrative-sql-statements/show/extended-show).
+match. The <code class="highlight fixed" style="white-space:pre-wrap">WHERE</code> and <code class="highlight fixed" style="white-space:pre-wrap">LIKE</code> clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](/sql-statements-structure/sql-statements/administrative-sql-statements/show/extended-show/).
 
 The following information is returned:
 
@@ -40,7 +40,7 @@ The following information is returned:
 <tr><td>Temporary</td><td>Placeholder to signal that a table is a temporary table. Currently always "N", except "Y" for generated information_schema tables and NULL for <a href="/kb/en/views/">views</a>. Added in <a href="/kb/en/mariadb-1035-release-notes/">MariaDB 10.3.5</a>.</td></tr>
 </tbody></table>
 
-Similar information can be found in the <a undefined>information_schema.TABLES</a> table as well as by using [mysqlshow](/clients-utilities/mysqlshow):
+Similar information can be found in the <a undefined>information_schema.TABLES</a> table as well as by using [mysqlshow](/clients-utilities/mysqlshow/):
 
 ```sql
 mysqlshow --status db_name

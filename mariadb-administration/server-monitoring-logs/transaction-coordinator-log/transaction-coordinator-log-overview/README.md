@@ -1,6 +1,6 @@
 # Transaction Coordinator Log Overview
 
-The transaction coordinator log (tc_log) is used to coordinate transactions that affect multiple [XA-capable](/sql-statements-structure/sql-statements/transactions/xa-transactions) [storage engines](/columns-storage-engines-and-plugins/storage-engines). If you have two or more XA-capable storage engines enabled, then a transaction coordinator log must be available.
+The transaction coordinator log (tc_log) is used to coordinate transactions that affect multiple [XA-capable](/sql-statements-structure/sql-statements/transactions/xa-transactions/) [storage engines](/columns-storage-engines-and-plugins/storage-engines/). If you have two or more XA-capable storage engines enabled, then a transaction coordinator log must be available.
 
 ## Types of Transaction Coordinator Logs
 
@@ -9,11 +9,11 @@ There are currently two implementations of the transaction coordinator log:
 - Binary log-based transaction coordinator log
 - Memory-mapped file-based transaction coordinator log
 
-If the [binary log](/mariadb-administration/server-monitoring-logs/binary-log) is enabled on a server, then the server will use the binary log-based transaction coordinator log. Otherwise, it will use the memory-mapped file-based transaction coordinator log.
+If the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) is enabled on a server, then the server will use the binary log-based transaction coordinator log. Otherwise, it will use the memory-mapped file-based transaction coordinator log.
 
 ### Binary Log-Based Transaction Coordinator Log
 
-This transaction coordinator uses the [binary log](/mariadb-administration/server-monitoring-logs/binary-log), which is enabled by the <a undefined>log_bin</a> server option.
+This transaction coordinator uses the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/), which is enabled by the <a undefined>log_bin</a> server option.
 
 ### Memory-Mapped File-Based Transaction Coordinator Log
 
@@ -47,7 +47,7 @@ The memory-mapped transaction coordinator log can be monitored with the followin
 
 ## Heuristic Recovery with the Transaction Coordinator Log
 
-One of the main purposes of the transaction coordinator log is in crash recovery. See [Heuristic Recovery with the Transaction Coordinator Log](/mariadb-administration/server-monitoring-logs/transaction-coordinator-log/heuristic-recovery-with-the-transaction-coordinator-log) for more information about that.
+One of the main purposes of the transaction coordinator log is in crash recovery. See [Heuristic Recovery with the Transaction Coordinator Log](/mariadb-administration/server-monitoring-logs/transaction-coordinator-log/heuristic-recovery-with-the-transaction-coordinator-log/) for more information about that.
 
 ## Known Issues
 
@@ -84,18 +84,18 @@ This means that the header of the memory-mapped file-based transaction coordinat
 This issue is known to occur when using docker. In that case, the problem may be caused by using a MariaDB container version with a data directory from a different MariaDB or MySQL version. Therefore, some potential fixes are:
 
 - Pinning the docker instance to a specific MariaDB version in the docker compose file, so that it consistently uses the same version.
-- Running [mysql_upgrade](/sql-statements-structure/sql-statements/table-statements/mysql_upgrade) to ensure that the data directory is upgraded to match the server version.
+- Running [mysql_upgrade](/sql-statements-structure/sql-statements/table-statements/mysql_upgrade/) to ensure that the data directory is upgraded to match the server version.
 
 See [this docker issue](https://github.com/docker-library/mariadb/issues/201) for more information.
 
 ### MariaDB Galera Cluster
 
-[MariaDB Galera Cluster](/replication/galera-cluster) builds include a built-in plugin called `wsrep`. Prior to [MariaDB 10.4.3](/kb/en/mariadb-1043-release-notes/), this plugin was internally considered an [XA-capable](/sql-statements-structure/sql-statements/transactions/xa-transactions) [storage engine](/columns-storage-engines-and-plugins/storage-engines). Consequently, these [MariaDB Galera Cluster](/replication/galera-cluster) builds have multiple XA-capable storage engines by default, even if the only "real" storage engine that supports external [XA transactions](/sql-statements-structure/sql-statements/transactions/xa-transactions) enabled on these builds by default is [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb). Therefore, when using one these builds MariaDB would be forced to use a transaction coordinator log by default, which could have performance implications.
+[MariaDB Galera Cluster](/replication/galera-cluster/) builds include a built-in plugin called `wsrep`. Prior to [MariaDB 10.4.3](/kb/en/mariadb-1043-release-notes/), this plugin was internally considered an [XA-capable](/sql-statements-structure/sql-statements/transactions/xa-transactions/) [storage engine](/columns-storage-engines-and-plugins/storage-engines/). Consequently, these [MariaDB Galera Cluster](/replication/galera-cluster/) builds have multiple XA-capable storage engines by default, even if the only "real" storage engine that supports external [XA transactions](/sql-statements-structure/sql-statements/transactions/xa-transactions/) enabled on these builds by default is [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/). Therefore, when using one these builds MariaDB would be forced to use a transaction coordinator log by default, which could have performance implications.
 
-For example, [MDEV-16509](https://jira.mariadb.org/browse/MDEV-16509) describes performance problems where [MariaDB Galera Cluster](/replication/galera-cluster) actually performs better when the [binary log](/mariadb-administration/server-monitoring-logs/binary-log) is enabled. It is possible that this is caused by the fact that MariaDB is forced to use the memory-mapped file-based transaction coordinator log in this case, which may not perform as well.
+For example, [MDEV-16509](https://jira.mariadb.org/browse/MDEV-16509) describes performance problems where [MariaDB Galera Cluster](/replication/galera-cluster/) actually performs better when the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) is enabled. It is possible that this is caused by the fact that MariaDB is forced to use the memory-mapped file-based transaction coordinator log in this case, which may not perform as well.
 
-This became a bigger issue in [MariaDB 10.1](/kb/en/what-is-mariadb-101/) when the [MySQL-wsrep](https://github.com/codership/mysql-wsrep) patch that powers [MariaDB Galera Cluster](/replication/galera-cluster) was enabled on most MariaDB builds on Linux by default. Consequently, this built-in `wsrep` plugin would exist on those MariaDB builds on Linux by default. Therefore, MariaDB users might pay a performance penalty, even if they never actually intended to use the [MariaDB Galera Cluster](/replication/galera-cluster) features included in [MariaDB 10.1](/kb/en/what-is-mariadb-101/).
+This became a bigger issue in [MariaDB 10.1](/kb/en/what-is-mariadb-101/) when the [MySQL-wsrep](https://github.com/codership/mysql-wsrep) patch that powers [MariaDB Galera Cluster](/replication/galera-cluster/) was enabled on most MariaDB builds on Linux by default. Consequently, this built-in `wsrep` plugin would exist on those MariaDB builds on Linux by default. Therefore, MariaDB users might pay a performance penalty, even if they never actually intended to use the [MariaDB Galera Cluster](/replication/galera-cluster/) features included in [MariaDB 10.1](/kb/en/what-is-mariadb-101/).
 
-In [MariaDB 10.4.3](/kb/en/mariadb-1043-release-notes/) and later, the built-in `wsrep` plugin has been changed to a replication plugin. Therefore, it is no longer considered an [XA-capable](/sql-statements-structure/sql-statements/transactions/xa-transactions) storage engine, so it no longer forces MariaDB to use a transaction coordinator log by default.
+In [MariaDB 10.4.3](/kb/en/mariadb-1043-release-notes/) and later, the built-in `wsrep` plugin has been changed to a replication plugin. Therefore, it is no longer considered an [XA-capable](/sql-statements-structure/sql-statements/transactions/xa-transactions/) storage engine, so it no longer forces MariaDB to use a transaction coordinator log by default.
 
 See [MDEV-16442](https://jira.mariadb.org/browse/MDEV-16442) for more information.

@@ -29,5 +29,5 @@ This is calculated as follows: 192 x 256<sup>3</sup> + 168 x 256 <sup>2</sup> + 
 
 ## See Also
 
-- [INET6_ATON()](/built-in-functions/secondary-functions/miscellaneous-functions/inet6_aton)
-- [INET_NTOA()](/built-in-functions/secondary-functions/miscellaneous-functions/inet_ntoa)
+- [INET6_ATON()](/built-in-functions/secondary-functions/miscellaneous-functions/inet6_aton/)
+- [INET_NTOA()](/built-in-functions/secondary-functions/miscellaneous-functions/inet_ntoa/)

@@ -62,4 +62,4 @@ $ ./debian/autobake-deb.sh
 
 ### After Building
 
-After building the packages, it is a good idea to put them in a repository. See the [Creating a Debian Repository](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/Creating_a_Debian_Repository) page for instructions.
+After building the packages, it is a good idea to put them in a repository. See the [Creating a Debian Repository](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/Creating_a_Debian_Repository/) page for instructions.

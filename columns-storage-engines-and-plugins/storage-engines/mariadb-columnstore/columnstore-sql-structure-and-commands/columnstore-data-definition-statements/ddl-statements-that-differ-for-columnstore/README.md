@@ -2,7 +2,7 @@
 
 In most cases, a ColumnStore table works just as any other MariaDB table. There are however a few differences.
 
-The following table lists the data definition statements (DDL) that differ from normal MariaDB [DDL](/sql-statements-structure/sql-statements/data-definition) when used on ColumnStore tables.
+The following table lists the data definition statements (DDL) that differ from normal MariaDB [DDL](/sql-statements-structure/sql-statements/data-definition/) when used on ColumnStore tables.
 
 <table><tbody><tr><th>DDL</th><th>Difference</th></tr>
 <tr><td><a href="/kb/en/drop-table/">DROP TABLE</a></td><td>Columnstore supports <a href="/kb/en/columnstore-drop-table/">DROP TABLE ...RESTRICT</a>  which only drops the table in the front end.</td></tr>

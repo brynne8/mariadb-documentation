@@ -11,7 +11,7 @@ By default MariaDB uses the following permissions for files and directories:
 
 ## Configuring File Permissions with Environment Variables
 
-You can configure MariaDB to use different permissions for files and directories by setting the following [environment variables](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-environment-variables) before you start the server:
+You can configure MariaDB to use different permissions for files and directories by setting the following [environment variables](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-environment-variables/) before you start the server:
 
 <table><tbody><tr><th>Object Type</th><th>Environment Variable</th></tr>
 <tr><td>Files</td><td><code>UMASK</code></td></tr>
@@ -29,4 +29,4 @@ These environment variables do not set the umask. They set the default file syst
 
 ### Configuring File Permissions with systemd
 
-If your server is started by [systemd](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd), then there is a specific way to configure the umask. See [Systemd: Configuring the umask](/kb/en/systemd/#configuring-the-umask) for more information.
+If your server is started by [systemd](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd/), then there is a specific way to configure the umask. See [Systemd: Configuring the umask](/kb/en/systemd/#configuring-the-umask) for more information.

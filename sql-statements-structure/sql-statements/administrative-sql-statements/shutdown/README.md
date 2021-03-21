@@ -20,21 +20,21 @@ The `SHUTDOWN` command shuts the server down.
 
 The `WAIT FOR ALL SLAVES` option was first added in [MariaDB 10.4.4](/kb/en/mariadb-1044-release-notes/).
 
-When a master server is shutdown and it goes through the normal shutdown process, the master kills client threads in random order. By default, the master also considers its binary log dump threads to be regular client threads. As a consequence, the binary log dump threads can be killed while client threads still exist, and this means that data can be written on the master during a normal shutdown that won't be replicated. This is true even if [semi-synchronous replication](/replication/standard-replication/semisynchronous-replication) is being used.
+When a master server is shutdown and it goes through the normal shutdown process, the master kills client threads in random order. By default, the master also considers its binary log dump threads to be regular client threads. As a consequence, the binary log dump threads can be killed while client threads still exist, and this means that data can be written on the master during a normal shutdown that won't be replicated. This is true even if [semi-synchronous replication](/replication/standard-replication/semisynchronous-replication/) is being used.
 
-In [MariaDB 10.4](/kb/en/what-is-mariadb-104/) and later, this problem can be solved by shutting down the server with the [SHUTDOWN](/sql-statements-structure/sql-statements/administrative-sql-statements/shutdown) command and by providing the `WAIT FOR ALL SLAVES` option to the command. For example:
+In [MariaDB 10.4](/kb/en/what-is-mariadb-104/) and later, this problem can be solved by shutting down the server with the [SHUTDOWN](/sql-statements-structure/sql-statements/administrative-sql-statements/shutdown/) command and by providing the `WAIT FOR ALL SLAVES` option to the command. For example:
 
 ```sql
 SHUTDOWN WAIT FOR ALL SLAVES;
 ```
 
-When the `WAIT FOR ALL SLAVES` option is provided, the server only kills its binary log dump threads after all client threads have been killed, and it only completes the shutdown after the last [binary log](/mariadb-administration/server-monitoring-logs/binary-log) has been sent to all connected slaves.
+When the `WAIT FOR ALL SLAVES` option is provided, the server only kills its binary log dump threads after all client threads have been killed, and it only completes the shutdown after the last [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) has been sent to all connected slaves.
 
 See [Replication Threads: Binary Log Dump Threads and the Shutdown Process](/kb/en/replication-threads/#binary-log-dump-threads-and-the-shutdown-process) for more information.
 
 ## Required Permissions
 
-One must have a `SHUTDOWN` privilege (see [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant)) to use this command. It is the same privilege one needs to use the <a undefined>mysqladmin shutdown</a> command.
+One must have a `SHUTDOWN` privilege (see [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/)) to use this command. It is the same privilege one needs to use the <a undefined>mysqladmin shutdown</a> command.
 
 ## Shutdown for Upgrades
 
@@ -57,7 +57,7 @@ END;
 
 ## Other Ways to Stop mysqld
 
-You can use the [mysqladmin shutdown](/clients-utilities/mysqladmin) command to take down mysqld cleanly.
+You can use the [mysqladmin shutdown](/clients-utilities/mysqladmin/) command to take down mysqld cleanly.
 
 You can also use the system kill command on Unix with signal SIGTERM (15)
 
@@ -77,5 +77,5 @@ NET STOP MySQL
 
 ## See Also
 
-- [mysqladmin shutdown](/clients-utilities/mysqladmin).
+- [mysqladmin shutdown](/clients-utilities/mysqladmin/).
 - [InnoDB fast shutdown option](/kb/en/innodb-system-variables/#innodb_fast_shutdown)

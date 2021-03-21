@@ -14,7 +14,7 @@ As an example, by default, the character `y` comes between `x` and `z`, while in
 
 ## Viewing Character Sets and Collations
 
-In MariaDB, the default character set is latin1, and the default collation is latin1_swedish_ci (however this may differ in some distros, see for example [Differences in MariaDB in Debian](/kb/en/differences-in-mariadb-in-debian/)). You can view a full list of character sets and collations supported by MariaDB at [Supported Character Sets and Collations](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/supported-character-sets-and-collations), or see what's supported on your server with the [SHOW CHARACTER SET](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-character-set) and [SHOW COLLATION](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-collation) commands.
+In MariaDB, the default character set is latin1, and the default collation is latin1_swedish_ci (however this may differ in some distros, see for example [Differences in MariaDB in Debian](/kb/en/differences-in-mariadb-in-debian/)). You can view a full list of character sets and collations supported by MariaDB at [Supported Character Sets and Collations](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/supported-character-sets-and-collations/), or see what's supported on your server with the [SHOW CHARACTER SET](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-character-set/) and [SHOW COLLATION](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-collation/) commands.
 
 By default, `A` comes before `Z`, so the following evaluates to true:
 
@@ -66,4 +66,4 @@ SELECT 'Mueller' = 'Müller';
 +-----------------------+
 ```
 
-See [Setting Character Sets and Collations](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/setting-character-sets-and-collations) for more.
+See [Setting Character Sets and Collations](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/setting-character-sets-and-collations/) for more.

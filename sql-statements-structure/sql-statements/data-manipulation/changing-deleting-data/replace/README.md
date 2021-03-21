@@ -33,17 +33,17 @@ REPLACE [LOW_PRIORITY | DELAYED]
 ## Description
 
 <code class="highlight fixed" style="white-space:pre-wrap">REPLACE</code> works exactly like
- <code class="highlight fixed" style="white-space:pre-wrap">[INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert)</code>, except that if an old row in the table
+ <code class="highlight fixed" style="white-space:pre-wrap">[INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/)</code>, except that if an old row in the table
  has the same value as a new row for a <code class="highlight fixed" style="white-space:pre-wrap">PRIMARY KEY</code> or a
  <code class="highlight fixed" style="white-space:pre-wrap">UNIQUE</code> index, the old row is deleted before the new row is
  inserted. If the table has more than one `UNIQUE` keys, it is possible that the new row conflicts with more than one row. In this case, all conflicting rows will be deleted.
 
-The table name can be specified in the form `db_name`.`tbl_name` or, if a default database is selected, in the form `tbl_name` (see [Identifier Qualifiers](/sql-statements-structure/sql-language-structure/identifier-qualifiers)). This allows to use [REPLACE ... SELECT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-select) to copy rows between different databases.
+The table name can be specified in the form `db_name`.`tbl_name` or, if a default database is selected, in the form `tbl_name` (see [Identifier Qualifiers](/sql-statements-structure/sql-language-structure/identifier-qualifiers/)). This allows to use [REPLACE ... SELECT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-select/) to copy rows between different databases.
 <br><br>
 
 ##### MariaDB starting with [10.0](/kb/en/what-is-mariadb-100/)
 
-The PARTITION clause was introduced in [MariaDB 10.0](/kb/en/what-is-mariadb-100/). See [Partition Pruning and Selection](/mariadb-administration/partitioning-tables/partition-pruning-and-selection) for details.
+The PARTITION clause was introduced in [MariaDB 10.0](/kb/en/what-is-mariadb-100/). See [Partition Pruning and Selection](/mariadb-administration/partitioning-tables/partition-pruning-and-selection/) for details.
 
 ##### MariaDB starting with [10.5.0](/kb/en/mariadb-1050-release-notes/)
 
@@ -69,14 +69,14 @@ REPLACE INTO t1 VALUES (...)
 
 <code class="highlight fixed" style="white-space:pre-wrap">REPLACE</code> is a MariaDB/MySQL extension to the SQL standard. It
  either inserts, or deletes and inserts. For other MariaDB/MySQL extensions to
- standard SQL --- that also handle duplicate values --- see [IGNORE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/ignore) and [INSERT ON DUPLICATE KEY UPDATE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update).
+ standard SQL --- that also handle duplicate values --- see [IGNORE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/ignore/) and [INSERT ON DUPLICATE KEY UPDATE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update/).
 
 Note that unless the table has a <code class="highlight fixed" style="white-space:pre-wrap">PRIMARY KEY</code> or
  <code class="highlight fixed" style="white-space:pre-wrap">UNIQUE</code> index, using a <code class="highlight fixed" style="white-space:pre-wrap">REPLACE</code> statement
 makes no sense. It becomes equivalent to <code class="highlight fixed" style="white-space:pre-wrap">INSERT</code>, because
 there is no index to be used to determine whether a new row duplicates another.
 
-Values for all columns are taken from the values sSee [Partition Pruning and Selection](/mariadb-administration/partitioning-tables/partition-pruning-and-selection) for details.pecified in the
+Values for all columns are taken from the values sSee [Partition Pruning and Selection](/mariadb-administration/partitioning-tables/partition-pruning-and-selection/) for details.pecified in the
  <code class="highlight fixed" style="white-space:pre-wrap">REPLACE</code> statement. Any missing columns are set to their
 default values, just as happens for <code class="highlight fixed" style="white-space:pre-wrap">INSERT</code>. You cannot refer
 to values from the current row and use them in the new row. If you use an
@@ -86,18 +86,18 @@ reference to the column name on the right hand side is treated as
  <code class="highlight fixed" style="white-space:pre-wrap">'SET col = DEFAULT(col) + 1'</code>.
 
 To use <code class="highlight fixed" style="white-space:pre-wrap">REPLACE</code>, you must have both the
- <code class="highlight fixed" style="white-space:pre-wrap">INSERT</code> and <code class="highlight fixed" style="white-space:pre-wrap">DELETE</code> [privileges](/sql-statements-structure/sql-statements/account-management-sql-commands/grant)
+ <code class="highlight fixed" style="white-space:pre-wrap">INSERT</code> and <code class="highlight fixed" style="white-space:pre-wrap">DELETE</code> [privileges](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/)
 for the table.
 
 There are some gotchas you should be aware of, before using `REPLACE`:
 
-- If there is an [AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment) field, a new value will be generated.
+- If there is an [AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment/) field, a new value will be generated.
 - If there are foreign keys, `ON DELETE` action will be activated by `REPLACE`.
-- [Triggers](/programming-customizing-mariadb/triggers-events/triggers) on `DELETE` and `INSERT` will be activated by `REPLACE`.
+- [Triggers](/programming-customizing-mariadb/triggers-events/triggers/) on `DELETE` and `INSERT` will be activated by `REPLACE`.
 
 To avoid some of these behaviors, you can use `INSERT ... ON DUPLICATE KEY UPDATE`.
 
-This statement activates INSERT and DELETE triggers. See [Trigger Overview](/programming-customizing-mariadb/triggers-events/triggers/trigger-overview) for details.
+This statement activates INSERT and DELETE triggers. See [Trigger Overview](/programming-customizing-mariadb/triggers-events/triggers/trigger-overview/) for details.
 
 ## REPLACE RETURNING
 
@@ -222,6 +222,6 @@ ECT...RETURNING if the table in the RETURNING clause is not the same as the REPL
 
 ## See Also
 
-- [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert)
+- [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/)
 - [HIGH_PRIORITY and LOW_PRIORITY clauses](/kb/en/high_priority-and-low_priority-clauses/)
-- [INSERT DELAYED](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed) for details on the `DELAYED` clause
+- [INSERT DELAYED](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed/) for details on the `DELAYED` clause

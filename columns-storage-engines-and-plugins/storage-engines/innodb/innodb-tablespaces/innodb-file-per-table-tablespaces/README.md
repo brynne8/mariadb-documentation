@@ -2,9 +2,9 @@
 
 When you create a table using the [InnoDB storage engine](/kb/en/xtradb-and-innodb/), data written to that table is stored on the file system in a data file called a tablespace.  Tablespace files contain both the data and indexes.
 
-When <a undefined>innodb_file_per_table=ON</a> is set, InnoDB uses one tablespace file per InnoDB table. These tablespace files have the `.ibd` extension. When <a undefined>innodb_file_per_table=OFF</a> is set, InnoDB stores all tables in the [InnoDB system tablespace](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces).
+When <a undefined>innodb_file_per_table=ON</a> is set, InnoDB uses one tablespace file per InnoDB table. These tablespace files have the `.ibd` extension. When <a undefined>innodb_file_per_table=OFF</a> is set, InnoDB stores all tables in the [InnoDB system tablespace](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces/).
 
-InnoDB versions in MySQL 5.7 and above also support an additional type of tablespace called [general tablespaces](https://dev.mysql.com/doc/refman/5.7/en/general-tablespaces.html) that are created with <a undefined>CREATE TABLESPACE</a>. However, InnoDB versions in MariaDB Server do not currently support general tablespaces or [CREATE TABLESPACE](/sql-statements-structure/sql-statements/data-definition/create/create-tablespace).
+InnoDB versions in MySQL 5.7 and above also support an additional type of tablespace called [general tablespaces](https://dev.mysql.com/doc/refman/5.7/en/general-tablespaces.html) that are created with <a undefined>CREATE TABLESPACE</a>. However, InnoDB versions in MariaDB Server do not currently support general tablespaces or [CREATE TABLESPACE](/sql-statements-structure/sql-statements/data-definition/create/create-tablespace/).
 
 ## File-Per-Table Tablespace Locations
 
@@ -35,7 +35,7 @@ Note, the system user that runs the MariaDB Server process (which is usually `my
 
 ## Copying Transportable Tablespaces
 
-InnoDB's file-per-table tablespaces are transportable, which means that you can copy a file-per-table tablespace from one MariaDB Server to another server.  You may find this useful in cases where you need to transport full tables between servers and don't want to use backup tools like [mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup) or [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump). In fact, this process can even be used with [mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup) in some cases, such as when [restoring partial backups](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/partial-backup-and-restore-with-mariabackup) or when [restoring individual tables or partitions from a backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/restoring-individual-tables-and-partitions-with-mariabackup).
+InnoDB's file-per-table tablespaces are transportable, which means that you can copy a file-per-table tablespace from one MariaDB Server to another server.  You may find this useful in cases where you need to transport full tables between servers and don't want to use backup tools like [mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/) or [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump/). In fact, this process can even be used with [mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/) in some cases, such as when [restoring partial backups](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/partial-backup-and-restore-with-mariabackup/) or when [restoring individual tables or partitions from a backup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/restoring-individual-tables-and-partitions-with-mariabackup/).
 
 ### Copying Transportable Tablespaces for Non-partitioned Tables
 
@@ -45,7 +45,7 @@ You can copy the transportable tablespace of a non-partitioned table from one se
 
 You can export a non-partitioned table by locking the table and copying the table's `.ibd` and `.cfg` files from the relevant [tablespace location](#file-per-table-tablespace-locations) for the table to a backup location. For example, the process would go like this:
 
-- First, use the [FLUSH TABLES ... FOR EXPORT](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export) statement on the target table:
+- First, use the [FLUSH TABLES ... FOR EXPORT](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export/) statement on the target table:
 
 ```sql
 FLUSH TABLES test.t1 FOR EXPORT;
@@ -70,7 +70,7 @@ UNLOCK TABLES;
 
 You can import a non-partitioned table by discarding the table's original tablespace, copying the table's `.ibd` and `.cfg` files from the backup location to the relevant [tablespace location](#file-per-table-tablespace-locations) for the table, and then telling the server to import the tablespace. For example, the process would go like this:
 
-- First, on the destination server, you need to create a copy of the table. Use the same [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table) statement that was used to create the table on the original server:
+- First, on the destination server, you need to create a copy of the table. Use the same [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/) statement that was used to create the table on the original server:
 
 ```sql
 CREATE TABLE test.t1 (
@@ -129,7 +129,7 @@ INSERT INTO test.t2 (name, employee_id) VALUES
    ('Will Fong', 16);
 ```
 
-- Then, we need to export the partitioned tablespace from the original server, which follows the same process as exporting non-partitioned tablespaces. That means that we need to use the [FLUSH TABLES ... FOR EXPORT](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export) statement on the target table:
+- Then, we need to export the partitioned tablespace from the original server, which follows the same process as exporting non-partitioned tablespaces. That means that we need to use the [FLUSH TABLES ... FOR EXPORT](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export/) statement on the target table:
 
 ```sql
 FLUSH TABLES test.t2 FOR EXPORT;
@@ -286,7 +286,7 @@ DROP TABLE test.t2_placeholder;
 
 #### Differing Storage Formats for Temporal Columns
 
-[MariaDB 10.1.2](/kb/en/mariadb-1012-release-notes/) added the <a undefined>mysql56_temporal_format</a> system variable, which enables a new MySQL 5.6-compatible storage format for the [TIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/time), [DATETIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/datetime) and [TIMESTAMP](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/timestamp) data types.
+[MariaDB 10.1.2](/kb/en/mariadb-1012-release-notes/) added the <a undefined>mysql56_temporal_format</a> system variable, which enables a new MySQL 5.6-compatible storage format for the [TIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/time/), [DATETIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/datetime/) and [TIMESTAMP](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/timestamp/) data types.
 
 If a file-per-tablespace file contains columns that use one or more of these temporal data types and if the tablespace file's original table was created with a certain storage format for these columns, then the tablespace file can only be imported into tables that were also created with the same storage format for these columns as the original table. Otherwise, you will see errors like the following:
 
@@ -297,7 +297,7 @@ ERROR 1808 (HY000): Schema mismatch (Column dt precise type mismatch.)
 
 See [MDEV-15225](https://jira.mariadb.org/browse/MDEV-15225) for more information.
 
-See the pages for the [TIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/time), [DATETIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/datetime) and [TIMESTAMP](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/timestamp) data types to determine how to update the storage format for temporal columns in tables that were created before [MariaDB 10.1.2](/kb/en/mariadb-1012-release-notes/) or that were created with <a undefined>mysql56_temporal_format=OFF</a>.
+See the pages for the [TIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/time/), [DATETIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/datetime/) and [TIMESTAMP](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/timestamp/) data types to determine how to update the storage format for temporal columns in tables that were created before [MariaDB 10.1.2](/kb/en/mariadb-1012-release-notes/) or that were created with <a undefined>mysql56_temporal_format=OFF</a>.
 
 #### Differing ROW_FORMAT Values
 

@@ -2,7 +2,7 @@
 
 Whether objects are case-sensitive or not is partly determined by the underlying operating system. Unix-based systems are case-sensitive, Windows is not, while Mac OS X is usually not, but can be if UFS volumes are used.
 
-Database, table, table aliases and [trigger](/programming-customizing-mariadb/triggers-events/triggers) names are affected by the systems case-sensitivity, while index, column, column aliases, [stored routine](/kb/en/stored-programs-and-views/) and [event](/programming-customizing-mariadb/triggers-events/event-scheduler/events) names are never case sensitive.
+Database, table, table aliases and [trigger](/programming-customizing-mariadb/triggers-events/triggers/) names are affected by the systems case-sensitivity, while index, column, column aliases, [stored routine](/kb/en/stored-programs-and-views/) and [event](/programming-customizing-mariadb/triggers-events/event-scheduler/events/) names are never case sensitive.
 
 Log file group name are case sensitive.
 
@@ -16,4 +16,4 @@ Even on case-insensitive systems, you are required to use the same case consiste
 SELECT * FROM a_table WHERE A_table.id>10;
 ```
 
-For a full list of identifier naming rules, see [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names).
+For a full list of identifier naming rules, see [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names/).

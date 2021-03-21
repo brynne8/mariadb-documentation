@@ -8,7 +8,7 @@ SHOW PRIVILEGES
 
 ## Description
 
-<code class="highlight fixed" style="white-space:pre-wrap">SHOW PRIVILEGES</code> shows the list of [system privileges](/sql-statements-structure/sql-statements/account-management-sql-commands/grant) that the MariaDB server supports. The exact list of privileges depends on the version of your server.
+<code class="highlight fixed" style="white-space:pre-wrap">SHOW PRIVILEGES</code> shows the list of [system privileges](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/) that the MariaDB server supports. The exact list of privileges depends on the version of your server.
 
 Note that before [MariaDB 10.3.23](/kb/en/mariadb-10323-release-notes/), [MariaDB 10.4.13](/kb/en/mariadb-10413-release-notes/) and [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/) , the [Delete history](/kb/en/grant/#table-privileges) privilege displays as `Delete versioning rows` ([MDEV-20382](https://jira.mariadb.org/browse/MDEV-20382)).
 
@@ -68,5 +68,5 @@ SHOW PRIVILEGES;
 
 ## See Also
 
-- [SHOW CREATE USER](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-user) shows how the user was created.
-- [SHOW GRANTS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-grants) shows the `GRANTS/PRIVILEGES` for a user.
+- [SHOW CREATE USER](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-user/) shows how the user was created.
+- [SHOW GRANTS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-grants/) shows the `GRANTS/PRIVILEGES` for a user.

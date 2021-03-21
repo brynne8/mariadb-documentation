@@ -8,4 +8,4 @@ The [Information Schema](/kb/en/information_schema/) `CHANGED_PAGE_BITMAPS` tabl
 
 For more information, see [MDEV-7472](https://jira.mariadb.org/browse/MDEV-7472).
 
-The `PROCESS` [privilege](/sql-statements-structure/sql-statements/account-management-sql-commands/grant) is required to view the table.
+The `PROCESS` [privilege](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/) is required to view the table.

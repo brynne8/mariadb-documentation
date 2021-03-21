@@ -7,7 +7,7 @@ MariaDB Binary tarballs are named following the pattern: mariadb-VERSION-OS.tar.
 Others are marked <em>'systemd'</em>, which are for systems with `systemd` and GLIBC 2.19 or higher.
 
 To install the [binaries](http://downloads.mariadb.org),
-unpack the distribution into the directory of your choice and run the <code class="highlight fixed" style="white-space:pre-wrap">[mysql_install_db](/mariadb-administration/getting-installing-and-upgrading-mariadb/installing-system-tables-mysql_install_db)</code> script.
+unpack the distribution into the directory of your choice and run the <code class="highlight fixed" style="white-space:pre-wrap">[mysql_install_db](/mariadb-administration/getting-installing-and-upgrading-mariadb/installing-system-tables-mysql_install_db/)</code> script.
 
 In the example below we install MariaDB in the <code class="highlight fixed" style="white-space:pre-wrap">/usr/local/mysql</code> directory (this is the default location for MariaDB for many platforms). However any other directory should work too.
 
@@ -30,8 +30,8 @@ you use the programs in the tar file.
 
 This is done by [creating your own .my.cnf file](/kb/en/mysqld-startup-options/) in
 your home directory and telling <code class="fixed" style="white-space:pre-wrap">mysql_install_db</code>,
-[mysqld_safe](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld_safe) and possibly [mysql (the
-command-line client utility)](/clients-utilities/mysql-client) to <strong>only</strong> use this one with the option
+[mysqld_safe](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld_safe/) and possibly [mysql (the
+command-line client utility)](/clients-utilities/mysql-client/) to <strong>only</strong> use this one with the option
 '<code class="fixed" style="white-space:pre-wrap">--defaults-file=~/.my.cnf</code>'. Note that
 this has to be first option for the above commands!
 
@@ -63,7 +63,7 @@ or
 ./bin/mysqld_safe --defaults-file=~/.my.cnf --user=mysql &
 ```
 
-To test connection, modify your $PATH so you can invoke client such as [mysql](/clients-utilities/mysql-client), [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump), etc.
+To test connection, modify your $PATH so you can invoke client such as [mysql](/clients-utilities/mysql-client/), [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump/), etc.
 
 ```sql
 export PATH=$PATH:/usr/local/mysql/bin/
@@ -111,14 +111,14 @@ For systemd installation the mariadb.service file will need to be copied from th
 cp support-files/systemd/mariadb.service /usr/lib/systemd/system/mariadb.service
 ```
 
-Please refer to the [systemd](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd) page for further information.
+Please refer to the [systemd](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd/) page for further information.
 
 ### Post Installation
 
 After this, remember to set proper passwords for all accounts accessible from
 untrusted sources, to avoid exposing the host to security risks! Also consider
-using the [mysql.server](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqlserver) to
-[start MariaDB automatically](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically)
+using the [mysql.server](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqlserver/) to
+[start MariaDB automatically](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically/)
 when your system boots.
 
 Our MariaDB binaries are similar to the Generic binaries available for the
@@ -127,4 +127,4 @@ MySQL 5.5 manual entry on
 [installing generic binaries](http://docs.oracle.com/cd/E17952_01/refman-5.5-en/binary-installation.html) can be consulted.
 
 For details on the exact steps used to build the binaries, see the
-[compiling MariaDB section](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source) of the KB.
+[compiling MariaDB section](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/) of the KB.

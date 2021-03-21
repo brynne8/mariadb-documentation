@@ -1,6 +1,6 @@
 # Date and Time Units
 
-The `INTERVAL` keyword can be used to add or subtract a time interval of time to a [DATETIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/datetime), [DATE](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/date) or [TIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/time) value.
+The `INTERVAL` keyword can be used to add or subtract a time interval of time to a [DATETIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/datetime/), [DATE](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/date/) or [TIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/time/) value.
 
 The syntax is:
 
@@ -8,7 +8,7 @@ The syntax is:
 INTERVAL time_quantity time_unit
 ```
 
-For example, the `SECOND` unit is used below by the [DATE_ADD()](/built-in-functions/date-time-functions/date_add) function:
+For example, the `SECOND` unit is used below by the [DATE_ADD()](/built-in-functions/date-time-functions/date_add/) function:
 
 ```sql
 SELECT '2008-12-31 23:59:59' + INTERVAL 1 SECOND;
@@ -56,11 +56,11 @@ INTERVAL '1!30!30' HOUR_SECOND -- same as above
 
 Time units can be used in the following contexts:
 
-- after a [+](/built-in-functions/numeric-functions/addition-operator) or a [-](/sql-statements-structure/operators/arithmetic-operators/subtraction-operator-) operator;
-- with the following `DATE` or `TIME` functions: [ADDDATE()](/built-in-functions/date-time-functions/adddate), [SUBDATE()](/built-in-functions/date-time-functions/subdate), [DATE_ADD()](/built-in-functions/date-time-functions/date_add), [DATE_SUB()](/built-in-functions/date-time-functions/date_sub), [TIMESTAMPADD()](/built-in-functions/date-time-functions/timestampadd), [TIMESTAMPDIFF()](/built-in-functions/date-time-functions/timestampdiff), [EXTRACT()](/built-in-functions/date-time-functions/extract);
-- in the `ON SCHEDULE` clause of [CREATE EVENT](/sql-statements-structure/sql-statements/data-definition/create/create-event) and [ALTER EVENT](/programming-customizing-mariadb/triggers-events/event-scheduler/alter-event).
+- after a [+](/built-in-functions/numeric-functions/addition-operator/) or a [-](/sql-statements-structure/operators/arithmetic-operators/subtraction-operator-/) operator;
+- with the following `DATE` or `TIME` functions: [ADDDATE()](/built-in-functions/date-time-functions/adddate/), [SUBDATE()](/built-in-functions/date-time-functions/subdate/), [DATE_ADD()](/built-in-functions/date-time-functions/date_add/), [DATE_SUB()](/built-in-functions/date-time-functions/date_sub/), [TIMESTAMPADD()](/built-in-functions/date-time-functions/timestampadd/), [TIMESTAMPDIFF()](/built-in-functions/date-time-functions/timestampdiff/), [EXTRACT()](/built-in-functions/date-time-functions/extract/);
+- in the `ON SCHEDULE` clause of [CREATE EVENT](/sql-statements-structure/sql-statements/data-definition/create/create-event/) and [ALTER EVENT](/programming-customizing-mariadb/triggers-events/event-scheduler/alter-event/).
 - when defining a [partitioning](/kb/en/create-table/#partitions) `BY SYSTEM_TIME`
 
 ## See also
 
-- [Date and time literals](/sql-statements-structure/sql-language-structure/date-and-time-literals)
+- [Date and time literals](/sql-statements-structure/sql-language-structure/date-and-time-literals/)

@@ -1,6 +1,6 @@
 # Condition Pushdown into Derived Table Optimization
 
-If a query uses a derived table (or a view), the first action that the query optimizer will attempt is to apply the  [derived-table-merge-optimization](/replication/optimization-and-tuning/query-optimizations/optimizations-for-derived-tables/derived-table-merge-optimization) and merge the derived table into its parent select. However, that optimization is only applicable when the select inside the derived table has a join as the top-level operation.  If it has a [GROUP-BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/group-by), [DISTINCT](/kb/en/select/#distinct), or uses [window functions](/built-in-functions/special-functions/window-functions), then [derived-table-merge-optimization](/replication/optimization-and-tuning/query-optimizations/optimizations-for-derived-tables/derived-table-merge-optimization) is not applicable.
+If a query uses a derived table (or a view), the first action that the query optimizer will attempt is to apply the  [derived-table-merge-optimization](/replication/optimization-and-tuning/query-optimizations/optimizations-for-derived-tables/derived-table-merge-optimization/) and merge the derived table into its parent select. However, that optimization is only applicable when the select inside the derived table has a join as the top-level operation.  If it has a [GROUP-BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/group-by/), [DISTINCT](/kb/en/select/#distinct), or uses [window functions](/built-in-functions/special-functions/window-functions/), then [derived-table-merge-optimization](/replication/optimization-and-tuning/query-optimizations/optimizations-for-derived-tables/derived-table-merge-optimization/) is not applicable.
 
 In that case, the Condition Pushdown optimization is applicable.
 
@@ -40,4 +40,4 @@ However, the optimizer can take the condition `customer_id=1` and push it down i
 ## See Also
 
 - Condition Pushdown through Window Functions (since [MariaDB 10.3](/kb/en/what-is-mariadb-103/))
-- [Condition Pushdown into IN Subqueries](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/condition-pushdown-into-in-subqueries) (since [MariaDB 10.4](/kb/en/what-is-mariadb-104/))
+- [Condition Pushdown into IN Subqueries](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/condition-pushdown-into-in-subqueries/) (since [MariaDB 10.4](/kb/en/what-is-mariadb-104/))

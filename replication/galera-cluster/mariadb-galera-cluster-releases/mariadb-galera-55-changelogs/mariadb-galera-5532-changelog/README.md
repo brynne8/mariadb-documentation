@@ -1,16 +1,16 @@
 # MariaDB Galera 5.5.32 Changelog
 
 The most recent [MariaDB Galera Cluster 5.5](/kb/en/galera/) release is:<br>
-<span class="cstm-style lead"><strong>[MariaDB Galera Cluster 5.5.63](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5563-release-notes)</strong> [Download<span>&nbsp;</span>Now](https://downloads.mariadb.org/mariadb-galera/5.5)</span>
+<span class="cstm-style lead"><strong>[MariaDB Galera Cluster 5.5.63](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5563-release-notes/)</strong> [Download<span>&nbsp;</span>Now](https://downloads.mariadb.org/mariadb-galera/5.5)</span>
 
 [Download](http://downloads.mariadb.org/mariadb-galera/5.5.32) |
-[Release Notes](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-5532-release-notes) |
+[Release Notes](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-5532-release-notes/) |
 <strong>Changelog</strong> |
-[Overview of Galera](/replication/galera-cluster/what-is-mariadb-galera-cluster)
+[Overview of Galera](/replication/galera-cluster/what-is-mariadb-galera-cluster/)
 
 <strong>Release date:</strong> 30 Aug 2013
 
-For the highlights of this release, see the [release notes](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-5532-release-notes).
+For the highlights of this release, see the [release notes](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-5532-release-notes/).
 
 The revision number links will take you to the revision's page on Launchpad. On
 Launchpad you can view more details of the revision and view diffs of the code
@@ -2240,7 +2240,7 @@ modified in that revision.
 </li></ul>
 </li><li>[Revision #3334.1.342](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.342)
    <span class="cstm-style datetime">Fri 2013-03-01 11:36:15 -0500</span>
-<ul start="1"><li>Removed the obsolete instructions from the MySQL 5.1 manual. Instead provide a link to [https://kb.askmonty.org/en/compiling-mariadb-from-source/](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source)
+<ul start="1"><li>Removed the obsolete instructions from the MySQL 5.1 manual. Instead provide a link to [https://kb.askmonty.org/en/compiling-mariadb-from-source/](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/)
 </li></ul>
 </li><li>[Revision #3334.1.341](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.341) [merge]
    <span class="cstm-style datetime">Fri 2013-03-01 18:09:06 +0200</span>

@@ -8,7 +8,7 @@ Documentation on using MariaDB Server.
 - [Migrating to MariaDB](/migrating-to-mariadb/) — Information on migrating to MariaDB from other databases.
 - [MariaDB Platform X3](/mariadb-platform-x3/) — MariaDB Platform X3 integrates MariaDB Server, MariaDB ColumnStore, and Mar...
 
-### [MariaDB Administration](/mariadb-administration)
+### [MariaDB Administration](/mariadb-administration/)
 
 - [Getting, Installing, and Upgrading MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/) — Getting, installing, and upgrading MariaDB Server and related software.
 - [User & Server Security](/mariadb-administration/user-server-security/) — Creating users, granting privileges, and encryption.
@@ -19,7 +19,7 @@ Documentation on using MariaDB Server.
 - [Variables and Modes](/mariadb-administration/variables-and-modes/) — Server variables and SQL modes.
 - [Copying Tables Between Different MariaDB Databases and MariaDB Servers](/mariadb-administration/copying-tables-between-different-mariadb-databases-and-mariadb-servers/) — Copy table files.
 
-### [High Availability &amp; Performance Tuning](/replication-cluster-multi-master)
+### [High Availability &amp; Performance Tuning](/replication-cluster-multi-master/)
 
 - [MariaDB Replication](/replication/standard-replication/) — Documentation on standard primary and replica replication.
 - [MariaDB Galera Cluster](/replication/galera-cluster/) — MariaDB Galera Cluster is a virtually synchronous multi-master cluster.
@@ -28,14 +28,14 @@ Documentation on using MariaDB Server.
 - [Multi master replication and deadlock detection in Galera with Mariadbs](/replication/multi-master-replication-and-deadlock-detection-in-galera-with-mariadbs/) — Hi, 
 We have multi master Galera replication setup where three master maria...
 
-### [Columns, Storage Engines, and Plugins](/columns-storage-engines-and-plugins)
+### [Columns, Storage Engines, and Plugins](/columns-storage-engines-and-plugins/)
 
 - [Data Types](/columns-storage-engines-and-plugins/data-types/) — Data types for columns in MariaDB tables.
 - [Character Sets and Collations](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/) — Setting character set and collation for a language.
 - [Storage Engines](/columns-storage-engines-and-plugins/storage-engines/) — Various storage engines available for MariaDB.
 - [Plugins](/columns-storage-engines-and-plugins/plugins/) — Documentation on MariaDB Server plugins.
 
-### [Programming &amp; Customizing MariaDB](/programming-customizing-mariadb)
+### [Programming &amp; Customizing MariaDB](/programming-customizing-mariadb/)
 
 - [Programmatic & Compound Statements](/programming-customizing-mariadb/programmatic-compound-statements/) — Compound SQL statements for stored routines and in general.
 - [Stored Routines](/programming-customizing-mariadb/stored-routines/) — Stored procedures and functions.

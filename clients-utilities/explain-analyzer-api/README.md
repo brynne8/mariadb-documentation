@@ -1,6 +1,6 @@
 # EXPLAIN Analyzer API
 
-The online [EXPLAIN Analyzer](/clients-utilities/explain-analyzer) tool has an open API to allow client applications to send it EXPLAINs.
+The online [EXPLAIN Analyzer](/clients-utilities/explain-analyzer/) tool has an open API to allow client applications to send it EXPLAINs.
 
 ## Sending EXPLAINs to the EXPLAIN Analyzer
 

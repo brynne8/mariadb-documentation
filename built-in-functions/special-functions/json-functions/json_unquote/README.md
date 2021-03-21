@@ -16,7 +16,7 @@ Unquotes a JSON value, returning a string, or NULL if the argument is null.
 
 An error will occur if the given value begins and ends with double quotes and is an invalid JSON string literal.
 
-Certain character sequences have special meanings within a string. Usually, a backspace is ignored, but the escape sequences in the table below are recognised by MariaDB, unless the [SQL Mode](/mariadb-administration/variables-and-modes/sql-mode) is set to NO_BACKSLASH_ESCAPES SQL.
+Certain character sequences have special meanings within a string. Usually, a backspace is ignored, but the escape sequences in the table below are recognised by MariaDB, unless the [SQL Mode](/mariadb-administration/variables-and-modes/sql-mode/) is set to NO_BACKSLASH_ESCAPES SQL.
 
 <table><tbody><tr><th>Escape sequence</th><th>Character</th></tr>
 <tr><td><code>\"</code></td><td>Double quote (")</td></tr>
@@ -40,7 +40,7 @@ SELECT JSON_UNQUOTE('"Monty"');
 +-------------------------+
 ```
 
-With the default [SQL Mode](/mariadb-administration/variables-and-modes/sql-mode):
+With the default [SQL Mode](/mariadb-administration/variables-and-modes/sql-mode/):
 
 ```sql
 SELECT JSON_UNQUOTE('Si\bng\ting');

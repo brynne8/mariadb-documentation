@@ -57,7 +57,7 @@ The following variables can also be set by using <em>--var_name=value</em>, for 
 
 ## Checking Tables
 
-If no option is provided, myisamchk will perform a check table. It is possible to check [MyISAM](/kb/en/myisam/) tables without shutting down or restricting access to the server by using [CHECK TABLE](/sql-statements-structure/sql-statements/table-statements/check-table) instead.
+If no option is provided, myisamchk will perform a check table. It is possible to check [MyISAM](/kb/en/myisam/) tables without shutting down or restricting access to the server by using [CHECK TABLE](/sql-statements-structure/sql-statements/table-statements/check-table/) instead.
 
 The following check options are available:
 
@@ -75,7 +75,7 @@ The following check options are available:
 
 ## Repairing Tables
 
-It is also possible to repair [MyISAM](/kb/en/myisam/) tables by using [REPAIR TABLE](/sql-statements-structure/sql-statements/table-statements/repair-table).
+It is also possible to repair [MyISAM](/kb/en/myisam/) tables by using [REPAIR TABLE](/sql-statements-structure/sql-statements/table-statements/repair-table/).
 
 The following repair options are available, and are applicable when using '-r' or '-o':
 
@@ -110,7 +110,7 @@ The following repair options are available, and are applicable when using '-r' o
 <tr><td>-b offset,  --block-search=offset</td><td>Find the record to which a block at the given <em>offset</em> belongs.</td></tr>
 </tbody></table>
 
-For more, see [Memory and Disk Use With myisamchk](/clients-utilities/myisam-clients-and-utilities/memory-and-disk-use-with-myisamchk).
+For more, see [Memory and Disk Use With myisamchk](/clients-utilities/myisam-clients-and-utilities/memory-and-disk-use-with-myisamchk/).
 
 ## Examples
 
@@ -149,4 +149,4 @@ myisamchk --silent --force --fast --update-state \
 
 ## See Also
 
-- [Memory and Disk Use With myisamchk](/clients-utilities/myisam-clients-and-utilities/memory-and-disk-use-with-myisamchk)
+- [Memory and Disk Use With myisamchk](/clients-utilities/myisam-clients-and-utilities/memory-and-disk-use-with-myisamchk/)

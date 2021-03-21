@@ -144,7 +144,7 @@ SELECT * FROM t1;
 
 EXECUTE IMMEDIATE increments the [Com_execute_immediate](/kb/en/server-status-variables/#com_execute_immediate) status variable, as well as the [Com_stmt_prepare](/kb/en/server-status-variables/#com_stmt_prepare), [Com_stmt_execute](/kb/en/server-status-variables/#com_stmt_execute) and [Com_stmt_close](/kb/en/server-status-variables/#com_stmt_close) status variables.
 
-Note, EXECUTE IMMEDIATE does not increment the [Com_execute_sql](/kb/en/server-status-variables/#com_execute_sql) status variable. <em>Com_execute_sql</em> is used only for [PREPARE](/sql-statements-structure/sql-statements/prepared-statements/prepare-statement)..[EXECUTE](/sql-statements-structure/sql-statements/prepared-statements/execute-statement).
+Note, EXECUTE IMMEDIATE does not increment the [Com_execute_sql](/kb/en/server-status-variables/#com_execute_sql) status variable. <em>Com_execute_sql</em> is used only for [PREPARE](/sql-statements-structure/sql-statements/prepared-statements/prepare-statement/)..[EXECUTE](/sql-statements-structure/sql-statements/prepared-statements/execute-statement/).
 
 This session screenshot demonstrates how EXECUTE IMMEDIATE affects status variables:
 

@@ -54,8 +54,8 @@ All statements in ColumnStore run at a particular version (or, snapshot) of the 
 
 The Version Buffer uses in-memory hash tables to supply memory access to in-flight transaction information.  It starts at 4MB with the memory region growing from that amount to handle blocks that are being modified by a transaction.  Each entry in the hash table is a 40-byte reference to the 8KB block being modified.
 
-The limiting factor of the Version Buffer is not the number of rows being updated, but rather the number of disk blocks.  You can increase the size, but use caution, since increasing the number of disk blocks means that [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update) and [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete) statements that run for long periods of time can take even longer in the event that you need to roll back the changes.
+The limiting factor of the Version Buffer is not the number of rows being updated, but rather the number of disk blocks.  You can increase the size, but use caution, since increasing the number of disk blocks means that [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/) and [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/) statements that run for long periods of time can take even longer in the event that you need to roll back the changes.
 
 ## Transaction Log
 
-MariaDB ColumnStore supports logging committed transaction to the server's [Binary Log](/sql-statements-structure/sql-statements/administrative-sql-statements/binlog).
+MariaDB ColumnStore supports logging committed transaction to the server's [Binary Log](/sql-statements-structure/sql-statements/administrative-sql-statements/binlog/).

@@ -4,4 +4,4 @@ ColumnStore supports all MariaDB functions that can be used in a post-processing
 
 ## See also
 
-- [ColumnStore Distributed Functions](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-sql-structure-and-commands/columnstore-distributed-functions)
+- [ColumnStore Distributed Functions](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-sql-structure-and-commands/columnstore-distributed-functions/)

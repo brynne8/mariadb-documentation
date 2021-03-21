@@ -1,6 +1,6 @@
 # ColumnStore Drop Table
 
-The [DROP TABLE](/sql-statements-structure/sql-statements/data-definition/drop/drop-table) statement deletes a table from ColumnStore.
+The [DROP TABLE](/sql-statements-structure/sql-statements/data-definition/drop/drop-table/) statement deletes a table from ColumnStore.
 
 ## Syntax
 
@@ -22,4 +22,4 @@ DROP TABLE orders RESTRICT;
 
 ## See also
 
-- [DROP TABLE](/sql-statements-structure/sql-statements/data-definition/drop/drop-table)
+- [DROP TABLE](/sql-statements-structure/sql-statements/data-definition/drop/drop-table/)

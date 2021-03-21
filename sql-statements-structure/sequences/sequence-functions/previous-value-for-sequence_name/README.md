@@ -16,7 +16,7 @@ or
 LASTVAL(sequence_name)
 ```
 
-or in Oracle mode ([SQL_MODE=ORACLE](/mariadb-administration/variables-and-modes/sql-mode))
+or in Oracle mode ([SQL_MODE=ORACLE](/mariadb-administration/variables-and-modes/sql-mode/))
 
 ```sql
 sequence_name.currval
@@ -30,9 +30,9 @@ Get last value in the current connection generated from a sequence.
 
 - If the sequence has not yet been used by the connection, `PREVIOUS VALUE FOR` returns `NULL` (the same thing applies with a new connection which doesn't see a last value for an existing sequence).
 - If a `SEQUENCE` has been dropped and re-created then it's treated as a new `SEQUENCE` and `PREVIOUS VALUE FOR` will return `NULL`.
-- [FLUSH TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush) has no effect on `PREVIOUS VALUE FOR`.
+- [FLUSH TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/) has no effect on `PREVIOUS VALUE FOR`.
 - Previous values for all used sequences are stored per connection until connection ends.
-- `PREVIOUS VALUE FOR` requires the [SELECT privilege](/sql-statements-structure/sql-statements/account-management-sql-commands/grant).
+- `PREVIOUS VALUE FOR` requires the [SELECT privilege](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/).
 
 ## Example
 
@@ -93,9 +93,9 @@ $ .mysql -uroot test -e"SELECT PREVIOUS VALUE FOR s; SELECT NEXT VALUE FOR s; SE
 
 ## See Also
 
-- [Sequence Overview](/sql-statements-structure/sequences/sequence-overview)
-- [CREATE SEQUENCE](/sql-statements-structure/sequences/create-sequence)
-- [ALTER SEQUENCE](/sql-statements-structure/sequences/alter-sequence)
-- [NEXT VALUE FOR](/sql-statements-structure/sequences/sequence-functions/next-value-for-sequence_name)
-- [SETVAL()](/sql-statements-structure/sequences/sequence-functions/setval). Set next value for the sequence.
-- [AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment)
+- [Sequence Overview](/sql-statements-structure/sequences/sequence-overview/)
+- [CREATE SEQUENCE](/sql-statements-structure/sequences/create-sequence/)
+- [ALTER SEQUENCE](/sql-statements-structure/sequences/alter-sequence/)
+- [NEXT VALUE FOR](/sql-statements-structure/sequences/sequence-functions/next-value-for-sequence_name/)
+- [SETVAL()](/sql-statements-structure/sequences/sequence-functions/setval/). Set next value for the sequence.
+- [AUTO_INCREMENT](/columns-storage-engines-and-plugins/data-types/auto_increment/)

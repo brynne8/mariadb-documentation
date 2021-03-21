@@ -1,10 +1,10 @@
 # System Variables Added in MariaDB 10.1
 
-This is a list of [system variables](/replication/optimization-and-tuning/system-variables/server-system-variables) that were added in the [MariaDB 10.1](/kb/en/what-is-mariadb-101/) series.
+This is a list of [system variables](/replication/optimization-and-tuning/system-variables/server-system-variables/) that were added in the [MariaDB 10.1](/kb/en/what-is-mariadb-101/) series.
 
 The list excludes the following variables, related to storage engines and plugins included in [MariaDB 10.1](/kb/en/what-is-mariadb-101/):
 
-- [Spider System Variables](/columns-storage-engines-and-plugins/storage-engines/spider/spider-server-system-variables)
+- [Spider System Variables](/columns-storage-engines-and-plugins/storage-engines/spider/spider-server-system-variables/)
 
 <table><tbody><tr><th>Variable</th><th>Added</th></tr>
 <tr><td><a href="/kb/en/aria-system-variables/#aria_encrypt_tables">aria_encrypt_tables</a></td><td><a href="/kb/en/mariadb-1013-release-notes/">MariaDB 10.1.3</a></td></tr>
@@ -64,6 +64,6 @@ The list excludes the following variables, related to storage engines and plugin
 
 ## See Also
 
-- [Status Variables Added in MariaDB 10.1](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/status-variables-added-in-mariadb-101)
-- [System Variables Added in MariaDB 10.2](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-102)
-- [System Variables Added in MariaDB 10.0](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-100)
+- [Status Variables Added in MariaDB 10.1](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/status-variables-added-in-mariadb-101/)
+- [System Variables Added in MariaDB 10.2](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-102/)
+- [System Variables Added in MariaDB 10.0](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-100/)

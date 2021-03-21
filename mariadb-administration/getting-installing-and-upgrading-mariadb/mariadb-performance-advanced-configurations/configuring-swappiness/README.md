@@ -8,7 +8,7 @@ Obviously, accessing swap memory from disk is far slower than accessing RAM dire
 - Swap increases IO over just using disk in the first place as pages are actively swapped in and out of swap. Even something like removing a dirty page that is no longer going to be stored in memory, while designed to improve efficiency, will under a swap situation cost more IO.
 - Database locks are particularly inefficient in swap. They are designed to be obtained and released often and quickly, and pausing to perform disk IO will have a serious impact on their usability.
 
-The main way to avoid swapping is to make sure you have enough RAM for all processes that need to run on the machine. Setting the [system variables](/replication/optimization-and-tuning/system-variables) too high can mean that under load the server runs short of memory, and needs to use swap. So understanding what settings to use and how these impact your server's memory usage is critical.
+The main way to avoid swapping is to make sure you have enough RAM for all processes that need to run on the machine. Setting the [system variables](/replication/optimization-and-tuning/system-variables/) too high can mean that under load the server runs short of memory, and needs to use swap. So understanding what settings to use and how these impact your server's memory usage is critical.
 
 ## Setting Swappiness on Linux
 

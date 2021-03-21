@@ -12,6 +12,6 @@ vulnerabilities maintained at [https://cve.mitre.org/](https://cve.mitre.org/)
 
 ## CVEs fixed in ColumnStore
 
-The appropriate release notes listed [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-release-notes) document CVEs fixed within a given release. Additional information can also be found at [Security Vulnerabilities Fixed in MariaDB](/kb/en/security/).
+The appropriate release notes listed [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-release-notes/) document CVEs fixed within a given release. Additional information can also be found at [Security Vulnerabilities Fixed in MariaDB](/kb/en/security/).
 
 There are no known CVEs on ColumnStore specific infrastructure outside of the MariaDB Server at this time.

@@ -1,14 +1,14 @@
 # InnoDB Server Status Variables
 
-See [Server Status Variables](/replication/optimization-and-tuning/system-variables/server-status-variables) for a complete list of status variables that can be viewed with [SHOW STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-status).
+See [Server Status Variables](/replication/optimization-and-tuning/system-variables/server-status-variables/) for a complete list of status variables that can be viewed with [SHOW STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-status/).
 
-Much of the [InnoDB/XtraDB](/columns-storage-engines-and-plugins/storage-engines/innodb) information here can also be seen with a [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) statement.
+Much of the [InnoDB/XtraDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) information here can also be seen with a [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) statement.
 
-See also the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables).
+See also the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables/).
 
 #### `Innodb_adaptive_hash_cells`
 
-- <strong>Description:</strong> As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.1](/kb/en/what-is-mariadb-101/) and later, this system variable is not present.
 </li></ul>
@@ -21,7 +21,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_adaptive_hash_hash_searches`
 
-- <strong>Description:</strong> Hash searches as shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> Hash searches as shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.1](/kb/en/what-is-mariadb-101/), [MariaDB 10.2](/kb/en/what-is-mariadb-102/), [MariaDB 10.3](/kb/en/what-is-mariadb-103/), and [MariaDB 10.4](/kb/en/what-is-mariadb-104/), this system variable is not present. Use the `adaptive_hash_searches` counter in the <a undefined>information_schema.INNODB_METRICS</a> table instead.
 </li><li>In [MariaDB 10.5](/kb/en/what-is-mariadb-105/), this system variable was reintroduced.
@@ -35,7 +35,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_adaptive_hash_heap_buffers`
 
-- <strong>Description:</strong> As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.1](/kb/en/what-is-mariadb-101/) and later, this system variable is not present.
 </li></ul>
@@ -48,7 +48,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_adaptive_hash_non_hash_searches`
 
-- <strong>Description:</strong> Non-hash searches as shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> Non-hash searches as shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.1](/kb/en/what-is-mariadb-101/), [MariaDB 10.2](/kb/en/what-is-mariadb-102/), [MariaDB 10.3](/kb/en/what-is-mariadb-103/), and [MariaDB 10.4](/kb/en/what-is-mariadb-104/), this system variable is not present. Use the `adaptive_hash_searches_btree` counter in the <a undefined>information_schema.INNODB_METRICS</a> table instead.
 </li><li>In [MariaDB 10.5](/kb/en/what-is-mariadb-105/), this system variable was reintroduced.
@@ -70,7 +70,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_background_log_sync`
 
-- <strong>Description:</strong> As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.1](/kb/en/what-is-mariadb-101/), [MariaDB 10.2](/kb/en/what-is-mariadb-102/), [MariaDB 10.3](/kb/en/what-is-mariadb-103/), and [MariaDB 10.4](/kb/en/what-is-mariadb-104/), this system variable is not present.
 </li><li>In [MariaDB 10.5](/kb/en/what-is-mariadb-105/), this system variable was reintroduced.
@@ -150,7 +150,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_buffer_pool_pages_LRU_flushed`
 
-- <strong>Description:</strong> Flush list as shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> Flush list as shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/), [MariaDB 10.3](/kb/en/what-is-mariadb-103/), and [MariaDB 10.4](/kb/en/what-is-mariadb-104/), this system variable is not present.
 </li><li>In [MariaDB 10.5](/kb/en/what-is-mariadb-105/), this system variable was reintroduced.
@@ -180,7 +180,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_buffer_pool_pages_made_not_young`
 
-- <strong>Description:</strong> Pages not young as shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> Pages not young as shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/), [MariaDB 10.3](/kb/en/what-is-mariadb-103/), and [MariaDB 10.4](/kb/en/what-is-mariadb-104/), this system variable is not present.
 </li><li>In [MariaDB 10.5](/kb/en/what-is-mariadb-105/), this system variable was reintroduced.
@@ -193,7 +193,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_buffer_pool_pages_made_young`
 
-- <strong>Description:</strong> Pages made young as shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> Pages made young as shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/), [MariaDB 10.3](/kb/en/what-is-mariadb-103/), and [MariaDB 10.4](/kb/en/what-is-mariadb-104/), this system variable is not present.
 </li><li>In [MariaDB 10.5](/kb/en/what-is-mariadb-105/), this system variable was reintroduced.
@@ -214,7 +214,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_buffer_pool_pages_old`
 
-- <strong>Description:</strong> Old database page, as shown in the BUFFER POOL AND MEMORY section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> Old database page, as shown in the BUFFER POOL AND MEMORY section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present for XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/), [MariaDB 10.3](/kb/en/what-is-mariadb-103/), and [MariaDB 10.4](/kb/en/what-is-mariadb-104/), this system variable is not present.
 </li><li>In [MariaDB 10.5](/kb/en/what-is-mariadb-105/), this system variable was reintroduced.
@@ -275,7 +275,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_buffer_pool_resize_status`
 
-- <strong>Description:</strong> Progress of the dynamic [InnoDB buffer pool](/kb/en/xtradbinnodb-memory-buffer/) resizing operation. See [Setting Innodb Buffer Pool Size Dynamically](/replication/optimization-and-tuning/system-variables/setting-innodb-buffer-pool-size-dynamically).
+- <strong>Description:</strong> Progress of the dynamic [InnoDB buffer pool](/kb/en/xtradbinnodb-memory-buffer/) resizing operation. See [Setting Innodb Buffer Pool Size Dynamically](/replication/optimization-and-tuning/system-variables/setting-innodb-buffer-pool-size-dynamically/).
 - <strong>Scope:</strong> Global
 - <strong>Data Type:</strong> `numeric`
 - <strong>Introduced:</strong> [MariaDB 10.2.2](/kb/en/mariadb-1022-release-notes/)
@@ -309,7 +309,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_checkpoint_age`
 
-- <strong>Description:</strong> The checkpoint age, as shown in the LOG section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output. (This is equivalent to subtracting "Last checkpoint at" from "Log sequence number".)
+- <strong>Description:</strong> The checkpoint age, as shown in the LOG section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output. (This is equivalent to subtracting "Last checkpoint at" from "Log sequence number".)
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/), [MariaDB 10.3](/kb/en/what-is-mariadb-103/), and [MariaDB 10.4](/kb/en/what-is-mariadb-104/), this system variable is not present.
 </li><li>In [MariaDB 10.5](/kb/en/what-is-mariadb-105/), this system variable was reintroduced.
@@ -322,7 +322,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_checkpoint_max_age`
 
-- <strong>Description:</strong> Max checkpoint age, as shown in the LOG section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> Max checkpoint age, as shown in the LOG section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/), [MariaDB 10.3](/kb/en/what-is-mariadb-103/), and [MariaDB 10.4](/kb/en/what-is-mariadb-104/), this system variable is not present.
 </li><li>In [MariaDB 10.5](/kb/en/what-is-mariadb-105/), this system variable was reintroduced.
@@ -335,7 +335,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_checkpoint_target_age`
 
-- <strong>Description:</strong> Checkpoint age target, as shown in the LOG section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output. XtraDB only. Removed in [MariaDB 10.0](/kb/en/what-is-mariadb-100/) and replaced with MySQL 5.6's flushing implementation.
+- <strong>Description:</strong> Checkpoint age target, as shown in the LOG section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output. XtraDB only. Removed in [MariaDB 10.0](/kb/en/what-is-mariadb-100/) and replaced with MySQL 5.6's flushing implementation.
 - <strong>Scope:</strong> Global
 - <strong>Data Type:</strong> `numeric`
 - <strong>Introduced:</strong> [MariaDB 5.5](/kb/en/what-is-mariadb-55/)
@@ -345,7 +345,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_current_row_locks`
 
-- <strong>Description:</strong> Number of current row locks on InnoDB tables as shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output. Renamed from [InnoDB_row_lock_numbers](#innodb_row_lock_numbers) in XtraDB 5.5.8-20.1.
+- <strong>Description:</strong> Number of current row locks on InnoDB tables as shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output. Renamed from [InnoDB_row_lock_numbers](#innodb_row_lock_numbers) in XtraDB 5.5.8-20.1.
 - <strong>Scope:</strong> Global
 - <strong>Data Type:</strong> `numeric`
 - <strong>Introduced:</strong> [MariaDB 5.5](/kb/en/what-is-mariadb-55/)
@@ -447,7 +447,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_defragment_compression_failures`
 
-- <strong>Description:</strong> Number of defragment re-compression failures. See [Defragmenting InnoDB Tablespaces](/replication/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces).
+- <strong>Description:</strong> Number of defragment re-compression failures. See [Defragmenting InnoDB Tablespaces](/replication/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces/).
 - <strong>Scope:</strong> Global
 - <strong>Data Type:</strong> `numeric`
 - <strong>Introduced:</strong> [MariaDB 10.1.1](/kb/en/mariadb-1011-release-notes/)
@@ -456,7 +456,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_defragment_count`
 
-- <strong>Description:</strong> Number of defragment operations. See [Defragmenting InnoDB Tablespaces](/replication/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces).
+- <strong>Description:</strong> Number of defragment operations. See [Defragmenting InnoDB Tablespaces](/replication/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces/).
 - <strong>Scope:</strong> Global
 - <strong>Data Type:</strong> `numeric`
 - <strong>Introduced:</strong> [MariaDB 10.1.1](/kb/en/mariadb-1011-release-notes/)
@@ -465,7 +465,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_defragment_failures`
 
-- <strong>Description:</strong> Number of defragment failures. See [Defragmenting InnoDB Tablespaces](/replication/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces).
+- <strong>Description:</strong> Number of defragment failures. See [Defragmenting InnoDB Tablespaces](/replication/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces/).
 - <strong>Scope:</strong> Global
 - <strong>Data Type:</strong> `numeric`
 - <strong>Introduced:</strong> [MariaDB 10.1.1](/kb/en/mariadb-1011-release-notes/)
@@ -654,7 +654,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_history_list_length`
 
-- <strong>Description:</strong> History list length as shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output. XtraDB only until introduced in [MariaDB 10.5.0](/kb/en/mariadb-1050-release-notes/).
+- <strong>Description:</strong> History list length as shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output. XtraDB only until introduced in [MariaDB 10.5.0](/kb/en/mariadb-1050-release-notes/).
 - <strong>Scope:</strong> Global
 - <strong>Data Type:</strong> `numeric`
 - <strong>Introduced:</strong> [MariaDB 5.5](/kb/en/what-is-mariadb-55/) (XtraDB-only), [MariaDB 10.5.0](/kb/en/mariadb-1050-release-notes/)
@@ -663,7 +663,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_ibuf_discarded_delete_marks`
 
-- <strong>Description:</strong> As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/), [MariaDB 10.3](/kb/en/what-is-mariadb-103/), and [MariaDB 10.4](/kb/en/what-is-mariadb-104/), this system variable is not present.
 </li><li>In [MariaDB 10.5](/kb/en/what-is-mariadb-105/), this system variable was reintroduced.
@@ -676,7 +676,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_ibuf_discarded_deletes`
 
-- <strong>Description:</strong> As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/), [MariaDB 10.3](/kb/en/what-is-mariadb-103/), and [MariaDB 10.4](/kb/en/what-is-mariadb-104/), this system variable is not present.
 </li><li>In [MariaDB 10.5](/kb/en/what-is-mariadb-105/), this system variable was reintroduced.
@@ -689,7 +689,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_ibuf_discarded_inserts`
 
-- <strong>Description:</strong> As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/), [MariaDB 10.3](/kb/en/what-is-mariadb-103/), and [MariaDB 10.4](/kb/en/what-is-mariadb-104/), this system variable is not present.
 </li><li>In [MariaDB 10.5](/kb/en/what-is-mariadb-105/), this system variable was reintroduced.
@@ -702,7 +702,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_ibuf_free_list`
 
-- <strong>Description:</strong> As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/), [MariaDB 10.3](/kb/en/what-is-mariadb-103/), and [MariaDB 10.4](/kb/en/what-is-mariadb-104/), this system variable is not present.
 </li><li>In [MariaDB 10.5](/kb/en/what-is-mariadb-105/), this system variable was reintroduced.
@@ -715,7 +715,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_ibuf_merged_delete_marks`
 
-- <strong>Description:</strong> As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/), [MariaDB 10.3](/kb/en/what-is-mariadb-103/), and [MariaDB 10.4](/kb/en/what-is-mariadb-104/), this system variable is not present.
 </li><li>In [MariaDB 10.5](/kb/en/what-is-mariadb-105/), this system variable was reintroduced.
@@ -728,7 +728,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_ibuf_merged_deletes`
 
-- <strong>Description:</strong> As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/), [MariaDB 10.3](/kb/en/what-is-mariadb-103/), and [MariaDB 10.4](/kb/en/what-is-mariadb-104/), this system variable is not present.
 </li><li>In [MariaDB 10.5](/kb/en/what-is-mariadb-105/), this system variable was reintroduced.
@@ -741,7 +741,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_ibuf_merged_inserts`
 
-- <strong>Description:</strong> As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/), [MariaDB 10.3](/kb/en/what-is-mariadb-103/), and [MariaDB 10.4](/kb/en/what-is-mariadb-104/), this system variable is not present.
 </li><li>In [MariaDB 10.5](/kb/en/what-is-mariadb-105/), this system variable was reintroduced.
@@ -754,7 +754,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_ibuf_merges`
 
-- <strong>Description:</strong> As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/), [MariaDB 10.3](/kb/en/what-is-mariadb-103/), and [MariaDB 10.4](/kb/en/what-is-mariadb-104/), this system variable is not present.
 </li><li>In [MariaDB 10.5](/kb/en/what-is-mariadb-105/), this system variable was reintroduced.
@@ -767,7 +767,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_ibuf_segment_size`
 
-- <strong>Description:</strong> As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/), [MariaDB 10.3](/kb/en/what-is-mariadb-103/), and [MariaDB 10.4](/kb/en/what-is-mariadb-104/), this system variable is not present.
 </li><li>In [MariaDB 10.5](/kb/en/what-is-mariadb-105/), this system variable was reintroduced.
@@ -780,7 +780,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_ibuf_size`
 
-- <strong>Description:</strong> As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/), [MariaDB 10.3](/kb/en/what-is-mariadb-103/), and [MariaDB 10.4](/kb/en/what-is-mariadb-104/), this system variable is not present.
 </li><li>In [MariaDB 10.5](/kb/en/what-is-mariadb-105/), this system variable was reintroduced.
@@ -793,7 +793,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_instant_alter_column`
 
-- <strong>Description:</strong> See [Instant ADD COLUMN for InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-online-ddl/instant-add-column-for-innodb).
+- <strong>Description:</strong> See [Instant ADD COLUMN for InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-online-ddl/instant-add-column-for-innodb/).
 - <strong>Scope:</strong> Global
 - <strong>Data Type:</strong> `numeric`
 - <strong>Introduced:</strong> [MariaDB 10.3.2](/kb/en/mariadb-1032-release-notes/)
@@ -826,7 +826,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_lsn_current`
 
-- <strong>Description:</strong> Log sequence number as shown in the LOG section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> Log sequence number as shown in the LOG section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/), [MariaDB 10.3](/kb/en/what-is-mariadb-103/), and [MariaDB 10.4](/kb/en/what-is-mariadb-104/), this system variable is not present.
 </li><li>In [MariaDB 10.5](/kb/en/what-is-mariadb-105/), this system variable was reintroduced.
@@ -839,7 +839,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_lsn_flushed`
 
-- <strong>Description:</strong> Flushed up to log sequence number as shown in the LOG section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> Flushed up to log sequence number as shown in the LOG section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/), [MariaDB 10.3](/kb/en/what-is-mariadb-103/), and [MariaDB 10.4](/kb/en/what-is-mariadb-104/), this system variable is not present.
 </li><li>In [MariaDB 10.5](/kb/en/what-is-mariadb-105/), this system variable was reintroduced.
@@ -852,7 +852,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_lsn_last_checkpoint`
 
-- <strong>Description:</strong> Log sequence number last checkpoint as shown in the LOG section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> Log sequence number last checkpoint as shown in the LOG section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/), [MariaDB 10.3](/kb/en/what-is-mariadb-103/), and [MariaDB 10.4](/kb/en/what-is-mariadb-104/), this system variable is not present.
 </li><li>In [MariaDB 10.5](/kb/en/what-is-mariadb-105/), this system variable was reintroduced.
@@ -865,7 +865,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_master_thread_1_second_loops`
 
-- <strong>Description:</strong> As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output. 
+- <strong>Description:</strong> As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output. 
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.1](/kb/en/what-is-mariadb-101/) and later, this system variable is not present.
 </li></ul>
@@ -878,7 +878,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_master_thread_10_second_loops`
 
-- <strong>Description:</strong> As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.1](/kb/en/what-is-mariadb-101/) and later, this system variable is not present
 </li></ul>
@@ -891,7 +891,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_master_thread_active_loops`
 
-- <strong>Description:</strong> As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/), [MariaDB 10.3](/kb/en/what-is-mariadb-103/), and [MariaDB 10.4](/kb/en/what-is-mariadb-104/), this system variable is not present.
 </li><li>In [MariaDB 10.5](/kb/en/what-is-mariadb-105/), this system variable was reintroduced.
@@ -905,7 +905,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_master_thread_background_loops`
 
-- <strong>Description:</strong> As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.1](/kb/en/what-is-mariadb-101/) and later, this system variable is not present
 </li></ul>
@@ -918,7 +918,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_master_thread_idle_loops`
 
-- <strong>Description:</strong> As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/), [MariaDB 10.3](/kb/en/what-is-mariadb-103/), and [MariaDB 10.4](/kb/en/what-is-mariadb-104/), this system variable is not present.
 </li><li>In [MariaDB 10.5](/kb/en/what-is-mariadb-105/), this system variable was reintroduced.
@@ -932,7 +932,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_master_thread_main_flush_loops`
 
-- <strong>Description:</strong> As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.1](/kb/en/what-is-mariadb-101/) and later, this system variable is not present
 </li></ul>
@@ -945,7 +945,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_master_thread_sleeps`
 
-- <strong>Description:</strong> As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine) output. XtraDB only.
+- <strong>Description:</strong> As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine/) output. XtraDB only.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.1](/kb/en/what-is-mariadb-101/), [MariaDB 10.2](/kb/en/what-is-mariadb-102/), [MariaDB 10.3](/kb/en/what-is-mariadb-103/), and [MariaDB 10.4](/kb/en/what-is-mariadb-104/), this system variable is not present. Use the `innodb_master_thread_sleeps` counter in the <a undefined>information_schema.INNODB_METRICS</a> table instead.
 </li><li>In [MariaDB 10.5](/kb/en/what-is-mariadb-105/), this system variable was reintroduced.
@@ -959,7 +959,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_max_trx_id`
 
-- <strong>Description:</strong> As shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> As shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/), [MariaDB 10.3](/kb/en/what-is-mariadb-103/), and [MariaDB 10.4](/kb/en/what-is-mariadb-104/), this system variable is not present.
 </li><li>In [MariaDB 10.5](/kb/en/what-is-mariadb-105/), this system variable was reintroduced.
@@ -972,7 +972,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_mem_adaptive_hash`
 
-- <strong>Description:</strong> As shown in the BUFFER POOL AND MEMORY section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> As shown in the BUFFER POOL AND MEMORY section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/), [MariaDB 10.3](/kb/en/what-is-mariadb-103/), and [MariaDB 10.4](/kb/en/what-is-mariadb-104/), this system variable is not present.
 </li><li>In [MariaDB 10.5](/kb/en/what-is-mariadb-105/), this system variable was reintroduced.
@@ -985,7 +985,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_mem_dictionary`
 
-- <strong>Description:</strong> As shown in the BUFFER POOL AND MEMORY section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> As shown in the BUFFER POOL AND MEMORY section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/), [MariaDB 10.3](/kb/en/what-is-mariadb-103/), and [MariaDB 10.4](/kb/en/what-is-mariadb-104/), this system variable is not present.
 </li><li>In [MariaDB 10.5](/kb/en/what-is-mariadb-105/), this system variable was reintroduced.
@@ -998,7 +998,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_mem_total`
 
-- <strong>Description:</strong> As shown in the BUFFER POOL AND MEMORY section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> As shown in the BUFFER POOL AND MEMORY section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, this system variable is not present.
 </li></ul>
@@ -1010,7 +1010,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_mutex_os_waits`
 
-- <strong>Description:</strong> Mutex OS waits as shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> Mutex OS waits as shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, this system variable is not present.
 </li></ul>
@@ -1022,7 +1022,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_mutex_spin_rounds`
 
-- <strong>Description:</strong> Mutex spin rounds as shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> Mutex spin rounds as shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, this system variable is not present.
 </li></ul>
@@ -1034,7 +1034,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_mutex_spin_waits`
 
-- <strong>Description:</strong> Mutex spin waits as shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> Mutex spin waits as shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, this system variable is not present.
 </li></ul>
@@ -1146,7 +1146,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_oldest_view_low_limit_trx_id`
 
-- <strong>Description:</strong> As shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> As shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, this system variable is not present.
 </li></ul>
@@ -1338,7 +1338,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_purge_trx_id`
 
-- <strong>Description:</strong> Purge transaction id as shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> Purge transaction id as shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, this system variable is not present.
 </li></ul>
@@ -1350,7 +1350,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_purge_undo_no`
 
-- <strong>Description:</strong> As shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> As shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, this system variable is not present.
 </li></ul>
@@ -1362,7 +1362,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_read_views_memory`
 
-- <strong>Description:</strong> As shown in the BUFFER POOL AND MEMORY section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output. Shows the total of memory in bytes allocated for the InnoDB read view.
+- <strong>Description:</strong> As shown in the BUFFER POOL AND MEMORY section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output. Shows the total of memory in bytes allocated for the InnoDB read view.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, this system variable is not present.
 </li></ul>
@@ -1382,7 +1382,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_row_lock_numbers`
 
-- <strong>Description:</strong> Number of current row locks on InnoDB tables as shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output. Renamed to [InnoDB_current_row_locks](#innodb_current_row_locks) in XtraDB 5.5.10-20.1.
+- <strong>Description:</strong> Number of current row locks on InnoDB tables as shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output. Renamed to [InnoDB_current_row_locks](#innodb_current_row_locks) in XtraDB 5.5.10-20.1.
 - <strong>Scope:</strong> Global
 - <strong>Data Type:</strong> `numeric`
 - <strong>Introduced:</strong> [MariaDB 5.5](/kb/en/what-is-mariadb-55/) / XtraDB 5.5.8-20
@@ -1456,7 +1456,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_s_lock_os_waits`
 
-- <strong>Description:</strong> As shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> As shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, this system variable is not present.
 </li></ul>
@@ -1468,7 +1468,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_s_lock_spin_rounds`
 
-- <strong>Description:</strong> As shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> As shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, this system variable is not present.
 </li></ul>
@@ -1480,7 +1480,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_s_lock_spin_waits`
 
-- <strong>Description:</strong> As shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> As shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, this system variable is not present.
 </li></ul>
@@ -1616,7 +1616,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_truncated_status_writes`
 
-- <strong>Description:</strong> Number of times output from [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) has been truncated.
+- <strong>Description:</strong> Number of times output from [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) has been truncated.
 - <strong>Scope:</strong> Global
 - <strong>Data Type:</strong> `numeric`
 - <strong>Introduced:</strong> [MariaDB 5.5](/kb/en/what-is-mariadb-55/)
@@ -1634,7 +1634,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_x_lock_os_waits`
 
-- <strong>Description:</strong> As shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> As shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, this system variable is not present.
 </li></ul>
@@ -1646,7 +1646,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_x_lock_spin_rounds`
 
-- <strong>Description:</strong> As shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> As shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, this system variable is not present.
 </li></ul>
@@ -1658,7 +1658,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `Innodb_x_lock_spin_waits`
 
-- <strong>Description:</strong> As shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) output.
+- <strong>Description:</strong> As shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/) and [MariaDB 10.1](/kb/en/what-is-mariadb-101/), this system variable is present in XtraDB.
 </li><li>In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, this system variable is not present.
 </li></ul>

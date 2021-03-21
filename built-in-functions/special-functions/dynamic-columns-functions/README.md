@@ -1,6 +1,6 @@
 # Dynamic Columns Functions
 
-[Dynamic columns](/sql-statements-structure/nosql/dynamic-columns) is a feature that allows one to store different sets of columns for each row in a table. It works by storing a set of columns in a blob and having a small set of functions to manipulate it.
+[Dynamic columns](/sql-statements-structure/nosql/dynamic-columns/) is a feature that allows one to store different sets of columns for each row in a table. It works by storing a set of columns in a blob and having a small set of functions to manipulate it.
 
 - [COLUMN_ADD](/built-in-functions/special-functions/dynamic-columns-functions/column_add/) — Adds or updates dynamic columns
 - [COLUMN_CHECK](/built-in-functions/special-functions/dynamic-columns-functions/column_check/) — Checks if a dynamic column blob is valid

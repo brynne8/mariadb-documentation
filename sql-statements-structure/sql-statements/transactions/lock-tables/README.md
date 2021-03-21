@@ -41,14 +41,14 @@ updating tables.
 `LOCK TABLES` explicitly acquires table locks for the current client session.
 Table locks can be acquired for base tables or views. To use `LOCK TABLES`,
 you must have the `LOCK TABLES` privilege, and the `SELECT` privilege for
-each object to be locked. See [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant)
+each object to be locked. See [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/)
 
 For view locking, `LOCK TABLES` adds all base tables used in the view to the
 set of tables to be locked and locks them automatically. If you lock a table
 explicitly with `LOCK TABLES`, any tables used in triggers are also locked
-implicitly, as described in [Triggers and Implicit Locks](/programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks).
+implicitly, as described in [Triggers and Implicit Locks](/programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks/).
 
-[UNLOCK TABLES](/sql-statements-structure/sql-statements/transactions/transactions-unlock-tables) explicitly releases any table locks held by the
+[UNLOCK TABLES](/sql-statements-structure/sql-statements/transactions/transactions-unlock-tables/) explicitly releases any table locks held by the
 current session.
 <br><br>
 
@@ -56,15 +56,15 @@ current session.
 
 ### WAIT/NOWAIT
 
-Set the lock wait timeout. See [WAIT and NOWAIT](/sql-statements-structure/sql-statements/transactions/wait-and-nowait).
+Set the lock wait timeout. See [WAIT and NOWAIT](/sql-statements-structure/sql-statements/transactions/wait-and-nowait/).
 
 ## Limitations
 
-LOCK TABLES [doesn't work when using Galera cluster](/replication/galera-cluster/mariadb-galera-cluster-known-limitations).   You may experience crashes or locks when used with Galera.
+LOCK TABLES [doesn't work when using Galera cluster](/replication/galera-cluster/mariadb-galera-cluster-known-limitations/).   You may experience crashes or locks when used with Galera.
 
 LOCK TABLES works on XtraDB/InnoDB tables only if the [innodb_table_locks](/kb/en/xtradbinnodb-server-system-variables/#innodb_table_locks) system variable is set to 1 (the default) and [autocommit](/kb/en/server-system-variables/#autocommit) is set to 0 (1 is default). Please note that no error message will be returned on LOCK TABLES with innodb_table_locks = 0.
 
-`LOCK TABLES` [implicitly commits](/sql-statements-structure/sql-statements/transactions/sql-statements-that-cause-an-implicit-commit) the active transaction, if any. Also, starting a transaction always releases all table locks acquired with LOCK TABLES. This means that there is no way to have table locks and an active transaction at the same time. The only exceptions are the transactions in [autocommit](/kb/en/start-transaction/#autocommit) mode. To preserve the data integrity between transactional and non-transactional tables, the [GET_LOCK()](/built-in-functions/secondary-functions/miscellaneous-functions/get_lock) function can be used.
+`LOCK TABLES` [implicitly commits](/sql-statements-structure/sql-statements/transactions/sql-statements-that-cause-an-implicit-commit/) the active transaction, if any. Also, starting a transaction always releases all table locks acquired with LOCK TABLES. This means that there is no way to have table locks and an active transaction at the same time. The only exceptions are the transactions in [autocommit](/kb/en/start-transaction/#autocommit) mode. To preserve the data integrity between transactional and non-transactional tables, the [GET_LOCK()](/built-in-functions/secondary-functions/miscellaneous-functions/get_lock/) function can be used.
 
 While a connection holds an explicit read lock on a table, it cannot modify it. If you try, the following error will be produced:
 
@@ -92,4 +92,4 @@ ERROR 1314 (0A000): LOCK is not allowed in stored procedures
 
 ## See Also
 
-- [UNLOCK TABLES](/sql-statements-structure/sql-statements/transactions/transactions-unlock-tables)
+- [UNLOCK TABLES](/sql-statements-structure/sql-statements/transactions/transactions-unlock-tables/)

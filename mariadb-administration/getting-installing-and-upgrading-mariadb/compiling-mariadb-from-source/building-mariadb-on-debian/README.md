@@ -1,6 +1,6 @@
 # Building MariaDB on Debian
 
-In the event that you are using the Linux-based operating system Debian or any of its direct derivatives and would like to compile MariaDB from source code, you can do so using the MariaDB source repository for the release that interests you.  For Ubuntu and its derivatives, see [Building on Ubuntu](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/building-mariadb-on-ubuntu).
+In the event that you are using the Linux-based operating system Debian or any of its direct derivatives and would like to compile MariaDB from source code, you can do so using the MariaDB source repository for the release that interests you.  For Ubuntu and its derivatives, see [Building on Ubuntu](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/building-mariadb-on-ubuntu/).
 
 Before you begin, install the `software-properties-common` and `devscripts` packages:
 
@@ -69,4 +69,4 @@ $ ./debian/autobake-deb.sh
 
 ### After Building
 
-After building the packages, it is a good idea to put them in a repository. See the [Creating a Debian Repository](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/Creating_a_Debian_Repository) page for instructions.
+After building the packages, it is a good idea to put them in a repository. See the [Creating a Debian Repository](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/Creating_a_Debian_Repository/) page for instructions.

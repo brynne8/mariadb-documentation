@@ -19,10 +19,10 @@ ALTER
 ## Description
 
 The `ALTER EVENT` statement is used to change one or more of the
-characteristics of an existing [event](/programming-customizing-mariadb/triggers-events/event-scheduler/events) without the need to drop and recreate it.
+characteristics of an existing [event](/programming-customizing-mariadb/triggers-events/event-scheduler/events/) without the need to drop and recreate it.
 The syntax for each of the `DEFINER`, `ON SCHEDULE`, `ON COMPLETION`,
 `COMMENT`, `ENABLE` `/` `DISABLE`, and `DO` clauses is exactly the
-same as when used with [CREATE EVENT](/sql-statements-structure/sql-statements/data-definition/create/create-event).
+same as when used with [CREATE EVENT](/sql-statements-structure/sql-statements/data-definition/create/create-event/).
 
 This statement requires the <a undefined>EVENT</a> privilege.
 When a user executes a successful `ALTER EVENT` statement, that user becomes
@@ -50,6 +50,6 @@ ALTER EVENT myevent
 ## See Also
 
 - [Events Overview](/kb/en/events-overview/)
-- [CREATE EVENT](/sql-statements-structure/sql-statements/data-definition/create/create-event)
-- [SHOW CREATE EVENT](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-event)
-- [DROP EVENT](/sql-statements-structure/sql-statements/data-definition/drop/drop-event)
+- [CREATE EVENT](/sql-statements-structure/sql-statements/data-definition/create/create-event/)
+- [SHOW CREATE EVENT](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-event/)
+- [DROP EVENT](/sql-statements-structure/sql-statements/data-definition/drop/drop-event/)

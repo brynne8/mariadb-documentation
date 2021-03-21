@@ -1,10 +1,10 @@
 # Installing MinIO for Usage With mysql-test-run
 
-When testing the S3 storage engine with the s3 test suite, [mysql-test-run](/clients-utilities/mysqltest) needs access to Amazon S3 compatible storage.
+When testing the S3 storage engine with the s3 test suite, [mysql-test-run](/clients-utilities/mysqltest/) needs access to Amazon S3 compatible storage.
 
 The easiest way to achieve this is to install [MinIO](https://min.io), an open source S3 compatible storage.
 
-Here is a shell script that you can use to install MinIO with the right credentials for [mysql-test-run](/clients-utilities/mysqltest).
+Here is a shell script that you can use to install MinIO with the right credentials for [mysql-test-run](/clients-utilities/mysqltest/).
 This should work on most Linux systems as the binaries are statically linked.
 You can alternatively download MinIO binaries directly from [here](https://min.io/download).
 

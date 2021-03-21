@@ -2,7 +2,7 @@
 
 ##### MariaDB starting with [10.4.3](/kb/en/mariadb-1043-release-notes/)
 
-Bitemporal tables are tables that use versioning both at the [system](/sql-statements-structure/temporal-tables/system-versioned-tables) and [application-time period](/sql-statements-structure/temporal-tables/application-time-periods) levels.
+Bitemporal tables are tables that use versioning both at the [system](/sql-statements-structure/temporal-tables/system-versioned-tables/) and [application-time period](/sql-statements-structure/temporal-tables/application-time-periods/) levels.
 
 ## Using Bitemporal Tables
 
@@ -32,5 +32,5 @@ ERROR 42000: You have an error in your SQL syntax; check the manual that corresp
 
 ## See Also
 
-- [System-versioned Tables](/sql-statements-structure/temporal-tables/system-versioned-tables)
-- [Application-time Periods](/sql-statements-structure/temporal-tables/application-time-periods)
+- [System-versioned Tables](/sql-statements-structure/temporal-tables/system-versioned-tables/)
+- [Application-time Periods](/sql-statements-structure/temporal-tables/application-time-periods/)

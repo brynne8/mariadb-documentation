@@ -1,16 +1,16 @@
 # CONNECT - Files Retrieved Using Rest Queries
 
-Starting with [CONNECT version 1.07.0001](/columns-storage-engines-and-plugins/storage-engines/connect), JSON, XML and possibly CSV data files can be retrieved as results from REST queries when creating or querying such tables. This is done internally by CONNECT using the CURL program generally available on all systems (if not just install it).
+Starting with [CONNECT version 1.07.0001](/columns-storage-engines-and-plugins/storage-engines/connect/), JSON, XML and possibly CSV data files can be retrieved as results from REST queries when creating or querying such tables. This is done internally by CONNECT using the CURL program generally available on all systems (if not just install it).
 
-This can also be done using the Microsoft Casablanca (cpprestsdk) package. To enable it, first, install the package as explained in [https://github.com/microsoft/cpprestsdk](https://github.com/microsoft/cpprestsdk). Then make the GetRest library (dll or so) as explained in [Making the GetRest Library](/columns-storage-engines-and-plugins/storage-engines/connect/connect-making-the-getrest-library).
+This can also be done using the Microsoft Casablanca (cpprestsdk) package. To enable it, first, install the package as explained in [https://github.com/microsoft/cpprestsdk](https://github.com/microsoft/cpprestsdk). Then make the GetRest library (dll or so) as explained in [Making the GetRest Library](/columns-storage-engines-and-plugins/storage-engines/connect/connect-making-the-getrest-library/).
 
 Note: If both are available, cpprestsdk is used preferably because it is faster. This can be changed by specifying ‘curl=1’ in the option list.
 
-Note: If you want to use this feature with an older distributed version of MariaDB not featuring REST, it is possible to add it as an OEM module as explained in [Adding the REST Feature as a Library Called by an OEM Table](/columns-storage-engines-and-plugins/storage-engines/connect/connect-making-the-getrest-library).
+Note: If you want to use this feature with an older distributed version of MariaDB not featuring REST, it is possible to add it as an OEM module as explained in [Adding the REST Feature as a Library Called by an OEM Table](/columns-storage-engines-and-plugins/storage-engines/connect/connect-making-the-getrest-library/).
 
 ### Creating Tables using REST
 
-To do so, specify the HTTP of the web client and eventually the URI of the request in the [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table) statement. For example, for a query returning JSON data:
+To do so, specify the HTTP of the web client and eventually the URI of the request in the [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/) statement. For example, for a query returning JSON data:
 
 ```sql
 CREATE TABLE webusers (
@@ -100,10 +100,10 @@ That results in:
 <tr><td>Clementina DuBuque</td><td>Lebsackbury</td><td>Hoeger LLC</td></tr>
 </tbody></table>
 
-Of course, the complete create table (obtained by SHOW CREATE TABLE) can later be edited to make your table return exactly what you want to get. See the [JSON table type](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-json-table-type) for details about what and how to specify these.
+Of course, the complete create table (obtained by SHOW CREATE TABLE) can later be edited to make your table return exactly what you want to get. See the [JSON table type](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-json-table-type/) for details about what and how to specify these.
 
-Note that such tables are read only. In addition, the data will be retrieved from the web each time you query the table with a [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) statement. This is fine if the result varies each time, such as when you query a weather forecasting site. But if you want to use the retrieved file many times without reloading it, just create another table on the same file without specifying the HTTP option.
+Note that such tables are read only. In addition, the data will be retrieved from the web each time you query the table with a [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) statement. This is fine if the result varies each time, such as when you query a weather forecasting site. But if you want to use the retrieved file many times without reloading it, just create another table on the same file without specifying the HTTP option.
 
 Note: For JSON tables, specifying the file name is optional and defaults to tabname.type. However, you should specify it if you want to use the file later for other tables.
 
-See the [JSON table type](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-json-table-type) for changes that will occur in the new CONNECT versions (distributed in early 2021).
+See the [JSON table type](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-json-table-type/) for changes that will occur in the new CONNECT versions (distributed in early 2021).

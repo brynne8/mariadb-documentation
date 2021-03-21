@@ -15,4 +15,4 @@ This maps all strings sent between the current client and the server with the gi
 
 ## See Also
 
-- [SET NAMES](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/set-names)
+- [SET NAMES](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/set-names/)

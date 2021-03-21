@@ -18,7 +18,7 @@ The first way is to check the [Sort_priority_queue_sorts](/kb/en/server-status-v
 
 ### Slow query log
 
-The second way is to check the slow query log. When one uses [Extended statistics in the slow query log](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/slow-query-log-extended-statistics) and  specifies [log_slow_verbosity=query_plan](/kb/en/server-system-variables/#log_slow_verbosity), [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log) entries look like this
+The second way is to check the slow query log. When one uses [Extended statistics in the slow query log](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/slow-query-log-extended-statistics/) and  specifies [log_slow_verbosity=query_plan](/kb/en/server-system-variables/#log_slow_verbosity), [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log/) entries look like this
 
 ```sql
 # Time: 140714 18:30:39

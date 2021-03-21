@@ -8,7 +8,7 @@ Generally, it is best to start with a recovery mode of 1, and increase in single
 
 Until [MariaDB 10.2.7](/kb/en/mariadb-1027-release-notes/), mode `0` was the only mode permitting changes to the data. From [MariaDB 10.2.7](/kb/en/mariadb-1027-release-notes/), write transactions are permitted with mode `3` or less.
 
-To recover the tables, you can execute [SELECTs](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) to dump data, and [DROP TABLE](/sql-statements-structure/sql-statements/data-definition/drop/drop-table) (when write transactions are permitted) to remove corrupted tables.
+To recover the tables, you can execute [SELECTs](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) to dump data, and [DROP TABLE](/sql-statements-structure/sql-statements/data-definition/drop/drop-table/) (when write transactions are permitted) to remove corrupted tables.
 
 The following modes are available:
 
@@ -30,4 +30,4 @@ Note also that XtraDB (&lt;= [MariaDB 10.2.6](/kb/en/mariadb-1026-release-notes/
 
 Try to set innodb_force_recovery to 1 and start mariadb.  If that fails, try a value of "2".  If a value of 2 works, then there is a chance the only corruption you have experienced is within the innodb "undo logs".  If that gets mariadb started, you should be able to dump your database with mysqldump.  You can verify any other issues with any tables by running "mysqlcheck --all-databases".
 
-If you were able to successfully dump your databases, or had previously known good backups, drop your database(s) from the mariadb command line like "[DROP DATABASE](/sql-statements-structure/sql-statements/data-definition/drop/drop-database) yourdatabase".  Stop mariadb.  Go to /var/lib/mysql (or whereever your mysql data directory is located) and "rm -i ib*".  Start mariadb, create the database(s) you dropped ("[CREATE DATABASE](/sql-statements-structure/sql-statements/data-definition/create/create-database) yourdatabase"), and then import your most recent dumps: "mysql &lt; mydatabasedump.sql"
+If you were able to successfully dump your databases, or had previously known good backups, drop your database(s) from the mariadb command line like "[DROP DATABASE](/sql-statements-structure/sql-statements/data-definition/drop/drop-database/) yourdatabase".  Stop mariadb.  Go to /var/lib/mysql (or whereever your mysql data directory is located) and "rm -i ib*".  Start mariadb, create the database(s) you dropped ("[CREATE DATABASE](/sql-statements-structure/sql-statements/data-definition/create/create-database/) yourdatabase"), and then import your most recent dumps: "mysql &lt; mydatabasedump.sql"

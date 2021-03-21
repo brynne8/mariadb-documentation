@@ -8,9 +8,9 @@ TINYINT[(M)] [SIGNED | UNSIGNED | ZEROFILL]
 
 ## Description
 
-A very small [integer](/kb/en/sql_language-data_types-int/). The signed range is -128 to 127. The unsigned range is 0 to 255. For details on the attributes, see [Numeric Data Type Overview](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/numeric-data-type-overview).
+A very small [integer](/kb/en/sql_language-data_types-int/). The signed range is -128 to 127. The unsigned range is 0 to 255. For details on the attributes, see [Numeric Data Type Overview](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/numeric-data-type-overview/).
 
-[INT1](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int1) is a synonym for `TINYINT`. [BOOL and BOOLEAN](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/boolean) are synonyms for `TINYINT(1)`.
+[INT1](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int1/) is a synonym for `TINYINT`. [BOOL and BOOLEAN](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/boolean/) are synonyms for `TINYINT(1)`.
 
 ## Examples
 
@@ -93,9 +93,9 @@ SELECT * FROM tinyints;
 
 ## See Also
 
-- [Numeric Data Type Overview](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/numeric-data-type-overview)
-- [SMALLINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/smallint)
-- [MEDIUMINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/mediumint)
-- [INTEGER](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int)
-- [BIGINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/bigint)
-- [BOOLEAN](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/boolean)
+- [Numeric Data Type Overview](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/numeric-data-type-overview/)
+- [SMALLINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/smallint/)
+- [MEDIUMINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/mediumint/)
+- [INTEGER](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int/)
+- [BIGINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/bigint/)
+- [BOOLEAN](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/boolean/)

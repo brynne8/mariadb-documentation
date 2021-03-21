@@ -16,7 +16,7 @@ JSON_ARRAYAGG(column_or_expression)
 
 Returns NULL in the case of an error, or if the result contains no rows.
 
-`JSON_ARRAYAGG` cannot currently be used as a [window function](/built-in-functions/special-functions/window-functions).
+`JSON_ARRAYAGG` cannot currently be used as a [window function](/built-in-functions/special-functions/window-functions/).
 
 The full syntax is as follows:
 

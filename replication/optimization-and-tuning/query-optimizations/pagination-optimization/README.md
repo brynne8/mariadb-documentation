@@ -4,7 +4,7 @@
 
 You have a website with news articles, or a blog, or some other thing with a list of things that might be too long for a single page. So, you decide to break it into chunks of, say, 10 items and provide a [Next] button to go the next "page".
 
-You spot [OFFSET and LIMIT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/limit) in MariaDB and decide that is the obvious way to do it.
+You spot [OFFSET and LIMIT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/limit/) in MariaDB and decide that is the obvious way to do it.
 
 ```sql
     SELECT  *
@@ -32,7 +32,7 @@ In addition to a performance problem, ...
 
 - If an item is inserted or deleted between the time you look at one page and the next, you could miss an item, or see an item duplicated.
 - The pages are not easily bookmarked or sent to someone else because the contents shift over time.
-- The WHERE clause and the [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by) may even make it so that all 50,000 items have to be read, just to find the 10 items for page 1!
+- The WHERE clause and the [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by/) may even make it so that all 50,000 items have to be read, just to find the 10 items for page 1!
 
 ## What to Do?
 
@@ -55,7 +55,7 @@ With INDEX(id), this suddenly becomes very efficient.
 
 ## Implementation -- Getting Rid of OFFSET
 
-You are probably doing this now: [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by) datetime DESC LIMIT 49990,10 You probably have some unique id on the table. This can probably be used for "left off".
+You are probably doing this now: [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by/) datetime DESC LIMIT 49990,10 You probably have some unique id on the table. This can probably be used for "left off".
 
 Currently, the [Next] button probably has a url something like ?topic=xyz&amp;page=4999&amp;limit=10 The 'topic' (or 'tag' or 'provider' or 'user' or etc) says which set of items are being displayed. The product of page*limit gives the OFFSET. (The "limit=10" might be in the url, or might be hard-coded; this choice is not relevant to this discussion.)
 

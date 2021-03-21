@@ -1,6 +1,6 @@
 # Performance Schema events_waits_summary_by_instance Table
 
-The [Performance Schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema) `events_waits_summary_by_instance` table contains wait events summarized by instance. It contains the following columns:
+The [Performance Schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/) `events_waits_summary_by_instance` table contains wait events summarized by instance. It contains the following columns:
 
 <table><tbody><tr><th>Column</th><th>Description</th></tr>
 <tr><td><code>EVENT_NAME</code></td><td>Event name. Used together with <code>OBJECT_INSTANCE_BEGIN</code> for grouping events.</td></tr>

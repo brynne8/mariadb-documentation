@@ -2,13 +2,13 @@
 
 ##### MariaDB starting with [10.3.3](/kb/en/mariadb-1033-release-notes/)
 
-The PERCENTILE_CONT() [window function](/built-in-functions/special-functions/window-functions) was first introduced with in [MariaDB 10.3.3](/kb/en/mariadb-1033-release-notes/).
+The PERCENTILE_CONT() [window function](/built-in-functions/special-functions/window-functions/) was first introduced with in [MariaDB 10.3.3](/kb/en/mariadb-1033-release-notes/).
 
 ## Syntax
 
 ## Description
 
-`PERCENTILE_CONT()` (standing for continuous percentile) is a [window function](/built-in-functions/special-functions/window-functions) which returns a value which corresponds to the given fraction in the sort order. If required, it will interpolate between adjacent input items.
+`PERCENTILE_CONT()` (standing for continuous percentile) is a [window function](/built-in-functions/special-functions/window-functions/) which returns a value which corresponds to the given fraction in the sort order. If required, it will interpolate between adjacent input items.
 
 Essentially, the following process is followed to find the value to return:
 
@@ -21,7 +21,7 @@ Essentially, the following process is followed to find the value to return:
 - (CRN - RN) * (value of expression for row at FRN) +
 - (RN - FRN) * (value of expression for row at CRN)
 
-The [MEDIAN function](/built-in-functions/special-functions/window-functions/median) is a specific case of `PERCENTILE_CONT`, equivalent to `PERCENTILE_CONT(0.5)`.
+The [MEDIAN function](/built-in-functions/special-functions/window-functions/median/) is a specific case of `PERCENTILE_CONT`, equivalent to `PERCENTILE_CONT(0.5)`.
 
 ## Examples
 
@@ -89,4 +89,4 @@ SELECT name, PERCENTILE_CONT(0.6) WITHIN GROUP (ORDER BY star_rating)
 
 ## See Also
 
-- [MEDIAN()](/built-in-functions/special-functions/window-functions/median) - a special case of `PERCENTILE_CONT` equivalent to `PERCENTILE_CONT(0.5)`
+- [MEDIAN()](/built-in-functions/special-functions/window-functions/median/) - a special case of `PERCENTILE_CONT` equivalent to `PERCENTILE_CONT(0.5)`

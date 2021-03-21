@@ -1,6 +1,6 @@
 # HANDLER for MEMORY Tables
 
-This article explains how to use [HANDLER commands](/sql-statements-structure/nosql/handler/handler-commands) efficiently with [MEMORY/HEAP](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/memory-storage-engine) tables.
+This article explains how to use [HANDLER commands](/sql-statements-structure/nosql/handler/handler-commands/) efficiently with [MEMORY/HEAP](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/memory-storage-engine/) tables.
 
 If you want to scan a table for over different key values, not just search for exact key values, you should create your keys with 'USING BTREE':
 
@@ -28,4 +28,4 @@ The limitations for HANDLER READ with Memory|HEAP tables are:
 
 ## See also
 
-See also the the limitations listed in [HANDLER commands](/sql-statements-structure/nosql/handler/handler-commands).
+See also the the limitations listed in [HANDLER commands](/sql-statements-structure/nosql/handler/handler-commands/).

@@ -19,7 +19,7 @@ values of its constituent bytes using this formula:
 ```
 
 If the leftmost character is not a multi-byte character, ORD() returns
-the same value as the [ASCII()](/built-in-functions/string-functions/ascii) function.
+the same value as the [ASCII()](/built-in-functions/string-functions/ascii/) function.
 
 ## Examples
 
@@ -34,5 +34,5 @@ SELECT ORD('2');
 
 ## See Also
 
-- [ASCII()](/built-in-functions/string-functions/ascii)  - Return ASCII value of first character
-- [CHAR()](/built-in-functions/string-functions/char-function) - Create a character from an integer value
+- [ASCII()](/built-in-functions/string-functions/ascii/)  - Return ASCII value of first character
+- [CHAR()](/built-in-functions/string-functions/char-function/) - Create a character from an integer value

@@ -1,14 +1,14 @@
 # Aria FAQ
 
-This FAQ provides information on the [Aria](/columns-storage-engines-and-plugins/storage-engines/aria) storage engine.
+This FAQ provides information on the [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/) storage engine.
 
-The <strong><em>Aria</em></strong> storage engine was previously known as <strong><em>Maria</em></strong>, (see, the [Aria Name](/columns-storage-engines-and-plugins/storage-engines/aria/the-aria-name)).  In current releases of [MariaDB](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb), you can refer to the engine as Maria or Aria.  As this will change in future releases, please update references in your scripts and automation to use the correct name.
+The <strong><em>Aria</em></strong> storage engine was previously known as <strong><em>Maria</em></strong>, (see, the [Aria Name](/columns-storage-engines-and-plugins/storage-engines/aria/the-aria-name/)).  In current releases of [MariaDB](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/), you can refer to the engine as Maria or Aria.  As this will change in future releases, please update references in your scripts and automation to use the correct name.
 
 ## What is Aria?
 
 Aria is a storage engine for MySQL<span>®</span> and MariaDB.  It was originally developed with the goal of becoming the default transactional <strong>and</strong> non-transactional storage engine for MariaDB and MySQL.
 
-It has been in development since 2007 and was first announced on Monty's [blog](http://monty-says.blogspot.com/2008/01/maria-engine-is-released.html).  The same core MySQL engineers who developed the MySQL server and the [MyISAM](/kb/en/myisam/), [MERGE](/columns-storage-engines-and-plugins/storage-engines/merge), and [MEMORY](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/memory-storage-engine) storage engines are also working on Aria.
+It has been in development since 2007 and was first announced on Monty's [blog](http://monty-says.blogspot.com/2008/01/maria-engine-is-released.html).  The same core MySQL engineers who developed the MySQL server and the [MyISAM](/kb/en/myisam/), [MERGE](/columns-storage-engines-and-plugins/storage-engines/merge/), and [MEMORY](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/memory-storage-engine/) storage engines are also working on Aria.
 
 ## Why is the engine called Aria?
 
@@ -17,7 +17,7 @@ Originally, the storage engine was called <strong>Maria</strong>, after Monty's 
 In practice, having both <em>MariaDB</em> the database server and <em>Maria</em> the storage engine with such similar names proved confusing.  To mitigate this, the decision was made to change the name.  A Rename Maria contest was held during the first half of 2010 and names were submitted from around the world.  Monty picked the name <strong><em>Aria</em></strong> from a short list of finalist.  Chris Tooley, who suggested it, received the prize of a Linux-powered
 [System 76 Meerkat NetTop](http://www.system76.com/product_info.php?cPath=27&amp;products_id=91) from Monty Program.
 
-For more information, see the [Aria Name](/columns-storage-engines-and-plugins/storage-engines/aria/the-aria-name).
+For more information, see the [Aria Name](/columns-storage-engines-and-plugins/storage-engines/aria/the-aria-name/).
 
 ## What's the goal for the current version?
 
@@ -97,7 +97,7 @@ All except Guilhem Bichot are working for [MariaDB Corporation Ab](http://mariad
 
 ## What is the release policy/schedule of Aria?
 
-Aria follows the same [release criteria](/kb/en/release-criteria/) as for [MariaDB](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb).  Some clarifications, unique for the Aria storage engine:
+Aria follows the same [release criteria](/kb/en/release-criteria/) as for [MariaDB](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/).  Some clarifications, unique for the Aria storage engine:
 
 - Aria index and data file formats should be backwards and forwards compatible to ensure easy upgrades and downgrades.
 - The log file format should also be compatible, but we don't make any guarantees yet.  In some cases when upgrading, you must remove the old `aria_log.%` and `maria_log.%` files before restarting MariaDB.  (So far, this has only occurred in the upgrade from [MariaDB 5.1](/kb/en/what-is-mariadb-51/) and [MariaDB 5.2](/kb/en/what-is-mariadb-52/)).
@@ -110,7 +110,7 @@ Aria follows the same [release criteria](/kb/en/release-criteria/) as for [Maria
 
 Aria 1.0 was basically a crash-safe non-transactional version of MyISAM.  Aria 1.5 added more concurrency (multiple inserter) and some optimizations.
 
-Aria supports all aspects of MyISAM, except as noted below. This includes external and internal check/repair/compressing of rows, different row formats, different index compress formats, [aria_chk](/clients-utilities/aria-clients-and-utilities/aria_chk) etc. After a normal shutdown you can copy Aria files between servers.
+Aria supports all aspects of MyISAM, except as noted below. This includes external and internal check/repair/compressing of rows, different row formats, different index compress formats, [aria_chk](/clients-utilities/aria-clients-and-utilities/aria_chk/) etc. After a normal shutdown you can copy Aria files between servers.
 
 ## Advantages of Aria compared to MyISAM
 
@@ -154,7 +154,7 @@ Aria supports all aspects of MyISAM, except as noted below. This includes extern
 
 See:
 
-- [Aria storage engine](/columns-storage-engines-and-plugins/storage-engines/aria/aria-storage-engine)
+- [Aria storage engine](/columns-storage-engines-and-plugins/storage-engines/aria/aria-storage-engine/)
 - [MariaDB versus MySQL](/kb/en/mariadb-versus-mysql/)
 
 ## Why do you use the `TRANSACTIONAL` keyword now when Aria is not yet transactional?
@@ -171,15 +171,15 @@ In the current development phase Aria tables created with `TRANSACTIONAL=1` are 
 If Aria doesn't start or you have an unrecoverable table (shouldn't happen):
 
 - Remove the `aria_log.%` files from the data directory.
-- Restart `mysqld` and run [CHECK TABLE](/sql-statements-structure/sql-statements/table-statements/check-table), [REPAIR TABLE](/sql-statements-structure/sql-statements/table-statements/repair-table) or [mysqlcheck](/sql-statements-structure/sql-statements/table-statements/mysqlcheck) on your Aria tables.
+- Restart `mysqld` and run [CHECK TABLE](/sql-statements-structure/sql-statements/table-statements/check-table/), [REPAIR TABLE](/sql-statements-structure/sql-statements/table-statements/repair-table/) or [mysqlcheck](/sql-statements-structure/sql-statements/table-statements/mysqlcheck/) on your Aria tables.
 
 Alternatively,
 
-- Remove logs and run [aria_chk](/clients-utilities/aria-clients-and-utilities/aria_chk) on your `*.MAI` files.
+- Remove logs and run [aria_chk](/clients-utilities/aria-clients-and-utilities/aria_chk/) on your `*.MAI` files.
 
 ## What is going to change in later Aria main releases?
 
-The `LOCK TABLES` statement will not start a crash-safe segment. You should use <a undefined>BEGIN</a> and [COMMIT](/sql-statements-structure/sql-statements/transactions/commit) instead.
+The `LOCK TABLES` statement will not start a crash-safe segment. You should use <a undefined>BEGIN</a> and [COMMIT](/sql-statements-structure/sql-statements/transactions/commit/) instead.
 
 To make things future safe, you could do this:
 
@@ -214,7 +214,7 @@ You can use `PAGE_CHECKSUM=1` also for non-transactional tables; This puts a pag
 
 You may still have a speed difference (may be slightly positive or negative) between MyISAM and Aria because of different page sizes.  You can change the page size for MariaDB with `--aria-block-size=\`#, where `\`# is 1024, 2048, 4096, 8192, 16384 or 32768.
 
-Note that if you change the page size you have to dump all your old tables into text (with [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump)) and remove the old Aria log and files:
+Note that if you change the page size you have to dump all your old tables into text (with [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump/)) and remove the old Aria log and files:
 
 ```sql
 # rm datadir/aria_log*
@@ -249,15 +249,15 @@ XXX.MAD : The data.
 
 It's safe to copy all the Aria files to another directory or MariaDB instance if any of the following holds:
 
-- If you shutdown the MariaDB Server properly with [mysqladmin shutdown](/clients-utilities/mysqladmin), so that there is nothing for Aria to recover when it starts.
+- If you shutdown the MariaDB Server properly with [mysqladmin shutdown](/clients-utilities/mysqladmin/), so that there is nothing for Aria to recover when it starts.
 
 or
 
-- If you have run a [FLUSH TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush) statement and not accessed the table using SQL from that time until the tables have been copied.
+- If you have run a [FLUSH TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/) statement and not accessed the table using SQL from that time until the tables have been copied.
 
 In addition, you must adhere the following rule for transactional tables:
 
-You can't copy the table to a location within the same MariaDB server if the new table has existed before and the new table is still active in the Aria recovery log (that is, Aria may need to access the old data during recovery). If you are unsure whether the old name existed, run [aria_chk --zerofill](/clients-utilities/aria-clients-and-utilities/aria_chk) on the table before you use it.
+You can't copy the table to a location within the same MariaDB server if the new table has existed before and the new table is still active in the Aria recovery log (that is, Aria may need to access the old data during recovery). If you are unsure whether the old name existed, run [aria_chk --zerofill](/clients-utilities/aria-clients-and-utilities/aria_chk/) on the table before you use it.
 
 After copying a transactional table and before you use the table, we recommend that you run the command:
 
@@ -267,13 +267,13 @@ $ aria_chk --zerofill table_name
 
 This will overwrite all references to the logs (LSN), all transactional references (TRN) and all unused space with 0. It also marks the table as 'movable'. An additional benefit of zerofill is that the Aria files will compress better.  No real data is ever removed as part of zerofill.
 
-Aria will automatically notice if you have copied a table from another system and do 'zerofill' for the first access of the table if it was not marked as 'movable'. The reason for using [aria_chk --zerofill](/clients-utilities/aria-clients-and-utilities/aria_chk) is that you avoid a delay in the MariaDB server for the first access of the table.
+Aria will automatically notice if you have copied a table from another system and do 'zerofill' for the first access of the table if it was not marked as 'movable'. The reason for using [aria_chk --zerofill](/clients-utilities/aria-clients-and-utilities/aria_chk/) is that you avoid a delay in the MariaDB server for the first access of the table.
 
 Note that this automatic detection doesn't work if you copy tables within the same MariaDB server!
 
 ## When is it safe to remove old log files?
 
-If you want to remove the Aria log files (`aria_log.%`) with `rm` or delete, then you must first shut down MariaDB cleanly (for example, with [mysqladmin shutdown](/clients-utilities/mysqladmin)) before deleting the old files.
+If you want to remove the Aria log files (`aria_log.%`) with `rm` or delete, then you must first shut down MariaDB cleanly (for example, with [mysqladmin shutdown](/clients-utilities/mysqladmin/)) before deleting the old files.
 
 The same rules apply when upgrading MariaDB; When upgrading, first take down MariaDB in a clean way and then upgrade. This will allow you to remove the old log files if there are incompatible problems between
 releases.

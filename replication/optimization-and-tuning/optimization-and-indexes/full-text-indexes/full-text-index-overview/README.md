@@ -3,15 +3,15 @@
 MariaDB has support for full-text indexing and searching:
 
 - A full-text index in MariaDB is an index of type FULLTEXT, and it allows more options when searching for portions of text from a field.
-- Full-text indexes can be used only with [MyISAM](/kb/en/myisam/) and [Aria](/columns-storage-engines-and-plugins/storage-engines/aria) tables, from [MariaDB 10.0.5](/kb/en/mariadb-1005-release-notes/) with [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) tables and from [MariaDB 10.0.15](/kb/en/mariadb-10015-release-notes/) with [Mroonga](/columns-storage-engines-and-plugins/storage-engines/mroonga) tables, and can be created only for [CHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/char), [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar), or [TEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/text) columns.
+- Full-text indexes can be used only with [MyISAM](/kb/en/myisam/) and [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/) tables, from [MariaDB 10.0.5](/kb/en/mariadb-1005-release-notes/) with [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables and from [MariaDB 10.0.15](/kb/en/mariadb-10015-release-notes/) with [Mroonga](/columns-storage-engines-and-plugins/storage-engines/mroonga/) tables, and can be created only for [CHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/char/), [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar/), or [TEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/text/) columns.
 - [Partitioned tables](/kb/en/managing-mariadb-partitioning/) cannot contain fulltext indexes, even if the storage engine supports them.
-- A FULLTEXT index definition can be given in the [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table) statement when a
-  table is created, or added later using [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) or [CREATE INDEX](/sql-statements-structure/sql-statements/data-definition/create/create-index).
+- A FULLTEXT index definition can be given in the [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/) statement when a
+  table is created, or added later using [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) or [CREATE INDEX](/sql-statements-structure/sql-statements/data-definition/create/create-index/).
 - For large data sets, it is much faster to load your data into a table that
   has no FULLTEXT index and then create the index after that, than to load data
   into a table that has an existing FULLTEXT index.
 
-Full-text searching is performed using [MATCH() ... AGAINST](/built-in-functions/string-functions/match-against) syntax.
+Full-text searching is performed using [MATCH() ... AGAINST](/built-in-functions/string-functions/match-against/) syntax.
 MATCH() takes a comma-separated list that names the columns to be
 searched. AGAINST takes a string to search for, and an optional
 modifier that indicates what type of search to perform. The search
@@ -24,8 +24,8 @@ MATCH (col1,col2,...) AGAINST (expr [search_modifier])
 ## Excluded Results
 
 - Partial words are excluded.
-- Words less than 4 characters in length (3 or less) will not be stored in the fulltext index. This value can be adjusted by changing the [ft_min_word_length](/kb/en/server-system-variables/#ft_min_word_len) system variable (or, for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb), [innodb_ft_min_token_size](/kb/en/xtradbinnodb-server-system-variables/#innodb_ft_min_token_size)).
-- Words longer than 84 characters in length will also not be stored in the fulltext index. This values can be adjusted by changing the [ft_max_word_length](/kb/en/server-system-variables/#ft_max_word_len) system variable (or, for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb), [innodb_ft_max_token_size](/kb/en/xtradbinnodb-server-system-variables/#innodb_ft_max_token_size)).
+- Words less than 4 characters in length (3 or less) will not be stored in the fulltext index. This value can be adjusted by changing the [ft_min_word_length](/kb/en/server-system-variables/#ft_min_word_len) system variable (or, for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/), [innodb_ft_min_token_size](/kb/en/xtradbinnodb-server-system-variables/#innodb_ft_min_token_size)).
+- Words longer than 84 characters in length will also not be stored in the fulltext index. This values can be adjusted by changing the [ft_max_word_length](/kb/en/server-system-variables/#ft_max_word_len) system variable (or, for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/), [innodb_ft_max_token_size](/kb/en/xtradbinnodb-server-system-variables/#innodb_ft_max_token_size)).
 - Stopwords are a list of common words such as "once" or "then" that do not reflect in the search results unless IN BOOLEAN MODE is used. The stopword list for MyISAM/Aria tables and InnoDB tables can differ. See [stopwords](/kb/en/stopwords/) for details and a full list, as well as for details on how to change the default list.
 - For MyISAM/Aria fulltext indexes only, if a word appears in more than half the rows, it is also excluded from the results of a fulltext search.
 - For InnoDB indexes, only committed rows appear - modifications from the current transaction do not apply.
@@ -202,4 +202,4 @@ SELECT * FROM ft2 WHERE MATCH(copy) AGAINST('+MariaDB -database'
 
 ## See Also
 
-- For simpler searches of a substring in text columns, see the [LIKE](/built-in-functions/string-functions/like) operator.
+- For simpler searches of a substring in text columns, see the [LIKE](/built-in-functions/string-functions/like/) operator.

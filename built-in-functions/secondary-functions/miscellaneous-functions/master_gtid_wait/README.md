@@ -35,7 +35,7 @@ a master. Simply take the value of [gtid_binlog_pos](/kb/en/global-transaction-i
 will have caught up with that master position.
 
 MASTER_GTID_WAIT() can also be used in client applications together with the
-[last_gtid](/kb/en/global-transaction-id/#last_gtid) session variable. This is useful in a read-scaleout [replication](/replication) setup, where the application writes to a single master but divides the
+[last_gtid](/kb/en/global-transaction-id/#last_gtid) session variable. This is useful in a read-scaleout [replication](/replication/) setup, where the application writes to a single master but divides the
 reads out to a number of slaves to distribute the load. In such a setup, there
 is a risk that an application could first do an update on the master, and then
 a bit later do a read on a slave, and if the slave is not fast enough, the
@@ -55,7 +55,7 @@ always recorded on the slave servers.
 ## Differences to MASTER_POS_WAIT()
 
 - MASTER_GTID_WAIT() is global; it waits for any master connection to reach
-   the specified GTID position. [MASTER_POS_WAIT()](/built-in-functions/secondary-functions/miscellaneous-functions/master_pos_wait) works only against a
+   the specified GTID position. [MASTER_POS_WAIT()](/built-in-functions/secondary-functions/miscellaneous-functions/master_pos_wait/) works only against a
    specific connection. This also means that while MASTER_POS_WAIT() aborts if
    its master connection is terminated with [STOP SLAVE](/kb/en/stop-slave/) or due to an error,
    MASTER_GTID_WAIT() continues to wait while slaves are stopped.

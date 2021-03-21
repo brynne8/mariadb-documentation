@@ -11,13 +11,13 @@ SHOW RELAYLOG ['connection_name'] EVENTS
 
 ## Description
 
-On [replicas](/replication/standard-replication), this command shows the events in the [relay log](/mariadb-administration/server-monitoring-logs/binary-log/relay-log). If `'log_name'` is not specified, the first relay log is shown.
+On [replicas](/replication/standard-replication/), this command shows the events in the [relay log](/mariadb-administration/server-monitoring-logs/binary-log/relay-log/). If `'log_name'` is not specified, the first relay log is shown.
 
 Syntax for the `LIMIT` clause is the same as for [SELECT ... LIMIT](/kb/en/select/#limit).
 
 Using the `LIMIT` clause is highly recommended because the `SHOW RELAYLOG EVENTS` command returns the complete contents of the relay log, which can be quite large.
 
-This command does not return events related to setting user and system variables. If you need those, use [mariadb-binlog/mysqlbinlog](/clients-utilities/mysqlbinlog).
+This command does not return events related to setting user and system variables. If you need those, use [mariadb-binlog/mysqlbinlog](/clients-utilities/mysqlbinlog/).
 
 On the primary, this command does nothing.
 

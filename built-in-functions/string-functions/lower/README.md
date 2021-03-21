@@ -23,9 +23,9 @@ according to the current character set mapping. The default is latin1
 +------------------------+
 ```
 
-`LOWER()` (and [UPPER](/built-in-functions/string-functions/upper)()) are ineffective when applied to binary
-strings ([BINARY](/columns-storage-engines-and-plugins/data-types/string-data-types/binary), [VARBINARY](/columns-storage-engines-and-plugins/data-types/string-data-types/varbinary), [BLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/blob)). 
-To perform lettercase conversion, [CONVERT](/built-in-functions/string-functions/convert) the string to a non-binary string:
+`LOWER()` (and [UPPER](/built-in-functions/string-functions/upper/)()) are ineffective when applied to binary
+strings ([BINARY](/columns-storage-engines-and-plugins/data-types/string-data-types/binary/), [VARBINARY](/columns-storage-engines-and-plugins/data-types/string-data-types/varbinary/), [BLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/blob/)). 
+To perform lettercase conversion, [CONVERT](/built-in-functions/string-functions/convert/) the string to a non-binary string:
 
 ```sql
 SET @str = BINARY 'North Carolina';

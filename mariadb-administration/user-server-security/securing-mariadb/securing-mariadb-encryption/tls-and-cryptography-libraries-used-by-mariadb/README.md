@@ -94,11 +94,11 @@ The [yaSSL](https://www.wolfssl.com/products/yassl/) library has not been certif
 
 ##### MariaDB starting with [10.4.6](/kb/en/mariadb-1046-release-notes/)
 
-MariaDB Server is statically linked with the bundled [wolfSSL](https://www.wolfssl.com/products/wolfssl/)  library in [MSI](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows) and [ZIP](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-windows-zip-packages) packages on Windows.
+MariaDB Server is statically linked with the bundled [wolfSSL](https://www.wolfssl.com/products/wolfssl/)  library in [MSI](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows/) and [ZIP](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-windows-zip-packages/) packages on Windows.
 
 ##### MariaDB until [10.4.5](/kb/en/mariadb-1045-release-notes/)
 
-MariaDB Server is statically linked with the bundled [yaSSL](https://www.wolfssl.com/products/yassl/) library in [MSI](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows) and [ZIP](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-windows-zip-packages) packages on Windows.
+MariaDB Server is statically linked with the bundled [yaSSL](https://www.wolfssl.com/products/yassl/) library in [MSI](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows/) and [ZIP](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-windows-zip-packages/) packages on Windows.
 
 #### MariaDB Server on Linux
 
@@ -106,47 +106,47 @@ MariaDB Server is statically linked with the bundled [yaSSL](https://www.wolfssl
 
 ##### MariaDB starting with [10.4.6](/kb/en/mariadb-1046-release-notes/)
 
-In [MariaDB 10.4.6](/kb/en/mariadb-1046-release-notes/) and later, MariaDB Server is statically linked with the bundled [wolfSSL](https://www.wolfssl.com/products/wolfssl/) library in [binary tarballs](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-binary-tarballs) on Linux.
+In [MariaDB 10.4.6](/kb/en/mariadb-1046-release-notes/) and later, MariaDB Server is statically linked with the bundled [wolfSSL](https://www.wolfssl.com/products/wolfssl/) library in [binary tarballs](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-binary-tarballs/) on Linux.
 
 ##### MariaDB until [10.4.5](/kb/en/mariadb-1045-release-notes/)
 
-In [MariaDB 10.4.5](/kb/en/mariadb-1045-release-notes/) and before, MariaDB Server is statically linked with the bundled [yaSSL](https://www.wolfssl.com/products/yassl/) library in [binary tarballs](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-binary-tarballs) on Linux.
+In [MariaDB 10.4.5](/kb/en/mariadb-1045-release-notes/) and before, MariaDB Server is statically linked with the bundled [yaSSL](https://www.wolfssl.com/products/yassl/) library in [binary tarballs](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-binary-tarballs/) on Linux.
 
 ##### MariaDB Server in DEB Packages
 
-MariaDB Server is dynamically linked with the system's [OpenSSL](https://www.openssl.org/) library in [.deb](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files) packages provided by MariaDB Foundation and MariaDB Corporation.
+MariaDB Server is dynamically linked with the system's [OpenSSL](https://www.openssl.org/) library in [.deb](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files/) packages provided by MariaDB Foundation and MariaDB Corporation.
 
 ##### MariaDB starting with [10.4.6](/kb/en/mariadb-1046-release-notes/)
 
-In [MariaDB 10.4.6](/kb/en/mariadb-1046-release-notes/) and later, MariaDB Server is statically linked with the bundled [wolfSSL](https://www.wolfssl.com/products/wolfssl/) library in [.deb](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files) packages provided by Debian's and Ubuntu's default repositories.
+In [MariaDB 10.4.6](/kb/en/mariadb-1046-release-notes/) and later, MariaDB Server is statically linked with the bundled [wolfSSL](https://www.wolfssl.com/products/wolfssl/) library in [.deb](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files/) packages provided by Debian's and Ubuntu's default repositories.
 
 ##### MariaDB until [10.4.5](/kb/en/mariadb-1045-release-notes/)
 
-In [MariaDB 10.4.5](/kb/en/mariadb-1045-release-notes/) and before, MariaDB Server is statically linked with the bundled [yaSSL](https://www.wolfssl.com/products/yassl/) library in [.deb](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files) packages provided by Debian's and Ubuntu's default repositories.
+In [MariaDB 10.4.5](/kb/en/mariadb-1045-release-notes/) and before, MariaDB Server is statically linked with the bundled [yaSSL](https://www.wolfssl.com/products/yassl/) library in [.deb](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files/) packages provided by Debian's and Ubuntu's default repositories.
 
-See [Differences in MariaDB in Debian (and Ubuntu)](/mariadb-administration/getting-installing-and-upgrading-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu) for more information.
+See [Differences in MariaDB in Debian (and Ubuntu)](/mariadb-administration/getting-installing-and-upgrading-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu/) for more information.
 
 ##### MariaDB Server in RPM Packages
 
-MariaDB Server is dynamically linked with the system's [OpenSSL](https://www.openssl.org/) library in [.rpm](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm) packages.
+MariaDB Server is dynamically linked with the system's [OpenSSL](https://www.openssl.org/) library in [.rpm](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/) packages.
 
 ### MariaDB Clients and Utilities
 
-In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, [MariaDB Connector/C](/kb/en/mariadb-connector-c/) has been [included with MariaDB Server](/kb/en/about-mariadb-connector-c/#integration-with-mariadb-server), and the bundled and the [clients and utilities](/clients-utilities) are linked with it. On some platforms, [MariaDB Connector/C](/kb/en/mariadb-connector-c/) and these [clients and utilities](/clients-utilities) may use a different TLS library than the one used by MariaDB Server and [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html).
+In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, [MariaDB Connector/C](/kb/en/mariadb-connector-c/) has been [included with MariaDB Server](/kb/en/about-mariadb-connector-c/#integration-with-mariadb-server), and the bundled and the [clients and utilities](/clients-utilities/) are linked with it. On some platforms, [MariaDB Connector/C](/kb/en/mariadb-connector-c/) and these [clients and utilities](/clients-utilities/) may use a different TLS library than the one used by MariaDB Server and [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html).
 
 #### MariaDB Clients and Utilities on Windows
 
 ##### MariaDB starting with [10.4.6](/kb/en/mariadb-1046-release-notes/)
 
-In [MariaDB 10.4.6](/kb/en/mariadb-1046-release-notes/) and later, MariaDB's [clients and utilities](/clients-utilities) and [MariaDB Connector/C](/kb/en/mariadb-connector-c/)  are are dynamically linked with the system's [Schannel](https://docs.microsoft.com/en-us/windows/desktop/secauthn/secure-channel) libraries in [MSI](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows) and [ZIP](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-windows-zip-packages) packages on Windows. [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html) is still statically linked with the bundled [wolfSSL](https://www.wolfssl.com/products/wolfssl/) library.
+In [MariaDB 10.4.6](/kb/en/mariadb-1046-release-notes/) and later, MariaDB's [clients and utilities](/clients-utilities/) and [MariaDB Connector/C](/kb/en/mariadb-connector-c/)  are are dynamically linked with the system's [Schannel](https://docs.microsoft.com/en-us/windows/desktop/secauthn/secure-channel) libraries in [MSI](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows/) and [ZIP](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-windows-zip-packages/) packages on Windows. [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html) is still statically linked with the bundled [wolfSSL](https://www.wolfssl.com/products/wolfssl/) library.
 
 ##### MariaDB starting with [10.2](/kb/en/what-is-mariadb-102/)
 
-In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, MariaDB's [clients and utilities](/clients-utilities) and [MariaDB Connector/C](/kb/en/mariadb-connector-c/)  are are dynamically linked with the system's [Schannel](https://docs.microsoft.com/en-us/windows/desktop/secauthn/secure-channel) libraries in [MSI](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows) and [ZIP](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-windows-zip-packages) packages on Windows. [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html) is still statically linked with the bundled [yaSSL](https://www.wolfssl.com/products/yassl/) library.
+In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, MariaDB's [clients and utilities](/clients-utilities/) and [MariaDB Connector/C](/kb/en/mariadb-connector-c/)  are are dynamically linked with the system's [Schannel](https://docs.microsoft.com/en-us/windows/desktop/secauthn/secure-channel) libraries in [MSI](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows/) and [ZIP](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-windows-zip-packages/) packages on Windows. [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html) is still statically linked with the bundled [yaSSL](https://www.wolfssl.com/products/yassl/) library.
 
 ##### MariaDB until [10.1](/kb/en/what-is-mariadb-101/)
 
-In [MariaDB 10.1](/kb/en/what-is-mariadb-101/) and before, MariaDB's [clients and utilities](/clients-utilities) and [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html) are statically linked with the bundled [yaSSL](https://www.wolfssl.com/products/yassl/) library in [MSI](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows) and [ZIP](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-windows-zip-packages) packages on Windows.
+In [MariaDB 10.1](/kb/en/what-is-mariadb-101/) and before, MariaDB's [clients and utilities](/clients-utilities/) and [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html) are statically linked with the bundled [yaSSL](https://www.wolfssl.com/products/yassl/) library in [MSI](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows/) and [ZIP](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-windows-zip-packages/) packages on Windows.
 
 #### MariaDB Clients and Utilities on Linux
 
@@ -154,37 +154,37 @@ In [MariaDB 10.1](/kb/en/what-is-mariadb-101/) and before, MariaDB's [clients an
 
 ##### MariaDB starting with [10.4.6](/kb/en/mariadb-1046-release-notes/)
 
-In [MariaDB 10.4.6](/kb/en/mariadb-1046-release-notes/) and later, MariaDB's [clients and utilities](/clients-utilities) and [MariaDB Connector/C](/kb/en/mariadb-connector-c/) are statically linked with the [GnuTLS](https://www.gnutls.org/) library in [binary tarballs](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-binary-tarballs) on Linux. [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html) is still statically linked with the bundled [wolfSSL](https://www.wolfssl.com/products/wolfssl/) library.
+In [MariaDB 10.4.6](/kb/en/mariadb-1046-release-notes/) and later, MariaDB's [clients and utilities](/clients-utilities/) and [MariaDB Connector/C](/kb/en/mariadb-connector-c/) are statically linked with the [GnuTLS](https://www.gnutls.org/) library in [binary tarballs](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-binary-tarballs/) on Linux. [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html) is still statically linked with the bundled [wolfSSL](https://www.wolfssl.com/products/wolfssl/) library.
 
 ##### MariaDB starting with [10.2](/kb/en/what-is-mariadb-102/)
 
-In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, MariaDB's [clients and utilities](/clients-utilities) and [MariaDB Connector/C](/kb/en/mariadb-connector-c/) are statically linked with the [GnuTLS](https://www.gnutls.org/) library in [binary tarballs](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-binary-tarballs) on Linux. [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html) is still statically linked with the bundled [yaSSL](https://www.wolfssl.com/products/yassl/) library.
+In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, MariaDB's [clients and utilities](/clients-utilities/) and [MariaDB Connector/C](/kb/en/mariadb-connector-c/) are statically linked with the [GnuTLS](https://www.gnutls.org/) library in [binary tarballs](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-binary-tarballs/) on Linux. [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html) is still statically linked with the bundled [yaSSL](https://www.wolfssl.com/products/yassl/) library.
 
 ##### MariaDB until [10.1](/kb/en/what-is-mariadb-101/)
 
-In [MariaDB 10.1](/kb/en/what-is-mariadb-101/) and before, MariaDB's [clients and utilities](/clients-utilities) and [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html) are statically linked with the bundled [yaSSL](https://www.wolfssl.com/products/yassl/) library in [binary tarballs](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-binary-tarballs) on Linux.
+In [MariaDB 10.1](/kb/en/what-is-mariadb-101/) and before, MariaDB's [clients and utilities](/clients-utilities/) and [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html) are statically linked with the bundled [yaSSL](https://www.wolfssl.com/products/yassl/) library in [binary tarballs](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-binary-tarballs/) on Linux.
 
 ##### MariaDB Clients and Utilities in DEB Packages
 
-MariaDB's [clients and utilities](/clients-utilities), [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html), and [MariaDB Connector/C](/kb/en/mariadb-connector-c/) are dynamically linked with the system's [OpenSSL](https://www.openssl.org/) library in [.deb](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files) packages provided by MariaDB Foundation's and MariaDB Corporation's repositories.
+MariaDB's [clients and utilities](/clients-utilities/), [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html), and [MariaDB Connector/C](/kb/en/mariadb-connector-c/) are dynamically linked with the system's [OpenSSL](https://www.openssl.org/) library in [.deb](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files/) packages provided by MariaDB Foundation's and MariaDB Corporation's repositories.
 
 ##### MariaDB starting with [10.4.6](/kb/en/mariadb-1046-release-notes/)
 
-In [MariaDB 10.4.6](/kb/en/mariadb-1046-release-notes/) and later, MariaDB's [clients and utilities](/clients-utilities) and [MariaDB Connector/C](/kb/en/mariadb-connector-c/) are dynamically linked with the system's [GnuTLS](https://www.gnutls.org/) library in [.deb](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files) packages provided by Debian's and Ubuntu's default repositories. [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html) is still statically linked with the bundled [wolfSSL](https://www.wolfssl.com/products/wolfssl/) libraries.
+In [MariaDB 10.4.6](/kb/en/mariadb-1046-release-notes/) and later, MariaDB's [clients and utilities](/clients-utilities/) and [MariaDB Connector/C](/kb/en/mariadb-connector-c/) are dynamically linked with the system's [GnuTLS](https://www.gnutls.org/) library in [.deb](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files/) packages provided by Debian's and Ubuntu's default repositories. [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html) is still statically linked with the bundled [wolfSSL](https://www.wolfssl.com/products/wolfssl/) libraries.
 
 ##### MariaDB starting with [10.2](/kb/en/what-is-mariadb-102/)
 
-In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, MariaDB's [clients and utilities](/clients-utilities) and [MariaDB Connector/C](/kb/en/mariadb-connector-c/) are dynamically linked with the system's [GnuTLS](https://www.gnutls.org/) library in [.deb](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files) packages provided by Debian's and Ubuntu's default repositories. [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html) is still statically linked with the bundled [yaSSL](https://www.wolfssl.com/products/yassl/) libraries.
+In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, MariaDB's [clients and utilities](/clients-utilities/) and [MariaDB Connector/C](/kb/en/mariadb-connector-c/) are dynamically linked with the system's [GnuTLS](https://www.gnutls.org/) library in [.deb](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files/) packages provided by Debian's and Ubuntu's default repositories. [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html) is still statically linked with the bundled [yaSSL](https://www.wolfssl.com/products/yassl/) libraries.
 
 ##### MariaDB until [10.1](/kb/en/what-is-mariadb-101/)
 
-In [MariaDB 10.1](/kb/en/what-is-mariadb-101/) and earlier, MariaDB's [clients and utilities](/clients-utilities) and [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html) are statically linked with the bundled [yaSSL](https://www.wolfssl.com/products/yassl/) library in [.deb](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files) packages provided by Debian's and Ubuntu's default repositories.
+In [MariaDB 10.1](/kb/en/what-is-mariadb-101/) and earlier, MariaDB's [clients and utilities](/clients-utilities/) and [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html) are statically linked with the bundled [yaSSL](https://www.wolfssl.com/products/yassl/) library in [.deb](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files/) packages provided by Debian's and Ubuntu's default repositories.
 
-See [Differences in MariaDB in Debian (and Ubuntu)](/mariadb-administration/getting-installing-and-upgrading-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu) for more information.
+See [Differences in MariaDB in Debian (and Ubuntu)](/mariadb-administration/getting-installing-and-upgrading-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu/) for more information.
 
 ##### MariaDB Clients and Utilities in RPM Packages
 
-MariaDB's [clients and utilities](/clients-utilities), [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html), and [MariaDB Connector/C](/kb/en/mariadb-connector-c/)  are dynamically linked with the system's [OpenSSL](https://www.openssl.org/) library in [.rpm](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm) packages.
+MariaDB's [clients and utilities](/clients-utilities/), [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html), and [MariaDB Connector/C](/kb/en/mariadb-connector-c/)  are dynamically linked with the system's [OpenSSL](https://www.openssl.org/) library in [.rpm](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/) packages.
 
 ## Updating Dynamically Linked OpenSSL Libraries on Linux
 
@@ -192,7 +192,7 @@ When the MariaDB Server or clients and utilities are dynamically linked to the s
 
 ### Updating Dynamically Linked OpenSSL Libraries with yum/dnf
 
-On RHEL, CentOS, Fedora, and other similar Linux distributions, it is highly recommended to update the libraries using [yum](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum) or <a undefined>dnf</a>. Starting with RHEL 8 and Fedora 22, `yum` has been replaced by `dnf`, which is the next major version of `yum`. However, `yum` commands still work on many systems that use `dnf`. For example:
+On RHEL, CentOS, Fedora, and other similar Linux distributions, it is highly recommended to update the libraries using [yum](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum/) or <a undefined>dnf</a>. Starting with RHEL 8 and Fedora 22, `yum` has been replaced by `dnf`, which is the next major version of `yum`. However, `yum` commands still work on many systems that use `dnf`. For example:
 
 Update the package by executing the following command:
 
@@ -222,7 +222,7 @@ And then [restart](/kb/en/starting-and-stopping-mariadb-starting-and-stopping-ma
 
 ### Updating Dynamically Linked OpenSSL Libraries with zypper
 
-On SLES, OpenSUSE, and other similar Linux distributions, it is highly recommended to recommended to update the libraries using [zypper](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper). For example:
+On SLES, OpenSUSE, and other similar Linux distributions, it is highly recommended to recommended to update the libraries using [zypper](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper/). For example:
 
 Update the package by executing the following command:
 

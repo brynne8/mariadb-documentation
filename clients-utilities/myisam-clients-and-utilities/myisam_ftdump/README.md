@@ -1,8 +1,8 @@
 # myisam_ftdump
 
-myisam_ftdump is a utility for displaying information about [MyISAM](/kb/en/myisam/) [FULLTEXT](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes) indexes. It will scan and dump the entire index, and can be a lengthy process.
+myisam_ftdump is a utility for displaying information about [MyISAM](/kb/en/myisam/) [FULLTEXT](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) indexes. It will scan and dump the entire index, and can be a lengthy process.
 
-If the server is running, make sure you run a [FLUSH TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush) statement first.
+If the server is running, make sure you run a [FLUSH TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/) statement first.
 
 ## Usage
 

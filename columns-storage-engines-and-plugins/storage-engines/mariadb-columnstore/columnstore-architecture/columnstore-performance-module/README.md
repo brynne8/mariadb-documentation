@@ -1,6 +1,6 @@
 # ColumnStore Performance Module
 
-The Performance Module performs I/O operations in support of read and write processing.  It doesn't see the query itself, but only a set of instructions given to it by a [User Module](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-user-module).
+The Performance Module performs I/O operations in support of read and write processing.  It doesn't see the query itself, but only a set of instructions given to it by a [User Module](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-user-module/).
 
 There are three critical tasks key to scaling out database behavior:
 
@@ -22,7 +22,7 @@ In order to accomplish this, ProcMgr uses the Process Monitor, or ProcMon on eac
 
 ### Processing Queries
 
-The Primary Process, or PrimProc, handles query execution.  The [User Modules](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-user-module) process queries from the application into instructions that are sent to the Performance Module.  PrimProc executes these instructions as block oriented I/O operations to perform predicate filtering, join processing, and the initial aggregation of data, after which PrimProc sends the data back to the User Module.
+The Primary Process, or PrimProc, handles query execution.  The [User Modules](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-user-module/) process queries from the application into instructions that are sent to the Performance Module.  PrimProc executes these instructions as block oriented I/O operations to perform predicate filtering, join processing, and the initial aggregation of data, after which PrimProc sends the data back to the User Module.
 
 ### Performing Loads and Writes
 
@@ -34,7 +34,7 @@ User and Performance modules both use cpimport.  On the Performance Module it up
 
 ## Shared Nothing Data Cache
 
-The Performance Module uses a shared nothing data cache.  When it first accesses data, it operates on data as instructed by the [User Module](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-user-module) and caches it in an LRU-based buffer for subsequent access.
+The Performance Module uses a shared nothing data cache.  When it first accesses data, it operates on data as instructed by the [User Module](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-user-module/) and caches it in an LRU-based buffer for subsequent access.
 
 When the Performance Module runs on a dedicated server, you can dedicate the majority of the available to this data cache.  As the Performance Module cache is shared nothing design:
 

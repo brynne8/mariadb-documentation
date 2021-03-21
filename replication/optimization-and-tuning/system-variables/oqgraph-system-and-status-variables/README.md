@@ -1,6 +1,6 @@
 # OQGRAPH System and Status Variables
 
-This page documents system and status variables related to the [OQGRAPH storage engine](/kb/en/oqgraph/). See [Server Status Variables](/replication/optimization-and-tuning/system-variables/server-status-variables) and [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables) for complete list of all system and status variables.
+This page documents system and status variables related to the [OQGRAPH storage engine](/kb/en/oqgraph/). See [Server Status Variables](/replication/optimization-and-tuning/system-variables/server-status-variables/) and [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables/) for complete list of all system and status variables.
 
 ## System Variables
 

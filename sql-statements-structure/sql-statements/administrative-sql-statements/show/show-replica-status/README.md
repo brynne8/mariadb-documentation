@@ -16,13 +16,13 @@ SHOW ALL REPLICAS STATUS -- From MariaDB 10.5.1
 
 ## Description
 
-This statement is to be run on a replica and provides status information on essential parameters of the [replica](/replication) threads.
+This statement is to be run on a replica and provides status information on essential parameters of the [replica](/replication/) threads.
 
 This statement requires the [SUPER](/kb/en/grant/#super) privilege, the [REPLICATION_CLIENT](/kb/en/grant/#replication-client) privilege, or, from [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/), the [REPLICATION SLAVE ADMIN](/kb/en/grant/#binlog-monitor) privilege, or, from [MariaDB 10.5.9](/kb/en/mariadb-1059-release-notes/), the [REPLICA MONITOR](/kb/en/grant/#replica-monitor) privilege.
 
 ### Multi-Source
 
-The `FULL` and `"connection_name"` options allow you to connect to [many primaries at the same time](/replication/standard-replication/multi-source-replication).
+The `FULL` and `"connection_name"` options allow you to connect to [many primaries at the same time](/replication/standard-replication/multi-source-replication/).
 
 `ALL SLAVES` (or `ALL REPLICAS` from [MariaDB 10.5.1](/kb/en/mariadb-1051-release-notes/)) gives you a list of all connections to the primary nodes.
 
@@ -103,7 +103,7 @@ connection. If `connection_name` is not used, then the name set by `default_mast
 
 ## Examples
 
-If you issue this statement using the [mysql](/clients-utilities/mysql-client) client,
+If you issue this statement using the [mysql](/clients-utilities/mysql-client/) client,
 you can use a `<code>\G`</code> statement terminator rather than a semicolon to
 obtain a more readable vertical layout.
 

@@ -1,6 +1,6 @@
 # Aria
 
-Information about the Aria storage engine. From [MariaDB 10.4](/kb/en/what-is-mariadb-104/), [system tables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables) use the Aria storage engine.
+Information about the Aria storage engine. From [MariaDB 10.4](/kb/en/what-is-mariadb-104/), [system tables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/) use the Aria storage engine.
 
 - [Aria Storage Engine](/columns-storage-engines-and-plugins/storage-engines/aria/aria-storage-engine/) — The Aria storage engine is compiled-in by default and is considered as an upgrade to MyISAM.
 - [Aria Clients and Utilities](/clients-utilities/aria-clients-and-utilities/) — Clients and utilities for working with Aria tables

@@ -16,4 +16,4 @@ MariaDB [j1]> delete from t1;
 Query OK, 1000 rows affected (0.14 sec)
 ```
 
-We could use the new [engine-independent-table-statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics) feature to get some data statistics.
+We could use the new [engine-independent-table-statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics/) feature to get some data statistics.

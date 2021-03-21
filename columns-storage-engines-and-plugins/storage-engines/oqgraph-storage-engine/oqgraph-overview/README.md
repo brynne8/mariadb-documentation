@@ -8,7 +8,7 @@ It is intended to be used for retrieving hierarchical information, such as those
 
 ## Installing
 
-See [Installing OQGRAPH](/columns-storage-engines-and-plugins/storage-engines/oqgraph-storage-engine/installing-oqgraph). Note that the [query cache](/replication/optimization-and-tuning/buffers-caches-and-threads/query-cache) needs to be disabled when using OQGRAPH with [MariaDB 5.5.35](/kb/en/mariadb-5535-release-notes/) and before, or 10.0.8 and before (see [MDEV-5744](https://jira.mariadb.org/browse/MDEV-5744)). With newer versions, the query cache can be enabled and OQGRAPH will not use it.
+See [Installing OQGRAPH](/columns-storage-engines-and-plugins/storage-engines/oqgraph-storage-engine/installing-oqgraph/). Note that the [query cache](/replication/optimization-and-tuning/buffers-caches-and-threads/query-cache/) needs to be disabled when using OQGRAPH with [MariaDB 5.5.35](/kb/en/mariadb-5535-release-notes/) and before, or 10.0.8 and before (see [MDEV-5744](https://jira.mariadb.org/browse/MDEV-5744)). With newer versions, the query cache can be enabled and OQGRAPH will not use it.
 
 ## Creating a Table
 
@@ -165,4 +165,4 @@ SELECT * FROM oq2_graph;
 +-------+--------+--------+--------+------+--------+
 ```
 
-See [OQGRAPH Examples](/columns-storage-engines-and-plugins/storage-engines/oqgraph-storage-engine/oqgraph-examples) for OQGRAPH usage examples.
+See [OQGRAPH Examples](/columns-storage-engines-and-plugins/storage-engines/oqgraph-storage-engine/oqgraph-examples/) for OQGRAPH usage examples.

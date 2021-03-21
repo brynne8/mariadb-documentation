@@ -63,4 +63,4 @@ SELECT givenname, surname FROM users WHERE SOUNDEX(givenname) = SOUNDEX("robert"
 
 ## See Also
 
-- [SOUNDS LIKE](/built-in-functions/string-functions/sounds-like)()
+- [SOUNDS LIKE](/built-in-functions/string-functions/sounds-like/)()

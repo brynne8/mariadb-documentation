@@ -31,4 +31,4 @@ SELECT ST_AsGeoJSON(ST_GeomFromText('POINT(5.3 7.2)'));
 
 ## See also
 
-- [ST_GeomFromGeoJSON](/sql-statements-structure/geographic-geometric-features/geojson/st_geomfromgeojson)
+- [ST_GeomFromGeoJSON](/sql-statements-structure/geographic-geometric-features/geojson/st_geomfromgeojson/)

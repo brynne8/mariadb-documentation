@@ -436,7 +436,7 @@ The Instance that was launched is ColumnStore Performance Module #1. This is the
 
 If you are installing as a Single-Node system, you can follow install instructions on how to run postConfigure in the follow document for non-root user:
 
-[Installing and Configuring MariaDB ColumnStore](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-10x/installing-and-configuring-mariadb-columnstore)
+[Installing and Configuring MariaDB ColumnStore](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-10x/installing-and-configuring-mariadb-columnstore/)
 
 The following is a transcript of a typical run of the MariaDB ColumnStore configuration script. Plain-text formatting indicates output from the script and bold text indicates responses to questions. After each question there is a short discussion of what the question is asking and what some typical answers might be. You will not see these discussions the running the actual configuration script.
 

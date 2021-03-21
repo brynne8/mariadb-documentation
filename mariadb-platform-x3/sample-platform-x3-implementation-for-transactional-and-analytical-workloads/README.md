@@ -64,13 +64,13 @@ The following sections detail how to implement a sample deployment of Platform X
 
 Our sample deployment calls for four servers running MariaDB Server to handle OLTP workloads, which we've named `Server-1` to `Server-4`.  These are shown at the left of our sample deployment diagram, in orange. We use InnoDB as the storage engine on these servers.
 
-These four servers run MariaDB Server 10.3, installed per the instructions at: [Getting and Upgrading MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb).
+These four servers run MariaDB Server 10.3, installed per the instructions at: [Getting and Upgrading MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/).
 
 ### Deploy MariaDB ColumnStore Servers
 
 Our sample deployment calls for five servers to run MariaDB ColumnStore to handle OLAP workloads.  Two of these servers operate as User Module servers, named `UM-1` and `UM-2`, and receive application traffic from MaxScale.  The other three operate as Performance Module servers, named `PM-1` through `PM-3`, and perform distributed query processing.
 
-These servers run MariaDB ColumnStore 1.2.2 and are installed using the non-root and non-distributed installation method, as per the instructions at: [Preparing and Installing MariaDB ColumnStore](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-12x).
+These servers run MariaDB ColumnStore 1.2.2 and are installed using the non-root and non-distributed installation method, as per the instructions at: [Preparing and Installing MariaDB ColumnStore](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-12x/).
 
 ### Deploy MariaDB MaxScale Servers
 
@@ -102,7 +102,7 @@ log-slave-updates
 
 In streaming data from MariaDB Server to ColumnStore for analysis, MaxScale requires that the Servers format the binary log events by each row modified by a statement, rather than by operation.  So, when deploying a cluster for HTAP, ensure that the <a undefined>binlog_format</a> system variable on the MariaDB Servers is always set to the `ROW` value.
 
-For more information on these server system variables and others, see [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables).
+For more information on these server system variables and others, see [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables/).
 
 #### Configure `Server-2` (slave)
 
@@ -201,7 +201,7 @@ If replication is currently running, reset the master so you can update its conf
 RESET MASTER;
 ```
 
-Issue a [CHANGE MASTER TO](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to) statement to configure the slave to replicate from `Server-1`:
+Issue a [CHANGE MASTER TO](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to/) statement to configure the slave to replicate from `Server-1`:
 
 ```sql
 CHANGE MASTER TO
@@ -303,7 +303,7 @@ Connect to MaxScale using the MariaDB Client.  Unlike when connecting to MariaDB
 $ mysql -h <MaxScale-1-ip> -P 6603 -u repl -p
 ```
 
-Issue a [CHANGE MASTER TO](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to) statement to use the master MariaDB Server host (that is, the IP address to Server-1) and the port for client connections, (which defaults to 3306).  Set the user and password as defined for the replication router in `/etc/maxscale.cnf` above.
+Issue a [CHANGE MASTER TO](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/change-master-to/) statement to use the master MariaDB Server host (that is, the IP address to Server-1) and the port for client connections, (which defaults to 3306).  Set the user and password as defined for the replication router in `/etc/maxscale.cnf` above.
 
 ```sql
 CHANGE MASTER TO MASTER_HOST='<Server-1-ip>',
@@ -444,7 +444,7 @@ INSERT INTO test.t6 VALUES (1,4);
 INSERT INTO test.t6 VALUES (1,5);
 ```
 
-Then, issue a [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) statement to see what data is available on the MariaDB Servers for the OLTP operations:
+Then, issue a [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) statement to see what data is available on the MariaDB Servers for the OLTP operations:
 
 ```sql
 SELECT * FROM test.t6;
@@ -460,7 +460,7 @@ SELECT * FROM test.t6;
 5 rows in set (0.010 sec)
 ```
 
-By checking the logging messages coming from the `mxs_adapter` utility, you can watch these [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert) statements as they stream from the MariaDB Servers through MaxScale to ColumnStore:
+By checking the logging messages coming from the `mxs_adapter` utility, you can watch these [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/) statements as they stream from the MariaDB Servers through MaxScale to ColumnStore:
 
 ```sql
 2018-11-23 18:39:09 [main] Started thread 0x176b470
@@ -479,7 +479,7 @@ By checking the logging messages coming from the `mxs_adapter` utility, you can 
 2018-11-23 18:39:28 [test.t6] DML average: 9ms
 ```
 
-Then, you can issue a similar [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) statement to the `test.t6` table on either of the User Modules for MariaDB ColumnStore to see that the data is now available for OLAP operations:
+Then, you can issue a similar [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) statement to the `test.t6` table on either of the User Modules for MariaDB ColumnStore to see that the data is now available for OLAP operations:
 
 ```sql
 SELECT * FROM test.t6;
@@ -495,7 +495,7 @@ SELECT * FROM test.t6;
 5 rows in set (0.010 sec)
 ```
 
-Next, test out other write operations using either an [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update) or [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete) statement on `Server-1`:
+Next, test out other write operations using either an [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/) or [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/) statement on `Server-1`:
 
 ```sql
 UPDATE test.t6 SET a = 2 WHERE b > 3;
@@ -524,9 +524,9 @@ Using the logging messages from the CDC Data Adapter, you can watch the binary e
 2018-11-23 18:44:27 [test.t6] Read timeout
 ```
 
-As you can see from the logging messages, MaxScale detected the [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update) statement and streamed it through the CDC Data Adapter to ColumnStore.  The CDC Data Adapter then begins logging `Read timeout` messages to indicate that it is done streaming and is waiting on additional binary events from the MariaDB Servers.
+As you can see from the logging messages, MaxScale detected the [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/) statement and streamed it through the CDC Data Adapter to ColumnStore.  The CDC Data Adapter then begins logging `Read timeout` messages to indicate that it is done streaming and is waiting on additional binary events from the MariaDB Servers.
 
-You can confirm that the data was successfully transferred by issuing a [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) statement to one of the MariaDB ColumnStore User Modules:
+You can confirm that the data was successfully transferred by issuing a [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) statement to one of the MariaDB ColumnStore User Modules:
 
 ```sql
 SELECT * FROM test.t6;
@@ -675,7 +675,7 @@ When you run the `mxs_adapter` utility, it streams logging messages about the op
 
 When all the loaded data has been streamed from the MariaDB Servers to ColumnStore, you'll begin to see `Read timeout` messages in the output.  This means that the `mxs_adapter` utility is now waiting on additional binary events to occur on the MariaDB Servers.
 
-At this point, if you issue a [SELECT COUNT(*)](/built-in-functions/aggregate-functions/count) statements to MariaDB ColumnStore, you should get following result-sets:
+At this point, if you issue a [SELECT COUNT(*)](/built-in-functions/aggregate-functions/count/) statements to MariaDB ColumnStore, you should get following result-sets:
 
 ```sql
 SELECT COUNT(*) FROM bank.account;
@@ -717,8 +717,8 @@ The MariaDB Servers and ColumnStore now contain the same data.
 
 Our sample deployment proxies application traffic through a second MariaDB MaxScale server for the selective routing of HTAP queries.  Specifically, it involves configuring the MaxScale-2 server so that:
 
-- All [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert), [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update), [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete) statements always route to `Server-1` for (OLTP)
-- All [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) queries on the loan table always route to MariaDB ColumnStore (OLAP)
+- All [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/), [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/), [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/) statements always route to `Server-1` for (OLTP)
+- All [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) queries on the loan table always route to MariaDB ColumnStore (OLAP)
 - All remaining read queries will route to any MariaDB Server.
 
 Below is a diagram of the `MaxScale-2` server configuration:
@@ -862,8 +862,8 @@ Then, start MaxScale:
 
 With the MariaDB Servers, ColumnStore and MaxScale servers configured and deployed, you can begin testing the sample HTAP deployment.  The application connects to the second MaxScale server, `MaxScale-2`, on port 4011, where it performs selective query routing:
 
-- All [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert), [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update), [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete) queries always route to `Server-1` (OLTP)
-- All [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) queries on loans table always route to MariaDB ColumnStore (OLAP)
+- All [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/), [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/), [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/) queries always route to `Server-1` (OLTP)
+- All [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) queries on loans table always route to MariaDB ColumnStore (OLAP)
 - All remaining read queries route to any MariaDB Server (OLTP)
 
 #### Connect from application to MaxScale HTAP Service
@@ -920,9 +920,9 @@ Since MaxScale routes the query as an analytical operation, the <a undefined>ver
 
 #### DML Statements
 
-The MariaDB MaxScale server configuration above designates data manipulation statements such as [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert), [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update) and [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete) as transactional and routes these statements to the MariaDB Servers.  The other MaxScale server then streams the changes over to ColumnStore.
+The MariaDB MaxScale server configuration above designates data manipulation statements such as [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/), [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/) and [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/) as transactional and routes these statements to the MariaDB Servers.  The other MaxScale server then streams the changes over to ColumnStore.
 
-Issue an [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update) statement to set the initial balance for a loan:
+Issue an [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/) statement to set the initial balance for a loan:
 
 ```sql
 UPDATE bank.loan SET balance = amount WHERE loan_id = 5314;
@@ -943,7 +943,7 @@ FROM bank.loan WHERE loan_id = 5314;
 
 The loan balance has been set to its initial value of the received funds.
 
-As you can see, the account holder has made payments on the loan.  This amount should be removed from the balance to reflect their paying it down.  Issue another [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update) statement to modify the balance, removing payments made on the account:
+As you can see, the account holder has made payments on the loan.  This amount should be removed from the balance to reflect their paying it down.  Issue another [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/) statement to modify the balance, removing payments made on the account:
 
 ```sql
 UPDATE bank.loan SET balance = balance - payments WHERE loan_id = 5314;
@@ -975,14 +975,14 @@ When you're ready to install MariaDB Platform X3, go to [Downloads](https://mari
 Documentation for MariaDB products is available in the [Library](https://mariadb.com/kb/en/library).  For the documentation on specific products, see the links below:
 
 - <strong>[MariaDB Server Documentation](https://mariadb.com/kb/en/library/documentation/)</strong>
-<ul start="1"><li><strong>[Getting Started](/mariadb-administration/getting-installing-and-upgrading-mariadb)</strong>
-</li><li><strong>[SQL Statements](/sql-statements-structure)</strong>
-</li><li><strong>[SQL Functions](/built-in-functions)</strong>
+<ul start="1"><li><strong>[Getting Started](/mariadb-administration/getting-installing-and-upgrading-mariadb/)</strong>
+</li><li><strong>[SQL Statements](/sql-statements-structure/)</strong>
+</li><li><strong>[SQL Functions](/built-in-functions/)</strong>
 </li><li><strong>[MariaDB Replication](/kb/en/high-availability-performance-tuning-mariadb-replication/)</strong>
-</li><li><strong>[Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables)</strong>
+</li><li><strong>[Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables/)</strong>
 </li></ul>
-- <strong>[MariadB ColumnStore Documentation](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore)</strong>
-<ul start="1"><li><strong>[Getting Started](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started)</strong>
-</li><li><strong>[ColumnStore Streaming Data Adapters](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-streaming-data-adapters)</strong>
+- <strong>[MariadB ColumnStore Documentation](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/)</strong>
+<ul start="1"><li><strong>[Getting Started](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/)</strong>
+</li><li><strong>[ColumnStore Streaming Data Adapters](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-streaming-data-adapters/)</strong>
 </li></ul>
 - <strong>[MariaDB MaxScale Documentation](mariadb-enterprise/maxscale)</strong>

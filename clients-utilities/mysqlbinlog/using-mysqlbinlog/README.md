@@ -8,17 +8,17 @@ From [MariaDB 10.4.6](/kb/en/mariadb-1046-release-notes/), `mariadb-binlog` is a
 
 From [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/), `mariadb-binlog` is the name of the tool, with `mysqlbinlog` a symlink .
 
-The MariaDB server's [binary log](/mariadb-administration/server-monitoring-logs/binary-log) is a set of files containing "events" which represent modifications to the contents of a MariaDB database. These events are written in a binary (i.e. non-human-readable) format. The <em>mysqlbinlog</em> utility is used to view these events in plain text.
+The MariaDB server's [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) is a set of files containing "events" which represent modifications to the contents of a MariaDB database. These events are written in a binary (i.e. non-human-readable) format. The <em>mysqlbinlog</em> utility is used to view these events in plain text.
 
-Run [mysqlbinlog](/clients-utilities/mysqlbinlog) from a command-line like this:
+Run [mysqlbinlog](/clients-utilities/mysqlbinlog/) from a command-line like this:
 
 ```sql
 shell> mysqlbinlog [options] log_file ...
 ```
 
-See [mysqlbinlog Options](/clients-utilities/mysqlbinlog/mysqlbinlog-options) for details on the available options.
+See [mysqlbinlog Options](/clients-utilities/mysqlbinlog/mysqlbinlog-options/) for details on the available options.
 
-As an example, here is how you could display the contents of a [binary log](/mariadb-administration/server-monitoring-logs/binary-log) file
+As an example, here is how you could display the contents of a [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) file
 named "mariadb-bin.000152":
 
 ```sql
@@ -32,7 +32,7 @@ logging the output of an event will not include an SQL statement but will
 instead output how individual rows were changed.
 
 The output from mysqlbinlog can be used as input to the mysql client to redo
-the statements contained in a [binary log](/mariadb-administration/server-monitoring-logs/binary-log). This is useful for recovering after a server crash. Here is an example:
+the statements contained in a [binary log](/mariadb-administration/server-monitoring-logs/binary-log/). This is useful for recovering after a server crash. Here is an example:
 
 ```sql
 shell> mysqlbinlog binlog-filenames | mysql -u root -p
@@ -79,5 +79,5 @@ shell> mysql -u root -p -e "source /tmp/mariadb-bin.sql"
 
 ## See Also
 
-- [mysqlbinlog](/clients-utilities/mysqlbinlog)
-- [mysqlbinlog Options](/clients-utilities/mysqlbinlog/mysqlbinlog-options)
+- [mysqlbinlog](/clients-utilities/mysqlbinlog/)
+- [mysqlbinlog Options](/clients-utilities/mysqlbinlog/mysqlbinlog-options/)

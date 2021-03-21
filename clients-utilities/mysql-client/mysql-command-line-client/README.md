@@ -2,7 +2,7 @@
 
 ## About the mysql Command-Line Client
 
-<strong>mysql</strong> (from [MariaDB 10.4.6](/kb/en/mariadb-1046-release-notes/), [also called mariadb](/clients-utilities/mysql-client/mariadb-command-line-client)) is a simple SQL shell (with GNU readline
+<strong>mysql</strong> (from [MariaDB 10.4.6](/kb/en/mariadb-1046-release-notes/), [also called mariadb](/clients-utilities/mysql-client/mariadb-command-line-client/)) is a simple SQL shell (with GNU readline
 capabilities). It supports interactive and non-interactive use. When used
 interactively, query results are presented in an ASCII-table format. When used
 non-interactively (for example, as a filter), the result is presented in
@@ -147,7 +147,7 @@ mysql <options>
 
 ### Option Files
 
-In addition to reading options from the command-line, `mysql` can also read options from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files). If an unknown option is provided to `mysql` in an option file, then it is ignored.
+In addition to reading options from the command-line, `mysql` can also read options from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/). If an unknown option is provided to `mysql` in an option file, then it is ignored.
 
 The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
 
@@ -163,7 +163,7 @@ In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, `mysql` is linked with
 
 #### Option Groups
 
-`mysql` reads options from the following [option groups](/kb/en/configuring-mariadb-with-option-files/#option-groups) from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files):
+`mysql` reads options from the following [option groups](/kb/en/configuring-mariadb-with-option-files/#option-groups) from [option files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/):
 
 <table><tbody><tr><th>Group</th><th>Description</th></tr>
 <tr><td><code>[mysql]</code></td><td>&nbsp;Options read by <code>mysql</code>, which includes both MariaDB Server and MySQL Server.</td></tr>
@@ -367,9 +367,9 @@ following statement when it connects to the MariaDB server:
 SET sql_safe_updates=1, sql_select_limit=1000, sql_max_join_size=1000000;
 ```
 
-The [SET](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set) statement has the following effects:
+The [SET](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set/) statement has the following effects:
 
-- You are not allowed to execute an [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update) or [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete) statement unless you
+- You are not allowed to execute an [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/) or [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/) statement unless you
   specify a key constraint in the WHERE clause or provide a LIMIT clause (or
   both). For example:
 

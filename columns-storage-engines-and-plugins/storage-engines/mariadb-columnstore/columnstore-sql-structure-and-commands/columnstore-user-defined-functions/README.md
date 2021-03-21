@@ -2,7 +2,7 @@
 
 ## Introduction
 
-MariaDB provides extensibility support through user defined functions. For more details on the MariaDB server framework see the [user-defined-functions](/programming-customizing-mariadb/user-defined-functions) article. This documentation applies to MariaDB ColumnStore version 1.0.10 and above.
+MariaDB provides extensibility support through user defined functions. For more details on the MariaDB server framework see the [user-defined-functions](/programming-customizing-mariadb/user-defined-functions/) article. This documentation applies to MariaDB ColumnStore version 1.0.10 and above.
 
 MariaDB ColumnStore provides scale out query processing and as such requires a separate distributed implementation of each SQL function. This allows for the function application to happen on each PM server node providing distributed scale out performance.
 
@@ -32,7 +32,7 @@ It is simplest to copy these and adapt to your needs. There are no system depend
 
 ### MariaDB server UDF implementation
 
-Three functions are required to be implemented (for more details see  [user-defined-functions](/programming-customizing-mariadb/user-defined-functions)):
+Three functions are required to be implemented (for more details see  [user-defined-functions](/programming-customizing-mariadb/user-defined-functions/)):
 
 - <em>x_init</em> : perform any parameter validation or setup such as memory allocation.
 - <em>x</em> : perform the actual function implementation.

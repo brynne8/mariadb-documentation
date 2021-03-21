@@ -25,13 +25,13 @@ The lock wait timeout can be explicitly set in the statement by using either `WA
 
 ## See Also
 
-- [Query Limits and Timeouts](/replication/optimization-and-tuning/query-optimizations/query-limits-and-timeouts)
-- [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table)
-- [CREATE INDEX](/sql-statements-structure/sql-statements/data-definition/create/create-index)
-- [DROP INDEX](/sql-statements-structure/sql-statements/data-definition/drop/drop-index)
-- [DROP TABLE](/sql-statements-structure/sql-statements/data-definition/drop/drop-table)
+- [Query Limits and Timeouts](/replication/optimization-and-tuning/query-optimizations/query-limits-and-timeouts/)
+- [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/)
+- [CREATE INDEX](/sql-statements-structure/sql-statements/data-definition/create/create-index/)
+- [DROP INDEX](/sql-statements-structure/sql-statements/data-definition/drop/drop-index/)
+- [DROP TABLE](/sql-statements-structure/sql-statements/data-definition/drop/drop-table/)
 - [LOCK TABLES and UNLOCK TABLES](/kb/en/lock-tables-and-unlock-tables/)
-- [OPTIMIZE TABLE](/replication/optimization-and-tuning/optimizing-tables/optimize-table)
-- [RENAME TABLE](/sql-statements-structure/sql-statements/data-definition/rename-table)
-- [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select)
-- [TRUNCATE TABLE](/sql-statements-structure/sql-statements/table-statements/truncate-table)
+- [OPTIMIZE TABLE](/replication/optimization-and-tuning/optimizing-tables/optimize-table/)
+- [RENAME TABLE](/sql-statements-structure/sql-statements/data-definition/rename-table/)
+- [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/)
+- [TRUNCATE TABLE](/sql-statements-structure/sql-statements/table-statements/truncate-table/)

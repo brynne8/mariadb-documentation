@@ -1,9 +1,9 @@
 # Enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT
 
-With the introduction of [group commit](/mariadb-administration/server-monitoring-logs/binary-log/group-commit-for-the-binary-log), MariaDB also introduced an enhanced storage engine API for COMMIT that allows engines to coordinate commit ordering and visibility with each other and with the [binary log](/mariadb-administration/server-monitoring-logs/binary-log).
+With the introduction of [group commit](/mariadb-administration/server-monitoring-logs/binary-log/group-commit-for-the-binary-log/), MariaDB also introduced an enhanced storage engine API for COMMIT that allows engines to coordinate commit ordering and visibility with each other and with the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/).
 
 With these improvements, the `START TRANSACTION WITH CONSISTENT SNAPSHOT` statement was enhanced to ensure consistency between storage engines that support the new
-API. At the time of writing, the supporting engines are [XtraDB](/kb/en/xtradb-and-innodb/) and [PBXT](/columns-storage-engines-and-plugins/storage-engines/legacy-storage-engines/pbxt-storage-engine). In
+API. At the time of writing, the supporting engines are [XtraDB](/kb/en/xtradb-and-innodb/) and [PBXT](/columns-storage-engines-and-plugins/storage-engines/legacy-storage-engines/pbxt-storage-engine/). In
 addition, the binary log, while not a storage engine as such, also supports
 the new API and can provide a binlog position consistent with storage engine
 transaction snapshots.
@@ -80,7 +80,7 @@ queries until all updates that have already started have finished.
 
 ### mysqldump
 
-The [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump) program was extended to use these status
+The [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump/) program was extended to use these status
 variables. This means that a backup suitable for provisioning a slave can be
 obtained as normal like this:
 
@@ -97,6 +97,6 @@ For more information on the design and implementation of this feature, see [MWL#
 
 ## See Also
 
-- [START TRANSACTION](/sql-statements-structure/sql-statements/transactions/start-transaction)
+- [START TRANSACTION](/sql-statements-structure/sql-statements/transactions/start-transaction/)
 - [What is MariaDB 5.3](/kb/en/what-is-mariadb-53/)
-- [MyRocks and START TRANSACTION WITH CONSISTENT SNAPSHOT](/columns-storage-engines-and-plugins/storage-engines/myrocks/myrocks-and-start-transaction-with-consistent-snapshot)
+- [MyRocks and START TRANSACTION WITH CONSISTENT SNAPSHOT](/columns-storage-engines-and-plugins/storage-engines/myrocks/myrocks-and-start-transaction-with-consistent-snapshot/)

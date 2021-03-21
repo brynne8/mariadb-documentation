@@ -8,7 +8,7 @@ TIME_FORMAT(time,format)
 
 ## Description
 
-This is used like the [DATE_FORMAT()](/built-in-functions/date-time-functions/date_format) function, but the format string
+This is used like the [DATE_FORMAT()](/built-in-functions/date-time-functions/date_format/) function, but the format string
 may contain format specifiers only for hours, minutes, and seconds.
 Other specifiers produce a NULL value or 0.
 

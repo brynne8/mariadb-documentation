@@ -31,4 +31,4 @@ The options you have are:
 
 - or
 
-- [Download the source](/kb/en/source-getting-the-mariadb-source-code/) and [build it](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/generic-build-instructions).
+- [Download the source](/kb/en/source-getting-the-mariadb-source-code/) and [build it](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/generic-build-instructions/).

@@ -1,10 +1,10 @@
 # Status Variables Added in MariaDB 10.1
 
-This is a list of [status variables](/replication/optimization-and-tuning/system-variables/server-status-variables) that were added in the [MariaDB 10.1](/kb/en/what-is-mariadb-101/) series.
+This is a list of [status variables](/replication/optimization-and-tuning/system-variables/server-status-variables/) that were added in the [MariaDB 10.1](/kb/en/what-is-mariadb-101/) series.
 
 The list excludes status related to the following storage engines included in [MariaDB 10.1](/kb/en/what-is-mariadb-101/):
 
-- [Galera Status Variables](/replication/galera-cluster/galera-cluster-status-variables)
+- [Galera Status Variables](/replication/galera-cluster/galera-cluster-status-variables/)
 
 <table><tbody><tr><th>Variable</th><th>Added</th></tr>
 <tr><td><a href="/kb/en/server-status-variables/#acl_column_grants">Acl_column_grants</a></td><td><a href="/kb/en/mariadb-1014-release-notes/">MariaDB 10.1.4</a></td></tr>
@@ -64,6 +64,6 @@ The list excludes status related to the following storage engines included in [M
 
 ## See Also
 
-- [System variables added in MariaDB 10.1](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-101)
-- [Status variables added in MariaDB 10.2](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/status-variables-added-in-mariadb-102)
-- [Status variables added in MariaDB 10.0](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/status-variables-added-in-mariadb-100)
+- [System variables added in MariaDB 10.1](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-101/)
+- [Status variables added in MariaDB 10.2](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/status-variables-added-in-mariadb-102/)
+- [Status variables added in MariaDB 10.0](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/status-variables-added-in-mariadb-100/)

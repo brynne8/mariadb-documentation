@@ -15,7 +15,7 @@ Connects Spark and ColumnStore through ColumStore's bulk write API.
 
 The following steps outline installing and configuring the MariaDB ColumnStoreExporter to be available in the Spark runtime:
 
-- The latest version of the MariaDB Bulk Data Adapters need to be installed. See additional [documentation](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk).
+- The latest version of the MariaDB Bulk Data Adapters need to be installed. See additional [documentation](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk/).
 - The configuration file <em> /usr/local/spark/conf/sparks-default.conf </em> should be created or updated to point to the BulkWriteAPI and ColumnStoreExporter libraries. Their paths depend on the OS you are using.
 
 For Debian 8, 9 and Ubuntu 16.04:

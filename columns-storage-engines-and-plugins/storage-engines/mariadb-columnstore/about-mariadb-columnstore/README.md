@@ -15,6 +15,6 @@ Links:
 
 - [MariaDB Columnstore Blogs](https://mariadb.com/resources/blog/tag/columnstore/).
 - A Google Group exists for MariaDB ColumnStore that can be used to discuss ideas, issues and communicate with the  community: Send email to mariadb-columnstore@googlegroups.com or use the [forum interface](https://groups.google.com/forum/#!forum/mariadb-columnstore)
-- Bugs can be reported in MariaDB Jira: [https://jira.mariadb.org](https://jira.mariadb.org) (see [Reporting Bugs](/kb/en/reporting-bugs/)). Please file bugs under the MCOL project and include the output from the [support utility](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-troubleshooting/system-troubleshooting-mariadb-columnstore) if possible.
+- Bugs can be reported in MariaDB Jira: [https://jira.mariadb.org](https://jira.mariadb.org) (see [Reporting Bugs](/kb/en/reporting-bugs/)). Please file bugs under the MCOL project and include the output from the [support utility](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-troubleshooting/system-troubleshooting-mariadb-columnstore/) if possible.
 
 MariaDB ColumnStore is released under the GPL license.

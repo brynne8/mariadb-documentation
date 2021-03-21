@@ -10,7 +10,7 @@ REAL[(M,D)] [SIGNED | UNSIGNED | ZEROFILL]
 
 ## Description
 
-A normal-size (double-precision) floating-point number (see [FLOAT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/float) for a single-precision floating-point number).
+A normal-size (double-precision) floating-point number (see [FLOAT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/float/) for a single-precision floating-point number).
 
 Allowable values are:
 
@@ -31,11 +31,11 @@ floating-point number is accurate to approximately 15 decimal places.
 `ZEROFILL`, if specified, pads the number with zeros, up to the total number
 of digits specified by `M`.
 
-REAL and DOUBLE PRECISION are synonyms, unless the REAL_AS_FLOAT [SQL mode](/kb/en/sql_mode/) is enabled, in which case REAL is a synonym for [FLOAT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/float) rather than DOUBLE.
+REAL and DOUBLE PRECISION are synonyms, unless the REAL_AS_FLOAT [SQL mode](/kb/en/sql_mode/) is enabled, in which case REAL is a synonym for [FLOAT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/float/) rather than DOUBLE.
 
-See [Floating Point Accuracy](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/floating-point-accuracy) for issues when using floating-point numbers.
+See [Floating Point Accuracy](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/floating-point-accuracy/) for issues when using floating-point numbers.
 
-For more details on the attributes, see [Numeric Data Type Overview](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/numeric-data-type-overview).
+For more details on the attributes, see [Numeric Data Type Overview](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/numeric-data-type-overview/).
 
 ## Examples
 

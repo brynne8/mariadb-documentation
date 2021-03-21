@@ -49,9 +49,9 @@ SELECT IFNULL(1/0,'yes');
 
 ## See Also
 
-- [NULL values](/columns-storage-engines-and-plugins/data-types/null-values)
-- [IS NULL operator](/sql-statements-structure/operators/comparison-operators/is-null)
-- [IS NOT NULL operator](/sql-statements-structure/operators/comparison-operators/is-not-null)
-- [COALESCE function](/sql-statements-structure/operators/comparison-operators/coalesce)
-- [NULLIF function](/built-in-functions/control-flow-functions/nullif)
+- [NULL values](/columns-storage-engines-and-plugins/data-types/null-values/)
+- [IS NULL operator](/sql-statements-structure/operators/comparison-operators/is-null/)
+- [IS NOT NULL operator](/sql-statements-structure/operators/comparison-operators/is-not-null/)
+- [COALESCE function](/sql-statements-structure/operators/comparison-operators/coalesce/)
+- [NULLIF function](/built-in-functions/control-flow-functions/nullif/)
 - [CONNECT data types](/kb/en/connect-data-types/#null-handling)

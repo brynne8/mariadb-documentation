@@ -11,7 +11,7 @@ COMPRESS(string_to_compress)
 Compresses a string and returns the result as a binary string. This
 function requires MariaDB to have been compiled with a compression
 library such as zlib. Otherwise, the return value is always `NULL`. The
-compressed string can be uncompressed with [UNCOMPRESS()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/uncompress).
+compressed string can be uncompressed with [UNCOMPRESS()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/uncompress/).
 
 The [have_compress](/kb/en/server-system-variables/#have_compress) server system variable indicates whether a compression library is present.
 

@@ -14,11 +14,11 @@ User-variables names are case insensitive, though they were case sensitive in My
 
 User-defined variables cannot be declared. They can be read even if no value has been set yet; in that case, they are NULL. To set a value for a user-defined variable you can use:
 
-- [SET](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set) statement;
+- [SET](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set/) statement;
 - [:=](/kb/en/assignment-operator/) operator within a SQL statement;
 - [SELECT ... INTO](/kb/en/select-into/).
 
-Since user-defined variables type cannot be declared, the only way to force their type is using [CAST()](/built-in-functions/string-functions/cast) or [CONVERT()](/built-in-functions/string-functions/convert):
+Since user-defined variables type cannot be declared, the only way to force their type is using [CAST()](/built-in-functions/string-functions/cast/) or [CONVERT()](/built-in-functions/string-functions/convert/):
 
 SET @str = CAST(123 AS CHAR(5));
 
@@ -37,7 +37,7 @@ It is unsafe to read a user-defined variable and set its value in the same state
 
 User-defined variables can be used in most MariaDB's statements and clauses which accept an SQL expression. However there are some exceptions, like the [LIMIT](/kb/en/select/#limit) clause.
 
-They must be used to [PREPARE](/sql-statements-structure/sql-statements/prepared-statements/prepare-statement) a prepared statement:
+They must be used to [PREPARE](/sql-statements-structure/sql-statements/prepared-statements/prepare-statement/) a prepared statement:
 
 ```sql
 @sql = 'DELETE FROM my_table WHERE c>1;';
@@ -55,5 +55,5 @@ SELECT a, b, c, (@var:=@var+1) AS counter FROM my_table;
 
 ## See Also
 
-- [DECLARE VARIABLE](/programming-customizing-mariadb/programmatic-compound-statements/declare-variable)
+- [DECLARE VARIABLE](/programming-customizing-mariadb/programmatic-compound-statements/declare-variable/)
 - [Information Schema USER_VARIABLES Table](/kb/en/information-schema-user_variables-table/)

@@ -16,13 +16,13 @@ HANDLER tbl_name CLOSE
 ## Description
 
 The `HANDLER` statement provides direct access to table
-storage engine interfaces for key lookups and key or table scans. It is available for at least [Aria](/kb/en/aria-formerly-known-as-maria/), [Memory](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/memory-storage-engine), [MyISAM](/columns-storage-engines-and-plugins/storage-engines/myisam-storage-engine) and [InnoDB](/kb/en/xtradb-and-innodb/) tables (and should work with most 'normal' storage engines, but not with system tables, [MERGE](/columns-storage-engines-and-plugins/storage-engines/merge) or [views](/programming-customizing-mariadb/views)).
+storage engine interfaces for key lookups and key or table scans. It is available for at least [Aria](/kb/en/aria-formerly-known-as-maria/), [Memory](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/memory-storage-engine/), [MyISAM](/columns-storage-engines-and-plugins/storage-engines/myisam-storage-engine/) and [InnoDB](/kb/en/xtradb-and-innodb/) tables (and should work with most 'normal' storage engines, but not with system tables, [MERGE](/columns-storage-engines-and-plugins/storage-engines/merge/) or [views](/programming-customizing-mariadb/views/)).
 
 `HANDLER ... OPEN` opens a table, allowing it to be accessible to subsequent `HANDLER ... READ` statements. The table can either be opened using an alias (which must then be used by `HANDLER ... READ`, or a table name.
 
 The table object is only closed when `HANDLER ... CLOSE` is called by the session, and is not shared by other sessions.
 
-[Prepared statements](/sql-statements-structure/sql-statements/prepared-statements) work with `HANDLER READ`, which gives a much higher performance (50% speedup) as there is no parsing and all data is transformed in binary (without conversions to text, as with the normal protocol).
+[Prepared statements](/sql-statements-structure/sql-statements/prepared-statements/) work with `HANDLER READ`, which gives a much higher performance (50% speedup) as there is no parsing and all data is transformed in binary (without conversions to text, as with the normal protocol).
 
 The HANDLER command does not work with [partitioned tables](/kb/en/managing-mariadb-partitioning/).
 
@@ -87,11 +87,11 @@ You may also find rows committed since the scan originally started.
 
 ### Invisible Columns
 
-`HANDLER ... READ` also reads the data of [invisible-columns](/sql-statements-structure/sql-statements/data-definition/create/invisible-columns).
+`HANDLER ... READ` also reads the data of [invisible-columns](/sql-statements-structure/sql-statements/data-definition/create/invisible-columns/).
 
 ### System-Versioned Tables
 
-`HANDLER ... READ` reads everything from [system-versioned tables](/sql-statements-structure/temporal-tables/system-versioned-tables), and so includes `row_start` and `row_end` fields, as well as all rows that have since been deleted or changed, including when history partitions are used.
+`HANDLER ... READ` reads everything from [system-versioned tables](/sql-statements-structure/temporal-tables/system-versioned-tables/), and so includes `row_start` and `row_end` fields, as well as all rows that have since been deleted or changed, including when history partitions are used.
 
 ### Other Limitations
 

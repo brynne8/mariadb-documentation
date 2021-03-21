@@ -18,8 +18,8 @@ SELECT CONCAT(CAST(int_col AS CHAR), char_col);
 
 A `NULL` parameter hides all information contained in other parameters from the result. Sometimes this is not desirable; to avoid this, you can:
 
-- Use the [CONCAT_WS()](/built-in-functions/string-functions/concat_ws) function with an empty separator, because that function is `NULL`-safe.
-- Use [IFNULL()](/built-in-functions/control-flow-functions/ifnull) to turn NULLs into empty strings.
+- Use the [CONCAT_WS()](/built-in-functions/string-functions/concat_ws/) function with an empty separator, because that function is `NULL`-safe.
+- Use [IFNULL()](/built-in-functions/control-flow-functions/ifnull/) to turn NULLs into empty strings.
 
 ### Oracle Mode
 
@@ -76,5 +76,5 @@ SELECT CONCAT('Ma', 'ria', NULL, 'DB');
 
 ## See Also
 
-- [GROUP_CONCAT()](/built-in-functions/aggregate-functions/group_concat)
+- [GROUP_CONCAT()](/built-in-functions/aggregate-functions/group_concat/)
 - [Oracle mode from MariaDB 10.3](/kb/en/sql_modeoracle-from-mariadb-103/#null-handling)

@@ -19,7 +19,7 @@ It has the following columns:
 <tr><td><code>IS_COMPRESSED</code></td><td><code>TRUE</code> if the table is compressed.</td></tr>
 </tbody></table>
 
-The `PROCESS` [privilege](/sql-statements-structure/sql-statements/account-management-sql-commands/grant) is required to view the table.
+The `PROCESS` [privilege](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/) is required to view the table.
 
 ## Examples
 

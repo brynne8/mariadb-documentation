@@ -26,7 +26,7 @@ Starting httpd:
 
 ## RPM Installation
 
-To install the RPMs, there is a quick and easy guide to [Installing MariaDB with the RPM Tool](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-the-rpm-tool). Follow the instructions there.
+To install the RPMs, there is a quick and easy guide to [Installing MariaDB with the RPM Tool](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-the-rpm-tool/). Follow the instructions there.
 
 ## Necessary Edits
 

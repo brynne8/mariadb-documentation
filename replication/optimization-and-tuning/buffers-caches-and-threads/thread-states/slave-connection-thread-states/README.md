@@ -1,6 +1,6 @@
 # Slave Connection Thread States
 
-This article documents thread states that are related to connection threads that occur on a [replication](/replication) slave. These correspond to the `STATE` values listed by the [SHOW PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist) statement or in the [Information Schema PROCESSLIST Table](/kb/en/information-schema-processlist-table/) as well as the `PROCESSLIST_STATE` value listed in the [Performance Schema threads Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table).
+This article documents thread states that are related to connection threads that occur on a [replication](/replication/) slave. These correspond to the `STATE` values listed by the [SHOW PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist/) statement or in the [Information Schema PROCESSLIST Table](/kb/en/information-schema-processlist-table/) as well as the `PROCESSLIST_STATE` value listed in the [Performance Schema threads Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table/).
 
 <table><tbody><tr><th>Value</th><th>Description</th></tr>
 <tr><td>Changing master</td><td>Processing a <a href="/kb/en/change-master-to/">CHANGE MASTER TO</a> statement.</td></tr>

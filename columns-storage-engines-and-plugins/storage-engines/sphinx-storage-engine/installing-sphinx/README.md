@@ -19,7 +19,7 @@ Alternatively, install as follows:
 - The Sphinx package and daemon are named `sphinxsearch`.
 - `sudo apt-get install unixodbc libpq5 mariadb-client`
 - `sudo dpkg -i sphinxsearch*.deb`
-- [Configure Sphinx](/columns-storage-engines-and-plugins/storage-engines/sphinx-storage-engine/configuring-sphinx) as required
+- [Configure Sphinx](/columns-storage-engines-and-plugins/storage-engines/sphinx-storage-engine/configuring-sphinx/) as required
 - You may need to check `/etc/default/sphinxsearch` to see that `START=yes`
 - Start with `sudo service sphinxsearch start` (and stop with `sudo service sphinxsearch stop`)
 
@@ -28,18 +28,18 @@ Alternatively, install as follows:
 - The package name is `sphinx` and the daemon `searchd`.
 - `sudo yum install postgresql-libs unixODBC`
 - `sudo rpm -Uhv sphinx*.rpm`
-- [Configure Sphinx](/columns-storage-engines-and-plugins/storage-engines/sphinx-storage-engine/configuring-sphinx) as required
+- [Configure Sphinx](/columns-storage-engines-and-plugins/storage-engines/sphinx-storage-engine/configuring-sphinx/) as required
 - `service searchd start`
 
 ## Windows
 
 - Unzip and extract the downloaded zip file
 - Move the extracted directory to `C:\Sphinx`
-- [Configure Sphinx](/columns-storage-engines-and-plugins/storage-engines/sphinx-storage-engine/configuring-sphinx) as required
+- [Configure Sphinx](/columns-storage-engines-and-plugins/storage-engines/sphinx-storage-engine/configuring-sphinx/) as required
 - Install as a service: 
 <ul><li>`C:\Sphinx\bin&gt; C:\Sphinx\bin\searchd --install --config C:\Sphinx\sphinx.conf.in --servicename SphinxSearch`
 </li></ul>
 
-Once Sphinx has been installed, it will need to be [configured](/columns-storage-engines-and-plugins/storage-engines/sphinx-storage-engine/configuring-sphinx).
+Once Sphinx has been installed, it will need to be [configured](/columns-storage-engines-and-plugins/storage-engines/sphinx-storage-engine/configuring-sphinx/).
 
 Full instructions, including details on compiling Sphinx yourself, are available at [http://sphinxsearch.com/docs/current.html](http://sphinxsearch.com/docs/current.html).

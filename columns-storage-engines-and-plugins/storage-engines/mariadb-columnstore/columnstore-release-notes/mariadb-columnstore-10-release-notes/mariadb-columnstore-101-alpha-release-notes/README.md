@@ -2,7 +2,7 @@
 
 <strong>Release date:</strong> 14 June 2016
 
-[MariaDB ColumnStore 1.0.1](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore) is the development version of MariaDB ColumnStore. It is built by porting InfiniDB 4.6.2 on [MariaDB 10.1.14](/kb/en/mariadb-10114-release-notes/).
+[MariaDB ColumnStore 1.0.1](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/) is the development version of MariaDB ColumnStore. It is built by porting InfiniDB 4.6.2 on [MariaDB 10.1.14](/kb/en/mariadb-10114-release-notes/).
 
 MariaDB ColumnStore 1.0.1 is an <strong><em>[Alpha](/kb/en/release-criteria/)</em></strong> release.
 
@@ -10,15 +10,15 @@ MariaDB ColumnStore 1.0.1 is an <strong><em>[Alpha](/kb/en/release-criteria/)</e
 
 This is the first MariaDB ColumnStore release, and we are releasing it now to get it into the hands of any one who might want to test it. We plan to do several Alpha releases, each with increased stability and more features.
 
-Note that this is an early Alpha release of [MariaDB ColumnStore](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore) in [MariaDB 10.1.14](/kb/en/mariadb-10114-release-notes/) The porting work from MySQL 5.1 is done but not all features have been fully tested.  This release is only meant for testing, not for using in production!
+Note that this is an early Alpha release of [MariaDB ColumnStore](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/) in [MariaDB 10.1.14](/kb/en/mariadb-10114-release-notes/) The porting work from MySQL 5.1 is done but not all features have been fully tested.  This release is only meant for testing, not for using in production!
 
 To understand what to expect from this release, a little background is needed:
-[MariaDB ColumnStore](%5B%5Bmariadb-columnstore) is based on the MySQL 5.1 InfiniDB release , which was a stable product with a lot of happy users.  To make this more modern and easier to develop, we moved the InfiniDB code to [MariaDB 10.1.14](/kb/en/mariadb-10114-release-notes/) and renamed it ColumnStore.  As most of the [MariaDB ColumnStore](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore) code is unchanged and as [MariaDB 10.1.14](/kb/en/mariadb-10114-release-notes/) code is stable, the possible problems are mostly in the interface between MariaDB Server and MariaDB ColumnStore.
+[MariaDB ColumnStore](%5B%5Bmariadb-columnstore) is based on the MySQL 5.1 InfiniDB release , which was a stable product with a lot of happy users.  To make this more modern and easier to develop, we moved the InfiniDB code to [MariaDB 10.1.14](/kb/en/mariadb-10114-release-notes/) and renamed it ColumnStore.  As most of the [MariaDB ColumnStore](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/) code is unchanged and as [MariaDB 10.1.14](/kb/en/mariadb-10114-release-notes/) code is stable, the possible problems are mostly in the interface between MariaDB Server and MariaDB ColumnStore.
 
-We have not yet had time to ourselves extensively test all [MariaDB ColumnStore](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore) features and MariaDB ColumnStore has not yet been tested by a larger community, so there may be some issues that needs to be fixed in the next releases.  We do however expect that most things should work and be reasonably stable.
+We have not yet had time to ourselves extensively test all [MariaDB ColumnStore](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/) features and MariaDB ColumnStore has not yet been tested by a larger community, so there may be some issues that needs to be fixed in the next releases.  We do however expect that most things should work and be reasonably stable.
 
 Please provide feedback in [JIRA](https://jira.mariadb.org/browse/MCOL) for anything that is not working as expected so that we can fix it before we make the release available for the larger community.
-For general "how to questions" ask questions [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore) or subscribe to mariadb-columnstore@googlegroups.com
+For general "how to questions" ask questions [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/) or subscribe to mariadb-columnstore@googlegroups.com
 
 ## Notable Features
 
@@ -83,7 +83,7 @@ The building of the software needs a special build environment. We're working on
 
 ## Documentation
 
-[MariaDB ColumnStore Documentation](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore) include architecture, getting started, SQL Syntax guide, How to manage and How to load data into MariaDB ColumnStore.
+[MariaDB ColumnStore Documentation](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/) include architecture, getting started, SQL Syntax guide, How to manage and How to load data into MariaDB ColumnStore.
 
 Detailed Installation Guide will be available in next version of the MariaDB ColumnStore 1.0 series
 

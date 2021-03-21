@@ -1,14 +1,14 @@
 # Spider Server System Variables
 
-The following variables are available when the [Spider](/columns-storage-engines-and-plugins/storage-engines/spider) storage engine has been installed.
+The following variables are available when the [Spider](/columns-storage-engines-and-plugins/storage-engines/spider/) storage engine has been installed.
 
-See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables) for a complete list of system variables and instructions on setting them.
+See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables/) for a complete list of system variables and instructions on setting them.
 
-See also the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables).
+See also the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables/).
 
 #### `spider_auto_increment_mode`
 
-- <strong>Description:</strong> The [auto increment](/columns-storage-engines-and-plugins/data-types/auto_increment) mode.
+- <strong>Description:</strong> The [auto increment](/columns-storage-engines-and-plugins/data-types/auto_increment/) mode.
 <ul start="1"><li>`-1` Uses the table parameter.
 </li><li>`0` Normal Mode. Uses a counter that Spider gets from the remote backend server with an exclusive lock for the auto-increment value.  This mode is slow.  Use Quick Mode (`2`), if you use Spider tables with the table partitioning feature and the auto-increment column is the first column of the index. Before [MariaDB 10.3](/kb/en/what-is-mariadb-103/), this value works as "1" for partitioned Spider tables.
 </li><li>`1` Quick Mode. Uses an internal Spider counter for the auto-increment value. This mode is fast, but it is possible for duplicates to occur when updating the same table from multiple Spider proxies.
@@ -79,7 +79,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `spider_bka_engine`
 
-- <strong>Description:</strong> Storage engine used with temporary tables when the [spider_bka_mode](#spider_bka_mode) system variable is set to `1`.  Defaults to the value of the table parameter, which is [MEMORY](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/memory-storage-engine) by default.
+- <strong>Description:</strong> Storage engine used with temporary tables when the [spider_bka_mode](#spider_bka_mode) system variable is set to `1`.  Defaults to the value of the table parameter, which is [MEMORY](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/memory-storage-engine/) by default.
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
 - <strong>Data Type:</strong> `string`
@@ -431,7 +431,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `spider_direct_dup_insert`
 
-- <strong>Description:</strong> Manages duplicate key check for [REPLACE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/replace), [INSERT IGNORE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/ignore) and [LOAD DATA LOCAL INFILE](/kb/en/load-data-infile/) to remote servers. This can save on network roundtrips if the key always maps to a single partition.  For bulk operations, records are checked for duplicate key errors one by one on the remote server, unless you set it to avoid duplicate checks on local servers (`1`).
+- <strong>Description:</strong> Manages duplicate key check for [REPLACE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/replace/), [INSERT IGNORE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/ignore/) and [LOAD DATA LOCAL INFILE](/kb/en/load-data-infile/) to remote servers. This can save on network roundtrips if the key always maps to a single partition.  For bulk operations, records are checked for duplicate key errors one by one on the remote server, unless you set it to avoid duplicate checks on local servers (`1`).
 <ul start="1"><li>`-1` Uses the table parameter. 
 </li><li>`0` Performs duplicate checks on the local server.
 </li><li>`1` Avoids duplicate checks on the local server.
@@ -619,7 +619,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `spider_internal_optimize`
 
-- <strong>Description:</strong> Whether to perform push down operations for [OPTIMIZE TABLE](/replication/optimization-and-tuning/optimizing-tables/optimize-table) statements.
+- <strong>Description:</strong> Whether to perform push down operations for [OPTIMIZE TABLE](/replication/optimization-and-tuning/optimizing-tables/optimize-table/) statements.
 <ul start="1"><li>`-1` Uses the table parameter. 
 </li><li>`0` Transmitted.
 </li><li>`1` Not transmitted.
@@ -649,7 +649,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `spider_internal_sql_log_off`
 
-- <strong>Description:</strong> Whether to log SQL statements sent to the remote server in the [General Query Log](/mariadb-administration/server-monitoring-logs/general-query-log). 
+- <strong>Description:</strong> Whether to log SQL statements sent to the remote server in the [General Query Log](/mariadb-administration/server-monitoring-logs/general-query-log/). 
 <ul start="1"><li>Explicitly setting this system variable to either `ON` or `OFF` causes the Spider node to send a `SET sql_log_off` statement to each of the data nodes using the `SUPER` privilege.
 </li><li>`-1` Don't know or does not matter; don't send 'SET SQL_LOG_OFF' statement
 </li><li>`0` Send 'SET SQL_LOG_OFF 0' statement to data nodes (logs SQL statements to the remote server)
@@ -762,7 +762,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 #### `spider_lock_exchange`
 
 - <strong>Description:</strong> 
-Whether to convert [SELECT... LOCK IN SHARE MODE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/lock-in-share-mode) and [SELECT... FOR UPDATE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/for-update) statements into a [LOCK TABLE](/kb/en/lock/) statement.
+Whether to convert [SELECT... LOCK IN SHARE MODE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/lock-in-share-mode/) and [SELECT... FOR UPDATE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/for-update/) statements into a [LOCK TABLE](/kb/en/lock/) statement.
 <ul start="1"><li>`0` Not converted.
 </li><li>`1` Converted.
 </li></ul>
@@ -792,7 +792,7 @@ Whether to convert [SELECT... LOCK IN SHARE MODE](/sql-statements-structure/sql-
 
 #### `spider_log_result_errors`
 
-- <strong>Description:</strong> Log results from data nodes to the Spider node in the [Error Log](/mariadb-administration/server-monitoring-logs/error-log).  Performs no logging by default.
+- <strong>Description:</strong> Log results from data nodes to the Spider node in the [Error Log](/mariadb-administration/server-monitoring-logs/error-log/).  Performs no logging by default.
 <ul start="1"><li>`0` : Logs no errors from data nodes.
 </li><li>`1` : Logs errors from data nodes.
 </li><li>`2` : Logs errors from data nodes, as well as warning summaries.
@@ -984,7 +984,7 @@ Whether to divide a statement into multiple SQL statements sent to the remote ba
 
 #### `spider_remote_access_charset`
 
-- <strong>Description:</strong> Forces the specified session [character set](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets) when connecting to the backend server.  This can improve connection time performance.
+- <strong>Description:</strong> Forces the specified session [character set](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/) when connecting to the backend server.  This can improve connection time performance.
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
 - <strong>Data Type:</strong> `string`
@@ -1034,7 +1034,7 @@ Whether to divide a statement into multiple SQL statements sent to the remote ba
 
 #### `spider_remote_time_zone`
 
-- <strong>Description:</strong> Forces the specified [time zone](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones) setting when connecting to backend servers. 
+- <strong>Description:</strong> Forces the specified [time zone](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones/) setting when connecting to backend servers. 
 This can improve connection performance when you know the time zone.
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -1404,7 +1404,7 @@ Enables background confirmation for table statistics.  When background confirmat
 #### `spider_sts_mode`
 
 - <strong>Description:</strong>  Table statistics mode.
-Mode for table statistics. The [SHOW](/sql-statements-structure/sql-statements/administrative-sql-statements/show) command is used at the table level default.
+Mode for table statistics. The [SHOW](/sql-statements-structure/sql-statements/administrative-sql-statements/show/) command is used at the table level default.
 <ul start="1"><li>`-1,0` Uses the table parameter. 
 </li><li>`1` Uses the `SHOW` command.
 </li><li>`2` Uses the Information Schema. 
@@ -1465,7 +1465,7 @@ Mode for table statistics. The [SHOW](/sql-statements-structure/sql-statements/a
 
 #### `spider_sync_sql_mode`
 
-- <strong>Description:</strong> Whether to sync [sql_mode](/mariadb-administration/variables-and-modes/sql-mode).
+- <strong>Description:</strong> Whether to sync [sql_mode](/mariadb-administration/variables-and-modes/sql-mode/).
 <ul start="1"><li>`OFF` No sync
 </li><li>`ON` Sync
 </li></ul>
@@ -1707,13 +1707,13 @@ Whether to push a local `START TRANSACTION WITH CONSISTENT` statement down to re
 
 #### `spider_use_handler`
 
-- <strong>Description:</strong> Converts [HANDLER](/sql-statements-structure/nosql/handler) SQL statements.
-When the [spider_sync_trx_isolation](#spider_sync_trx_isolation) system variable is set to `0`, Spider disables [HANDLER](/sql-statements-structure/nosql/handler) conversions to prevent use of the statement on the [SERIALIZABLE](/kb/en/set-transaction/#serializable) isolation level.
+- <strong>Description:</strong> Converts [HANDLER](/sql-statements-structure/nosql/handler/) SQL statements.
+When the [spider_sync_trx_isolation](#spider_sync_trx_isolation) system variable is set to `0`, Spider disables [HANDLER](/sql-statements-structure/nosql/handler/) conversions to prevent use of the statement on the [SERIALIZABLE](/kb/en/set-transaction/#serializable) isolation level.
 <ul start="1"><li>`-1` Uses table parameter
-</li><li>`0` Converts [HANDLER](/sql-statements-structure/nosql/handler) statements into [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) statements.
-</li><li>`1` Passes [HANDLER](/sql-statements-structure/nosql/handler) to the remote backend server.
-</li><li>`2` Converts SQL statements to [HANDLER](/sql-statements-structure/nosql/handler) statements.
-</li><li>`3` Converts SQL statements to [HANDLER](/sql-statements-structure/nosql/handler) statements and [HANDLER](/sql-statements-structure/nosql/handler) statements to SQL statements.
+</li><li>`0` Converts [HANDLER](/sql-statements-structure/nosql/handler/) statements into [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) statements.
+</li><li>`1` Passes [HANDLER](/sql-statements-structure/nosql/handler/) to the remote backend server.
+</li><li>`2` Converts SQL statements to [HANDLER](/sql-statements-structure/nosql/handler/) statements.
+</li><li>`3` Converts SQL statements to [HANDLER](/sql-statements-structure/nosql/handler/) statements and [HANDLER](/sql-statements-structure/nosql/handler/) statements to SQL statements.
 </li></ul>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes

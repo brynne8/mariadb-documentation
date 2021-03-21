@@ -13,11 +13,11 @@ argument, in which case it returns the minimum string value. The `DISTINCT`
 keyword can be used to find the minimum of the distinct values of <em>`expr`</em>,
 however, this produces the same result as omitting `DISTINCT`.
 
-Note that [SET](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set) and [ENUM](/columns-storage-engines-and-plugins/data-types/string-data-types/enum) fields are currently compared by their string value rather than their relative position in the set, so MIN() may produce a different lowest result than ORDER BY ASC.
+Note that [SET](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set/) and [ENUM](/columns-storage-engines-and-plugins/data-types/string-data-types/enum/) fields are currently compared by their string value rather than their relative position in the set, so MIN() may produce a different lowest result than ORDER BY ASC.
 
-It is an [aggregate function](/built-in-functions/aggregate-functions), and so can be used with the [GROUP BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/group-by) clause.
+It is an [aggregate function](/built-in-functions/aggregate-functions/), and so can be used with the [GROUP BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/group-by/) clause.
 
-From [MariaDB 10.2.2](/kb/en/mariadb-1022-release-notes/), MIN() can be used as a [window function](/built-in-functions/special-functions/window-functions).
+From [MariaDB 10.2.2](/kb/en/mariadb-1022-release-notes/), MIN() can be used as a [window function](/built-in-functions/special-functions/window-functions/).
 
 `MIN()` returns `NULL` if there were no matching rows.
 
@@ -87,7 +87,7 @@ SELECT grade FROM student2 ORDER BY grade ASC LIMIT 1;
 +-------+
 ```
 
-As a [window function](/built-in-functions/special-functions/window-functions):
+As a [window function](/built-in-functions/special-functions/window-functions/):
 
 ```sql
 CREATE OR REPLACE TABLE student_test (name CHAR(10), test CHAR(10), score TINYINT);
@@ -115,8 +115,8 @@ SELECT name, test, score, MIN(score)
 
 ## See Also
 
-- [AVG](/built-in-functions/aggregate-functions/avg) (average)
-- [MAX](/built-in-functions/aggregate-functions/max) (maximum)
-- [SUM](/built-in-functions/aggregate-functions/sum) (sum total)
-- [MIN/MAX optimization](/replication/optimization-and-tuning/query-optimizations/minmax-optimization) used by the optimizer
-- [LEAST()](/sql-statements-structure/operators/comparison-operators/least) returns the smallest value from a list.
+- [AVG](/built-in-functions/aggregate-functions/avg/) (average)
+- [MAX](/built-in-functions/aggregate-functions/max/) (maximum)
+- [SUM](/built-in-functions/aggregate-functions/sum/) (sum total)
+- [MIN/MAX optimization](/replication/optimization-and-tuning/query-optimizations/minmax-optimization/) used by the optimizer
+- [LEAST()](/sql-statements-structure/operators/comparison-operators/least/) returns the smallest value from a list.

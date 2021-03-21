@@ -1,7 +1,7 @@
 # Mroonga Overview
 
 <br><br>
-Once Mroonga has been installed (see [About Mroonga](/columns-storage-engines-and-plugins/storage-engines/mroonga/about-mroonga)), its basic usage is similar to that of a [regular fulltext index](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes).
+Once Mroonga has been installed (see [About Mroonga](/columns-storage-engines-and-plugins/storage-engines/mroonga/about-mroonga/)), its basic usage is similar to that of a [regular fulltext index](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/).
 <br><br><br><br>
 For example:<br><br><br>
 

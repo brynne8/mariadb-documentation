@@ -8,7 +8,7 @@ MultiPoint(pt1,pt2,...)
 
 ## Description
 
-Constructs a [WKB](/sql-statements-structure/geographic-geometric-features/wkb) MultiPoint value using WKB [Point](/sql-statements-structure/geographic-geometric-features/geometry-constructors/point) arguments. If any argument is not a WKB Point, the return value is `NULL`.
+Constructs a [WKB](/sql-statements-structure/geographic-geometric-features/wkb/) MultiPoint value using WKB [Point](/sql-statements-structure/geographic-geometric-features/geometry-constructors/point/) arguments. If any argument is not a WKB Point, the return value is `NULL`.
 
 ## Examples
 

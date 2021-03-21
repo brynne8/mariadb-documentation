@@ -10,7 +10,7 @@ VAR_POP(expr)
 
 Returns the population standard variance of `expr`. It considers rows as
 the whole population, not as a sample, so it has the number of rows as
-the denominator. You can also use [VARIANCE()](/built-in-functions/aggregate-functions/variance), which is equivalent but
+the denominator. You can also use [VARIANCE()](/built-in-functions/aggregate-functions/variance/), which is equivalent but
 is not standard SQL.
 
 Variance is calculated by
@@ -19,9 +19,9 @@ Variance is calculated by
 - for each number, subtracting the mean and squaring the result
 - calculate the average of the resulting differences
 
-It is an [aggregate function](/built-in-functions/aggregate-functions), and so can be used with the [GROUP BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/group-by) clause.
+It is an [aggregate function](/built-in-functions/aggregate-functions/), and so can be used with the [GROUP BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/group-by/) clause.
 
-From [MariaDB 10.2.2](/kb/en/mariadb-1022-release-notes/), VAR_POP() can be used as a [window function](/built-in-functions/special-functions/window-functions).
+From [MariaDB 10.2.2](/kb/en/mariadb-1022-release-notes/), VAR_POP() can be used as a [window function](/built-in-functions/special-functions/window-functions/).
 
 VAR_POP() returns `NULL` if there were no matching rows.
 
@@ -49,7 +49,7 @@ SELECT VAR_POP(i) FROM v;
 +------------+
 ```
 
-As an [aggregate function](/built-in-functions/aggregate-functions):
+As an [aggregate function](/built-in-functions/aggregate-functions/):
 
 ```sql
 CREATE OR REPLACE TABLE stats (category VARCHAR(2), x INT);
@@ -68,7 +68,7 @@ SELECT category, STDDEV_POP(x), STDDEV_SAMP(x), VAR_POP(x)
 +----------+---------------+----------------+------------+
 ```
 
-As a [window function](/built-in-functions/special-functions/window-functions):
+As a [window function](/built-in-functions/special-functions/window-functions/):
 
 ```sql
 CREATE OR REPLACE TABLE student_test (name CHAR(10), test CHAR(10), score TINYINT);
@@ -96,6 +96,6 @@ SELECT name, test, score, VAR_POP(score)
 
 ## See Also
 
-- [VARIANCE](/built-in-functions/aggregate-functions/variance) (equivalent, non-standard SQL)
-- [STDDEV_POP](/built-in-functions/aggregate-functions/stddev_pop) (population standard deviation)
-- [STDDEV_SAMP](/built-in-functions/aggregate-functions/stddev_samp) (sample standard deviation)
+- [VARIANCE](/built-in-functions/aggregate-functions/variance/) (equivalent, non-standard SQL)
+- [STDDEV_POP](/built-in-functions/aggregate-functions/stddev_pop/) (population standard deviation)
+- [STDDEV_SAMP](/built-in-functions/aggregate-functions/stddev_samp/) (sample standard deviation)

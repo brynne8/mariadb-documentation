@@ -2,7 +2,7 @@
 
 ##### MariaDB starting with [10.0.1](/kb/en/mariadb-1001-release-notes/)
 
-[MariaDB 10.0.1](/kb/en/mariadb-1001-release-notes/) introduced the following improvements to the [dynamic columns](/sql-statements-structure/nosql/dynamic-columns) feature.
+[MariaDB 10.0.1](/kb/en/mariadb-1001-release-notes/) introduced the following improvements to the [dynamic columns](/sql-statements-structure/nosql/dynamic-columns/) feature.
 
 ## Column Name Support
 
@@ -79,7 +79,7 @@ The following new functions have been added to dynamic columns in MariaDB 10
 
 ### COLUMN_CHECK
 
-[COLUMN_CHECK](/built-in-functions/special-functions/dynamic-columns-functions/column_check) is used to check a column's integrity. When it encounters an error
+[COLUMN_CHECK](/built-in-functions/special-functions/dynamic-columns-functions/column_check/) is used to check a column's integrity. When it encounters an error
 it does not return illegal format errors but returns false instead. It also
 checks integrity more thoroughly and finds errors in the dynamic column
 internal structures which might not be found by other functions.
@@ -135,5 +135,5 @@ columns family (the table analog in cassandra).
 
 ## See Also
 
-- [Dynamic Columns](/sql-statements-structure/nosql/dynamic-columns)
+- [Dynamic Columns](/sql-statements-structure/nosql/dynamic-columns/)
 - [Cassandra Storage Engine](/kb/en/cassandra-storage-engine/)

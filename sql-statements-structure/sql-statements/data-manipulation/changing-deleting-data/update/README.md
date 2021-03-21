@@ -30,30 +30,30 @@ they should be given.  Each value can be given as an expression, or the keyword
 `DEFAULT` to set a column explicitly to its default value. The
 `WHERE` clause, if given, specifies the conditions that identify
 which rows to update. With no `WHERE` clause, all rows are
-updated. If the [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by) clause is specified, the rows are
-updated in the order that is specified. The [LIMIT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/limit) clause
+updated. If the [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by/) clause is specified, the rows are
+updated in the order that is specified. The [LIMIT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/limit/) clause
 places a limit on the number of rows that can be updated.
 
 ##### MariaDB starting with [10.0](/kb/en/what-is-mariadb-100/)
 
-The PARTITION clause was introduced in [MariaDB 10.0](/kb/en/what-is-mariadb-100/). See [Partition Pruning and Selection](/mariadb-administration/partitioning-tables/partition-pruning-and-selection) for details.
+The PARTITION clause was introduced in [MariaDB 10.0](/kb/en/what-is-mariadb-100/). See [Partition Pruning and Selection](/mariadb-administration/partitioning-tables/partition-pruning-and-selection/) for details.
 
 Until [MariaDB 10.3.2](/kb/en/mariadb-1032-release-notes/), for the multiple-table syntax, `UPDATE` updates rows in each
 table named in table_references that satisfy the conditions. In this case,
-[ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by) and [LIMIT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/limit) cannot be used. This restriction was lifted in [MariaDB 10.3.2](/kb/en/mariadb-1032-release-notes/) and both clauses can be used with multiple-table updates. An `UPDATE` can also reference tables which are located in different databases; see [Identifier Qualifiers](/sql-statements-structure/sql-language-structure/identifier-qualifiers) for the syntax.
+[ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by/) and [LIMIT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/limit/) cannot be used. This restriction was lifted in [MariaDB 10.3.2](/kb/en/mariadb-1032-release-notes/) and both clauses can be used with multiple-table updates. An `UPDATE` can also reference tables which are located in different databases; see [Identifier Qualifiers](/sql-statements-structure/sql-language-structure/identifier-qualifiers/) for the syntax.
 
 `where_condition` is an expression that evaluates to true for
 each row to be updated.
 
 `table_references` and `where_condition` are as
-specified as described in [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select).
+specified as described in [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/).
 
-For single-table updates, assignments are evaluated in left-to-right order, while for multi-table updates, there is no guarantee of a particular order. If the `SIMULTANEOUS_ASSIGNMENT` [sql_mode](/mariadb-administration/variables-and-modes/sql-mode) (available from [MariaDB 10.3.5](/kb/en/mariadb-1035-release-notes/)) is set, UPDATE statements evaluate all assignments simultaneously.
+For single-table updates, assignments are evaluated in left-to-right order, while for multi-table updates, there is no guarantee of a particular order. If the `SIMULTANEOUS_ASSIGNMENT` [sql_mode](/mariadb-administration/variables-and-modes/sql-mode/) (available from [MariaDB 10.3.5](/kb/en/mariadb-1035-release-notes/)) is set, UPDATE statements evaluate all assignments simultaneously.
 
 You need the `UPDATE` privilege only for columns referenced in
 an `UPDATE` that are actually updated. You need only the
-[SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) privilege for any columns that are read but
-not modified. See [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant).
+[SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) privilege for any columns that are read but
+not modified. See [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/).
 
 The `UPDATE` statement supports the following modifiers:
 
@@ -119,8 +119,8 @@ UPDATE tab1, tab2 SET tab1.column1 = value1, tab1.column2 = value2 WHERE tab1.id
 
 ## See Also
 
-- [How IGNORE works](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/ignore)
-- [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select)
-- [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by)
-- [LIMIT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/limit)
-- [Identifier Qualifiers](/sql-statements-structure/sql-language-structure/identifier-qualifiers)
+- [How IGNORE works](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/ignore/)
+- [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/)
+- [ORDER BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/order-by/)
+- [LIMIT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/limit/)
+- [Identifier Qualifiers](/sql-statements-structure/sql-language-structure/identifier-qualifiers/)

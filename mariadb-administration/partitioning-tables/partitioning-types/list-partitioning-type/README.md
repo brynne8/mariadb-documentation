@@ -1,12 +1,12 @@
 # LIST Partitioning Type
 
-LIST partitioning is conceptually similar to [RANGE partitioning](/mariadb-administration/partitioning-tables/partitioning-types/range-partitioning-type). In both cases you decide a partitioning expression (a column, or a slightly more complex calculation) and use it to determine which partitions will contain each row. However, with the RANGE type, partitioning is done by assigning a range of values to each partition. With the LIST type, we assign a set of values to each partition. This is usually preferred if the partitioning expression can return a limited set of values.
+LIST partitioning is conceptually similar to [RANGE partitioning](/mariadb-administration/partitioning-tables/partitioning-types/range-partitioning-type/). In both cases you decide a partitioning expression (a column, or a slightly more complex calculation) and use it to determine which partitions will contain each row. However, with the RANGE type, partitioning is done by assigning a range of values to each partition. With the LIST type, we assign a set of values to each partition. This is usually preferred if the partitioning expression can return a limited set of values.
 
-A variant of this partitioning method, [LIST COLUMNS](/mariadb-administration/partitioning-tables/partitioning-types/range-columns-and-list-columns-partitioning-types), allows us to use multiple columns and more datatypes.
+A variant of this partitioning method, [LIST COLUMNS](/mariadb-administration/partitioning-tables/partitioning-types/range-columns-and-list-columns-partitioning-types/), allows us to use multiple columns and more datatypes.
 
 ## Syntax
 
-The last part of a [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table) statement can be the definition of the new table's partitions. In the case of LIST partitioning, the syntax is the following:
+The last part of a [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/) statement can be the definition of the new table's partitions. In the case of LIST partitioning, the syntax is the following:
 
 ```sql
 PARTITION BY LIST (partitioning_expression)

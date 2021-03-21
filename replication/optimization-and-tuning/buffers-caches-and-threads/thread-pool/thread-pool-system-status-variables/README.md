@@ -1,6 +1,6 @@
 # Thread Pool System and Status Variables
 
-This article describes the system and status variables used by the MariaDB thread pool. For a full description, see [Thread Pool in MariaDB](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb).
+This article describes the system and status variables used by the MariaDB thread pool. For a full description, see [Thread Pool in MariaDB](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb/).
 
 ## System variables
 
@@ -35,7 +35,7 @@ This article describes the system and status variables used by the MariaDB threa
 
 - <strong>Description:</strong> Determines how the server handles threads for client connections. In addition to threads for client connections, this also applies to certain internal server threads, such as [Galera slave threads](/kb/en/about-galera-replication/#galera-slave-threads).
 <ul start="1"><li>When the default `one-thread-per-connection` mode is enabled, the server uses one thread to handle each client connection.
-</li><li>When the `pool-of-threads` mode is enabled, the server uses the [thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb) for client connections.
+</li><li>When the `pool-of-threads` mode is enabled, the server uses the [thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb/) for client connections.
 </li><li>When the `no-threads` mode is enabled, the server uses a single thread for all client connections, which is really only usable for debugging.
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--thread-handling=name</code>
@@ -44,7 +44,7 @@ This article describes the system and status variables used by the MariaDB threa
 - <strong>Data Type:</strong> `enumeration`
 - <strong>Default Value:</strong> `one-thread-per-connection`
 - <strong>Valid Values:</strong> `no-threads`, `one-thread-per-connection`, `pool-of-threads`.
-- <strong>Documentation:</strong> [Using the thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb).
+- <strong>Documentation:</strong> [Using the thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb/).
 - <strong>Notes:</strong> In MySQL the thread pool is only available in MySQL enterprise 5.5.16 and above. In MariaDB it's available in all versions.
 
 ---
@@ -90,14 +90,14 @@ calculate the queuing time shown in the [Information Schema Threadpool_Queues](/
 - <strong>Dynamic:</strong> Yes
 - <strong>Data Type:</strong> `numeric`
 - <strong>Default Value:</strong> `60`
-- <strong>Documentation:</strong> [Using the thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb).
+- <strong>Documentation:</strong> [Using the thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb/).
 
 ---
 
 #### `thread_pool_max_threads`
 
-- <strong>Description:</strong> The maximum number of threads in the [thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb). Once this limit is reached, no new threads will be created in most cases.
-<ul start="1"><li>On Unix, in rare cases, the actual number of threads can slightly exceed this, because each [thread group](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-groups-in-the-unix-implementation-of-the-thread-pool) needs at least two threads (i.e. at least one worker thread and at least one listener thread) to prevent deadlocks.
+- <strong>Description:</strong> The maximum number of threads in the [thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb/). Once this limit is reached, no new threads will be created in most cases.
+<ul start="1"><li>On Unix, in rare cases, the actual number of threads can slightly exceed this, because each [thread group](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-groups-in-the-unix-implementation-of-the-thread-pool/) needs at least two threads (i.e. at least one worker thread and at least one listener thread) to prevent deadlocks.
 </li></ul>
 - <strong>Scope:</strong>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">thread-pool-max-threads=#</code>
@@ -110,20 +110,20 @@ calculate the queuing time shown in the [Information Schema Threadpool_Queues](/
 </li><li>`500` (&lt;= [MariaDB 10.0](/kb/en/what-is-mariadb-100/))
 </li></ul>
 - <strong>Range:</strong> `1` to `65536`
-- <strong>Documentation:</strong> [Using the thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb).
+- <strong>Documentation:</strong> [Using the thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb/).
 
 ---
 
 #### `thread_pool_min_threads`
 
-- <strong>Description:</strong> Minimum number of threads in the [thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb). In bursty environments, after a period of inactivity, threads would normally be retired. When the next burst arrives, it would take time to reach the optimal level. Setting this value higher than the default would prevent thread retirement even if inactive.
+- <strong>Description:</strong> Minimum number of threads in the [thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb/). In bursty environments, after a period of inactivity, threads would normally be retired. When the next burst arrives, it would take time to reach the optimal level. Setting this value higher than the default would prevent thread retirement even if inactive.
 <ul start="1"><li>This system variable is only meaningful on <strong>Windows</strong>.
 </li><li>The <a undefined>thread_pool_idle_timeout</a> system variable is comparable for Unix.
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">thread-pool-min-threads=#</code>
 - <strong>Data Type:</strong> `numeric`
 - <strong>Default Value:</strong> `1`
-- <strong>Documentation:</strong> [Using the thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb).
+- <strong>Documentation:</strong> [Using the thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb/).
 
 ---
 
@@ -139,7 +139,7 @@ calculate the queuing time shown in the [Information Schema Threadpool_Queues](/
 - <strong>Data Type:</strong> `numeric`
 - <strong>Default Value:</strong> `3`
 - <strong>Range:</strong> `1` to `65536`
-- <strong>Documentation:</strong> [Using the thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb).
+- <strong>Documentation:</strong> [Using the thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb/).
 
 ---
 
@@ -155,13 +155,13 @@ calculate the queuing time shown in the [Information Schema Threadpool_Queues](/
 - <strong>Default Value:</strong> `1000`
 - <strong>Range:</strong> `0` to `4294967295`
 - <strong>Introduced:</strong> [MariaDB 10.2.2](/kb/en/mariadb-1022-release-notes/)
-- <strong>Documentation:</strong> [Using the thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb).
+- <strong>Documentation:</strong> [Using the thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb/).
 
 ---
 
 #### `thread_pool_priority`
 
-- <strong>Description:</strong> [Thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb) priority. High-priority connections usually start executing earlier than low-priority.
+- <strong>Description:</strong> [Thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb/) priority. High-priority connections usually start executing earlier than low-priority.
 If set to 'auto' (the default), the actual priority (low or high) is determined by whether or not the connection is inside a transaction.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--thread-pool-priority=#</code>
 - <strong>Scope:</strong> Global,Connection
@@ -169,14 +169,14 @@ If set to 'auto' (the default), the actual priority (low or high) is determined 
 - <strong>Default Value:</strong> `auto`
 - <strong>Valid Values:</strong> `high`, `low`, `auto`.
 - <strong>Introduced:</strong> [MariaDB 10.2.2](/kb/en/mariadb-1022-release-notes/)
-- <strong>Documentation:</strong> [Using the thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb).
+- <strong>Documentation:</strong> [Using the thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb/).
 
 ---
 
 #### `thread_pool_size`
 
-- <strong>Description:</strong> The number of [thread groups](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-groups-in-the-unix-implementation-of-the-thread-pool) in the [thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb), which determines how many statements can execute simultaneously. The default value is the number of CPUs on the system. When setting this system variable's value at system startup, the max value is 100000. However, it is not a good idea to set it that high. When setting this system variable's value dynamically, the max value is either 128 or the value that was set at system startup--whichever value is higher.
-<ul start="1"><li>See [Thread Groups in the Unix Implementation of the Thread Pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-groups-in-the-unix-implementation-of-the-thread-pool) for more information.
+- <strong>Description:</strong> The number of [thread groups](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-groups-in-the-unix-implementation-of-the-thread-pool/) in the [thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb/), which determines how many statements can execute simultaneously. The default value is the number of CPUs on the system. When setting this system variable's value at system startup, the max value is 100000. However, it is not a good idea to set it that high. When setting this system variable's value dynamically, the max value is either 128 or the value that was set at system startup--whichever value is higher.
+<ul start="1"><li>See [Thread Groups in the Unix Implementation of the Thread Pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-groups-in-the-unix-implementation-of-the-thread-pool/) for more information.
 </li><li>This system variable is only meaningful on <strong>Unix</strong>.
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--thread-pool-size=#</code>
@@ -185,7 +185,7 @@ If set to 'auto' (the default), the actual priority (low or high) is determined 
 - <strong>Data Type:</strong> `numeric`
 - <strong>Default Value:</strong> Based on the number of processors (but see [MDEV-7806](https://jira.mariadb.org/browse/MDEV-7806)).
 - <strong>Range:</strong> `1` to `128` (&lt; [MariaDB 5.5.37](/kb/en/mariadb-5537-release-notes/), [MariaDB 10.0.11](/kb/en/mariadb-10011-release-notes/)), `1` to `100000` (&gt;= [MariaDB 5.5.37](/kb/en/mariadb-5537-release-notes/), [MariaDB 10.0.11](/kb/en/mariadb-10011-release-notes/))
-- <strong>Documentation:</strong> [Using the thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb).
+- <strong>Documentation:</strong> [Using the thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb/).
 
 ---
 
@@ -202,7 +202,7 @@ If set to 'auto' (the default), the actual priority (low or high) is determined 
 - <strong>Data Type:</strong> `numeric`
 - <strong>Default Value:</strong> `500`
 - <strong>Range:</strong> `10` to `4294967295` (&lt; [MariaDB 10.5](/kb/en/what-is-mariadb-105/)),  `1` to `4294967295` (&gt;= [MariaDB 10.5](/kb/en/what-is-mariadb-105/))
-- <strong>Documentation:</strong> [Using the thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb).
+- <strong>Documentation:</strong> [Using the thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb/).
 
 ---
 
@@ -210,7 +210,7 @@ If set to 'auto' (the default), the actual priority (low or high) is determined 
 
 #### `Threadpool_idle_threads`
 
-- <strong>Description:</strong> Number of inactive threads in the [thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb). Threads become inactive for various reasons, such as by waiting for new work. However, an inactive thread is not necessarily one that has not been assigned work. Threads are also considered inactive if they are being blocked while waiting on disk I/O, or while waiting on a lock, etc.
+- <strong>Description:</strong> Number of inactive threads in the [thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb/). Threads become inactive for various reasons, such as by waiting for new work. However, an inactive thread is not necessarily one that has not been assigned work. Threads are also considered inactive if they are being blocked while waiting on disk I/O, or while waiting on a lock, etc.
 <ul start="1"><li>This status variable is only meaningful on <strong>Unix</strong>.
 </li></ul>
 - <strong>Scope:</strong> Global, Session
@@ -220,7 +220,7 @@ If set to 'auto' (the default), the actual priority (low or high) is determined 
 
 #### `Threadpool_threads`
 
-- <strong>Description:</strong> Number of threads in the [thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb). In rare cases, this can be slightly higher than <a undefined>thread_pool_max_threads</a>, because each thread group needs at least two threads (i.e. at least one worker thread and at least one listener thread) to prevent deadlocks.
+- <strong>Description:</strong> Number of threads in the [thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb/). In rare cases, this can be slightly higher than <a undefined>thread_pool_max_threads</a>, because each thread group needs at least two threads (i.e. at least one worker thread and at least one listener thread) to prevent deadlocks.
 - <strong>Scope:</strong> Global, Session
 - <strong>Data Type:</strong> `numeric`
 
@@ -228,4 +228,4 @@ If set to 'auto' (the default), the actual priority (low or high) is determined 
 
 ## See Also
 
-- [Thread Pool in MariaDB](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb)
+- [Thread Pool in MariaDB](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb/)

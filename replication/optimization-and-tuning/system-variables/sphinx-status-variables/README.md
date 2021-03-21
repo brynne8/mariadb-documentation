@@ -1,8 +1,8 @@
 # Sphinx Status Variables
 
-This page documents status variables related to the [Sphinx storage engine](/columns-storage-engines-and-plugins/storage-engines/sphinx-storage-engine). See [Server Status Variables](/replication/optimization-and-tuning/system-variables/server-status-variables) for a complete list of status variables that can be viewed with [SHOW STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-status).
+This page documents status variables related to the [Sphinx storage engine](/columns-storage-engines-and-plugins/storage-engines/sphinx-storage-engine/). See [Server Status Variables](/replication/optimization-and-tuning/system-variables/server-status-variables/) for a complete list of status variables that can be viewed with [SHOW STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-status/).
 
-See also the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables).
+See also the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables/).
 
 #### `Sphinx_error`
 

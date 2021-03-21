@@ -49,7 +49,7 @@ If `EXISTS` subquery is an AND-part of the `WHERE` clause:
 SELECT ... FROM outer_tables WHERE EXISTS (SELECT ...) AND ...
 ```
 
-then it satisfies the main property of [semi-join subqueries](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/semi-join-subquery-optimizations):
+then it satisfies the main property of [semi-join subqueries](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/semi-join-subquery-optimizations/):
 
 <em>with semi-join subquery, we're only interested in records of outer_tables that have matches in the subquery</em>
 

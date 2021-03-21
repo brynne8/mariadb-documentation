@@ -1,12 +1,12 @@
 # The Aria Name
 
-The [Aria](/columns-storage-engines-and-plugins/storage-engines/aria) storage engine used to be called Maria. This page gives the history
+The [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/) storage engine used to be called Maria. This page gives the history
 and background of how and why this name was changed to Aria.
 
 ## Backstory
 
 When starting what became the MariaDB project, Monty and the initial developers
-only planned to work on a next generation [MyISAM](/columns-storage-engines-and-plugins/storage-engines/myisam-storage-engine) storage engine replacement.
+only planned to work on a next generation [MyISAM](/columns-storage-engines-and-plugins/storage-engines/myisam-storage-engine/) storage engine replacement.
 This storage engine would be crash safe and eventually support transactions.
 Monty named the storage engine, and the project, after his daughter, Maria.
 

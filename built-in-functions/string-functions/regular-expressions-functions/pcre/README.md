@@ -18,25 +18,25 @@
 
 ## PCRE Enhancements
 
-[MariaDB 10.0.5](/kb/en/mariadb-1005-release-notes/) switched to the PCRE library, which significantly improved the power of the [REGEXP/RLIKE](/built-in-functions/string-functions/regular-expressions-functions/regexp) operator.
+[MariaDB 10.0.5](/kb/en/mariadb-1005-release-notes/) switched to the PCRE library, which significantly improved the power of the [REGEXP/RLIKE](/built-in-functions/string-functions/regular-expressions-functions/regexp/) operator.
 
 The switch to PCRE added a number of features, including recursive patterns, named capture, look-ahead and look-behind assertions, non-capturing groups, non-greedy quantifiers, Unicode character properties, extended syntax for characters and character classes, multi-line matching, and many other.
 
-Additionally, [MariaDB 10.0.5](/kb/en/mariadb-1005-release-notes/) introduced three new functions that work with regular expressions: [REGEXP_REPLACE()](/built-in-functions/string-functions/regular-expressions-functions/regexp_replace), [REGEXP_INSTR()](/built-in-functions/string-functions/regular-expressions-functions/regexp_instr) and [REGEXP_SUBSTR()](/built-in-functions/string-functions/regular-expressions-functions/regexp_substr).
+Additionally, [MariaDB 10.0.5](/kb/en/mariadb-1005-release-notes/) introduced three new functions that work with regular expressions: [REGEXP_REPLACE()](/built-in-functions/string-functions/regular-expressions-functions/regexp_replace/), [REGEXP_INSTR()](/built-in-functions/string-functions/regular-expressions-functions/regexp_instr/) and [REGEXP_SUBSTR()](/built-in-functions/string-functions/regular-expressions-functions/regexp_substr/).
 
 Also, REGEXP/RLIKE, and the new functions, now work correctly with all multi-byte [character sets](/kb/en/data-types-character-sets-and-collations/) supported by MariaDB, including East-Asian character sets (big5, gb2313, gbk, eucjp, eucjpms, cp932, ujis, euckr), and Unicode character sets (utf8, utf8mb4, ucs2, utf16, utf16le, utf32). In earlier versions of MariaDB (and all MySQL versions) REGEXP/RLIKE works correctly only with 8-bit character sets.
 
 ## New Regular Expression Functions
 
-- [REGEXP_REPLACE(subject, pattern, replace)](/built-in-functions/string-functions/regular-expressions-functions/regexp_replace) - Replaces all occurrences of a pattern.
-- [REGEXP_INSTR(subject, pattern)](/built-in-functions/string-functions/regular-expressions-functions/regexp_instr) - Position of the first appearance of a regex .
-- [REGEXP_SUBSTR(subject,pattern)](/built-in-functions/string-functions/regular-expressions-functions/regexp_substr) - Returns the matching part of a string.
+- [REGEXP_REPLACE(subject, pattern, replace)](/built-in-functions/string-functions/regular-expressions-functions/regexp_replace/) - Replaces all occurrences of a pattern.
+- [REGEXP_INSTR(subject, pattern)](/built-in-functions/string-functions/regular-expressions-functions/regexp_instr/) - Position of the first appearance of a regex .
+- [REGEXP_SUBSTR(subject,pattern)](/built-in-functions/string-functions/regular-expressions-functions/regexp_substr/) - Returns the matching part of a string.
 
 See the individual articles for more details and examples.
 
 ## PCRE Syntax
 
-In most cases PCRE is backward compatible with the old POSIX 1003.2 compliant regexp library (see [Regular Expressions Overview](/built-in-functions/string-functions/regular-expressions-functions/regular-expressions-overview)), so you won't need to change your applications that use SQL queries with the REGEXP/RLIKE predicate.
+In most cases PCRE is backward compatible with the old POSIX 1003.2 compliant regexp library (see [Regular Expressions Overview](/built-in-functions/string-functions/regular-expressions-functions/regular-expressions-overview/)), so you won't need to change your applications that use SQL queries with the REGEXP/RLIKE predicate.
 
 [MariaDB 10.0.11](/kb/en/mariadb-10011-release-notes/) introduced the [default_regex_flags](/kb/en/server-system-variables/#default_regex_flags) variable to address the remaining compatibilities between PCRE and the old regex library.
 
@@ -59,7 +59,7 @@ PCRE supports the following escape sequences to match special characters:
 <tr><td>\x{hhh..}</td><td>character with hex code hhh..</td></tr>
 </tbody></table>
 
-Note, the backslash characters (here, and in all examples in the sections below) must be escaped with another backslash, unless you're using the [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode) `NO_BACKSLASH_ESCAPES`.
+Note, the backslash characters (here, and in all examples in the sections below) must be escaped with another backslash, unless you're using the [SQL_MODE](/mariadb-administration/variables-and-modes/sql-mode/) `NO_BACKSLASH_ESCAPES`.
 
 This example tests if a character has hex code 0x61:
 
@@ -391,7 +391,7 @@ SELECT REGEXP_REPLACE('The King','(?:the|an|a)[^a-z]([a-z]+)','\\1');
 -> King
 ```
 
-Note that the articles are listed inside the left parentheses using the alternation operator `|` but they do not produce a captured subpattern, so the word followed by the article is referenced by `'<br>1'` in the third argument to the function. Using non-capturing groups can be useful to save numbers on the sup-patterns that won't be used in the third argument of [REGEXP_REPLACE()](/built-in-functions/string-functions/regular-expressions-functions/regexp_replace), as well as for performance purposes.
+Note that the articles are listed inside the left parentheses using the alternation operator `|` but they do not produce a captured subpattern, so the word followed by the article is referenced by `'<br>1'` in the third argument to the function. Using non-capturing groups can be useful to save numbers on the sup-patterns that won't be used in the third argument of [REGEXP_REPLACE()](/built-in-functions/string-functions/regular-expressions-functions/regexp_replace/), as well as for performance purposes.
 
 ### Non-Greedy Quantifiers
 

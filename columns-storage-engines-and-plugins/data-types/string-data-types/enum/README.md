@@ -125,4 +125,4 @@ SELECT * FROM enums WHERE a='1';
 
 ## See Also
 
-- [Data Type Storage Requirements](/columns-storage-engines-and-plugins/data-types/data-type-storage-requirements)
+- [Data Type Storage Requirements](/columns-storage-engines-and-plugins/data-types/data-type-storage-requirements/)

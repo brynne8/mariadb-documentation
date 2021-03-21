@@ -15,29 +15,29 @@ CREATE
 
 ## Description
 
-The CREATE VIEW statement creates a new [view](/programming-customizing-mariadb/views), or replaces an existing
+The CREATE VIEW statement creates a new [view](/programming-customizing-mariadb/views/), or replaces an existing
 one if the OR REPLACE clause is given. If the view does not exist, CREATE OR
 REPLACE VIEW is the same as CREATE VIEW. If the view does exist, CREATE OR
-REPLACE VIEW is the same as [ALTER VIEW](/programming-customizing-mariadb/views/alter-view).
+REPLACE VIEW is the same as [ALTER VIEW](/programming-customizing-mariadb/views/alter-view/).
 
-The select_statement is a [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) statement that provides the definition of
+The select_statement is a [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) statement that provides the definition of
 the view. (When you select from the view, you select in effect using the SELECT
 statement.) select_statement can select from base tables or other views.
 
 The view definition is "frozen" at creation time, so changes to the underlying
 tables afterwards do not affect the view definition. For example, if a view is
 defined as SELECT * on a table, new columns added to the table later do not
-become part of the view. A [SHOW CREATE VIEW](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-view) shows that
+become part of the view. A [SHOW CREATE VIEW](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-view/) shows that
 such queries are rewritten and column names are included in the view
 definition.
 
 The view definition must be a query that does not return errors at view
 creation times. However, the base tables used by the views might be altered
 later and the query may not be valid anymore. In this case, querying the view
-will result in an error. [CHECK TABLE](/sql-statements-structure/sql-statements/table-statements/check-table) helps in finding this kind
+will result in an error. [CHECK TABLE](/sql-statements-structure/sql-statements/table-statements/check-table/) helps in finding this kind
 of problems.
 
-The [ALGORITHM clause](/programming-customizing-mariadb/views/view-algorithms) affects how MariaDB processes the
+The [ALGORITHM clause](/programming-customizing-mariadb/views/view-algorithms/) affects how MariaDB processes the
 view. The DEFINER and SQL SECURITY clauses specify the security context to be
 used when checking access privileges at view invocation time. The WITH CHECK
 OPTION clause can be given to constrain inserts or updates to rows in tables
@@ -77,7 +77,7 @@ table's database directory, in a subdirectory named arc. The backup
 file for a view v is named v.frm-00001. If you alter the view again,
 the next backup is named v.frm-00002. The three latest view backup
 definitions are stored. Backed up view definitions are not preserved
-by [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump), or any other such programs, but you can retain them
+by [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump/), or any other such programs, but you can retain them
 using a file copy operation. However, they are not needed for anything
 but to provide you with a backup of your previous view definition. It
 is safe to remove these backup definitions, but only while mysqld is
@@ -130,7 +130,7 @@ A view definition is subject to the following restrictions:
 - The definition cannot refer to a TEMPORARY table, and you cannot create a TEMPORARY view.
 - Any tables named in the view definition must exist at definition time.
 - You cannot associate a trigger with a view.
-- For valid identifiers to use as view names, see [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names).
+- For valid identifiers to use as view names, see [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names/).
 
 ORDER BY is allowed in a view definition, but it is ignored if you
 select from a view using a statement that has its own ORDER BY.
@@ -250,14 +250,14 @@ the view definition includes a DEFINER clause.
 The optional ALGORITHM clause is an extension to standard SQL. It
 affects how MariaDB processes the view. ALGORITHM takes three values:
 MERGE, TEMPTABLE, or UNDEFINED. The default algorithm is UNDEFINED if
-no ALGORITHM clause is present. See [View Algorithms](/programming-customizing-mariadb/views/view-algorithms) for more information.
+no ALGORITHM clause is present. See [View Algorithms](/programming-customizing-mariadb/views/view-algorithms/) for more information.
 
 Some views are updatable. That is, you can use them in statements such
 as UPDATE, DELETE, or INSERT to update the contents of the underlying
 table. For a view to be updatable, there must be a one-to-one
 relationship between the rows in the view and the rows in the
 underlying table. There are also certain other constructs that make a
-view non-updatable. See [Inserting and Updating with Views](/programming-customizing-mariadb/views/inserting-and-updating-with-views).
+view non-updatable. See [Inserting and Updating with Views](/programming-customizing-mariadb/views/inserting-and-updating-with-views/).
 
 ### WITH CHECK OPTION
 
@@ -274,7 +274,7 @@ keyword is given, the default is CASCADED.
 
 For more information about updatable views and the WITH CHECK OPTION
 clause, see
-[Inserting and Updating with Views](/programming-customizing-mariadb/views/inserting-and-updating-with-views).
+[Inserting and Updating with Views](/programming-customizing-mariadb/views/inserting-and-updating-with-views/).
 
 ### IF NOT EXISTS
 
@@ -325,8 +325,8 @@ SHOW WARNINGS;
 
 ## See Also
 
-- [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names)
-- [ALTER VIEW](/programming-customizing-mariadb/views/alter-view)
-- [DROP VIEW](/programming-customizing-mariadb/views/drop-view)
+- [Identifier Names](/sql-statements-structure/sql-language-structure/identifier-names/)
+- [ALTER VIEW](/programming-customizing-mariadb/views/alter-view/)
+- [DROP VIEW](/programming-customizing-mariadb/views/drop-view/)
 - [SHOW CREATE VIEWS](show-create-views)
-- [INFORMATION SCHEMA VIEWS Table](/programming-customizing-mariadb/views/information-schema-views-table)
+- [INFORMATION SCHEMA VIEWS Table](/programming-customizing-mariadb/views/information-schema-views-table/)

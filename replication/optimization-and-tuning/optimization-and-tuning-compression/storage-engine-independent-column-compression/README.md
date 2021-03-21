@@ -4,7 +4,7 @@
 
 Storage-engine independent support for column compression was introduced in [MariaDB 10.3.2](/kb/en/mariadb-1032-release-notes/)
 
-Storage-engine independent column compression enables [TINYBLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/tinyblob), [BLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/blob), [MEDIUMBLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/mediumblob), [LONGBLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/longblob), [TINYTEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/tinytext), [TEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/text), [MEDIUMTEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/mediumtext), [LONGTEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/longtext), [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar) and [VARBINARY](/columns-storage-engines-and-plugins/data-types/string-data-types/varbinary) columns to be compressed.
+Storage-engine independent column compression enables [TINYBLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/tinyblob/), [BLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/blob/), [MEDIUMBLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/mediumblob/), [LONGBLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/longblob/), [TINYTEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/tinytext/), [TEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/text/), [MEDIUMTEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/mediumtext/), [LONGTEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/longtext/), [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar/) and [VARBINARY](/columns-storage-engines-and-plugins/data-types/string-data-types/varbinary/) columns to be compressed.
 
 This is performed by means of a new COMPRESSED [column attribute](/kb/en/create-table/#column-and-index-definitions):
 `COMPRESSED[=&lt;compression_method&gt;]`
@@ -85,12 +85,12 @@ When using the `COMPRESSED` attribute, note that FIELD LENGTH is reduced by 1; f
 ### Limitations
 
 - The only supported method currently is zlib.
-- The [CSV](/columns-storage-engines-and-plugins/storage-engines/csv) storage engine stores data uncompressed on-disk even if the COMPRESSED attribute is present.
+- The [CSV](/columns-storage-engines-and-plugins/storage-engines/csv/) storage engine stores data uncompressed on-disk even if the COMPRESSED attribute is present.
 - It is not possible to create indexes over compressed columns.
 
 ### Comparison with InnoDB Page Compression
 
-Storage-independent column compression is different to [InnoDB Page Compression](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-page-compression) in a number of ways.
+Storage-independent column compression is different to [InnoDB Page Compression](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-page-compression/) in a number of ways.
 
 - It is storage engine independent, while InnoDB page compression applies to InnoDB only.
 - By being specific to a column, one can access non-compressed fields without the decompression overhead.
@@ -109,5 +109,5 @@ CREATE TABLE cmp2 (i TEXT COMPRESSED=zlib);
 
 ### See Also
 
-- [InnoDB Page Compression](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-page-compression)
-- [InnoDB Compressed Row Format](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format)
+- [InnoDB Page Compression](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-page-compression/)
+- [InnoDB Compressed Row Format](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format/)

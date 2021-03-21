@@ -4,7 +4,7 @@
 
 This page describes recommended settings for IO-bound queries that shovel through lots of records.
 
-First, turn on [Batched Key Access](/replication/optimization-and-tuning/query-optimizations/block-based-join-algorithms):
+First, turn on [Batched Key Access](/replication/optimization-and-tuning/query-optimizations/block-based-join-algorithms/):
 
 ```sql
 # Turn on disk-ordered reads

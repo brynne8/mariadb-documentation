@@ -38,5 +38,5 @@ SELECT RTRIM(''),RTRIM_ORACLE('');
 
 ## See Also
 
-- [LTRIM](/built-in-functions/string-functions/ltrim) - leading spaces removed
-- [TRIM](/built-in-functions/string-functions/trim) - removes all given prefixes or suffixes
+- [LTRIM](/built-in-functions/string-functions/ltrim/) - leading spaces removed
+- [TRIM](/built-in-functions/string-functions/trim/) - removes all given prefixes or suffixes

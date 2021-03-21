@@ -1,12 +1,12 @@
 # MariaDB Galera Cluster 10.0.19 Release Notes
 
 The most recent [MariaDB Galera Cluster 10.0](/kb/en/galera/) release is:<br>
-<span class="cstm-style lead"><strong>[MariaDB Galera Cluster 10.0.38](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10038-release-notes)</strong> [Download<span>&nbsp;</span>Now](https://downloads.mariadb.org/mariadb-galera/10.0)</span>
+<span class="cstm-style lead"><strong>[MariaDB Galera Cluster 10.0.38](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10038-release-notes/)</strong> [Download<span>&nbsp;</span>Now](https://downloads.mariadb.org/mariadb-galera/10.0)</span>
 
 [Download](http://downloads.mariadb.org/mariadb-galera/10.0.19)
-[Release Notes](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10019-release-notes)
-[Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10019-changelog)
-[Overview of MariaDB Galera Cluster](/replication/galera-cluster/what-is-mariadb-galera-cluster)
+[Release Notes](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10019-release-notes/)
+[Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10019-changelog/)
+[Overview of MariaDB Galera Cluster](/replication/galera-cluster/what-is-mariadb-galera-cluster/)
 
 <strong>Release date:</strong> 18 May 2015
 
@@ -16,13 +16,13 @@ release.  It is a merge of [MariaDB 10.0.19](/kb/en/mariadb-10019-release-notes/
 additional bug fixes.
 
 Various articles about MariaDB Galera Cluster, including
-[known limitations](/replication/galera-cluster/mariadb-galera-cluster-known-limitations) and
-[how to get started](/replication/galera-cluster/getting-started-with-mariadb-galera-cluster) are
+[known limitations](/replication/galera-cluster/mariadb-galera-cluster-known-limitations/) and
+[how to get started](/replication/galera-cluster/getting-started-with-mariadb-galera-cluster/) are
 available in the <strong>[Galera](/kb/en/galera/)</strong> section of the Knowledge Base.
 
 For a list of changes made in MariaDB Galera Cluster 10.0.19, with links to
 detailed information on each push, see the
-[MariaDB Galera Cluster 10.0.19 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10019-changelog).
+[MariaDB Galera Cluster 10.0.19 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10019-changelog/).
 
 ## Updates and fixes in this version
 
@@ -34,7 +34,7 @@ detailed information on each push, see the
 
 - Starting this version, [wsrep_osu_method](/kb/en/galera-cluster-system-variables/#wsrep_osu_method) has been made a session variable ([Issue#90](https://github.com/codership/mysql-wsrep/issues/90)).
 
-- The following [FLUSH](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush) commands are now executed under total order isolation:
+- The following [FLUSH](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/) commands are now executed under total order isolation:
 <ul start="1"><li>FLUSH DES_KEY_FILE
 </li><li>FLUSH HOSTS
 </li><li>FLUSH PRIVILEGES

@@ -1,7 +1,7 @@
 # CONNECT Data Types
 
 Many data types make no or little sense when applied to plain files. This why
-[CONNECT](/columns-storage-engines-and-plugins/storage-engines/connect) supports only a restricted set of data types. However, ODBC, JDBC
+[CONNECT](/columns-storage-engines-and-plugins/storage-engines/connect/) supports only a restricted set of data types. However, ODBC, JDBC
 or MYSQL source tables may contain data types not supported by CONNECT. In this
 case, CONNECT makes an automatic conversion to a similar supported type when it
 is possible.
@@ -21,7 +21,7 @@ The data types currently supported by CONNECT are:
 
 ## TYPE_STRING
 
-This type corresponds to what is generally known as [CHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/char) or [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar) by
+This type corresponds to what is generally known as [CHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/char/) or [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar/) by
 database users, or as strings by programmers. Columns containing characters
 have a maximum length but the character string is of fixed or variable length
 depending on the file format.
@@ -33,25 +33,25 @@ the number of characters.
 
 ## TYPE_INT
 
-The ][INTEGER](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/integer) type contains signed integer numeric 4-byte values (the <em>int/ of
+The ][INTEGER](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/integer/) type contains signed integer numeric 4-byte values (the <em>int/ of
 the C language) ranging from `–2,147,483,648` to `2,147,483,647` for signed
 type and `0` to `4,294,967,295` for unsigned type.</em>
 
 ## TYPE_SHORT
 
-The SHORT data type contains signed [integer numeric 2-byte](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/smallint) values (the <em>short
+The SHORT data type contains signed [integer numeric 2-byte](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/smallint/) values (the <em>short
 integer</em> of the C language) ranging from `–32,768` to `32,767` for signed
 type and `0` to `65,535` for unsigned type.
 
 ## TYPE_TINY
 
-The TINY data type contains [integer numeric 1-byte](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/tinyint) values (the <em>char</em> of
+The TINY data type contains [integer numeric 1-byte](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/tinyint/) values (the <em>char</em> of
 the C language) ranging from `–128` to `127` for signed type and `0` to
 `255` for unsigned type. For some table types, TYPE_TINY is used to represent Boolean values (0 is false, anything else is true).
 
 ## TYPE_BIGINT
 
-The [BIGINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/bigint) data type contains signed integer 8-byte values (the <em>long long</em> of the C language) ranging from `-9,223,372,036,854,775,808` to
+The [BIGINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/bigint/) data type contains signed integer 8-byte values (the <em>long long</em> of the C language) ranging from `-9,223,372,036,854,775,808` to
 `9,223,372,036,854,775,807` for signed type and from `0` to
 `18,446,744,073,709,551,615` for unsigned type.
 
@@ -66,7 +66,7 @@ set the output field length for all table types.
 
 ## TYPE_DOUBLE
 
-The DOUBLE data type corresponds to the C language [double](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/double) type, a
+The DOUBLE data type corresponds to the C language [double](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/double/) type, a
 floating-point double precision value coded with 8 bytes. Like for integers,
 the internal coding in tables depends on the table type, characters for text
 files, and platform binary representation for binary files.
@@ -80,7 +80,7 @@ decimals for all types of tables.
 
 ## TYPE_DECIM
 
-The DECIMAL data type corresponds to what MariaDB or ODBC data sources call NUMBER, NUMERIC, or [DECIMAL](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/decimal): a numeric value with a maximum number of digits (the precision) some of them eventually being decimal digits (the scale). The internal coding in CONNECT is a character representation of the number. For instance:
+The DECIMAL data type corresponds to what MariaDB or ODBC data sources call NUMBER, NUMERIC, or [DECIMAL](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/decimal/): a numeric value with a maximum number of digits (the precision) some of them eventually being decimal digits (the scale). The internal coding in CONNECT is a character representation of the number. For instance:
 
 ```sql
 colname decimal(14,6)
@@ -110,7 +110,7 @@ of ODBC, JDBC and MySQL table types, CONNECT does not provide decimal calculatio
 
 Internally, date/time values are stored by CONNECT as a signed 4-byte integer.
 The value 0 corresponds to 01 January 1970 12:00:00 am coordinated universal
-time ([UTC](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time)).  All other date/time values are
+time ([UTC](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time/)).  All other date/time values are
 represented by the number of seconds elapsed since or before midnight
 (00:00:00), 1 January 1970, to that date/time value. Date/time values before
 midnight 1 January 1970 are represented by a negative number of seconds.
@@ -217,14 +217,14 @@ as if they were real dates. Of course they must be inserted and will be displaye
 ## NULL handling
 
 CONNECT handles [null values](/kb/en/null-values-in-mariadb/) for data sources able to produce nulls. Currently
-this concerns mainly the [ODBC](/kb/en/connect-table-types-odbc-table-type-accessing-tables-from-other-dbms/), [JDBC](/kb/en/connect-jdbc-table-type-accessing-tables-from-other-dbms/), MONGO, [MYSQL](/kb/en/connect-table-types-mysql-table-type-accessing-mysqlmariadb-tables/), [XML](/kb/en/connect-table-types-data-files/#xml-table-type), [JSON](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-json-table-type) and [INI](/kb/en/connect-table-types-data-files/#ini-table-type) table types. For INI, [JSON](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-json-table-type), MONGO or XML types, null values are returned when the key is missing in the section (INI) or when the corresponding node does not exist in a row (XML, JSON, MONGO).
+this concerns mainly the [ODBC](/kb/en/connect-table-types-odbc-table-type-accessing-tables-from-other-dbms/), [JDBC](/kb/en/connect-jdbc-table-type-accessing-tables-from-other-dbms/), MONGO, [MYSQL](/kb/en/connect-table-types-mysql-table-type-accessing-mysqlmariadb-tables/), [XML](/kb/en/connect-table-types-data-files/#xml-table-type), [JSON](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-json-table-type/) and [INI](/kb/en/connect-table-types-data-files/#ini-table-type) table types. For INI, [JSON](/columns-storage-engines-and-plugins/storage-engines/connect/connect-table-types/connect-json-table-type/), MONGO or XML types, null values are returned when the key is missing in the section (INI) or when the corresponding node does not exist in a row (XML, JSON, MONGO).
 
 For other file tables, the issue is to define what a null value is. In a numeric column, 0 can sometimes be a valid value but, in some other cases, it
 can make no sense. The same for character columns; is a blank field a valid value or not?
 
 A special case is DATE columns with a DATE_FORMAT specified. Any value not matching the format can be regarded as NULL.
 
-CONNECT leaves the decision to you. When declaring a column in the [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table)
+CONNECT leaves the decision to you. When declaring a column in the [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/)
 statement, if it is declared NOT NULL, blank or zero values will be considered
 as valid values. Otherwise they will be considered as NULL values. In all
 cases, nulls are replaced on insert or update by pseudo null values, a zero-length character string for text types or a zero value for numeric types. Once
@@ -313,12 +313,12 @@ When converted, MariaDB types are converted as:
 <tr><td>Other types</td><td>TYPE_ERROR</td><td>Not supported, no conversion provided.</td></tr>
 </tbody></table>
 
-For [ENUM](/columns-storage-engines-and-plugins/data-types/string-data-types/enum), the length of the column is the length of the longest value of the enumeration. For [SET](/columns-storage-engines-and-plugins/data-types/string-data-types/set-data-type) the length is enough to contain all the set values concatenated with comma separator.
+For [ENUM](/columns-storage-engines-and-plugins/data-types/string-data-types/enum/), the length of the column is the length of the longest value of the enumeration. For [SET](/columns-storage-engines-and-plugins/data-types/string-data-types/set-data-type/) the length is enough to contain all the set values concatenated with comma separator.
 
-In the case of [TEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/text) columns, the handling depends on the values given to the [connect_type_conv](/kb/en/connect-system-variables/#connect_type_conv) and
+In the case of [TEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/text/) columns, the handling depends on the values given to the [connect_type_conv](/kb/en/connect-system-variables/#connect_type_conv) and
 [connect_conv_size](/kb/en/connect-system-variables/#connect_conv_size) system variables.
 
-Note: [BLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/blob) is currently not converted by default until a TYPE_BIN type is added to CONNECT. However, the FORCE option (from Connect 1.06.006) can be specified for blob columns containing text and the SKIP option also applies to ODBC BLOB columns.
+Note: [BLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/blob/) is currently not converted by default until a TYPE_BIN type is added to CONNECT. However, the FORCE option (from Connect 1.06.006) can be specified for blob columns containing text and the SKIP option also applies to ODBC BLOB columns.
 
 ODBC SQL types are converted as:
 
@@ -363,5 +363,5 @@ Note: The [connect_type_conv](/kb/en/connect-system-variables/#connect_type_conv
 1 [↑](#_ref-0) Here input and output are
   used to specify respectively decoding the date to get its numeric value from
   the data file and encoding a date to write it in the table file. Input is
-  performed within [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) queries; output is performed in [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update) or [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert)
+  performed within [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) queries; output is performed in [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/) or [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/)
   queries.

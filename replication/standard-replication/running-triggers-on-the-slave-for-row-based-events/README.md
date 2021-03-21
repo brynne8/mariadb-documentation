@@ -4,7 +4,7 @@ The terms <em>master</em> and <em>slave</em> have historically been used in repl
 
 ##### MariaDB starting with [10.1.1](/kb/en/mariadb-1011-release-notes/)
 
-Starting from [MariaDB 10.1.1](/kb/en/mariadb-1011-release-notes/), one can force the slave thread to run [triggers](/programming-customizing-mariadb/triggers-events/triggers) for row-based binlog events.
+Starting from [MariaDB 10.1.1](/kb/en/mariadb-1011-release-notes/), one can force the slave thread to run [triggers](/programming-customizing-mariadb/triggers-events/triggers/) for row-based binlog events.
 
 The setting is controlled by the [slave_run_triggers_for_rbr](/kb/en/replication-and-binary-log-server-system-variables/#slave_run_triggers_for_rbr) global variable. It can be also specified as a command-line option or in my.cnf.
 

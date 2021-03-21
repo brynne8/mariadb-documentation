@@ -4,7 +4,7 @@
 
 GUIDs/UUIDs (Globally/Universal Unique Identifiers) are very random. Therefore, INSERTing into an index means jumping around a lot. Once the index is too big to be cached, most INSERTs involve a disk hit. Even on a beefy system, this limits you to a few hundred INSERTs per second.
 
-[MariaDB's UUID function](/built-in-functions/secondary-functions/miscellaneous-functions/uuid).
+[MariaDB's UUID function](/built-in-functions/secondary-functions/miscellaneous-functions/uuid/).
 
 This blog is mostly eliminated in MySQL 8.0 with the advent of the following function:
 [UUID_TO_BIN(str, swap_flag)](https://dev.mysql.com/doc/refman/8.0/en/miscellaneous-functions.html#function_uuid-to-bin).
@@ -21,7 +21,7 @@ Some math... If the index is small enough to be cached in RAM, each insert into 
 
 36 characters is bulky. If you are using that as a PRIMARY KEY in InnoDB and you have secondary keys, remember that each secondary key has an implicit copy of the PK, thereby making it bulky.
 
-It is tempting to declare the UUID [VARCHAR(36)](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar). And, since you probably are thinking globally, so you have [CHARACTER SET](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets) utf8 (or utf8mb4). For utf8:
+It is tempting to declare the UUID [VARCHAR(36)](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar/). And, since you probably are thinking globally, so you have [CHARACTER SET](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/) utf8 (or utf8mb4). For utf8:
 
 - 2 - Overhead for VAR
 - 36 - chars
@@ -32,8 +32,8 @@ To compress
 
 - utf8 is unnecessary (ascii would do); but this is obviated by the next two steps
 - Toss dashes
-- [UNHEX](/built-in-functions/string-functions/unhex)
-Now it will fit in 16 bytes: [BINARY(16)](/columns-storage-engines-and-plugins/data-types/string-data-types/binary)
+- [UNHEX](/built-in-functions/string-functions/unhex/)
+Now it will fit in 16 bytes: [BINARY(16)](/columns-storage-engines-and-plugins/data-types/string-data-types/binary/)
 
 ## Combining the problems and crafting a solution
 
@@ -54,7 +54,7 @@ If your SELECTs tend to be for "recent" uuids, then they, too, will be easily ca
 
 ## Code to do it
 
-Let's make [Stored Functions](/programming-customizing-mariadb/stored-routines/stored-functions) to do the messy work of the two actions:
+Let's make [Stored Functions](/programming-customizing-mariadb/stored-routines/stored-functions/) to do the messy work of the two actions:
 
 - Rearrange fields
 - Convert to/from BINARY(16)
@@ -113,7 +113,7 @@ Do not flip the WHERE; this will be inefficent because it won't use INDEX(uuid):
 
 ## TokuDB
 
-[TokuDB](/columns-storage-engines-and-plugins/storage-engines/tokudb) is a viable engine if you must have UUIDs (even non-type-1) in a huge table. TokuDB is available in MariaDB as a 'standard' engine, making the barrier to entry very low. There are a small number of differences between [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) and TokuDB; I will not go into them here.
+[TokuDB](/columns-storage-engines-and-plugins/storage-engines/tokudb/) is a viable engine if you must have UUIDs (even non-type-1) in a huge table. TokuDB is available in MariaDB as a 'standard' engine, making the barrier to entry very low. There are a small number of differences between [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) and TokuDB; I will not go into them here.
 
 Tokudb, with its “fractal” indexing strategy builds the indexes in stages. In contrast, InnoDB inserts index entries “immediately” — actually that indexing is buffered by most of the size of the buffer_pool. To elaborate…
 

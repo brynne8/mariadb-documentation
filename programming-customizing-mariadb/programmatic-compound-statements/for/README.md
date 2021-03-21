@@ -163,4 +163,4 @@ Query OK, 0 rows affected (0.000 sec)
 
 ## See Also
 
-- [LOOP](/programming-customizing-mariadb/programmatic-compound-statements/loop)
+- [LOOP](/programming-customizing-mariadb/programmatic-compound-statements/loop/)

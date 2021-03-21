@@ -8,13 +8,13 @@ COUNT(expr)
 
 ## Description
 
-Returns a count of the number of non-NULL values of expr in the rows retrieved by a [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) statement. The result is a [BIGINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/bigint) value. It is an [aggregate function](/built-in-functions/aggregate-functions), and so can be used with the [GROUP BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/group-by) clause.
+Returns a count of the number of non-NULL values of expr in the rows retrieved by a [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) statement. The result is a [BIGINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/bigint/) value. It is an [aggregate function](/built-in-functions/aggregate-functions/), and so can be used with the [GROUP BY](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/group-by/) clause.
 
 COUNT(*) counts the total number of rows in a table.
 
 COUNT() returns 0 if there were no matching rows.
 
-From [MariaDB 10.2.0](/kb/en/mariadb-1020-release-notes/), COUNT() can be used as a [window function](/built-in-functions/special-functions/window-functions).
+From [MariaDB 10.2.0](/kb/en/mariadb-1020-release-notes/), COUNT() can be used as a [window function](/built-in-functions/special-functions/window-functions/).
 
 ## Examples
 
@@ -35,7 +35,7 @@ SELECT COUNT(*) FROM student;
 +----------+
 ```
 
-[COUNT(DISTINCT)](/built-in-functions/aggregate-functions/count-distinct) example:
+[COUNT(DISTINCT)](/built-in-functions/aggregate-functions/count-distinct/) example:
 
 ```sql
 SELECT COUNT(DISTINCT (name)) FROM student;
@@ -46,7 +46,7 @@ SELECT COUNT(DISTINCT (name)) FROM student;
 +------------------------+
 ```
 
-As a [window function](/built-in-functions/special-functions/window-functions)
+As a [window function](/built-in-functions/special-functions/window-functions/)
 
 ```sql
 CREATE OR REPLACE TABLE student_test (name CHAR(10), test CHAR(10), score TINYINT);
@@ -74,6 +74,6 @@ SELECT name, test, score, COUNT(score) OVER (PARTITION BY name)
 
 ## See Also
 
-- [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select)
-- [COUNT DISTINCT](/built-in-functions/aggregate-functions/count-distinct)
-- [Window Functions](/built-in-functions/special-functions/window-functions)
+- [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/)
+- [COUNT DISTINCT](/built-in-functions/aggregate-functions/count-distinct/)
+- [Window Functions](/built-in-functions/special-functions/window-functions/)

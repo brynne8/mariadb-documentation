@@ -2,22 +2,22 @@
 
 <strong>Release date:</strong> 24th November 2016
 
-[MariaDB ColumnStore 1.0.5](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore) is a Release Candidate release of MariaDB ColumnStore. This release of MariaDB ColumnStore provides improvements over the previous 1.0.4 beta release.
+[MariaDB ColumnStore 1.0.5](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/) is a Release Candidate release of MariaDB ColumnStore. This release of MariaDB ColumnStore provides improvements over the previous 1.0.4 beta release.
 
 MariaDB ColumnStore 1.0.5 is a <strong><em>[Release Candidate](/kb/en/release-criteria/)</em></strong> release.
 
 <strong>Do not use <em>Release Candidate</em> releases on production systems!</strong>
 
-For an overview of [MariaDB ColumnStore](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore) see [MariaDB ColumnStore Architectural Overview](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-architectural-overview)
+For an overview of [MariaDB ColumnStore](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/) see [MariaDB ColumnStore Architectural Overview](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-architecture/columnstore-architectural-overview/)
 
 Please provide feedback in [JIRA](https://jira.mariadb.org/browse/MCOL) for anything that is not working as expected so that we can fix it before we make the release available for the larger community.
-For general "how to questions" ask questions [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore) or subscribe to mariadb-columnstore@googlegroups.com
+For general "how to questions" ask questions [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/) or subscribe to mariadb-columnstore@googlegroups.com
 
 ## Notable Changes
 
 - [MCOL-385](https://jira.mariadb.org/browse/MCOL-385) - 10.1.19 Merge : ColumnStore is now based off the MariaDB Server release 10.1.19.
 - [MCOL-404](https://jira.mariadb.org/browse/MCOL-404) - non-root install fails on centos7 : Non root installs now work.
-- [MCOL-309](https://jira.mariadb.org/browse/MCOL-309) - Support method to report on data set size : Information schema tables are created to support reporting on table and column sizes. This is an initial implementation with some further improvements planned for the GA release. See [documentation](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-sql-structure-and-commands/columnstore-information-schema-tables) for further details.
+- [MCOL-309](https://jira.mariadb.org/browse/MCOL-309) - Support method to report on data set size : Information schema tables are created to support reporting on table and column sizes. This is an initial implementation with some further improvements planned for the GA release. See [documentation](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-sql-structure-and-commands/columnstore-information-schema-tables/) for further details.
 - An install for Debian 8.6 is now available.
 
 ## Bugs and Issues Fixed
@@ -49,7 +49,7 @@ Below is list of some of the bugs and issues fixed. A number of regression test 
 
 ## Upgrade
 
-Multi version upgrades are not supported, please upgrade versions prior to 1.0.4 before upgrading to 1.0.5. Details on upgrading from version to 1.0.4 to 1.0.5 can be found [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/mariadb-columnstore-columnstore/mariadb-columnstore-10-upgrades/upgrading-mariadb-columnstore-from-104-to-105).
+Multi version upgrades are not supported, please upgrade versions prior to 1.0.4 before upgrading to 1.0.5. Details on upgrading from version to 1.0.4 to 1.0.5 can be found [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/mariadb-columnstore-columnstore/mariadb-columnstore-10-upgrades/upgrading-mariadb-columnstore-from-104-to-105/).
 
 Upgrade from MariaDB ColumnStore Alpha versions 1.0.0 to 1.0.2 is not supported, please upgrade to version 1.0.4 prior to upgrading to 1.0.5.
 
@@ -66,7 +66,7 @@ There are a number bugs and known limitations within this beta version of MariaD
 - [MCOL-364](https://jira.mariadb.org/browse/MCOL-364): In a multi UM configuration where the default storage engine has been set to columnstore replicated tables are not created as columnstore tables. Avoid overriding the default storage engine and specify engine=columnstore on all table DDL.
 - [MCOL-365](https://jira.mariadb.org/browse/MCOL-365): Log files created by load data infile remain in the bulk/data/log and /tmp directories. If storage is a concern these can safely be removed.
 - [MCOL-421](https://jira.mariadb.org/browse/MCOL-421): If a password was set for the root localhost user in the prior installed version then upgrade will fail. The workaround is to clear the password temporarily prior to the upgrade and reapply after the upgrade is complete.
-- The current logging default generates full verbose debug logs. This can be controlled by making logging configuration changes as described [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/columnstore-system-monitoring-configuration).
+- The current logging default generates full verbose debug logs. This can be controlled by making logging configuration changes as described [here](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/columnstore-system-monitoring-configuration/).
 - While Millisecond and Microsecond storage is supported for datetime, time and timestamp columns, at this time the query results cannot return millisecond and microseconds.
 - UTF-8 Limitation
 <ul start="1"><li>UTF-8 must be declared at the table level if the instance has been set up with a UTF-8 profile. Tables created with a non-matching character set will yield indeterminate results. 
@@ -77,7 +77,7 @@ There are a number bugs and known limitations within this beta version of MariaD
 
 ## Documentation
 
-[MariaDB ColumnStore Documentation](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore)
+[MariaDB ColumnStore Documentation](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/)
 
 ## Packaging
 

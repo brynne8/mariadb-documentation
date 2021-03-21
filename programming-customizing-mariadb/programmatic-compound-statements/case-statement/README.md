@@ -22,7 +22,7 @@ END CASE
 
 ## Description
 
-The text on this page describes the `CASE` statement for [stored programs](/kb/en/stored-programs-and-views/). See the [CASE OPERATOR](/built-in-functions/control-flow-functions/case-operator) for details on the CASE operator outside of [stored programs](/kb/en/stored-programs-and-views/).
+The text on this page describes the `CASE` statement for [stored programs](/kb/en/stored-programs-and-views/). See the [CASE OPERATOR](/built-in-functions/control-flow-functions/case-operator/) for details on the CASE operator outside of [stored programs](/kb/en/stored-programs-and-views/).
 
 The `CASE` statement for [stored programs](/kb/en/stored-programs-and-views/) implements a complex conditional
 construct. If a `search_condition` evaluates to true, the corresponding SQL
@@ -44,7 +44,7 @@ error results.
 Each statement_list consists of one or more statements; an empty
 `statement_list` is not allowed. To handle situations where no value is
 matched by any `WHEN` clause, use an `ELSE` containing an
-empty [BEGIN ... END](/programming-customizing-mariadb/programmatic-compound-statements/begin-end) block, as shown in this example:
+empty [BEGIN ... END](/programming-customizing-mariadb/programmatic-compound-statements/begin-end/) block, as shown in this example:
 
 ```sql
 DELIMITER |
@@ -65,6 +65,6 @@ and is not otherwise significant. See [Delimiters in the mysql client](/kb/en/de
 
 <strong>Note:</strong> The syntax of the `CASE` statement used inside stored programs
 differs slightly from that of the SQL CASE expression described in
-[CASE OPERATOR](/built-in-functions/control-flow-functions/case-operator).
+[CASE OPERATOR](/built-in-functions/control-flow-functions/case-operator/).
 The `CASE` statement cannot have an `ELSE NULL` clause, and it is
 terminated with `END CASE` instead of `END`.

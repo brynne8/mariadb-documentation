@@ -1,6 +1,6 @@
 # ANALYZE FORMAT=JSON
 
-`ANALYZE FORMAT=JSON` is a mix of the [EXPLAIN FORMAT=JSON](/kb/en/explain-formatjson/) and [ANALYZE](/sql-statements-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/analyze-statement) statement features. The `ANALYZE FORMAT=JSON $statement` will execute `$statement`, and then print the output of `EXPLAIN FORMAT=JSON`, amended with data from the query execution.
+`ANALYZE FORMAT=JSON` is a mix of the [EXPLAIN FORMAT=JSON](/kb/en/explain-formatjson/) and [ANALYZE](/sql-statements-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/analyze-statement/) statement features. The `ANALYZE FORMAT=JSON $statement` will execute `$statement`, and then print the output of `EXPLAIN FORMAT=JSON`, amended with data from the query execution.
 
 ## Basic Execution Data
 
@@ -28,4 +28,4 @@ The most important data not available in the regular tabula `ANALYZE` statement 
 
 ## Use Cases
 
-See [Examples of ANALYZE FORMAT=JSON](/sql-statements-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/analyze-formatjson-examples).
+See [Examples of ANALYZE FORMAT=JSON](/sql-statements-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/analyze-formatjson-examples/).

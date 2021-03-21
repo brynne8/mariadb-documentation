@@ -104,11 +104,11 @@ config files:
 
 ### Suggested upgrade procedure for replication
 
-If you have a [master-slave setup](/replication/standard-replication), the normal procedure is to first upgrade your slaves to MariaDB, then move one of your slaves to be the master and then upgrade your original master. In this scenario you can upgrade from MySQL to MariaDB or upgrade later to a new version of MariaDB without any downtime.
+If you have a [master-slave setup](/replication/standard-replication/), the normal procedure is to first upgrade your slaves to MariaDB, then move one of your slaves to be the master and then upgrade your original master. In this scenario you can upgrade from MySQL to MariaDB or upgrade later to a new version of MariaDB without any downtime.
 
 ### Other resources to consult before beginning your upgrade
 
-It may also be useful to check out the [Upgrading MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading) section. It contains several articles on upgrading from MySQL to MariaDB and from one version of MariaDB to another. For upgrade purposes, MySQL 5.5 and [MariaDB 5.5](/kb/en/what-is-mariadb-55/) are very similar. In particular, see the [Upgrading from MariaDB 5.5 to MariaDB 10.0](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-from-mariadb-55-to-mariadb-100) and [Upgrading from MariaDB 10.0 to MariaDB 10.1](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-from-mariadb-100-to-mariadb-101) articles.
+It may also be useful to check out the [Upgrading MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/) section. It contains several articles on upgrading from MySQL to MariaDB and from one version of MariaDB to another. For upgrade purposes, MySQL 5.5 and [MariaDB 5.5](/kb/en/what-is-mariadb-55/) are very similar. In particular, see the [Upgrading from MariaDB 5.5 to MariaDB 10.0](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-from-mariadb-55-to-mariadb-100/) and [Upgrading from MariaDB 10.0 to MariaDB 10.1](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-from-mariadb-100-to-mariadb-101/) articles.
 
 If you need help with upgrading or setting up replication, you can always [contact the MariaDB corporation](https://mariadb.com/contact) to find experts to help you with this.
 
@@ -118,12 +118,12 @@ The suggested upgrade procedure is:
 
 1 Set [innodb_fast_shutdown](/kb/en/xtradbinnodb-server-system-variables/#innodb_fast_shutdown) to `0`. This is to ensure that if you make a backup as part of the upgrade, all data is written to the InnoDB data files, which simplifies any restore in the future.
 2 Shutdown MySQL 5.5
-3 Take a [backup](/mariadb-administration/backing-up-and-restoring-databases/backup-and-restore-overview)
+3 Take a [backup](/mariadb-administration/backing-up-and-restoring-databases/backup-and-restore-overview/)
 <ul start="1"><li>when the server is shut down is the perfect time to take a backup of your databases
 </li><li>store a copy of the backup on external media or a different machine for safety
 </li></ul>
 4 Perform the upgrade from Debian 8 to Debian 9
-5 During the upgrade, the [mysql_upgrade](/sql-statements-structure/sql-statements/table-statements/mysql_upgrade) script will be run automatically; this script does two things:
+5 During the upgrade, the [mysql_upgrade](/sql-statements-structure/sql-statements/table-statements/mysql_upgrade/) script will be run automatically; this script does two things:
 <ol start="1"><li>Upgrades the permission tables in the `mysql` database with some new fields
 </li><li>Does a very quick check of all tables and marks them as compatible with [MariaDB 10.1](/kb/en/what-is-mariadb-101/)
 <ul start="1"><li>In most cases this should be a fast operation (depending of course on the number of tables)
@@ -161,7 +161,7 @@ aria_pagecache_buffer_size=128M
 key_buffer_size=64K
 ```
 
-The reason for the above change is that MariaDB is using the newer [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/aria-storage-engine) storage engine for disk based temporary files instead of MyISAM. The main benefit of Aria is that it can cache both indexes and rows and thus gives better performance than MyISAM for large queries.
+The reason for the above change is that MariaDB is using the newer [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/aria-storage-engine/) storage engine for disk based temporary files instead of MyISAM. The main benefit of Aria is that it can cache both indexes and rows and thus gives better performance than MyISAM for large queries.
 
 ## Secure passwordless root accounts only on new installs
 
@@ -171,11 +171,11 @@ This only affects new installs. Upgrades from old versions will continue to use 
 
 ## See also
 
-- [Differences in MariaDB in Debian (and Ubuntu)](/mariadb-administration/getting-installing-and-upgrading-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu)
-- [Configuring MariaDB for optimal performance](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/configuring-mariadb-for-optimal-performance)
+- [Differences in MariaDB in Debian (and Ubuntu)](/mariadb-administration/getting-installing-and-upgrading-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu/)
+- [Configuring MariaDB for optimal performance](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/configuring-mariadb-for-optimal-performance/)
 - [New features in MariaDB you should considering using](/kb/en/mariadb-vs-mysql-features/)
 - [What is MariaDB 10.1](/kb/en/what-is-mariadb-101/)
-- [General instructions for upgrading from MySQL to MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-mariadb-upgrading-from-mysql-to-mariadb/upgrading-from-mysql-to-mariadb)
+- [General instructions for upgrading from MySQL to MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-mariadb-upgrading-from-mysql-to-mariadb/upgrading-from-mysql-to-mariadb/)
 
 ## Comments and suggestions
 

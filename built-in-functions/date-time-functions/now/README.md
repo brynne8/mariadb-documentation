@@ -16,13 +16,13 @@ LOCALTIMESTAMP([precision])
 Returns the current date and time as a value in `'YYYY-MM-DD HH:MM:SS'`
 or `YYYYMMDDHHMMSS.uuuuuu` format, depending on whether the function is
 used in a string or numeric context. The value is expressed in the
-current [time zone](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones).
+current [time zone](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones/).
 
-The optional <em>precision</em> determines the microsecond precision. See [Microseconds in MariaDB](/built-in-functions/date-time-functions/microseconds-in-mariadb).
+The optional <em>precision</em> determines the microsecond precision. See [Microseconds in MariaDB](/built-in-functions/date-time-functions/microseconds-in-mariadb/).
 
-`NOW()` (or its synonyms) can be used as the default value for [TIMESTAMP](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/timestamp) columns as well as, since [MariaDB 10.0.1](/kb/en/mariadb-1001-release-notes/), [DATETIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/datetime) columns. Before [MariaDB 10.0.1](/kb/en/mariadb-1001-release-notes/), it was only possible for a single TIMESTAMP column per table to contain the CURRENT_TIMESTAMP as its default.
+`NOW()` (or its synonyms) can be used as the default value for [TIMESTAMP](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/timestamp/) columns as well as, since [MariaDB 10.0.1](/kb/en/mariadb-1001-release-notes/), [DATETIME](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/datetime/) columns. Before [MariaDB 10.0.1](/kb/en/mariadb-1001-release-notes/), it was only possible for a single TIMESTAMP column per table to contain the CURRENT_TIMESTAMP as its default.
 
-When displayed in the [INFORMATION_SCHEMA.COLUMNS](/kb/en/information-schema-columns-table/) table, a default [CURRENT TIMESTAMP](/built-in-functions/date-time-functions/current_timestamp) is displayed as `CURRENT_TIMESTAMP` up until [MariaDB 10.2.2](/kb/en/mariadb-1022-release-notes/), and as `current_timestamp()` from [MariaDB 10.2.3](/kb/en/mariadb-1023-release-notes/), due to to [MariaDB 10.2](/kb/en/what-is-mariadb-102/) accepting expressions in the DEFAULT clause.
+When displayed in the [INFORMATION_SCHEMA.COLUMNS](/kb/en/information-schema-columns-table/) table, a default [CURRENT TIMESTAMP](/built-in-functions/date-time-functions/current_timestamp/) is displayed as `CURRENT_TIMESTAMP` up until [MariaDB 10.2.2](/kb/en/mariadb-1022-release-notes/), and as `current_timestamp()` from [MariaDB 10.2.3](/kb/en/mariadb-1023-release-notes/), due to to [MariaDB 10.2](/kb/en/what-is-mariadb-102/) accepting expressions in the DEFAULT clause.
 
 ## Examples
 
@@ -91,5 +91,5 @@ SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA='test'
 
 ## See Also
 
-- [Microseconds in MariaDB](/built-in-functions/date-time-functions/microseconds-in-mariadb)
+- [Microseconds in MariaDB](/built-in-functions/date-time-functions/microseconds-in-mariadb/)
 - [timestamp server system variable](/kb/en/server-system-variables/#timestamp)

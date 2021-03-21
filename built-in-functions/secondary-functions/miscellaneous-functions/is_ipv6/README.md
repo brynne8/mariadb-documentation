@@ -35,6 +35,6 @@ SELECT IS_IPV6('10.0.1.1');
 
 ## See Also
 
-- [INET6](/columns-storage-engines-and-plugins/data-types/string-data-types/inet6) data type
-- [INET6_ATON](/built-in-functions/secondary-functions/miscellaneous-functions/inet6_aton)
-- [INET6_NTOA](/built-in-functions/secondary-functions/miscellaneous-functions/inet6_ntoa)
+- [INET6](/columns-storage-engines-and-plugins/data-types/string-data-types/inet6/) data type
+- [INET6_ATON](/built-in-functions/secondary-functions/miscellaneous-functions/inet6_aton/)
+- [INET6_NTOA](/built-in-functions/secondary-functions/miscellaneous-functions/inet6_ntoa/)

@@ -58,4 +58,4 @@ SELECT YEAR('1987-01-01');
 
 ## See Also
 
-- [YEAR data type](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/year-data-type)
+- [YEAR data type](/columns-storage-engines-and-plugins/data-types/date-and-time-data-types/year-data-type/)

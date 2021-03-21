@@ -66,9 +66,9 @@ apt-get update
 apt-get install -y 
 ```
 
-To find out the steps to install MariaDB on your system of choice, see the [Getting, Installing, and Upgrading MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb) section.
+To find out the steps to install MariaDB on your system of choice, see the [Getting, Installing, and Upgrading MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/) section.
 
-You may also want to restore a database backup in the new box. In this way, you can have the database needed by the application you are developing. To find out how to do it, see [Backup and Restore Overview](/mariadb-administration/backing-up-and-restoring-databases/backup-and-restore-overview). The most flexible type of backup (meaning that it works between different MariaDB versions, and in some cases even between MariaDB and different DBMSs) is a [dump](/clients-utilities/backup-restore-and-import-clients/mysqldump).
+You may also want to restore a database backup in the new box. In this way, you can have the database needed by the application you are developing. To find out how to do it, see [Backup and Restore Overview](/mariadb-administration/backing-up-and-restoring-databases/backup-and-restore-overview/). The most flexible type of backup (meaning that it works between different MariaDB versions, and in some cases even between MariaDB and different DBMSs) is a [dump](/clients-utilities/backup-restore-and-import-clients/mysqldump/).
 
 On Linux machines, the `shell` provisioner uses the default shell. On Windows machines, it uses PowerShell.
 
@@ -97,7 +97,7 @@ end
 
 With the [Ansible provisioner](https://www.vagrantup.com/docs/provisioning/ansible), Ansible runs in the host system. In this example, it runs a playbook called `vagrant.yml`. The [Ansible Local provisioner](https://www.vagrantup.com/docs/provisioning/ansible_local) runs the playbook in the vagrant machine.
 
-For an introduction to Ansible for MariaDB users, see [Ansible and MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb).
+For an introduction to Ansible for MariaDB users, see [Ansible and MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/).
 
 ### Provisioning Vagrant with Puppet
 

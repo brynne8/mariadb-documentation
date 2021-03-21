@@ -24,13 +24,13 @@ variables that affect the operation of the server or your client. Older
 versions of MySQL employed <code class="fixed" style="white-space:pre-wrap">SET OPTION</code>, but this syntax was
 deprecated in favor of <code class="fixed" style="white-space:pre-wrap">SET</code> without <code class="fixed" style="white-space:pre-wrap">OPTION</code>, and was removed in [MariaDB 10.0](/kb/en/what-is-mariadb-100/).
 
-Changing a system variable by using the SET statement does not make the change permanently. To do so, the change must be made in a [configuration file](/mariadb-administration/getting-installing-and-upgrading-mariadb/mysqld-configuration-files-and-groups).
+Changing a system variable by using the SET statement does not make the change permanently. To do so, the change must be made in a [configuration file](/mariadb-administration/getting-installing-and-upgrading-mariadb/mysqld-configuration-files-and-groups/).
 
-For setting variables on a per-query basis (from [MariaDB 10.1.2](/kb/en/mariadb-1012-release-notes/)), see [SET STATEMENT](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set-statement).
+For setting variables on a per-query basis (from [MariaDB 10.1.2](/kb/en/mariadb-1012-release-notes/)), see [SET STATEMENT](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set-statement/).
 
-See [SHOW VARIABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-variables) for documentation on viewing server system variables.
+See [SHOW VARIABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-variables/) for documentation on viewing server system variables.
 
-See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables) for a list of all the system variables.
+See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables/) for a list of all the system variables.
 
 ### GLOBAL / SESSION
 
@@ -111,7 +111,7 @@ SELECT VARIABLE_NAME, SESSION_VALUE, GLOBAL_VALUE FROM
 +---------------------------+---------------+--------------+
 ```
 
-[SHOW VARIABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-variables) will by default return the session value unless the variable is global only.
+[SHOW VARIABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-variables/) will by default return the session value unless the variable is global only.
 
 ```sql
 SHOW VARIABLES LIKE 'max_error_count';
@@ -156,8 +156,8 @@ SELECT @a;
 
 ## See Also
 
-- [Using last_value() to return data of used rows](/built-in-functions/secondary-functions/information-functions/last_value)
-- [SET STATEMENT](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set-statement)
-- [SET Variable](/programming-customizing-mariadb/programmatic-compound-statements/set-variable)
-- [SET Data Type](/columns-storage-engines-and-plugins/data-types/string-data-types/set-data-type)
-- [DECLARE Variable](/programming-customizing-mariadb/programmatic-compound-statements/declare-variable)
+- [Using last_value() to return data of used rows](/built-in-functions/secondary-functions/information-functions/last_value/)
+- [SET STATEMENT](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set-statement/)
+- [SET Variable](/programming-customizing-mariadb/programmatic-compound-statements/set-variable/)
+- [SET Data Type](/columns-storage-engines-and-plugins/data-types/string-data-types/set-data-type/)
+- [DECLARE Variable](/programming-customizing-mariadb/programmatic-compound-statements/declare-variable/)

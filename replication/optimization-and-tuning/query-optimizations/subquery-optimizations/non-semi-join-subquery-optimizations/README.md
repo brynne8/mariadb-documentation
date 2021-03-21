@@ -1,6 +1,6 @@
 # Non-semi-join Subquery Optimizations
 
-Certain kinds of IN-subqueries cannot be flattened into [semi-joins](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/semi-join-subquery-optimizations). These
+Certain kinds of IN-subqueries cannot be flattened into [semi-joins](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/semi-join-subquery-optimizations/). These
 subqueries can be both correlated or non-correlated. In order to provide
 consistent performance in all cases, MariaDB provides several alternative
 strategies for these types of subqueries. Whenever several strategies are

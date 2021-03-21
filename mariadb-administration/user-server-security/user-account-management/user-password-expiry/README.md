@@ -10,11 +10,11 @@ Password expiry permits administrators to expire user passwords, either manually
 
 There are two system variables which affect password expiry: [default_password_lifetime](/kb/en/server-system-variables/#default_password_lifetime), which determines the amount of time between requiring the user to change their password. `0`, the default, means automatic password expiry is not active.
 
-The second variable, [disconnect_on_expired_password](/kb/en/server-system-variables/#disconnect_on_expired_password) determines whether a client is permitted to connect if their password has expired, or whether they are permitted to connect in sandbox mode, able to perform a limited subset of queries related to resetting the password, in particular [SET PASSWORD](/sql-statements-structure/sql-statements/account-management-sql-commands/set-password) and [SET](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set).
+The second variable, [disconnect_on_expired_password](/kb/en/server-system-variables/#disconnect_on_expired_password) determines whether a client is permitted to connect if their password has expired, or whether they are permitted to connect in sandbox mode, able to perform a limited subset of queries related to resetting the password, in particular [SET PASSWORD](/sql-statements-structure/sql-statements/account-management-sql-commands/set-password/) and [SET](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set/).
 
 ## Setting a Password Expiry Limit for a User
 
-Besides automatic password expiry, as determined by [default_password_lifetime](/kb/en/server-system-variables/#default_password_lifetime), password expiry times can be set on an individual user basis, overriding the global using the [CREATE USER](/sql-statements-structure/sql-statements/account-management-sql-commands/create-user) or [ALTER USER](/sql-statements-structure/sql-statements/account-management-sql-commands/alter-user) statements, for example:
+Besides automatic password expiry, as determined by [default_password_lifetime](/kb/en/server-system-variables/#default_password_lifetime), password expiry times can be set on an individual user basis, overriding the global using the [CREATE USER](/sql-statements-structure/sql-statements/account-management-sql-commands/create-user/) or [ALTER USER](/sql-statements-structure/sql-statements/account-management-sql-commands/alter-user/) statements, for example:
 
 ```sql
 CREATE USER 'monty'@'localhost' PASSWORD EXPIRE INTERVAL 120 DAY;
@@ -46,7 +46,7 @@ ALTER USER 'monty'@'localhost' PASSWORD EXPIRE DEFAULT;
 
 ## SHOW CREATE USER
 
-The [SHOW CREATE USER](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-user) statement will display information about the password expiry status of the user. Unlike MySQL, it will not display if the user is unlocked, or if the password expiry is set to default.
+The [SHOW CREATE USER](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-user/) statement will display information about the password expiry status of the user. Unlike MySQL, it will not display if the user is unlocked, or if the password expiry is set to default.
 
 ```sql
 CREATE USER 'monty'@'localhost' PASSWORD EXPIRE INTERVAL 120 DAY;
@@ -112,7 +112,7 @@ SELECT pei.User, pei.Host,
 
 ## --connect-expired-password Client Option
 
-The [mysql client](/clients-utilities/mysql-client/mysql-command-line-client) `--connect-expired-password` option notifies the server that the client is prepared to handle expired password sandbox mode (even if the `--batch` option was specified).
+The [mysql client](/clients-utilities/mysql-client/mysql-command-line-client/) `--connect-expired-password` option notifies the server that the client is prepared to handle expired password sandbox mode (even if the `--batch` option was specified).
 
 ## See Also
 

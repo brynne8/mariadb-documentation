@@ -16,7 +16,7 @@ Inserts data into a JSON document, returning the resulting document or NULL if a
 
 An error will occur if the JSON document is not invalid, or if any of the paths are invalid or contain a `*` or `**` wildcard.
 
-JSON_INSERT can only insert data while [JSON_REPLACE](/built-in-functions/special-functions/json-functions/json_replace) can only update. [JSON_SET](/built-in-functions/special-functions/json-functions/json_set) can update or insert data.
+JSON_INSERT can only insert data while [JSON_REPLACE](/built-in-functions/special-functions/json-functions/json_replace/) can only update. [JSON_SET](/built-in-functions/special-functions/json-functions/json_set/) can update or insert data.
 
 ## Examples
 

@@ -10,7 +10,7 @@ A server almost always has a large number of active plugins, because the server 
 
 ### Querying Plugin Information with `SHOW PLUGINS`
 
-The [SHOW PLUGINS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-plugins) statement can be used to query information about all active plugins.
+The [SHOW PLUGINS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-plugins/) statement can be used to query information about all active plugins.
 
 For example:
 
@@ -87,9 +87,9 @@ The [mysql.plugin](/kb/en/mysqlplugin-table/) table can be queried to get inform
 
 This table only contains information about plugins that have been installed via the following methods:
 
-- The [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname) statement.
-- The [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin) statement.
-- The [mysql_plugin](/clients-utilities/mysql_plugin) utility.
+- The [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname/) statement.
+- The [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin/) statement.
+- The [mysql_plugin](/clients-utilities/mysql_plugin/) utility.
 
 This table does not contain information about:
 
@@ -116,8 +116,8 @@ SELECT * FROM mysql.plugin;
 There are three primary ways to install a plugin:
 
 - A plugin can be installed dynamically with an SQL statement.
-- A plugin can be installed with a [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options) option, but it requires a server restart.
-- A plugin can be installed with the [mysql_plugin](/clients-utilities/mysql_plugin) utility, while the server is completely offline.
+- A plugin can be installed with a [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/) option, but it requires a server restart.
+- A plugin can be installed with the [mysql_plugin](/clients-utilities/mysql_plugin/) utility, while the server is completely offline.
 
 When you are installing a plugin, you also have to ensure that:
 
@@ -126,15 +126,15 @@ When you are installing a plugin, you also have to ensure that:
 
 ### Installing a Plugin Dynamically
 
-A plugin can be installed dynamically by executing either the [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname) or the [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin) statement.
+A plugin can be installed dynamically by executing either the [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname/) or the [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin/) statement.
 
 If a plugin is installed with one of these statements, then a record will be added to the [mysql.plugins](/kb/en/mysqlplugin-table/) table for the plugin. This means that the plugin will automatically be loaded every time the server restarts, unless specifically uninstalled or deactivated.
 
 #### Installing a Plugin with `INSTALL SONAME`
 
-You can install a plugin dynamically by executing the [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname) statement. [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname) installs all plugins from the given plugin library. This could be required for some plugin libraries.
+You can install a plugin dynamically by executing the [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname/) statement. [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname/) installs all plugins from the given plugin library. This could be required for some plugin libraries.
 
-For example, to install all plugins in the `server_audit` plugin library (which is currently only the [server_audit](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin) audit plugin), you could execute the following:
+For example, to install all plugins in the `server_audit` plugin library (which is currently only the [server_audit](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/) audit plugin), you could execute the following:
 
 ```sql
 INSTALL SONAME 'server_audit';
@@ -142,9 +142,9 @@ INSTALL SONAME 'server_audit';
 
 #### Installing a Plugin with `INSTALL PLUGIN`
 
-You can install a plugin dynamically by executing the [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin) statement. [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin) installs a single plugin from the given plugin library.
+You can install a plugin dynamically by executing the [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin/) statement. [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin/) installs a single plugin from the given plugin library.
 
-For example, to install the [server_audit](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin) audit plugin from the `server_audit` plugin library, you could execute the following:
+For example, to install the [server_audit](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/) audit plugin from the `server_audit` plugin library, you could execute the following:
 
 ```sql
 INSTALL PLUGIN server_audit SONAME 'server_audit';
@@ -152,13 +152,13 @@ INSTALL PLUGIN server_audit SONAME 'server_audit';
 
 ### Installing a Plugin with Plugin Load Options
 
-A plugin can be installed with a [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options) option by providing either the [--plugin-load-add](/kb/en/mysqld-options/#-plugin-load-add) or the [--plugin-load](/kb/en/mysqld-options/#-plugin-load) option.
+A plugin can be installed with a [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/) option by providing either the [--plugin-load-add](/kb/en/mysqld-options/#-plugin-load-add) or the [--plugin-load](/kb/en/mysqld-options/#-plugin-load) option.
 
 If a plugin is installed with one of these options, then a record will <strong>not</strong> be added to the [mysql.plugins](/kb/en/mysqlplugin-table/) table for the plugin. This means that if the server is restarted without the same option set, then the plugin will <strong>not</strong> automatically be loaded.
 
 #### Installing a Plugin with `--plugin-load-add`
 
-You can install a plugin with the <a undefined>--plugin-load-add</a> option by specifying the option as a command-line argument to [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options) or by specifying the option in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files).
+You can install a plugin with the <a undefined>--plugin-load-add</a> option by specifying the option as a command-line argument to [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/) or by specifying the option in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/).
 
 The <a undefined>--plugin-load-add</a> option uses the following format:
 
@@ -166,13 +166,13 @@ The <a undefined>--plugin-load-add</a> option uses the following format:
 - Plugins can also be specified in the format `library`, where `library` is the plugin library. This format installs all plugins from the given plugin library.
 - Multiple plugins can be specified by separating them with semicolons.
 
-For example, to install all plugins in the `server_audit` plugin library (which is currently only the [server_audit](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin) audit plugin) and also the [ed25519](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-ed25519) authentication plugin from the `auth_ed25519` plugin library, you could set the option to the following values on the command-line:
+For example, to install all plugins in the `server_audit` plugin library (which is currently only the [server_audit](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/) audit plugin) and also the [ed25519](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-ed25519/) authentication plugin from the `auth_ed25519` plugin library, you could set the option to the following values on the command-line:
 
 ```sql
 $ mysqld --user=mysql --plugin-load-add='server_audit' --plugin-load-add='ed25519=auth_ed25519'
 ```
 
-You could also set the option to the same values in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files):
+You could also set the option to the same values in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/):
 
 ```sql
 [mariadb]
@@ -185,7 +185,7 @@ Special care must be taken when specifying both the <a undefined>--plugin-load</
 
 #### Installing a Plugin with `--plugin-load`
 
-You can install a plugin with the <a undefined>--plugin-load</a> option by specifying the option as a command-line argument to [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options) or by specifying the option in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files).
+You can install a plugin with the <a undefined>--plugin-load</a> option by specifying the option as a command-line argument to [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/) or by specifying the option in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/).
 
 The <a undefined>--plugin-load</a> option uses the following format:
 
@@ -193,13 +193,13 @@ The <a undefined>--plugin-load</a> option uses the following format:
 - Plugins can also be specified in the format `library`, where `library` is the plugin library. This format installs all plugins from the given plugin library.
 - Multiple plugins can be specified by separating them with semicolons.
 
-For example, to install all plugins in the `server_audit` plugin library (which is currently only the [server_audit](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin) audit plugin) and also the [ed25519](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-ed25519) authentication plugin from the `auth_ed25519` plugin library, you could set the option to the following values on the command-line:
+For example, to install all plugins in the `server_audit` plugin library (which is currently only the [server_audit](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/) audit plugin) and also the [ed25519](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-ed25519/) authentication plugin from the `auth_ed25519` plugin library, you could set the option to the following values on the command-line:
 
 ```sql
 $ mysqld --user=mysql --plugin-load='server_audit;ed25519=auth_ed25519'
 ```
 
-You could also set the option to the same values in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files):
+You could also set the option to the same values in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/):
 
 ```sql
 [mariadb]
@@ -244,7 +244,7 @@ plugin_load_add = ed25519=auth_ed25519
 
 ### Installing a Plugin with `mysql_plugin`
 
-A plugin can be installed with the [mysql_plugin](/clients-utilities/mysql_plugin) utility if the server is completely offline.
+A plugin can be installed with the [mysql_plugin](/clients-utilities/mysql_plugin/) utility if the server is completely offline.
 
 The syntax is:
 
@@ -252,7 +252,7 @@ The syntax is:
 mysql_plugin [options] <plugin> ENABLE|DISABLE
 ```
 
-For example, to install the [server_audit](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin) audit plugin, you could execute the following:
+For example, to install the [server_audit](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/) audit plugin, you could execute the following:
 
 ```sql
 mysql_plugin server_audit ENABLE
@@ -262,7 +262,7 @@ If a plugin is installed with this utility, then a record will be added to the <
 
 ### Configuring the Plugin Directory
 
-When a plugin is being installed, the server looks for the plugin's library in the server's plugin directory. This directory is configured by the <a undefined>plugin_dir</a> system variable. This can be specified as a command-line argument to [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options) or it can be specified in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files). For example:
+When a plugin is being installed, the server looks for the plugin's library in the server's plugin directory. This directory is configured by the <a undefined>plugin_dir</a> system variable. This can be specified as a command-line argument to [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/) or it can be specified in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/). For example:
 
 ```sql
 [mariadb]
@@ -272,7 +272,7 @@ plugin_dir = /usr/lib64/mysql/plugin
 
 ### Configuring the Minimum Plugin Maturity
 
-When a plugin is being installed, the server compares the plugin's maturity level against the server's minimum allowed plugin maturity. This can help prevent users from using unstable plugins on production servers. This minimum plugin maturity is configured by the <a undefined>plugin_maturity</a> system variable. This can be specified as a command-line argument to [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options) or it can be specified in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files). For example:
+When a plugin is being installed, the server compares the plugin's maturity level against the server's minimum allowed plugin maturity. This can help prevent users from using unstable plugins on production servers. This minimum plugin maturity is configured by the <a undefined>plugin_maturity</a> system variable. This can be specified as a command-line argument to [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/) or it can be specified in a relevant server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/). For example:
 
 ```sql
 [mariadb]
@@ -284,13 +284,13 @@ plugin_maturity = stable
 
 A plugin will be loaded by default when the server starts if:
 
-- The plugin was installed with the [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname) statement.
-- The plugin was installed with the [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin) statement.
-- The plugin was installed with the [mysql_plugin](/clients-utilities/mysql_plugin) utility.
+- The plugin was installed with the [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname/) statement.
+- The plugin was installed with the [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin/) statement.
+- The plugin was installed with the [mysql_plugin](/clients-utilities/mysql_plugin/) utility.
 - The server is configured to load the plugin with the <a undefined>--plugin-load-add</a> option.
 - The server is configured to load the plugin with the <a undefined>--plugin-load</a> option.
 
-This behavior can be changed with special options that take the form `--plugin-name`. For example, for the [server_audit](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin) audit plugin, the special option is called <a undefined>--server-audit</a>.
+This behavior can be changed with special options that take the form `--plugin-name`. For example, for the [server_audit](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/) audit plugin, the special option is called <a undefined>--server-audit</a>.
 
 The possible values for these special options are:
 
@@ -305,22 +305,22 @@ A plugin's status can be found by looking at the `PLUGIN_STATUS` column of the <
 
 ## Uninstalling Plugins
 
-Plugins that are found in the mysql.plugin table, that is those that were installed with [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname), [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin) or [mysql_plugin](/clients-utilities/mysql_plugin) can be uninstalled in one of two ways:
+Plugins that are found in the mysql.plugin table, that is those that were installed with [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname/), [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin/) or [mysql_plugin](/clients-utilities/mysql_plugin/) can be uninstalled in one of two ways:
 
-- The [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname) or the [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin) statement while the server is running
-- With [mysql_plugin](/clients-utilities/mysql_plugin) while the server is offline.
+- The [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname/) or the [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin/) statement while the server is running
+- With [mysql_plugin](/clients-utilities/mysql_plugin/) while the server is offline.
 
 Plugins that were enabled as a `--plugin-load` option do not need to be uninstalled. If `--plugin-load` is omitted the next time the server starts, or the plugin is not listed as one of the `--plugin-load` entries, the plugin will not be loaded.
 
-[UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin) uninstalls a single installed plugin, while [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname) uninstalls all plugins belonging to a given library.
+[UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin/) uninstalls a single installed plugin, while [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname/) uninstalls all plugins belonging to a given library.
 
 ## See Also
 
-- [List of Plugins](/columns-storage-engines-and-plugins/plugins/information-on-plugins/list-of-plugins)
-- [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin)
-- [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname)
-- [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin)
-- [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname)
-- [SHOW PLUGINS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-plugins)
-- [INFORMATION_SCHEMA.PLUGINS Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema)
-- [mysql_plugin](/clients-utilities/mysql_plugin)
+- [List of Plugins](/columns-storage-engines-and-plugins/plugins/information-on-plugins/list-of-plugins/)
+- [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin/)
+- [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname/)
+- [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin/)
+- [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname/)
+- [SHOW PLUGINS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-plugins/)
+- [INFORMATION_SCHEMA.PLUGINS Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema/)
+- [mysql_plugin](/clients-utilities/mysql_plugin/)

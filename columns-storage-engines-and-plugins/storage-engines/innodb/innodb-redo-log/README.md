@@ -2,7 +2,7 @@
 
 ## Overview
 
-The redo log is used by [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) during crash recovery. The redo log files have names like `ib_logfileN`, where `N` is an integer (from [MariaDB 10.5](/kb/en/what-is-mariadb-105/), there is only one redo log, so the file will always be named `ib_logfile0`. If the [innodb_log_group_home_dir](/kb/en/innodb-system-variables/#innodb_log_group_home_dir) system variable is configured, then the redo log files will be created in that directory. Otherwise, they will be created in the directory defined by the [datadir](/kb/en/server-system-variables/#datadir) system variable.
+The redo log is used by [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) during crash recovery. The redo log files have names like `ib_logfileN`, where `N` is an integer (from [MariaDB 10.5](/kb/en/what-is-mariadb-105/), there is only one redo log, so the file will always be named `ib_logfile0`. If the [innodb_log_group_home_dir](/kb/en/innodb-system-variables/#innodb_log_group_home_dir) system variable is configured, then the redo log files will be created in that directory. Otherwise, they will be created in the directory defined by the [datadir](/kb/en/server-system-variables/#datadir) system variable.
 
 ## Flushing Effects on Performance and Consistency
 
@@ -10,7 +10,7 @@ The [innodb_flush_log_at_trx_commit](/kb/en/innodb-system-variables/#innodb_flus
 
 ### Binary Log Group Commit and Redo Log Flushing
 
-In [MariaDB 10.0](/kb/en/what-is-mariadb-100/) and above, when both [innodb_flush_log_at_trx_commit=1](/kb/en/innodb-system-variables/#innodb_flush_log_at_trx_commit) (the default) is set and the [binary log](/mariadb-administration/server-monitoring-logs/binary-log) is enabled, there is now one less sync to disk inside InnoDB during commit (2 syncs shared between a group of transactions instead of 3). See [Binary Log Group Commit and InnoDB Flushing Performance](/columns-storage-engines-and-plugins/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance) for more information.
+In [MariaDB 10.0](/kb/en/what-is-mariadb-100/) and above, when both [innodb_flush_log_at_trx_commit=1](/kb/en/innodb-system-variables/#innodb_flush_log_at_trx_commit) (the default) is set and the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) is enabled, there is now one less sync to disk inside InnoDB during commit (2 syncs shared between a group of transactions instead of 3). See [Binary Log Group Commit and InnoDB Flushing Performance](/columns-storage-engines-and-plugins/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance/) for more information.
 
 ## Redo Log Group Capacity
 
@@ -61,7 +61,7 @@ Records within the InnoDB redo log are identified via a log sequence number (LSN
 
 ## Checkpoints
 
-When InnoDB performs a checkpoint, it writes the LSN of the oldest dirty page in the [InnoDB buffer pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool) to the InnoDB redo log. If a page is the oldest dirty page in the  [InnoDB buffer pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool), then that means that all pages with lower LSNs have been flushed to the physical InnoDB tablespace files. If the server were to crash, then InnoDB would perform crash recovery by only applying log records with LSNs that are greater than or equal to the LSN of the oldest dirty page written in the last checkpoint.
+When InnoDB performs a checkpoint, it writes the LSN of the oldest dirty page in the [InnoDB buffer pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool/) to the InnoDB redo log. If a page is the oldest dirty page in the  [InnoDB buffer pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool/), then that means that all pages with lower LSNs have been flushed to the physical InnoDB tablespace files. If the server were to crash, then InnoDB would perform crash recovery by only applying log records with LSNs that are greater than or equal to the LSN of the oldest dirty page written in the last checkpoint.
 
 Checkpoints are one of the tasks performed by the InnoDB master background thread. This thread schedules checkpoints 7 seconds apart when the server is very active, but checkpoints can happen more frequently when the server is less active.
 
@@ -79,7 +79,7 @@ In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and later, MariaDB uses InnoDB. I
 
 To determine the InnoDB checkpoint age, do the following:
 
-- Query [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status).
+- Query [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/).
 - Find the `LOG` section. For example:
 
 ```sql

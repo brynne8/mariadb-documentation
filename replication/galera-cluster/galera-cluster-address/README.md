@@ -19,7 +19,7 @@ URL's in [Galera](/kb/en/galera/) take a particular format:
 
 ## Option list
 
-- The [wsrep_provider_options](/kb/en/galera-cluster-system-variables/#wsrep_provider_options) variable is used to set a [list of options](/replication/galera-cluster/wsrep_provider_options). These parameters can also be provided (and overridden)  as part of the URL. Unlike options provided in a configuration file, they will not endure, and need to be resubmitted with each connection.
+- The [wsrep_provider_options](/kb/en/galera-cluster-system-variables/#wsrep_provider_options) variable is used to set a [list of options](/replication/galera-cluster/wsrep_provider_options/). These parameters can also be provided (and overridden)  as part of the URL. Unlike options provided in a configuration file, they will not endure, and need to be resubmitted with each connection.
 
 A useful option to set is `pc.wait_prim=no` to ensure the server will start running even if it can't determine a primary node. This is useful if all members go down at the same time.
 

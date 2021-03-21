@@ -2,18 +2,18 @@
 
 ## Overview
 
-[MindsDB](https://docs.mindsdb.com/databases/) is a third-party application that interfaces with MariaDB Server to provide Machine Learning capabilities through SQL. The interface is done via the [Connect Storage Engine](/columns-storage-engines-and-plugins/storage-engines/connect).
+[MindsDB](https://docs.mindsdb.com/databases/) is a third-party application that interfaces with MariaDB Server to provide Machine Learning capabilities through SQL. The interface is done via the [Connect Storage Engine](/columns-storage-engines-and-plugins/storage-engines/connect/).
 
 ## Installation
 
 To get a functional MariaDB - MindsDB installation, one needs to install the following components:
 
 - <strong>MindsDB</strong>: follow the instructions in the project's [official documentation](https://docs.mindsdb.com/installation/Installing/).
-- <strong>Connect Storage Engine</strong> must be enabled for the integration to work. See [installing the connect storage engine](/columns-storage-engines-and-plugins/storage-engines/connect/installing-the-connect-storage-engine).
+- <strong>Connect Storage Engine</strong> must be enabled for the integration to work. See [installing the connect storage engine](/columns-storage-engines-and-plugins/storage-engines/connect/installing-the-connect-storage-engine/).
 
 MindsDB connects to MariaDB Server via a regular user to setup a dedicated database called `mindsdb`. Which user will be used is specified within MindsDB's [configuration file](https://docs.mindsdb.com/databases/MariaDB/).
 
-For example, if MindsDB is installed locally, one can create a user called `mindsdb@localhost`. MindsDB only authenticates via the [mysql_native_password](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-mysql_native_password) plugin, hence one must set a password for the user:
+For example, if MindsDB is installed locally, one can create a user called `mindsdb@localhost`. MindsDB only authenticates via the [mysql_native_password](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-mysql_native_password/) plugin, hence one must set a password for the user:
 
 ```sql
 CREATE USER mindsdb@localhost;

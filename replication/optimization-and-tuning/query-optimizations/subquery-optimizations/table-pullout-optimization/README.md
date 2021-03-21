@@ -1,6 +1,6 @@
 # Table Pullout Optimization
 
-Table pullout is an optimization for [Semi-join subqueries](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/semi-join-subquery-optimizations).
+Table pullout is an optimization for [Semi-join subqueries](/replication/optimization-and-tuning/query-optimizations/subquery-optimizations/semi-join-subquery-optimizations/).
 
 ## The idea of Table Pullout
 
@@ -26,7 +26,7 @@ where
 
 ## Table pullout in action
 
-If one runs [EXPLAIN](/sql-statements-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain) for the above query in MySQL 5.1-5.6 or [MariaDB 5.1](/kb/en/what-is-mariadb-51/)-5.2, they'll get this plan:
+If one runs [EXPLAIN](/sql-statements-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain/) for the above query in MySQL 5.1-5.6 or [MariaDB 5.1](/kb/en/what-is-mariadb-51/)-5.2, they'll get this plan:
 
 ```sql
 MySQL [world]> explain select * from City where City.Country in (select Country.Code from Country where Country.Population < 100*1000);

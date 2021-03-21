@@ -1,7 +1,7 @@
 # Pausing mysql-test-run.pl
 
 Sometimes you need to work when your computer is busy running
-[mysql-test-run.pl](/clients-utilities/mysqltest/mysql-test-runpl-options). The mysql-test-run.pl script allows you to stop it temporarily so you can use
+[mysql-test-run.pl](/clients-utilities/mysqltest/mysql-test-runpl-options/). The mysql-test-run.pl script allows you to stop it temporarily so you can use
 your computer and then restart the tests when you're ready.
 
 There are two ways to enable this:

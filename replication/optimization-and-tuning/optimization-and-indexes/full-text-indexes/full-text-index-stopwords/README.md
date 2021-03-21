@@ -1,8 +1,8 @@
 # Full-Text Index Stopwords
 
-Stopwords are used to provide a list of commonly-used words that can be ignored for the purposes of [Full-text-indexes](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes).
+Stopwords are used to provide a list of commonly-used words that can be ignored for the purposes of [Full-text-indexes](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/).
 
-Full-text indexes built in [MyISAM](/kb/en/myisam/) and [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) have different stopword lists by default.
+Full-text indexes built in [MyISAM](/kb/en/myisam/) and [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) have different stopword lists by default.
 
 ## MyISAM Stopwords
 
@@ -10,7 +10,7 @@ For full-text indexes on MyISAM tables, by default, the list is built from the f
 
 If the stopword list is changed, any existing full-text indexes need to be rebuilt
 
-The following table shows the default list of stopwords, although you should always treat `storage/myisam/ft_static.c` as the definitive list. See the [Fulltext Index Overview](/kb/en/fulltext-index-overview/) for more details, and [Full-text-indexes](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes) for related articles.
+The following table shows the default list of stopwords, although you should always treat `storage/myisam/ft_static.c` as the definitive list. See the [Fulltext Index Overview](/kb/en/fulltext-index-overview/) for more details, and [Full-text-indexes](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) for related articles.
 
 <table><tbody><tr><td>a's</td><td>able</td><td>about</td><td>above</td></tr>
 <tr><td>according</td><td>accordingly</td><td>across</td><td>actually</td></tr>
@@ -160,7 +160,7 @@ The stopword list is determined as follows:
 - If `innodb_ft_user_stopword_table` is not set, the table set by [innodb_ft_server_stopword_table](/kb/en/xtradbinnodb-server-system-variables/#innodb_ft_server_stopword_table) is used.
 - If neither variable is set, the built-in list is used, which can be viewed by querying the [INNODB_FT_DEFAULT_STOPWORD table](/kb/en/information-schema-innodb_ft_default_stopword-table/) in the [Information Schema](/kb/en/information_schema/).
 
-In the first two cases, the specified table must exist at the time the system variable is set and the full-text index created. It must be an InnoDB table with a single column, a [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar) named VALUE.
+In the first two cases, the specified table must exist at the time the system variable is set and the full-text index created. It must be an InnoDB table with a single column, a [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar/) named VALUE.
 
 The default InnoDB stopword list differs from the default MyISAM list, being much shorter, and contains the following words:
 

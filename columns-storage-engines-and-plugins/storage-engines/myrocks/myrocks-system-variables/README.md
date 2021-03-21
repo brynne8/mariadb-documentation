@@ -1,8 +1,8 @@
 # MyRocks System Variables
 
-This page documents system variables related to the [MyRocks](/columns-storage-engines-and-plugins/storage-engines/myrocks) storage engine. See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables) for a complete list of system variables and instructions on setting them.
+This page documents system variables related to the [MyRocks](/columns-storage-engines-and-plugins/storage-engines/myrocks/) storage engine. See [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables/) for a complete list of system variables and instructions on setting them.
 
-See also the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables).
+See also the [Full list of MariaDB options, system and status variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables/).
 
 #### `rocksdb_access_hint_on_compaction_start`
 
@@ -598,7 +598,7 @@ column of the `INFORMATION_SCHEMA.ROCKSDB_DBSTATS` table.
 
 #### `rocksdb_enable_2pc`
 
-- <strong>Description:</strong> Enable two phase commit for MyRocks. When set, MyRocks will keep its data consistent with the [binary log](/mariadb-administration/server-monitoring-logs/binary-log) (in other words, the server will be a crash-safe master). The consistency is achieved by doing two-phase XA commit with the binary log.
+- <strong>Description:</strong> Enable two phase commit for MyRocks. When set, MyRocks will keep its data consistent with the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) (in other words, the server will be a crash-safe master). The consistency is achieved by doing two-phase XA commit with the binary log.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--rocksdb-enable-2pc={0|1}</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -620,7 +620,7 @@ column of the `INFORMATION_SCHEMA.ROCKSDB_DBSTATS` table.
 
 #### `rocksdb_enable_insert_with_update_caching`
 
-- <strong>Description:</strong> Whether to enable optimization where we cache the read from a failed insertion attempt in [INSERT ON DUPLICATE KEY UPDATE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update).
+- <strong>Description:</strong> Whether to enable optimization where we cache the read from a failed insertion attempt in [INSERT ON DUPLICATE KEY UPDATE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--rocksdb-enable-insert-with-update-caching={0|1}</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -771,7 +771,7 @@ column of the `INFORMATION_SCHEMA.ROCKSDB_DBSTATS` table.
 
 #### `rocksdb_force_index_records_in_range`
 
-- <strong>Description:</strong> Used to override the result of records_in_range() when [FORCE INDEX](/replication/optimization-and-tuning/query-optimizations/force-index) is used.
+- <strong>Description:</strong> Used to override the result of records_in_range() when [FORCE INDEX](/replication/optimization-and-tuning/query-optimizations/force-index/) is used.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--rocksdb-force-index-records-in-range=#</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -1293,7 +1293,7 @@ column of the `INFORMATION_SCHEMA.ROCKSDB_DBSTATS` table.
 
 #### `rocksdb_remove_mariabackup_checkpoint`
 
-- <strong>Description:</strong> Remove [mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup) checkpoint.
+- <strong>Description:</strong> Remove [mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/) checkpoint.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--rocksdb-remove-mariabackup-checkpoint={0|1}</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes

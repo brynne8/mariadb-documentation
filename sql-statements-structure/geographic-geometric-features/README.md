@@ -1,6 +1,6 @@
 # Geographic &amp; Geometric Features
 
-MariaDB supports spatial extensions that enable the creation, storage and analysis of geographic features. These can be used in the [Aria](/columns-storage-engines-and-plugins/storage-engines/aria), [MyISAM](/kb/en/myisam/), [InnoDB/XtraDB](/columns-storage-engines-and-plugins/storage-engines/innodb) and [ARCHIVE](/columns-storage-engines-and-plugins/storage-engines/archive) engines in MariaDB.
+MariaDB supports spatial extensions that enable the creation, storage and analysis of geographic features. These can be used in the [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/), [MyISAM](/kb/en/myisam/), [InnoDB/XtraDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) and [ARCHIVE](/columns-storage-engines-and-plugins/storage-engines/archive/) engines in MariaDB.
 
 [Partitioned tables](/kb/en/managing-mariadb-partitioning/) do not support geometric types.
 

@@ -2,8 +2,8 @@
 
 The terms <em>master</em> and <em>slave</em> have historically been used in replication, but the terms terms <em>primary</em> and <em>replica</em> are now preferred. The old terms are used throughout the documentation, and in MariaDB commands, although [MariaDB 10.5](/kb/en/what-is-mariadb-105/) has begun the process of renaming. The documentation will follow over time. See [MDEV-18777](https://jira.mariadb.org/browse/MDEV-18777) to follow progress on this effort.
 
-The introduction of [checksums on binlog events](/replication/standard-replication/binlog-event-checksums) changes the format that events
-are stored in [binary log](/mariadb-administration/server-monitoring-logs/binary-log) files and sent over the network to slaves. This raises the question on what happens when replicating between different versions of the
+The introduction of [checksums on binlog events](/replication/standard-replication/binlog-event-checksums/) changes the format that events
+are stored in [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) files and sent over the network to slaves. This raises the question on what happens when replicating between different versions of the
 server, where one server is a newer version that has the binlog checksum
 feature implemented, while the other server is an older version that does not
 know about binlog checksums.
@@ -59,7 +59,7 @@ combination of master and slave servers and checksum enabled/disabled:
 
 ## Checksums and `mysqlbinlog`
 
-When using the [mysqlbinlog](/clients-utilities/mysqlbinlog) client program, there are similar issues.
+When using the [mysqlbinlog](/clients-utilities/mysqlbinlog/) client program, there are similar issues.
 
 A version of `mysqlbinlog` which understands checksums can read binlog files
 from either old or new servers, with or without checksums enabled.
@@ -80,4 +80,4 @@ produced by either MySQL or MariaDB just fine.
 
 ## See Also
 
-- [Binlog Event Checksums](/replication/standard-replication/binlog-event-checksums)
+- [Binlog Event Checksums](/replication/standard-replication/binlog-event-checksums/)

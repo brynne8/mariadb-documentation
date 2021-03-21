@@ -1,10 +1,10 @@
 # Aria Storage Formats
 
-The [Aria](/columns-storage-engines-and-plugins/storage-engines/aria) storage engine supports three different table storage formats.
+The [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/) storage engine supports three different table storage formats.
 
-These are FIXED, DYNAMIC and PAGE, and they can be set with the ROW FORMAT option in the [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table) statement. PAGE is the default format, while FIXED and DYNAMIC are essentially the same as the [MyISAM formats](/columns-storage-engines-and-plugins/storage-engines/myisam-storage-engine/myisam-storage-formats).
+These are FIXED, DYNAMIC and PAGE, and they can be set with the ROW FORMAT option in the [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/) statement. PAGE is the default format, while FIXED and DYNAMIC are essentially the same as the [MyISAM formats](/columns-storage-engines-and-plugins/storage-engines/myisam-storage-engine/myisam-storage-formats/).
 
-The [SHOW TABLE STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-table-status) statement can be used to see the storage format used by a table.
+The [SHOW TABLE STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-table-status/) statement can be used to see the storage format used by a table.
 
 ## Fixed-length
 
@@ -47,4 +47,4 @@ Page tables have a number of characteristics:
 
 ## Transactional
 
-See [Aria Storage Engine](/columns-storage-engines-and-plugins/storage-engines/aria/aria-storage-engine) for the impact of the TRANSACTIONAL option on the row format.
+See [Aria Storage Engine](/columns-storage-engines-and-plugins/storage-engines/aria/aria-storage-engine/) for the impact of the TRANSACTIONAL option on the row format.

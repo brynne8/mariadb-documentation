@@ -12,23 +12,23 @@ MySQL was born at the beginning of the 90s. Back in the days, if compared to its
 
 The web evolved rapidly, and the same happened to MySQL. Being open source helped a lot in this respect, because the community needed functionalities that weren’t supported at that time.
 
-MySQL was probably the first database system to support a [pluggable storage engine architecture](/columns-storage-engines-and-plugins/storage-engines). Basically, this means that MySQL knows very little about creating or populating a table, reading from it, building proper indexes and caches. It just delegated all these operations to a special plugin type called a storage engine.
+MySQL was probably the first database system to support a [pluggable storage engine architecture](/columns-storage-engines-and-plugins/storage-engines/). Basically, this means that MySQL knows very little about creating or populating a table, reading from it, building proper indexes and caches. It just delegated all these operations to a special plugin type called a storage engine.
 
-One of the first plugins developed by third parties was [InnoDB](/kb/en/understanding-mariadb-architecture/#innodb). It is very fast, and it adds two important features that are not otherwise supported: transactions and [foreign keys](/replication/optimization-and-tuning/optimization-and-indexes/foreign-keys).
+One of the first plugins developed by third parties was [InnoDB](/kb/en/understanding-mariadb-architecture/#innodb). It is very fast, and it adds two important features that are not otherwise supported: transactions and [foreign keys](/replication/optimization-and-tuning/optimization-and-indexes/foreign-keys/).
 
-Note that when MariaDB asks a storage engine to write or read a row, the storage engine could theoretically do anything. This led to the creation of very interesting alternative engines, like [BLACKHOLE](/columns-storage-engines-and-plugins/storage-engines/blackhole) (which doesn’t write or read any data, acting like the /dev/null file in Linux), or [CONNECT](/columns-storage-engines-and-plugins/storage-engines/connect) (which can read and write to files written in many different formats, or remote DBMSs, or some other special data sources).
+Note that when MariaDB asks a storage engine to write or read a row, the storage engine could theoretically do anything. This led to the creation of very interesting alternative engines, like [BLACKHOLE](/columns-storage-engines-and-plugins/storage-engines/blackhole/) (which doesn’t write or read any data, acting like the /dev/null file in Linux), or [CONNECT](/columns-storage-engines-and-plugins/storage-engines/connect/) (which can read and write to files written in many different formats, or remote DBMSs, or some other special data sources).
 
-Nowadays InnoDB is the default MariaDB storage engine, and it is the best choice for most use cases. But for particular needs, sometimes using a different storage engine is desirable. In case of doubts about the best storage engine to use for a specific case, check the [Choosing the Right Storage Engine](/columns-storage-engines-and-plugins/storage-engines/choosing-the-right-storage-engine) page.
+Nowadays InnoDB is the default MariaDB storage engine, and it is the best choice for most use cases. But for particular needs, sometimes using a different storage engine is desirable. In case of doubts about the best storage engine to use for a specific case, check the [Choosing the Right Storage Engine](/columns-storage-engines-and-plugins/storage-engines/choosing-the-right-storage-engine/) page.
 
 When we create a table, we specify its storage engine or use the default one. It is possible to convert an existing table to another storage engine, though this is a blocking operation which requires a complete table copy. Third-party storage engines can also be installed while MariaDB is running.
 
 Note that it is perfectly possible to use tables with different storage engines in the same transaction (even if some engines are not transactional). It is even possible to use different engines in the same query, for example with JOINs and subqueries.
 
-The default storage engine can be changed by changing the [default_storage_engine](/kb/en/server-system-variables/#default_storage_engine) variable. A different default can be specified for temporary tables by setting [default_tmp_storage_engine](/kb/en/server-system-variables/#default_tmp_storage_engine). MariaDB uses [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/aria-storage-engine) for system tables and temporary tables created internally to store the intermediate results of a query.
+The default storage engine can be changed by changing the [default_storage_engine](/kb/en/server-system-variables/#default_storage_engine) variable. A different default can be specified for temporary tables by setting [default_tmp_storage_engine](/kb/en/server-system-variables/#default_tmp_storage_engine). MariaDB uses [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/aria-storage-engine/) for system tables and temporary tables created internally to store the intermediate results of a query.
 
 ### InnoDB
 
-It is worth spending some more words here about [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb), the default storage engine.
+It is worth spending some more words here about [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/), the default storage engine.
 
 #### Primary Key and Indexes
 
@@ -49,9 +49,9 @@ Some consequences of these design choices are the following:
 
 For InnoDB, a <em>tablespace</em> is a file containing data (not a file group as in SQL Server). The types of tablespaces are:
 
-- [System tablespace](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces).
-- [File-per-table tablespaces](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces).
-- [Temporary tablespaces](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-tablespaces/innodb-temporary-tablespaces).
+- [System tablespace](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces/).
+- [File-per-table tablespaces](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces/).
+- [Temporary tablespaces](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-tablespaces/innodb-temporary-tablespaces/).
 
 The system tablespace is stored in the file `ibdata`. It contains information used by InnoDB internally, like rollback segments, as well as some system tables. Historically, the system tablespace also contained all tables created by the user. In modern MariaDB versions, a table is created in the system tablespace only if the [innodb_file_per_table](/kb/en/innodb-system-variables/#innodb_file_per_table) system variable is set to 0 at the moment of the table creation. By default, innodb_file_per_table is 1.
 
@@ -65,7 +65,7 @@ Starting from [MariaDB 10.2](/kb/en/what-is-mariadb-102/), temporary tables are 
 
 In SQL Server, the transaction log contains both the undo log and the redo log. Usually we have only one transaction log.
 
-In MariaDB the undo log and the redo log are stored separately. By default, the [redo log](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-redo-log) is written to two files, called `ib_logfile0` and `ib_logfile1`. The [undo log](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-undo-log) by default is written to the <em>system tablespace</em>, which is in the `ibdata1` file. However, it is possible to write it in separate files in a specified directory.
+In MariaDB the undo log and the redo log are stored separately. By default, the [redo log](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-redo-log/) is written to two files, called `ib_logfile0` and `ib_logfile1`. The [undo log](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-undo-log/) by default is written to the <em>system tablespace</em>, which is in the `ibdata1` file. However, it is possible to write it in separate files in a specified directory.
 
 MariaDB provides no way to inspect the contents of the transaction logs. However, it is possible to inspect the [binary log](/kb/en/understanding-mariadb-architecture/#the-binary-log).
 
@@ -73,21 +73,21 @@ InnoDB transaction logs are written in a circular fashion: their size is normall
 
 #### InnoDB Buffer Pool
 
-MariaDB doesn't have a central buffer pool. Each storage engine may or may not have a buffer pool. The [InnoDB buffer pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool) is typically assigned a big amount of memory. See [MariaDB Memory Allocation](/replication/optimization-and-tuning/mariadb-memory-allocation).
+MariaDB doesn't have a central buffer pool. Each storage engine may or may not have a buffer pool. The [InnoDB buffer pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool/) is typically assigned a big amount of memory. See [MariaDB Memory Allocation](/replication/optimization-and-tuning/mariadb-memory-allocation/).
 
 MariaDB has no extension like the SQL Server buffer pool extension.
 
-A part of the buffer pool is called the [change buffer](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-change-buffering). It contains dirty pages that have been modified in memory and not yet flushed.
+A part of the buffer pool is called the [change buffer](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-change-buffering/). It contains dirty pages that have been modified in memory and not yet flushed.
 
 #### InnoDB Background Threads
 
 InnoDB has background threads that take care of flushing dirty pages from the change buffer to the tablespaces. They don't directly affect the latency of queries, but they are very important for performance.
 
-[SHOW ENGINE InnoDB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status) shows information about them in the `BACKGROUND THREAD` section. They can also be seen using the [threads](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table) table, in the [performance_schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema).
+[SHOW ENGINE InnoDB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) shows information about them in the `BACKGROUND THREAD` section. They can also be seen using the [threads](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table/) table, in the [performance_schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/).
 
 InnoDB flushing is similar to <em>lazy writes</em> and <em>checkpoints</em> in SQL Server. It has no equivalent for <em>eager writing</em>.
 
-For more information, see [InnoDB Page Flushing](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-page-flushing) and [InnoDB Purge](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-purge).
+For more information, see [InnoDB Page Flushing](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-page-flushing/) and [InnoDB Purge](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-purge/).
 
 #### Checksums and Doublewrite Buffer
 
@@ -127,7 +127,7 @@ A database is a container for database objects like tables and views. A database
 
 - A database is a namespace.
 - A database is a logical container to separate objects.
-- A database has a default [character set](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets) and collation, which are inherited by their tables.
+- A database has a default [character set](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/) and collation, which are inherited by their tables.
 - Permissions can be assigned on a whole database, to make permission maintenance simpler.
 - Physical data files are stored in a directory which has the same name as the database to which they belong.
 
@@ -135,13 +135,13 @@ A database is a container for database objects like tables and views. A database
 
 MariaDB has the following system databases:
 
-- [mysql](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables) is for internal use only, and should not be read or written directly.
-- [information_schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema) contains all information that can be found in SQL Server's information_schema and more. However, while SQL Server's `information_schema` is a schema containing information about the local database, MariaDB's `information_schema` is a database that contains information about all databases.
-- [performance_schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema) contains information about MariaDB runtime. It is disabled by default. Enabling it requires setting the [performance_schema](/kb/en/performance-schema-system-variables/#performance_schema) system variable to 1 and restarting MariaDB.
+- [mysql](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) is for internal use only, and should not be read or written directly.
+- [information_schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/) contains all information that can be found in SQL Server's information_schema and more. However, while SQL Server's `information_schema` is a schema containing information about the local database, MariaDB's `information_schema` is a database that contains information about all databases.
+- [performance_schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/) contains information about MariaDB runtime. It is disabled by default. Enabling it requires setting the [performance_schema](/kb/en/performance-schema-system-variables/#performance_schema) system variable to 1 and restarting MariaDB.
 
 ### Default Database
 
-When a user connects to MariaDB, they can optionally specify a default database. A default database can also be specified or changed later, with the [USE](/sql-statements-structure/sql-statements/administrative-sql-statements/use) command.
+When a user connects to MariaDB, they can optionally specify a default database. A default database can also be specified or changed later, with the [USE](/sql-statements-structure/sql-statements/administrative-sql-statements/use/) command.
 
 Having a default database specified allows one to specify tables without specifying the name of the database where they are located. If no default database is specified, all table names must be fully qualified.
 
@@ -166,7 +166,7 @@ SELECT m.*
         ON m.xyz = y.xyz;
 ```
 
-MariaDB has the [DATABASE()](/built-in-functions/secondary-functions/information-functions/database) function to determine the current database:
+MariaDB has the [DATABASE()](/built-in-functions/secondary-functions/information-functions/database/) function to determine the current database:
 
 ```sql
 SELECT DATABASE();
@@ -178,7 +178,7 @@ Stored procedures and triggers don't inherit a default database from the session
 
 Different tables can be built using different storage engines. It is important to note that not all engines are transactional, and that different engines implement the transaction logs in different ways. For this reason, MariaDB cannot replicate data from a master to a slave using an equivalent of SQL Server transactional replication.
 
-Instead, it needs a global mechanism to log the changes that are applied to data. This mechanism is the [binary log](/mariadb-administration/server-monitoring-logs/binary-log), often abbreviated to binlog.
+Instead, it needs a global mechanism to log the changes that are applied to data. This mechanism is the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/), often abbreviated to binlog.
 
 The binary log can be written in the following formats:
 
@@ -188,60 +188,60 @@ The binary log can be written in the following formats:
 
 In most cases, STATEMENT is slower because the SQL statement needs to be re-executed by the slave, and because certain statements may produce a different result in the slave (think about queries that use LIMIT without ORDER BY, or the CURRENT_TIMESTAMP() function). But there are exceptions, and besides, DDL statements are always logged as STATEMENT to avoid flooding the binary log. Therefore, the binary log may well contain both ROW and STATEMENT entries.
 
-See [Binary Log Formats](/mariadb-administration/server-monitoring-logs/binary-log/binary-log-formats).
+See [Binary Log Formats](/mariadb-administration/server-monitoring-logs/binary-log/binary-log-formats/).
 
 The binary log allows:
 
 - replication, if enabled on the master;
 - promoting a slave to a master, if enabled on that slave;
 - incremental backups;
-- seeing data as they were in a point of time in the past ([flashback](/mariadb-administration/server-monitoring-logs/binary-log/flashback));
+- seeing data as they were in a point of time in the past ([flashback](/mariadb-administration/server-monitoring-logs/binary-log/flashback/));
 - restoring a backup and re-appling the binary log, with the exception of a data change which caused problems (human mistake, application bug, SQL injection);
 - Capture Data Changes (CDC), by streaming the binary log to technologies like Apache Kafka.
 
 If you don't plan to use any of these features on a server, it is possible to [disable](/kb/en/replication-and-binary-log-system-variables/#log_bin) the binary log to slightly improve the performance.
 
-The binary log can be inspected using the [mysqlbinlog](/clients-utilities/mysqlbinlog) utility, which comes with MariaDB. Enabling or disabling the binary log requires restarting MariaDB.
+The binary log can be inspected using the [mysqlbinlog](/clients-utilities/mysqlbinlog/) utility, which comes with MariaDB. Enabling or disabling the binary log requires restarting MariaDB.
 
-See also [MariaDB Replication Overview for SQL Server Users](/mariadb-administration/getting-installing-and-upgrading-mariadb/migrating-from-sql-server-to-mariadb/mariadb-replication-overview-for-sql-server-users) and [MariaDB Backups Overview for SQL Server Users](/mariadb-administration/getting-installing-and-upgrading-mariadb/migrating-from-sql-server-to-mariadb/mariadb-backups-overview-for-sql-server-users) for a better understanding of how the binary log is used.
+See also [MariaDB Replication Overview for SQL Server Users](/mariadb-administration/getting-installing-and-upgrading-mariadb/migrating-from-sql-server-to-mariadb/mariadb-replication-overview-for-sql-server-users/) and [MariaDB Backups Overview for SQL Server Users](/mariadb-administration/getting-installing-and-upgrading-mariadb/migrating-from-sql-server-to-mariadb/mariadb-backups-overview-for-sql-server-users/) for a better understanding of how the binary log is used.
 
 ## Plugins
 
-Storage engines are a special type of [plugin](/columns-storage-engines-and-plugins/plugins). But others exist. For example, plugins can add authentication methods, new features, SQL syntax, functions, informative tables, and more.
+Storage engines are a special type of [plugin](/columns-storage-engines-and-plugins/plugins/). But others exist. For example, plugins can add authentication methods, new features, SQL syntax, functions, informative tables, and more.
 
-A plugin may add some server variables and some status variables. Server variables can be used to configure the plugin, and status variables can be used to monitor its activities and status. These variables generally use the plugin's name as a prefix. For example InnoDB has a server variable called innodb_buffer_pool_size to configure the size of its buffer pool, and a status variable called Innodb_pages_read which indicates the number of memory pages read from the buffer pool. The category [system variables](/replication/optimization-and-tuning/system-variables) of the MariaDB Knowledge Base has specific pages for system and status variables associated with various plugins.
+A plugin may add some server variables and some status variables. Server variables can be used to configure the plugin, and status variables can be used to monitor its activities and status. These variables generally use the plugin's name as a prefix. For example InnoDB has a server variable called innodb_buffer_pool_size to configure the size of its buffer pool, and a status variable called Innodb_pages_read which indicates the number of memory pages read from the buffer pool. The category [system variables](/replication/optimization-and-tuning/system-variables/) of the MariaDB Knowledge Base has specific pages for system and status variables associated with various plugins.
 
-Many plugins are installed by default, or available but not installed by default. They can be installed or uninstalled at runtime with SQL statements, like `INSTALL PLUGIN`, `UNINSTALL PLUGIN` and others; see [Plugin SQL Statements](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements). 3rd party plugins can be made available for installation by simply copying them to the [plugin_dir](/kb/en/server-system-variables/#plugin_dir).
+Many plugins are installed by default, or available but not installed by default. They can be installed or uninstalled at runtime with SQL statements, like `INSTALL PLUGIN`, `UNINSTALL PLUGIN` and others; see [Plugin SQL Statements](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/). 3rd party plugins can be made available for installation by simply copying them to the [plugin_dir](/kb/en/server-system-variables/#plugin_dir).
 
 It is important to note that different plugins may have different maturity levels. It is possible to prevent the installation of plugins we don’t consider production-ready by setting the [plugin_maturity](/kb/en/server-system-variables/#plugin_maturity) system variable. For plugins that are distributed with MariaDB, the maturity level is determined by the MariaDB team based on the bugs reported and fixed.
 
 Some plugins are developed by 3rd parties. Even some 3rd party plugins are included in MariaDB official distributions - the ones available on mariadb.org.
 
-In MariaDB every authorization method (including the default one) is provided by an [authentication plugin](/columns-storage-engines-and-plugins/plugins/authentication-plugins). A user can be required to use a certain authentication plugin. This gives us much flexibility and control. Windows users may be interested in [gsapi](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-gssapi) (which supports Windows authentication, Kerberos and NTLM) and [named_pipe](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-named-pipe) (which uses named pipe impersonation).
+In MariaDB every authorization method (including the default one) is provided by an [authentication plugin](/columns-storage-engines-and-plugins/plugins/authentication-plugins/). A user can be required to use a certain authentication plugin. This gives us much flexibility and control. Windows users may be interested in [gsapi](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-gssapi/) (which supports Windows authentication, Kerberos and NTLM) and [named_pipe](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-named-pipe/) (which uses named pipe impersonation).
 
-Other plugins that can be very useful include [userstat](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/user-statistics), which includes statistics about resources and table usage, and [METADATA_LOCK_INFO](/kb/en/metadata_lock_info/), which provides information about metadata locks.
+Other plugins that can be very useful include [userstat](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/user-statistics/), which includes statistics about resources and table usage, and [METADATA_LOCK_INFO](/kb/en/metadata_lock_info/), which provides information about metadata locks.
 
 ## Thread Pool
 
-MariaDB supports [thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool). It works differently on UNIX and on Windows. On Windows, it is enabled by default and its implementation is quite similar to SQL Server. It uses the Windows native CreateThreadpool API.
+MariaDB supports [thread pool](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/). It works differently on UNIX and on Windows. On Windows, it is enabled by default and its implementation is quite similar to SQL Server. It uses the Windows native CreateThreadpool API.
 
 If we don't use the thread pool, MariaDB will use its traditional method to handle connections. It consists of using a dedicated thread for each client connection. Creating a new thread has a cost in terms of CPU time. To mitigate this cost, after a client disconnects, the thread may be preserved for a certain time in the [thread cache](/kb/en/server-system-variables/#thread_cache_size).
 
-Whichever connection method we use, MariaDB has a maximum number of simultaneous connections, which can be changed at runtime. When the limit is reached, if more clients try to connect they will receive an error. This prevents MariaDB from consuming all the server resources and freezing or crashing. See [Handling Too Many Connections](/replication/optimization-and-tuning/system-variables/handling-too-many-connections).
+Whichever connection method we use, MariaDB has a maximum number of simultaneous connections, which can be changed at runtime. When the limit is reached, if more clients try to connect they will receive an error. This prevents MariaDB from consuming all the server resources and freezing or crashing. See [Handling Too Many Connections](/replication/optimization-and-tuning/system-variables/handling-too-many-connections/).
 
 ## Configuration
 
 MariaDB has many settings that 
-control the server behavior. These can be set up when starting mysqld ([mysqld options](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options)), and the vast majority are also accessible as [server system variables](/replication/optimization-and-tuning/system-variables/server-system-variables). These can be classified in these ways:
+control the server behavior. These can be set up when starting mysqld ([mysqld options](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/)), and the vast majority are also accessible as [server system variables](/replication/optimization-and-tuning/system-variables/server-system-variables/). These can be classified in these ways:
 
 - <strong>Dynamic</strong> or <strong>static</strong>;
 - <strong>Global</strong>, <strong>session</strong>, or both.
 
-Note that server system variables are not to be confused with [user-defined variables](/sql-statements-structure/sql-language-structure/user-defined-variables). The latter are not used for MariaDB configuration.
+Note that server system variables are not to be confused with [user-defined variables](/sql-statements-structure/sql-language-structure/user-defined-variables/). The latter are not used for MariaDB configuration.
 
 ### Configuration Files
 
-MariaDB can use several [configuration files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files). Configuration files are searched in several locations, including in the user directory, and if present they all are read and used. They are read in a consistent order. These locations depend on the operating system; see [Default Option File Locations](/kb/en/configuring-mariadb-with-option-files/#default-option-file-locations). It is possible to tell MariaDB which files it should read; see [Global Options Related to Option Files](/kb/en/configuring-mariadb-with-option-files/#global-options-related-to-option-files).
+MariaDB can use several [configuration files](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/). Configuration files are searched in several locations, including in the user directory, and if present they all are read and used. They are read in a consistent order. These locations depend on the operating system; see [Default Option File Locations](/kb/en/configuring-mariadb-with-option-files/#default-option-file-locations). It is possible to tell MariaDB which files it should read; see [Global Options Related to Option Files](/kb/en/configuring-mariadb-with-option-files/#global-options-related-to-option-files).
 
 On Linux, by default the configuration files are called `my.cnf`. On Windows, by default the configuration files can be called `my.ini` or `my.cnf`. The former is more common.
 
@@ -251,9 +251,9 @@ The contents of each configuration file are organized by <em>option groups</em>.
 
 ### Dynamic and Static Variables
 
-Dynamic variables have a value that can be changed at runtime, using the [SET](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set) SQL statement. Static variables have a value that is decided at startup (see below) and cannot be changed without a restart.
+Dynamic variables have a value that can be changed at runtime, using the [SET](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set/) SQL statement. Static variables have a value that is decided at startup (see below) and cannot be changed without a restart.
 
-The [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables) page states if variables are dynamic or static.
+The [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables/) page states if variables are dynamic or static.
 
 ### Scope
 
@@ -261,7 +261,7 @@ A global system variable is one that affects the general behavior of MariaDB. Fo
 
 A variable could exist in both the global and session scopes. In this case, the session value is what affects the current connection. When a user connects, the current global value is copied to the session scope. Changing the global value afterward will not change existing connections.
 
-The [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables) page states the scope of each variable.
+The [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables/) page states the scope of each variable.
 
 Global variables and some session variables can only be modified by a user with the [SUPER](/kb/en/grant/#global-privileges) privilege (typically root).
 
@@ -278,7 +278,7 @@ SELECT @@session.variable_name;
 SELECT @@variable_name;
 ```
 
-A longer syntax, which is mostly useful to get multiple variables, makes use of the same pattern syntax that is used by the [LIKE](/built-in-functions/string-functions/like) operator:
+A longer syntax, which is mostly useful to get multiple variables, makes use of the same pattern syntax that is used by the [LIKE](/built-in-functions/string-functions/like/) operator:
 
 ```sql
 -- global variables whose name starts with 'innodb':
@@ -299,8 +299,8 @@ Notice that if we modify a global variable in this way, the new value will be lo
 
 For further information see:
 
-- The [SET](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set) statement.
-- The [SHOW VARIABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-variables) statement.
+- The [SET](/sql-statements-structure/sql-statements/administrative-sql-statements/set-commands/set/) statement.
+- The [SHOW VARIABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-variables/) statement.
 
 ### Setting System Variables with Startup Parameters
 
@@ -316,7 +316,7 @@ mysqld --bind-address=127.0.0.1
 
 ### Debugging Configuration
 
-Mistyping a variable can prevent MariaDB from starting. We cannot set a variable that doesn't exist in the MariaDB version in use. In these cases, an error is written in the [error log](/mariadb-administration/server-monitoring-logs/error-log).
+Mistyping a variable can prevent MariaDB from starting. We cannot set a variable that doesn't exist in the MariaDB version in use. In these cases, an error is written in the [error log](/mariadb-administration/server-monitoring-logs/error-log/).
 
 Having several configuration files and configuration groups, as well as being able to pass variables as command-line arguments, brings a lot of flexibility but can sometimes be confusing. When we are unsure about which values will be used, we can run:
 
@@ -328,7 +328,7 @@ mysqld --print-defaults
 
 MariaDB status variables and some system tables allow external tools to monitor a server, building graphs on how they change over time, and allow the user to inspect what is happening inside the server.
 
-[Status variables](/replication/optimization-and-tuning/system-variables/server-status-variables) cannot be directly modified by the user. Their values indicate how MariaDB is operating. Their scope can be:
+[Status variables](/replication/optimization-and-tuning/system-variables/server-status-variables/) cannot be directly modified by the user. Their values indicate how MariaDB is operating. Their scope can be:
 
 - <strong>Global</strong>, meaning that the value is about some MariaDB activity.
 - <strong>Session</strong>, meaning that the value measures activities taking place in the current session.
@@ -337,7 +337,7 @@ Many status variables exist in both scopes. For example,[Cpu_time](/kb/en/server
 
 The status variables created by a plugin, usually, use the plugin name as a prefix.
 
-The [SHOW STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-status) statement prints the values of the status variables that match a certain pattern.
+The [SHOW STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-status/) statement prints the values of the status variables that match a certain pattern.
 
 ```sql
 -- Show all InnoDB global status variables

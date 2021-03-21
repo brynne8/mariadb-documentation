@@ -2,7 +2,7 @@
 
 ##### MariaDB starting with [10.1](/kb/en/what-is-mariadb-101/)
 
-[InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb) Page Compression was added in [MariaDB 10.1.0](/kb/en/mariadb-1010-release-notes/). Support for the <a undefined>snappy</a> compression algorithm was added in [MariaDB 10.1.3](/kb/en/mariadb-1013-release-notes/).
+[InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) Page Compression was added in [MariaDB 10.1.0](/kb/en/mariadb-1010-release-notes/). Support for the <a undefined>snappy</a> compression algorithm was added in [MariaDB 10.1.3](/kb/en/mariadb-1013-release-notes/).
 
 ## Overview
 
@@ -16,17 +16,17 @@ InnoDB page compression provides a way to compress InnoDB tables.
 
 - InnoDB page compression is most beneficial on solid state drives (SSDs) and other flash storage. See [Optimized for Flash Storage](#optimized-for-flash-storage) for more information.
 
-- InnoDB page compression performs best when your storage device and file system support atomic writes, since that allows the [InnoDB doublewrite buffer](/kb/en/xtradbinnodb-doublewrite-buffer/) to be disabled. See [Atomic Write Support](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/atomic-write-support) for more information.
+- InnoDB page compression performs best when your storage device and file system support atomic writes, since that allows the [InnoDB doublewrite buffer](/kb/en/xtradbinnodb-doublewrite-buffer/) to be disabled. See [Atomic Write Support](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/atomic-write-support/) for more information.
 
 ## Comparison with the `COMPRESSED` Row Format
 
-InnoDB page compression is a modern way to compress your InnoDB tables. It is similar to InnoDB's [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format) row format, but it has many advantages. Some of the differences are:
+InnoDB page compression is a modern way to compress your InnoDB tables. It is similar to InnoDB's [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format/) row format, but it has many advantages. Some of the differences are:
 
-- With InnoDB page compression, compressed pages are immediately decompressed after being read from the tablespace file, and only uncompressed pages are stored in the buffer pool. In contrast, with InnoDB's [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format) row format, compressed pages are decompressed immediately after they are read from the tablespace file, and both the uncompressed and compressed pages are stored in the buffer pool. This means that the [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format) row format uses more space in the buffer pool than InnoDB page compression does.
-- With InnoDB page compression, pages are compressed just before being written to the tablespace file. In contrast, with InnoDB's [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format) row format, pages are re-compressed immediately after any changes, and the compressed pages are stored in the buffer pool alongside the uncompressed pages. These changes are then occasionally flushed to disk. This means that the [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format) row format re-compresses data more frequently than InnoDB page compression does.
-- With InnoDB page compression, multiple compression algorithms are supported. In contrast, with InnoDB's [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format) row format, <a undefined>zlib</a> is the only supported compression algorithm. This means that the [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format) row format has less compression options than InnoDB page compression does.
+- With InnoDB page compression, compressed pages are immediately decompressed after being read from the tablespace file, and only uncompressed pages are stored in the buffer pool. In contrast, with InnoDB's [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format/) row format, compressed pages are decompressed immediately after they are read from the tablespace file, and both the uncompressed and compressed pages are stored in the buffer pool. This means that the [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format/) row format uses more space in the buffer pool than InnoDB page compression does.
+- With InnoDB page compression, pages are compressed just before being written to the tablespace file. In contrast, with InnoDB's [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format/) row format, pages are re-compressed immediately after any changes, and the compressed pages are stored in the buffer pool alongside the uncompressed pages. These changes are then occasionally flushed to disk. This means that the [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format/) row format re-compresses data more frequently than InnoDB page compression does.
+- With InnoDB page compression, multiple compression algorithms are supported. In contrast, with InnoDB's [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format/) row format, <a undefined>zlib</a> is the only supported compression algorithm. This means that the [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format/) row format has less compression options than InnoDB page compression does.
 
-In general, InnoDB page compression is superior to the [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format) row format.
+In general, InnoDB page compression is superior to the [COMPRESSED](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format/) row format.
 
 ## Comparison with Storage Engine-Independent Column Compression
 
@@ -61,7 +61,7 @@ This system variable can be changed dynamically with <a undefined>SET GLOBAL</a>
 SET GLOBAL innodb_compression_algorithm='lzma';
 ```
 
-This system variable can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+This system variable can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]
@@ -75,7 +75,7 @@ On many distributions, the standard MariaDB builds do not support all InnoDB pag
 
 The <a undefined>zlib</a> compression algorithm is always supported.
 
-A MariaDB build's support for other InnoDB page compression algorithms can be checked by querying the following status variables with [SHOW GLOBAL STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-status):
+A MariaDB build's support for other InnoDB page compression algorithms can be checked by querying the following status variables with [SHOW GLOBAL STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-status/):
 
 <table><tbody><tr><th>Status Variable</th><th>Description</th></tr>
 <tr><td><code><a href="/kb/en/innodb-server-status-variables/#innodb_have_lz4">Innodb_have_lz4</a></code></td><td>Whether InnoDB supports the <code><a href="https://code.google.com/p/lz4/">lz4</a></code> compression algorithm.</td></tr>
@@ -151,17 +151,17 @@ Or make a package to install:
 make package
 ```
 
-See [Compiling MariaDB From Source](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source) for more information.
+See [Compiling MariaDB From Source](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/) for more information.
 
 ## Enabling InnoDB Page Compression
 
 InnoDB page compression is not enabled by default. However, InnoDB page compression can be enabled for just individual InnoDB tables or it can be enabled for all new InnoDB tables by default.
 
-InnoDB page compression is also only supported if the InnoDB table is in a [file per-table](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces) tablespace. Therefore, the <a undefined>innodb_file_per_table</a> system variable must be set to `ON` to use InnoDB page compression.
+InnoDB page compression is also only supported if the InnoDB table is in a [file per-table](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces/) tablespace. Therefore, the <a undefined>innodb_file_per_table</a> system variable must be set to `ON` to use InnoDB page compression.
 
 InnoDB page compression is only supported if the InnoDB table uses the `Barracuda` [file format](/kb/en/xtradbinnodb-file-format/).Therefore, in [MariaDB 10.1](/kb/en/what-is-mariadb-101/) and before, the <a undefined>innodb_file_format</a> system variable must be set to `Barracuda` to use InnoDB page compression.
 
-InnoDB page compression is also only supported if the InnoDB table's [row format](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-row-formats-overview) is [COMPACT](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compact-row-format) or [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format).
+InnoDB page compression is also only supported if the InnoDB table's [row format](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-row-formats-overview/) is [COMPACT](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-compact-row-format/) or [DYNAMIC](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format/).
 
 ### Enabling InnoDB Page Compression by Default
 
@@ -205,7 +205,7 @@ CREATE TABLE users (
    ENGINE=InnoDB;
 ```
 
-This system variable can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+This system variable can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]
@@ -261,7 +261,7 @@ This system variable can be changed dynamically with <a undefined>SET GLOBAL</a>
 SET GLOBAL innodb_compression_level=9;
 ```
 
-This system variable can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+This system variable can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]
@@ -314,7 +314,7 @@ This system variable can be changed dynamically with <a undefined>SET GLOBAL</a>
 SET GLOBAL innodb_compression_failure_threshold_pct=10;
 ```
 
-This system variable can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+This system variable can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]
@@ -336,7 +336,7 @@ This system variable can be changed dynamically with <a undefined>SET GLOBAL</a>
 SET GLOBAL innodb_compression_pad_pct_max=75;
 ```
 
-This system variable can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+This system variable can also be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]
@@ -399,7 +399,7 @@ DeviceIoControl(file_handle, FSCTL_SET_ZERO_DATA, inbuf, inbuf_size,
 
 In [MariaDB 10.3](/kb/en/what-is-mariadb-103/) and later, InnoDB uses the <em>punch hole</em> technique to create sparse files used automatically when the underlying file system supports sparse files.
 
-In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and before, InnoDB can be configured to use the <em>punch hole</em> technique to create sparse files by configuring the <a undefined>innodb_use_trim</a> and <a undefined>innodb_use_fallocate</a> system variables. These system variables can be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up the server. For example:
+In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and before, InnoDB can be configured to use the <em>punch hole</em> technique to create sparse files by configuring the <a undefined>innodb_use_trim</a> and <a undefined>innodb_use_fallocate</a> system variables. These system variables can be set in a server [option group](/kb/en/configuring-mariadb-with-option-files/#option-groups) in an [option file](/mariadb-administration/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files/) prior to starting up the server. For example:
 
 ```sql
 [mariadb]
@@ -412,7 +412,7 @@ innodb_use_fallocate=ON
 
 InnoDB page compression was designed to be optimized on solid state drives (SSDs) and other flash storage.
 
-InnoDB page compression was originally developed by collaborating with [Fusion-io](http://fusionio.com). As a consequence, it was originally designed to work best on [FusionIO devices](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/fusion-io/fusion-io-introduction) using [NVMFS](https://ieeexplore.ieee.org/document/6558434). [Fusion-io](http://fusionio.com) has since been acquired by [Western Digital](https://www.westerndigital.com/), and they have decided not to continue supporting [NVMFS](https://ieeexplore.ieee.org/document/6558434).
+InnoDB page compression was originally developed by collaborating with [Fusion-io](http://fusionio.com). As a consequence, it was originally designed to work best on [FusionIO devices](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/fusion-io/fusion-io-introduction/) using [NVMFS](https://ieeexplore.ieee.org/document/6558434). [Fusion-io](http://fusionio.com) has since been acquired by [Western Digital](https://www.westerndigital.com/), and they have decided not to continue supporting [NVMFS](https://ieeexplore.ieee.org/document/6558434).
 
 However, InnoDB page compression is still likely to be most optimized on solid state drives (SSDs) and other flash storage.
 
@@ -420,11 +420,11 @@ InnoDB page compression works without any issues on hard disk drives (HDDs). How
 
 ## Configuring InnoDB Page Flushing
 
-With InnoDB page compression, pages are compressed when they are flushed to disk. Therefore, it can be helpful to optimize the configuration of InnoDB's page flushing. See [InnoDB Page Flushing](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-page-flushing) for more information.
+With InnoDB page compression, pages are compressed when they are flushed to disk. Therefore, it can be helpful to optimize the configuration of InnoDB's page flushing. See [InnoDB Page Flushing](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-page-flushing/) for more information.
 
 ## Monitoring InnoDB Page Compression
 
-InnoDB page compression can be monitored by querying the following status variables with [SHOW GLOBAL STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-status):
+InnoDB page compression can be monitored by querying the following status variables with [SHOW GLOBAL STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-status/):
 
 <table><tbody><tr><th>Status Variable</th><th>Description</th></tr>
 <tr><td><code><a href="/kb/en/xtradbinnodb-server-status-variables/#innodb_page_compression_saved">Innodb_page_compression_saved</a></code></td><td>Bytes saved by compression</td></tr>
@@ -494,7 +494,7 @@ SHOW GLOBAL STATUS LIKE 'Innodb_num_pages_page_compressed';
 
 ## Compatibility with Backup Tools
 
-[Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup) supports InnoDB page compression.
+[Mariabackup](/mariadb-administration/backing-up-and-restoring-databases/mariabackup/) supports InnoDB page compression.
 
 [Percona XtraBackup](/kb/en/percona-xtrabackup/) does not support InnoDB page compression.
 
@@ -504,8 +504,8 @@ SHOW GLOBAL STATUS LIKE 'Innodb_num_pages_page_compressed';
 
 ## See Also
 
-- [Storage-Engine Independent Column Compression](/replication/optimization-and-tuning/optimization-and-tuning-compression/storage-engine-independent-column-compression)
-- [Atomic Write Support](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/atomic-write-support)
+- [Storage-Engine Independent Column Compression](/replication/optimization-and-tuning/optimization-and-tuning-compression/storage-engine-independent-column-compression/)
+- [Atomic Write Support](/mariadb-administration/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/atomic-write-support/)
 - [MariaDB Introduces Atomic Writes](https://blog.mariadb.org/mariadb-introduces-atomic-writes/)
 - [Small Datum: Third day with InnoDB transparent page compression](http://smalldatum.blogspot.com/2015/09/third-day-with-innodb-transparent-page.html)
 - [InnoDB holepunch compression vs the filesystem in MariaDB 10.1](https://blog.mariadb.org/innodb-holepunch-compression-vs-the-filesystem-in-mariadb-10-1/)

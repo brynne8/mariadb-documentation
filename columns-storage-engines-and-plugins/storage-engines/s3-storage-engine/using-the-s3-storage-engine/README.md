@@ -2,9 +2,9 @@
 
 ##### MariaDB starting with [10.5](/kb/en/what-is-mariadb-105/)
 
-The [S3 storage engine](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine) has been available since [MariaDB 10.5.4](/kb/en/mariadb-1054-release-notes/).
+The [S3 storage engine](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/) has been available since [MariaDB 10.5.4](/kb/en/mariadb-1054-release-notes/).
 
-The [S3 storage engine](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine) is read only and allows one to archive MariaDB
+The [S3 storage engine](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/) is read only and allows one to archive MariaDB
 tables in Amazon S3, or any third-party public or private cloud that
 implements S3 API (of which there are many), but still have them
 accessible for reading in MariaDB.
@@ -56,12 +56,12 @@ To get data back to a 'normal' table one can do:
 ALTER TABLE s3_table ENGINE=INNODB
 ```
 
-## New Options for [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table)
+## New Options for [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/)
 
 - <strong>`S3_BLOCK_SIZE` :</strong> Set to 4M as default. This is the block size for all index and data pages stored in S3.
 - <strong>`COMPRESSION_ALGORITHM` :</strong> Set to 'none' as default. Which compression algorithm to use for block stored in S3.  Options are: `none` or `zlib`.
 
-[ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) can be used on S3 tables as normal to add columns or change column definitions.
+[ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) can be used on S3 tables as normal to add columns or change column definitions.
 
 ## mysqld Startup Options for S3
 
@@ -83,7 +83,7 @@ Other, less critical options, are:
 
 - <strong>[s3_host_name](/kb/en/s3-storage-engine-system-variables/#s3_host_name):</strong> Hostname for the S3 service. "s3.amazonaws.com", Amazon S3 service, by default.
 - <strong>[s3_protocol_version](/kb/en/s3-storage-engine-system-variables/#s3_protocol_version):</strong>  Protocol used to communication with S3. One of "Auto", "Amazon" or "Original" where "Auto" is the default. If you get errors like "8 Access Denied" when you are connecting to another service provider, then try to change this option.  The reason for this variable is that Amazon has changed some parts of the S3 protocol since they originally introduced it but other service providers are still using the original protocol.
-- <strong>[s3_block_size](/kb/en/s3-storage-engine-system-variables/#s3_block_size):</strong> Set to 4M as default.  This is the default block size for a table, if not specified in [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table).
+- <strong>[s3_block_size](/kb/en/s3-storage-engine-system-variables/#s3_block_size):</strong> Set to 4M as default.  This is the default block size for a table, if not specified in [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/).
 - <strong>[s3_pagecache_buffer_size](/kb/en/s3-storage-engine-system-variables/#s3_pagecache_buffer_size):</strong> Default 128M. The size of the buffer used for index blocks for S3 tables. Increase this to get better index handling (for all reads and multiple writes) to as much as you can afford.
 
 Last some options you probably don't have to ever touch:
@@ -134,18 +134,18 @@ implementations also provide reliable long-term storage.
 
 ## Operations Allowed on S3 Tables
 
-- [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) S3 supports all types, keys and other options that are supported by the [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/aria-storage-engine) engine. One can also perform [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) on an S3 table to add or modify columns etc.
-- [DROP TABLE](/sql-statements-structure/sql-statements/data-definition/drop/drop-table)
-- [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select)  Any SELECT operations you can perform on a normal table should work with an S3 table.
-- [SHOW TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-tables) will show all tables that exist in the current defined S3 location.
-- S3 tables can be part of [partitions](/mariadb-administration/partitioning-tables/partitions-files). See Discovery below.
+- [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) S3 supports all types, keys and other options that are supported by the [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/aria-storage-engine/) engine. One can also perform [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) on an S3 table to add or modify columns etc.
+- [DROP TABLE](/sql-statements-structure/sql-statements/data-definition/drop/drop-table/)
+- [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/)  Any SELECT operations you can perform on a normal table should work with an S3 table.
+- [SHOW TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-tables/) will show all tables that exist in the current defined S3 location.
+- S3 tables can be part of [partitions](/mariadb-administration/partitioning-tables/partitions-files/). See Discovery below.
 
 ## Discovery
 
-The S3 storage engine supports full [MariaDB discovery](/columns-storage-engines-and-plugins/storage-engines/storage-engines-storage-engine-development/table-discovery). This means that if
+The S3 storage engine supports full [MariaDB discovery](/columns-storage-engines-and-plugins/storage-engines/storage-engines-storage-engine-development/table-discovery/). This means that if
 you have the S3 storage engine enabled and properly configured, the
 table stored in S3 will automatically be discovered when it's accessed with
-[SHOW TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-tables), [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select) or any other operation that
+[SHOW TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-tables/), [SELECT](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/) or any other operation that
 tries to access it. In the case of SELECT, the .frm file from S3 will
 be copied to the local storage to speed up future accesses.
 
@@ -154,36 +154,36 @@ and there is a local .frm file, the S3 engine will check if it's still
 relevant, and if not, update or delete the .frm file.
 
 This means that if the table definition changes on S3 and it's in the
-local cache, one has to execute [FLUSH TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush) to
+local cache, one has to execute [FLUSH TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/) to
 get MariaDB to notice the change and update the .frm file.
 
 If partitioning S3 tables are used, the partition definitions will also be stored on S3 storage and will be discovered by other servers.
 
-Discovery of S3 tables is not done for tables in the [mysql databases](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables) to make mysqld boot faster and more securely.
+Discovery of S3 tables is not done for tables in the [mysql databases](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) to make mysqld boot faster and more securely.
 
 ## Replication
 
-S3 works with [replication](/replication/standard-replication/replication-overview). One can use replication in two different scenarios:
+S3 works with [replication](/replication/standard-replication/replication-overview/). One can use replication in two different scenarios:
 
 - The master and slave share the same S3 storage. In this case the master will make all changes to the S3 data and the slave will ignore any changes in the replication stream to S3 data . This scenario is achieved by setting [s3_slave_ignore_updates](/kb/en/s3-storage-engine-system-variables/#s3-slave-ignore-updates) to 1.
 - The master and slave don't share the same S3 storage or the slave uses another storage engine for the S3 tables. This scenario is achieved by setting [s3_slave_ignore_updates](/kb/en/s3-storage-engine-system-variables/#s3-slave-ignore-updates) to 0.
 
 ## aria_s3_copy
 
-[aria_s3_copy](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/aria_s3_copy) is an external tool that one can use to copy [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/aria-storage-engine) tables to and from S3.  Use `aria_s3_copy --help` to get the options of how to use it.
+[aria_s3_copy](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/aria_s3_copy/) is an external tool that one can use to copy [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/aria-storage-engine/) tables to and from S3.  Use `aria_s3_copy --help` to get the options of how to use it.
 
 ## mysqldump
 
-- [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump) will by default ignore S3 tables. If `mysqldump` is run with the `--copy-s3-tables` option, the resulting file will contain a CREATE statement for a similar [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/aria-storage-engine) table, followed by the table data and ending with an `ALTER TABLE xxx ENGINE=S3`.
+- [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump/) will by default ignore S3 tables. If `mysqldump` is run with the `--copy-s3-tables` option, the resulting file will contain a CREATE statement for a similar [Aria](/columns-storage-engines-and-plugins/storage-engines/aria/aria-storage-engine/) table, followed by the table data and ending with an `ALTER TABLE xxx ENGINE=S3`.
 
 ## Current Limitations
 
 - [mysql-test-run](/kb/en/mysql-test-run/) doesn't by default test the S3 engine as we can't embed AWS keys into mysql-test-run.
 - Slaves should not access S3 tables while they are ALTERed! This is because there is no locking implemented to S3 between servers. However, after a table (either the original S3 table or the partitioned S3 table) is changed on the master, the slave will notice this on the next access and update its local definition.
 
-### Limitations in [ALTER .. PARTITION](/sql-statements-structure/sql-statements/data-definition/alter/alter-table)
+### Limitations in [ALTER .. PARTITION](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/)
 
-All [ALTER PARTITION](/sql-statements-structure/sql-statements/data-definition/alter/alter-table) operations are supported on S3 partitioning tables except:
+All [ALTER PARTITION](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) operations are supported on S3 partitioning tables except:
 
 - REBUILD PARTITION
 - TRUNCATE PARTITION
@@ -222,7 +222,7 @@ Try also to execute the query twice to check if the problem is that the data was
 
 ## Future Development Ideas
 
-- Store aws keys and region in the mysql.servers table (as [Spider](/columns-storage-engines-and-plugins/storage-engines/spider) and [FederatedX](/kb/en/federatedx/)). This will allow one to have different tables on different S3 servers.
+- Store aws keys and region in the mysql.servers table (as [Spider](/columns-storage-engines-and-plugins/storage-engines/spider/) and [FederatedX](/kb/en/federatedx/)). This will allow one to have different tables on different S3 servers.
 - Store s3 bucket, access_key and secret key in a cache to better be able to better to reuse connections. This would save some memory and make some S3 accesses a bit faster as we could reuse old connections.
 
 ## Troubleshooting S3 on SELinux
@@ -238,4 +238,4 @@ The fix is to change `/etc/selinux/config` to `SELINUX=disabled`.
 
 ## See Also
 
-- [S3 storage engine internals](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/s3-storage-engine-internals)
+- [S3 storage engine internals](/columns-storage-engines-and-plugins/storage-engines/s3-storage-engine/s3-storage-engine-internals/)
