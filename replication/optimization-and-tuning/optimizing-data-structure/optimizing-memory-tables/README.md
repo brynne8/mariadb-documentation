@@ -1,0 +1,5 @@
+# Optimizing MEMORY Tables
+
+[MEMORY tables](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/memory-storage-engine) are a good choice for data that needs to be accessed often, and is rarely updated. Being in memory, it's not suitable for critical data or for storage, but if data can be moved to memory for reading without needing to be regenerated often, if at all, it can provide a significant performance boost.
+
+The [MEMORY Storage Engine](/replication/optimization-and-tuning/query-optimizations/guiduuid-performance/mariadb/memory-storage-engine) has a key feature in that it permits its indexes to be either B-tree or Hash. Choosing the best index type can lead to better performance. See [Storage Engine index types](/replication/optimization-and-tuning/optimization-and-indexes/storage-engine-index-types) for more on the characteristics of each index type.

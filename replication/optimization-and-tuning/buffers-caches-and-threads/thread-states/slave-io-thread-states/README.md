@@ -1,0 +1,19 @@
+# Slave I/O Thread States
+
+This article documents thread states that are related to [replication](/replication) slave I/O threads. These correspond to the `Slave_IO_State` shown by [SHOW SLAVE STATUS](/kb/en/show-slave-status/) and the `STATE` values listed by the [SHOW PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist) statement or in the [Information Schema PROCESSLIST Table](/kb/en/information-schema-processlist-table/) as well as the `PROCESSLIST_STATE` value listed in the [Performance Schema threads Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table).
+
+<table><tbody><tr><th>Value</th><th>Description</th></tr>
+<tr><td>Checking master version</td><td>Checking the master's version, which only occurs very briefly after establishing a connection with the master.</td></tr>
+<tr><td>Connecting to master</td><td>Attempting to connect to master.</td></tr>
+<tr><td>Queueing master event to the relay log</td><td>Event is being copied to the <a href="/kb/en/relay-log/">relay log</a> after being read, where it can be processed by the SQL thread.</td></tr>
+<tr><td>Reconnecting after a failed binlog dump request</td><td>Attempting to reconnect to the master after a previously failed binary log dump request.</td></tr>
+<tr><td>Reconnecting after a failed master event read</td><td>Attempting to reconnect to the master after a previously failed request. After successfully connecting, the state will change to <code>Waiting for master to send event</code>.</td></tr>
+<tr><td>Registering slave on master</td><td>Registering the slave on the master, which only occurs very briefly after establishing a connection with the master.</td></tr>
+<tr><td>Requesting binlog dump</td><td>Requesting the contents of the binary logs from the given log file name and position. Only occurs very briefly after establishing a connection with the master.</td></tr>
+<tr><td>Waiting for master to send event</td><td>Waiting for <a href="/kb/en/binary-log/">binary log</a> events to arrive after successfully connecting. If there are no new events on the master, this state can persist for as many seconds as specified by the <a href="/kb/en/replication-and-binary-log-server-system-variables/#slave_net_timeout">slave_net_timeout</a> system variable, after which the thread will reconnect.</td></tr>
+<tr><td>Waiting for slave mutex on exit</td><td>Waiting for slave mutex while the thread is stopping. Only occurs very briefly.</td></tr>
+<tr><td>Waiting for the slave SQL thread to free enough relay log space.</td><td><a href="/kb/en/relay-log/">Relay log</a> has reached its maximum size, determined by <a href="/kb/en/replication-and-binary-log-server-system-variables/#relay_log_space_limit">relay_log_space_limit</a> (no limit by default), so waiting for the SQL thread to free up space by processing enough relay log events.</td></tr>
+<tr><td>Waiting for master update</td><td>State before connecting to master.</td></tr>
+<tr><td>Waiting to reconnect after a failed binlog dump request</td><td>Waiting to reconnect after a binary log dump request has failed due to disconnection. The length of time in this state is determined by the <code>MASTER_CONNECT_RETRY</code> clause of the <a href="/kb/en/change-master-to/">CHANGE MASTER TO</a> statement.</td></tr>
+<tr><td>Waiting to reconnect after a failed master event read</td><td>Sleeping while waiting to reconnect after a disconnection error. The time in seconds is determined by the <code>MASTER_CONNECT_RETRY</code> clause of the <a href="/kb/en/change-master-to/">CHANGE MASTER TO</a> statement.</td></tr>
+</tbody></table>

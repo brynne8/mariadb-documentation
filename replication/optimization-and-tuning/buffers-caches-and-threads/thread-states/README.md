@@ -1,0 +1,13 @@
+# Thread States
+
+Thread states can be viewed with the `STATE` values listed by the [SHOW PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist) statement or in the [Information Schema PROCESSLIST Table](/kb/en/information-schema-processlist-table/) as well as the `PROCESSLIST_STATE` value listed in the [Performance Schema threads Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table).  `Slave_IO_State` shown by [SHOW SLAVE STATUS](/kb/en/show-slave-status/) also shows slave-related thread states.
+
+- [Delayed Insert Connection Thread States](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-states/delayed-insert-connection-thread-states/) — Thread states related to the connection thread that processes INSERT DELAYED statements
+- [Delayed Insert Handler Thread States](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-states/delayed-insert-handler-thread-states/) — Thread states  related to the handler thread that inserts the results of INSERT DELAYED statements
+- [Event Scheduler Thread States](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-states/event-scheduler-thread-states/) — Thread states related to the Event Scheduler
+- [General Thread States](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-states/general-thread-states/) — Thread states
+- [Master Thread States](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-states/master-thread-states/) — Thread states related to replication master threads
+- [Query Cache Thread States](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-states/query-cache-thread-states/) — Thread states related to the query cache
+- [Slave Connection Thread States](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-states/slave-connection-thread-states/) — Thread states related to slave connection threads
+- [Slave I/O Thread States](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-states/slave-io-thread-states/) — Thread states related to replication slave I/O threads
+- [Slave SQL Thread States](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-states/slave-sql-thread-states/) — Thread states related to replication slave SQL threads.

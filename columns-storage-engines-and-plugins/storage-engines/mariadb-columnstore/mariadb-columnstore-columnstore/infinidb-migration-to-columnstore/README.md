@@ -1,0 +1,4 @@
+# InfiniDB Migration to ColumnStore
+
+- [Migrating from InfiniDB 4.x  to MariaDB ColumnStore](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/mariadb-columnstore-columnstore/infinidb-migration-to-columnstore/migrating-from-infinidb-4x-to-mariadb-columnstore/) — Migrating to ColumnStore on new servers from InfiniDB 4.6
+- [Upgrade from InfiniDB 4.x to MariaDB ColumnStore](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/mariadb-columnstore-columnstore/infinidb-migration-to-columnstore/upgrade-from-infinidb-4x-to-mariadb-columnstore/) — Upgrade to MariaDB ColumnStore on the same server from InfiniDB 4.6

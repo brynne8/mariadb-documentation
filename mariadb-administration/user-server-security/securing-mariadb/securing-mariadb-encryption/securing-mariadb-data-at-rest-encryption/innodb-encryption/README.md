@@ -1,0 +1,10 @@
+# InnoDB Encryption
+
+Data-at-rest encryption configuration and use with the InnoDB storage engine.
+
+- [InnoDB Encryption Overview](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/innodb-encryption/innodb-encryption-overview/) — Data-at-rest encryption for tables that use the InnoDB and XtraDB storage engines.
+- [Enabling InnoDB Encryption](/kb/en/library/documentation/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/innodb-encryption/innodb-enabling-encryption/) — Configuration and procedure for enabling data-at-rest encryption for InnoDB tables.
+- [Disabling InnoDB Encryption](/kb/en/library/documentation/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/innodb-encryption/disabling-innodb-encryption/) — Configuration and procedure to disable data-at-rest encryption for InnoDB tables.
+- [InnoDB Background Encryption Threads](/kb/en/library/documentation/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/innodb-encryption/innodb-background-encryption-threads/) — InnoDB and XtraDB perform some encryption and decryption operations with ba...
+- [InnoDB Encryption Keys](/kb/en/library/documentation/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/innodb-encryption/innodb-encryption-keys/) — InnoDB uses encryption key management plugins to support the use of multiple encryption keys.
+- [InnoDB Encryption Troubleshooting](/kb/en/library/documentation/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/innodb-encryption/innodb-encryption-troubleshooting/) — Troubleshooting InnoDB encryption

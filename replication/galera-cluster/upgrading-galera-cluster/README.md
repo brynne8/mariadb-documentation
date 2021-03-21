@@ -1,0 +1,8 @@
+# Upgrading Galera Cluster
+
+- [Upgrading Between Minor Versions with Galera Cluster](/replication/galera-cluster/upgrading-galera-cluster/upgrading-between-minor-versions-with-galera-cluster/) — Upgrading between minor versions of MariaDB with Galera Cluster, e.g. from ...
+- [Upgrading from MariaDB 10.3 to MariaDB 10.4 with Galera Cluster](/replication/galera-cluster/upgrading-galera-cluster/upgrading-from-mariadb-103-to-mariadb-104-with-galera-cluster/) — How to upgrade from MariaDB 10.3 to MariaDB 10.4 in a Galera Cluster deployment.
+- [Upgrading from MariaDB 10.2 to MariaDB 10.3 with Galera Cluster](/replication/galera-cluster/upgrading-galera-cluster/upgrading-from-mariadb-102-to-mariadb-103-with-galera-cluster/) — How to upgrade from MariaDB 10.2 to MariaDB 10.3 in a Galera Cluster deployment.
+- [Upgrading from MariaDB 10.1 to MariaDB 10.2 with Galera Cluster](/replication/galera-cluster/upgrading-galera-cluster/upgrading-from-mariadb-101-to-mariadb-102-with-galera-cluster/) — How to upgrade from MariaDB 10.1 to MariaDB 10.2 in a Galera Cluster deployment.
+- [Upgrading from MariaDB Galera Cluster 10.0 to MariaDB 10.1 with Galera Cluster](/replication/galera-cluster/upgrading-galera-cluster/upgrading-galera-cluster-upgrading-from-mariadb-galera-cluster-100-to-maria/) — How to upgrade from MariaDB Galera Cluster 10.0 to MariaDB 10.1 in a Galera Cluster deployment.
+- [Upgrading from MariaDB Galera Cluster 5.5 to MariaDB Galera Cluster 10.0](/replication/galera-cluster/upgrading-galera-cluster/upgrading-from-mariadb-galera-cluster-55-to-mariadb-galera-cluster-100/) — How to upgrade from MariaDB Galera Cluster 5.5 to MariaDB Galera Cluster 10.0

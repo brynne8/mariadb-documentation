@@ -1,0 +1,39 @@
+# MariaDB Galera 5.5 Changelogs
+
+Changelogs for [MariaDB Galera 5.5](/replication/galera-cluster/what-is-mariadb-galera-cluster) releases.
+
+- [MariaDB Galera Cluster 5.5.63 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5563-changelog/) — Status: Stable (GA) | Release Date: 1 Feb 2019
+- [MariaDB Galera Cluster 5.5.62 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5562-changelog/) — Status: Stable (GA) | Release Date: 31 Oct 2018
+- [MariaDB Galera Cluster 5.5.61 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5561-changelog/) — Status: Stable (GA) | Release Date: 3 Aug 2018
+- [MariaDB Galera Cluster 5.5.60 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5560-changelog/) — Status: Stable (GA) | Release Date: 3 May 2018
+- [MariaDB Galera Cluster 5.5.59 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5559-changelog/) — Status: Stable (GA) | Release Date: 23 Jan 2018
+- [MariaDB Galera Cluster 5.5.58 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5558-changelog/) — Status: Stable (GA) | Release Date: 25 Oct 2017
+- [MariaDB Galera Cluster 5.5.57 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5557-changelog/) — Status: Stable (GA) | Release Date: 26 Jul 2017
+- [MariaDB Galera Cluster 5.5.56 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5556-changelog/) — Status: Stable (GA) | Release Date: 22 Apr 2017
+- [MariaDB Galera Cluster 5.5.55 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5555-changelog/) — Status: Stable (GA) | Release Date: 22 Apr 2017
+- [MariaDB Galera Cluster 5.5.54 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5554-changelog/) — Status: Stable (GA) | Release Date: 4 Jan 2017
+- [MariaDB Galera Cluster 5.5.53 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5553-changelog/) — Status: Stable (GA) | Release Date: 20 Oct 2016
+- [MariaDB Galera Cluster 5.5.52 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5552-changelog/) — Status: Stable (GA) | Release Date: 21 Sep 2016
+- [MariaDB Galera Cluster 5.5.51 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5551-changelog/) — Status: Stable (GA) | Release Date: 15 Aug 2016
+- [MariaDB Galera Cluster 5.5.50 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5550-changelog/) — Status: Stable (GA) | Release Date: 1 Jul 2016
+- [MariaDB Galera Cluster 5.5.49 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5549-changelog/) — Status: Stable (GA) | Release Date: 26 Apr 2016
+- [MariaDB Galera Cluster 5.5.48 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5548-changelog/) — Status: Stable (GA) | Release Date: 23 Feb 2016
+- [MariaDB Galera Cluster 5.5.47 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5547-changelog/) — Status: Stable (GA) | Release Date: 24 Dec 2015
+- [MariaDB Galera Cluster 5.5.46 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5546-changelog/) — Status: Stable (GA) | Release Date: 20 Oct 2015
+- [MariaDB Galera Cluster 5.5.45 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5545-changelog/) — Status: Stable (GA) | Release Date: 18 Aug 2015
+- [MariaDB Galera Cluster 5.5.44 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5544-changelog/) — Status: Stable (GA) | Release Date: 27 Jun 2015
+- [MariaDB Galera Cluster 5.5.43 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5543-changelog/) — Status: Stable (GA) | Release Date: 15 May 2015
+- [MariaDB Galera Cluster 5.5.42 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5542-changelog/) — Status: Stable (GA) | Release Date: 11 Mar 2015
+- [MariaDB Galera Cluster 5.5.41 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5541-changelog/) — Status: Stable (GA) | Release Date: 6 Jan 2015
+- [MariaDB Galera Cluster 5.5.40 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5540-changelog/) — Status: Stable (GA) | Release Date: 17 Oct 2014
+- [MariaDB Galera Cluster 5.5.39 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5539-changelog/) — Status: Stable (GA) | Release Date: 21 Aug 2014
+- [MariaDB Galera Cluster 5.5.38 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5538-changelog/) — Status: Stable (GA) | Release Date: 25 Jun 2014
+- [MariaDB Galera Cluster 5.5.37 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5537-changelog/) — Status: Stable (GA) | Release Date: 30 Apr 2014
+- [MariaDB Galera Cluster 5.5.36 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5536-changelog/) — Status: Stable (GA) | Release Date: 12 Mar 2014
+- [MariaDB Galera Cluster 5.5.35 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5535-changelog/) — Status: Stable (GA) | Release Date: 14 Feb 2014
+- [MariaDB Galera Cluster 5.5.34 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5534-changelog/) — Status: Stable (GA) | Release Date: 18 Dec 2013
+- [MariaDB Galera 5.5.33a Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-5533a-changelog/) — Status: Stable (GA) | Release Date: 30 Sep 2013
+- [MariaDB Galera 5.5.32 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-5532-changelog/) — Status: Stable (GA) | Release Date: 30 Aug 2013
+- [MariaDB Galera 5.5.29 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-5529-changelog/) — Status: Stable (GA) | Release Date: 5 Mar 2013
+- [MariaDB Galera 5.5.28a Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-5528a-changelog/) — Status: Release Candidate (RC) | Release Date: 21 Dec 2012
+- [MariaDB Galera 5.5.25 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-5525-changelog/) — Status: Alpha | Release Date: 4 Sep 2012

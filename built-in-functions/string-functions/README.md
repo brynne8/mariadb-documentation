@@ -1,0 +1,71 @@
+# String Functions
+
+Functions dealing with strings, such as CHAR, CONVERT, CONCAT, PAD, REGEXP, TRIM, etc.
+
+- [Regular Expressions Functions](/built-in-functions/string-functions/regular-expressions-functions/) — Functions for dealing with regular expressions
+- [Dynamic Columns Functions](/built-in-functions/special-functions/dynamic-columns-functions/) — Functions for storing key/value pairs of data within a column.
+- [ASCII](/built-in-functions/string-functions/ascii/) — Numeric ASCII value of leftmost character.
+- [BIN](/built-in-functions/string-functions/bin/) — Returns binary value.
+- [BINARY Operator](/built-in-functions/string-functions/binary-operator/) — Casts to a binary string.
+- [BIT_LENGTH](/built-in-functions/string-functions/bit_length/) — Returns the length of a string in bits.
+- [CAST](/built-in-functions/string-functions/cast/) — Casts a value of one type to another type.
+- [CHAR Function](/built-in-functions/string-functions/char-function/) — Returns string based on the integer values for the individual characters.
+- [CHARACTER_LENGTH](/built-in-functions/string-functions/character_length/) — Synonym for CHAR_LENGTH().
+- [CHAR_LENGTH](/built-in-functions/string-functions/char_length/) — Length of the string in characters.
+- [CHR](/built-in-functions/string-functions/chr/) — Returns string based on integer values of the individual characters.
+- [CONCAT](/built-in-functions/string-functions/concat/) — Returns concatenated string.
+- [CONCAT_WS](/built-in-functions/string-functions/concat_ws/) — Concatenate with separator.
+- [CONVERT](/built-in-functions/string-functions/convert/) — Convert a value from one type to another type.
+- [ELT](/built-in-functions/string-functions/elt/) — Returns the N'th element from a set of strings.
+- [EXPORT_SET](/built-in-functions/string-functions/export_set/) — Returns an on string for every bit set, an off string for every bit not set.
+- [EXTRACTVALUE](/built-in-functions/string-functions/extractvalue/) — Returns the text of the first text node matched by the XPath expression.
+- [FIELD](/built-in-functions/string-functions/field/) — Returns the index position of a string in a list.
+- [FIND_IN_SET](/built-in-functions/string-functions/find_in_set/) — Returns the position of a string in a set of strings.
+- [FORMAT](/built-in-functions/string-functions/format/) — Formats a number.
+- [FROM_BASE64](/built-in-functions/string-functions/from_base64/) — Given a base-64 encoded string, returns the decoded result as a binary string.
+- [HEX](/built-in-functions/string-functions/hex/) — Returns hexadecimal value.
+- [INSERT Function](/built-in-functions/string-functions/insert-function/) — Replaces a part of a string with another string.
+- [INSTR](/built-in-functions/string-functions/instr/) — Returns the position of a string within a string.
+- [LCASE](/built-in-functions/string-functions/lcase/) — Synonym for LOWER().
+- [LEFT](/built-in-functions/string-functions/left/) — Returns the leftmost characters from a string.
+- [LENGTH](/built-in-functions/string-functions/length/) — Length of the string in bytes.
+- [LENGTHB](/built-in-functions/string-functions/lengthb/) — Length of the given string, in bytes.
+- [LIKE](/built-in-functions/string-functions/like/) — Whether expression matches a pattern.
+- [LOAD_FILE](/built-in-functions/string-functions/load_file/) — Returns file contents as a string.
+- [LOCATE](/built-in-functions/string-functions/locate/) — Returns the position of a substring in a string.
+- [LOWER](/built-in-functions/string-functions/lower/) — Returns a string with all characters changed to lowercase.
+- [LPAD](/built-in-functions/string-functions/lpad/) — Returns the string left-padded with another string to a given length.
+- [LTRIM](/built-in-functions/string-functions/ltrim/) — Returns the string with leading space characters removed.
+- [MAKE_SET](/built-in-functions/string-functions/make_set/) — Make a set of strings that matches a bitmask.
+- [MATCH AGAINST](/built-in-functions/string-functions/match-against/) — Perform a fulltext search on a fulltext index.
+- [Full-Text Index Stopwords](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/full-text-index-stopwords/) — Default list of full-text stopwords used by MATCH...AGAINST.
+- [MID](/built-in-functions/string-functions/mid/) — Synonym for SUBSTRING(str,pos,len).
+- [NOT LIKE](/built-in-functions/string-functions/not-like/) — Same as NOT(expr LIKE pat [ESCAPE 'escape_char']).
+- [NOT REGEXP](/built-in-functions/string-functions/not-regexp/) — Same as NOT (expr REGEXP pat).
+- [OCTET_LENGTH](/built-in-functions/string-functions/octet_length/) — Returns the length of the given string, in bytes.
+- [ORD](/built-in-functions/string-functions/ord/) — Return ASCII or character code.
+- [POSITION](/built-in-functions/string-functions/position/) — Returns the position of a substring in a string.
+- [QUOTE](/built-in-functions/string-functions/quote/) — Returns quoted, properly escaped string.
+- [REPEAT Function](/built-in-functions/string-functions/repeat-function/) — Returns a string repeated a number of times.
+- [REPLACE Function](/built-in-functions/string-functions/replace-function/) — Replace occurrences of a string.
+- [REVERSE](/built-in-functions/string-functions/reverse/) — Reverses the order of a string.
+- [RIGHT](/built-in-functions/string-functions/right/) — Returns the rightmost N characters from a string.
+- [RPAD](/built-in-functions/string-functions/rpad/) — Returns the string right-padded with another string to a given length.
+- [RTRIM](/built-in-functions/string-functions/rtrim/) — Returns the string with trailing space characters removed.
+- [SOUNDEX](/built-in-functions/string-functions/soundex/) — Returns a string based on how the string sounds.
+- [SOUNDS LIKE](/built-in-functions/string-functions/sounds-like/) — SOUNDEX(expr1) = SOUNDEX(expr2).
+- [SPACE](/built-in-functions/string-functions/space/) — Returns a string of space characters.
+- [STRCMP](/built-in-functions/string-functions/strcmp/) — Compares two strings in sort order.
+- [SUBSTR](/built-in-functions/string-functions/substr/) — Returns a substring from string starting at a given position.
+- [SUBSTRING](/built-in-functions/string-functions/substring/) — Returns a substring from string starting at a given position.
+- [SUBSTRING_INDEX](/built-in-functions/string-functions/substring_index/) — Returns the substring from string before count occurrences of a delimiter.
+- [TO_BASE64](/built-in-functions/string-functions/to_base64/) — Converts a string to its base-64 encoded form.
+- [TRIM](/built-in-functions/string-functions/trim/) — Returns a string with all given prefixes or suffixes removed.
+- [TRIM_ORACLE](/built-in-functions/string-functions/trim_oracle/) — Synonym for the Oracle mode version of TRIM().
+- [UCASE](/built-in-functions/string-functions/ucase/) — Synonym for UPPER().
+- [UNCOMPRESSED_LENGTH](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/uncompressed_length/) — Returns length of a string before being compressed with COMPRESS().
+- [UNHEX](/built-in-functions/string-functions/unhex/) — Interprets pairs of hex digits as numbers and converts to the character represented by the number.
+- [UPDATEXML](/built-in-functions/string-functions/updatexml/) — Replace XML.
+- [UPPER](/built-in-functions/string-functions/upper/) — Changes string to uppercase.
+- [WEIGHT_STRING](/built-in-functions/string-functions/weight_string/) — Weight of the input string.
+- [Type Conversion](/built-in-functions/string-functions/type-conversion/) — When implicit type conversion takes place.

@@ -1,0 +1,2272 @@
+# CONNECT JSON Table Type
+
+## Overview
+
+JSON (JavaScript Object Notation) is a lightweight data-interchange format widely used on the Internet. Many applications, generally written in JavaScript or PHP use and produce JSON data, which are exchanged as files of different physical formats. JSON data is often returned from REST queries.
+
+It is also possible to query, create or update such information in a database-like manner. MongoDB does it using a JavaScript-like language. PostgreSQL includes these facilities by using a specific data type and related functions like dynamic columns.
+
+The CONNECT engine adds this facility to MariaDB by supporting tables based on JSON data files. This is done like for XML tables by creating tables describing what should be retrieved from the file and how it should be processed.
+
+Let us start from the file “biblio3.json” that is the JSON equivalent of the XML Xsample file we have described in the XML table chapter:
+
+```sql
+[
+  {
+    "ISBN": "9782212090819",
+    "LANG": "fr",
+    "SUBJECT": "applications",
+    "AUTHOR": [
+      {
+        "FIRSTNAME": "Jean-Christophe",
+        "LASTNAME": "Bernadac"
+      },
+      {
+        "FIRSTNAME": "François",
+        "LASTNAME": "Knab"
+      }
+    ],
+    "TITLE": "Construire une application XML",
+    "PUBLISHER": {
+      "NAME": "Eyrolles",
+      "PLACE": "Paris"
+    },
+    "DATEPUB": 1999
+  },
+  {
+    "ISBN": "9782840825685",
+    "LANG": "fr",
+    "SUBJECT": "applications",
+    "AUTHOR": [
+      {
+        "FIRSTNAME": "William J.",
+        "LASTNAME": "Pardi"
+      }
+    ],
+    "TITLE": "XML en Action",
+    "TRANSLATED": {
+       "PREFIX": "adapté de l'anglais par",
+       "TRANSLATOR": {
+          "FIRSTNAME": "James",
+        "LASTNAME": "Guerin"
+        }
+    },
+    "PUBLISHER": {
+      "NAME": "Microsoft Press",
+      "PLACE": "Paris"
+    },
+    "DATEPUB": 1999
+  }
+]
+```
+
+This file contains the different items existing in JSON.
+
+- `Arrays`: They are enclosed in square brackets and contain a list of comma separated values.
+- `Objects`: They are enclosed in curly brackets. They contain a comma separated list of pairs, each pair composed of a key name between double quotes, followed by a ‘:’ character and followed by a value.
+- `Values`: Values can be an array or an object. They also can be a string between double quotes, an integer or float number, a Boolean value or a null value.
+The simplest way for CONNECT to locate a table in such a file is by an array containing a list of objects. Each array value will be a table row and each pair of the row objects will represent a column, the key being the column name and the value the column value.
+
+A first try to create a table on this file will be to take the outer array as the table:
+
+```sql
+create table jsample (
+ISBN char(15),
+LANG char(2),
+SUBJECT char(32),
+AUTHOR char(128),
+TITLE char(32),
+TRANSLATED char(80),
+PUBLISHER char(20),
+DATEPUB int(4))
+engine=CONNECT table_type=JSON
+File_name='biblio3.json';
+```
+
+If we execute the query:
+
+```sql
+select isbn, author, title, publisher from jsample;
+```
+
+We get the result:
+
+<table><tbody><tr><th>isbn</th><th>author</th><th>title</th><th>publisher</th></tr>
+<tr><td>9782212090819</td><td>Jean-Christophe Bernadac</td><td>Construire une application XML</td><td>Eyrolles Paris</td></tr>
+<tr><td>9782840825685</td><td>William J. Pardi</td><td>XML en Action</td><td>Microsoft Press Pari</td></tr>
+</tbody></table>
+
+Note that by default, column values that are objects have been set to the concatenation of all the string values of the object separated by a blank. When a column value is an array, only the first item of the array is retrieved.
+
+However, things are generally more complicated. If JSON files do not contain attributes (although object pairs are similar to attributes) they contain a new item, arrays. We have seen that they can be used like XML multiple nodes, here to specify several authors, but they are more general because they can contain objects of different types, even it may not be advisable to do so.
+
+This is why CONNECT enables the specification of a column field_format option “JPATH” that is used to describe exactly where the items to display are and how to handles arrays.
+
+Here is an example of a new table that can be created on the same file, allowing choosing the column names, to get some sub-objects and to specify how to handle the author array.
+
+Until Connect 1.5:
+
+```sql
+create table jsampall (
+ISBN char(15),
+Language char(2) field_format='LANG',
+Subject char(32) field_format='SUBJECT',
+Author char(128) field_format='AUTHOR:[" and "]',
+Title char(32) field_format='TITLE',
+Translation char(32) field_format='TRANSLATOR:PREFIX',
+Translator char(80) field_format='TRANSLATOR',
+Publisher char(20) field_format='PUBLISHER:NAME',
+Location char(16) field_format='PUBLISHER:PLACE',
+Year int(4) field_format='DATEPUB')
+engine=CONNECT table_type=JSON File_name='biblio3.json';
+```
+
+From Connect 1.6:
+
+```sql
+create table jsampall (
+ISBN char(15),
+Language char(2) field_format='LANG',
+Subject char(32) field_format='SUBJECT',
+Author char(128) field_format='AUTHOR.[" and "]',
+Title char(32) field_format='TITLE',
+Translation char(32) field_format='TRANSLATOR.PREFIX',
+Translator char(80) field_format='TRANSLATOR',
+Publisher char(20) field_format='PUBLISHER.NAME',
+Location char(16) field_format='PUBLISHER.PLACE',
+Year int(4) field_format='DATEPUB')
+engine=CONNECT table_type=JSON File_name='biblio3.json';
+```
+
+Given the query:
+
+```sql
+select title, author, publisher, location from jsampall;
+```
+
+The result is:
+
+<table><tbody><tr><th>title</th><th>author</th><th>publisher</th><th>location</th></tr>
+<tr><td>Construire une application XML</td><td>Jean-Christophe Bernadac and François Knab</td><td>Eyrolles</td><td>Paris</td></tr>
+<tr><td>XML en Action</td><td>William J. Pardi</td><td>Microsoft Press</td><td>Paris</td></tr>
+</tbody></table>
+
+Here is another example showing that one can choose what to extract from the file and how to “expand” an array, meaning to generate one row for each array value:
+
+Until Connect 1.5:
+
+```sql
+create table jsampex (
+ISBN char(15),
+Title char(32) field_format='TITLE',
+AuthorFN char(128) field_format='AUTHOR:[X]:FIRSTNAME',
+AuthorLN char(128) field_format='AUTHOR:[X]:LASTNAME',
+Year int(4) field_format='DATEPUB')
+engine=CONNECT table_type=JSON File_name='biblio3.json';
+```
+
+From Connect 1.6:
+
+```sql
+create table jsampex (
+ISBN char(15),
+Title char(32) field_format='TITLE',
+AuthorFN char(128) field_format='AUTHOR.[X].FIRSTNAME',
+AuthorLN char(128) field_format='AUTHOR.[X].LASTNAME',
+Year int(4) field_format='DATEPUB')
+engine=CONNECT table_type=JSON File_name='biblio3.json';
+```
+
+From Connect 1.06.006:
+
+```sql
+create table jsampex (
+ISBN char(15),
+Title char(32) field_format='TITLE',
+AuthorFN char(128) field_format='AUTHOR[*].FIRSTNAME',
+AuthorLN char(128) field_format='AUTHOR[*].LASTNAME',
+Year int(4) field_format='DATEPUB')
+engine=CONNECT table_type=JSON File_name='biblio3.json';
+```
+
+It is displayed as:
+
+<table><tbody><tr><th>ISBN</th><th>Title</th><th>AuthorFN</th><th>AuthorLN</th><th>Year</th></tr>
+<tr><td>9782212090819</td><td>Construire une application XML</td><td>Jean-Christophe</td><td>Bernadac</td><td>1999</td></tr>
+<tr><td>9782212090819</td><td>Construire une application XML</td><td>François</td><td>Knab</td><td>1999</td></tr>
+<tr><td>9782840825685</td><td>XML en Action</td><td>William J.</td><td>Pardi</td><td>1999</td></tr>
+</tbody></table>
+
+## The Jpath Specification
+
+From Connect 1.6, the Jpath specification has changed to be the one of the native JSON functions and more compatible with what is generally used. It is close to the standard definition and compatible to what MongoDB and other products do. The ‘:’ separator is replaced by ‘.’. Position in array is accepted MongoDB style with no square brackets. Array specification specific to CONNECT are still accepted but [*] is used for expanding and [x] for multiply. However, tables created with the previous syntax can still be used by adding SEP_CHAR=’:’ (can be done with alter table).
+
+Until Connect 1.5, it is the description of the path to follow to reach the required item. Each step is the key name (case sensitive) of the pair when crossing an object, and the number of the value between square brackets when crossing an array. Each specification is separated by a ‘:’ character.
+
+From Connect 1.6, It is the description of the path to follow to reach the required item. Each step is the key name (case sensitive) of the pair when crossing an object, and the position number of the value when crossing an array. Key specifications are separated by a ‘.’ character.
+
+For instance, in the above file, the last name of the second author of a book is reached by:
+
+$.AUTHOR[1].LASTNAME	<em> standard style
+$AUTHOR.1.LASTNAME	</em> MongoDB style
+AUTHOR:[1]:LASTNAME   <em> old style when SEP_CHAR=’:’ or until Connect 1.5</em>
+
+The ‘$’ or “$.” prefix specifies the root of the path and can be omitted with CONNECT.
+
+The array specification can also indicate how it must be processed:
+
+For instance, in the above file, the last name of the second author of a book is reached by:
+
+```sql
+AUTHOR:[1]:LASTNAME
+```
+
+The array specification can also indicate how it must be processed:
+
+<table><tbody><tr><th>Specification</th><th>Array Type</th><th>Limit</th><th>Description</th></tr>
+<tr><td>n (Connect &gt;= 1.6) or [n]<sup class="reference" id="_ref-0">[<a href="#_note-0">1</a>]</sup></td><td>All</td><td>N.A</td><td>Take the nth value of the array.</td></tr>
+<tr><td>[*] (Connect &gt;= 1.6), [X] or [x] (Connect &lt;= 1.5)</td><td>All</td><td></td><td>Expand. Generate one row for each array value.</td></tr>
+<tr><td>["string"]</td><td>String</td><td></td><td>Concatenate all values separated by the specified string.</td></tr>
+<tr><td>[+]</td><td>Numeric</td><td></td><td>Make the sum of all the non-null array values.</td></tr>
+<tr><td>[x] (Connect &gt;= 1.6), [*] (Connect &lt;= 1.5)</td><td>Numeric</td><td></td><td>Make the product of all non-null array values.</td></tr>
+<tr><td>[!]</td><td>Numeric</td><td></td><td>Make the average of all the non-null array values.</td></tr>
+<tr><td>[&gt;] or [&lt;]</td><td>All</td><td></td><td>Return the greatest or least non-null value of the array.</td></tr>
+<tr><td>[#]</td><td>All</td><td>N.A</td><td>Return the number of values in the array.</td></tr>
+<tr><td>[]</td><td>All</td><td></td><td>Expand if under an expanded object. Otherwise sum if numeric, else concatenation separated by “, “.</td></tr>
+<tr><td></td><td>All</td><td>N.A</td><td>If an array, expand it if under an expanded object or take the first value of it.</td></tr>
+</tbody></table>
+
+Note 1: When the LIMIT restriction is applicable, only the first <em>m</em> array items are used, <em>m</em> being the value of the LIMIT option (to be specified in option_list). The LIMIT default value is 10.
+
+Note 2: An alternative way to indicate what is to be expanded is to use the expand option in the option list, for instance:
+
+```sql
+OPTION_LIST='Expand=AUTHOR'
+```
+
+`AUTHOR` is here the key of the pair that has the array as a value (case sensitive). Expand is limited to only one branch (expanded arrays must be under the same object).
+
+Let us take as an example the file `expense.json` ([found here](/columns-storage-engines-and-plugins/storage-engines/connect/json-sample-files)).
+The table jexpall expands all under and including the week array:
+
+From Connect 1.6:
+
+```sql
+create table jexpall (
+WHO char(12),
+WEEK int(2) field_format='$.WEEK[*].NUMBER',
+WHAT char(32) field_format='$.WEEK[*].EXPENSE[*].WHAT',
+AMOUNT double(8,2) field_format='$.WEEK[*].EXPENSE[*].AMOUNT')
+engine=CONNECT table_type=JSON File_name='expense.json';
+```
+
+Until Connect 1.5:
+
+```sql
+create table jexpall (
+WHO char(12),
+WEEK int(2) field_format='WEEK:[x]:NUMBER',
+WHAT char(32) field_format='WEEK:[x]:EXPENSE:[x]:WHAT',
+AMOUNT double(8,2) field_format='WEEK:[x]:EXPENSE:[x]:AMOUNT')
+engine=CONNECT table_type=JSON File_name='expense.json';
+```
+
+<table><tbody><tr><th>WHO</th><th>WEEK</th><th>WHAT</th><th>AMOUNT</th></tr>
+<tr><td>Joe</td><td>3</td><td>Beer</td><td>18.00</td></tr>
+<tr><td>Joe</td><td>3</td><td>Food</td><td>12.00</td></tr>
+<tr><td>Joe</td><td>3</td><td>Food</td><td>19.00</td></tr>
+<tr><td>Joe</td><td>3</td><td>Car</td><td>20.00</td></tr>
+<tr><td>Joe</td><td>4</td><td>Beer</td><td>19.00</td></tr>
+<tr><td>Joe</td><td>4</td><td>Beer</td><td>16.00</td></tr>
+<tr><td>Joe</td><td>4</td><td>Food</td><td>17.00</td></tr>
+<tr><td>Joe</td><td>4</td><td>Food</td><td>17.00</td></tr>
+<tr><td>Joe</td><td>4</td><td>Beer</td><td>14.00</td></tr>
+<tr><td>Joe</td><td>5</td><td>Beer</td><td>14.00</td></tr>
+<tr><td>Joe</td><td>5</td><td>Food</td><td>12.00</td></tr>
+<tr><td>Beth</td><td>3</td><td>Beer</td><td>16.00</td></tr>
+<tr><td>Beth</td><td>4</td><td>Food</td><td>17.00</td></tr>
+<tr><td>Beth</td><td>4</td><td>Beer</td><td>15.00</td></tr>
+<tr><td>Beth</td><td>5</td><td>Food</td><td>12.00</td></tr>
+<tr><td>Beth</td><td>5</td><td>Beer</td><td>20.00</td></tr>
+<tr><td>Janet</td><td>3</td><td>Car</td><td>19.00</td></tr>
+<tr><td>Janet</td><td>3</td><td>Food</td><td>18.00</td></tr>
+<tr><td>Janet</td><td>3</td><td>Beer</td><td>18.00</td></tr>
+<tr><td>Janet</td><td>4</td><td>Car</td><td>17.00</td></tr>
+<tr><td>Janet</td><td>5</td><td>Beer</td><td>14.00</td></tr>
+<tr><td>Janet</td><td>5</td><td>Car</td><td>12.00</td></tr>
+<tr><td>Janet</td><td>5</td><td>Beer</td><td>19.00</td></tr>
+<tr><td>Janet</td><td>5</td><td>Food</td><td>12.00</td></tr>
+</tbody></table>
+
+The table `jexpw` shows what was bought and the sum and average of amounts for each person and week:
+
+From Connect 1.6:
+
+```sql
+create table jexpw (
+WHO char(12) not null,
+WEEK int(2) not null field_format='$.WEEK[*].NUMBER',
+WHAT char(32) not null field_format='$.WEEK[].EXPENSE[", "].WHAT',
+SUM double(8,2) not null field_format='$.WEEK[].EXPENSE[+].AMOUNT',
+AVERAGE double(8,2) not null field_format='$.WEEK[].EXPENSE[!].AMOUNT')
+engine=CONNECT table_type=JSON File_name='expense.json';
+```
+
+Until Connect 1.5:
+
+```sql
+create table jexpw (
+WHO char(12) not null,
+WEEK int(2) not null field_format='WEEK:[x]:NUMBER',
+WHAT char(32) not null field_format='WEEK::EXPENSE:[", "]:WHAT',
+SUM double(8,2) not null field_format='WEEK::EXPENSE:[+]:AMOUNT',
+AVERAGE double(8,2) not null field_format='WEEK::EXPENSE:[!]:AMOUNT')
+engine=CONNECT table_type=JSON File_name='expense.json';
+```
+
+<table><tbody><tr><th>WHO</th><th>WEEK</th><th>WHAT</th><th>SUM</th><th>AVERAGE</th></tr>
+<tr><td>Joe</td><td>3</td><td>Beer, Food, Food, Car</td><td>69.00</td><td>17.25</td></tr>
+<tr><td>Joe</td><td>4</td><td>Beer, Beer, Food, Food, Beer</td><td>83.00</td><td>16.60</td></tr>
+<tr><td>Joe</td><td>5</td><td>Beer, Food</td><td>26.00</td><td>13.00</td></tr>
+<tr><td>Beth</td><td>3</td><td>Beer</td><td>16.00</td><td>16.00</td></tr>
+<tr><td>Beth</td><td>4</td><td>Food, Beer</td><td>32.00</td><td>16.00</td></tr>
+<tr><td>Beth</td><td>5</td><td>Food, Beer</td><td>32.00</td><td>16.00</td></tr>
+<tr><td>Janet</td><td>3</td><td>Car, Food, Beer</td><td>55.00</td><td>18.33</td></tr>
+<tr><td>Janet</td><td>4</td><td>Car</td><td>17.00</td><td>17.00</td></tr>
+<tr><td>Janet</td><td>5</td><td>Beer, Car, Beer, Food</td><td>57.00</td><td>14.25</td></tr>
+</tbody></table>
+
+Let us see what the table `jexpz` does:
+
+From Connect 1.6:
+
+```sql
+create table jexpz (
+WHO char(12) not null,
+WEEKS char(12) not null field_format='WEEK[", "].NUMBER',
+SUMS char(64) not null field_format='WEEK["+"].EXPENSE[+].AMOUNT',
+SUM double(8,2) not null field_format='WEEK[+].EXPENSE[+].AMOUNT',
+AVGS char(64) not null field_format='WEEK["+"].EXPENSE[!].AMOUNT',
+SUMAVG double(8,2) not null field_format='WEEK[+].EXPENSE[!].AMOUNT',
+AVGSUM double(8,2) not null field_format='WEEK[!].EXPENSE[+].AMOUNT',
+AVERAGE double(8,2) not null field_format='WEEK[!].EXPENSE[*].AMOUNT')
+engine=CONNECT table_type=JSON File_name='expense.json';
+```
+
+Until Connect 1.5:
+
+```sql
+create table jexpz (
+WHO char(12) not null,
+WEEKS char(12) not null field_format='WEEK:[", "]:NUMBER',
+SUMS char(64) not null field_format='WEEK:["+"]:EXPENSE:[+]:AMOUNT',
+SUM double(8,2) not null field_format='WEEK:[+]:EXPENSE:[+]:AMOUNT',
+AVGS char(64) not null field_format='WEEK:["+"]:EXPENSE:[!]:AMOUNT',
+SUMAVG double(8,2) not null field_format='WEEK:[+]:EXPENSE:[!]:AMOUNT',
+AVGSUM double(8,2) not null field_format='WEEK:[!]:EXPENSE:[+]:AMOUNT',
+AVERAGE double(8,2) not null field_format='WEEK:[!]:EXPENSE:[x]:AMOUNT')
+engine=CONNECT table_type=JSON
+File_name='E:/Data/Json/expense2.json';
+```
+
+<table><tbody><tr><th>WHO</th><th>WEEKS</th><th>SUMS</th><th>SUM</th><th>AVGS</th><th>SUMAVG</th><th>AVGSUM</th><th>AVERAGE</th></tr>
+<tr><td>Joe</td><td>3, 4, 5</td><td>69.00+83.00+26.00</td><td>178.00</td><td>17.25+16.60+13.00</td><td>46.85</td><td>59.33</td><td>16.18</td></tr>
+<tr><td>Beth</td><td>3, 4, 5</td><td>16.00+32.00+32.00</td><td>80.00</td><td>16.00+16.00+16.00</td><td>48.00</td><td>26.67</td><td>16.00</td></tr>
+<tr><td>Janet</td><td>3, 4, 5</td><td>55.00+17.00+57.00</td><td>129.00</td><td>18.33+17.00+14.25</td><td>49.58</td><td>43.00</td><td>16.12</td></tr>
+</tbody></table>
+
+For all persons:
+
+- Column 1 show the person name.
+- Column 2 shows the weeks for which values are calculated.
+- Column 3 lists the sums of expenses for each week.
+- Column 4 calculates the sum of all expenses by person.
+- Column 5 shows the week’s expense averages.
+- Column 6 calculates the sum of these averages.
+- Column 7 calculates the average of the week’s sum of expenses.
+- Column 8 calculates the average expense by person.
+
+It would be very difficult, if even possible, to obtain this result from table `jexpall` using an SQL query.
+
+## Handling of NULL Values
+
+Json has a null explicit value that can be met in arrays or object key values. When regarding json as a relational table, a column value can be null because the corresponding json item is explicitly null, or implicitly because the corresponding item is missing in an array or object. CONNECT does not make any distinction between explicit and implicit nulls.
+
+However, it is possible to specify how nulls are handled and represented. This is done by setting the string session variable [connect_json_null](/kb/en/connect-system-variables/#connect_json_null). The default value of connect_json_null is “&lt;null&gt;”; it can be changed, for instance, by:
+
+```sql
+SET connect_json_null='NULL';
+```
+
+This changes its representation when a column displays the text of an object or the concatenation of the values of an array.
+
+It is also possible to tell CONNECT to ignore nulls by:
+
+```sql
+SET connect_json_null=NULL;
+```
+
+When doing so, nulls do not appear in object text or array lists. However, this does not change the behavior of array calculation nor the result of array count.
+
+## Having Columns defined by Discovery
+
+It is possible to let the MariaDB discovery process do the job of column specification. When columns are not defined in the create table statement, CONNECT endeavors to analyze the JSON file and to provide the column specifications. This is possible only for tables represented by an array of objects because CONNECT retrieves the column names from the object pair keys and their definition from the object pair values. For instance, the jsample table could be created saying:
+
+```sql
+create table jsample engine=connect table_type=JSON file_name='biblio3.json';
+```
+
+Let’s check how it was actually specified using the show create table statement:
+
+```sql
+CREATE TABLE `jsample` (
+  `ISBN` char(13) NOT NULL,
+  `LANG` char(2) NOT NULL,
+  `SUBJECT` char(12) NOT NULL,
+  `AUTHOR` varchar(256) DEFAULT NULL,
+  `TITLE` char(30) NOT NULL,
+  `TRANSLATED` varchar(256) DEFAULT NULL,
+  `PUBLISHER` varchar(256) DEFAULT NULL,
+  `DATEPUB` int(4) NOT NULL
+) ENGINE=CONNECT DEFAULT CHARSET=latin1 `TABLE_TYPE`='JSON' `FILE_NAME`='biblio3.json';
+```
+
+It is equivalent except for the column sizes that have been calculated from the file as the maximum length of the corresponding column when it was a normal value. For columns that are json arrays or objects, the column is specified as a varchar string of length 256, supposedly big enough to contain the sub-object's concatenated values. Nullable is set to true if the column is null or missing in some rows or if its JPATH contains arrays.
+
+If a more complex definition is desired, you can ask CONNECT to analyze the JPATH up to a given level using the level option in the option list. The level value is the number of sub-objects that are taken in the JPATH. For instance:
+
+```sql
+create table jsampall2 engine=connect table_type=JSON 
+  file_name='biblio3.json' option_list='level=1';
+```
+
+This will define the table as:
+
+From Connect 1.6:
+
+```sql
+CREATE TABLE `jsampall2` (
+  `ISBN` char(13) NOT NULL,
+  `LANG` char(2) NOT NULL,
+  `SUBJECT` char(12) NOT NULL,
+  `AUTHOR_FIRSTNAME` char(15) NOT NULL `FIELD_FORMAT`='AUTHOR..FIRSTNAME',
+  `AUTHOR_LASTNAME` char(8) NOT NULL `FIELD_FORMAT`='AUTHOR..LASTNAME',
+  `TITLE` char(30) NOT NULL,
+  `TRANSLATED_PREFIX` char(23) DEFAULT NULL `FIELD_FORMAT`='TRANSLATED.PREFIX',
+  `TRANSLATED_TRANSLATOR` varchar(256) DEFAULT NULL `FIELD_FORMAT`='TRANSLATED.TRANSLATOR',
+  `PUBLISHER_NAME` char(15) NOT NULL `FIELD_FORMAT`='PUBLISHER.NAME',
+  `PUBLISHER_PLACE` char(5) NOT NULL `FIELD_FORMAT`='PUBLISHER.PLACE',
+  `DATEPUB` int(4) NOT NULL
+) ENGINE=CONNECT DEFAULT CHARSET=latin1 `TABLE_TYPE`='JSON' 
+  `FILE_NAME`='biblio3.json' `OPTION_LIST`='level=1';
+```
+
+Until Connect 1.5:
+
+```sql
+CREATE TABLE `jsampall2` (
+  `ISBN` char(13) NOT NULL,
+  `LANG` char(2) NOT NULL,
+  `SUBJECT` char(12) NOT NULL,
+  `AUTHOR_FIRSTNAME` char(15) NOT NULL `FIELD_FORMAT`='AUTHOR::FIRSTNAME',
+  `AUTHOR_LASTNAME` char(8) NOT NULL `FIELD_FORMAT`='AUTHOR::LASTNAME',
+  `TITLE` char(30) NOT NULL,
+  `TRANSLATED_PREFIX` char(23) DEFAULT NULL `FIELD_FORMAT`='TRANSLATED:PREFIX',
+  `TRANSLATED_TRANSLATOR` varchar(256) DEFAULT NULL `FIELD_FORMAT`='TRANSLATED:TRANSLATOR',
+  `PUBLISHER_NAME` char(15) NOT NULL `FIELD_FORMAT`='PUBLISHER:NAME',
+  `PUBLISHER_PLACE` char(5) NOT NULL `FIELD_FORMAT`='PUBLISHER:PLACE',
+  `DATEPUB` int(4) NOT NULL
+) ENGINE=CONNECT DEFAULT CHARSET=latin1 `TABLE_TYPE`='JSON' `
+  FILE_NAME`='biblio3.json' `OPTION_LIST`='level=1';
+```
+
+The problem is that CONNECT cannot guess what you want to do with arrays. Here the AUTHOR array is left undefined, which means that only its first value will be retrieved unless you also had specified “Expand=AUTHOR” in the option list. But of course, you can replace it by anything else.
+
+This method can be used as a quick way to make a “template” table definition that can later be edited to make the desired definition. In particular, column names are constructed from all the object keys of their path in order to have distinct column names. This can be manually edited to have the desired names, provided their JPATH key names are not modified.
+
+## JSON Catalogue Tables
+
+Another way to see JSON table column specifications is to use a catalogue table. For instance:
+
+```sql
+create table bibcol engine=connect table_type=JSON file_name='biblio3.json' 
+  option_list='level=2' catfunc=columns;
+select column_name, type_name type, column_size size, jpath from bibcol;
+```
+
+which returns:
+
+From Connect 1.6:
+
+<table><tbody><tr><th>column_name</th><th>type</th><th>size</th><th>jpath</th></tr>
+<tr><td>ISBN</td><td>CHAR</td><td>13</td><td></td></tr>
+<tr><td>LANG</td><td>CHAR</td><td>2</td><td></td></tr>
+<tr><td>SUBJECT</td><td>CHAR</td><td>12</td><td></td></tr>
+<tr><td>AUTHOR_FIRSTNAME</td><td>CHAR</td><td>15</td><td>AUTHOR..FIRSTNAME</td></tr>
+<tr><td>AUTHOR_LASTNAME</td><td>CHAR</td><td>8</td><td>AUTHOR..LASTNAME</td></tr>
+<tr><td>TITLE</td><td>CHAR</td><td>30</td><td></td></tr>
+<tr><td>TRANSLATED_PREFIX</td><td>CHAR</td><td>23</td><td>TRANSLATED.PREFIX</td></tr>
+<tr><td>TRANSLATED_TRANSLATOR_FIRSTNAME</td><td>CHAR</td><td>5</td><td>TRANSLATED.TRANSLATOR.FIRSTNAME</td></tr>
+<tr><td>TRANSLATED_TRANSLATOR_LASTNAME</td><td>CHAR</td><td>6</td><td>TRANSLATED.TRANSLATOR.LASTNAME</td></tr>
+<tr><td>PUBLISHER_NAME</td><td>CHAR</td><td>15</td><td>PUBLISHER.NAME</td></tr>
+<tr><td>PUBLISHER_PLACE</td><td>CHAR</td><td>5</td><td>PUBLISHER.PLACE</td></tr>
+<tr><td>DATEPUB</td><td>INTEGER</td><td>4</td><td></td></tr>
+</tbody></table>
+
+Until Connect 1.5:
+
+<table><tbody><tr><th>column_name</th><th>type</th><th>size</th><th>jpath</th></tr>
+<tr><td>ISBN</td><td>CHAR</td><td>13</td><td></td></tr>
+<tr><td>LANG</td><td>CHAR</td><td>2</td><td></td></tr>
+<tr><td>SUBJECT</td><td>CHAR</td><td>12</td><td></td></tr>
+<tr><td>AUTHOR_FIRSTNAME</td><td>CHAR</td><td>15</td><td>AUTHOR::FIRSTNAME</td></tr>
+<tr><td>AUTHOR_LASTNAME</td><td>CHAR</td><td>8</td><td>AUTHOR::LASTNAME</td></tr>
+<tr><td>TITLE</td><td>CHAR</td><td>30</td><td></td></tr>
+<tr><td>TRANSLATED_PREFIX</td><td>CHAR</td><td>23</td><td>TRANSLATED:PREFIX</td></tr>
+<tr><td>TRANSLATED_TRANSLATOR_FIRSTNAME</td><td>CHAR</td><td>5</td><td>TRANSLATED:TRANSLATOR:FIRSTNAME</td></tr>
+<tr><td>TRANSLATED_TRANSLATOR_LASTNAME</td><td>CHAR</td><td>6</td><td>TRANSLATED:TRANSLATOR:LASTNAME</td></tr>
+<tr><td>PUBLISHER_NAME</td><td>CHAR</td><td>15</td><td>PUBLISHER:NAME</td></tr>
+<tr><td>PUBLISHER_PLACE</td><td>CHAR</td><td>5</td><td>PUBLISHER:PLACE</td></tr>
+<tr><td>DATEPUB</td><td>INTEGER</td><td>4</td><td></td></tr>
+</tbody></table>
+
+All this is mostly useful when creating a table on a remote file that you cannot easily see.
+
+## Finding the table within a JSON file
+
+Given the file “facebook.json”:
+
+```sql
+{
+   "data": [
+      {
+         "id": "X999_Y999",
+         "from": {
+            "name": "Tom Brady", "id": "X12"
+         },
+         "message": "Looking forward to 2010!",
+         "actions": [
+            {
+               "name": "Comment",
+               "link": "http://www.facebook.com/X999/posts/Y999"
+            },
+            {
+               "name": "Like",
+               "link": "http://www.facebook.com/X999/posts/Y999"
+            }
+         ],
+         "type": "status",
+         "created_time": "2010-08-02T21:27:44+0000",
+         "updated_time": "2010-08-02T21:27:44+0000"
+      },
+      {
+         "id": "X998_Y998",
+         "from": {
+            "name": "Peyton Manning", "id": "X18"
+         },
+         "message": "Where's my contract?",
+         "actions": [
+            {
+               "name": "Comment",
+               "link": "http://www.facebook.com/X998/posts/Y998"
+            },
+            {
+               "name": "Like",
+               "link": "http://www.facebook.com/X998/posts/Y998"
+            }
+         ],
+         "type": "status",
+         "created_time": "2010-08-02T21:27:44+0000",
+         "updated_time": "2010-08-02T21:27:44+0000"
+      }
+   ]
+}
+```
+
+The table we want to analyze is represented by the array value of the “data” object. Here is how this is specified in the create table statement:
+
+From Connect 1.6:
+
+```sql
+create table jfacebook (
+`ID` char(10) field_format='id',
+`Name` char(32) field_format='from.name',
+`MyID` char(16) field_format='from.id',
+`Message` varchar(256) field_format='message',
+`Action` char(16) field_format='actions..name',
+`Link` varchar(256) field_format='actions..link',
+`Type` char(16) field_format='type',
+`Created` datetime date_format='YYYY-MM-DD\'T\'hh:mm:ss' field_format='created_time',
+`Updated` datetime date_format='YYYY-MM-DD\'T\'hh:mm:ss' field_format='updated_time')
+engine=connect table_type=JSON file_name='facebook.json' option_list='Object=data,Expand=actions';
+```
+
+Until Connect 1.5:
+
+```sql
+create table jfacebook (
+`ID` char(10) field_format='id',
+`Name` char(32) field_format='from:name',
+`MyID` char(16) field_format='from:id',
+`Message` varchar(256) field_format='message',
+`Action` char(16) field_format='actions::name',
+`Link` varchar(256) field_format='actions::link',
+`Type` char(16) field_format='type',
+`Created` datetime date_format='YYYY-MM-DD\'T\'hh:mm:ss' field_format='created_time',
+`Updated` datetime date_format='YYYY-MM-DD\'T\'hh:mm:ss' field_format='updated_time')
+engine=connect table_type=JSON file_name='facebook.json' option_list='Object=data,Expand=actions';
+```
+
+This is the object option that gives the Jpath of the table. Note also an alternate way to declare the array to be expanded by the expand option of the option_list.
+
+Because some string values contain a date representation, the corresponding columns are declared as datetime and the date format is specified for them.
+
+The Jpath of the object option has the same syntax than the column Jpath but of course all array step must be specified using the [n] (until Connect 1.5) or n (from Connect 1.6) format.
+
+Note: All this applies only to tables having pretty = 2 (see below).
+
+## JSON File Formats
+
+The examples we have seen so far are files that, even they can be formatted in different ways (blanks, tabs, carriage return and line feed are ignored when parsing them), respect the JSON syntax and are made of only one item (Object or Array). Like for XML files, they are entirely parsed and a memory representation is made used to process them. This implies that they are of reasonable size to avoid an out of memory condition. Tables based on such files are recognized by the option Pretty=2 that we did not specify above because this is the default.
+
+An alternate format, which is the format of exported MongoDB files, is a file where each row is physically stored in one file record. For instance:
+
+```sql
+{ "_id" : "01001", "city" : "AGAWAM", "loc" : [ -72.622739, 42.070206 ], "pop" : 15338, "state" : "MA" }
+{ "_id" : "01002", "city" : "CUSHMAN", "loc" : [ -72.51564999999999, 42.377017 ], "pop" : 36963, "state" : "MA" }
+{ "_id" : "01005", "city" : "BARRE", "loc" : [ -72.1083540000001, 42.409698 ], "pop" : 4546, "state" : "MA" }
+{ "_id" : "01007", "city" : "BELCHERTOWN", "loc" : [ -72.4109530000001, 42.275103 ], "pop" : 10579, "state" : "MA" }
+…
+{ "_id" : "99929", "city" : "WRANGELL", "loc" : [ -132.352918, 56.433524 ], "pop" : 2573, "state" : "AK" }
+{ "_id" : "99950", "city" : "KETCHIKAN", "loc" : [ -133.18479, 55.942471 ], "pop" : 422, "state" : "AK" }
+```
+
+The original file, “cities.json”, has 29352 records. To base a table on this file we must specify the option Pretty=0 in the option list. For instance:
+
+From Connect 1.6:
+
+```sql
+create table cities (
+`_id` char(5) key,
+`city` char(32),
+`lat` double(12,6) field_format='loc.0',
+`long` double(12,6) field_format='loc.1',
+`pop` int(8),
+`state` char(2) distrib='clustered')
+engine=CONNECT table_type=JSON file_name='cities.json' lrecl=128 option_list='pretty=0';
+```
+
+Until Connect 1.5:
+
+```sql
+create table cities (
+`_id` char(5) key,
+`city` char(32),
+`long` double(12,6) field_format='loc:[0]',
+`lat` double(12,6) field_format='loc:[1]',
+`pop` int(8),
+`state` char(2) distrib='clustered')
+engine=CONNECT table_type=JSON file_name='cities.json' lrecl=128 option_list='pretty=0';
+```
+
+Note the use of [n] (until Connect 1.5) or n (from Connect 1.6) array specifications for the longitude and latitude columns.
+
+When using this format, the table is processed by CONNECT like a DOS, CSV or FMT table. Rows are retrieved and parsed by records and the table can be very large. Another advantage is that such a table can be indexed, which can be of great value for very large tables. The “distrib” option of the “state” column tells CONNECT to use block indexing when possible.
+
+For such tables – as well as for <em>pretty=1</em> ones – the record size must be specified using the LRECL option. Be sure you don’t specify it too small as it is used to allocate the read/write buffers and the memory used for parsing the rows. If in doubt, be generous as it does not cost much in memory allocation.
+
+Another format exists, noted by Pretty=1, which is similar to this one but has some additions to represent a JSON array. A header and a trailer records are added containing the opening and closing square bracket, and all records but the last are followed by a comma. It has the same advantages for reading and updating, but inserting and deleting are executed in the pretty=2 way.
+
+## Alternate Table Arrangement
+
+We have seen that the most natural way to represent a table in a JSON file is to make it on an array of objects. However, other possibilities exist. A table can be an array of arrays, a one column table can be an array of values, or a one row table can be just one object or one value. One row tables are internally handled by adding a one value array around them.
+
+Let us see how to handle, for instance, a table that is an array of arrays. The file:
+
+```sql
+[
+  [56, "Coucou", 500.00],
+  [[2,0,1,4], "Hello World", 2.0316],
+  ["1784", "John Doo", 32.4500],
+  [1914, ["Nabucho","donosor"], 5.12],
+  [7, "sept", [0.77,1.22,2.01]],
+  [8, "huit", 13.0]
+]
+```
+
+A table can be created on this file as:
+
+From Connect 1.6:
+
+```sql
+create table xjson (
+`a` int(6) field_format='1',
+`b` char(32) field_format='2',
+`c` double(10,4) field_format='3')
+engine=connect table_type=JSON file_name='test.json' option_list='Pretty=1,Jmode=1,Base=1' lrecl=128;
+```
+
+Until Connect 1.5:
+
+```sql
+create table xjson (
+`a` int(6) field_format='[1]',
+`b` char(32) field_format='[2]',
+`c` double(10,4) field_format='[3]')
+engine=connect table_type=JSON file_name='test.json'
+option_list='Pretty=1,Jmode=1,Base=1' lrecl=128;
+```
+
+Columns are specified by their position in the row arrays. By default, this is zero-based but for this table the base was set to 1 by the <em>Base</em> option of the option list. Another new option in the option list is Jmode=1.
+It indicates what type of table this is. The Jmode values are:
+
+1 An array of objects. This is the default.
+2 An array of Array. Like this one.
+3 An array of values.
+
+When reading, this is not required as the type of the array items is specified for the columns; however, it is required when inserting new rows so CONNECT knows what to insert. For instance:
+
+```sql
+insert into xjson values(25, 'Breakfast', 1.414);
+```
+
+After this, it is displayed as:
+
+<table><tbody><tr><th>a</th><th>b</th><th>c</th></tr>
+<tr><td>56</td><td>Coucou</td><td>500.0000</td></tr>
+<tr><td>2</td><td>Hello World</td><td>2.0316</td></tr>
+<tr><td>1784</td><td>John Doo</td><td>32.4500</td></tr>
+<tr><td>1914</td><td>Nabucho</td><td>5.1200</td></tr>
+<tr><td>7</td><td>sept</td><td>0.7700</td></tr>
+<tr><td>8</td><td>huit</td><td>13.0000</td></tr>
+<tr><td>25</td><td>Breakfast</td><td>1.4140</td></tr>
+</tbody></table>
+
+Unspecified array values are represented by their first element.
+
+## Getting and Setting JSON Representation of a Column
+
+It is possible to retrieve and display a column contain as the full JSON string corresponding to it in the JSON file. This is specified in the JPATH by a “*” where the object or array would be specified. For instance:
+
+From Connect 1.6:
+
+```sql
+create table jsample2 (
+ISBN char(15),
+Lng char(2) field_format='LANG',
+json_Author char(255) field_format='AUTHOR.*',
+Title char(32) field_format='TITLE',
+Year int(4) field_format='DATEPUB')
+engine=CONNECT table_type=JSON file_name='biblio3.json';
+```
+
+Until Connect 1.5:
+
+```sql
+create table jsample2 (
+ISBN char(15),
+Lng char(2) field_format='LANG',
+json_Author char(255) field_format='AUTHOR:*',
+Title char(32) field_format='TITLE',
+Year int(4) field_format='DATEPUB')
+engine=CONNECT table_type=JSON file_name='biblio3.json';
+```
+
+Now the query:
+
+```sql
+select * from jsample2 where isbn = '9782840825685';
+```
+
+will return and display&nbsp;:
+
+<table><tbody><tr><th>ISBN</th><th>Lng</th><th>json_Author</th><th>Title</th><th>Year</th></tr>
+<tr><td>9782840825685</td><td>fr</td><td>[{"FIRSTNAME":"William J.","LASTNAME":"Pardi"}]</td><td>XML en Action</td><td>1999</td></tr>
+</tbody></table>
+
+This also works on input, a column specified so that it can be directly set to a valid JSON string.
+
+This feature is of great value as we will see below.
+
+## Create, Read, Update and Delete Operations on JSON Tables
+
+The SQL commands INSERT, UPDATE and DELETE are fully supported for JSON tables except those returned by REST queries. For INSERT and UPDATE, if the target values are simple values, there are no problems.
+
+However, there are some issues when the added or modified values are objects or arrays.
+
+Concerning objects, the same problems exist that we have already seen with the XML type. The added or modified object will have the format described in the table definition, which can be different from the one of the JSON file. Modifications should be done using a file specifying the full path of modified objects.
+
+New problems are raised when trying to modify the values of an array. Only updates can be done on the original table. First of all, for the values of the array to be distinct values, all update operations concerning array values must be done using a table expanding this array.
+
+For instance, to modify the authors of the `biblio.json` based table, the `jsampex` table must be used. Doing so, updating and deleting authors is possible using standard SQL commands. For example, to change the first name of Knab from François to John:
+
+```sql
+update jsampex set authorfn = 'John' where authorln = 'Knab';
+```
+
+However It would be wrong to do:
+
+```sql
+update jsampex set authorfn = 'John' where isbn = '9782212090819';
+```
+
+Because this would change the first name of both authors as they share the same ISBN.
+
+Where things become more difficult is when trying to delete or insert an author of a book. Indeed, a delete command will delete the whole book and an insert command will add a new complete row instead of adding a new author in the same array. Here we are penalized by the SQL language that cannot give us a way to specify this. Something like:
+
+```sql
+update jsampex add authorfn = 'Charles', authorln = 'Dickens'
+where title = 'XML en Action';
+```
+
+However this does not exist in SQL. Does this mean that it is impossible to do it? No, but it requires us to use a table specified on the same file but adapted to this task. One way to do it is to specify a table for which the authors are no more an expanded array. Supposing we want to add an author to the “XML en Action” book. We will do it on a table containing just the author(s) of that book, which is the second book of the table.
+
+From Connect 1.6:
+
+```sql
+create table jauthor (
+FIRSTNAME char(64),
+LASTNAME char(64))
+engine=CONNECT table_type=JSON File_name='biblio3.json' option_list='Object=1.AUTHOR';
+```
+
+Until Connect 1.5
+
+```sql
+create table jauthor (
+FIRSTNAME char(64),
+LASTNAME char(64))
+engine=CONNECT table_type=JSON File_name='biblio3.json' option_list='Object=[1]:AUTHOR';
+```
+
+The command:
+
+```sql
+select * from jauthor;
+```
+
+replies:
+
+<table><tbody><tr><th>FIRSTNAME</th><th>LASTNAME</th></tr>
+<tr><td>William J.</td><td>Pardi</td></tr>
+</tbody></table>
+
+It is a standard JSON table that is an array of objects in which we can freely insert or delete  rows.
+
+```sql
+insert into jauthor values('Charles','Dickens');
+```
+
+We can check that this was done correctly by:
+
+```sql
+select * from jsampex;
+```
+
+This will display:
+
+<table><tbody><tr><th>ISBN</th><th>Title</th><th>AuthorFN</th><th>AuthorLN</th><th>Year</th></tr>
+<tr><td>9782212090819</td><td>Construire une application XML</td><td>Jean-Christophe</td><td>Bernadac</td><td>1999</td></tr>
+<tr><td>9782212090819</td><td>Construire une application XML</td><td>John</td><td>Knab</td><td>1999</td></tr>
+<tr><td>9782840825685</td><td>XML en Action</td><td>William J.</td><td>Pardi</td><td>1999</td></tr>
+<tr><td>9782840825685</td><td>XML en Action</td><td>Charles</td><td>Dickens</td><td>1999</td></tr>
+</tbody></table>
+
+Note: If this table were a big table with many books, it would be difficult to know what the order of a specific book is in the table. This can be found by adding a special ROWID column in the table.
+
+However, an alternate way to do it is by using direct JSON column representation as in the `JSAMPLE2` table. This can be done by:
+
+```sql
+update jsample2 set json_Author =
+'[{"FIRSTNAME":"William J.","LASTNAME":"Pardi"},
+  {"FIRSTNAME":"Charles","LASTNAME":"Dickens"}]'
+where isbn = '9782840825685';
+```
+
+Here, we didn't have to find the index of the sub array to modify. However, this is not quite satisfying because we had to manually write the whole JSON value to set to the json_Author column.
+
+Therefore we need specific functions to do so. They are introduced now.
+
+## JSON User Defined Functions
+
+Although such functions written by other parties do exist,<sup class="reference" id="_ref-1">[[2](#_note-1)]</sup> CONNECT provides its own UDFs that are specifically adapted to the JSON table type and easily available because, being inside the CONNECT library or DLL, they require no additional module to be loaded (see [CONNECT - Compiling JSON UDFs in a Separate Library](/columns-storage-engines-and-plugins/storage-engines/connect/connect-compiling-json-udfs-in-a-separate-library) to make these functions in a separate library module).
+
+In particular, [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and 10.3 feature native JSON functions. In some cases, it is possible that these native functions can be used. However, mixing native and UDF JSON functions in the same query often does not work because the way they recognize their arguments is different and might even cause a server crash.
+
+Here is the list of the CONNECT functions; more can be added if required.
+
+<table><tbody><tr><th>Name</th><th>Type</th><th>Return</th><th>Description</th><th>Added</th></tr>
+<tr><td>jbin_array</td><td>Function</td><td>STRING*</td><td>Make a JSON array containing its arguments.</td><td><a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a>, <a href="/kb/en/mariadb-1019-release-notes/">MariaDB 10.1.9</a></td></tr>
+<tr><td>jbin_array_add</td><td>Function</td><td>STRING*</td><td>Adds to its first array argument its second arguments.</td><td><a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a>, <a href="/kb/en/mariadb-1019-release-notes/">MariaDB 10.1.9</a></td></tr>
+<tr><td>jbin_array_add_values</td><td>Function</td><td>STRING*</td><td>Adds to its first array argument all following arguments.</td><td><a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a></td></tr>
+<tr><td>jbin_array_delete</td><td>Function</td><td>STRING*</td><td>Deletes the nth element of its first array argument.</td><td><a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a>, <a href="/kb/en/mariadb-1019-release-notes/">MariaDB 10.1.9</a></td></tr>
+<tr><td>jbin_file</td><td>Function</td><td>STRING*</td><td>Returns of a (json) file contain.</td><td><a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a>, <a href="/kb/en/mariadb-1019-release-notes/">MariaDB 10.1.9</a></td></tr>
+<tr><td>jbin_get_item</td><td>Function</td><td>STRING*</td><td>Access and returns a json item by a JPATH key.</td><td><a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a>, <a href="/kb/en/mariadb-1019-release-notes/">MariaDB 10.1.9</a></td></tr>
+<tr><td>jbin_insert_item</td><td>Function</td><td>STRING</td><td>Insert item values located to paths.</td><td><a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a></td></tr>
+<tr><td>jbin_item_merge</td><td>Function</td><td>STRING*</td><td>Merges two arrays or two objects.</td><td><a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a>, <a href="/kb/en/mariadb-1019-release-notes/">MariaDB 10.1.9</a></td></tr>
+<tr><td>jbin_object</td><td>Function</td><td>STRING*</td><td>Make a JSON object containing its arguments.</td><td><a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a>, <a href="/kb/en/mariadb-1019-release-notes/">MariaDB 10.1.9</a></td></tr>
+<tr><td>jbin_object_nonull</td><td>Function</td><td>STRING*</td><td>Make a JSON object containing its not null arguments.</td><td><a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a>, <a href="/kb/en/mariadb-1019-release-notes/">MariaDB 10.1.9</a></td></tr>
+<tr><td>jbin_object_add</td><td>Function</td><td>STRING*</td><td>Adds to its first object argument its second argument.</td><td><a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a>, <a href="/kb/en/mariadb-1019-release-notes/">MariaDB 10.1.9</a></td></tr>
+<tr><td>jbin_object_delete</td><td>Function</td><td>STRING*</td><td>Deletes the nth element of its first object argument.</td><td><a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a>, <a href="/kb/en/mariadb-1019-release-notes/">MariaDB 10.1.9</a></td></tr>
+<tr><td>jbin_object_key</td><td>Function</td><td>STRING*</td><td>Make a JSON object for key/value pairs.</td><td><a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a></td></tr>
+<tr><td>jbin_object_list</td><td>Function</td><td>STRING*</td><td>Returns the list of object keys as an array.</td><td><a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a>, <a href="/kb/en/mariadb-1019-release-notes/">MariaDB 10.1.9</a></td></tr>
+<tr><td>jbin_set_item</td><td>Function</td><td>STRING</td><td>Set item values located to paths.</td><td><a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a></td></tr>
+<tr><td>jbin_update_item</td><td>Function</td><td>STRING</td><td>Update item values located to paths.</td><td><a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a></td></tr>
+<tr><td>jfile_make</td><td>Function</td><td>STRING</td><td>Make a json file from its json item first argument.</td><td><a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a>, <a href="/kb/en/mariadb-1019-release-notes/">MariaDB 10.1.9</a></td></tr>
+<tr><td>json_array</td><td>Function</td><td>STRING</td><td>Make a JSON array containing its arguments.</td><td><a href="/kb/en/mariadb-10017-release-notes/">MariaDB 10.0.17</a> until Connect 1.5</td></tr>
+<tr><td>json_array_add</td><td>Function</td><td>STRING</td><td>Adds to its first array argument its second arguments (before <a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a>, <a href="/kb/en/mariadb-1019-release-notes/">MariaDB 10.1.9</a>, all following arguments).</td><td><a href="/kb/en/mariadb-10017-release-notes/">MariaDB 10.0.17</a></td></tr>
+<tr><td>json_array_add_values</td><td>Function</td><td>STRING</td><td>Adds to its first array argument all following arguments.</td><td><a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a>, <a href="/kb/en/mariadb-1019-release-notes/">MariaDB 10.1.9</a></td></tr>
+<tr><td>json_array_delete</td><td>Function</td><td>STRING</td><td>Deletes the nth element of its first array argument.</td><td><a href="/kb/en/mariadb-10018-release-notes/">MariaDB 10.0.18</a></td></tr>
+<tr><td>json_array_grp</td><td>Aggregate</td><td>STRING</td><td>Makes JSON arrays from coming argument.</td><td><a href="/kb/en/mariadb-10017-release-notes/">MariaDB 10.0.17</a></td></tr>
+<tr><td>json_file</td><td>Function</td><td>STRING</td><td>Returns the contains of (json) file.</td><td><a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a>, <a href="/kb/en/mariadb-1019-release-notes/">MariaDB 10.1.9</a></td></tr>
+<tr><td>json_get_item</td><td>Function</td><td>STRING</td><td>Access and returns a json item by a JPATH key.</td><td><a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a>, <a href="/kb/en/mariadb-1019-release-notes/">MariaDB 10.1.9</a></td></tr>
+<tr><td>json_insert_item</td><td>Function</td><td>STRING</td><td>Insert item values located to paths.</td><td><a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a></td></tr>
+<tr><td>json_item_merge</td><td>Function</td><td>STRING</td><td>Merges two arrays or two objects.</td><td><a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a>, <a href="/kb/en/mariadb-1019-release-notes/">MariaDB 10.1.9</a></td></tr>
+<tr><td>json_locate_all</td><td>Function</td><td>STRING</td><td>Returns the JPATH’s of all occurrences of an element.</td><td><a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a>, <a href="/kb/en/mariadb-1019-release-notes/">MariaDB 10.1.9</a></td></tr>
+<tr><td>json_make_array</td><td>Function</td><td>STRING</td><td>Make a JSON array containing its arguments.</td><td>From Connect 1.6</td></tr>
+<tr><td>json_make_object</td><td>Function</td><td>STRING</td><td>Make a JSON object containing its arguments.</td><td>From Connect 1.6</td></tr>
+<tr><td>json_object</td><td>Function</td><td>STRING</td><td>Make a JSON object containing its arguments.</td><td><a href="/kb/en/mariadb-10017-release-notes/">MariaDB 10.0.17</a> until Connect 1.5</td></tr>
+<tr><td>json_object_delete</td><td>Function</td><td>STRING</td><td>Deletes the nth element of its first object argument.</td><td><a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a>, <a href="/kb/en/mariadb-1019-release-notes/">MariaDB 10.1.9</a></td></tr>
+<tr><td>json_object_grp</td><td>Aggregate</td><td>STRING</td><td>Makes JSON objects from coming arguments.</td><td><a href="/kb/en/mariadb-10017-release-notes/">MariaDB 10.0.17</a></td></tr>
+<tr><td>json_object_list</td><td>Function</td><td>STRING</td><td>Returns the list of object keys as an array.</td><td><a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a>, <a href="/kb/en/mariadb-1019-release-notes/">MariaDB 10.1.9</a></td></tr>
+<tr><td>json_object_nonull</td><td>Function</td><td>STRING</td><td>Make a JSON object containing its not null arguments.</td><td><a href="/kb/en/mariadb-10018-release-notes/">MariaDB 10.0.18</a></td></tr>
+<tr><td>json_serialize</td><td>Function</td><td>STRING</td><td>Serializes the return of a “Jbin” function.</td><td><a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a>, <a href="/kb/en/mariadb-1019-release-notes/">MariaDB 10.1.9</a></td></tr>
+<tr><td>json_set_item</td><td>Function</td><td>STRING</td><td>Set item values located to paths.</td><td><a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a></td></tr>
+<tr><td>json_update_item</td><td>Function</td><td>STRING</td><td>Update item values located to paths.</td><td><a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a></td></tr>
+<tr><td>jsonvalue</td><td>Function</td><td>STRING</td><td>Make a JSON value from its unique argument. Called json_value until <a href="/kb/en/mariadb-10022-release-notes/">MariaDB 10.0.22</a> and <a href="/kb/en/mariadb-1018-release-notes/">MariaDB 10.1.8</a>.</td><td><a href="/kb/en/mariadb-10017-release-notes/">MariaDB 10.0.17</a></td></tr>
+<tr><td>jsoncontains</td><td>Function</td><td>INTEGER</td><td>Returns 0 or 1 if an element is contained in the document.</td><td><a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a></td></tr>
+<tr><td>jsoncontains_path</td><td>Function</td><td>INTEGER</td><td>Returns 0 or 1 if a JPATH is contained in the document.</td><td><a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a></td></tr>
+<tr><td>jsonget_string</td><td>Function</td><td>STRING</td><td>Access and returns a string element by a JPATH key.</td><td><a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a>, <a href="/kb/en/mariadb-1019-release-notes/">MariaDB 10.1.9</a></td></tr>
+<tr><td>jsonget_int</td><td>Function</td><td>INTEGER</td><td>Access and returns an integer element by a JPATH key.</td><td><a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a>, <a href="/kb/en/mariadb-1019-release-notes/">MariaDB 10.1.9</a></td></tr>
+<tr><td>jsonget_real</td><td>Function</td><td>REAL</td><td>Access and returns a real element by a JPATH key.</td><td><a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a>, <a href="/kb/en/mariadb-1019-release-notes/">MariaDB 10.1.9</a></td></tr>
+<tr><td>jsonlocate</td><td>Function</td><td>STRING</td><td>Returns the JPATH to access one element.</td><td><a href="/kb/en/mariadb-10023-release-notes/">MariaDB 10.0.23</a>, <a href="/kb/en/mariadb-1019-release-notes/">MariaDB 10.1.9</a></td></tr>
+</tbody></table>
+
+String values are mapped to JSON strings. These strings are automatically escaped to conform to the JSON syntax. The automatic escaping is bypassed when the value has an alias beginning with ‘json_’. This is automatically the case when a JSON UDF argument is another JSON UDF whose name begins with “json_” (not case sensitive). This is why all functions that do not return a Json item are not prefixed by “json_”.
+
+Numeric values are (big) integers, double floating point values or decimal values. Decimal values are character strings containing a numeric representation and are treated as strings. Floating point values contain a decimal point and/or an exponent. Integers are written without decimal points.
+
+To install these functions execute the following commands :<sup class="reference" id="_ref-2">[[3](#_note-2)]</sup>
+
+Note: Json function names are often written on this page with leading upper case letters for clarity. It is possible to do so in SQL queries because function names are case insensitive. However, when creating or dropping them, their names must match the case they are in the library module (lower case from [MariaDB 10.0.23](/kb/en/mariadb-10023-release-notes/), [MariaDB 10.1.9](/kb/en/mariadb-1019-release-notes/)).
+
+On Unix systems (from Connect 1.6):
+
+```sql
+create function jsonvalue returns string soname 'ha_connect.so';
+create function json_make_array returns string soname 'ha_connect.so';
+create function json_array_add_values returns string soname 'ha_connect.so';
+create function json_array_add returns string soname 'ha_connect.so';
+create function json_array_delete returns string soname 'ha_connect.so';
+create function json_make_object returns string soname 'ha_connect.so';
+create function json_object_nonull returns string soname 'ha_connect.so';
+create function json_object_key returns string soname 'ha_connect.so';
+create function json_object_add returns string soname 'ha_connect.so';
+create function json_object_delete returns string soname 'ha_connect.so';
+create function json_object_list returns string soname 'ha_connect.so';
+create function jsonset_grp_size returns integer soname 'ha_connect.so';
+create function jsonget_grp_size returns integer soname 'ha_connect.so';
+create aggregate function json_array_grp returns string soname 'ha_connect.so';
+create aggregate function json_object_grp returns string soname 'ha_connect.so';
+create function jsonlocate returns string soname 'ha_connect.so';
+create function json_locate_all returns string soname 'ha_connect.so';
+create function jsoncontains returns integer soname 'ha_connect.so';
+create function jsoncontains_path returns integer soname 'ha_connect.so';
+create function json_item_merge returns string soname 'ha_connect.so';
+create function json_get_item returns string soname 'ha_connect.so';
+create function jsonget_string returns string soname 'ha_connect.so';
+create function jsonget_int returns integer soname 'ha_connect.so';
+create function jsonget_real returns real soname 'ha_connect.so';
+create function json_set_item returns string soname 'ha_connect.so';
+create function json_insert_item returns string soname 'ha_connect.so';
+create function json_update_item returns string soname 'ha_connect.so';
+create function json_file returns string soname 'ha_connect.so';
+create function jfile_make returns string soname 'ha_connect.so';
+create function json_serialize returns string soname 'ha_connect.so';
+create function jbin_array returns string soname 'ha_connect.so';
+create function jbin_array_add_values returns string soname 'ha_connect.so';
+create function jbin_array_add returns string soname 'ha_connect.so';
+create function jbin_array_delete returns string soname 'ha_connect.so';
+create function jbin_object returns string soname 'ha_connect.so';
+create function jbin_object_nonull returns string soname 'ha_connect.so';
+create function jbin_object_key returns string soname 'ha_connect.so';
+create function jbin_object_add returns string soname 'ha_connect.so';
+create function jbin_object_delete returns string soname 'ha_connect.so';
+create function jbin_object_list returns string soname 'ha_connect.so';
+create function jbin_item_merge returns string soname 'ha_connect.so';
+create function jbin_get_item returns string soname 'ha_connect.so';
+create function jbin_set_item returns string soname 'ha_connect.so';
+create function jbin_insert_item returns string soname 'ha_connect.so';
+create function jbin_update_item returns string soname 'ha_connect.so';
+create function jbin_file returns string soname 'ha_connect.so';
+```
+
+On Unix systems (from [MariaDB 10.0.23](/kb/en/mariadb-10023-release-notes/), [MariaDB 10.1.9](/kb/en/mariadb-1019-release-notes/) until Connect 1.5):
+
+```sql
+create function jsonvalue returns string soname 'ha_connect.so';
+create function json_array returns string soname 'ha_connect.so';
+create function json_array_add_values returns string soname 'ha_connect.so';
+create function json_array_add returns string soname 'ha_connect.so';
+create function json_array_delete returns string soname 'ha_connect.so';
+create function json_object returns string soname 'ha_connect.so';
+create function json_object_nonull returns string soname 'ha_connect.so';
+create function json_object_key returns string soname 'ha_connect.so';
+create function json_object_add returns string soname 'ha_connect.so';
+create function json_object_delete returns string soname 'ha_connect.so';
+create function json_object_list returns string soname 'ha_connect.so';
+create function jsonset_grp_size returns integer soname 'ha_connect.so';
+create function jsonget_grp_size returns integer soname 'ha_connect.so';
+create aggregate function json_array_grp returns string soname 'ha_connect.so';
+create aggregate function json_object_grp returns string soname 'ha_connect.so';
+create function jsonlocate returns string soname 'ha_connect.so';
+create function json_locate_all returns string soname 'ha_connect.so';
+create function jsoncontains returns integer soname 'ha_connect.so';
+create function jsoncontains_path returns integer soname 'ha_connect.so';
+create function json_item_merge returns string soname 'ha_connect.so';
+create function json_get_item returns string soname 'ha_connect.so';
+create function jsonget_string returns string soname 'ha_connect.so';
+create function jsonget_int returns integer soname 'ha_connect.so';
+create function jsonget_real returns real soname 'ha_connect.so';
+create function json_set_item returns string soname 'ha_connect.so';
+create function json_insert_item returns string soname 'ha_connect.so';
+create function json_update_item returns string soname 'ha_connect.so';
+create function json_file returns string soname 'ha_connect.so';
+create function jfile_make returns string soname 'ha_connect.so';
+create function json_serialize returns string soname 'ha_connect.so';
+create function jbin_array returns string soname 'ha_connect.so';
+create function jbin_array_add_values returns string soname 'ha_connect.so';
+create function jbin_array_add returns string soname 'ha_connect.so';
+create function jbin_array_delete returns string soname 'ha_connect.so';
+create function jbin_object returns string soname 'ha_connect.so';
+create function jbin_object_nonull returns string soname 'ha_connect.so';
+create function jbin_object_key returns string soname 'ha_connect.so';
+create function jbin_object_add returns string soname 'ha_connect.so';
+create function jbin_object_delete returns string soname 'ha_connect.so';
+create function jbin_object_list returns string soname 'ha_connect.so';
+create function jbin_item_merge returns string soname 'ha_connect.so';
+create function jbin_get_item returns string soname 'ha_connect.so';
+create function jbin_set_item returns string soname 'ha_connect.so';
+create function jbin_insert_item returns string soname 'ha_connect.so';
+create function jbin_update_item returns string soname 'ha_connect.so';
+create function jbin_file returns string soname 'ha_connect.so';
+```
+
+On WIndows (from Connect 1.6):
+
+```sql
+create function jsonvalue returns string soname 'ha_connect';
+create function json_make_array returns string soname 'ha_connect';
+create function json_array_add_values returns string soname 'ha_connect';
+create function json_array_add returns string soname 'ha_connect';
+create function json_array_delete returns string soname 'ha_connect';
+create function json_make_object returns string soname 'ha_connect';
+create function json_object_nonull returns string soname 'ha_connect';
+create function json_object_key returns string soname 'ha_connect';
+create function json_object_add returns string soname 'ha_connect';
+create function json_object_delete returns string soname 'ha_connect';
+create function json_object_list returns string soname 'ha_connect';
+create function jsonset_grp_size returns integer soname 'ha_connect';
+create function jsonget_grp_size returns integer soname 'ha_connect';
+create aggregate function json_array_grp returns string soname 'ha_connect';
+create aggregate function json_object_grp returns string soname 'ha_connect';
+create function jsonlocate returns string soname 'ha_connect';
+create function json_locate_all returns string soname 'ha_connect';
+create function jsoncontains returns integer soname 'ha_connect';
+create function jsoncontains_path returns integer soname 'ha_connect';
+create function json_item_merge returns string soname 'ha_connect';
+create function json_get_item returns string soname 'ha_connect';
+create function jsonget_string returns string soname 'ha_connect';
+create function jsonget_int returns integer soname 'ha_connect';
+create function jsonget_real returns real soname 'ha_connect';
+create function json_set_item returns string soname 'ha_connect';
+create function json_insert_item returns string soname 'ha_connect';
+create function json_update_item returns string soname 'ha_connect';
+create function json_file returns string soname 'ha_connect';
+create function jfile_make returns string soname 'ha_connect';
+create function json_serialize returns string soname 'ha_connect';
+create function jbin_array returns string soname 'ha_connect';
+create function jbin_array_add_values returns string soname 'ha_connect';
+create function jbin_array_add returns string soname 'ha_connect';
+create function jbin_array_delete returns string soname 'ha_connect';
+create function jbin_object returns string soname 'ha_connect';
+create function jbin_object_nonull returns string soname 'ha_connect';
+create function jbin_object_key returns string soname 'ha_connect';
+create function jbin_object_add returns string soname 'ha_connect';
+create function jbin_object_delete returns string soname 'ha_connect';
+create function jbin_object_list returns string soname 'ha_connect';
+create function jbin_item_merge returns string soname 'ha_connect';
+create function jbin_get_item returns string soname 'ha_connect';
+create function jbin_set_item returns string soname 'ha_connect';
+create function jbin_insert_item returns string soname 'ha_connect';
+create function jbin_update_item returns string soname 'ha_connect';
+create function jbin_file returns string soname 'ha_connect';
+```
+
+On WIndows (until Connect 1.5):
+
+```sql
+create function jsonvalue returns string soname 'ha_connect';
+create function json_array returns string soname 'ha_connect';
+create function json_array_add_values returns string soname 'ha_connect';
+create function json_array_add returns string soname 'ha_connect';
+create function json_array_delete returns string soname 'ha_connect';
+create function json_object returns string soname 'ha_connect';
+create function json_object_nonull returns string soname 'ha_connect';
+create function json_object_key returns string soname 'ha_connect';
+create function json_object_add returns string soname 'ha_connect';
+create function json_object_delete returns string soname 'ha_connect';
+create function json_object_list returns string soname 'ha_connect';
+create function jsonset_grp_size returns integer soname 'ha_connect';
+create function jsonget_grp_size returns integer soname 'ha_connect';
+create aggregate function json_array_grp returns string soname 'ha_connect';
+create aggregate function json_object_grp returns string soname 'ha_connect';
+create function jsonlocate returns string soname 'ha_connect';
+create function json_locate_all returns string soname 'ha_connect';
+create function jsoncontains returns integer soname 'ha_connect';
+create function jsoncontains_path returns integer soname 'ha_connect';
+create function json_item_merge returns string soname 'ha_connect';
+create function json_get_item returns string soname 'ha_connect';
+create function jsonget_string returns string soname 'ha_connect';
+create function jsonget_int returns integer soname 'ha_connect';
+create function jsonget_real returns real soname 'ha_connect';
+create function json_set_item returns string soname 'ha_connect';
+create function json_insert_item returns string soname 'ha_connect';
+create function json_update_item returns string soname 'ha_connect';
+create function json_file returns string soname 'ha_connect';
+create function jfile_make returns string soname 'ha_connect';
+create function json_serialize returns string soname 'ha_connect';
+create function jbin_array returns string soname 'ha_connect';
+create function jbin_array_add_values returns string soname 'ha_connect';
+create function jbin_array_add returns string soname 'ha_connect';
+create function jbin_array_delete returns string soname 'ha_connect';
+create function jbin_object returns string soname 'ha_connect';
+create function jbin_object_nonull returns string soname 'ha_connect';
+create function jbin_object_key returns string soname 'ha_connect';
+create function jbin_object_add returns string soname 'ha_connect';
+create function jbin_object_delete returns string soname 'ha_connect';
+create function jbin_object_list returns string soname 'ha_connect';
+create function jbin_item_merge returns string soname 'ha_connect';
+create function jbin_get_item returns string soname 'ha_connect';
+create function jbin_set_item returns string soname 'ha_connect';
+create function jbin_insert_item returns string soname 'ha_connect';
+create function jbin_update_item returns string soname 'ha_connect';
+create function jbin_file returns string soname 'ha_connect';
+```
+
+Until [MariaDB 10.0.22](/kb/en/mariadb-10022-release-notes/) and [MariaDB 10.1.8](/kb/en/mariadb-1018-release-notes/):
+
+```sql
+create function Json_Array returns string soname 'ha_connect.[so|dll]';
+create function Json_Array_Add returns string soname 'ha_connect.[so|dll]';
+create function Json_Array_Delete returns string soname 'ha_connect.[so|dll]';
+create function Json_Object returns string soname 'ha_connect.[so|dll]';
+create function Json_Object_Nonull returns string soname 'ha_connect.[so|dll]';
+create function Json_Value returns string soname 'ha_connect.[so|dll]';
+create aggregate function Json_Array_Grp returns string soname 'ha_connect.[so|dll]';
+create aggregate function Json_Object_Grp returns string soname 'ha_connect.[so|dll]';
+```
+
+### Json_Array_Add
+
+```sql
+Json_Array_Add(arg1, arg2, [arg3][, arg4][, ...])
+```
+
+Note: In CONNECT version 1.3 (before [MariaDB 10.0.23](/kb/en/mariadb-10023-release-notes/), [MariaDB 10.1.9](/kb/en/mariadb-1019-release-notes/)), this function behaved like the new `Json_Array_Add_Values` function. The following describes this function for CONNECT version 1.4 (from MariaDB [MariaDB 10.0.23](/kb/en/mariadb-10023-release-notes/), 10.1.9) only.
+The first argument must be a JSON array. The second argument is added as member of this array. For example:
+
+```sql
+select Json_Array_Add(Json_Array(56,3.1416,'machin',NULL),
+'One more') Array;
+```
+
+<table><tbody><tr><th>Array</th></tr>
+<tr><td>[56,3.141600,"machin",null,"One more"]</td></tr>
+</tbody></table>
+
+Note: The first array is not escaped, its (alias) name beginning with ‘json_’.
+
+Now we can see how adding an author to the JSAMPLE2 table can alternatively be done:
+
+```sql
+update jsample2 set 
+  json_author = json_array_add(json_author, json_object('Charles' FIRSTNAME, 'Dickens' LASTNAME)) 
+  where isbn = '9782840825685';
+```
+
+Note: Calling a column returning JSON a name prefixed by json_ (like json_author here) is good practice and removes the need to give it an alias to prevent escaping when used as an argument.
+
+Additional arguments:
+If a third integer argument is given, it specifies the position (zero based) of the added value:
+
+```sql
+select Json_Array_Add('[5,3,8,7,9]' json_, 4, 2) Array;
+```
+
+<table><tbody><tr><th>Array</th></tr>
+<tr><td>[5,3,4,8,7,9]</td></tr>
+</tbody></table>
+
+If a string argument is added, it specifies the Json path to the array to be modified. For instance:
+
+```sql
+select Json_Array_Add('{"a":1,"b":2,"c":[3,4]}' json_, 5, 1, 'c');
+```
+
+<table><tbody><tr><th>Json_Array_Add('{"a":1,"b":2,"c":[3, 4]}' json_, 5, 1, 'c')</th></tr>
+<tr><td>{"a":1,"b":2,"c":[3,5,4]}</td></tr>
+</tbody></table>
+
+### Json_Array_Add_Values
+
+##### MariaDB starting with [10.0.23](/kb/en/mariadb-10023-release-notes/)
+
+Json_Array_Add_Values added in CONNECT 1.4 replaces the function Json_Array_Add of CONNECT version 1.3 (before [MariaDB 10.0.23](/kb/en/mariadb-10023-release-notes/), [MariaDB 10.1.9](/kb/en/mariadb-1019-release-notes/)).
+
+```sql
+Json_Array_Add_Values(arg, arglist)
+```
+
+The first argument must be a JSON array string. Then all other arguments are added as members of this array. For example:
+
+```sql
+select Json_Array_Add_Values
+  (Json_Array(56, 3.1416, 'machin', NULL), 'One more', 'Two more') Array;
+```
+
+<table><tbody><tr><th>Array</th></tr>
+<tr><td>[56,3.141600,"machin",null,"One more","Two more"]</td></tr>
+</tbody></table>
+
+### Json_Array_Delete
+
+##### MariaDB starting with [10.0.18](/kb/en/mariadb-10018-release-notes/)
+
+Json_Array_Delete was introduced in [MariaDB 10.0.18](/kb/en/mariadb-10018-release-notes/).
+
+```sql
+Json_Array_Delete(arg1, arg2 [,arg3] [...])
+```
+
+The first argument should be a JSON array. The second argument is an integer indicating the rank (0 based conforming to general json usage) of the element to delete. For example:
+
+```sql
+select Json_Array_Delete(Json_Array(56,3.1416,'foo',NULL),1) Array;
+```
+
+<table><tbody><tr><th>Array</th></tr>
+<tr><td>[56,"foo",null]</td></tr>
+</tbody></table>
+
+Now we can see how to delete the second author from the JSAMPLE2 table:
+
+```sql
+update jsample2 set json_author = json_array_delete(json_author, 1) 
+  where isbn = '9782840825685';
+```
+
+A Json path can be specified as a third string argument
+
+### Json_Array_Grp
+
+```sql
+Json_Array_Grp(arg)
+```
+
+This is an aggregate function that makes an array filled from values coming from the rows retrieved by a query. Let us suppose we have the pet table:
+
+<table><tbody><tr><th>name</th><th>race</th><th>number</th></tr>
+<tr><td>John</td><td>dog</td><td>2</td></tr>
+<tr><td>Bill</td><td>cat</td><td>1</td></tr>
+<tr><td>Mary</td><td>dog</td><td>1</td></tr>
+<tr><td>Mary</td><td>cat</td><td>1</td></tr>
+<tr><td>Lisbeth</td><td>rabbit</td><td>2</td></tr>
+<tr><td>Kevin</td><td>cat</td><td>2</td></tr>
+<tr><td>Kevin</td><td>bird</td><td>6</td></tr>
+<tr><td>Donald</td><td>dog</td><td>1</td></tr>
+<tr><td>Donald</td><td>fish</td><td>3</td></tr>
+</tbody></table>
+
+The query:
+
+```sql
+select name, json_array_grp(race) from pet group by name;
+```
+
+will return:
+
+<table><tbody><tr><th>name</th><td>json_array_grp(race)</td></tr>
+<tr><td>Bill</td><td>["cat"]</td></tr>
+<tr><td>Donald</td><td>["dog","fish"]</td></tr>
+<tr><td>John</td><td>["dog"]</td></tr>
+<tr><td>Kevin</td><td>["cat","bird"]</td></tr>
+<tr><td>Lisbeth</td><td>["rabbit"]</td></tr>
+<tr><td>Mary</td><td>["dog","cat"]</td></tr>
+</tbody></table>
+
+One problem with the JSON aggregate functions is that they construct their result in memory and cannot know the needed amount of storage, not knowing the number of rows of the used table.
+
+This is why the number of values for each group is limited. This limit is the value of the <em>connect_json_grp_size</em> session variable and is equal to 10 by default. Nevertheless, working on a larger table is possible, but only after setting <em>connect_json_grp_size</em> to the ceiling of the number of rows per group for the table. Try not to set it to a very large value to avoid memory exhaustion.
+
+### JsonValue
+
+```sql
+JsonValue (val)
+```
+
+Returns a JSON value as a string, for instance:
+
+```sql
+select JsonValue(3.1416);
+```
+
+<table><tbody><tr><th>JsonValue(3.1416)</th></tr>
+<tr><td>3.141600</td></tr>
+</tbody></table>
+
+Before [MariaDB 10.0.23](/kb/en/mariadb-10023-release-notes/) and [MariaDB 10.1.9](/kb/en/mariadb-1019-release-notes/), this function was called Json_Value, but was renamed to avoid clashing with the [JSON_VALUE](/built-in-functions/special-functions/json-functions/json_value) function.
+
+### Json_Make_Array
+
+```sql
+Json_Make_Array(val1, …, valn)
+```
+
+This function returns a string denoting a JSON array with all its arguments as members. For example:
+
+```sql
+select Json_Make_Array(56, 3.1416, 'My name is "Foo"', NULL);
+```
+
+<table><tbody><tr><th>Json_Make_Array(56, 3.1416, 'My name is "Foo"',N ULL)</th></tr>
+<tr><td>[56,3.141600,"My name is \"Foo\"",null]</td></tr>
+</tbody></table>
+
+Note: The argument list can be void. If so a void array is returned.
+
+This function was named “Json_Array” in previous versions of CONNECT. It was renamed because [MariaDB 10.2](/kb/en/what-is-mariadb-102/) features native JSON functions including a “Json_Array” function. The native function does almost the same as the UDF one but does not accept CONNECT specific arguments such as the result from JBIN functions.
+
+### Json_Make_Object
+
+```sql
+Json_Make_Object(arg1, …, argn)
+```
+
+Return a string denoting a JSON object. For instance:
+
+```sql
+select Json_Make_Object(56, 3.1416, 'machin', NULL);
+```
+
+The object is filled with pairs corresponding to the given arguments. The key of each pair is made from the argument (default or specified) alias.
+
+<table><tbody><tr><th>Json_Make_Object(56, 3.1416, 'machin', NULL)</th></tr>
+<tr><td>{"56":56,"3.1416":3.141600,"machin":"machin","NULL":null}</td></tr>
+</tbody></table>
+
+When needed, it is possible to specify the keys by giving an alias to the arguments:
+
+```sql
+select Json_Make_Object(56 qty, 3.1416 price, 'machin' truc, NULL garanty);
+```
+
+<table><tbody><tr><th>Json_Make_Object(56 qty,3.1416 price,'machin' truc, NULL garanty)</th></tr>
+<tr><td>{"qty":56,"price":3.141600,"truc":"machin","garanty":null}</td></tr>
+</tbody></table>
+
+If the alias is prefixed by ‘json_’ (to prevent escaping) the key name is stripped from that prefix.
+
+This function is chiefly useful when entering values retrieved from a table, the key being by default the column name:
+
+```sql
+select Json_Make_Object(matricule, nom, titre, salaire) from connect.employe where nom = 'PANTIER';
+```
+
+<table><tbody><tr><th>Json_Make_Object(matricule, nom, titre, salaire)</th></tr>
+<tr><td>{"matricule":40567,"nom":"PANTIER","titre":"DIRECTEUR","salaire":14000.000000}</td></tr>
+</tbody></table>
+
+This function was named “Json_Object” in previous versions of CONNECT. It was renamed because [MariaDB 10.2](/kb/en/what-is-mariadb-102/) features native JSON functions including a “Json_Object” function. The native function does what the UDF Json_Object_Key does.
+
+### Json_Object_Delete
+
+##### MariaDB starting with [10.0.23](/kb/en/mariadb-10023-release-notes/)
+
+Json_Object_Delete was added in CONNECT 1.4 (from [MariaDB 10.0.23](/kb/en/mariadb-10023-release-notes/), [MariaDB 10.1.9](/kb/en/mariadb-1019-release-notes/)).
+
+```sql
+Json_Object_Delete(arg1, arg2, [arg3] …):
+```
+
+The first argument must be a JSON object. The second argument is the key of the pair to delete. For example:
+
+```sql
+select Json_Object_Delete('{"item":"T-shirt","qty":27,"price":24.99}' json_old, 'qty') newobj;
+```
+
+<table><tbody><tr><th>newobj</th></tr>
+<tr><td>{"item":"T-shirt","price":24.99}</td></tr>
+</tbody></table>
+
+The third string argument is a Json path to the object to be the target of deletion.
+
+### Json_Object_Grp
+
+```sql
+Json_Object_Grp(arg1,arg2)
+```
+
+This function works like Json_Array_Grp. It makes a JSON object filled with values passed from its first argument. Values passed from the second argument will be the keys associated with the values.
+
+This can be seen with the query:
+
+```sql
+select name, json_object_grp(number,race) from pet group by name;
+```
+
+This query returns:
+
+<table><tbody><tr><th>name</th><th>json_object_grp(number,race)</th></tr>
+<tr><td>Bill</td><td>{"cat":1}</td></tr>
+<tr><td>Donald</td><td>{"dog":1,"fish":3}</td></tr>
+<tr><td>John</td><td>{"dog":2}</td></tr>
+<tr><td>Kevin</td><td>{"cat":2,"bird":6}</td></tr>
+<tr><td>Lisbeth</td><td>{"rabbit":2}</td></tr>
+<tr><td>Mary</td><td>{"dog":1,"cat":1}</td></tr>
+</tbody></table>
+
+### Json_Object_List
+
+##### MariaDB starting with [10.0.23](/kb/en/mariadb-10023-release-notes/)
+
+Json_Object_List was added in CONNECT 1.4 (from [MariaDB 10.0.23](/kb/en/mariadb-10023-release-notes/), [MariaDB 10.1.9](/kb/en/mariadb-1019-release-notes/)).
+
+```sql
+Json_Object_List(arg1, …):
+```
+
+The first argument must be a JSON object. This function returns an array containing the list of all keys existing in the object. For example:
+
+```sql
+select Json_Object_List(Json_Object(56 qty,3.1416 price,'machin' truc, NULL garanty))
+  "Key List";
+```
+
+<table><tbody><tr><th>Key List</th></tr>
+<tr><td>["qty","price","truc","garanty"]</td></tr>
+</tbody></table>
+
+### Json_Object_Nonull
+
+```sql
+Json_Object_Nonull(arg1, …, argn)
+```
+
+This function works like `Json_Object` but “null” arguments are ignored and not inserted in the object.
+Arguments are regarded as “null” if they are JSON null values, void arrays or objects, or arrays or objects containing only null members.
+
+It is mainly used to avoid constructing useless null items when converting tables (see later).
+
+### Json_Object_Add
+
+##### MariaDB starting with [10.0.23](/kb/en/mariadb-10023-release-notes/)
+
+Json_Object_Add was added in CONNECT 1.4 (from [MariaDB 10.0.23](/kb/en/mariadb-10023-release-notes/), [MariaDB 10.1.9](/kb/en/mariadb-1019-release-notes/)).
+
+```sql
+Json_Object_Add(arg1, arg2, [arg3] …)
+```
+
+The first argument must be a JSON object. The second argument is added as a pair to this object. For example:
+
+```sql
+select Json_Object_Add
+  ('{"item":"T-shirt","qty":27,"price":24.99}' json_old,'blue' color) newobj;
+```
+
+<table><tbody><tr><th>newobj</th></tr>
+<tr><td>{"item":"T-shirt","qty":27,"price":24.990000,"color":"blue"}</td></tr>
+</tbody></table>
+
+Note: If the specified key already exists in the object, its value is replaced by the new one.
+
+The third string argument is a Json path to the target object.
+
+### JsonLocate
+
+##### MariaDB starting with [10.0.23](/kb/en/mariadb-10023-release-notes/)
+
+JsonLocate was added in CONNECT 1.4 (from [MariaDB 10.0.23](/kb/en/mariadb-10023-release-notes/), [MariaDB 10.1.9](/kb/en/mariadb-1019-release-notes/)).
+
+```sql
+JsonLocate(arg1, arg2, [arg3], …):
+```
+
+The first argument must be a JSON tree. The second argument is the item to be located. The item to be located can be a constant or a json item. Constant values must be equal in type and value to be found. This is "shallow equality" – strings, integers and doubles won't match.
+
+This function returns the json path to the located item or null if it is not found. For example:
+
+```sql
+select JsonLocate('{"AUTHORS":[{"FN":"Jules", "LN":"Verne"}, 
+  {"FN":"Jack", "LN":"London"}]}' json_, 'Jack') Path;
+```
+
+This query returns:
+
+<table><tbody><tr><th>Path</th></tr>
+<tr><td>AUTHORS:[1]:FN</td></tr>
+</tbody></table>
+
+or, from [MariaDB 10.2.8](/kb/en/mariadb-1028-release-notes/):
+
+<table><tbody><tr><th>Path</th></tr>
+<tr><td>$.AUTHORS[1].FN</td></tr>
+</tbody></table>
+
+The path syntax is the same used in JSON CONNECT tables.
+
+By default, the path of the first occurrence of the item is returned. The third parameter can be used to specify the occurrence whose path is to be returned. For instance:
+
+```sql
+select 
+JsonLocate('[45,28,[36,45],89]',45) first,
+JsonLocate('[45,28,[36,45],89]',45,2) second,
+JsonLocate('[45,28,[36,45],89]',45.0) `wrong type`,
+JsonLocate('[45,28,[36,45],89]','[36,45]' json_) json;
+```
+
+<table><tbody><tr><th>first</th><th>second</th><th>wrong type</th><th>json</th></tr>
+<tr><td>[0]</td><td>[2]:[1]</td><td>&lt;null&gt;</td><td>[2]</td></tr>
+</tbody></table>
+
+or, from [MariaDB 10.2.8](/kb/en/mariadb-1028-release-notes/):
+
+<table><tbody><tr><th>first</th><th>second</th><th>wrong type</th><th>json</th></tr>
+<tr><td>$[0]</td><td>$[2][1]</td><td>&lt;null&gt;</td><td>$[2]</td></tr>
+</tbody></table>
+
+For string items, the comparison is case sensitive by default. However, it is possible to specify a string to be compared case insensitively by giving it an alias beginning by “ci”:
+
+```sql
+select JsonLocate('{"AUTHORS":[{"FN":"Jules", "LN":"Verne"}, 
+  {"FN":"Jack", "LN":"London"}]}' json_, 'VERNE' ci) Path;
+```
+
+<table><tbody><tr><th>Path</th></tr>
+<tr><td>AUTHORS:[0]:LN</td></tr>
+</tbody></table>
+
+or, from [MariaDB 10.2.8](/kb/en/mariadb-1028-release-notes/):
+
+<table><tbody><tr><th>Path</th></tr>
+<tr><td>$.AUTHORS[0].LN</td></tr>
+</tbody></table>
+
+### Json_Locate_All
+
+##### MariaDB starting with [10.0.23](/kb/en/mariadb-10023-release-notes/)
+
+Json_Locate_All was added in CONNECT 1.4 (from [MariaDB 10.0.23](/kb/en/mariadb-10023-release-notes/), [MariaDB 10.1.9](/kb/en/mariadb-1019-release-notes/)).
+
+```sql
+Json_Locate_All(arg1, arg2, [arg3], …):
+```
+
+The first argument must be a JSON item. The second argument is the item to be located. This function returns the paths to all locations of the item as an array of strings. For example:
+
+```sql
+select Json_Locate_All('[[45,28],[[36,45],89]]',45);
+```
+
+This query returns:
+
+<table><tbody><tr><th>All paths</th></tr>
+<tr><td>["[0]:[0]","[1]:[0]:[1]"]</td></tr>
+</tbody></table>
+
+or, from [MariaDB 10.2.8](/kb/en/mariadb-1028-release-notes/):
+
+<table><tbody><tr><th>All paths</th></tr>
+</tbody></table>
+
+["$[0][0]","$[1][0][1]"]
+
+The returned array can be applied other functions. For instance, to get the number of occurrences of an item in a json tree, you can do:
+
+```sql
+select JsonGet_Int(Json_Locate_All('[[45,28],[[36,45],89]]',45), '[#]') "Nb of occurs";
+```
+
+or, from [MariaDB 10.2.8](/kb/en/mariadb-1028-release-notes/):
+
+```sql
+select JsonGet_Int(Json_Locate_All('[[45,28],[[36,45],89]]',45), '$[#]') "Nb of occurs";
+```
+
+The displayed result:
+
+<table><tbody><tr><th>Nb of occurs</th></tr>
+<tr><td>2</td></tr>
+</tbody></table>
+
+If specified, the third integer argument set the depth to search in the document. This means the maximum items in the paths (until [MariaDB 10.2.7](/kb/en/mariadb-1027-release-notes/), the number of ‘:’ separator characters in them plus one). This value defaults to 10 but can be increased for complex documents or reduced to set the maximum wanted depth of the returned paths.
+
+### Json_Item_Merge
+
+##### MariaDB starting with [10.0.23](/kb/en/mariadb-10023-release-notes/)
+
+Json_Item_Merge was added in CONNECT 1.4 (from [MariaDB 10.0.23](/kb/en/mariadb-10023-release-notes/), [MariaDB 10.1.9](/kb/en/mariadb-1019-release-notes/)).
+
+```sql
+Json_Item_Merge(arg1, arg2, …)
+```
+
+This function merges two arrays or two objects. For arrays, this is done by adding to the first array all the values of the second array. For instance:
+
+```sql
+select Json_Item_Merge(Json_Array('a','b','c'), Json_Array('d','e','f')) as "Result"; 
+```
+
+The function returns:
+
+<table><tbody><tr><th>Result</th></tr>
+<tr><td>["a","b","c","d","e","f"]</td></tr>
+</tbody></table>
+
+For objects, the pairs of the second object are added to the first object if the key does not yet exist in it; otherwise the pair of the first object is set with the value of the matching pair of the second object. For instance:
+
+```sql
+select Json_Item_Merge(Json_Object(1 "a", 2 "b", 3 "c"), Json_Object(4 "d",5 "b",6 "f")) 
+  as "Result"; 
+```
+
+The function returns:
+
+<table><tbody><tr><th>Result</th></tr>
+<tr><td>{"a":1,"b":5,"c":3,"d":4,"f":6}</td></tr>
+</tbody></table>
+
+### Json_Get_Item
+
+##### MariaDB starting with [10.1.9](/kb/en/mariadb-1019-release-notes/)
+
+Json_Get_Item was added in CONNECT 1.4 (from [MariaDB 10.1.9](/kb/en/mariadb-1019-release-notes/)).
+
+```sql
+Json_Get_Item(arg1, arg2, …)
+```
+
+This function returns a subset of the json document passed as first argument. The second argument is the json path of the item to be returned and should be one returning a json item (terminated by a ‘*’). If not, the function will try to make it right but this is not foolproof. For instance:
+
+```sql
+select Json_Get_Item(Json_Object('foo' as "first", Json_Array('a', 33) 
+  as "json_second"), 'second') as "item";
+```
+
+The correct path should have been ‘second:*’ (or from [MariaDB 10.2.8](/kb/en/mariadb-1028-release-notes/), ‘second.*’), but in this simple case the function was able to make it right. The returned item:
+
+<table><tbody><tr><th>item</th></tr>
+<tr><td>["a",33]</td></tr>
+</tbody></table>
+
+Note: The array is aliased “json_second” to indicate it is a json item and avoid escaping it. However, the “json_” prefix is skipped when making the object and must not be added to the path.
+
+### JsonGet_String / JsonGet_Int / JsonGet_Real
+
+##### MariaDB starting with [10.1.9](/kb/en/mariadb-1019-release-notes/)
+
+JsonGet_String, JsonGet_Int and JsonGet_Real were added in CONNECT 1.4 (from [MariaDB 10.1.9](/kb/en/mariadb-1019-release-notes/)).
+
+```sql
+JsonGet_String(arg1, arg2, [arg3] …)
+JsonGet_Int(arg1, arg2, [arg3] …)
+JsonGet_Real(arg1, arg2, [arg3] …)
+```
+
+The first argument should be a JSON item. If it is a string with no alias, it will be converted as a json item. The second argument is the path of the item to be located in the first argument and returned, eventually converted according to the used function.  For example:
+
+```sql
+select 
+JsonGet_String('{"qty":7,"price":29.50,"garanty":null}','price') "String",
+JsonGet_Int('{"qty":7,"price":29.50,"garanty":null}','price') "Int",
+JsonGet_Real('{"qty":7,"price":29.50,"garanty":null}','price') "Real";
+```
+
+This query returns:
+
+<table><tbody><tr><th>String</th><th>Int</th><th>Real</th></tr>
+<tr><td>29.50</td><td>29</td><td>29.500000000000000</td></tr>
+</tbody></table>
+
+The function <em>JsonGet_Real</em> can be given a third argument to specify the number of decimal digits of the returned value. For instance:
+
+```sql
+select 
+JsonGet_Real('{"qty":7,"price":29.50,"garanty":null}','price',4) "Real";
+```
+
+This query returns:
+
+<table><tbody><tr><th>String</th></tr>
+<tr><td>29.50</td></tr>
+</tbody></table>
+
+The given path can specify all operators for arrays except the “expand” [X] operator (or from [MariaDB 10.2.8](/kb/en/mariadb-1028-release-notes/), the“expand” [*] operator). For instance:
+
+```sql
+select 
+JsonGet_Int(Json_Array(45,28,36,45,89), '[4]') "Rank",
+JsonGet_Int(Json_Array(45,28,36,45,89), '[#]') "Number",
+JsonGet_String(Json_Array(45,28,36,45,89), '[","]') "Concat",
+JsonGet_Int(Json_Array(45,28,36,45,89), '[+]') "Sum",
+JsonGet_Real(Json_Array(45,28,36,45,89), '[!]', 2) "Avg";
+```
+
+The result:
+
+<table><tbody><tr><th>Rank</th><th>Number</th><th>Concat</th><th>Sum</th><th>Avg</th></tr>
+<tr><td>89</td><td>5</td><td>45,28,36,45,89</td><td>243</td><td>48.60</td></tr>
+</tbody></table>
+
+### Json_Set_Item / Json_Insert_Item / Json_Update_Item
+
+```sql
+Json_{Set | Insert | Update}_Item(json_doc, [item, path [, val, path …]])
+```
+
+These functions insert or update data in a JSON document and return the result. The value/path pairs are evaluated left to right. The document produced by evaluating one pair becomes the new value against which the next pair is evaluated.
+
+- Json_Set_Item	replaces existing values and adds non-existing values.
+- Json_Insert_Item	inserts values without replacing existing values.
+- Json_Update_Item	replaces only existing values.
+
+Example:
+
+```sql
+set @j = Json_Array(1, 2, 3, Json_Object_Key('quatre', 4));
+select Json_Set_Item(@j, 'foo', '[1]', 5, '[3]:cinq') as "Set",
+Json_Insert_Item(@j, 'foo', '[1]', 5, '[3]:cinq') as "Insert",
+Json_Update_Item(@j, 'foo', '[1]', 5, '[3]:cinq') as "Update";
+```
+
+or, from [MariaDB 10.2.8](/kb/en/mariadb-1028-release-notes/):
+
+```sql
+set @j = Json_Array(1, 2, 3, Json_Object_Key('quatre', 4));
+select Json_Set_Item(@j, 'foo', '$[1]', 5, '$[3].cinq') as "Set",
+Json_Insert_Item(@j, 'foo', '$[1]', 5, '$[3].cinq') as "Insert",
+Json_Update_Item(@j, 'foo', '$[1]', 5, '$[3].cinq') as "Update";
+```
+
+This query returns:
+
+<table><tbody><tr><th>Set</th><th>Insert</th><th>Update</th></tr>
+<tr><td>[1,"foo",3,{"quatre":4,"cinq":5}]</td><td>[1,2,3,{"quatre":4,"cinq":5}]</td><td>[1,"foo",3,{"quatre":4}]</td></tr>
+</tbody></table>
+
+### Json_File
+
+##### MariaDB starting with [10.1.9](/kb/en/mariadb-1019-release-notes/)
+
+Json_File was added in CONNECT 1.4 (from [MariaDB 10.1.9](/kb/en/mariadb-1019-release-notes/)).
+
+```sql
+Json_File(arg1, [arg2, [arg3]], …)
+```
+
+The first argument must be a file name. This function returns the text of the file that is supposed to be a json file. If only one argument is specified, the file text is returned without being parsed. Up to two additional arguments can be specified:
+
+A string argument is the path to the sub-item to be returned. An integer argument specifies the pretty format value of the file.
+
+This function is chiefly used to get the json item argument of other json functions from a json file. For instance, supposing the file tb.json is:
+
+```sql
+{ "_id" : 5, "type" : "food", "ratings" : [ 5, 8, 9 ] }
+{ "_id" : 6, "type" : "car", "ratings" : [ 5, 9 ] }
+```
+
+Extracting a value from it can be done with a query such as:
+
+```sql
+select JsonGet_String(Json_File('tb.json', 0), '[1]:type') "Type";
+```
+
+or, from [MariaDB 10.2.8](/kb/en/mariadb-1028-release-notes/):
+
+```sql
+select JsonGet_String(Json_File('tb.json', 0), '$[1].type') "Type";
+```
+
+This query returns:
+
+<table><tbody><tr><th>Type</th></tr>
+<tr><td>car</td></tr>
+</tbody></table>
+
+However, we’ll see that, most of the time, it is better to use Jbin_File or to directly specify the file name in queries. In particular this function should not be used for queries that must modify the json item because, even if the modified json is returned, the file itself would be unchanged.
+
+### Jfile_Make
+
+##### MariaDB starting with [10.1.9](/kb/en/mariadb-1019-release-notes/)
+
+Jfile_Make was added in CONNECT 1.4 (from [MariaDB 10.1.9](/kb/en/mariadb-1019-release-notes/)).
+
+```sql
+Jfile_Make(arg1, arg2, [arg3], …)
+```
+
+The first argument must be a json item (if it is just a string, Jfile_Make will try its best to see if it is a json item or an input file name). The following arguments are a string file name and an integer pretty value (defaulting to 2) in any order. This function creates a json file containing the first argument item.
+
+The returned string value is the created file name. If not specified as an argument, the file name can in some cases be retrieved from the first argument; in such cases the file itself is modified.
+
+This function can be used to create or format a json file. For instance, supposing we want to format the file tb.json, this can be done with the query:
+
+```sql
+select Jfile_Make('tb.json' jfile_, 2);
+```
+
+The tb.json file will be changed to:
+
+```sql
+[
+  {
+    "_id": 5,
+    "type": "food",
+    "ratings": [
+      5,
+      8,
+      9
+    ]
+  },
+  {
+    "_id": 6,
+    "type": "car",
+    "ratings": [
+      5,
+      9
+    ]
+  }
+]
+```
+
+## The “JBIN” return type
+
+Almost all functions returning a json string - whose name begins with <em>Json_</em> - have a counterpart with a name beginning with <em>Jbin_</em>. This is both for performance (speed and memory) as well as for better control of what the functions should do.
+
+This is due to the way CONNECT UDFs work internally. The Json functions, when receiving json strings as parameters, parse them and construct a binary tree in memory. They work on this tree and before returning; serialize this tree to return a new json string.
+
+If the json document is large, this can take up a large amount of time and storage space. It is all right when one simple json function is called – it must be done anyway – but is a waste of time and memory when json functions are used as parameters to other json functions.
+
+To avoid multiple serializing and parsing, the Jbin functions should be used as parameters to other functions. Indeed, they do not serialize the memory document tree, but return a structure allowing the receiving function to have direct access to the memory tree. This saves the serialize-parse steps otherwise needed to pass the argument and removes the need to reallocate the memory of the binary tree, which by the way is 6 to 7 times the size of the json string. For instance:
+
+```sql
+select Json_Object(Jbin_Array_Add(Jbin_Array('a','b','c'), 'd') as "Jbin_foo") as "Result";
+```
+
+This query returns:
+
+<table><tbody><tr><th>Result</th></tr>
+<tr><td>{"foo":["a","b","c","d"]}</td></tr>
+</tbody></table>
+
+Here the binary json tree allocated by <em>Jbin_Array</em> is completed by <em>Jbin_Array_Add</em> and <em>Json_Object</em> and serialized only once to make the final result string. It would be serialized and parsed two more times if using “Json” functions.
+
+Note that Jbin results are recognized as such because they are aliased beginning with “Jbin_”. This is why in the <em>Json_Object</em> function the alias is specified as “Jbin_foo”.
+
+What happens if it is not recognized as such? These functions are declared as returning a string and to take care of this, the returned structure begins with a zero-terminated string. For instance:
+
+```sql
+select Jbin_Array('a','b','c');
+```
+
+This query replies:
+
+<table><tbody><tr><th>Jbin_Array('a','b','c')</th></tr>
+<tr><td>Binary Json array</td></tr>
+</tbody></table>
+
+Note: When testing, the tree returned by a “Jbin” function can be seen using the <em>Json_Serialize</em> function whose unique parameter must be a “Jbin” result. For instance:
+
+```sql
+select Json_Serialize(Jbin_Array('a','b','c'));
+```
+
+This query returns:
+
+<table><tbody><tr><th>Json_Serialize(Jbin_Array('a','b','c'))</th></tr>
+<tr><td>["a","b","c"]</td></tr>
+</tbody></table>
+
+Note: For this simple example, this is equivalent to using the <em>Json_Array</em> function.
+
+### Using a file as json UDF first argument
+
+We have seen that many json UDFs can have an additional argument not yet described. This is in the case where the json item argument was referring to a file. Then the additional integer argument is the pretty value of the json file. It matters only when the first argument is just a file name (to make the UDF understand this argument is a file name, it should be aliased with a name beginning with jfile_) or if the function modifies the file, in which case it will be rewritten with this pretty format.
+
+The json item is created by extracting the required part from the file. This can be the whole file but more often only some of it. There are two ways to specify the sub-item of the file to be used:
+
+1 Specifying it in the <em>Json_File</em> or <em>Jbin_File</em> arguments.
+2 Specifying it in the receiving function (not possible for all functions).
+
+It doesn’t make any difference when the <em>Jbin_File</em> is used but it does with <em>Json_File</em>. For instance:
+
+```sql
+select Jfile_Make('{"a":1, "b":[44, 55]}' json_, 'test.json');
+select Json_Array_Add(Json_File('test.json', 'b'), 66);
+```
+
+The second query returns:
+
+<table><tbody><tr><th>Json_Array_Add(Json_File('test.json', 'b'), 66)</th></tr>
+<tr><td>[44,55,66]</td></tr>
+</tbody></table>
+
+It just returns the – modified -- subset returned by the Json_File function, while the query:
+
+```sql
+select Json_Array_Add(Json_File('test.json'), 66, 'b');
+```
+
+returns what was received from <em>Json_File</em> with the modification made on the subset.
+
+<table><tbody><tr><th>Json_Array_Add(Json_File('test.json'), 66, 'b')</th></tr>
+<tr><td>{"a":1,"b":[44,55,66]}</td></tr>
+</tbody></table>
+
+Note that in both case the test.json file is not modified. This is because the <em>Json_File</em> function returns a string representing all or part of the file text but no information about the file name. This is all right to check what would be the effect of the modification to the file.
+
+However, to have the file modified, use the <em>Jbin_File</em> function or directly give the file name. <em>Jbin_File</em> returns a structure containing the file name, a pointer to the file parsed tree and eventually a pointer to the subset when a path is given as a second argument:
+
+```sql
+select Json_Array_Add(Jbin_File('test.json', 'b'), 66);
+```
+
+This query returns:
+
+<table><tbody><tr><th>Json_Array_Add(Jbin_File('test.json', 'b'), 66)</th></tr>
+<tr><td>test.json</td></tr>
+</tbody></table>
+
+This time the file is modified. This can be checked with:
+
+```sql
+select Json_File('test.json', 3);
+```
+
+<table><tbody><tr><th>Json_File('test.json', 3)</th></tr>
+<tr><td>{"a":1,"b":[44,55,66]}</td></tr>
+</tbody></table>
+
+<span class="cstm-style darkheader-nospace-borders"></span>
+
+The reason why the first argument is returned by such a query is because of tables such as:
+
+```sql
+create table tb (
+n int key,
+jfile_cols char(10) not null);
+insert into tb values(1,'test.json');
+```
+
+In this table, the <em>jfile_cols</em> column just contains a file name. If we update it by:
+
+```sql
+update tb set jfile_cols = select Json_Array_Add(Jbin_File('test.json', 'b'), 66)
+where n = 1;
+```
+
+This is the test.json file that must be modified, not the jfile_cols column. This can be checked by:
+
+```sql
+select JsonGet_String(jfile_cols, '[1]:*') from tb;
+```
+
+<span class="cstm-style darkheader-nospace-borders"></span>
+
+<table><tbody><tr><th>JsonGet_String(jfile_cols, '[1]:*')</th></tr>
+<tr><td>{"a":1,"b":[44,55,66]}</td></tr>
+</tbody></table>
+
+Note: It was an important facility to name the second column of the table beginning by “jfile_” so the json functions knew it was a file name without obliging to specify an alias in the queries.
+
+### Using “Jbin” to control what the query execution does
+
+This is applying in particular when acting on json files. We have seen that a file was not modified when using the <em>Json_File</em> function as an argument to a modifying function because the modifying function just received a copy of the json file. This is not true when using the <em>Jbin_File</em> function that does not serialize the binary document and make it directly accessible. Also, as we have seen earlier, json functions that modify their first file parameter modify the file and return the file name. This is done by directly serializing the internal binary document as a file.
+
+However, the “Jbin” counterpart of these functions does not serialize the binary document and thus does not modify the json file. For example let us compare these two queries:
+
+/* First query */
+
+```sql
+select Json_Object(Jbin_Object_Add(Jbin_File('bt2.json'), 4 as "d") as "Jbin_bt1")
+  as "Result";
+```
+
+/* Second query */
+
+```sql
+select Json_Object(Json_Object_Add(Jbin_File('bt2.json'), 4 as "d") as "Jfile_bt1")
+  as "Result";
+```
+
+Both queries return:
+
+<table><tbody><tr><th>Result</th></tr>
+<tr><td>{"bt1":{"a":1,"b":2,"c":3,"d":4}}</td></tr>
+</tbody></table>
+
+In the first query <em>Jbin_Object_Add</em> does not serialize the document (no “Jbin” functions do) and <em>Json_Object</em> just returns a serialized modified tree. Consequently, the file bt2.json is not modified. This query is all right to copy a modified version of the json file without modifying it.
+
+However, in the second query <em>Json_Object_Add</em> does modify the json file and returns the file name. The <em>Json_Object</em> function receives this file name, reads and parses the file, makes an object from it and returns the serialized result. This modification can be done willingly but can be an unwanted side effect of the query.
+
+Therefore, using “Jbin” argument functions, in addition to being faster and using less memory, are also safer when dealing with json files that should not be modified.
+
+## Using JSON as Dynamic Columns
+
+The JSON nosql language has all the features to be used as an alternative to dynamic columns. For instance, take the following example of dynamic columns:
+
+```sql
+create table assets (
+   item_name varchar(32) primary key, /* A common attribute for all items */
+   dynamic_cols  blob  /* Dynamic columns will be stored here */
+ );
+
+INSERT INTO assets VALUES
+   ('MariaDB T-shirt', COLUMN_CREATE('color', 'blue', 'size', 'XL'));
+
+INSERT INTO assets VALUES
+   ('Thinkpad Laptop', COLUMN_CREATE('color', 'black', 'price', 500));
+
+SELECT item_name, COLUMN_GET(dynamic_cols, 'color' as char) AS color FROM assets;
++-----------------+-------+
+| item_name       | color |
++-----------------+-------+
+| MariaDB T-shirt | blue  |
+| Thinkpad Laptop | black |
++-----------------+-------+
+```
+
+/* Remove a column: */
+
+```sql
+UPDATE assets SET dynamic_cols=COLUMN_DELETE(dynamic_cols, "price")
+  WHERE COLUMN_GET(dynamic_cols, 'color' as char)='black';
+```
+
+/* Add a column: */
+
+```sql
+UPDATE assets SET dynamic_cols=COLUMN_ADD(dynamic_cols, 'warranty', '3 years')
+   WHERE item_name='Thinkpad Laptop';
+```
+
+/* You can also list all columns, or (starting from [MariaDB 10.0.1](/kb/en/mariadb-1001-release-notes/))
+   get them together with their values in JSON format: */
+
+```sql
+SELECT item_name, column_list(dynamic_cols) FROM assets;
++-----------------+---------------------------+
+| item_name       | column_list(dynamic_cols) |
++-----------------+---------------------------+
+| MariaDB T-shirt | `size`,`color`            |
+| Thinkpad Laptop | `color`,`warranty`        |
++-----------------+---------------------------+
+
+SELECT item_name, COLUMN_JSON(dynamic_cols) FROM assets;
++-----------------+----------------------------------------+
+| item_name       | COLUMN_JSON(dynamic_cols)              |
++-----------------+----------------------------------------+
+| MariaDB T-shirt | {"size":"XL","color":"blue"}           |
+| Thinkpad Laptop | {"color":"black","warranty":"3 years"} |
++-----------------+----------------------------------------+
+```
+
+The same result can be obtained with json columns using the json UDF’s:
+
+/* JSON equivalent */
+
+```sql
+create table jassets (
+   item_name varchar(32) primary key, /* A common attribute for all items */
+   json_cols varchar(512)  /* Jason columns will be stored here */
+ );
+
+INSERT INTO jassets VALUES
+   ('MariaDB T-shirt', Json_Object('blue' color, 'XL' size));
+
+INSERT INTO jassets VALUES
+   ('Thinkpad Laptop', Json_Object('black' color, 500 price));
+
+SELECT item_name, JsonGet_String(json_cols, 'color') AS color FROM jassets;
++-----------------+-------+
+| item_name       | color |
++-----------------+-------+
+| MariaDB T-shirt | blue  |
+| Thinkpad Laptop | black |
++-----------------+-------+
+```
+
+/* Remove a column: */
+
+```sql
+UPDATE jassets SET json_cols=Json_Object_Delete(json_cols, 'price')
+ WHERE JsonGet_String(json_cols, 'color')='black';
+```
+
+/* Add a column */
+
+```sql
+UPDATE jassets SET json_cols=Json_Object_Add(json_cols, '3 years' warranty)
+ WHERE item_name='Thinkpad Laptop';
+```
+
+/* You can also list all columns, or get them together with their values in JSON format: */
+
+```sql
+SELECT item_name, Json_Object_List(json_cols) FROM jassets;
++-----------------+-----------------------------+
+| item_name       | Json_Object_List(json_cols) |
++-----------------+-----------------------------+
+| MariaDB T-shirt | ["color","size"]            |
+| Thinkpad Laptop | ["color","warranty"]        |
++-----------------+-----------------------------+
+
+SELECT item_name, json_cols FROM jassets;
++-----------------+----------------------------------------+
+| item_name       | json_cols                              |
++-----------------+----------------------------------------+
+| MariaDB T-shirt | {"color":"blue","size":"XL"}           |
+| Thinkpad Laptop | {"color":"black","warranty":"3 years"} |
++-----------------+----------------------------------------+
+```
+
+However, using JSON brings features not existing in dynamic columns:
+
+- Use of a language used by many implementation and developers.
+- Full support of arrays, currently missing from dynamic columns.
+- Access of subpart of json by JPATH that can include calculations on arrays.
+- Possible references to json files.
+
+With more experience, additional UDFs can be easily written to support new needs.
+
+## Converting Tables to JSON
+
+The JSON UDF’s and the direct Jpath “*” facility are powerful tools to convert table and files to the JSON format. For instance, the file `biblio3.json` we used previously can be obtained by converting the `xsample.xml file`. This can be done like this:
+
+```sql
+create table xj1 (row varchar(500) field_format='*') 
+ engine=connect table_type=JSON file_name='biblio3.json' option_list='jmode=2';
+```
+
+And then&nbsp;:
+
+```sql
+insert into xj1
+  select json_object_nonull(ISBN, language LANG, SUBJECT, 
+    json_array_grp(json_object(authorfn FIRSTNAME, authorln LASTNAME)) json_AUTHOR, TITLE,
+    json_object(translated PREFIX, json_object(tranfn FIRSTNAME, tranln LASTNAME) json_TRANSLATOR) 
+    json_TRANSLATED, json_object(publisher NAME, location PLACE) json_PUBLISHER, date DATEPUB) 
+from xsampall2 group by isbn;
+```
+
+The xj1 table rows will directly receive the Json object made by the select statement used in the insert statement and the table file will be made as shown (xj1 is pretty=2 by default) Its mode is Jmode=2 because the values inserted are strings even if they denote json objects.
+
+Another way to do this is to create a table describing the file format we want before the `biblio3.json` file existed:
+
+```sql
+create table jsampall3 (
+ISBN char(15),
+LANGUAGE char(2) field_format='LANG',
+SUBJECT char(32),
+AUTHORFN char(128) field_format='AUTHOR:[X]:FIRSTNAME',
+AUTHORLN char(128) field_format='AUTHOR:[X]:LASTNAME',
+TITLE char(32),
+TRANSLATED char(32) field_format='TRANSLATOR:PREFIX',
+TRANSLATORFN char(128) field_format='TRANSLATOR:FIRSTNAME',
+TRANSLATORLN char(128) field_format='TRANSLATOR:LASTNAME',
+PUBLISHER char(20) field_format='PUBLISHER:NAME',
+LOCATION char(20) field_format='PUBLISHER:PLACE',
+DATE int(4) field_format='DATEPUB')
+engine=CONNECT table_type=JSON file_name='biblio3.json';
+```
+
+and to populate it by:
+
+```sql
+insert into jsampall3 select * from xsampall;
+```
+
+This is a simpler method. However, the issue is that this method cannot handle the multiple column values. This is why we inserted from `xsampall` not from `xsampall2`. How can we add the missing multiple authors in this table? Here again we must create a utility table able to handle JSON strings.
+
+```sql
+create table xj2 (ISBN char(15), author varchar(150) field_format='AUTHOR:*') 
+  engine=connect table_type=JSON file_name='biblio3.json' option_list='jmode=1';
+
+update xj2 set author =
+(select json_array_grp(json_object(authorfn FIRSTNAME, authorln LASTNAME)) 
+  from xsampall2 where isbn = xj2.isbn);
+```
+
+Voilà&nbsp;!
+
+## Converting json files
+
+We have seen that json files can be formatted differently depending on the pretty option. In particular, big data files should be formatted with pretty equal to 0 when used by a CONNECT json table. The best and simplest way to convert a file from one format to another is to use the <em>Jfile_Make</em> function. Indeed this function makes a file of specified format using the syntax:
+
+```sql
+Jfile_Make(json_document, [file_name], [pretty]);
+```
+
+The file name is optional when the json document comes from a Jbin_File function because the returned structure makes it available. For instance, to convert back the json file tb.json to pretty= 0, this can be simply done by:
+
+```sql
+select Jfile_Make(Jbin_File('tb.json'), 0);
+```
+
+## Performance Consideration
+
+MySQL and PostgreSQL have a JSON data type that is not just text but an internal encoding of JSON data. This is to save parsing time when executing JSON functions. Of course the parse must be done anyway when creating the data and serializing must be done to output the result.
+
+CONNECT directly works on character strings impersonating JSON values with the need of parsing them all the time but with the advantage of working easily on external data. Generally, this is not too penalizing because JSON data are often of some or reasonable size. The only case where it can be a serious problem is when working on a big JSON file.
+
+Then, the file should be formatted or converted to pretty=0. Also, it should not be used directly by JSON UDFs because they parse the whole file, even when only a subset is used. Instead, it should be used by a JSON table created on it. Indeed, JSON tables do not parse the whole document but just the item corresponding to the row they are working on. In addition, indexing can be used by the table as explained previously on this page.
+
+Generally speaking, the maximum flexibility offered by CONNECT is by using JSON tables and JSON UDFs together. Some things are better handled by tables, other by UDFs. The tools are there but it is up to you to discover the best way to resolve your problems.
+
+## Specifying a JSON table Encoding
+
+An important feature of JSON is that strings should in UNICODE. As a matter of fact, all examples we have found on the Internet seemed to be just ASCII. This is because UNICODE is generally encoded in JSON files using UTF8 or UTF16 or UTF32.
+
+To specify the required encoding, just use the data_charset CONNECT option.
+
+## Retrieving JSON data from MongoDB
+
+Classified as a&nbsp;NoSQL&nbsp;database program, MongoDB uses&nbsp;JSON-like documents (BSON) grouped in collections. The simplest way, and only method available before Connect 1.6, to access MongoDB data was to export a collection to a JSON file. This produces a file having the pretty=0 format. Viewed as SQL, a collection is a table and documents are table rows.
+
+Since CONNECT version 1.6, it is now possible to directly access MongoDB collections via their MongoDB C Driver. This is the purpose of the MONGO table type described later. However, JSON tables can also do it in a somewhat different way (providing MONGO support is installed as described for MONGO tables).
+
+It is achieved by specifying the MongoDB connection URI while creating the table. For instance:
+
+```sql
+create or replace table jinvent (
+_id char(24) not null, 
+item char(12) not null,
+instock varchar(300) not null field_format='instock.*')
+engine=connect table_type=JSON tabname='inventory' lrecl=512
+connection='mongodb://localhost:27017';
+```
+
+In this statement, the <em>file_name</em> option was replaced by the <em>connection</em> option. It is the URI enabling to retrieve data from a local or remote MongoDB server. The <em>tabname</em> option is the name of the MongoDB collection that will be used and the <em>dbname</em> option could have been used to indicate the database containing the collection (it defaults to the current database).
+
+The way it works is that the documents retrieved from MongoDB are serialized and CONNECT uses them as if they were read from a file. This implies serializing by MongoDB and parsing by CONNECT and is not the best performance wise. CONNECT tries its best to reduce the data transfer when a query contains a reduced column list and/or a where clause. This way makes all the possibilities of the JSON table type available, such as calculated arrays.
+
+However, to work on large JSON collations, using the MONGO table type is generally the normal way.
+
+Note: JSON tables using the MongoDB access accept the specific MONGO options <em>colist</em>, <em>filter</em> and <em>pipe</em>. They are described in the MONGO table chapter.
+
+## Notes
+
+1 [↑](#_ref-0) The value n can be 0 based or 1 based depending on the base table option. The default is 0 to match what is the current usage in the Json world but it can be set to 1 for tables created in old versions.
+2 [↑](#_ref-1) See&nbsp;for instance: [https://mariadb.com/kb/en/mariadb/json-functions/](/built-in-functions/special-functions/json-functions), [https://github.com/mysqludf/lib_mysqludf_json#readme](https://github.com/mysqludf/lib_mysqludf_json#readme) and [https://blogs.oracle.com/svetasmirnova/entry/json_udf_functions_version_04](https://blogs.oracle.com/svetasmirnova/entry/json_udf_functions_version_04)
+3 [↑](#_ref-2) This will not work when CONNECT is compiled embedded

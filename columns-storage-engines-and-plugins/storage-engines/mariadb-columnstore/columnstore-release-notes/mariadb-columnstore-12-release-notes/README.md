@@ -1,0 +1,8 @@
+# MariaDB ColumnStore 1.2 Release Notes
+
+- [MariaDB ColumnStore 1.2.5 GA Release Notes](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-release-notes/mariadb-columnstore-12-release-notes/mariadb-columnstore-125-ga-release-notes/) — Status: GA | Release Date: 23rd July 2019
+- [MariaDB ColumnStore 1.2.4 GA Release Notes (Release removed)](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-release-notes/mariadb-columnstore-12-release-notes/mariadb-columnstore-124-ga-release-notes-release-removed/) — Status: GA | Release Date: 29th May 2019
+- [MariaDB ColumnStore 1.2.3 GA Release Notes](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-release-notes/mariadb-columnstore-12-release-notes/mariadb-columnstore-123-ga-release-notes/) — Status: GA | Release Date: 21st March 2019
+- [MariaDB ColumnStore 1.2.2 GA Release Notes](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-release-notes/mariadb-columnstore-12-release-notes/mariadb-columnstore-122-ga-release-notes/) — Status: GA | Release Date: 3rd December 2018
+- [MariaDB ColumnStore 1.2.1 Beta Release Notes](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-release-notes/mariadb-columnstore-12-release-notes/mariadb-columnstore-121-beta-release-notes/) — Status: Beta | Release Date: 14th November 2018
+- [MariaDB ColumnStore 1.2.0 Alpha Release Notes](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-release-notes/mariadb-columnstore-12-release-notes/mariadb-columnstore-120-alpha-release-notes/) — Status: Alpha | Release Date: 17th October 2018

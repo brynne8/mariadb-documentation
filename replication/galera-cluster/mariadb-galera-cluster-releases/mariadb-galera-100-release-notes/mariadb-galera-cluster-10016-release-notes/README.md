@@ -1,0 +1,62 @@
+# MariaDB Galera Cluster 10.0.16 Release Notes
+
+The most recent [MariaDB Galera Cluster 10.0](/kb/en/galera/) release is:<br>
+<span class="cstm-style lead"><strong>[MariaDB Galera Cluster 10.0.38](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10038-release-notes)</strong> [Download<span>&nbsp;</span>Now](https://downloads.mariadb.org/mariadb-galera/10.0)</span>
+
+[Download](http://downloads.mariadb.org/mariadb-galera/10.0.16)
+[Release Notes](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10016-release-notes)
+[Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10016-changelog)
+[Overview of MariaDB Galera Cluster](/replication/galera-cluster/what-is-mariadb-galera-cluster)
+
+<strong>Release date:</strong> 29 Jan 2015
+
+This is a release in the MariaDB Galera Cluster 10.0 series. It is a
+<strong><em>[Stable](/kb/en/release-criteria/)</em></strong> (GA) release.  It is a merge of [MariaDB 10.0.16](/kb/en/mariadb-10016-release-notes/)
+and [Galera Cluster](http://codership.com/content/using-galera-cluster) with
+additional bug fixes.
+
+Various articles about MariaDB Galera Cluster, including
+[known limitations](/replication/galera-cluster/mariadb-galera-cluster-known-limitations) and
+[how to get started](/replication/galera-cluster/getting-started-with-mariadb-galera-cluster) are
+available in the <strong>[Galera](/kb/en/galera/)</strong> section of the Knowledge Base.
+
+For a list of changes made in MariaDB Galera Cluster 10.0.16, with links to
+detailed information on each push, see the
+[MariaDB Galera Cluster 10.0.16 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10016-changelog).
+
+## Updates and fixes in this version
+
+- Codership changes: `lp:codership-mysql/5.6` (till rev `4144`).
+
+- [Galera library](http://codership.com/content/using-galera-cluster)
+  versions: 25.3.5, 25.2.9
+
+- Supported wsrep interface API version: 25
+
+## Notes
+
+- Running MariaDB Galera Cluster 5.5 and 10.0 nodes in a cluster is not
+  supported ([MDEV-6257](https://jira.mariadb.org/browse/MDEV-6257))
+
+- New session-only system variable :
+  [wsrep_dirty_reads](/kb/en/galera-cluster-system-variables/#wsrep_dirty_reads)
+  ([MDEV-7476](https://jira.mariadb.org/browse/MDEV-7476))
+
+- MariaDB Galera Cluster supports ROW binlog_format only, thus it discards any
+  request of setting it to any value other than ROW with an error. With this
+  release, this restriction has been eased a bit to allow setting of
+  binlog_format to other formats at SESSION scope. ([MDEV-7322](https://jira.mariadb.org/browse/MDEV-7322))
+
+- Compatibility: Wsrep providers (Galera libraries) other than version 25.x.xx
+  are not supported.
+
+- Compatibility: If Galera v2 and v3 are both being used in the cluster,
+  MariaDB with Galera v3 must be started with
+  [wsrep_provider_options='socket.checksum=1'](/kb/en/wsrep_provider_options/#socketchecksum)
+  in order to make it backward compatible with Galera v2.
+
+- See the [MariaDB 10.0.16 Release Notes](/kb/en/mariadb-10016-release-notes/) and
+  [Changelog](/kb/en/mariadb-10016-changelog/) for more information on the changes in
+  MariaDB.
+
+Thanks, and enjoy MariaDB Galera Cluster!

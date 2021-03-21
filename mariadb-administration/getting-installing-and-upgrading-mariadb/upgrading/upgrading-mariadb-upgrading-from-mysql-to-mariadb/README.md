@@ -1,0 +1,7 @@
+# Upgrading from MySQL to MariaDB
+
+- [Upgrading from MySQL to MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-mariadb-upgrading-from-mysql-to-mariadb/upgrading-from-mysql-to-mariadb/) — Upgrading from MySQL to MariaDB.
+- [Moving from MySQL to MariaDB in Debian 9](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-mariadb-upgrading-from-mysql-to-mariadb/moving-from-mysql-to-mariadb-in-debian-9/) — MariaDB 10.1 is the default mysql server in Debian 9 "Stretch"
+- [Screencast for Upgrading MySQL to MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-mariadb-upgrading-from-mysql-to-mariadb/screencast-for-upgrading-mysql-to-mariadb/) — Screencast for upgrading MySQL 5.1.55 to MariaDB
+- [Upgrading from MySQL 5.7 to MariaDB 10.2](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-mariadb-upgrading-from-mysql-to-mariadb/upgrading-from-mysql-57-to-mariadb-102/) — Following compatibility report was done on 10.2.4 and may get some fixing i...
+- [Upgrading to MariaDB From MySQL 5.0 or Older](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-mariadb-upgrading-from-mysql-to-mariadb/upgrading-to-mariadb-from-mysql-50-or-older/) — Upgrading to MariaDB from MySQL 5.0 (or older version)

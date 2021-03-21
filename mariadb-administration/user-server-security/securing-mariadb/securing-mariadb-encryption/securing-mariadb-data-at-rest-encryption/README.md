@@ -1,0 +1,10 @@
+# Data-at-Rest Encryption
+
+MariaDB supports the use of data-at-rest encryption for tables and tablespaces from [MariaDB 10.1](/kb/en/what-is-mariadb-101/).  For a minor performance overhead of 3-5%, this makes it almost impossible for someone with access to the host system or who steals a hard drive to read the original data.
+
+- [Data-at-Rest Encryption Overview](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/data-at-rest-encryption-overview/) — Having data encrypted will make it hard for someone to steal your data.
+- [Why Encrypt MariaDB Data?](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/why-encrypt-mariadb-data/) — When to use encryption for MariaDB data.
+- [Key Management and Encryption Plugins](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/key-management-and-encryption-plugins/) — MariaDB uses plugins to handle key management and encryption of data.
+- [Encrypting Binary Logs](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/encrypting-binary-logs/) — Data-at-rest encryption for binary logs and relay logs.
+- [Aria Encryption](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/aria-encryption/) — Configuration and use of data-at-rest encryption with the Aria storage engine.
+- [InnoDB Encryption](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/innodb-encryption/) — Articles on using data-at-rest encryption with the InnoDB storage engine.

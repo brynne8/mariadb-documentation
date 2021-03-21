@@ -1,0 +1,33 @@
+# MariaDB Galera 10.0 Changelogs
+
+Changelogs for MariaDB Galera Cluster 10.0.x releases.
+
+- [MariaDB Galera Cluster 10.0.38 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10038-changelog/) — Status: Stable (GA) | Release Date: 4 Feb 2019
+- [MariaDB Galera Cluster 10.0.37 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10037-changelog/) — Status: Stable (GA) | Release Date: 6 Nov 2018
+- [MariaDB Galera Cluster 10.0.36 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10036-changelog/) — Status: Stable (GA) | Release Date: 7 Aug 2018
+- [MariaDB Galera Cluster 10.0.35 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10035-changelog/) — Status: Stable (GA) | Release Date: 9 May 2018
+- [MariaDB Galera Cluster 10.0.34 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10034-changelog/) — Status: Stable (GA) | Release Date: 6 Feb 2018
+- [MariaDB Galera Cluster 10.0.33 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10033-changelog/) — Status: Stable (GA) | Release Date: 14 Nov 2017
+- [MariaDB Galera Cluster 10.0.32 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10032-changelog/) — Status: Stable (GA) | Release Date: 17 Aug 2017
+- [MariaDB Galera Cluster 10.0.31 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10031-changelog/) — Status: Stable (GA) | Release Date: 2 Jun 2017
+- [MariaDB Galera Cluster 10.0.30 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10030-changelog/) — Status: Stable (GA) | Release Date: 22 Mar 2017
+- [MariaDB Galera Cluster 10.0.29 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10029-changelog/) — Status: Stable (GA) | Release Date: 16 Jan 2017
+- [MariaDB Galera Cluster 10.0.28 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10028-changelog/) — Status: Stable (GA) | Release Date: 7 Nov 2016
+- [MariaDB Galera Cluster 10.0.27 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10027-changelog/) — Status: Stable (GA) | Release Date: 29 Aug 2016
+- [MariaDB Galera Cluster 10.0.26 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10026-changelog/) — Status: Stable (GA) | Release Date: 1 Jul 2016
+- [MariaDB Galera Cluster 10.0.25 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10025-changelog/) — Status: Stable (GA) | Release Date: 3 May 2016
+- [MariaDB Galera Cluster 10.0.24 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10024-changelog/) — Status: Stable (GA) | Release Date: 26 Feb 2015
+- [MariaDB Galera Cluster 10.0.23 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10023-changelog/) — Status: Stable (GA) | Release Date: 24 Dec 2015
+- [MariaDB Galera Cluster 10.0.22 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10022-changelog/) — Status: Stable (GA) | Release Date: 19 Nov 2015
+- [MariaDB Galera Cluster 10.0.21 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10021-changelog/) — Status: Stable (GA) | Release Date: 18 Aug 2015
+- [MariaDB Galera Cluster 10.0.20 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10020-changelog/) — Status: Stable (GA) | Release Date: 27 Jun 2015
+- [MariaDB Galera Cluster 10.0.19 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10019-changelog/) — Status: Stable (GA) | Release Date: 18 May 2015
+- [MariaDB Galera Cluster 10.0.17 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10017-changelog/) — Status: Stable (GA) | Release Date: 11 Mar 2015
+- [MariaDB Galera Cluster 10.0.16 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10016-changelog/) — Status: Stable (GA) | Release Date: 29 Jan 2015
+- [MariaDB Galera Cluster 10.0.15 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10015-changelog/) — Status: Stable (GA) | Release Date: 12 Dec 2014
+- [MariaDB Galera Cluster 10.0.14 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10014-changelog/) — Status: Stable (GA) | Release Date: 16 Oct 2014
+- [MariaDB Galera Cluster 10.0.13 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10013-changelog/) — Status: Stable (GA) | Release Date: 3 Sep 2014
+- [MariaDB Galera Cluster 10.0.12 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10012-changelog/) — Status: Stable (GA) | Release Date: 28 Jun 2014
+- [MariaDB Galera Cluster 10.0.11 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10011-changelog/) — Status: Beta | Release Date: 11 Jun 2014
+- [MariaDB Galera Cluster 10.0.10 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-10010-changelog/) — Status: Beta | Release Date: 22 Apr 2014
+- [MariaDB Galera Cluster 10.0.7 Changelog](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-100-changelogs/mariadb-galera-cluster-1007-changelog/) — Status: Alpha | Release Date: 24 Feb 2014

@@ -1,0 +1,7 @@
+# Preparing and Installing MariaDB ColumnStore 1.1.x
+
+- [Preparing for ColumnStore Installation - 1.1.X](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-11x/preparing-for-columnstore-installation-11x/) — Before installing MariaDB ColumnStore, there is some preparation necessary
+- [MariaDB ColumnStore Cluster Test Tool](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-11x/mariadb-columnstore-cluster-test-tool/) — Introduction
+MariaDB ColumnStore Cluster Test Tool is used to validate tha...
+- [Installing and Configuring a Single Server ColumnStore System](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-10x/installing-and-configuring-mariadb-columnstore/) — How to install ColumnStore on a single server system.
+- [Installing and Configuring a Multi Server ColumnStore System - 1.1.X](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-11x/installing-and-configuring-a-multi-server-columnstore-system-11x/) — How to install ColumnStore on a multi-server system

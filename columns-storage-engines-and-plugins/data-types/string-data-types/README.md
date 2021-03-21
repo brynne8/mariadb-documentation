@@ -1,0 +1,25 @@
+# String Data Types
+
+- [String Literals](/sql-statements-structure/sql-language-structure/string-literals/) — Strings are sequences of characters and are enclosed with quotes.
+- [CHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/char/) — Fixed-length string.
+- [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar/) — Variable-length string.
+- [BINARY](/columns-storage-engines-and-plugins/data-types/string-data-types/binary/) — Fixed-length binary byte string.
+- [CHAR BYTE](/columns-storage-engines-and-plugins/data-types/string-data-types/char-byte/) — Alias for BINARY.
+- [VARBINARY](/columns-storage-engines-and-plugins/data-types/string-data-types/varbinary/) — Variable-length binary byte string.
+- [TINYBLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/tinyblob/) — Tiny binary large object up to 255 bytes.
+- [BLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/blob/) — Binary large object up to 65,535 bytes.
+- [BLOB and TEXT Data Types](/columns-storage-engines-and-plugins/data-types/string-data-types/blob-and-text-data-types/) — Binary large object data types and the corresponding TEXT types.
+- [MEDIUMBLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/mediumblob/) — Medium binary large object up to 16,777,215 bytes.
+- [LONGBLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/longblob/) — Long BLOB holding up to 4GB.
+- [TINYTEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/tinytext/) — A TEXT column with a maximum length of 255 characters.
+- [TEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/text/) — A TEXT column with a maximum length of 65,535 characters.
+- [MEDIUMTEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/mediumtext/) — A TEXT column with a maximum length of 16,777,215 characters.
+- [LONGTEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/longtext/) — A TEXT column with a maximum length of 4,294,967,295 characters.
+- [INET6](/columns-storage-engines-and-plugins/data-types/string-data-types/inet6/) — For storage of IPv6 addresses.
+- [JSON Data Type](/columns-storage-engines-and-plugins/data-types/string-data-types/json-data-type/) — Compatibility data type that is an alias for LONGTEXT.
+- [ENUM](/columns-storage-engines-and-plugins/data-types/string-data-types/enum/) — Enumeration, or string object that can have one value chosen from a list of values.
+- [SET Data Type](/columns-storage-engines-and-plugins/data-types/string-data-types/set-data-type/) — Set, or string object that can have 0 or more values chosen from a list of values.
+- [Supported Character Sets and Collations](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/supported-character-sets-and-collations/) — MariaDB supports the following character sets and collations.
+- [Character Sets and Collations](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/) — Setting character set and collation for a language.
+- [Data Type Storage Requirements](/columns-storage-engines-and-plugins/data-types/data-type-storage-requirements/) — Storage requirements for the various data types.
+- [ROW](/columns-storage-engines-and-plugins/data-types/string-data-types/row/) — Data type for stored procedure variables.

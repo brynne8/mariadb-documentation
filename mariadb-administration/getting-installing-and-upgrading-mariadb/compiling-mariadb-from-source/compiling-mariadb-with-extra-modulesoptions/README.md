@@ -1,0 +1,5 @@
+# Compiling MariaDB with Extra Modules/Options
+
+- [Compiling MariaDB with TCMalloc](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/compiling-mariadb-with-extra-modulesoptions/compiling-mariadb-with-tcmalloc/) — TCMalloc is a malloc replacement library optimized for multi-threaded usage.
+- [Compiling MariaDB with Vanilla XtraDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/compiling-mariadb-with-extra-modulesoptions/compiling-mariadb-with-vanilla-xtradb/) — Sometimes, one needs to have MariaDB compiled with Vanilla XtraDB. This pag...
+- [Specifying Which Plugins to Build](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/compiling-mariadb-with-extra-modulesoptions/specifying-which-plugins-to-build/) — Specifying which plugins to build.

@@ -1,0 +1,22 @@
+# Authentication Plugins
+
+When a user attempts to log in, the authentication plugin controls how MariaDB Server determines whether the connection is from a legitimate user.
+
+When creating or altering a user account with the [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant), [CREATE USER](/sql-statements-structure/sql-statements/account-management-sql-commands/create-user) or [ALTER USER](/sql-statements-structure/sql-statements/account-management-sql-commands/alter-user) statements, you can specify the authentication plugin you want the user account to use by providing the `IDENTIFIED VIA` clause. By default, when you issue one of these statements for a user account without specifying an authentication plugin, MariaDB uses the [mysql_native_password](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-mysql_native_password) plugin.
+
+##### MariaDB starting with [10.4](/kb/en/what-is-mariadb-104/)
+
+In [MariaDB 10.4](/kb/en/what-is-mariadb-104/) and later, there are some notable changes, such as:
+
+- You can specify multiple authentication plugins for each user account.
+- The `root@localhost` user created by [mysql_install_db](/clients-utilities/mysql_install_db) is created with the ability to use two authentication plugins. First, it is configured to try to use the [unix_socket](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-unix-socket) authentication plugin. This allows the the `root@localhost` user to login without a password via the local Unix socket file defined by the <a undefined>socket</a> system variable, as long as the login is attempted from a process owned by the operating system `root` user account. Second, if authentication fails with the [unix_socket](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-unix-socket) authentication plugin, then it is configured to try to use the [mysql_native_password](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-mysql_native_password) authentication plugin. However, an invalid password is initially set, so in order to authenticate this way, a password must be set with [SET PASSWORD](/sql-statements-structure/sql-statements/account-management-sql-commands/set-password).
+
+- [Pluggable Authentication Overview](/columns-storage-engines-and-plugins/plugins/authentication-plugins/pluggable-authentication-overview/) — The authentication of users is delegated to plugins.
+- [Authentication Plugin - mysql_native_password](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-mysql_native_password/) — Uses the password hashing algorithm introduced in MySQL 4.1.
+- [Authentication Plugin - mysql_old_password](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-mysql_old_password/) — The mysql_old_password authentication plugin uses the pre-MySQL 4.1 password hashing algorithm.
+- [Authentication Plugin - ed25519](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-ed25519/) — Uses the Elliptic Curve Digital Signature Algorithm to securely store users' passwords.
+- [Authentication Plugin - GSSAPI](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-gssapi/) — The gssapi authentication plugin uses the GSSAPI interface to authenticate with Kerberos or NTLM.
+- [Authentication with Pluggable Authentication Modules (PAM)](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/) — Uses the Pluggable Authentication Module (PAM) framework to authenticate MariaDB users.
+- [Authentication Plugin - Unix Socket](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-unix-socket/) — Uses the user name that owns the process connected to MariaDB's unix socket file.
+- [Authentication Plugin - Named Pipe](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-named-pipe/) — Uses the user name that owns the process connected to MariaDB's named pipe on Windows.
+- [Authentication Plugin - SHA-256](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-sha-256/) — MySQL supports the sha256_password and caching_sha2_password authentication plugins.

@@ -1,0 +1,8 @@
+# User-Defined Functions Security
+
+The MariaDB server imposes a number of limitations on [user-defined functions](/programming-customizing-mariadb/user-defined-functions) for security purposes.
+
+- The INSERT privilege for the mysql database is required to run [CREATE FUNCTION](/programming-customizing-mariadb/user-defined-functions/create-function-udf), as a record will be added to the [mysql.func-table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlfunc-table).
+- The DELETE privilege for the mysql database is required to run [DROP FUNCTION](/programming-customizing-mariadb/user-defined-functions/drop-function-udf) as the corresponding record will be removed from the [mysql.func-table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlfunc-table).
+- UDF object files can only be placed in the plugin directory, as specified by the value of the [plugin_dir](/kb/en/server-system-variables/#plugin_dir) system variable.
+- At least one symbol, beyond the required <em>x()</em> - corresponding to an SQL function <em>X())</em> - is required. These can be <em>x_init()</em>, <em>x_deinit()</em>, <em>xxx_reset()</em>, <em>x_clear()</em> and <em>x_add()</em> functions (see [Creating User-defined Functions](/programming-customizing-mariadb/user-defined-functions/creating-user-defined-functions)). The [allow-suspicious-udfs](/kb/en/mysqld-options/#-allow-suspicious-udfs) mysqld option (by default unset) provides a workaround, permitting only one symbol to be used. This is not recommended, as it opens the possibility of loading shared objects that are not legitimate user-defined functions.

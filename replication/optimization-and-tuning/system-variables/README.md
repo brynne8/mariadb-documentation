@@ -1,0 +1,51 @@
+# System Variables
+
+- [System and Status Variables Added By Major Release](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/) — Lists of status and system variables added in MariaDB major release
+- [Full List of MariaDB Options, System and Status Variables](/mariadb-administration/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables/) — Complete alphabetical list of all MariaDB options as well as system and status variables.
+- [Server Status Variables](/replication/optimization-and-tuning/system-variables/server-status-variables/) — List and description of the Server Status Variables.
+- [Server System Variables](/replication/optimization-and-tuning/system-variables/server-system-variables/) — List of system variables.
+- [Aria Status Variables](/columns-storage-engines-and-plugins/storage-engines/aria/aria-status-variables/) — Aria-related server status variables.
+- [Aria System Variables](/columns-storage-engines-and-plugins/storage-engines/aria/aria-system-variables/) — Aria-related system variables.
+- [Cassandra Status Variables](/columns-storage-engines-and-plugins/storage-engines/legacy-storage-engines/cassandra/cassandra-status-variables/) — Cassandra-related status variables
+- [Cassandra System Variables](/columns-storage-engines-and-plugins/storage-engines/legacy-storage-engines/cassandra/cassandra-system-variables/) — Cassandra system variables
+- [CONNECT System Variables](/columns-storage-engines-and-plugins/storage-engines/connect/connect-system-variables/) — System variables related to the CONNECT storage engine.
+- [Galera Cluster Status Variables](/replication/galera-cluster/galera-cluster-status-variables/) — Galera Cluster Status Variables
+- [Galera Cluster System Variables](/replication/galera-cluster/galera-cluster-system-variables/) — Listing and description of Galera Cluster system variables.
+- [InnoDB Server Status Variables](/replication/optimization-and-tuning/system-variables/innodb-status-variables/) — List and description of InnoDB/XtraDB status variables.
+- [InnoDB System Variables](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-system-variables/) — List and description of XtraDB/InnoDB-related server system variables.
+- [MariaDB Audit Plugin Options and System Variables](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables/) — Description of Server_Audit plugin options and system variables.
+- [MariaDB Audit Plugin - Status Variables](/columns-storage-engines-and-plugins/plugins/mariadb-audit-plugin/mariadb-audit-plugin-status-variables/) — Server Audit plugin status variables
+- [Mroonga Status Variables](/columns-storage-engines-and-plugins/storage-engines/mroonga/mroonga-status-variables/) — Mroonga-related status variables.
+- [Mroonga System Variables](/columns-storage-engines-and-plugins/storage-engines/mroonga/mroonga-system-variables/) — Mroonga-related system variables.
+- [MyISAM System Variables](/columns-storage-engines-and-plugins/storage-engines/myisam-storage-engine/myisam-system-variables/) — MyISAM system variables.
+- [MyRocks Status Variables](/columns-storage-engines-and-plugins/storage-engines/myrocks/myrocks-status-variables/) — MyRocks-related status variables.
+- [MyRocks System Variables](/columns-storage-engines-and-plugins/storage-engines/myrocks/myrocks-system-variables/) — MyRocks server system variables.
+- [OQGRAPH System and Status Variables](/replication/optimization-and-tuning/system-variables/oqgraph-system-and-status-variables/) — List and description of OQGRAPH system and status variables.
+- [Performance Schema Status Variables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables/) — Performance Schema status variables.
+- [Performance Schema System Variables](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables/) — Performance Schema system variables.
+- [Replication and Binary Log Status Variables](/replication/standard-replication/replication-and-binary-log-status-variables/) — Replication and binary log status variables.
+- [Replication and Binary Log System Variables](/replication/standard-replication/replication-and-binary-log-system-variables/) — Replication and binary log system variables.
+- [Semisynchronous Replication Plugin Status Variables](/replication/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables/) — Semisynchronous Replication plugin status variables
+- [Semisynchronous Replication](/replication/standard-replication/semisynchronous-replication/) — Semisynchronous replication.
+- [Sphinx Status Variables](/replication/optimization-and-tuning/system-variables/sphinx-status-variables/) — Sphinx status variables.
+- [Spider Status Variables](/replication/optimization-and-tuning/system-variables/spider-status-variables/) — Spider server status variables.
+- [Spider Server System Variables](/columns-storage-engines-and-plugins/storage-engines/spider/spider-server-system-variables/) — System variables for the Spider storage engine.
+- [SQL_ERROR_LOG Plugin System Variables](/replication/optimization-and-tuning/system-variables/sql_error_log-plugin-system-variables/) — SQL_ERROR_LOG plugin-related system variables.
+- [SSL/TLS Status Variables](/replication/optimization-and-tuning/system-variables/ssltls-status-variables/) — List and description of Transport Layer Security (TLS)-related status variables.
+- [SSL/TLS System Variables](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables/) — List and description of Transport Layer Security (TLS)-related system variables.
+- [Thread Pool System and Status Variables](/replication/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables/) — System and status variables related to the MariaDB thread pool.
+- [TokuDB Status Variables](/columns-storage-engines-and-plugins/storage-engines/tokudb/tokudb-status-variables/) — TokuDB status variables
+- [TokuDB System Variables](/columns-storage-engines-and-plugins/storage-engines/tokudb/tokudb-system-variables/) — TokuDB System Variables
+- [MariaDB Optimization for MySQL Users](/replication/optimization-and-tuning/system-variables/mariadb-optimization-for-mysql-users/) — MariaDB contains many new options and optimizations which, for
+compatibilit...
+- [InnoDB Buffer Pool](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-buffer-pool/) — The most important memory buffer used by InnoDB.
+- [InnoDB Change Buffering](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-change-buffering/) — Buffering INSERT, UPDATE and DELETE  statements for greater efficiency.
+- [Optimizing table_open_cache](/replication/optimization-and-tuning/system-variables/optimizing-table_open_cache/) — Adjusting table_open_cache to improve performance.
+- [Optimizing key_buffer_size](/replication/optimization-and-tuning/system-variables/optimizing-key_buffer_size/) — Optimizing index buffers with key_buffer_size
+- [Segmented Key Cache](/replication/optimization-and-tuning/system-variables/segmented-key-cache/) — Collection of structures for regular MyISAM key caches
+- [Big Query Settings](/replication/optimization-and-tuning/system-variables/big-query-settings/) — Recommended settings for large, IO-bound queries
+- [Sample my.cnf Files](/replication/optimization-and-tuning/system-variables/sample-mycnf-files/) — Place holder for sample my.cnf files, customized for different memory size ...
+- [Handling Too Many Connections](/replication/optimization-and-tuning/system-variables/handling-too-many-connections/) — Dealing with the 'Too many connections' error
+- [System Variable Differences between MariaDB and MySQL](/kb/en/library/server-client-software/mariadb-releases/compatibility-differences/system-variable-differences-between-mariadb-and-mysql/) — Comparison of variable differences between major versions of MariaDB and MySQL.
+- [MariaDB Memory Allocation](/replication/optimization-and-tuning/mariadb-memory-allocation/) — Basic issues in RAM allocation for MariaDB.
+- [Setting Innodb Buffer Pool Size Dynamically](/replication/optimization-and-tuning/system-variables/setting-innodb-buffer-pool-size-dynamically/) — The InnoDB Buffer Pool size can be set dynamically from MariaDB 10.2.2.

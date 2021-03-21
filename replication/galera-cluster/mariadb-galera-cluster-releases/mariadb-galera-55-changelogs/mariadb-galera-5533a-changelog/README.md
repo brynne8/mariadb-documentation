@@ -1,0 +1,983 @@
+# MariaDB Galera 5.5.33a Changelog
+
+The most recent [MariaDB Galera Cluster 5.5](/kb/en/galera/) release is:<br>
+<span class="cstm-style lead"><strong>[MariaDB Galera Cluster 5.5.63](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5563-release-notes)</strong> [Download<span>&nbsp;</span>Now](https://downloads.mariadb.org/mariadb-galera/5.5)</span>
+
+[Download](http://downloads.mariadb.org/mariadb-galera/5.5.33a) |
+[Release Notes](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-5533a-release-notes) |
+<strong>Changelog</strong> |
+[Overview of Galera](/replication/galera-cluster/what-is-mariadb-galera-cluster)
+
+<strong>Release date:</strong> 30 Sep 2013
+
+For the highlights of this release, see the [release notes](/replication/galera-cluster/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-5533a-release-notes).
+
+The revision number links will take you to the revision's page on Launchpad. On
+Launchpad you can view more details of the revision and view diffs of the code
+modified in that revision.
+
+- [Revision #3428](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3428)
+  <span class="cstm-style datetime">2013-09-29 20:53:10 UTC</span>
+<ul start="1"><li>References [Bug #1232890](https://bugs.launchpad.net/bugs/1232890) - Rows_log_event type cast only for row events
+</li></ul>
+- [Revision #3427](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3427)
+  <span class="cstm-style datetime">Fri 2013-09-27 22:32:49 +0200</span>
+<ul start="1"><li>revert the change for auto-rpm-packages for plugins. galera tree should only build galera-server package
+</li></ul>
+- [Revision #3426](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3426)
+  <span class="cstm-style datetime">Fri 2013-09-27 17:07:44 +0300</span>
+<ul start="1"><li>Fix merge error.
+</li></ul>
+- [Revision #3425](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3425) [merge]
+  <span class="cstm-style datetime">Fri 2013-09-27 13:48:58 +0300</span>
+<ul start="1"><li>mariadb-5.5.33a merge
+</li><li>[Revision #3334.48.17](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.48.17)
+   <span class="cstm-style datetime">Thu 2013-09-19 22:24:59 +0200</span>
+<ul start="1"><li>5.5.33a
+</li></ul>
+</li><li>[Revision #3334.48.16](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.48.16)
+   <span class="cstm-style datetime">Thu 2013-09-19 22:24:39 +0200</span>
+<ul start="1"><li>[MDEV-4979](https://jira.mariadb.org/browse/MDEV-4979) mysqld_safe section in my.cnf doesn't have mariadb equivalent
+</li></ul>
+</li><li>[Revision #3334.48.15](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.48.15)
+   <span class="cstm-style datetime">Thu 2013-09-19 20:19:17 +0200</span>
+<ul start="1"><li>[MDEV-5035](https://jira.mariadb.org/browse/MDEV-5035) debian package conflict libmariadbclient18 5.5.33+maria-1wheezy vs. mariadb-server-5.3 5.3.12-mariadb122wheezy
+</li></ul>
+</li><li>[Revision #3334.48.14](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.48.14)
+   <span class="cstm-style datetime">Thu 2013-09-19 20:19:10 +0200</span>
+<ul start="1"><li>[MDEV-5021](https://jira.mariadb.org/browse/MDEV-5021) tokudb ft-index libraries are build with -DWITHOUT_TOKUDB=1
+</li></ul>
+</li><li>[Revision #3334.48.13](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.48.13)
+   <span class="cstm-style datetime">Thu 2013-09-19 20:19:00 +0200</span>
+<ul start="1"><li>[MDEV-5026](https://jira.mariadb.org/browse/MDEV-5026) cannot use system jemalloc
+</li></ul>
+</li><li>[Revision #3334.48.12](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.48.12)
+   <span class="cstm-style datetime">Wed 2013-09-18 17:25:10 +0200</span>
+<ul start="1"><li>[MDEV-5029](https://jira.mariadb.org/browse/MDEV-5029) Crash in [MariaDB 5.5.33](/kb/en/mariadb-5533-release-notes/) with .frm from older MariaDB release
+</li></ul>
+</li><li>[Revision #3334.48.11](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.48.11)
+   <span class="cstm-style datetime">Wed 2013-09-18 10:30:23 +0200</span>
+<ul start="1"><li>fix upgrades when mariadb-galera-server-5.5 is installed
+</li></ul>
+</li><li>[Revision #3334.48.10](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.48.10)
+   <span class="cstm-style datetime">Wed 2013-09-18 09:09:27 +0200</span>
+<ul start="1"><li>[MDEV-5029](https://jira.mariadb.org/browse/MDEV-5029) Crash in [MariaDB 5.5.33](/kb/en/mariadb-5533-release-notes/) with .frm from older MariaDB release
+</li></ul>
+</li><li>[Revision #3334.48.9](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.48.9) [merge]
+   <span class="cstm-style datetime">Tue 2013-09-17 20:44:34 +0200</span>
+<ul start="1"><li>merge with 5.5-release
+</li><li>[Revision #3334.1.564](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.564)
+    <span class="cstm-style datetime">Tue 2013-09-17 17:07:45 +0200</span>
+<ul start="1"><li>mariadb-tokudb-engine deb package is not architecture-independent
+</li></ul>
+</li></ul>
+</li><li>[Revision #3334.48.8](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.48.8)
+   <span class="cstm-style datetime">Tue 2013-09-17 17:37:03 +0400</span>
+<ul start="1"><li>Fixed tokudb with ccache build failure.
+</li></ul>
+</li><li>[Revision #3334.48.7](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.48.7)
+   <span class="cstm-style datetime">Tue 2013-09-17 13:49:49 +0400</span>
+<ul start="1"><li>Fixed jemalloc with ccache build failure.
+</li></ul>
+</li><li>[Revision #3334.48.6](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.48.6) [merge]
+   <span class="cstm-style datetime">Mon 2013-09-16 16:05:53 +0400</span>
+<ul start="1"><li>Merge from 5.3
+</li><li>[Revision #2502.567.142](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2502.567.142)
+    <span class="cstm-style datetime">Mon 2013-09-16 16:03:55 +0400</span>
+<ul start="1"><li>backport from 10.0
+</li></ul>
+</li></ul>
+</li><li>[Revision #3334.48.5](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.48.5) [merge]
+   <span class="cstm-style datetime">Mon 2013-09-16 14:08:43 +0400</span>
+<ul start="1"><li>Merge from 5.3
+</li><li>[Revision #2502.567.141](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2502.567.141)
+    <span class="cstm-style datetime">Mon 2013-09-16 14:07:01 +0400</span>
+<ul start="1"><li>[MDEV-4861](https://jira.mariadb.org/browse/MDEV-4861) TIME/DATETIME arithmetics does not preserve INTERVAL precision Adding tests only.
+</li></ul>
+</li></ul>
+</li><li>[Revision #3334.48.4](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.48.4) [merge]
+   <span class="cstm-style datetime">Mon 2013-09-16 13:54:12 +0400</span>
+<ul start="1"><li>Merge from 5.3 pending merges:   Alexander Barkov 2013-09-16 [MDEV-4870](https://jira.mariadb.org/browse/MDEV-4870) Wrong values of CASE, COALESCE, IF...
+</li><li>[Revision #2502.567.140](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2502.567.140)
+    <span class="cstm-style datetime">Mon 2013-09-16 13:52:13 +0400</span>
+<ul start="1"><li>[MDEV-4870](https://jira.mariadb.org/browse/MDEV-4870) Wrong values of CASE, COALESCE, IFNULL on a combination of different temporal types
+</li></ul>
+</li></ul>
+</li><li>[Revision #3334.48.3](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.48.3) [merge]
+   <span class="cstm-style datetime">Mon 2013-09-16 13:08:19 +0400</span>
+<ul start="1"><li>Merge from 5.3
+</li><li>[Revision #2502.567.139](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2502.567.139)
+    <span class="cstm-style datetime">Mon 2013-09-16 13:03:49 +0400</span>
+<ul start="1"><li>[MDEV-4869](https://jira.mariadb.org/browse/MDEV-4869) Wrong result of MAKETIME(0, 0, -0.1)
+</li></ul>
+</li></ul>
+</li><li>[Revision #3334.48.2](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.48.2) [merge]
+   <span class="cstm-style datetime">Mon 2013-09-16 10:51:03 +0400</span>
+<ul start="1"><li>Merge from 5.3 pending merges:   Alexander Barkov 2013-09-16 [MDEV-4843](https://jira.mariadb.org/browse/MDEV-4843) Wrong data type for TIMESTAMP('200...
+</li><li>[Revision #2502.567.138](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2502.567.138)
+    <span class="cstm-style datetime">Mon 2013-09-16 10:14:41 +0400</span>
+<ul start="1"><li>[MDEV-4843](https://jira.mariadb.org/browse/MDEV-4843) Wrong data type for TIMESTAMP('2001-01-01','10:10:10')
+</li></ul>
+</li></ul>
+</li><li>[Revision #3334.48.1](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.48.1) [merge]
+   <span class="cstm-style datetime">Sun 2013-09-15 17:30:53 -0700</span>
+<ul start="1"><li>Merge 5.3-&gt;5.5
+</li><li>[Revision #2502.567.137](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2502.567.137)
+    <span class="cstm-style datetime">Sun 2013-09-15 12:38:22 -0700</span>
+<ul start="1"><li>Fixed bug [MDEV-5015](https://jira.mariadb.org/browse/MDEV-5015). The patch for [MDEV-4355](https://jira.mariadb.org/browse/MDEV-4355) had a defect: the cached values for bitmaps of used tables were not updated when processing degenerate OR formulas.
+</li></ul>
+</li></ul>
+</li></ul>
+- [Revision #3424](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3424)
+  <span class="cstm-style datetime">Fri 2013-09-27 13:01:14 +0300</span>
+<ul start="1"><li>Updated test results because of new system variables and a new lock variable.
+</li></ul>
+- [Revision #3423](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3423)
+  <span class="cstm-style datetime">Thu 2013-09-26 17:51:01 +0300</span>
+<ul start="1"><li>Merged revisions `3916--3921` from lp:codership/codership-mysql/5.5-23
+</li></ul>
+- [Revision #3422](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3422)
+  <span class="cstm-style datetime">Thu 2013-09-26 16:43:49 +0300</span>
+<ul start="1"><li>Merge revisions `3907--3914` from lp:codership/codership-mysql/5.5-23
+</li></ul>
+- [Revision #3421](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3421)
+  <span class="cstm-style datetime">Thu 2013-09-19 09:21:17 +0200</span>
+<ul start="1"><li>updated test results
+</li></ul>
+- [Revision #3420](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3420)
+  <span class="cstm-style datetime">Wed 2013-09-18 20:55:58 +0200</span>
+<ul start="1"><li>fix broken (after merge) galera deb packaging
+</li></ul>
+- [Revision #3419](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3419)
+  <span class="cstm-style datetime">Wed 2013-09-18 14:59:51 +0200</span>
+<ul start="1"><li>cmake error on osx
+</li></ul>
+- [Revision #3418](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3418) [merge]
+  <span class="cstm-style datetime">Wed 2013-09-18 12:00:23 +0200</span>
+<ul start="1"><li>mariadb-5.5.33 merge
+</li><li>[Revision #3334.1.563](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.563)
+   <span class="cstm-style datetime">Mon 2013-09-16 21:21:15 +0200</span>
+<ul start="1"><li>specify deb conflicts correctly
+</li></ul>
+</li><li>[Revision #3334.1.562](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.562)
+   <span class="cstm-style datetime">Fri 2013-09-13 23:42:29 +0200</span>
+<ul start="1"><li>fix BUILD/compile-solaris-amd64 to produce working binaries
+</li></ul>
+</li><li>[Revision #3334.1.561](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.561)
+   <span class="cstm-style datetime">Fri 2013-09-13 23:42:00 +0200</span>
+<ul start="1"><li>[MDEV-5012](https://jira.mariadb.org/browse/MDEV-5012) Server crashes in Item_ref::real_item on EXPLAIN with select subqueries or views, constant table, derived_merge+derived_with_keys
+</li></ul>
+</li><li>[Revision #3334.1.560](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.560) [merge]
+   <span class="cstm-style datetime">Fri 2013-09-13 14:47:40 +0400</span>
+<ul start="1"><li>Null-merge from 5.3.
+</li><li>[Revision #2502.567.136](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2502.567.136)
+    <span class="cstm-style datetime">Fri 2013-09-13 14:43:10 +0400</span>
+<ul start="1"><li>[MDEV-4724](https://jira.mariadb.org/browse/MDEV-4724) Some temporal functions do not preserve microseconds
+</li></ul>
+</li></ul>
+</li><li>[Revision #3334.1.559](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.559) [merge]
+   <span class="cstm-style datetime">Fri 2013-09-13 13:19:29 +0300</span>
+<ul start="1"><li>merge 5.3-&gt;5.5
+</li><li>[Revision #2502.567.135](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2502.567.135)
+    <span class="cstm-style datetime">Thu 2013-09-12 17:05:29 +0300</span>
+<ul start="1"><li>[MDEV-5005](https://jira.mariadb.org/browse/MDEV-5005): Subquery in Procedure somehow affecting temporary table
+</li></ul>
+</li></ul>
+</li><li>[Revision #3334.1.558](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.558) [merge]
+   <span class="cstm-style datetime">Fri 2013-09-13 12:06:17 +0400</span>
+<ul start="1"><li>Merge from 5.3.
+</li><li>[Revision #2502.579.1](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2502.579.1)
+    <span class="cstm-style datetime">Thu 2013-09-12 21:31:14 +0400</span>
+<ul start="1"><li>[MDEV-4724](https://jira.mariadb.org/browse/MDEV-4724) Some temporal functions do not preserve microseconds
+</li></ul>
+</li></ul>
+</li><li>[Revision #3334.1.557](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.557) [merge]
+   <span class="cstm-style datetime">Thu 2013-09-12 13:54:46 +0400</span>
+<ul start="1"><li>Merge 5.3 -&gt; 5.5
+</li><li>[Revision #2502.567.134](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2502.567.134)
+    <span class="cstm-style datetime">Thu 2013-09-12 13:53:13 +0400</span>
+<ul start="1"><li>[MDEV-5011](https://jira.mariadb.org/browse/MDEV-5011): ERROR Plugin 'MEMORY' has ref_count=1 after shutdown for SJM queries - Provide a special execution path for cleanup of degenerate    non-merged semi-join children of degenerate selects.
+</li></ul>
+</li></ul>
+</li><li>[Revision #3334.1.556](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.556)
+   <span class="cstm-style datetime">Thu 2013-09-12 10:10:09 +0200</span>
+<ul start="1"><li>tokudb buildbot fixes
+</li></ul>
+</li><li>[Revision #3334.1.555](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.555)
+   <span class="cstm-style datetime">Wed 2013-09-11 15:35:49 +0200</span>
+<ul start="1"><li>support ./mtr suite.test,com,bi,na,tions syntax
+</li></ul>
+</li><li>[Revision #3334.1.554](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.554) [merge]
+   <span class="cstm-style datetime">Tue 2013-09-10 23:02:25 +0200</span>
+<ul start="1"><li>merge with 5.5-tokudb tree. In particular:
+<ul start="1"><li>add TokuDB, together with the ft-index library
+</li><li>cmake support, auto-detecting whether tokudb can be built
+</li><li>fix packaging - tokudb-engine.rpm, deb
+</li><li>remove PBXT
+</li><li>add jemalloc
+</li><li>the server is built with jemalloc by default even if TokuDB is not built
+</li><li>documentation files in RPM are installed in the correct location
+</li><li>support for optional deb packages (tokudb has specific build requirements)
+</li><li>move plugins from mariadb-server deb to appropriate debs (server/test/libmariadbclient)
+</li><li>correct mariadb-test.deb to be not architecture-independent
+</li><li>fix out-of-tree builds to never modify in-tree files
+</li><li>new handler::prepare_index_scan() method
+</li></ul>
+</li></ul>
+</li><li>[Revision #3334.1.553](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.553)
+   <span class="cstm-style datetime">Tue 2013-09-10 11:04:14 +0200</span>
+<ul start="1"><li>fix insert.test in <code class="fixed" style="white-space:pre-wrap">--ps-protocol</code>.
+</li></ul>
+</li><li>[Revision #3334.1.552](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.552) [merge]
+   <span class="cstm-style datetime">Tue 2013-09-10 10:08:11 +0400</span>
+<ul start="1"><li>Merge from 5.3
+</li><li>[Revision #2502.567.133](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2502.567.133)
+    <span class="cstm-style datetime">Mon 2013-09-09 15:32:25 +0400</span>
+<ul start="1"><li>[MDEV-4863](https://jira.mariadb.org/browse/MDEV-4863) COALESCE(time_or_datetime) returns wrong results in numeric context
+</li></ul>
+</li></ul>
+</li><li>[Revision #3334.1.551](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.551)
+   <span class="cstm-style datetime">Mon 2013-09-09 19:31:29 +0200</span>
+<ul start="1"><li>[MDEV-4941](https://jira.mariadb.org/browse/MDEV-4941) make: AIX fails with 'Identifier not allowed in cast'; syntax error in include/my_global.h
+</li></ul>
+</li><li>[Revision #3334.1.550](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.550)
+   <span class="cstm-style datetime">Mon 2013-09-09 16:56:35 +0500</span>
+<ul start="1"><li>[MDEV-4472](https://jira.mariadb.org/browse/MDEV-4472) Audit-plugin.  Server-related part of the task.      file_logger became the service.      Data like query_id now are sent to the audit plugin.      Fix for [MDEV-4770](https://jira.mariadb.org/browse/MDEV-4770) ported from 10.0.      Fix added for the read_maria_plugin_info().      Log rotation can be disabled with 'set rotations=0'.
+</li></ul>
+</li><li>[Revision #3334.1.549](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.549)
+   <span class="cstm-style datetime">Sun 2013-09-08 11:36:34 +0200</span>
+<ul start="1"><li>fix for xtradb to compile on windows
+</li></ul>
+</li><li>[Revision #3334.1.548](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.548)
+   <span class="cstm-style datetime">Sat 2013-09-07 22:36:34 +0200</span>
+<ul start="1"><li>fix xtradb to compile in both debug and optimized builds
+</li></ul>
+</li><li>[Revision #3334.1.547](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.547) [merge]
+   <span class="cstm-style datetime">Sat 2013-09-07 13:49:15 +0200</span>
+<ul start="1"><li>Percona-Server-5.5.33-rel31.1.tar.gz
+</li><li>[Revision #0.12.64](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/0.12.64)
+    <span class="cstm-style datetime">Sat 2013-09-07 09:47:42 +0200</span>
+<ul start="1"><li>Percona-Server-5.5.33-rel31.1.tar.gz
+</li></ul>
+</li></ul>
+</li><li>[Revision #3334.1.546](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.546) [merge]
+   <span class="cstm-style datetime">Fri 2013-09-06 22:31:30 +0200</span>
+<ul start="1"><li>mysql-5.5.33 merge
+</li><li>[Revision #3077.188.78](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.78)
+    <span class="cstm-style datetime">Mon 2013-07-15 13:41:27 +0200</span>
+<ul start="1"><li>Removed random passwords feature for Bugfix#17160741 (not applicable for 5.5.X)
+</li></ul>
+</li><li>[Revision #3077.188.77](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.77)
+    <span class="cstm-style datetime">Wed 2013-07-10 19:14:41 +0200</span>
+<ul start="1"><li>Updated spec file for Bug#17080138
+</li></ul>
+</li><li>[Revision #3077.188.76](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.76)
+    <span class="cstm-style datetime">Tue 2013-07-09 20:35:26 +0200</span>
+<ul start="1"><li>Removed directory  /usr/share/mysql/solaris/postinstall-solaris to resolve build error
+</li></ul>
+</li><li>[Revision #3077.188.75](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.75)
+    <span class="cstm-style datetime">Fri 2013-07-05 14:30:15 +0530</span>
+<ul start="1"><li>Bug#17033706 SINCE 5.5.32 &amp; 5.6.12, INNODB CANT START WITH OWN              MULTI-FILE TABLESPACE
+</li></ul>
+</li><li>[Revision #3077.188.74](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.74)
+    <span class="cstm-style datetime">Thu 2013-07-04 16:59:09 +0530</span>
+<ul start="1"><li>Bug #16567381 	DATETIME FIELD COMPARISONS DO NOT WORK PROPERLY                  WITH UTF8_UNICODE_CI COLLATION Problem Description: When comparing datetime values with strings, the utf8_unicode_ci collation  prevents correct comparisons. Consider the below set of queries, it is not  showing any results on a table which has tuples that satisfies the query.  But for collation utf8_general_ci it shows one tuple. <code class="fixed" style="white-space:pre-wrap">set names utf8 collate utf8_unicode_ci;;</code> <code class="fixed" style="white-space:pre-wrap">select * from lang where dt='1979-12-09';</code>
+</li></ul>
+</li><li>[Revision #3077.188.73](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.73) [merge]
+    <span class="cstm-style datetime">Mon 2013-07-01 15:38:16 +0200</span>
+<ul start="1"><li>merge 5.1 =&gt; 5.5
+</li><li>[Revision #2661.848.48](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2661.848.48)
+     <span class="cstm-style datetime">Mon 2013-07-01 15:30:55 +0200</span>
+<ul start="1"><li>Bug#58165: "my_empty_string" gets modified and causes LOAD DATA to fail and Cleanup test case (left outfile in data dir)
+</li></ul>
+</li></ul>
+</li><li>[Revision #3077.188.72](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.72)
+    <span class="cstm-style datetime">Mon 2013-07-01 16:53:30 +0530</span>
+</li><li>[Revision #3077.188.71](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.71) [merge]
+    <span class="cstm-style datetime">Fri 2013-06-28 17:13:44 +0300</span>
+<ul start="1"><li>merge back to the 5.5 tree and fix indentation
+</li><li>[Revision #3077.189.1](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.189.1)
+     <span class="cstm-style datetime">Wed 2013-06-26 12:19:02 +0300</span>
+<ul start="1"><li>Bug #16996656: UNIQUE OPTION PREFIXES NOT DEPRECATED IN 5.5+
+</li></ul>
+</li></ul>
+</li><li>[Revision #3077.188.70](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.70)
+    <span class="cstm-style datetime">Fri 2013-06-28 13:18:16 +0200</span>
+<ul start="1"><li>Bug#16589511: MYSQL_UPGRADE FAILS TO WRITE OUT ENTIRE ALTER TABLE ... ALGORITHM= ... STATEMENT
+</li></ul>
+</li><li>[Revision #3077.188.69](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.69)
+    <span class="cstm-style datetime">Thu 2013-06-27 10:08:30 +0200</span>
+<ul start="1"><li>Updated copyright year in the spec file
+</li></ul>
+</li><li>[Revision #3077.188.68](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.68)
+    <span class="cstm-style datetime">Thu 2013-06-27 09:18:48 +0200</span>
+<ul start="1"><li>- Spec file cleanup for 5.5.33 release to resolve rpm dependencies bugs
+</li></ul>
+</li><li>[Revision #3077.188.67](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.67)
+    <span class="cstm-style datetime">Wed 2013-06-26 11:43:44 +0200</span>
+<ul start="1"><li>Cleaned up spec file for 5.5.33 release
+</li></ul>
+</li><li>[Revision #3077.188.66](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.66)
+    <span class="cstm-style datetime">Wed 2013-06-26 10:02:42 +0530</span>
+<ul start="1"><li>Bug #16994338 PARSING TAP OUTPUT OF UNIT TEST EXPLAIN_FILENAME-T FAILS
+</li></ul>
+</li><li>[Revision #3077.188.65](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.65)
+    <span class="cstm-style datetime">Tue 2013-06-25 09:42:54 +0800</span>
+<ul start="1"><li>Bug 16876388 - PLEASE BACKPORT BUG#16208542 TO 5.5
+</li></ul>
+</li><li>[Revision #3077.188.64](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.64)
+    <span class="cstm-style datetime">Mon 2013-06-24 13:56:11 +0300</span>
+</li><li>[Revision #3077.188.63](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.63)
+    <span class="cstm-style datetime">Mon 2013-06-24 11:11:55 +0530</span>
+<ul start="1"><li>Bug#16753869:INCORRECT TRUNCATION OF LONG SET EXPRESSION IN LOAD DATA CAN CAUSE SQL INJECTION
+</li></ul>
+</li><li>[Revision #3077.188.62](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.62)
+    <span class="cstm-style datetime">Mon 2013-06-24 10:42:40 +0530</span>
+</li><li>[Revision #3077.188.61](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.61)
+    <span class="cstm-style datetime">Fri 2013-06-21 14:18:01 +0200</span>
+<ul start="1"><li>Bug#16945503 ADDRESSSANITIZER BUG IN SYS_VARS Sys_var_keycache inherits from some variant of Sys_var_integer
+</li></ul>
+</li><li>[Revision #3077.188.60](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.60) [merge]
+    <span class="cstm-style datetime">Wed 2013-06-19 14:55:46 +0530</span>
+<ul start="1"><li>Bug#11829813  UNUSED MUTEX COMMIT_THREADS_M
+</li><li>[Revision #2661.848.47](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2661.848.47)
+     <span class="cstm-style datetime">Wed 2013-06-19 14:43:15 +0530</span>
+<ul start="1"><li>Bug#11829813  UNUSED MUTEX COMMIT_THREADS_M
+</li></ul>
+</li></ul>
+</li><li>[Revision #3077.188.59](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.59)
+    <span class="cstm-style datetime">Tue 2013-06-18 17:12:28 +0300</span>
+<ul start="1"><li>Fix Bug#16907783 5.5 STILL CRASHES IN DICT_UPDATE_STATISTICS WITH CONCURRENT DDL AND I_S QUERIES
+</li></ul>
+</li><li>[Revision #3077.188.58](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.58) [merge]
+    <span class="cstm-style datetime">Tue 2013-06-18 15:49:13 +0530</span>
+<ul start="1"><li>[Revision #2661.848.46](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2661.848.46)
+     <span class="cstm-style datetime">Tue 2013-06-18 15:48:00 +0530</span>
+</li></ul>
+</li><li>[Revision #3077.188.57](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.57)
+    <span class="cstm-style datetime">Tue 2013-06-18 10:20:30 +0530</span>
+</li><li>[Revision #3077.188.56](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.56)
+    <span class="cstm-style datetime">Mon 2013-06-17 10:49:53 +0800</span>
+</li><li>[Revision #3077.188.55](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.55)
+    <span class="cstm-style datetime">Fri 2013-06-14 13:33:37 -0500</span>
+<ul start="1"><li>Bug#16914007-INNODB: CHECK TABLE SHOULD MARK AN INDEX AS CORRUPTED IF IT HAS A WRONG COUNT
+</li></ul>
+</li><li>[Revision #3077.188.54](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.54)
+    <span class="cstm-style datetime">Fri 2013-06-14 16:38:27 +0200</span>
+<ul start="1"><li>Bug#14834378 ADDRESSSANITIZER BUG IN FILENAME_TO_TABLENAME Backport to 5.5
+</li></ul>
+</li><li>[Revision #3077.188.53](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.53)
+    <span class="cstm-style datetime">Fri 2013-06-14 10:52:23 +0200</span>
+<ul start="1"><li>Bug#16729109: FIX COMPILATION WARNINGS WITH GCC 4.8 Backport to 5.5 (external Bug#69407 Build warnings with mysql)
+</li></ul>
+</li><li>[Revision #3077.188.52](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.52) [merge]
+    <span class="cstm-style datetime">Fri 2013-06-14 16:55:37 +0530</span>
+<ul start="1"><li>[Revision #2661.848.45](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2661.848.45)
+     <span class="cstm-style datetime">Fri 2013-06-14 16:44:49 +0530</span>
+</li></ul>
+</li><li>[Revision #3077.188.51](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.51) [merge]
+    <span class="cstm-style datetime">Fri 2013-06-14 11:28:29 +0530</span>
+<ul start="1"><li>Bug#13548704 ALGORITHM USED FOR DROPPING PARTITIONED TABLE CAN LEAD              TO INCONSISTENCY  [Merge from 5.1]
+</li><li>[Revision #2661.848.44](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2661.848.44)
+     <span class="cstm-style datetime">Fri 2013-06-14 11:22:05 +0530</span>
+<ul start="1"><li>Bug#13548704 ALGORITHM USED FOR DROPPING PARTITIONED TABLE CAN LEAD              TO INCONSISTENCY 
+</li></ul>
+</li></ul>
+</li><li>[Revision #3077.188.50](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.50)
+    <span class="cstm-style datetime">Thu 2013-06-13 11:14:13 +0530</span>
+<ul start="1"><li>Bug #16417635 INNODB FAILS TO MERGE UNDER-FILLED PAGES DEPENDING ON DELETION ORDER
+</li></ul>
+</li><li>[Revision #3077.188.49](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.49)
+    <span class="cstm-style datetime">Wed 2013-06-12 09:35:33 +0200</span>
+<ul start="1"><li>Bug #14227431: CHARACTER SET MISMATCH WHEN ALTERING FOREIGN KEYS CAN LEAD TO MISSING TABLES
+</li></ul>
+</li><li>[Revision #3077.188.48](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.48)
+    <span class="cstm-style datetime">Wed 2013-06-12 12:00:44 +0530</span>
+</li><li>[Revision #3077.188.47](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.47)
+    <span class="cstm-style datetime">Mon 2013-06-10 22:29:41 +0200</span>
+<ul start="1"><li>Fixing the bug 16919882 - WRONG FSF ADDRESS IN LICENSES HEADERS
+</li></ul>
+</li><li>[Revision #3077.188.46](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.46) [merge]
+    <span class="cstm-style datetime">Tue 2013-06-11 01:20:25 +0530</span>
+<ul start="1"><li>Upmerging the changes from 5.1 for the bug 16919882 - WRONG FSF ADDRESS IN LICENSES HEADERS
+</li><li>[Revision #2661.848.43](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2661.848.43)
+     <span class="cstm-style datetime">Tue 2013-06-11 01:13:07 +0530</span>
+<ul start="1"><li>Bug 16919882 - WRONG FSF ADDRESS IN LICENSES HEADERS
+</li></ul>
+</li></ul>
+</li><li>[Revision #3077.188.45](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.45)
+    <span class="cstm-style datetime">Fri 2013-06-07 21:34:34 +0200</span>
+<ul start="1"><li>Bug #16917425  -DBUILD_CONFIG=MYSQL_RELEASE -DWITH_DEBUG=ON FAILS 4 AND SKIPS 27 MTR TESTS
+</li></ul>
+</li><li>[Revision #3077.188.44](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.44)
+    <span class="cstm-style datetime">Fri 2013-06-07 19:29:56 +0530</span>
+<ul start="1"><li>Bug #16917425  -DBUILD_CONFIG=MYSQL_RELEASE -DWITH_DEBUG=ON FAILS 4 AND SKIPS 27 MTR TESTS
+</li></ul>
+</li><li>[Revision #3077.188.43](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.43) [merge]
+    <span class="cstm-style datetime">Thu 2013-06-06 15:47:55 +0200</span>
+<ul start="1"><li>Null merging the changes of 5.1 branch
+</li><li>[Revision #2661.848.42](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2661.848.42) [merge]
+     <span class="cstm-style datetime">Tue 2013-06-04 18:17:58 +0200</span>
+<ul start="1"><li>Merge from mysql-5.1.70-release
+</li><li>[Revision #2661.852.5](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2661.852.5)
+      <span class="cstm-style datetime">Mon 2013-05-13 15:26:11 +0200</span>
+</li><li>[Revision #2661.852.4](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2661.852.4)
+      <span class="cstm-style datetime">Mon 2013-05-13 15:22:49 +0200</span>
+<ul start="1"><li>Merging the changes for build failures in windows.
+</li></ul>
+</li><li>[Revision #2661.852.3](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2661.852.3)
+      <span class="cstm-style datetime">Fri 2013-05-10 15:27:03 +0200</span>
+<ul start="1"><li>Merging the changes which fixes the build issue for Windows Builds. Description:  Fixing a build issue.  The function innobase_convert_to_system_charset()  is included only in the builtin InnoDB, and it is missed in InnoDB  plugin.  Adding this function in InnoDB plugin as well.
+</li></ul>
+</li><li>[Revision #2661.852.2](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2661.852.2)
+      <span class="cstm-style datetime">Tue 2013-05-07 09:14:51 +0200</span>
+<ul start="1"><li>Updated spec file to ignore upgrade error message
+</li></ul>
+</li><li>[Revision #2661.852.1](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2661.852.1)
+      <span class="cstm-style datetime">Tue 2013-05-07 08:10:09 +0200</span>
+<ul start="1"><li>Merging the changes from 5.1 branch to release branch. Includes bug fixes for: Bug #16722314 FOREIGN KEY ID MODIFIED DURING EXPORT Bug #16754901 PARS_INFO_FREE NOT CALLED IN DICT_CREATE_ADD_FOREIGN_TO_DICTIONARY
+</li></ul>
+</li></ul>
+</li></ul>
+</li><li>[Revision #3077.188.42](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.42) [merge]
+    <span class="cstm-style datetime">Wed 2013-06-05 14:17:01 +0200</span>
+<ul start="1"><li>Merge from mysql-5.5.32-release
+</li></ul>
+</li><li>[Revision #3077.188.41](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.41)
+    <span class="cstm-style datetime">Mon 2013-06-03 16:34:43 +0530</span>
+<ul start="1"><li>BUG #13619394 - MAKE TEST FAILS ON MY_VSNPRINTF
+</li></ul>
+</li><li>[Revision #3077.188.40](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.40)
+    <span class="cstm-style datetime">Wed 2013-05-29 20:09:45 +0530</span>
+<ul start="1"><li>Fix to remove unreferenced components
+</li></ul>
+</li><li>[Revision #3077.188.39](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.39)
+    <span class="cstm-style datetime">Fri 2013-05-24 18:17:36 +0200</span>
+<ul start="1"><li>4371 Maitrayi Sabaratnam	2013-05-23       Bug#13116514 - CREATE LOGFILE GROUP INITIAL_SIZE &amp; UNDO_BUFFER_SIZE FAILS
+</li></ul>
+</li><li>[Revision #3077.188.38](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.38)
+    <span class="cstm-style datetime">Fri 2013-05-24 13:58:42 +0300</span>
+<ul start="1"><li>Bug#16859867 INNODB_BUG14529666 FAILS SPORADICALLY IN VALGRIND
+</li></ul>
+</li><li>[Revision #3077.188.37](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.37) [merge]
+    <span class="cstm-style datetime">Fri 2013-05-24 14:35:00 +0530</span>
+<ul start="1"><li>Bug#16765278 DELETE SQL_LOAD_MB* FILE (TEMP FILE) CREATED BY BINLOG_KILLED_SIMULATE.TEST Merging fix from mysql-5.1
+</li><li>[Revision #2661.848.41](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2661.848.41)
+     <span class="cstm-style datetime">Fri 2013-05-24 14:25:00 +0530</span>
+<ul start="1"><li>Bug#16765278 DELETE SQL_LOAD_MB* FILE (TEMP FILE) CREATED BY BINLOG_KILLED_SIMULATE.TEST
+</li></ul>
+</li></ul>
+</li><li>[Revision #3077.188.36](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.36) [merge]
+    <span class="cstm-style datetime">Thu 2013-05-23 15:02:33 +0530</span>
+<ul start="1"><li>Null merge from 5.1 to 5.5
+</li><li>[Revision #2661.848.40](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2661.848.40)
+     <span class="cstm-style datetime">Thu 2013-05-23 15:00:31 +0530</span>
+<ul start="1"><li>Bug #16119355: PREPARED STATEMENT: READ OF FREED MEMORY WITH                                  STRING CONVERSION FUNCTIONS
+</li></ul>
+</li></ul>
+</li><li>[Revision #3077.188.35](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.35) [merge]
+    <span class="cstm-style datetime">Thu 2013-05-23 11:06:34 +0530</span>
+<ul start="1"><li>Merge from 5.5 to 5.6
+</li><li>[Revision #2661.848.39](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2661.848.39)
+     <span class="cstm-style datetime">Wed 2013-05-22 14:36:43 +0530</span>
+<ul start="1"><li>Bug#11766191:INVALID MEMORY READ IN DO_DIV_MOD WITH DOUBLY ASSIGNED VARIABLES Bug#12608543: CRASHES WITH DECIMALS AND STATEMENT NEEDS TO BE REPREPARED ERRORS
+</li></ul>
+</li></ul>
+</li><li>[Revision #3077.188.34](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.34)
+    <span class="cstm-style datetime">Mon 2013-05-20 14:00:40 +0530</span>
+</li><li>[Revision #3077.188.33](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.33)
+    <span class="cstm-style datetime">Sun 2013-05-19 23:38:06 +0530</span>
+<ul start="1"><li>Bug#16194302: SUPPORT FOR FLOATING-POINT SYSTEM VARIABLES               USING THE PLUGIN INTERFACE.
+</li></ul>
+</li><li>[Revision #3077.188.32](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.32)
+    <span class="cstm-style datetime">Sat 2013-05-18 10:20:56 +0530</span>
+<ul start="1"><li>Bug #12762377 FOREIGN KEYS NOT CONSTRUCTED WHEN APOSTROPHES ARE ESCAPED WITH BACKSLASH
+</li></ul>
+</li><li>[Revision #3077.188.31](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.31)
+    <span class="cstm-style datetime">Fri 2013-05-17 18:54:36 +0530</span>
+<ul start="1"><li>Bug#14236170 MYSQLDUMP 5.5.25 CLIENT FAILS TO DUMP MYSQL DB FROM REMOTE 5.0.96 SERVER
+</li></ul>
+</li><li>[Revision #3077.188.30](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.30)
+    <span class="cstm-style datetime">Fri 2013-05-17 08:00:38 +0530</span>
+</li><li>[Revision #3077.188.29](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.29)
+    <span class="cstm-style datetime">Thu 2013-05-16 18:14:25 +0530</span>
+<ul start="1"><li>BUG #16813006 - UNIT TEST FOR MY_VSNPRINTF FAIL FOR NON GNU COMPILER
+</li></ul>
+</li><li>[Revision #3077.188.28](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.28)
+    <span class="cstm-style datetime">Thu 2013-05-16 11:02:39 +0200</span>
+<ul start="1"><li>Bug#16447483: PARTITION PRUNING IS NOT CORRECT FOR RANGE COLUMNS
+</li></ul>
+</li><li>[Revision #3077.188.27](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.27)
+    <span class="cstm-style datetime">Thu 2013-05-16 16:56:02 +0530</span>
+<ul start="1"><li>Fixing a compiler warning issue.  At the end of the function ibuf_insert_to_index_page_low() add a DBUG_RETURN(NULL).
+</li></ul>
+</li><li>[Revision #3077.188.26](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.26) [merge]
+    <span class="cstm-style datetime">Thu 2013-05-16 14:34:06 +0530</span>
+<ul start="1"><li>Bug 16813007 5.1 =&gt; 5.5 null
+</li><li>[Revision #2661.848.38](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2661.848.38)
+     <span class="cstm-style datetime">Thu 2013-05-16 14:32:09 +0530</span>
+<ul start="1"><li>Bug #16813007 - MTR IS NOT TAKING MYSQLTEST CLIENT USING THE ENV VARIABLE MYSQL_TEST
+</li></ul>
+</li></ul>
+</li><li>[Revision #3077.188.25](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.25) [merge]
+    <span class="cstm-style datetime">Thu 2013-05-16 14:19:57 +0530</span>
+<ul start="1"><li>Bug 16813007 5.1 =&gt; 5.5
+</li><li>[Revision #2661.851.1](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2661.851.1)
+     <span class="cstm-style datetime">Thu 2013-05-16 14:18:04 +0530</span>
+<ul start="1"><li>Bug #16813007 - MTR IS NOT TAKING MYSQLTEST CLIENT USING THE ENV VARIABLE MYSQL_TEST
+</li></ul>
+</li></ul>
+</li><li>[Revision #3077.188.24](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.24) [merge]
+    <span class="cstm-style datetime">Thu 2013-05-16 14:05:51 +0530</span>
+<ul start="1"><li>Null merge from mysql-5.1 to mysql-5.5
+</li><li>[Revision #2661.848.37](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2661.848.37)
+     <span class="cstm-style datetime">Thu 2013-05-16 14:05:05 +0530</span>
+<ul start="1"><li>Bug #16806366 	BOGUS CALL TO LOCK_REC_RESTORE_FROM_PAGE_INFIMUM IN  INSERT BUFFER MERGE
+</li></ul>
+</li></ul>
+</li><li>[Revision #3077.188.23](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.23) [merge]
+    <span class="cstm-style datetime">Thu 2013-05-16 13:58:26 +0530</span>
+<ul start="1"><li>Merge from mysql-5.1 to mysql-5.5
+</li><li>[Revision #2661.850.1](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2661.850.1)
+     <span class="cstm-style datetime">Thu 2013-05-16 10:26:09 +0530</span>
+<ul start="1"><li>Bug #16806366 	BOGUS CALL TO LOCK_REC_RESTORE_FROM_PAGE_INFIMUM IN  INSERT BUFFER MERGE
+</li></ul>
+</li></ul>
+</li><li>[Revision #3077.188.22](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.22) [merge]
+    <span class="cstm-style datetime">Thu 2013-05-16 09:01:11 +0200</span>
+<ul start="1"><li>Merge from mysql-5.1 to mysql-5.5
+</li><li>[Revision #2661.848.36](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2661.848.36)
+     <span class="cstm-style datetime">Thu 2013-05-16 08:09:48 +0200</span>
+<ul start="1"><li>Bug#16807394: PREVENT NEW ERROR MESSAGES FROM BEING ADDED TO 5.5
+</li></ul>
+</li></ul>
+</li><li>[Revision #3077.188.21](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.21)
+    <span class="cstm-style datetime">Thu 2013-05-16 13:34:50 +0800</span>
+</li><li>[Revision #3077.188.20](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.20)
+    <span class="cstm-style datetime">Thu 2013-05-16 10:01:06 +0530</span>
+<ul start="1"><li>Bug #16411457  MASTER THREAD CANNOT EXIT FLUSH_LOOP WHEN INNODB_FAST_SHUTDOWN IS 2
+</li></ul>
+</li><li>[Revision #3077.188.19](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.19) [merge]
+    <span class="cstm-style datetime">Wed 2013-05-15 22:50:44 +0300</span>
+<ul start="1"><li>Merge mysql-5.1 to mysql-5.5.
+</li><li>[Revision #2661.848.35](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2661.848.35)
+     <span class="cstm-style datetime">Wed 2013-05-15 22:40:29 +0300</span>
+<ul start="1"><li>Bug#16736929 PAGE_ZIP_DECOMPRESS() FAILS ON EMPTY RECORD
+</li></ul>
+</li></ul>
+</li><li>[Revision #3077.188.18](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.18)
+    <span class="cstm-style datetime">Wed 2013-05-15 10:47:19 -0400</span>
+<ul start="1"><li>Bug#16622478 INNODB'S THREAD CONCURRENCY TICKETS MIGHT BE RELEASED AFTER A ROW IS READ
+</li></ul>
+</li><li>[Revision #3077.188.17](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.17)
+    <span class="cstm-style datetime">Wed 2013-05-15 07:59:01 +0200</span>
+</li><li>[Revision #3077.188.16](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.16)
+    <span class="cstm-style datetime">Tue 2013-05-14 22:52:42 +0530</span>
+<ul start="1"><li>Bug#16607258 :Linker Errors Due To Inclusion Of An Implementation File                            In log_event.h
+</li></ul>
+</li><li>[Revision #3077.188.15](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.15)
+    <span class="cstm-style datetime">Mon 2013-05-13 22:05:56 +0800</span>
+<ul start="1"><li>Bug#14529666 INNODB_BUFFER_PAGE DOES NOT MARK CHANGE BUFFER PAGES APPROPRIATELY
+</li></ul>
+</li><li>[Revision #3077.188.14](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.14)
+    <span class="cstm-style datetime">Mon 2013-05-13 17:15:25 +0530</span>
+<ul start="1"><li>Bug#12328597 - MULTIPLE COUNT(DISTINCT) IN SAME SELECT FALSE                 WITH COMPOSITE KEY COLUMNS
+</li></ul>
+</li><li>[Revision #3077.188.13](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.13) [merge]
+    <span class="cstm-style datetime">Mon 2013-05-13 12:27:33 +0530</span>
+<ul start="1"><li>Null merge from mysql-5.1 to mysql-5.5
+</li><li>[Revision #2661.848.34](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2661.848.34)
+     <span class="cstm-style datetime">Mon 2013-05-13 12:01:17 +0530</span>
+</li></ul>
+</li><li>[Revision #3077.188.12](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.12) [merge]
+    <span class="cstm-style datetime">Sun 2013-05-12 19:45:42 +0530</span>
+<ul start="1"><li>Merge from mysql-5.1 to mysql-5.5
+</li><li>[Revision #2661.848.33](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2661.848.33)
+     <span class="cstm-style datetime">Sun 2013-05-12 19:41:25 +0530</span>
+<ul start="1"><li>Fixing a build issue.  In InnoDB plugin, the function innobase_convert_to_filename_charset() was by mistake kept within the conditional compilation of UNIV_COMPILE_TEST_FUNCS.  Now placing the function out of UNIV_COMPILE_TEST_FUNCS.  Also, removed the unnecessary log message (as in 5.6+).
+</li></ul>
+</li></ul>
+</li><li>[Revision #3077.188.11](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.11) [merge]
+    <span class="cstm-style datetime">Fri 2013-05-10 19:21:40 +0530</span>
+<ul start="1"><li>Null merge from 5.1 to 5.5
+</li><li>[Revision #2661.848.32](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2661.848.32)
+     <span class="cstm-style datetime">Fri 2013-05-10 19:18:21 +0530</span>
+<ul start="1"><li>Bug#16119355:PREPARED STATEMENT: READ OF FREED MEMORY WITH STRING CONVERSION FUNCTIONS
+</li></ul>
+</li></ul>
+</li><li>[Revision #3077.188.10](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.10) [merge]
+    <span class="cstm-style datetime">Fri 2013-05-10 15:38:25 +0530</span>
+<ul start="1"><li>Merge from mysql-5.1 to mysql-5.5
+</li><li>[Revision #2661.848.31](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2661.848.31)
+     <span class="cstm-style datetime">Fri 2013-05-10 15:35:40 +0530</span>
+<ul start="1"><li>Fixing a build issue.  The function innobase_convert_to_system_charset() is included only in the builtin InnoDB, and it is missed in InnoDB plugin.  Adding this function in InnoDB plugin as well.
+</li></ul>
+</li></ul>
+</li><li>[Revision #3077.188.9](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.9)
+    <span class="cstm-style datetime">Thu 2013-05-09 14:01:51 +0530</span>
+</li><li>[Revision #3077.188.8](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.8)
+    <span class="cstm-style datetime">Wed 2013-05-08 12:52:12 +0200</span>
+<ul start="1"><li>Bug#16779374: NEW ERROR MESSAGE ADDED TO 5.5 AFTER 5.6 GA - REUSING               NUMBER ALREADY USED BY 5.6
+</li></ul>
+</li><li>[Revision #3077.188.7](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.7) [merge]
+    <span class="cstm-style datetime">Tue 2013-05-07 18:00:00 +0530</span>
+<ul start="1"><li>Merge from 5.1 to 5.5
+</li><li>[Revision #2661.848.30](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2661.848.30)
+     <span class="cstm-style datetime">Tue 2013-05-07 16:08:48 +0530</span>
+<ul start="1"><li>Bug #16119355: PREPARED STATEMENT: READ OF FREED MEMORY WITH                            STRING CONVERSION FUNCTIONS
+</li></ul>
+</li></ul>
+</li><li>[Revision #3077.188.6](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.6) [merge]
+    <span class="cstm-style datetime">Tue 2013-05-07 13:14:01 +0400</span>
+<ul start="1"><li>5.1 -&gt; 5.5 merge
+</li><li>[Revision #2661.848.29](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2661.848.29)
+     <span class="cstm-style datetime">Tue 2013-05-07 13:10:58 +0400</span>
+<ul start="1"><li>Bug#16095534 CRASH: PREPARED STATEMENT CRASHES IN ITEM_BOOL_FUNC2::FIX_LENGTH_AND_DEC The problem happened due to broken left expression in Item_in_optimizer object. In case of the bug left expression is runtime created Item_outer_ref item which is deleted at the end of the statement and one of Item_in_optimizer arguments becomes bad when re-executed. The fix is to use real_item() instead of original left expression. Note: It feels a bit weird that after preparing, the field is directly part of the generated Item_func_eq, whereas in execution it is replaced with an Item_outer_ref wrapper object.
+</li></ul>
+</li></ul>
+</li><li>[Revision #3077.188.5](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.5)
+    <span class="cstm-style datetime">Tue 2013-05-07 13:30:25 +0530</span>
+<ul start="1"><li>Bug#16513588:"PREPARE_COMMIT_MUTEX" IS NOT FREED DURING TRANSACTION ROLLBACK
+</li></ul>
+</li><li>[Revision #3077.188.4](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.4) [merge]
+    <span class="cstm-style datetime">Mon 2013-05-06 19:57:49 +0530</span>
+<ul start="1"><li>Merge from mysql-5.1 to mysql-5.5
+</li><li>[Revision #2661.848.28](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2661.848.28)
+     <span class="cstm-style datetime">Mon 2013-05-06 16:28:56 +0530</span>
+<ul start="1"><li>Bug #16722314 FOREIGN KEY ID MODIFIED DURING EXPORT Bug #16754901 PARS_INFO_FREE NOT CALLED IN DICT_CREATE_ADD_FOREIGN_TO_DICTIONARY
+</li></ul>
+</li></ul>
+</li><li>[Revision #3077.188.3](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.3)
+    <span class="cstm-style datetime">Mon 2013-05-06 15:01:57 +0200</span>
+<ul start="1"><li>Bug#16757869: INNODB: POSSIBLE REGRESSION IN 5.5.31, BUG#16004999
+</li></ul>
+</li><li>[Revision #3077.188.2](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.2) [merge]
+    <span class="cstm-style datetime">Mon 2013-05-06 10:56:48 +0200</span>
+<ul start="1"><li>Empty version change upmerge
+</li><li>[Revision #2661.848.27](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2661.848.27)
+     <span class="cstm-style datetime">Mon 2013-05-06 10:25:03 +0200</span>
+<ul start="1"><li>Raise version number after cloning 5.1.70
+</li></ul>
+</li></ul>
+</li><li>[Revision #3077.188.1](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3077.188.1)
+    <span class="cstm-style datetime">Mon 2013-05-06 09:51:25 +0200</span>
+<ul start="1"><li>Raise version number after cloning 5.5.32
+</li></ul>
+</li></ul>
+</li><li>[Revision #3334.1.545](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.545) [merge]
+   <span class="cstm-style datetime">Fri 2013-09-06 10:34:38 -0700</span>
+<ul start="1"><li>Merge 5.3-&gt;5.5
+</li><li>[Revision #2502.567.132](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2502.567.132)
+    <span class="cstm-style datetime">Fri 2013-09-06 09:55:32 -0700</span>
+<ul start="1"><li>Fixed bug [MDEV-4996](https://jira.mariadb.org/browse/MDEV-4996). The fix for bug [MDEV-4971](https://jira.mariadb.org/browse/MDEV-4971) not always correctly set the pointers to inherited multiple equalities in objects of the Item_equal class.
+</li></ul>
+</li></ul>
+</li><li>[Revision #3334.1.544](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.544)
+   <span class="cstm-style datetime">Fri 2013-09-06 15:59:19 +0400</span>
+<ul start="1"><li>[MDEV-4978](https://jira.mariadb.org/browse/MDEV-4978) - Server cursor is broken with blobs in the select list,             ORDER BY does not work
+</li></ul>
+</li><li>[Revision #3334.1.543](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.543)
+   <span class="cstm-style datetime">Tue 2013-09-03 22:45:12 +0200</span>
+<ul start="1"><li>[MDEV-4926](https://jira.mariadb.org/browse/MDEV-4926): Remove division-using-subtraction implementation from semi-sync plugin
+</li></ul>
+</li><li>[Revision #3334.1.542](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.542) [merge]
+   <span class="cstm-style datetime">Tue 2013-09-03 18:41:07 +0400</span>
+<ul start="1"><li>[MDEV-4836](https://jira.mariadb.org/browse/MDEV-4836): Merge into 5.5-main
+</li><li>[Revision #3334.46.2](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.46.2)
+    <span class="cstm-style datetime">Wed 2013-08-28 21:21:12 +0400</span>
+<ul start="1"><li>[MDEV-4942](https://jira.mariadb.org/browse/MDEV-4942): Add another testcase after merging with other fixes.
+</li></ul>
+</li><li>[Revision #3334.46.1](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.46.1) [merge]
+    <span class="cstm-style datetime">Wed 2013-08-28 20:31:23 +0400</span>
+<ul start="1"><li>Automatic merge of [MDEV-4836](https://jira.mariadb.org/browse/MDEV-4836) fix into 5.5
+</li><li>[Revision #3334.45.2](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.45.2)
+     <span class="cstm-style datetime">Mon 2013-08-26 21:38:04 +0400</span>
+<ul start="1"><li>Fix for [MDEV-4836](https://jira.mariadb.org/browse/MDEV-4836) fix: take into account situation where "notnull_col IS NULL" is not  a direct child of the WHERE clause item, but rather is embedded inside Item_cond_and or  Item_cond_or.
+</li></ul>
+</li><li>[Revision #3334.45.1](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.45.1) [merge]
+     <span class="cstm-style datetime">Mon 2013-08-26 16:31:58 +0400</span>
+<ul start="1"><li>Fix for [MDEV-4836](https://jira.mariadb.org/browse/MDEV-4836): Merge with current 5.5
+</li><li>[Revision #3334.44.1](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.44.1)
+      <span class="cstm-style datetime">Fri 2013-08-23 16:32:56 +0400</span>
+<ul start="1"><li>[MDEV-4836](https://jira.mariadb.org/browse/MDEV-4836): Wrong result on &lt;not null date column&gt; IS NULL (old documented hack stopped working) - When applying optimization introduced by [MDEV-4817](https://jira.mariadb.org/browse/MDEV-4817), ignore the conditions that have form   "datetime_not_null_col IS NULL".
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li><li>[Revision #3334.1.541](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.541) [merge]
+   <span class="cstm-style datetime">Sat 2013-08-31 09:33:09 -0700</span>
+<ul start="1"><li>Merge
+</li><li>[Revision #3334.43.1](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.43.1) [merge]
+    <span class="cstm-style datetime">Sat 2013-08-31 08:18:25 -0700</span>
+<ul start="1"><li>Merge 5.3-&gt;5.5
+</li><li>[Revision #2502.567.131](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2502.567.131)
+     <span class="cstm-style datetime">Thu 2013-08-29 21:02:42 -0700</span>
+<ul start="1"><li>Fixed bug [MDEV-4971](https://jira.mariadb.org/browse/MDEV-4971). The function propagate_new_equalities() did not updated properly the references to inherited multiple equalities.
+</li></ul>
+</li></ul>
+</li></ul>
+</li><li>[Revision #3334.1.540](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.540)
+   <span class="cstm-style datetime">Fri 2013-08-30 11:00:29 +0400</span>
+<ul start="1"><li>[MDEV-4902](https://jira.mariadb.org/browse/MDEV-4902) - sql_yacc.yy incompatible with bison 3
+</li></ul>
+</li><li>[Revision #3334.1.539](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.539) [merge]
+   <span class="cstm-style datetime">Thu 2013-08-29 12:32:09 -0700</span>
+<ul start="1"><li>Merge 5.3-&gt;5.5
+</li><li>[Revision #2502.567.130](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2502.567.130)
+    <span class="cstm-style datetime">Thu 2013-08-29 10:56:12 -0700</span>
+<ul start="1"><li>Fixed bug [MDEV-4962](https://jira.mariadb.org/browse/MDEV-4962). When a non-nullable datetime field is used under an IS NULL predicate of the WHERE condition in a query with outer joins the remove_eq_conds function should check whether this field belongs to an inner table of any outer join that can be, in a general case, a nested outer join.
+</li></ul>
+</li></ul>
+</li><li>[Revision #3334.1.538](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.538)
+   <span class="cstm-style datetime">Wed 2013-08-28 22:16:13 +0200</span>
+<ul start="1"><li>fix an old bug where dd_frm_type() could incorrectly determine the table type for dynamic engines (because it only looked at the one-byte code, not at the full engine name).
+</li></ul>
+</li><li>[Revision #3334.1.537](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.537)
+   <span class="cstm-style datetime">Wed 2013-08-28 22:16:03 +0200</span>
+<ul start="1"><li>Test case for MyISAM and OPTIMIZE TABLE that requires MDL_SHARED_NO_READ_WRITE.
+</li></ul>
+</li><li>[Revision #3334.1.536](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.536)
+   <span class="cstm-style datetime">Mon 2013-08-26 21:14:34 +0400</span>
+<ul start="1"><li>bugfix: storage engine might return a negative error code, but it shouldn't be ignored on return
+</li></ul>
+</li><li>[Revision #3334.1.535](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.535)
+   <span class="cstm-style datetime">Mon 2013-08-26 21:14:01 +0400</span>
+<ul start="1"><li>mtr bug: files outside of both the suite dir and the overlay dir, were treated as coming from the overlay.
+</li></ul>
+</li><li>[Revision #3334.1.534](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.534)
+   <span class="cstm-style datetime">Mon 2013-08-26 21:13:17 +0400</span>
+<ul start="1"><li>don't decide on extended keys by DB_TYPE_INNODB, use hton-&gt;flags
+</li></ul>
+</li><li>[Revision #3334.1.533](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.533)
+   <span class="cstm-style datetime">Mon 2013-08-26 21:04:10 +0400</span>
+<ul start="1"><li>HA_ERR_TABLE_DEF_CHANGED is normal situation, not an server-wide exception, don't log it to the error log.
+</li></ul>
+</li><li>[Revision #3334.1.532](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.532)
+   <span class="cstm-style datetime">Mon 2013-08-26 21:03:01 +0400</span>
+<ul start="1"><li>typo fixed (boolean index attributes didn't work)
+</li></ul>
+</li><li>[Revision #3334.1.531](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.531)
+   <span class="cstm-style datetime">Wed 2013-08-28 07:49:53 +0200</span>
+<ul start="1"><li>[MDEV-4951](https://jira.mariadb.org/browse/MDEV-4951) drop user leaves privileges
+</li></ul>
+</li><li>[Revision #3334.1.530](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.530)
+   <span class="cstm-style datetime">Wed 2013-08-28 09:14:57 -0700</span>
+<ul start="1"><li>Fixed bug [MDEV-4959](https://jira.mariadb.org/browse/MDEV-4959). The fix for [MDEV-4420](https://jira.mariadb.org/browse/MDEV-4420) was not quite correct. This patch corrects it.
+</li></ul>
+</li><li>[Revision #3334.1.529](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.529) [merge]
+   <span class="cstm-style datetime">Tue 2013-08-27 22:19:14 -0700</span>
+<ul start="1"><li>Merge 5.3-&gt;5.5
+</li><li>[Revision #2502.567.129](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2502.567.129)
+    <span class="cstm-style datetime">Mon 2013-08-26 15:51:47 -0700</span>
+<ul start="1"><li>Fixed bug [MDEV-4952](https://jira.mariadb.org/browse/MDEV-4952) When in function remove_eq_conds() a sub-formula of the processed condition is replaced for another formula we should ensure that in the resulting formula AND/OR levels must alternate.
+</li></ul>
+</li><li>[Revision #2502.567.128](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2502.567.128)
+    <span class="cstm-style datetime">Mon 2013-08-26 12:55:58 -0700</span>
+<ul start="1"><li>Fixed bug [MDEV-4944](https://jira.mariadb.org/browse/MDEV-4944). The patch to fix [MDEV-4418](https://jira.mariadb.org/browse/MDEV-4418) turned out to be incorrect. At the substitution of single row tables in make_join_statistics() the used multiple equalities may change and references to the new multiple equalities must be updated. The function remove_eq_conds() takes care of it and it should be called right after the substitution of single row tables. Calling it after the call of make_join_statistics was a mistake.
+</li></ul>
+</li></ul>
+</li><li>[Revision #3334.1.528](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.528)
+   <span class="cstm-style datetime">Tue 2013-08-27 19:18:04 +0300</span>
+<ul start="1"><li>Fixed MySQL bug #69861 LAST_INSERT_ID is replicated incorrectly if replication filters are used
+</li></ul>
+</li><li>[Revision #3334.1.527](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.527) [merge]
+   <span class="cstm-style datetime">Mon 2013-08-26 16:23:14 +0400</span>
+<ul start="1"><li>Merge fix for [MDEV-4942](https://jira.mariadb.org/browse/MDEV-4942), 5.3-&gt;5.5
+</li><li>[Revision #2502.567.127](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2502.567.127)
+    <span class="cstm-style datetime">Fri 2013-08-23 22:17:02 -0700</span>
+<ul start="1"><li>Fixed bug [MDEV-4942](https://jira.mariadb.org/browse/MDEV-4942). Made sure that degenerate conjunctions/disjunctions are obtained from AND/OR conditions.
+</li></ul>
+</li></ul>
+</li><li>[Revision #3334.1.526](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.526) [merge]
+   <span class="cstm-style datetime">Fri 2013-08-23 08:34:35 -0700</span>
+<ul start="1"><li>Merge
+</li><li>[Revision #3334.42.1](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.42.1)
+    <span class="cstm-style datetime">Fri 2013-08-23 07:25:45 -0700</span>
+<ul start="1"><li>Fixed bug [MDEV-4420](https://jira.mariadb.org/browse/MDEV-4420). The code of JOIN::optimize that performed substitutions for the best equal field in all ref items did not take into account that a multiple equality could contain the result of the single-value subquery if the subquery is inexpensive. This code was corrected. Also made necessary corresponding corrections in the code of make_join_select().
+</li></ul>
+</li></ul>
+</li><li>[Revision #3334.1.525](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.525) [merge]
+   <span class="cstm-style datetime">Thu 2013-08-22 16:23:54 +0400</span>
+<ul start="1"><li>Merging from 5.3
+</li><li>[Revision #2502.567.126](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2502.567.126)
+    <span class="cstm-style datetime">Thu 2013-08-22 15:20:27 +0400</span>
+<ul start="1"><li>[MDEV-4804](https://jira.mariadb.org/browse/MDEV-4804) Date comparing false result
+</li></ul>
+</li></ul>
+</li><li>[Revision #3334.1.524](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.524) [merge]
+   <span class="cstm-style datetime">Thu 2013-08-22 14:13:46 +0400</span>
+<ul start="1"><li>Automatic merge
+</li><li>[Revision #3334.41.1](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.41.1)
+    <span class="cstm-style datetime">Thu 2013-08-22 14:12:10 +0400</span>
+<ul start="1"><li>[MDEV-4840](https://jira.mariadb.org/browse/MDEV-4840): Wrong result (missing rows) on LEFT JOIN with InnoDB tables Fix two problems in table elimination code: - Before marking a "value" as bound, check if it is already bound. Marking the    same value as bound twice could confuse a module that depends on this value,    because Dep_module_XXX use counters to know when they become bound.
+</li></ul>
+</li></ul>
+</li><li>[Revision #3334.1.523](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.523) [merge]
+   <span class="cstm-style datetime">Wed 2013-08-21 12:34:58 -0700</span>
+<ul start="1"><li>Merge
+</li><li>[Revision #2502.567.125](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2502.567.125)
+    <span class="cstm-style datetime">Wed 2013-08-21 17:42:09 +0300</span>
+<ul start="1"><li>[MDEV-4908](https://jira.mariadb.org/browse/MDEV-4908): Assertion `((Item_cond *) cond)-&gt;functype() == ((Item_cond *) new_item)-&gt;functype()' fails on a query with IN and equal conditions, AND/OR, materialization+semijoin
+</li></ul>
+</li></ul>
+</li><li>[Revision #3334.1.522](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.522) [merge]
+   <span class="cstm-style datetime">Wed 2013-08-21 11:27:02 -0700</span>
+<ul start="1"><li>Merge 5.3-&gt;5.5
+</li><li>[Revision #2502.567.124](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2502.567.124)
+    <span class="cstm-style datetime">Tue 2013-08-20 13:47:13 -0700</span>
+<ul start="1"><li>Fixed a bug/typo in the patch for [MDEV-4355](https://jira.mariadb.org/browse/MDEV-4355), noticed after the patch had been merged into 5.5.
+</li></ul>
+</li><li>[Revision #2502.567.123](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2502.567.123)
+    <span class="cstm-style datetime">Tue 2013-08-20 17:08:03 +0300</span>
+<ul start="1"><li>Fix bug [MDEV-4895](https://jira.mariadb.org/browse/MDEV-4895) Valgrind warnings (Conditional jump or move depends on uninitialised value) in Field_datetime::get_date on GREATEST(..) IS NULL
+</li></ul>
+</li><li>[Revision #2502.567.122](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2502.567.122)
+    <span class="cstm-style datetime">Mon 2013-08-19 14:24:48 -0700</span>
+<ul start="1"><li>Backported from maria-5.5 the fix in the patch for [MDEV-4418](https://jira.mariadb.org/browse/MDEV-4418) that had been discovered when merging the patch from 5.3 into 5.5.
+</li></ul>
+</li></ul>
+</li><li>[Revision #3334.1.521](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.521)
+   <span class="cstm-style datetime">Tue 2013-08-20 16:05:34 +0300</span>
+<ul start="1"><li>[MDEV-4923](https://jira.mariadb.org/browse/MDEV-4923) Incorrect merge on XtraDB os0file.c. Function os_file_set_atomic_writes returns TRUE when successfull and FALSE at failure.
+</li></ul>
+</li><li>[Revision #3334.1.520](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.520)
+   <span class="cstm-style datetime">Tue 2013-08-20 10:42:38 +0200</span>
+<ul start="1"><li>Backport from 10.0-base fix for tests failing when vardir has no execute permissions.
+</li></ul>
+</li><li>[Revision #3334.1.519](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.519) [merge]
+   <span class="cstm-style datetime">Mon 2013-08-19 08:55:49 -0700</span>
+<ul start="1"><li>Merge
+</li><li>[Revision #3334.40.2](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.40.2) [merge]
+    <span class="cstm-style datetime">Sun 2013-08-18 22:13:49 -0700</span>
+<ul start="1"><li>Merge
+</li></ul>
+</li><li>[Revision #3334.40.1](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.40.1) [merge]
+    <span class="cstm-style datetime">Sun 2013-08-18 19:58:51 -0700</span>
+<ul start="1"><li>Merge 5.3-&gt;5.5. In particular: Merged the patch for bug [MDEV-4418](https://jira.mariadb.org/browse/MDEV-4418) from 5.3 into 5.5. Fixed a bug in the patch that should be backported to 5.3.
+</li><li>[Revision #2502.567.121](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2502.567.121)
+     <span class="cstm-style datetime">Fri 2013-08-16 22:01:47 -0700</span>
+<ul start="1"><li>Fixed bug [MDEV-4418](https://jira.mariadb.org/browse/MDEV-4418). After single row substitutions there might appear new equalities. They should be properly propagated to all AND/OR levels the WHERE condition. It's done now with an additional call of remove_eq_conds().
+</li></ul>
+</li><li>[Revision #2502.567.120](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2502.567.120) [merge]
+     <span class="cstm-style datetime">Thu 2013-08-15 16:59:20 -0700</span>
+<ul start="1"><li>Merge
+</li><li>[Revision #2502.578.1](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2502.578.1)
+      <span class="cstm-style datetime">Thu 2013-08-15 14:16:16 -0700</span>
+<ul start="1"><li>Fixed bug [MDEV-4355](https://jira.mariadb.org/browse/MDEV-4355). This patch almost totally revised the patch for bug [MDEV-4177](https://jira.mariadb.org/browse/MDEV-4177). The latter had too many defects. In particular, it did not propagate multiple equalities formed when merging a degenerate disjunct into underlying AND formula.
+</li></ul>
+</li></ul>
+</li><li>[Revision #2502.567.119](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2502.567.119) [merge]
+     <span class="cstm-style datetime">Thu 2013-08-15 14:04:20 -0700</span>
+<ul start="1"><li>Merge 5.2-&gt;5.3
+</li><li>[Revision #2502.566.53](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2502.566.53) [merge]
+      <span class="cstm-style datetime">Wed 2013-08-14 20:37:38 -0700</span>
+<ul start="1"><li>Merge 5.1-&gt;5.2
+</li><li>[Revision #2502.565.53](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2502.565.53)
+       <span class="cstm-style datetime">Tue 2013-08-13 15:21:11 -0700</span>
+<ul start="1"><li>Fixed bug [MDEV-4894](https://jira.mariadb.org/browse/MDEV-4894). This a an old legacy performance bug. When a very selective range scan existed for the second table in a join, and, at the same time, there was another range condition depending on the fields of the first table, the optimizer chose a plan with 'Range checked for each record'. This plan was extremely inefficient in comparison with the regular selective range scan. As a matter of fact the range scan chosen for each record was the same as that selective range scan. 
+</li></ul>
+</li><li>[Revision #2502.565.52](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2502.565.52)
+       <span class="cstm-style datetime">Mon 2013-07-22 00:55:06 +0500</span>
+<ul start="1"><li>[MDEV-4478](https://jira.mariadb.org/browse/MDEV-4478) check mysql-5.5 changes in spatial.cc.    not_enough_points() introduced to check if the spatial object is incorrect.
+</li></ul>
+</li></ul>
+</li><li>[Revision #2502.566.52](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2502.566.52)
+      <span class="cstm-style datetime">Thu 2013-08-01 09:25:50 +0300</span>
+<ul start="1"><li>[MDEV-4823](https://jira.mariadb.org/browse/MDEV-4823): Server crashes in Item_func_not::fix_fields on creating a table with a virtual column using NOT
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li><li>[Revision #3334.1.518](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.518)
+   <span class="cstm-style datetime">Sat 2013-08-17 17:20:09 +0400</span>
+<ul start="1"><li>[MDEV-4165](https://jira.mariadb.org/browse/MDEV-4165) [PATCH] RFE: make tmpdir a build-time configurable option
+</li></ul>
+</li><li>[Revision #3334.1.517](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.517)
+   <span class="cstm-style datetime">Wed 2013-08-14 11:12:57 +0200</span>
+<ul start="1"><li>fix a comment
+</li></ul>
+</li><li>[Revision #3334.1.516](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.516) [merge]
+   <span class="cstm-style datetime">Mon 2013-08-12 17:33:08 +0400</span>
+<ul start="1"><li>Merge from 5.3
+</li><li>[Revision #2502.567.118](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2502.567.118)
+    <span class="cstm-style datetime">Mon 2013-08-12 16:47:59 +0400</span>
+<ul start="1"><li>[MDEV-4652](https://jira.mariadb.org/browse/MDEV-4652) Wrong result for CONCAT(GREATEST(TIME('00:00:01'),TIME('00:00:00'))
+</li></ul>
+</li><li>[Revision #2502.567.117](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2502.567.117)
+    <span class="cstm-style datetime">Thu 2013-08-01 11:46:11 +0300</span>
+<ul start="1"><li>[MDEV-4811](https://jira.mariadb.org/browse/MDEV-4811) Assertion `offset &lt; 0x1f' fails in type_and_offset_store on COLUMN_ADD [MDEV-4812](https://jira.mariadb.org/browse/MDEV-4812) Valgrind warnings (Invalid write) in dynamic_column_update_many on COLUMN_ADD
+</li></ul>
+</li></ul>
+</li><li>[Revision #3334.1.515](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.515)
+   <span class="cstm-style datetime">Thu 2013-08-08 13:33:15 +0200</span>
+<ul start="1"><li><code class="fixed" style="white-space:pre-wrap">mysql --skip-column-names</code> flag should not affect alignment of field values, set num_flag[] unconditionally, not under "if (column_names)"
+</li></ul>
+</li><li>[Revision #3334.1.514](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.514) [merge]
+   <span class="cstm-style datetime">Thu 2013-08-08 13:41:21 +0400</span>
+<ul start="1"><li>Merge from 5.3
+</li><li>[Revision #2502.567.116](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2502.567.116)
+    <span class="cstm-style datetime">Thu 2013-08-08 12:58:28 +0400</span>
+<ul start="1"><li>[MDEV-4653](https://jira.mariadb.org/browse/MDEV-4653) Wrong result for CONVERT_TZ(TIME('00:00:00'),'+00:00','+7:5')
+</li></ul>
+</li></ul>
+</li><li>[Revision #3334.1.513](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.513) [merge]
+   <span class="cstm-style datetime">Thu 2013-08-08 11:48:49 +0400</span>
+<ul start="1"><li>Merge from 5.3
+</li><li>[Revision #2502.567.115](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/2502.567.115)
+    <span class="cstm-style datetime">Thu 2013-08-08 11:36:03 +0400</span>
+<ul start="1"><li>[MDEV-4512](https://jira.mariadb.org/browse/MDEV-4512) Valgrind warnings in my_long10_to_str_8bit on INTERVAL and DATE_ADD with incorrect types Fixing a typo:  bit AND (&amp;) was erroneously used instead of logical AND (&amp;&amp;)
+</li></ul>
+</li></ul>
+</li><li>[Revision #3334.1.512](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.512)
+   <span class="cstm-style datetime">Mon 2013-08-05 17:34:38 +0300</span>
+<ul start="1"><li>Fix possible race condition in Query cache.
+</li></ul>
+</li><li>[Revision #3334.1.511](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.511) [merge]
+   <span class="cstm-style datetime">Mon 2013-08-05 20:59:15 +0400</span>
+<ul start="1"><li>Automatic merge
+</li><li>[Revision #3334.39.1](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.39.1)
+    <span class="cstm-style datetime">Mon 2013-08-05 20:57:48 +0400</span>
+<ul start="1"><li>Update test results after fix for [MDEV-4687](https://jira.mariadb.org/browse/MDEV-4687)
+</li></ul>
+</li></ul>
+</li><li>[Revision #3334.1.510](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.510) [merge]
+   <span class="cstm-style datetime">Mon 2013-08-05 21:21:21 +0400</span>
+<ul start="1"><li>Fixes for storage_engine tests diverged from the main line
+</li><li>[Revision #3334.38.3](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.38.3)
+    <span class="cstm-style datetime">Mon 2013-08-05 20:31:29 +0400</span>
+<ul start="1"><li>Deliberate change in behavior introduced in MySQL 5.5.31 along with the partitioning enhancement for Bug#14521864
+</li></ul>
+</li><li>[Revision #3334.38.2](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.38.2)
+    <span class="cstm-style datetime">Mon 2013-08-05 18:42:22 +0400</span>
+<ul start="1"><li>The test was non-deterministic while choosing an alternative storage engine
+</li></ul>
+</li><li>[Revision #3334.38.1](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.38.1)
+    <span class="cstm-style datetime">Mon 2013-08-05 18:30:12 +0400</span>
+<ul start="1"><li>Deliberate change in behavior introduced along with the fix for [MDEV-4310](https://jira.mariadb.org/browse/MDEV-4310)
+</li></ul>
+</li></ul>
+</li><li>[Revision #3334.1.509](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.509)
+   <span class="cstm-style datetime">Wed 2013-07-31 17:24:52 +0400</span>
+<ul start="1"><li>[MDEV-4817](https://jira.mariadb.org/browse/MDEV-4817): Optimizer fails to optimize expression of the form 'FOO' IS NULL - Modify the way Item_cond::fix_fields() and Item_cond::eval_not_null_tables()    calculate bitmap for Item_cond_or::not_null_tables():   if they see a "... OR inexpensive_const_false_item OR ..." then the item can   be ignored. - Updated test results. There can be more warnings produced since parts of WHERE    are evaluated more times.
+</li></ul>
+</li><li>[Revision #3334.1.508](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.508) [merge]
+   <span class="cstm-style datetime">Wed 2013-07-31 13:37:01 +0400</span>
+<ul start="1"><li>Automatic merge
+</li><li>[Revision #3334.37.1](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.37.1)
+    <span class="cstm-style datetime">Thu 2013-07-25 22:42:26 +0400</span>
+<ul start="1"><li>[MDEV-4687](https://jira.mariadb.org/browse/MDEV-4687): impossible where with &lt; operation, but =-5 return one row - Let _ma_record_pos() set SEARCH_PART_KEY when doing a search on   a prefix of a [unique] key.  Otherwise, _ma_search_pos() would    find the first key equal to search key, and assume it is also    the last one, which will make a wrong estimate of key's position.
+</li></ul>
+</li></ul>
+</li><li>[Revision #3334.1.507](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.507)
+   <span class="cstm-style datetime">Mon 2013-07-29 16:03:41 +0200</span>
+<ul start="1"><li>[MDEV-4815](https://jira.mariadb.org/browse/MDEV-4815) - allow multiple  mysql_server_init() / mysql_server_end() in the same process, for embedded library.
+</li></ul>
+</li><li>[Revision #3334.1.506](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.506)
+   <span class="cstm-style datetime">Fri 2013-07-19 13:21:23 +0300</span>
+<ul start="1"><li>Revert reverted patch (as workaround) to have no problem with ongoing fix.
+</li></ul>
+</li><li>[Revision #3334.1.505](http://bazaar.launchpad.net/%7Emaria-captains/maria/maria-5.5-galera/revision/3334.1.505)
+   <span class="cstm-style datetime">Thu 2013-07-18 11:16:18 +0300</span>
+<ul start="1"><li>Fix of using uninitialized variadle.
+</li></ul>
+</li></ul>

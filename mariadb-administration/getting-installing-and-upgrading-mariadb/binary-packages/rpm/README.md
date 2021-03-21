@@ -1,0 +1,14 @@
+# Installing MariaDB RPM Files
+
+MariaDB provides RPM packages for several RPM-based Linux distributions. MariaDB also provides YUM/DNF and ZYpp repositories for these Linux distributions. The articles here provide information and instructions on using the RPM packages and the related repositories.
+
+- [About the MariaDB RPM Files](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/about-the-mariadb-rpm-files/) — Describes the contents of the RPM packages that come with each MariaDB release
+- [Installing MariaDB with yum/dnf](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum/) — Installing MariaDB with yum or dnf on RHEL, CentOS, Fedora, and similar distros.
+- [Installing MariaDB with zypper](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper/) — How to install MariaDB with zypper on SLES, OpenSUSE, and other similar Linux distributions.
+- [Installing MariaDB With the rpm Tool](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-the-rpm-tool/) — Downloading and installing RPM files using the rpm command
+- [Checking MariaDB RPM Package Signatures](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/checking-mariadb-rpm-package-signatures/) — Steps to check MariaDB RPM package signatures
+- [Troubleshooting MariaDB Installs on Red Hat/CentOS](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/troubleshooting-mariadb-installs-on-red-hatcentos/) — Issues people have encountered when installing MariaDB on Red Hat / CentOS
+- [MariaDB for DirectAdmin Using RPMs](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/mariadb-for-directadmin-using-rpms/) — Using DirectAdmin when installing MariaDB with YUM
+- [MariaDB Installation (Version 10.1.21) via RPMs on CentOS 7](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/mariadb-installation-version-10121-via-rpms-on-centos-7/) — Detailed steps for installing MariaDB (version 10.1.21) via RPMs on CentOS 7
+- [Why Source RPMs (SRPMs) Aren't Packaged For Some Platforms](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/rpm/why-source-rpms-srpms-arent-packaged-for-some-platforms/) — Explanation for why source RPM (SRPMs) aren't packaged for some platforms
+- [Building MariaDB from a Source RPM](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/building-mariadb-from-a-source-rpm/) — How to build MariaDB from a source RPM (SRPM).

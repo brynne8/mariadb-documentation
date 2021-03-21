@@ -1,0 +1,62 @@
+# Clients &amp; Utilities
+
+- [mysql Client](/clients-utilities/mysql-client/) — The mysql command-line client.
+- [Aria Clients and Utilities](/clients-utilities/aria-clients-and-utilities/) — Clients and utilities for working with Aria tables
+- [Backup, Restore and Import Clients](/clients-utilities/backup-restore-and-import-clients/) — Clients for taking backups or importing/restoring data
+- [Graphical and Enhanced Clients](/clients-utilities/graphical-and-enhanced-clients/) — Incomplete list of graphical clients
+- [MyISAM Clients and Utilities](/clients-utilities/myisam-clients-and-utilities/) — Clients and utilities for working with MyISAM tables
+- [dbdeployer](/clients-utilities/dbdeployer/) — Installing and testing multiple MariaDB versions in isolation.
+- [dbForge Studio for MariaDB](/clients-utilities/clients-utilities-dbforge-studio-for-mariadb/) — IDE for the development, management, and administration of MariaDB & MySQL databases.
+- [EXPLAIN Analyzer](/clients-utilities/explain-analyzer/) — The EXPLAIN Analyzer is an online tool for analyzing and optionally sharing...
+- [EXPLAIN Analyzer API](/clients-utilities/explain-analyzer-api/) — The online EXPLAIN Analyzer tool has an open API to allow client applicatio...
+- [innochecksum](/clients-utilities/innochecksum/) — Tool for printing checksums for InnoDB files.
+- [msql2mysql](/clients-utilities/msql2mysql/) — Description
+Initially, the MySQL C API was developed to be very similar to ...
+- [my_print_defaults](/clients-utilities/my_print_defaults/) — Displays the options from option groups of option files
+- [mysqladmin](/clients-utilities/mysqladmin/) — Admin tool for monitoring, creating/dropping databases, stopping mysqld etc.
+- [mysqlaccess](/clients-utilities/mysqlaccess/) — Tool for checking access privileges.
+- [mysqlbinlog](/clients-utilities/mysqlbinlog/) — mysqlbinlog utility for processing binary log files.
+- [mysqlcheck](/sql-statements-structure/sql-statements/table-statements/mysqlcheck/) — Tool for checking, repairing, analyzing and optimizing tables.
+- [mysql_convert_table_format](/clients-utilities/mysql_convert_table_format/) — Convert tables to use a particular storage engine by default.
+- [mysqldumpslow](/clients-utilities/mysqldumpslow/) — Display data from the slow query log.
+- [mysql_embedded](/clients-utilities/mysql_embedded/) — mysql client statically linked to libmysqld, the embedded server.
+- [mysql_find_rows](/clients-utilities/mysql_find_rows/) — Read files containing SQL statements and extract statements that match a pattern.
+- [mysql_fix_extensions](/clients-utilities/mysql_fix_extensions/) — Converts the extensions for MyISAM (or ISAM) table files to their canonical forms.
+- [mysql_install_db](/clients-utilities/mysql_install_db/) — Tool for creating the system tables in the mysql database.
+- [mysql_plugin](/clients-utilities/mysql_plugin/) — Tool for enabling or disabling plugins.
+- [mysqlreport](/clients-utilities/mysqlreport/) — Creates a friendly report of important MariaDB status values.
+- [MySQL Sandbox](/clients-utilities/mysql-sandbox/) — Installing multiple MariaDB versions in isolation.
+- [mysql_secure_installation](/clients-utilities/mysql_secure_installation/) — Improve the security of a MariaDB installation.
+- [mysql_setpermission](/clients-utilities/mysql_setpermission/) — Helps add users or databases or change passwords in MariaDB.
+- [mysqlshow](/clients-utilities/mysqlshow/) — Shows database structure.
+- [mysqlslap](/clients-utilities/mysqlslap/) — Tool for load-testing MariaDB.
+- [mysql-stress-test](/clients-utilities/mysql-stress-test/) — Perl script that performs stress-testing of the MariaDB server
+- [mysql-test](/clients-utilities/mysqltest/) — Testing utility
+- [mysql_tzinfo_to_sql](/clients-utilities/mysql_tzinfo_to_sql/) — Load time zones to the mysql time zone tables.
+- [mysql_upgrade](/sql-statements-structure/sql-statements/table-statements/mysql_upgrade/) — Update to the latest version.
+- [mysql_waitpid](/clients-utilities/mysql_waitpid/) — Terminate processes.
+- [mysql_zap](/clients-utilities/mysql_zap/) — Kill processes that match a pattern.
+- [perror](/clients-utilities/perror/) — Display descriptions for system or storage engine error codes
+- [replace Utility](/clients-utilities/replace-utility/) — The replace utility program changes strings in place infiles or on the standard input
+- [resolveip](/clients-utilities/resolveip/) — Resolves IP addresses to host names and vice versa
+- [resolve_stack_dump](/clients-utilities/resolve_stack_dump/) — Resolve numeric stack strace dump into symbols
+- [xtstat](/clients-utilities/xtstat/) — Used to monitor all internal activity of PBXT
+- [mariadb-access](/clients-utilities/mariadb-access/) — Symlink or new name for mysqlaccess.
+- [mariadb-admin](/clients-utilities/mariadb-admin/) — Symlink or new name for mysqladmin.
+- [mariadb-check](/clients-utilities/mariadb-check/) — Symlink or new name for mysqlcheck.
+- [mariadb-conv](/clients-utilities/mariadb-conv/) — Character set conversion utility for MariaDB.
+- [mariadb-convert-table-format](/clients-utilities/mariadb-convert-table-format/) — Symlink or new name for mysql_convert_table_format.
+- [mariadb-dumpslow](/clients-utilities/mariadb-dumpslow/) — Symlink or new name for mysqldumpslow.
+- [mariadb-embedded](/clients-utilities/mariadb-embedded/) — Symlink or new name for mysql_embedded.
+- [mariadb-find-rows](/clients-utilities/mariadb-find-rows/) — Symlink or new name for mysql_find_rows.
+- [mariadb-fix-extensions](/clients-utilities/mariadb-fix-extensions/) — Symlink or new name for mysql_fix_extensions.
+- [mariadb-install-db](/clients-utilities/mariadb-install-db/) — Symlink to mysql_install_db.
+- [mariadb-plugin](/clients-utilities/mariadb-plugin/) — Symlink or new name for mysql_plugin.
+- [mariadb-report](/clients-utilities/mariadb-report/) — Symlink or new name for mysqlreport.
+- [mariadb-secure-installation](/clients-utilities/mariadb-secure-installation/) — Symlink or new name for mysql_secure_installation.
+- [mariadb-setpermission](/clients-utilities/mariadb-setpermission/) — Symlink or new name for mysql_setpermission.
+- [mariadb-show](/clients-utilities/mariadb-show/) — Symlink or new name for mysqlshow.
+- [mariadb-slap](/clients-utilities/mariadb-slap/) — Symlink or new name for mysqlslap.
+- [mariadb-tzinfo-to-sql](/clients-utilities/mariadb-tzinfo-to-sql/) — Symlink or new name for mysql_tzinfo_to_sql.
+- [mariadb-upgrade](/clients-utilities/mariadb-upgrade/) — Symlink or new name for mysql_upgrade.
+- [mariadb-waitpid](/clients-utilities/mariadb-waitpid/) — Symlink or new name for mysql_waitpid.

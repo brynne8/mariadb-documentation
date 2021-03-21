@@ -1,0 +1,10 @@
+# Docker and MariaDB
+
+Docker is an open source container manager that can be used to quickly create ephemeral containers running specific software. Docker containers can be used for production, development or testing, though it is not the preferred choice to run MariaDB in production.
+
+- [Benefits of Managing Docker Containers with Orchestration Software](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/benefits-of-managing-docker-containers-with-orchestration-software/) — Benefits of managing Docker with Automation Software.
+- [Installing and Using MariaDB via Docker](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/installing-and-using-mariadb-via-docker/) — Creating and managing a MariaDB Docker container.
+- [MariaDB ColumnStore Docker, Vagrant, and Windows 10 Linux Setup - (allows for evaluation on a PC or Mac)](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/columnstore-getting-started-mariadb-columnstore-docker-vagrant-and-windows-/) — Docker and Vagrant allow for a simple setup of a ColumnStore single server ...
+- [Creating a Custom Docker Image](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/creating-a-custom-docker-image/) — How to write a Dockerfile to create custom Docker images.
+- [Setting Up a LAMP Stack with Docker Compose](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/setting-up-a-lamp-stack-with-docker-compose/) — How to use Docker Compose to set up containers running a LAMP stack.
+- [Docker Security Concerns](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/docker-security-concerns/) — Security matters related to Docker containers.

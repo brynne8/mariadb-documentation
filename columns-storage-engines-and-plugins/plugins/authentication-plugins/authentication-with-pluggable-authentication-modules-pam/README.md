@@ -1,0 +1,6 @@
+# Authentication with Pluggable Authentication Modules (PAM)
+
+- [Authentication Plugin - PAM](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam/) — Uses the Pluggable Authentication Module (PAM) framework to authenticate MariaDB users.
+- [User and Group Mapping with PAM](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/user-and-group-mapping-with-pam/) — Configure PAM to map a given PAM user or group to a different MariaDB user.
+- [Configuring PAM Authentication and User Mapping with Unix Authentication](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/configuring-pam-authentication-and-user-mapping-with-unix-authentication/) — Walkthrough configuration of PAM authentication and user mapping with Unix authentication.
+- [Configuring PAM Authentication and User Mapping with LDAP Authentication](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/configuring-pam-authentication-and-user-mapping-with-ldap-authentication/) — Configuring PAM authentication and user mapping with LDAP authentication.

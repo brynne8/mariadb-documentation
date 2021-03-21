@@ -1,0 +1,8 @@
+# Vagrant and MariaDB
+
+Vagrant is an open source tool to quickly setup machines that can be used for development and testing. These machines can be local virtual machines, Docker containers, AWS EC2 instances, and so on. Vagrant allows one to easily and quickly setup test MariaDB servers.
+
+- [Vagrant Overview for MariaDB Users](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/vagrant-and-mariadb/vagrant-overview-for-mariadb-users/) — Vagrant architecture, general concepts and basic usage.
+- [Creating a Vagrantfile](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/vagrant-and-mariadb/creating-a-vagrantfile/) — How to create a new Vagrant box running MariaDB.
+- [Vagrant Security Concerns](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/vagrant-and-mariadb/vagrant-security-concerns/) — Security matters related to Vagrant machines.
+- [MariaDB ColumnStore Docker, Vagrant, and Windows 10 Linux Setup - (allows for evaluation on a PC or Mac)](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/columnstore-getting-started-mariadb-columnstore-docker-vagrant-and-windows-/) — Docker and Vagrant allow for a simple setup of a ColumnStore single server ...

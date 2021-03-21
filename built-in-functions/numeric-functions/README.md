@@ -1,0 +1,43 @@
+# Numeric Functions
+
+Functions dealing with numerals, including ABS, CEIL, DIV, EXP, PI, SIN, etc.
+
+- [Addition Operator (+)](/built-in-functions/numeric-functions/addition-operator/) — Addition.
+- [Subtraction Operator (-)](/sql-statements-structure/operators/arithmetic-operators/subtraction-operator-/) — Subtraction and unary minus.
+- [Division Operator (/)](/built-in-functions/numeric-functions/division-operator/) — Division.
+- [Multiplication Operator (*)](/built-in-functions/numeric-functions/multiplication-operator/) — Multiplication.
+- [Modulo Operator (%)](/built-in-functions/numeric-functions/modulo-operator/) — Modulo operator. Returns the remainder of N divided by M.
+- [DIV](/built-in-functions/numeric-functions/div/) — Integer division.
+- [ABS](/built-in-functions/numeric-functions/abs/) — Returns an absolute value.
+- [ACOS](/built-in-functions/numeric-functions/acos/) — Returns an arc cosine.
+- [ASIN](/built-in-functions/numeric-functions/asin/) — Returns the arc sine.
+- [ATAN](/built-in-functions/numeric-functions/atan/) — Returns the arc tangent.
+- [ATAN2](/built-in-functions/numeric-functions/atan2/) — Returns the arc tangent of two variables.
+- [CEIL](/built-in-functions/numeric-functions/ceil/) — Synonym for CEILING().
+- [CEILING](/built-in-functions/numeric-functions/ceiling/) — Returns the smallest integer not less than X.
+- [CONV](/built-in-functions/numeric-functions/conv/) — Converts numbers between different number bases.
+- [COS](/built-in-functions/numeric-functions/cos/) — Returns the cosine.
+- [COT](/built-in-functions/numeric-functions/cot/) — Returns the cotangent.
+- [CRC32](/built-in-functions/numeric-functions/crc32/) — Computes a cyclic redundancy check value.
+- [DEGREES](/built-in-functions/numeric-functions/degrees/) — Converts from radians to degrees.
+- [EXP](/built-in-functions/numeric-functions/exp/) — e raised to the power of the argument.
+- [FLOOR](/built-in-functions/numeric-functions/floor/) — Largest integer value not greater than the argument.
+- [GREATEST](/sql-statements-structure/operators/comparison-operators/greatest/) — Returns the largest argument.
+- [LEAST](/sql-statements-structure/operators/comparison-operators/least/) — Returns the smallest argument.
+- [LN](/built-in-functions/numeric-functions/ln/) — Returns natural logarithm.
+- [LOG](/built-in-functions/numeric-functions/log/) — Returns the natural logarithm.
+- [LOG10](/built-in-functions/numeric-functions/log10/) — Returns the base-10 logarithm.
+- [LOG2](/built-in-functions/numeric-functions/log2/) — Returns the base-2 logarithm.
+- [MOD](/built-in-functions/numeric-functions/mod/) — Modulo operation. Remainder of N divided by M.
+- [OCT](/built-in-functions/numeric-functions/oct/) — Returns octal value.
+- [PI](/built-in-functions/numeric-functions/pi/) — Returns the value of π (pi).
+- [POW](/built-in-functions/numeric-functions/pow/) — Returns X raised to the power of Y.
+- [POWER](/built-in-functions/numeric-functions/power/) — Synonym for POW().
+- [RADIANS](/built-in-functions/numeric-functions/radians/) — Converts from degrees to radians.
+- [RAND](/built-in-functions/numeric-functions/rand/) — Random floating-point value.
+- [ROUND](/built-in-functions/numeric-functions/round/) — Rounds a number.
+- [SIGN](/built-in-functions/numeric-functions/sign/) — Returns 1, 0 or -1.
+- [SIN](/built-in-functions/numeric-functions/sin/) — Returns the sine.
+- [SQRT](/built-in-functions/numeric-functions/sqrt/) — Square root.
+- [TAN](/built-in-functions/numeric-functions/tan/) — Returns the tangent.
+- [TRUNCATE](/built-in-functions/numeric-functions/truncate/) — The TRUNCATE function truncates a number to a specified number of decimal places.

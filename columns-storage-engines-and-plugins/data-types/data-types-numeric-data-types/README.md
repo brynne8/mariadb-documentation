@@ -1,0 +1,23 @@
+# Numeric Data Types
+
+- [Numeric Data Type Overview](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/numeric-data-type-overview/) — Overview and usage of the numeric data types.
+- [TINYINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/tinyint/) — Tiny integer, -128 to 127 signed.
+- [BOOLEAN](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/boolean/) — Synonym for TINYINT(1).
+- [SMALLINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/smallint/) — Small integer from -32768 to 32767 signed.
+- [MEDIUMINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/mediumint/) — Medium integer from -8388608 to 8388607 signed.
+- [INT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int/) — Integer from -2147483648 to 2147483647 signed.
+- [INTEGER](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/integer/) — Synonym for INT
+- [BIGINT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/bigint/) — Large integer.
+- [DECIMAL](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/decimal/) — A packed "exact" fixed-point number.
+- [DEC, NUMERIC, FIXED](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/dec-numeric-fixed/) — Synonyms for DECIMAL
+- [NUMBER](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/number/) — Synonym for DECIMAL in Oracle mode.
+- [FLOAT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/float/) — Single-precision floating-point number
+- [DOUBLE](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/double/) — Normal-size (double-precision) floating-point number
+- [DOUBLE PRECISION](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/double-precision/) — REAL and DOUBLE PRECISION are synonyms for DOUBLE.
+- [BIT](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/bit/) — Bit field type.
+- [Floating-point Accuracy](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/floating-point-accuracy/) — Not all floating-point numbers can be stored with exact precision
+- [INT1](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int1/) — A synonym for TINYINT.
+- [INT2](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int2/) — Synonym for SMALLINT.
+- [INT3](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int3/) — Synonym for MEDIUMINT.
+- [INT4](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int4/) — Synonym for INT.
+- [INT8](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/int8/) — Synonym for BIGINT.

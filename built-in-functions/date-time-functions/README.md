@@ -1,0 +1,66 @@
+# Date &amp; Time Functions
+
+Functions for handling date and time, e.g. TIME, DATE, DAYNAME etc.
+
+- [Microseconds in MariaDB](/built-in-functions/date-time-functions/microseconds-in-mariadb/) — Microseconds have been supported since MariaDB 5.3.
+- [Date and Time Units](/built-in-functions/date-time-functions/date-and-time-units/) — Date or time units
+- [ADDDATE](/built-in-functions/date-time-functions/adddate/) — Add days or another interval to a date.
+- [ADDTIME](/built-in-functions/date-time-functions/addtime/) — Adds a time to a time or datetime.
+- [CONVERT_TZ](/built-in-functions/date-time-functions/convert_tz/) — Converts a datetime from one time zone to another.
+- [CURDATE](/built-in-functions/date-time-functions/curdate/) — Returns the current date.
+- [CURRENT_DATE](/built-in-functions/date-time-functions/current_date/) — Synonym for CURDATE().
+- [CURRENT_TIME](/built-in-functions/date-time-functions/current_time/) — Synonym for CURTIME().
+- [CURRENT_TIMESTAMP](/built-in-functions/date-time-functions/current_timestamp/) — Synonym for NOW().
+- [CURTIME](/built-in-functions/date-time-functions/curtime/) — Returns the current time.
+- [DATE FUNCTION](/built-in-functions/date-time-functions/date-function/) — Extracts the date portion of a datetime.
+- [DATEDIFF](/built-in-functions/date-time-functions/datediff/) — Difference in days between two date/time values.
+- [DATE_ADD](/built-in-functions/date-time-functions/date_add/) — Date arithmetic - addition.
+- [DATE_FORMAT](/built-in-functions/date-time-functions/date_format/) — Formats the date value according to the format string.
+- [DATE_SUB](/built-in-functions/date-time-functions/date_sub/) — Date arithmetic - subtraction.
+- [DAY](/built-in-functions/date-time-functions/day/) — Synonym for DAYOFMONTH().
+- [DAYNAME](/built-in-functions/date-time-functions/dayname/) — Return the name of the weekday.
+- [DAYOFMONTH](/built-in-functions/date-time-functions/dayofmonth/) — Returns the day of the month.
+- [DAYOFWEEK](/built-in-functions/date-time-functions/dayofweek/) — Returns the day of the week index.
+- [DAYOFYEAR](/built-in-functions/date-time-functions/dayofyear/) — Returns the day of the year.
+- [EXTRACT](/built-in-functions/date-time-functions/extract/) — Extracts a portion of the date.
+- [FROM_DAYS](/built-in-functions/date-time-functions/from_days/) — Returns a date given a day.
+- [FROM_UNIXTIME](/built-in-functions/date-time-functions/from_unixtime/) — Returns a datetime from a Unix timestamp.
+- [GET_FORMAT](/built-in-functions/date-time-functions/get_format/) — Returns a format string.
+- [HOUR](/built-in-functions/date-time-functions/hour/) — Returns the hour.
+- [LAST_DAY](/built-in-functions/date-time-functions/last_day/) — Returns the last day of the month.
+- [LOCALTIME](/built-in-functions/date-time-functions/localtime/) — Synonym for NOW().
+- [LOCALTIMESTAMP](/built-in-functions/date-time-functions/localtimestamp/) — Synonym for NOW().
+- [MAKEDATE](/built-in-functions/date-time-functions/makedate/) — Returns a date given a year and day.
+- [MAKETIME](/built-in-functions/date-time-functions/maketime/) — Returns a time.
+- [MICROSECOND](/built-in-functions/date-time-functions/microsecond/) — Returns microseconds from a date or datetime.
+- [MINUTE](/built-in-functions/date-time-functions/minute/) — Returns a minute from 0 to 59.
+- [MONTH](/built-in-functions/date-time-functions/month/) — Returns a month from 1 to 12.
+- [MONTHNAME](/built-in-functions/date-time-functions/monthname/) — Returns the full name of the month.
+- [NOW](/built-in-functions/date-time-functions/now/) — Returns the current date and time.
+- [PERIOD_ADD](/built-in-functions/date-time-functions/period_add/) — Add months to a period.
+- [PERIOD_DIFF](/built-in-functions/date-time-functions/period_diff/) — Number of months between two periods.
+- [QUARTER](/built-in-functions/date-time-functions/quarter/) — Returns year quarter from 1 to 4.
+- [SECOND](/built-in-functions/date-time-functions/second/) — Returns the second of a time.
+- [SEC_TO_TIME](/built-in-functions/date-time-functions/sec_to_time/) — Converts a second to a time.
+- [STR_TO_DATE](/built-in-functions/date-time-functions/str_to_date/) — Converts a string to date.
+- [SUBDATE](/built-in-functions/date-time-functions/subdate/) — Subtract a date unit or number of days.
+- [SUBTIME](/built-in-functions/date-time-functions/subtime/) — Subtracts a time from a date/time.
+- [SYSDATE](/built-in-functions/date-time-functions/sysdate/) — Returns the current date and time.
+- [TIME Function](/built-in-functions/date-time-functions/time-function/) — Extracts the time.
+- [TIMEDIFF](/built-in-functions/date-time-functions/timediff/) — Returns the difference between two date/times.
+- [TIMESTAMP FUNCTION](/built-in-functions/date-time-functions/timestamp-function/) — Return the datetime, or add a time to a date/time.
+- [TIMESTAMPADD](/built-in-functions/date-time-functions/timestampadd/) — Add interval to a date or datetime.
+- [TIMESTAMPDIFF](/built-in-functions/date-time-functions/timestampdiff/) — Difference between two datetimes.
+- [TIME_FORMAT](/built-in-functions/date-time-functions/time_format/) — Formats the time value according to the format string.
+- [TIME_TO_SEC](/built-in-functions/date-time-functions/time_to_sec/) — Returns the time argument, converted to seconds.
+- [TO_DAYS](/built-in-functions/date-time-functions/to_days/) — Number of days since year 0.
+- [TO_SECONDS](/built-in-functions/date-time-functions/to_seconds/) — Number of seconds since year 0.
+- [UNIX_TIMESTAMP](/built-in-functions/date-time-functions/unix_timestamp/) — Returns a Unix timestamp.
+- [UTC_DATE](/built-in-functions/date-time-functions/utc_date/) — Returns the current UTC date.
+- [UTC_TIME](/built-in-functions/date-time-functions/utc_time/) — Returns the current UTC time.
+- [UTC_TIMESTAMP](/built-in-functions/date-time-functions/utc_timestamp/) — Returns the current UTC date and time.
+- [WEEK](/built-in-functions/date-time-functions/week/) — Returns the week number.
+- [WEEKDAY](/built-in-functions/date-time-functions/weekday/) — Returns the weekday index.
+- [WEEKOFYEAR](/built-in-functions/date-time-functions/weekofyear/) — Returns the calendar week of the date as a number in the range from 1 to 53.
+- [YEAR](/built-in-functions/date-time-functions/year/) — Returns the year for the given date.
+- [YEARWEEK](/built-in-functions/date-time-functions/yearweek/) — Returns year and week for a date.

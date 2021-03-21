@@ -1,0 +1,6 @@
+# Migrating to MariaDB from Other Databases
+
+- [Migrating from SQL Server to MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/migrating-from-sql-server-to-mariadb/) — SQL Server and MariaDB are different systems. They support different featur...
+- [Migrating to MariaDB from PostgreSQL](/migrating-to-mariadb/migrating-to-mariadb-from-other-databases/migrating-to-mariadb-from-postgresql/) — Information on migrating from PostgreSQL to MariaDB.
+- [Oracle XE 11.2. and MariaDB 10.1 integration on Ubuntu 14.04 and Debian systems](/migrating-to-mariadb/migrating-to-mariadb-from-other-databases/oracle-xe-112-and-mariadb-101-integration-on-ubuntu-1404-and-debian-systems/) — 1) Sign up for Oracle downloads and download Oracle Express at:
+http://www...

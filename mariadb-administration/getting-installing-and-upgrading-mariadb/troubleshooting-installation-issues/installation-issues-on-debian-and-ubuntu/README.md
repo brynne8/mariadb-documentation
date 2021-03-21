@@ -1,0 +1,10 @@
+# Installation issues on Debian and Ubuntu
+
+Solutions to different installation issues on Debian and Ubuntu
+
+- [Differences in MariaDB in Debian (and Ubuntu)](/mariadb-administration/getting-installing-and-upgrading-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu/) — MariaDB when installed from the Debian repos has a number of differences with standard MariaDB.
+- [Moving from MySQL to MariaDB in Debian 9](/mariadb-administration/getting-installing-and-upgrading-mariadb/upgrading/upgrading-mariadb-upgrading-from-mysql-to-mariadb/moving-from-mysql-to-mariadb-in-debian-9/) — MariaDB 10.1 is the default mysql server in Debian 9 "Stretch"
+- [Creating a Debian Repository](/mariadb-administration/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/Creating_a_Debian_Repository/) — Instructions for creating your own Debian repository
+- [MariaDB 5.5.33 Debian and Ubuntu Installation Issues](/mariadb-administration/getting-installing-and-upgrading-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/mariadb-5533-debian-and-ubuntu-installation-issues/) — Workarounds for some repository issues with the 5.5.33 release.
+- [MariaDB Debian Live Images](/mariadb-administration/getting-installing-and-upgrading-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/mariadb-debian-live-images/) — Debian live iso images with pre-installed MariaDB (obsolete)
+- [apt-upgrade Fails, But the Database is Running](/mariadb-administration/getting-installing-and-upgrading-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/apt-upgrade-fails-but-the-database-is-running/) — timeout causing apt to fail while the database is running
