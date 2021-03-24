@@ -83,7 +83,7 @@ If a plugin's `PLUGIN_LIBRARY` column has the `NULL` value, then the plugin is b
 
 ### Querying Plugin Information with `mysql.plugin`
 
-The [mysql.plugin](/kb/en/mysqlplugin-table/) table can be queried to get information about installed plugins.
+The [mysql.plugin](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlplugin-table/) table can be queried to get information about installed plugins.
 
 This table only contains information about plugins that have been installed via the following methods:
 
@@ -128,7 +128,7 @@ When you are installing a plugin, you also have to ensure that:
 
 A plugin can be installed dynamically by executing either the [INSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname/) or the [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin/) statement.
 
-If a plugin is installed with one of these statements, then a record will be added to the [mysql.plugins](/kb/en/mysqlplugin-table/) table for the plugin. This means that the plugin will automatically be loaded every time the server restarts, unless specifically uninstalled or deactivated.
+If a plugin is installed with one of these statements, then a record will be added to the [mysql.plugins](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlplugin-table/) table for the plugin. This means that the plugin will automatically be loaded every time the server restarts, unless specifically uninstalled or deactivated.
 
 #### Installing a Plugin with `INSTALL SONAME`
 
@@ -154,7 +154,7 @@ INSTALL PLUGIN server_audit SONAME 'server_audit';
 
 A plugin can be installed with a [mysqld](/mariadb-administration/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mysqld-options/) option by providing either the [--plugin-load-add](/kb/en/mysqld-options/#-plugin-load-add) or the [--plugin-load](/kb/en/mysqld-options/#-plugin-load) option.
 
-If a plugin is installed with one of these options, then a record will <strong>not</strong> be added to the [mysql.plugins](/kb/en/mysqlplugin-table/) table for the plugin. This means that if the server is restarted without the same option set, then the plugin will <strong>not</strong> automatically be loaded.
+If a plugin is installed with one of these options, then a record will <strong>not</strong> be added to the [mysql.plugins](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlplugin-table/) table for the plugin. This means that if the server is restarted without the same option set, then the plugin will <strong>not</strong> automatically be loaded.
 
 #### Installing a Plugin with `--plugin-load-add`
 
@@ -258,7 +258,7 @@ For example, to install the [server_audit](/columns-storage-engines-and-plugins/
 mysql_plugin server_audit ENABLE
 ```
 
-If a plugin is installed with this utility, then a record will be added to the <a undefined>mysql.plugins</a> table for the plugin. This means that the plugin will automatically be loaded every time the server restarts, unless specifically uninstalled or deactivated.
+If a plugin is installed with this utility, then a record will be added to the [mysql.plugins](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlplugin-table/) table for the plugin. This means that the plugin will automatically be loaded every time the server restarts, unless specifically uninstalled or deactivated.
 
 ### Configuring the Plugin Directory
 

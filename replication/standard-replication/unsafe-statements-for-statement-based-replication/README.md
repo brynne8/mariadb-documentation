@@ -51,7 +51,7 @@ The following statements are regarded as unsafe:
 - Statements which refer to log tables, since these may differ across servers.
 - Statements which refer to self-logging tables. Statements following a read or write to a self-logging table within a transaction are also considered unsafe.
 - Statements which refer to [system variables](/replication/optimization-and-tuning/system-variables/server-system-variables/) (there are a few exceptions).
-- [LOAD DATA INFILE](/kb/en/load-data-infile/) statements (since [MariaDB 5.5](/kb/en/what-is-mariadb-55/)).
+- [LOAD DATA INFILE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile/) statements (since [MariaDB 5.5](/kb/en/what-is-mariadb-55/)).
 - Non-transactional reads or writes that execute after transactional reads within a transaction.
 - If row-based logging is used for a statement, and the session executing the statement has any temporary tables, row-based logging is used for the remaining statements until the temporary table is dropped. This is because temporary tables can't use row-based logging, so if it is used due to one of the above conditions, all subsequent statements using that table are unsafe. The server deals with this situation by treating all statements in the session as unsafe for statement-based logging until the temporary table is dropped.
 

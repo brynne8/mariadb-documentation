@@ -22,8 +22,8 @@ A view cannot be of type ALGORITHM=MERGE if it uses any of the following:
 - [LIMIT](/kb/en/select/#limit)
 - [GROUP BY](/kb/en/select/#group-by)
 - [DISTINCT](/kb/en/select/#distinct)
-- [UNION](/kb/en/union/)
-- [UNION ALL](/kb/en/union/)
+- [UNION](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/union/)
+- [UNION ALL](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/union/)
 - An aggregate function, such as [MAX()](/built-in-functions/aggregate-functions/max/), [MIN()](/built-in-functions/aggregate-functions/min/), [SUM()](/built-in-functions/aggregate-functions/sum/) or [COUNT()](/built-in-functions/aggregate-functions/count/)
 - subquery in the SELECT list
 - if it has no underlying table because it refers only to literal values

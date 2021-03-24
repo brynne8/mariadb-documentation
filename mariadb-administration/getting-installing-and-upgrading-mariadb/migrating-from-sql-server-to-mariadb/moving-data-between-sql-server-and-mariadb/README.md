@@ -69,7 +69,7 @@ If the table structures are already in MariaDB, we need only to import table dat
 
 SQL Server Management Studio and several other Microsoft tools allow one to export CSV files.
 
-MariaDB allows importing CSV files with the [LOAD DATA INFILE](/kb/en/load-data-infile/) statement, which is essentially the MariaDB equivalent of `BULK INSERT`.
+MariaDB allows importing CSV files with the [LOAD DATA INFILE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile/) statement, which is essentially the MariaDB equivalent of `BULK INSERT`.
 
 It can happen that we don't want to import the whole data, but some filtered or transformed version of it. In that case, we may prefer to use the [CONNECT](/columns-storage-engines-and-plugins/storage-engines/connect/) storage engine to access CSV files and query them. The results of a query can be inserted into a table using [INSERT SELECT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-select/).
 

@@ -66,7 +66,7 @@ REVOKE ADMIN OPTION FOR role FROM grantee [, grantee2]
 
 ### Description
 
-`REVOKE` is also used to remove a [role](/mariadb-administration/user-server-security/user-account-management/roles/) from a user or another role that it's previously been assigned to. If a role has previously been set as a [default role](/sql-statements-structure/sql-statements/account-management-sql-commands/set-default-role/), `REVOKE` does not remove the record of the default role from the <a undefined>mysql.user</a> table. If the role is subsequently granted again, it will again be the user's default. Use [SET DEFAULT ROLE NONE](/sql-statements-structure/sql-statements/account-management-sql-commands/set-default-role/) to explicitly remove this.
+`REVOKE` is also used to remove a [role](/mariadb-administration/user-server-security/user-account-management/roles/) from a user or another role that it's previously been assigned to. If a role has previously been set as a [default role](/sql-statements-structure/sql-statements/account-management-sql-commands/set-default-role/), `REVOKE` does not remove the record of the default role from the [mysql.user](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqluser-table/) table. If the role is subsequently granted again, it will again be the user's default. Use [SET DEFAULT ROLE NONE](/sql-statements-structure/sql-statements/account-management-sql-commands/set-default-role/) to explicitly remove this.
 
 Before [MariaDB 10.1.13](/kb/en/mariadb-10113-release-notes/), the `REVOKE role` statement was not permitted in [prepared statements](/sql-statements-structure/sql-statements/prepared-statements/).
 

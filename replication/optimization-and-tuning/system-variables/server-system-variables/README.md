@@ -234,7 +234,7 @@ The suffix can be upper or lower-case.
 
 #### `character_set_filesystem`
 
-- <strong>Description:</strong> The [character set](/kb/en/data-types-character-sets-and-collations/) for the filesystem. Used for converting file names specified as a string literal from [character_set_client](#character_set_client) to character_set_filesystem before opening the file. By default set to `binary`, so no conversion takes place. This could be useful for statements such as [LOAD_FILE()](/built-in-functions/string-functions/load_file/) or [LOAD DATA INFILE](/kb/en/load-data-infile/) on system where multi-byte file names are use.
+- <strong>Description:</strong> The [character set](/kb/en/data-types-character-sets-and-collations/) for the filesystem. Used for converting file names specified as a string literal from [character_set_client](#character_set_client) to character_set_filesystem before opening the file. By default set to `binary`, so no conversion takes place. This could be useful for statements such as [LOAD_FILE()](/built-in-functions/string-functions/load_file/) or [LOAD DATA INFILE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile/) on system where multi-byte file names are use.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--character-set-filesystem=name</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -1299,7 +1299,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `local_infile`
 
-- <strong>Description:</strong> If set to `1`, LOCAL is supported for [LOAD DATA INFILE](/kb/en/load-data-infile/) statements. If set to `0`, usually for security reasons, attempts to perform a LOAD DATA LOCAL will fail with an error message.
+- <strong>Description:</strong> If set to `1`, LOCAL is supported for [LOAD DATA INFILE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile/) statements. If set to `0`, usually for security reasons, attempts to perform a LOAD DATA LOCAL will fail with an error message.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--local-infile=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -1375,7 +1375,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `log_output`
 
-- <strong>Description:</strong> How the output for the [general query log](/mariadb-administration/server-monitoring-logs/general-query-log/) and the [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log/) is stored. By default written to file (`FILE`), it can also be stored in the [general_log](/kb/en/mysqlgeneral_log-table/) and [slow_log](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlslow_log-table/) tables in the mysql database (`TABLE`), or not stored at all (`NONE`). More than one option can be chosen at the same time, with `NONE` taking precedence if present. Logs will not be written if logging is not enabled. See [Writing logs into tables](/mariadb-administration/server-monitoring-logs/writing-logs-into-tables/), and the [slow_query_log](#slow_query_log) and [general_log](#general_log) server system variables.
+- <strong>Description:</strong> How the output for the [general query log](/mariadb-administration/server-monitoring-logs/general-query-log/) and the [slow query log](/mariadb-administration/server-monitoring-logs/slow-query-log/) is stored. By default written to file (`FILE`), it can also be stored in the [general_log](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table/) and [slow_log](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlslow_log-table/) tables in the mysql database (`TABLE`), or not stored at all (`NONE`). More than one option can be chosen at the same time, with `NONE` taking precedence if present. Logs will not be written if logging is not enabled. See [Writing logs into tables](/mariadb-administration/server-monitoring-logs/writing-logs-into-tables/), and the [slow_query_log](#slow_query_log) and [general_log](#general_log) server system variables.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--log-output=name</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -1776,7 +1776,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `max_recursive_iterations`
 
-- <strong>Description:</strong> Maximum number of iterations when executing recursive queries, used to prevent infinite loops in [recursive CTEs](/kb/en/recursive-common-table-expressions-overview/).
+- <strong>Description:</strong> Maximum number of iterations when executing recursive queries, used to prevent infinite loops in [recursive CTEs](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/common-table-expressions/recursive-common-table-expressions-overview/).
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--max-recursive-iterations=#</code>
 - <strong>Scope:</strong> Global, Session
 - <strong>Dynamic:</strong> Yes
@@ -2598,7 +2598,7 @@ the best query execution plan.
 
 #### `secure_file_priv`
 
-- <strong>Description:</strong> [LOAD DATA](/kb/en/load-data-infile/), [SELECT ... INTO](/kb/en/select/#into) and [LOAD FILE()](/built-in-functions/string-functions/load_file/) will only work with files in the specified path. If not set, the default, or set to empty string, the statements will work with any files that can be accessed.
+- <strong>Description:</strong> [LOAD DATA](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile/), [SELECT ... INTO](/kb/en/select/#into) and [LOAD FILE()](/built-in-functions/string-functions/load_file/) will only work with files in the specified path. If not set, the default, or set to empty string, the statements will work with any files that can be accessed.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--secure-file-priv=path</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No

@@ -6,7 +6,7 @@ The `IGNORE` option tells the server to ignore some common errors.
 
 - [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/)
 - [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/) (see also [INSERT IGNORE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-ignore/))
-- [LOAD DATA INFILE](/kb/en/load-data-infile/)
+- [LOAD DATA INFILE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile/)
 - [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/)
 - [ALTER TABLE](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/)
 - [CREATE TABLE ... SELECT](/kb/en/create-table/#create-select)

@@ -13,9 +13,9 @@ can be used to re-create the named [stored procedure](/programming-customizing-m
 statement, <code class="highlight fixed" style="white-space:pre-wrap">[SHOW CREATE FUNCTION](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-function/)</code>,
 displays information about [stored functions](/programming-customizing-mariadb/stored-routines/stored-functions/).
 
-Both statements require that you are the owner of the routine or have the [SELECT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/) privilege on the <a undefined>mysql.proc</a> table.  When neither is true, the statements display `NULL` for the `Create Procedure` or `Create Function` field.
+Both statements require that you are the owner of the routine or have the [SELECT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/) privilege on the [mysql.proc](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlproc-table/) table.  When neither is true, the statements display `NULL` for the `Create Procedure` or `Create Function` field.
 
-<strong>Warning</strong> Users with `SELECT` privileges on <a undefined>mysql.proc</a> or `USAGE` privileges on `*.*` can view the text of routines, even when they do not have privileges for the function or procedure itself.
+<strong>Warning</strong> Users with `SELECT` privileges on [mysql.proc](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlproc-table/) or `USAGE` privileges on `*.*` can view the text of routines, even when they do not have privileges for the function or procedure itself.
 
 The output of these statements is unreliably affected by the <a undefined>sql_quote_show_create</a> server system variable - see [http://bugs.mysql.com/bug.php?id=12719](http://bugs.mysql.com/bug.php?id=12719)
 
@@ -55,7 +55,7 @@ CALL test.prc1();
 Error 1370 (42000): execute command denieed to user 'test_user'@'localhost' for routine 'test'.'prc1'
 ```
 
-If the user neither has privilege to the routine nor the [SELECT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/) privilege on <a undefined>mysql.proc</a> table, it raises Error 1305, informing them that the procedure does not exist.
+If the user neither has privilege to the routine nor the [SELECT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/) privilege on [mysql.proc](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlproc-table/) table, it raises Error 1305, informing them that the procedure does not exist.
 
 ```sql
 SHOW CREATE TABLES test.prc1\G

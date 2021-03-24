@@ -12,7 +12,7 @@ one `RETURN` statement in a stored function. If the function has multiple exit p
 
 This statement is not used in [stored procedures](/programming-customizing-mariadb/stored-routines/stored-procedures/), [triggers](/programming-customizing-mariadb/triggers-events/triggers/), or [events](/programming-customizing-mariadb/triggers-events/event-scheduler/events/). [LEAVE](/programming-customizing-mariadb/programmatic-compound-statements/leave/) can be used instead.
 
-The following example shows that `RETURN` can return the result of a [scalar subquery](/kb/en/subqueries-scalar-subqueries/):
+The following example shows that `RETURN` can return the result of a [scalar subquery](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/subqueries/subqueries-scalar-subqueries/):
 
 ```sql
 CREATE FUNCTION users_count() RETURNS BOOL

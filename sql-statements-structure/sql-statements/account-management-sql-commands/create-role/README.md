@@ -18,7 +18,7 @@ The `CREATE ROLE` statement creates one or more MariaDB [roles](/mariadb-adminis
 use it, you must have the global [CREATE USER](/kb/en/grant/#create-user)
 privilege or the [INSERT](/kb/en/grant/#table-privileges) privilege for the mysql
 database. For each account, `CREATE ROLE` creates a new row in the
-[mysql.user](/kb/en/mysqluser-table/) table that has no privileges, and with the
+[mysql.user](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqluser-table/) table that has no privileges, and with the
 corresponding `is_role` field set to `Y`. It also creates a record in the
 [mysql.roles_mapping](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlroles_mapping-table/) table.
 

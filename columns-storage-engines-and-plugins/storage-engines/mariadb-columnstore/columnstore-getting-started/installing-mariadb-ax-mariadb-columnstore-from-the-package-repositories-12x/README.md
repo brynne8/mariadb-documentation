@@ -1088,7 +1088,7 @@ Install via MSI (Windows Installer)
 
 Additional information on the Backup and Restore Tool:
 
-[https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/](https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/)
+[https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/mariadb-columnstore-backup-and-restore/backup-and-restore-for-mariadb-columnstore-110-onwards/)
 
 Additional information on mcsimport:
 

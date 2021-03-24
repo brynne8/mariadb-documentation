@@ -19,7 +19,7 @@ If you are doing a backup on the server and your tables all are [MyISAM](/kb/en/
 consider using [mysqlhotcopy](/clients-utilities/backup-restore-and-import-clients/mysqlhotcopy/) instead because it can accomplish faster
 backups and faster restores.
 
-mysqldump dumps triggers along with tables, as these are part of the table definition. However, [stored procedures](/programming-customizing-mariadb/stored-routines/stored-procedures/), [views](/programming-customizing-mariadb/views/), and [events](/programming-customizing-mariadb/triggers-events/event-scheduler/events/) are not, and need extra parameters to be recreated explicitly (for example, `--routines` and `--events`). [Procedures](/programming-customizing-mariadb/stored-routines/stored-procedures/) and [functions](functions) are however also part of the system tables (for example [mysql.proc](/kb/en/mysqlproc-table/)).
+mysqldump dumps triggers along with tables, as these are part of the table definition. However, [stored procedures](/programming-customizing-mariadb/stored-routines/stored-procedures/), [views](/programming-customizing-mariadb/views/), and [events](/programming-customizing-mariadb/triggers-events/event-scheduler/events/) are not, and need extra parameters to be recreated explicitly (for example, `--routines` and `--events`). [Procedures](/programming-customizing-mariadb/stored-routines/stored-procedures/) and [functions](functions) are however also part of the system tables (for example [mysql.proc](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlproc-table/)).
 
 `mysqldump` supports the [enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT](/kb/en/enhancements-for-start-transaction-with-consistent-snapshot/#mysqldump).
 
@@ -66,7 +66,7 @@ enabled by default, so to enable memory buffering, use
 
 ### mysqldump in [MariaDB 10.3](/kb/en/what-is-mariadb-103/) and Higher
 
-`mysqldump` in [MariaDB 10.3](/kb/en/what-is-mariadb-103/) includes logic to cater for the [mysql.transaction_registry table](/kb/en/mysqltransaction_registry-table/). `mysqldump` from an earlier MariaDB release cannot be used on [MariaDB 10.3](/kb/en/what-is-mariadb-103/) and beyond.
+`mysqldump` in [MariaDB 10.3](/kb/en/what-is-mariadb-103/) includes logic to cater for the [mysql.transaction_registry table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqltransaction_registry-table/). `mysqldump` from an earlier MariaDB release cannot be used on [MariaDB 10.3](/kb/en/what-is-mariadb-103/) and beyond.
 
 ### mysqldump and Old Versions of MySQL
 

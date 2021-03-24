@@ -10,8 +10,8 @@ A view cannot be used for updating if it uses  any of the following:
 - [HAVING](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select/)
 - [GROUP BY](/kb/en/select/#group-by)
 - [DISTINCT](/kb/en/select/#distinct)
-- [UNION](/kb/en/union/)
-- [UNION ALL](/kb/en/union/)
+- [UNION](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/union/)
+- [UNION ALL](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/union/)
 - An aggregate function, such as [MAX()](/built-in-functions/aggregate-functions/max/), [MIN()](/built-in-functions/aggregate-functions/min/), [SUM()](/built-in-functions/aggregate-functions/sum/) or [COUNT()](/built-in-functions/aggregate-functions/count/)
 - subquery in the SELECT list
 - subquery in the WHERE clause referring to a table in the FROM clause

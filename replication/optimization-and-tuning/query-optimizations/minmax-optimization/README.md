@@ -26,7 +26,7 @@ SELECT MAX(b) FROM t1 WHERE a=const AND b BETWEEN const AND const
 
 - Instead of `a=const` the condition `a IS NULL` can be used.
 
-The above optimization also works for [subqueries](/kb/en/subqueries/):
+The above optimization also works for [subqueries](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/subqueries/):
 
 ```sql
 SELECT x from t2 where y= (SELECT MIN(b) FROM t1 WHERE a=const)

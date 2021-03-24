@@ -99,7 +99,7 @@ Max_data_length: 0
         Comment:
 ```
 
-The [information_schema.INNODB_SYS_TABLES](/kb/en/information-schema-innodb_sys_tables-table/) table can also be queried to see the row format used by a table. For example:
+The [information_schema.INNODB_SYS_TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table/) table can also be queried to see the row format used by a table. For example:
 
 ```sql
 SELECT * FROM information_schema.INNODB_SYS_TABLES WHERE name='db1/tab'\G
@@ -115,7 +115,7 @@ ZIP_PAGE_SIZE: 0
    SPACE_TYPE: Single
 ```
 
-A table's tablespace is tagged with the lowest InnoDB file format that supports the table's row format. So, even if the `Barracuda` file format is enabled, tables that use the `COMPACT` or `REDUNDANT` row formats will be tagged with the `Antelope` file format in the [information_schema.INNODB_SYS_TABLES](/kb/en/information-schema-innodb_sys_tables-table/) table.
+A table's tablespace is tagged with the lowest InnoDB file format that supports the table's row format. So, even if the `Barracuda` file format is enabled, tables that use the `COMPACT` or `REDUNDANT` row formats will be tagged with the `Antelope` file format in the [information_schema.INNODB_SYS_TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table/) table.
 
 ## Row Formats
 

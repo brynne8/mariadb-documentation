@@ -431,7 +431,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 #### `spider_direct_dup_insert`
 
-- <strong>Description:</strong> Manages duplicate key check for [REPLACE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/replace/), [INSERT IGNORE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/ignore/) and [LOAD DATA LOCAL INFILE](/kb/en/load-data-infile/) to remote servers. This can save on network roundtrips if the key always maps to a single partition.  For bulk operations, records are checked for duplicate key errors one by one on the remote server, unless you set it to avoid duplicate checks on local servers (`1`).
+- <strong>Description:</strong> Manages duplicate key check for [REPLACE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/replace/), [INSERT IGNORE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/ignore/) and [LOAD DATA LOCAL INFILE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile/) to remote servers. This can save on network roundtrips if the key always maps to a single partition.  For bulk operations, records are checked for duplicate key errors one by one on the remote server, unless you set it to avoid duplicate checks on local servers (`1`).
 <ul start="1"><li>`-1` Uses the table parameter. 
 </li><li>`0` Performs duplicate checks on the local server.
 </li><li>`1` Avoids duplicate checks on the local server.

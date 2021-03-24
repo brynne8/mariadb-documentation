@@ -1,12 +1,12 @@
 # Preparing and Installing MariaDB ColumnStore 1.2.X
 
-- [Preparing for ColumnStore Installation - 1.2.0](/kb/en/library/documentation/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-12x/preparing-for-columnstore-installation-120/) — Prerequisite
+- [Preparing for ColumnStore Installation - 1.2.0](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-12x/preparing-for-columnstore-installation-120/) — Prerequisite
 
 With the 1.2.0  version of MariaDB ColumnStore, there should ...
 - [Preparing for ColumnStore Installation - 1.2.1](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-12x/preparing-for-and-installing-columnstore-version-121/) — Prerequisite
 
 With version 1.2.1 of MariaDB ColumnStore, there should be no...
-- [Preparing for ColumnStore Installation - 1.2.2](/kb/en/library/documentation/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-12x/preparing-for-columnstore-installation-122/) — Prerequisite
+- [Preparing for ColumnStore Installation - 1.2.2](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-12x/preparing-for-columnstore-installation-122/) — Prerequisite
 
 With version 1.2.2 of MariaDB ColumnStore, there should be no...
 - [MariaDB ColumnStore Cluster Test Tool](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-11x/mariadb-columnstore-cluster-test-tool/) — Introduction

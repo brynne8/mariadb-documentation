@@ -41,4 +41,4 @@ If the default mode is set to use cpimport internally any output error files wil
 
 ### See Also
 
-[LOAD DATA INFILE](/kb/en/load-data-infile/)
+[LOAD DATA INFILE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile/)

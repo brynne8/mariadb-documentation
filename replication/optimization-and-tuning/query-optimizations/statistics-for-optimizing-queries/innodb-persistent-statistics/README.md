@@ -16,8 +16,8 @@ These settings can be overwritten on a per-table basis by use of the [STATS_PERS
 
 Details of the statistics are stored in two system tables in the [mysql database](the-mysql-database-table):
 
-- [innodb_table_stats](/kb/en/mysqlinnodb_table_stats/)
-- [innodb_index_stats](/kb/en/mysqlinnodb_index_stats/)
+- [innodb_table_stats](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlinnodb_table_stats/)
+- [innodb_index_stats](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlinnodb_index_stats/)
 
 ## See Also
 

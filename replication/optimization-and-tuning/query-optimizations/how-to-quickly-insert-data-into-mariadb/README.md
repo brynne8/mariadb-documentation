@@ -38,7 +38,7 @@ faster than creating the index one row at a time and it also uses less key
 buffer memory.
 
 <strong>Note:</strong> When you insert into an <strong>empty table</strong> with [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/) or
-[LOAD DATA](/kb/en/load-data-infile/), MariaDB <strong>automatically</strong> does an
+[LOAD DATA](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile/), MariaDB <strong>automatically</strong> does an
 [DISABLE KEYS](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/) before and an [ENABLE KEYS](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/)
 afterwards.
 
@@ -60,7 +60,7 @@ Also, if the table has [INSERT triggers](/programming-customizing-mariadb/trigge
 ## Loading Text Files
 
 The <strong>fastest way</strong> to insert data into MariaDB is through the
-[LOAD DATA INFILE](/kb/en/load-data-infile/) command.
+[LOAD DATA INFILE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile/) command.
 
 The simplest form of the command is:
 
@@ -106,7 +106,7 @@ You can import many files in parallel with [mariadb-import](/clients-utilities/b
 mysqlimport --use-threads=10 database text-file-name [text-file-name...]
 ```
 
-Internally [mariadb-import/mysqlimport](/clients-utilities/backup-restore-and-import-clients/mysqlimport/) uses [LOAD DATA INFILE](/kb/en/load-data-infile/) to read
+Internally [mariadb-import/mysqlimport](/clients-utilities/backup-restore-and-import-clients/mysqlimport/) uses [LOAD DATA INFILE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile/) to read
 in the data.
 
 ## Inserting Data with INSERT Statements

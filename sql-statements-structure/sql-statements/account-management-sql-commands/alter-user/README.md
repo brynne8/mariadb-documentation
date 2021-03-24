@@ -104,7 +104,7 @@ CREATE USER for bob@localhost: CREATE USER `bob`@`localhost`
 
 ### IDENTIFIED BY 'password'
 
-The optional `IDENTIFIED BY` clause can be used to provide an account with a password. The password should be specified in plain text. It will be hashed by the [PASSWORD](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password/) function prior to being stored to the [mysql.user](/kb/en/mysqluser-table/) table.
+The optional `IDENTIFIED BY` clause can be used to provide an account with a password. The password should be specified in plain text. It will be hashed by the [PASSWORD](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password/) function prior to being stored to the [mysql.user](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqluser-table/) table.
 
 For example, if our password is `mariadb`, then we can set the account's password with:
 
@@ -121,7 +121,7 @@ The only [authentication plugins](/columns-storage-engines-and-plugins/plugins/a
 
 ### IDENTIFIED BY PASSWORD 'password_hash'
 
-The optional `IDENTIFIED BY PASSWORD` clause can be used to provide an account with a password that has already been hashed. The password should be specified as a hash that was provided by the [PASSWORD](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password/)#function. It will be stored to the [mysql.user](/kb/en/mysqluser-table/) table as-is.
+The optional `IDENTIFIED BY PASSWORD` clause can be used to provide an account with a password that has already been hashed. The password should be specified as a hash that was provided by the [PASSWORD](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password/)#function. It will be stored to the [mysql.user](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqluser-table/) table as-is.
 
 For example, if our password is `mariadb`, then we can find the hash with:
 
@@ -235,7 +235,7 @@ The resources are tracked per account, which means `'user'@'server'`; not per us
 
 The count can be reset for all users using [FLUSH USER_RESOURCES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/), [FLUSH PRIVILEGES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/) or [mysqladmin reload](/clients-utilities/mysqladmin/).
 
-Per account resource limits are stored in the [user](/kb/en/mysqluser-table/) table, in the [mysql](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database. Columns used for resources limits are named `max_questions`, `max_updates`, `max_connections` (for `MAX_CONNECTIONS_PER_HOUR`), and `max_user_connections` (for `MAX_USER_CONNECTIONS`).
+Per account resource limits are stored in the [user](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqluser-table/) table, in the [mysql](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database. Columns used for resources limits are named `max_questions`, `max_updates`, `max_connections` (for `MAX_CONNECTIONS_PER_HOUR`), and `max_user_connections` (for `MAX_USER_CONNECTIONS`).
 
 ## Password Expiry
 
@@ -273,6 +273,6 @@ From [MariaDB 10.4.7](/kb/en/mariadb-1047-release-notes/) and [MariaDB 10.5.8](/
 - [DROP USER](/sql-statements-structure/sql-statements/account-management-sql-commands/drop-user/)
 - [SET PASSWORD](/sql-statements-structure/sql-statements/account-management-sql-commands/set-password/)
 - [SHOW CREATE USER](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-user/)
-- [mysql.user table](/kb/en/mysqluser-table/)
+- [mysql.user table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqluser-table/)
 - [Password Validation Plugins](/columns-storage-engines-and-plugins/plugins/password-validation-plugins/) - permits the setting of basic criteria for passwords
 - [Authentication Plugins](/columns-storage-engines-and-plugins/plugins/authentication-plugins/) - allow various authentication methods to be used, and new ones to be developed.

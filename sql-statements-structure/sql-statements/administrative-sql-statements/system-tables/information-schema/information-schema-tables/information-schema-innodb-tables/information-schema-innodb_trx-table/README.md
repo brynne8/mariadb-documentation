@@ -1,0 +1,88 @@
+# Information Schema INNODB_TRX Table
+
+The [Information Schema](/kb/en/information_schema/) `INNODB_TRX` table stores information about all currently executing InnoDB transactions.
+
+It has the following columns:
+
+<table><tbody><tr><th>Column</th><th>Description</th></tr>
+<tr><td><code>TRX_ID</code></td><td>Unique transaction ID number.</td></tr>
+<tr><td><code>TRX_STATE</code></td><td>Transaction execution state; one of <code>RUNNING</code>, <code>LOCK WAIT</code>, <code>ROLLING BACK</code> or <code>COMMITTING</code>.</td></tr>
+<tr><td><code>TRX_STARTED</code></td><td>Time that the transaction started.</td></tr>
+<tr><td><code>TRX_REQUESTED_LOCK_ID</code></td><td>If <code>TRX_STATE</code> is <code>LOCK_WAIT</code>, the <code><a href="/kb/en/information-schema-innodb_locks-table/">INNODB_LOCKS.LOCK_ID</a></code> value of the lock being waited on. <code>NULL</code> if any other state.</td></tr>
+<tr><td><code>TRX_WAIT_STARTED</code></td><td>If <code>TRX_STATE</code> is <code>LOCK_WAIT</code>, the time the transaction started waiting for the lock, otherwise <code>NULL</code>.</td></tr>
+<tr><td><code>TRX_WEIGHT</code></td><td>Transaction weight, based on the number of locked rows and the number of altered rows. To resolve deadlocks, lower weighted transactions are rolled back first. Transactions that have affected non-transactional tables are always treated as having a heavier weight.</td></tr>
+<tr><td><code>TRX_MYSQL_THREAD_ID</code></td><td>Thread ID from the <code><a href="/kb/en/information-schema-processlist-table/">PROCESSLIST</a></code> table (note that the locking and transaction information schema tables use a different snapshot from the processlist, so records may appear in one but not the other).</td></tr>
+<tr><td><code>TRX_QUERY</code></td><td>SQL that the transaction is currently running.</td></tr>
+<tr><td><code>TRX_OPERATION_STATE</code></td><td>Transaction's current state, or <code>NULL</code>.</td></tr>
+<tr><td><code>TRX_TABLES_IN_USE</code></td><td>Number of InnoDB tables currently being used for processing the current SQL statement.</td></tr>
+<tr><td><code>TRX_TABLES_LOCKED</code></td><td>Number of InnoDB tables that that have row locks held by the current SQL statement.</td></tr>
+<tr><td><code>TRX_LOCK_STRUCTS</code></td><td>Number of locks reserved by the transaction.</td></tr>
+<tr><td><code>TRX_LOCK_MEMORY_BYTES</code></td><td>Total size in bytes of the memory used to hold the lock structures for the current transaction in memory.</td></tr>
+<tr><td><code>TRX_ROWS_LOCKED</code></td><td>Number of rows the current transaction has locked. locked by this transaction. An approximation, and may include rows not visible to the current transaction that are delete-marked but physically present.</td></tr>
+<tr><td><code>TRX_ROWS_MODIFIED</code></td><td>Number of rows added or changed in the current transaction.</td></tr>
+<tr><td><code>TRX_CONCURRENCY_TICKETS</code></td><td>Indicates how much work the current transaction can do before being swapped out, see the <code><a href="/kb/en/xtradbinnodb-server-system-variables/#innodb_concurrency_tickets">innodb_concurrency_tickets</a></code> system variable.</td></tr>
+<tr><td><code>TRX_ISOLATION_LEVEL</code></td><td><a href="/kb/en/set-transaction/#isolation-levels">Isolation level</a> of the current transaction.</td></tr>
+<tr><td><code>TRX_UNIQUE_CHECKS</code></td><td>Whether unique checks are <code>on</code> or <code>off</code> for the current transaction. Bulk data are a case where unique checks would be off.</td></tr>
+<tr><td><code>TRX_FOREIGN_KEY_CHECKS</code></td><td>Whether foreign key checks are <code>on</code> or <code>off</code> for the current transaction. Bulk data are a case where foreign keys checks would be off.</td></tr>
+<tr><td><code>TRX_LAST_FOREIGN_KEY_ERROR</code></td><td>Error message for the most recent foreign key error, or <code>NULL</code> if none.</td></tr>
+<tr><td><code>TRX_ADAPTIVE_HASH_LATCHED</code></td><td>Whether the adaptive hash index is locked by the current transaction or not. One transaction at a time can change the adaptive hash index.</td></tr>
+<tr><td><code>TRX_ADAPTIVE_HASH_TIMEOUT</code></td><td>Whether the adaptive hash index search latch shoild be relinquished immediately or reserved across all MariaDB calls. <code>0</code> if there is no contention on the adaptive hash index, in which case the latch is reserved until completion, otherwise counts down to zero and the latch is released after each row lookup.</td></tr>
+<tr><td><code>TRX_IS_READ_ONLY</code></td><td><code>1</code> if a read-only transaction, otherwise <code>0</code>.</td></tr>
+<tr><td><code>TRX_AUTOCOMMIT_NON_LOCKING</code></td><td><code>1</code> if the transaction only contains this one statement, that is, a <code><a href="/kb/en/select/">SELECT</a></code> statement not using <code>FOR UPDATE</code> or <code>LOCK IN SHARED MODE</code>, and with autocommit on. If this and <code>TRX_IS_READ_ONLY</code> are both 1, the transaction can be optimized by the storrage engine to reduce some overheads</td></tr>
+</tbody></table>
+
+The table is often used in conjunction with the [INNODB_LOCKS](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_locks-table/) and [INNODB_LOCK_WAITS](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_lock_waits-table/) tables to diagnose problematic locks and transactions.
+
+[XA transactions](/sql-statements-structure/sql-statements/transactions/xa-transactions/) are not stored in this table. To see them, `XA RECOVER` can be used.
+
+## Example
+
+```sql
+-- session 1
+START TRANSACTION;
+UPDATE t SET id = 15 WHERE id = 10;
+
+-- session 2
+DELETE FROM t WHERE id = 10;
+
+-- session 1
+USE information_schema;
+SELECT l.*, t.*
+    FROM information_schema.INNODB_LOCKS l
+    JOIN information_schema.INNODB_TRX t
+        ON l.lock_trx_id = t.trx_id
+    WHERE trx_state = 'LOCK WAIT' \G
+*************************** 1. row ***************************
+                   lock_id: 840:40:3:2
+               lock_trx_id: 840
+                 lock_mode: X
+                 lock_type: RECORD
+                lock_table: `test`.`t`
+                lock_index: PRIMARY
+                lock_space: 40
+                 lock_page: 3
+                  lock_rec: 2
+                 lock_data: 10
+                    trx_id: 840
+                 trx_state: LOCK WAIT
+               trx_started: 2019-12-23 18:43:46
+     trx_requested_lock_id: 840:40:3:2
+          trx_wait_started: 2019-12-23 18:43:46
+                trx_weight: 2
+       trx_mysql_thread_id: 46
+                 trx_query: DELETE FROM t WHERE id = 10
+       trx_operation_state: starting index read
+         trx_tables_in_use: 1
+         trx_tables_locked: 1
+          trx_lock_structs: 2
+     trx_lock_memory_bytes: 1136
+           trx_rows_locked: 1
+         trx_rows_modified: 0
+   trx_concurrency_tickets: 0
+       trx_isolation_level: REPEATABLE READ
+         trx_unique_checks: 1
+    trx_foreign_key_checks: 1
+trx_last_foreign_key_error: NULL
+          trx_is_read_only: 0
+trx_autocommit_non_locking: 0
+```

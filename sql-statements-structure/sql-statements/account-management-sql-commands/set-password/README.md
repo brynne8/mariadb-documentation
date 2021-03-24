@@ -33,7 +33,7 @@ account on the current server host. Only clients that have the `UPDATE`
 privilege for the `mysql` database can do this. The user value should be
 given in <code class="fixed" style="white-space:pre-wrap">user_name@host_name</code> format, where `user_name` and `host_name` are
 exactly as they are listed in the User and Host columns of the
-<a undefined>mysql.user</a> table entry.
+[mysql.user](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqluser-table/) table entry.
 
 The argument to [PASSWORD()](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password/) and the password given to MariaDB clients can be of arbitrary length.
 
@@ -41,15 +41,15 @@ The argument to [PASSWORD()](/built-in-functions/secondary-functions/encryption-
 
 ##### MariaDB starting with [10.4](/kb/en/what-is-mariadb-104/)
 
-In [MariaDB 10.4](/kb/en/what-is-mariadb-104/) and later, `SET PASSWORD` (with or without `PASSWORD()`) works for accounts authenticated via any [authentication plugin](/columns-storage-engines-and-plugins/plugins/authentication-plugins/) that supports passwords stored in the <a undefined>mysql.global_priv</a> table.
+In [MariaDB 10.4](/kb/en/what-is-mariadb-104/) and later, `SET PASSWORD` (with or without `PASSWORD()`) works for accounts authenticated via any [authentication plugin](/columns-storage-engines-and-plugins/plugins/authentication-plugins/) that supports passwords stored in the [mysql.global_priv](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlglobal_priv-table/) table.
 
-The [ed25519](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-ed25519/), [mysql_native_password](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-mysql_native_password/), and [mysql_old_password](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-mysql_old_password/) authentication plugins store passwords in the <a undefined>mysql.global_priv</a> table.
+The [ed25519](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-ed25519/), [mysql_native_password](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-mysql_native_password/), and [mysql_old_password](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-mysql_old_password/) authentication plugins store passwords in the [mysql.global_priv](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlglobal_priv-table/) table.
 
-If you run `SET PASSWORD` on an account that authenticates with one of these authentication plugins that stores passwords in the <a undefined>mysql.global_priv</a> table, then the `PASSWORD()` function is evaluated by the specific authentication plugin used by the account. The authentication plugin hashes the password with a method that is compatible with that specific authentication plugin.
+If you run `SET PASSWORD` on an account that authenticates with one of these authentication plugins that stores passwords in the [mysql.global_priv](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlglobal_priv-table/) table, then the `PASSWORD()` function is evaluated by the specific authentication plugin used by the account. The authentication plugin hashes the password with a method that is compatible with that specific authentication plugin.
 
-The [unix_socket](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-unix-socket/), [named_pipe](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-named-pipe/), [gssapi](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-gssapi/), and [pam](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam/) authentication plugins do <strong>not</strong> store passwords in the <a undefined>mysql.global_priv</a> table. These authentication plugins rely on other methods to authenticate the user.
+The [unix_socket](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-unix-socket/), [named_pipe](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-named-pipe/), [gssapi](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-plugin-gssapi/), and [pam](/columns-storage-engines-and-plugins/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam/) authentication plugins do <strong>not</strong> store passwords in the [mysql.global_priv](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlglobal_priv-table/) table. These authentication plugins rely on other methods to authenticate the user.
 
-If you attempt to run `SET PASSWORD` on an account that authenticates with one of these authentication plugins that doesn't store a password in the <a undefined>mysql.global_priv</a> table, then MariaDB Server will raise a warning like the following:
+If you attempt to run `SET PASSWORD` on an account that authenticates with one of these authentication plugins that doesn't store a password in the [mysql.global_priv](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlglobal_priv-table/) table, then MariaDB Server will raise a warning like the following:
 
 ```sql
 SET PASSWORD is ignored for users authenticating via unix_socket plugin

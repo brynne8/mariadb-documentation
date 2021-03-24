@@ -134,7 +134,7 @@ Mariabackup from MariaDB Enterprise Server performs the following tasks in the `
 </li><li>The file names of renamed tables can also be read from `ddl.log`, so the files can be renamed instead of re-copying them.
 </li></ul>
 - Copy changes to system log tables.
-<ul start="1"><li><a undefined>mysql.general_log</a>
+<ul start="1"><li>[mysql.general_log](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table/)
 </li><li>[mysql.slow_log](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlslow_log-table/)
 </li><li>This is easy as these are append only.
 </li></ul>
@@ -149,14 +149,14 @@ Mariabackup from MariaDB Enterprise Server performs the following tasks in the `
 
 - Create a [MyRocks](/columns-storage-engines-and-plugins/storage-engines/myrocks/) checkpoint using the <a undefined>rocksdb_create_checkpoint</a> system variable.
 - Copy changes to system log tables.
-<ul start="1"><li><a undefined>mysql.general_log</a>
+<ul start="1"><li>[mysql.general_log](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table/)
 </li><li>[mysql.slow_log](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlslow_log-table/)
 </li><li>This is easy as these are append only.
 </li></ul>
 - Copy changes to statistics tables.
-<ul start="1"><li><a undefined>mysql.table_stats</a>
-</li><li><a undefined>mysql.column_stats</a>
-</li><li><a undefined>mysql.index_stats</a>
+<ul start="1"><li>[mysql.table_stats](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqltable_stats-table/)
+</li><li>[mysql.column_stats](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlcolumn_stats-table/)
+</li><li>[mysql.index_stats](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlindex_stats-table/)
 </li></ul>
 - Copy the tail of all transaction logs.
 <ul start="1"><li>The tail of the [InnoDB redo log](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-redo-log/) (i.e. `ib_logfileN` files) will be copied for [InnoDB](/columns-storage-engines-and-plugins/storage-engines/innodb/) tables.

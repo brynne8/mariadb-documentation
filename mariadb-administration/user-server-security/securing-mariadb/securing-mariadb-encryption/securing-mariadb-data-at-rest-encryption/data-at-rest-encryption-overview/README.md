@@ -52,7 +52,7 @@ MariaDB supports the use of [multiple encryption keys](/kb/en/encryption-key-man
 How MariaDB manages encryption keys depends on which encryption key management solution you choose. Currently, MariaDB has three options:
 
 - [File Key Management Plugin](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin/)
-- [AWS Key Management Plugin](/kb/en/aws-key-management-encryption-plugin/)
+- [AWS Key Management Plugin](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin/)
 - [Eperi Key Management Plugin](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/key-management-and-encryption-plugins/eperi-key-management-encryption-plugin/)
 
 Once you have an key management and encryption plugin set up and configured for your server, you can begin using encryption options to better secure your data.

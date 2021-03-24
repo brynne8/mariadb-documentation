@@ -3,7 +3,7 @@
 Starting with MariaDB ColumnStore 1.4, the Bulk Write SDK is deprecated, and it should not be used for loading data. The more modern recommendations are:
 
 - Load data using [cpimport](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-data-loading/).
-- Or connect to MariaDB ColumnStore using a standard MariaDB [client](/clients-utilities/) or [connector](/kb/en/connectors/), and then load data using <a undefined>LOAD DATA INFILE</a>.
+- Or connect to MariaDB ColumnStore using a standard MariaDB [client](/clients-utilities/) or [connector](/kb/en/connectors/), and then load data using [LOAD DATA INFILE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile/).
 
 # Introduction
 

@@ -56,7 +56,7 @@ modified.
 `trigger_event` indicates the kind of statement that activates the
 trigger. The `trigger_event` can be one of the following:
 
-- `INSERT`: The trigger is activated whenever a new row is inserted into the table; for example, through [INSERT](/kb/en/insert-commands/), [LOAD DATA](/kb/en/load-data-infile/), and [REPLACE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/replace/) statements.
+- `INSERT`: The trigger is activated whenever a new row is inserted into the table; for example, through [INSERT](/kb/en/insert-commands/), [LOAD DATA](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile/), and [REPLACE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/replace/) statements.
 - `UPDATE`: The trigger is activated whenever a row is modified; for example, through [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/) statements.
 - `DELETE`: The trigger is activated whenever a row is deleted from the table; for example, through [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/) and [REPLACE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/replace/) statements. However, `DROP TABLE` and `TRUNCATE` statements on the table do not activate this trigger, because they do not use `DELETE`. Dropping a partition does not activate `DELETE` triggers, either.
 

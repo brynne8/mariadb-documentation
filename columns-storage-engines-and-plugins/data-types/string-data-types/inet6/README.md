@@ -51,7 +51,7 @@ Attempting to compare INET6 to an expression of any other data type returns an e
 
 ### Mixing INET6 Values for Result
 
-An INET6 expression can be mixed for result (i.e. [UNION](/kb/en/union/), [CASE..THEN](case), [COALESCE](/sql-statements-structure/operators/comparison-operators/coalesce/) etc) with:
+An INET6 expression can be mixed for result (i.e. [UNION](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/union/), [CASE..THEN](case), [COALESCE](/sql-statements-structure/operators/comparison-operators/coalesce/) etc) with:
 
 - another INET6 expression. The resulting data type is INET6.
 - a character string in text (short or long) address representation. The result data type is INET6. The character string counterpart is automatically converted to INET6. If the string format is not understood, it's converted with a warning to either NULL or to '::', depending on the NULL-ability of the result.

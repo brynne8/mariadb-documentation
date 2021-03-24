@@ -85,7 +85,7 @@ This is a subclass of Item. Its sole purpose is to hide the fact that
 ##### Utility Functions (sp.{cc,h})
 
 This contains functions for creating, dropping and finding a stored
-      procedure in the [mysql.proc table](/kb/en/mysqlproc-table/) (or the internal cache).
+      procedure in the [mysql.proc table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlproc-table/) (or the internal cache).
 
 #### Parsing CREATE PROCEDURE
 
@@ -195,7 +195,7 @@ As seen above, the entired definition string, including the "CREATE
     stored in the table mysql.proc with the name and type as the key, the
     type being one of the enum ("procedure","function").
 
-A PROCEDURE is just stored in the [mysql.proc table](/kb/en/mysqlproc-table/). A FUNCTION has an
+A PROCEDURE is just stored in the [mysql.proc table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlproc-table/). A FUNCTION has an
     additional requirement. They will be called in expressions with the same
     syntax as UDFs, so UDFs and stored FUNCTIONs share the namespace. Thus,
     we must make sure that we do not have UDFs and FUNCTIONs with the same
@@ -325,7 +325,7 @@ A FUNCTION differs from a PROCEDURE in one important aspect: Whereas a
       PROCEDURE is CALLed as statement by itself, a FUNCTION is invoked
       "on-the-fly" during the execution of *another* statement.
       This makes things a lot more complicated compared to CALL:
-      - We can't read and parse the FUNCTION from the [mysql.proc table](/kb/en/mysqlproc-table/) at the
+      - We can't read and parse the FUNCTION from the [mysql.proc table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlproc-table/) at the
         point of invocation; the server requires that all tables used are
         opened and locked at the beginning of the query execution.
       One "obvious" solution would be to simply push "mysql.proc" to the list
@@ -334,7 +334,7 @@ A FUNCTION differs from a PROCEDURE in one important aspect: Whereas a
       table easily; since a privileged used might in fact want to search
       the proc table).
       Another solution would of course be to allow the opening and closing
-      of the [mysql.proc table](/kb/en/mysqlproc-table/) during a query execution, but this it not
+      of the [mysql.proc table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlproc-table/) during a query execution, but this it not
       possible at the present.
 
 So, the solution is to collect the names of the referred FUNCTIONs during
@@ -1119,7 +1119,7 @@ This is an outline of the key types. Some types and other details
 
 ### The mysql.proc schema
 
-This is the [mysql.proc table](/kb/en/mysqlproc-table/) used in [MariaDB 10.4](/kb/en/what-is-mariadb-104/):
+This is the [mysql.proc table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlproc-table/) used in [MariaDB 10.4](/kb/en/what-is-mariadb-104/):
 
 ```sql
 CREATE TABLE `proc` (

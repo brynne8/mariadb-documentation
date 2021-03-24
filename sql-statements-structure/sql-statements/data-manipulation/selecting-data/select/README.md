@@ -35,7 +35,7 @@ export_options:
 ## Description
 
 `SELECT` is used to retrieve rows selected from one or more
-tables, and can include [UNION](/kb/en/union/) statements and [subqueries](/kb/en/subqueries/).
+tables, and can include [UNION](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/union/) statements and [subqueries](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/subqueries/).
 
 - Each <em>select_expr</em> expression indicates a column or data that you want to retrieve. You
 must have at least one select expression. See [Select Expressions](#select-expressions) below.

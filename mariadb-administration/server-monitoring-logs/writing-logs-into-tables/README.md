@@ -13,7 +13,7 @@ SET GLOBAL log_output = 'TABLE';
 SET GLOBAL log_output = 'FILE,TABLE';
 ```
 
-The general log will be written into the [general_log](/kb/en/mysqlgeneral_log-table/) table, and the slow query log will be written into the [slow_log](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlslow_log-table/) table. Only a limited set of operations are supported for those special tables. For example, direct DML statements (like `INSERT`) on those tables will fail with an error similar to the following:
+The general log will be written into the [general_log](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table/) table, and the slow query log will be written into the [slow_log](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlslow_log-table/) table. Only a limited set of operations are supported for those special tables. For example, direct DML statements (like `INSERT`) on those tables will fail with an error similar to the following:
 
 ```sql
 ERROR 1556 (HY000): You can't use locks with log tables.

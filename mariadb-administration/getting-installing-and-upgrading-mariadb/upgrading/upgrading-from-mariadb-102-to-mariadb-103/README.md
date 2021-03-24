@@ -101,7 +101,7 @@ The following options should be removed or renamed if you use them in your [opti
 
 #### mysqldump
 
-- [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump/) in [MariaDB 10.3](/kb/en/what-is-mariadb-103/) includes logic to cater for the [mysql.transaction_registry table](/kb/en/mysqltransaction_registry-table/). `mysqldump` from an earlier MariaDB release cannot be used on [MariaDB 10.3](/kb/en/what-is-mariadb-103/) and beyond.
+- [mysqldump](/clients-utilities/backup-restore-and-import-clients/mysqldump/) in [MariaDB 10.3](/kb/en/what-is-mariadb-103/) includes logic to cater for the [mysql.transaction_registry table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqltransaction_registry-table/). `mysqldump` from an earlier MariaDB release cannot be used on [MariaDB 10.3](/kb/en/what-is-mariadb-103/) and beyond.
 
 #### MariaDB Backup and Percona XtraBackup
 

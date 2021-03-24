@@ -44,7 +44,7 @@ SHOW CREATE USER 'marijn'@'localhost';
 +-----------------------------------------------+
 ```
 
-as well as querying the [mysql.global_priv table](/kb/en/mysqlglobal_priv-table/):
+as well as querying the [mysql.global_priv table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlglobal_priv-table/):
 
 ```sql
 SELECT CONCAT(user, '@', host, ' => ', JSON_DETAILED(priv)) FROM mysql.global_priv 

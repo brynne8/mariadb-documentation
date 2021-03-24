@@ -126,11 +126,11 @@ Some data types are affected by the time zone settings.
 
 The [mysql](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database contains a number of time zone tables:
 
-- <a undefined>time_zone</a>
-- <a undefined>time_zone_leap_second</a>
-- <a undefined>time_zone_name</a>
-- <a undefined>time_zone_transition</a>
-- <a undefined>time_zone_transition_type</a>
+- [time_zone](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqltime_zone-table/)
+- [time_zone_leap_second](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqltime_zone_leap_second-table/)
+- [time_zone_name](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqltime_zone_name-table/)
+- [time_zone_transition](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqltime_zone_transition-table/)
+- [time_zone_transition_type](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqltime_zone_transition_type-table/)
 
 By default, these time zone tables in the [mysql](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database are created, but not populated.
 

@@ -96,7 +96,7 @@ INSERT INTO mariadb_tab SELECT * FROM tab;
 
 ## PostgreSQL's COPY TO
 
-PostgreSQL's <a undefined>COPY TO</a> allows you to copy the data from a PostgreSQL table to a text file. This data can then be loaded into MariaDB with <a undefined>LOAD DATA INFILE</a>.
+PostgreSQL's <a undefined>COPY TO</a> allows you to copy the data from a PostgreSQL table to a text file. This data can then be loaded into MariaDB with [LOAD DATA INFILE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile/).
 
 ## MySQL Workbench
 

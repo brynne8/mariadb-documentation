@@ -80,7 +80,7 @@ The corresponding [binary log](/mariadb-administration/server-monitoring-logs/bi
 
 #### GTID Position
 
-If the slave is replicating [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) events that contain [GTIDs](/replication/standard-replication/gtid/), then the [slave's SQL thread](/kb/en/replication-threads/#slave-sql-thread) will write every GTID that it applies to the <a undefined>mysql.gtid_slave_pos</a> table. This GTID can be inspected and modified through the <a undefined>gtid_slave_pos</a> system variable.
+If the slave is replicating [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) events that contain [GTIDs](/replication/standard-replication/gtid/), then the [slave's SQL thread](/kb/en/replication-threads/#slave-sql-thread) will write every GTID that it applies to the [mysql.gtid_slave_pos](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table/) table. This GTID can be inspected and modified through the <a undefined>gtid_slave_pos</a> system variable.
 
 If the slave has the <a undefined>log_slave_updates</a> system variable enabled and if the slave has the [binary log](/mariadb-administration/server-monitoring-logs/binary-log/) enabled, then every write by the [slave's SQL thread](/kb/en/replication-threads/#slave-sql-thread) will also go into the slave's [binary log](/mariadb-administration/server-monitoring-logs/binary-log/). This means that [GTIDs](/replication/standard-replication/gtid/) of replicated transactions would be reflected in the value of the <a undefined>gtid_binlog_pos</a> system variable.
 

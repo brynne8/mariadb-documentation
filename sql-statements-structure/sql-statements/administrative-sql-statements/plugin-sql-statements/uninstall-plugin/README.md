@@ -10,14 +10,14 @@ UNINSTALL PLUGIN [IF EXISTS] plugin_name```
 This statement removes a single installed [plugin](/kb/en/mariadb-plugins/). To uninstall the whole library which contains the plugin, use [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname/). You cannot uninstall a plugin if any table that uses it is open.
 
 <code class="highlight fixed" style="white-space:pre-wrap">plugin_name</code> must be the name of some plugin that is listed
-in the [mysql.plugin](/kb/en/mysqlplugin-table/) table. The server executes the plugin's deinitialization
+in the [mysql.plugin](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlplugin-table/) table. The server executes the plugin's deinitialization
 function and removes the row for the plugin from the `mysql.plugin`
 table, so that subsequent server restarts will not load and initialize
 the plugin. <code class="highlight fixed" style="white-space:pre-wrap">UNINSTALL PLUGIN</code> does not remove the plugin's
 shared library file.
 
 To use <code class="highlight fixed" style="white-space:pre-wrap">UNINSTALL PLUGIN</code>, you must have the
-[DELETE](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/) privilege for the [mysql.plugin](/kb/en/mysqlplugin-table/) table.
+[DELETE](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/) privilege for the [mysql.plugin](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlplugin-table/) table.
 
 ##### MariaDB starting with [10.4.0](/kb/en/mariadb-1040-release-notes/)
 

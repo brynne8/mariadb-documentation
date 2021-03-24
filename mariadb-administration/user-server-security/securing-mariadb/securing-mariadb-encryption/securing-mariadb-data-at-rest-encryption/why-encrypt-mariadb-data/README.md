@@ -34,7 +34,7 @@ All data that is not supposed to fall into possible attackers hands should be en
 There are currently three options for key management:
 
 - [File Key Management Plugin](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin/)
-- [AWS Key Management Plugin](/kb/en/aws-key-management-encryption-plugin/)
+- [AWS Key Management Plugin](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin/)
 - [eperi Gateway for Databases](/kb/en/encryption-key-management/#eperi-gateway-for-databases)
 
 See [Encryption Key Management](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management/) for details.

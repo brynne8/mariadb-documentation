@@ -52,7 +52,7 @@ The slave remembers the global transaction ID of the last event group
 
 2. The state of the slave is recorded in a crash-safe way.
 
-The slave keeps track of its current position (the global transaction ID of the last transaction applied) in the [mysql.gtid_slave_pos](/kb/en/mysqlgtid_slave_pos-table/) system table. If this table is using a transactional storage engine (such as InnoDB, which is the default), then updates to the state are done in the same transaction as the updates to the data. This makes the state crash-safe; if the slave server crashes, crash recovery on restart will make sure that the recorded replication position matches the changes that were actually replicated. This is not the case for old-style replication, where the state is recorded in a file relay-log.info, which is updated independently of the actual data changes and can easily get out of sync if the slave server crashes. (This works for DML to transactional tables; non-transactional tables and DDL in general are not crash-safe in MariaDB.)
+The slave keeps track of its current position (the global transaction ID of the last transaction applied) in the [mysql.gtid_slave_pos](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table/) system table. If this table is using a transactional storage engine (such as InnoDB, which is the default), then updates to the state are done in the same transaction as the updates to the data. This makes the state crash-safe; if the slave server crashes, crash recovery on restart will make sure that the recorded replication position matches the changes that were actually replicated. This is not the case for old-style replication, where the state is recorded in a file relay-log.info, which is updated independently of the actual data changes and can easily get out of sync if the slave server crashes. (This works for DML to transactional tables; non-transactional tables and DDL in general are not crash-safe in MariaDB.)
 
 Because of these two benefits, it is generally recommended to use global
 transaction ID for any replication setups based on [MariaDB 10.0.2](/kb/en/mariadb-1002-release-notes/) or later.
@@ -216,7 +216,7 @@ SHOW SLAVE STATUS\G
 Using_Gtid: Slave_pos
 ```
 
-The slave server internally uses the [mysql.gtid_slave_pos table](/kb/en/mysqlgtid_slave_pos-table/) to store the
+The slave server internally uses the [mysql.gtid_slave_pos table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table/) to store the
 GTID position (and so preserve the value of <code class="fixed" style="white-space:pre-wrap">@@GLOBAL.gtid_slave_pos</code> across
 server restarts). After upgrading a server to 10.0, it is necessary to run
 [mysql_upgrade](/sql-statements-structure/sql-statements/table-statements/mysql_upgrade/) (as always) to get the table created.
@@ -230,7 +230,7 @@ storage engine, for example), use [ALTER TABLE](/sql-statements-structure/sql-st
 
 <code class="fixed" style="white-space:pre-wrap">ALTER TABLE mysql.gtid_slave_pos ENGINE = InnoDB</code>
 
-The [mysql.gtid_slave_pos table](/kb/en/mysqlgtid_slave_pos-table/) should not be modified in any other way. In
+The [mysql.gtid_slave_pos table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table/) should not be modified in any other way. In
 particular, do not try to update the rows in the table to change the slave's
 idea of the current GTID position; instead use
 
@@ -238,7 +238,7 @@ idea of the current GTID position; instead use
 
 Starting from [MariaDB 10.3.1](/kb/en/mariadb-1031-release-notes/), the server variable [gtid_pos_auto_engines](#gtid_pos_auto_engines) can
 preferably be set to make the server handle this automatically. See the
-description of the [mysql.gtid_slave_pos table](/kb/en/mysqlgtid_slave_pos-table/) for details.
+description of the [mysql.gtid_slave_pos table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table/) for details.
 
 ##### MariaDB [10.0.2](/kb/en/mariadb-1002-release-notes/)
 
@@ -337,7 +337,7 @@ START SLAVE;
 This method is particularly useful when setting up a new slave from a backup of the master. Remember to ensure that the value of <a undefined>server_id</a> configured on the new slave is different from that of any other server in the replication topology.
 
 If the backup was taken of an existing slave server, then the new slave should already have the
-correct GTID position stored in the <a undefined>mysql.gtid_slave_pos</a> table. This is assuming that this table was backed up and that it was backed up in a consistent manner with changes to other tables. In this case, there is no need to explicitly look up the GTID position on the old server and set it on the new slave - it will be already correctly loaded from the <a undefined>mysql.gtid_slave_pos</a> table. This however does not work if the backup was taken from the master - because then the current GTID position is contained in the binary log, not in the <a undefined>mysql.gtid_slave_pos</a> table or any other table.
+correct GTID position stored in the [mysql.gtid_slave_pos](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table/) table. This is assuming that this table was backed up and that it was backed up in a consistent manner with changes to other tables. In this case, there is no need to explicitly look up the GTID position on the old server and set it on the new slave - it will be already correctly loaded from the [mysql.gtid_slave_pos](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table/) table. This however does not work if the backup was taken from the master - because then the current GTID position is contained in the binary log, not in the [mysql.gtid_slave_pos](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table/) table or any other table.
 
 #### Setting up a New Slave with Mariabackup
 
@@ -621,7 +621,7 @@ If a user sets the value of the `gtid_slave_pos` system variable, and <a undefin
 
 This can help protect the user when the slave is configured to use <a undefined>gtid_current_pos</a>  as its replication position. This can also help protect the user when a server has been rolled back to restart replication from an earlier point in time, but the user has forgotten to reset <a undefined>gtid_binlog_pos</a> with [RESET MASTER](/sql-statements-structure/sql-statements/administrative-sql-statements/replication-commands/reset-master/).
 
-The <a undefined>mysql.gtid_slave_pos</a> system table is used to store the contents of global.gtid_slave_pos and preserve it over restarts.
+The [mysql.gtid_slave_pos](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table/) system table is used to store the contents of global.gtid_slave_pos and preserve it over restarts.
 
 - <strong>Commandline:</strong> None
 - <strong>Scope:</strong> Global
@@ -823,7 +823,7 @@ offending slave, to be able to replicate past the problem point (perhaps using
 
 #### `gtid_pos_auto_engines`
 
-This variable is used to enable multiple versions of the [mysql.gtid_slave_pos](/kb/en/mysqlgtid_slave_pos-table/) table, one for each transactional storage engine in use. This can improve replication performance if a server is using multiple different storage engines in different transactions.
+This variable is used to enable multiple versions of the [mysql.gtid_slave_pos](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table/) table, one for each transactional storage engine in use. This can improve replication performance if a server is using multiple different storage engines in different transactions.
 
 The value is a list of engine names, separated by commas (','). Replication
 of transactions using these engines will automatically create new versions
@@ -849,7 +849,7 @@ Removing a storage engine from the variable will have no effect once the new tab
 
 #### `gtid_cleanup_batch_size`
 
-- <strong>Description:</strong> Normally does not need tuning. How many old rows must accumulate in the [mysql.gtid_slave_pos table](/kb/en/mysqlgtid_slave_pos-table/) before a background job will be run to delete them. Can be increased to reduce number of commits if using many different engines with [gtid_pos_auto_engines](#gtid_pos_auto_engines), or to reduce CPU overhead if using a huge number of different [gtid_domain_ids](#gtid_domain_id). Can be decreased to reduce number of old rows in the table.
+- <strong>Description:</strong> Normally does not need tuning. How many old rows must accumulate in the [mysql.gtid_slave_pos table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table/) before a background job will be run to delete them. Can be increased to reduce number of commits if using many different engines with [gtid_pos_auto_engines](#gtid_pos_auto_engines), or to reduce CPU overhead if using a huge number of different [gtid_domain_ids](#gtid_domain_id). Can be decreased to reduce number of old rows in the table.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--gtid-cleanup-batch-size=#</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes

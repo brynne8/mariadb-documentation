@@ -53,5 +53,5 @@ The file which contains the buffer pool dump is specified via the [innodb_buffer
 ## See Also
 
 - [InnoDB Change Buffering](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-change-buffering/)
-- [Information Schema INNODB_BUFFER_POOL_STATS Table](/kb/en/information-schema-innodb_buffer_pool_stats-table/)
+- [Information Schema INNODB_BUFFER_POOL_STATS Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_buffer_pool_stats-table/)
 - [Setting Innodb Buffer Pool Size Dynamically](/replication/optimization-and-tuning/system-variables/setting-innodb-buffer-pool-size-dynamically/)

@@ -17,7 +17,7 @@ For an overview of [MariaDB ColumnStore](/columns-storage-engines-and-plugins/st
 3 [MariaDB ColumnStore Data API to programmatically load data into PM nodes](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-data-ingestion/columnstore-bulk-write-sdk/).
 4 Text and Blob Data Types.
 5 [User defined distributed aggregate and window functions.](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/columnstore-sql-structure-and-commands/columnstore-user-defined-aggregate-and-window-functions/)
-6 [ColumnStore Backup/Restore Tool](https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/).
+6 [ColumnStore Backup/Restore Tool](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/mariadb-columnstore-backup-and-restore/backup-and-restore-for-mariadb-columnstore-110-onwards/).
 7 MariaDB Server [Audit Plugin Integration](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/columnstore-audit-plugin/).
 8 Built-in data redundancy using GlusterFS integration for installations that use local disks for data storage on PMs. Please refer to [Preparing ColumnStore Installation](https://mariadb.com/kb/en/library/preparing-for-columnstore-installation-110-beta/) for using GlusterFS with MariaDB ColumnStore.
 9 Several performance improvements in string handling, memory utilization and general area.

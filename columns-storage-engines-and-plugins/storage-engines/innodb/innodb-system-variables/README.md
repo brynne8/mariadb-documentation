@@ -860,7 +860,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 #### `innodb_default_page_encryption_key`
 
 - <strong>Description:</strong> Encryption key used for page encryption.
-<ul start="1"><li>See [Data-at-Rest Encryption](/kb/en/data-at-rest-encryption/) and [InnoDB Encryption Keys](/kb/en/innodb-encryption-keys/) for more information.
+<ul start="1"><li>See [Data-at-Rest Encryption](/kb/en/data-at-rest-encryption/) and [InnoDB Encryption Keys](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/innodb-encryption/innodb-encryption-keys/) for more information.
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-default-page-encryption-key=#</code>
 - <strong>Scope:</strong> Global
@@ -876,7 +876,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 #### `innodb_default_encryption_key_id`
 
 - <strong>Description:</strong> ID of encryption key used by default to encrypt InnoDB tablespaces.
-<ul start="1"><li>See [Data-at-Rest Encryption](/kb/en/data-at-rest-encryption/) and [InnoDB Encryption Keys](/kb/en/innodb-encryption-keys/) for more information.
+<ul start="1"><li>See [Data-at-Rest Encryption](/kb/en/data-at-rest-encryption/) and [InnoDB Encryption Keys](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/innodb-encryption/innodb-encryption-keys/) for more information.
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-default-encryption-key-id=#</code>
 - <strong>Scope:</strong> Global, Session
@@ -1156,7 +1156,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 #### `innodb_encryption_threads`
 
 - <strong>Description:</strong> Number of background encryption threads threads performing background key rotation and [scrubbing](/columns-storage-engines-and-plugins/storage-engines/innodb/innodb-data-scrubbing/). When setting up encryption, this variable must be set to a non-zero value. Otherwise, when you enable encryption through [innodb_encrypt_tables](#innodb_encrypt_tables) MariaDB won't be able to automatically encrypt any unencrypted tables. Recommended never be set higher than 255.
-<ul start="1"><li>See [Data-at-Rest Encryption](/kb/en/data-at-rest-encryption/) and [InnoDB Background Encryption Threads](/kb/en/innodb-background-encryption-threads/) for more information.
+<ul start="1"><li>See [Data-at-Rest Encryption](/kb/en/data-at-rest-encryption/) and [InnoDB Background Encryption Threads](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/innodb-encryption/innodb-background-encryption-threads/) for more information.
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-encryption-threads=#</code>
 - <strong>Scope:</strong> Global
@@ -1494,7 +1494,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 #### `innodb_ft_aux_table`
 
-- <strong>Description:</strong> Diagnostic variable intended only to be set at runtime. It specifies the qualified name (for example `test/ft_innodb`) of an InnoDB table that has a [FULLTEXT index](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/), and after being set the INFORMATION_SCHEMA tables [INNODB_FT_INDEX_TABLE](/kb/en/information-schema-innodb_ft_index_table-table/), [INNODB_FT_INDEX_CACHE](/kb/en/information-schema-innodb_ft_index_cache-table/), INNODB_FT_CONFIG, [INNODB_FT_DELETED](/kb/en/information-schema-innodb_ft_deleted-table/), and [INNODB_FT_BEING_DELETED](/kb/en/information-schema-innodb_ft_being_deleted-table/) will contain search index information for the specified table.
+- <strong>Description:</strong> Diagnostic variable intended only to be set at runtime. It specifies the qualified name (for example `test/ft_innodb`) of an InnoDB table that has a [FULLTEXT index](/replication/optimization-and-tuning/optimization-and-indexes/full-text-indexes/), and after being set the INFORMATION_SCHEMA tables [INNODB_FT_INDEX_TABLE](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_ft_index_table-table/), [INNODB_FT_INDEX_CACHE](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_ft_index_cache-table/), INNODB_FT_CONFIG, [INNODB_FT_DELETED](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_ft_deleted-table/), and [INNODB_FT_BEING_DELETED](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_ft_being_deleted-table/) will contain search index information for the specified table.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-ft-aux-table=value</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -2150,7 +2150,7 @@ add/drop/reorder of columns.
 
 #### `innodb_max_changed_pages`
 
-- <strong>Description:</strong> Limit to the number of changed page bitmap files (stored in the [Information Schema INNODB_CHANGED_PAGES table](/kb/en/information-schema-innodb_changed_pages-table/)). Zero is unlimited. See [innodb_max_bitmap_file_size](#innodb_max_bitmap_file_size) and [innodb_track_changed_pages](#innodb_track_changed_pages). Previously named `innodb_changed_pages_limit`. XtraDB only.
+- <strong>Description:</strong> Limit to the number of changed page bitmap files (stored in the [Information Schema INNODB_CHANGED_PAGES table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_changed_pages-table/)). Zero is unlimited. See [innodb_max_bitmap_file_size](#innodb_max_bitmap_file_size) and [innodb_track_changed_pages](#innodb_track_changed_pages). Previously named `innodb_changed_pages_limit`. XtraDB only.
 <ul start="1"><li>Deprecated and ignored in [MariaDB 10.2.6](/kb/en/mariadb-1026-release-notes/) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
 </li></ul>
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">innodb-max-changed-pages=#</code>
@@ -2288,7 +2288,7 @@ add/drop/reorder of columns.
 
 #### `innodb_monitor_disable`
 
-- <strong>Description:</strong> Disables the specified counters in the [INFORMATION_SCHEMA.INNODB_METRICS](/kb/en/information-schema-innodb_metrics-table/) table.
+- <strong>Description:</strong> Disables the specified counters in the [INFORMATION_SCHEMA.INNODB_METRICS](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table/) table.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-monitor-disable=string</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -2299,7 +2299,7 @@ add/drop/reorder of columns.
 
 #### `innodb_monitor_enable`
 
-- <strong>Description:</strong> Enables the specified counters in the [INFORMATION_SCHEMA.INNODB_METRICS](/kb/en/information-schema-innodb_metrics-table/) table.
+- <strong>Description:</strong> Enables the specified counters in the [INFORMATION_SCHEMA.INNODB_METRICS](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table/) table.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-monitor-enable=string</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -2310,7 +2310,7 @@ add/drop/reorder of columns.
 
 #### `innodb_monitor_reset`
 
-- <strong>Description:</strong> Resets the count value of the specified counters in the [INFORMATION_SCHEMA.INNODB_METRICS](/kb/en/information-schema-innodb_metrics-table/) table to zero.
+- <strong>Description:</strong> Resets the count value of the specified counters in the [INFORMATION_SCHEMA.INNODB_METRICS](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table/) table to zero.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--innodb-monitor-reset=string</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes
@@ -2321,7 +2321,7 @@ add/drop/reorder of columns.
 
 #### `innodb_monitor_reset_all`
 
-- <strong>Description:</strong> Resets all values for the specified counters in the [INFORMATION_SCHEMA.INNODB_METRICS](/kb/en/information-schema-innodb_metrics-table/) table.
+- <strong>Description:</strong> Resets all values for the specified counters in the [INFORMATION_SCHEMA.INNODB_METRICS](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table/) table.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">---innodb-monitor-reset-all=string</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> Yes

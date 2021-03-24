@@ -10,7 +10,7 @@ From [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/), `mariadb-access` is t
 
 `mysqlaccess` is a tool for checking access privileges, developed by Yves Carlier.
 
-It checks the access privileges for a host name, user name, and database combination. Note that mysqlaccess checks access using only the [user](/kb/en/mysqluser-table/), [db](/kb/en/mysqldb-table/), and host tables. It does not check table, column, or routine privileges specified in the [tables_priv](/kb/en/mysqltables_priv-table/), [columns_priv](/kb/en/mysqlcolumns_priv-table/), or [procs_priv](/kb/en/mysqlprocs_priv-table/) tables.
+It checks the access privileges for a host name, user name, and database combination. Note that mysqlaccess checks access using only the [user](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqluser-table/), [db](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqldb-table/), and host tables. It does not check table, column, or routine privileges specified in the [tables_priv](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqltables_priv-table/), [columns_priv](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlcolumns_priv-table/), or [procs_priv](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlprocs_priv-table/) tables.
 
 ## Usage
 

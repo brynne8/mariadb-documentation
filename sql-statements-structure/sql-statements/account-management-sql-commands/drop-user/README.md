@@ -71,4 +71,4 @@ SHOW WARNINGS;
 - [ALTER USER](/sql-statements-structure/sql-statements/account-management-sql-commands/alter-user/)
 - [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/)
 - [SHOW CREATE USER](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-user/)
-- [mysql.user table](/kb/en/mysqluser-table/)
+- [mysql.user table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqluser-table/)

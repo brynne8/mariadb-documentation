@@ -16,7 +16,7 @@ It's important to give careful thought to the privileges associated with [stored
 - To run a stored routine, the <a undefined>EXECUTE</a> privilege is needed. This is also temporarily granted to the creator if they attempt to run their routine unless the [automatic_sp_privileges](/kb/en/server-system-variables/#automatic_sp_privileges) variable is set to `0`.
 - The <a undefined>SQL SECURITY clause</a> (by default `DEFINER`) specifies what privileges are used when a routine is called. If `SQL SECURITY` is `INVOKER`, the function body will be evaluated using the privileges of the user calling the function. If `SQL SECURITY` is `DEFINER`, the function body is always evaluated using the privileges of the definer account. `DEFINER` is the default. Thus, by default, users who can access the database associated with the stored routine can also run the routine, and potentially perform operations they wouldn't normally have permissions for.
 - The creator of a routine is the account that ran the [CREATE FUNCTION](/sql-statements-structure/sql-statements/data-definition/create/create-function/) or [CREATE PROCEDURE](/programming-customizing-mariadb/stored-routines/stored-procedures/create-procedure/) statement, regardless of whether a `DEFINER` is provided. The definer is by default the creator unless otherwise specified.
-- The server automatically changes the privileges in the [mysql.proc](/kb/en/mysqlproc-table/) table as required, but will not look out for manual changes.
+- The server automatically changes the privileges in the [mysql.proc](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlproc-table/) table as required, but will not look out for manual changes.
 
 ### DEFINER Clause
 

@@ -15,7 +15,7 @@ internal implementation of the named [stored procedure](/programming-customizing
 information about [stored functions](/programming-customizing-mariadb/stored-routines/stored-functions/).
 
 Both statements require that you be the owner of the routine or have
- <code class="highlight fixed" style="white-space:pre-wrap">[SELECT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/)</code> access to the <a undefined>mysql.proc</a> table.
+ <code class="highlight fixed" style="white-space:pre-wrap">[SELECT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/)</code> access to the [mysql.proc](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlproc-table/) table.
 
 If the named routine is available, each statement produces a result
 set. Each row in the result set corresponds to one "instruction" in

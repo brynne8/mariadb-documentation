@@ -280,9 +280,9 @@ Querying the [information_schema](/sql-statements-structure/sql-statements/admin
 
 In particular, check the following tables:
 
-- [INNODB_LOCKS](/kb/en/information-schema-innodb_locks-table/): requests for locks not yet fulfilled, or that are blocking another transaction.
-- [INNODB_LOCK_WAITS](/kb/en/information-schema-innodb_lock_waits-table/): queued requests to acquire a lock.
-- [INNODB_TRX](/kb/en/information-schema-innodb_trx-table/): information about all currently executing InnoDB transactions, including SQL queries that are running.
+- [INNODB_LOCKS](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_locks-table/): requests for locks not yet fulfilled, or that are blocking another transaction.
+- [INNODB_LOCK_WAITS](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_lock_waits-table/): queued requests to acquire a lock.
+- [INNODB_TRX](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_trx-table/): information about all currently executing InnoDB transactions, including SQL queries that are running.
 
 Here is an example of their usage.
 

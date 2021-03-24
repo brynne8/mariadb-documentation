@@ -356,10 +356,10 @@ Create_tablespace_priv: N
     max_statement_time: 0.000000
 ```
 
-As seen above from the [mysql.user](/kb/en/mysqluser-table/) table, the anonymous user doesn't have any global privileges.
+As seen above from the [mysql.user](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqluser-table/) table, the anonymous user doesn't have any global privileges.
 Still, the anonymous user can see databases, so there must be a way so that anonymous user can see the `test` and `test_electricity` databases.
 
-Let's check for grants on the database level. That information can be found in the [mysql.db](/kb/en/mysqldb-table/) table.
+Let's check for grants on the database level. That information can be found in the [mysql.db](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqldb-table/) table.
 Looking at the `mysql.db` table, it already contains 2 rows created when the `mysql_install_db` script was invoked.
 
 The anonymous user has database privileges (without `grant`, `alter_routine` and `execute`) on `test` and `test_%` databases:

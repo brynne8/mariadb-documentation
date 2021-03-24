@@ -114,11 +114,11 @@ certain levels.
 - [Global privileges <em>priv_type</em>](#global-privileges) are granted using `*.*` for
 <em>priv_level</em>. Global privileges include privileges to administer the database
 and manage user accounts, as well as privileges for all tables, functions, and
-procedures. Global privileges are stored in the [mysql.user table](/kb/en/mysqluser-table/).
+procedures. Global privileges are stored in the [mysql.user table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqluser-table/).
 - [Database privileges <em>priv_type</em>](#database-privileges) are granted using `db_name.*`
 for <em>priv_level</em>, or using just `*` to use default database. Database
 privileges include privileges to create tables and functions, as well as
-privileges for all tables, functions, and procedures in the database. Database privileges are stored in the [mysql.db table](/kb/en/mysqldb-table/).
+privileges for all tables, functions, and procedures in the database. Database privileges are stored in the [mysql.db table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqldb-table/).
 - [Table privileges <em>priv_type</em>](#table-privileges) are granted using `db_name.tbl_name`
 for <em>priv_level</em>, or using just `tbl_name` to specify a table in the default
 database. The `TABLE` keyword is optional. Table privileges include the
@@ -201,7 +201,7 @@ Execute [CREATE SERVER](/sql-statements-structure/sql-statements/data-definition
 
 #### FILE
 
-Read and write files on the server, using statements like [LOAD DATA INFILE](/kb/en/load-data-infile/) or functions like [LOAD_FILE()](/built-in-functions/string-functions/load_file/). Also needed to create [CONNECT](/columns-storage-engines-and-plugins/storage-engines/connect/) outward tables. MariaDB server must have the permissions to access those files.
+Read and write files on the server, using statements like [LOAD DATA INFILE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile/) or functions like [LOAD_FILE()](/built-in-functions/string-functions/load_file/). Also needed to create [CONNECT](/columns-storage-engines-and-plugins/storage-engines/connect/) outward tables. MariaDB server must have the permissions to access those files.
 
 #### GRANT OPTION
 
@@ -476,7 +476,7 @@ The authentication options for the `GRANT` statement are the same as those for t
 
 ### IDENTIFIED BY 'password'
 
-The optional `IDENTIFIED BY` clause can be used to provide an account with a password. The password should be specified in plain text. It will be hashed by the [PASSWORD](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password/) function prior to being stored to the [mysql.user](/kb/en/mysqluser-table/) table.
+The optional `IDENTIFIED BY` clause can be used to provide an account with a password. The password should be specified in plain text. It will be hashed by the [PASSWORD](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password/) function prior to being stored to the [mysql.user](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqluser-table/) table.
 
 For example, if our password is `mariadb`, then we can create the user with:
 
@@ -496,7 +496,7 @@ The only [authentication plugins](/columns-storage-engines-and-plugins/plugins/a
 
 ### IDENTIFIED BY PASSWORD 'password_hash'
 
-The optional `IDENTIFIED BY PASSWORD` clause can be used to provide an account with a password that has already been hashed. The password should be specified as a hash that was provided by the [PASSWORD](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password/) function. It will be stored to the [mysql.user](/kb/en/mysqluser-table/) table as-is.
+The optional `IDENTIFIED BY PASSWORD` clause can be used to provide an account with a password that has already been hashed. The password should be specified as a hash that was provided by the [PASSWORD](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password/) function. It will be stored to the [mysql.user](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqluser-table/) table as-is.
 
 For example, if our password is `mariadb`, then we can find the hash with:
 
@@ -594,7 +594,7 @@ The count can be reset for all users using [FLUSH USER_RESOURCES](/sql-statement
 
 Users with the `CONNECTION ADMIN` privilege (in [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/) and later) or the `SUPER` privilege are not restricted by `max_user_connections`, `max_connections`, or `max_password_errors`.
 
-Per account resource limits are stored in the [user](/kb/en/mysqluser-table/) table, in the [mysql](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database. Columns used for resources limits are named `max_questions`, `max_updates`, `max_connections` (for `MAX_CONNECTIONS_PER_HOUR`), and `max_user_connections` (for `MAX_USER_CONNECTIONS`).
+Per account resource limits are stored in the [user](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqluser-table/) table, in the [mysql](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database. Columns used for resources limits are named `max_questions`, `max_updates`, `max_connections` (for `MAX_CONNECTIONS_PER_HOUR`), and `max_user_connections` (for `MAX_USER_CONNECTIONS`).
 
 ## TLS Options
 
@@ -673,6 +673,6 @@ GRANT ALL PRIVILEGES ON  *.* to 'alexander'@'localhost' WITH GRANT OPTION;
 - [DROP USER](/sql-statements-structure/sql-statements/account-management-sql-commands/drop-user/)
 - [SET PASSWORD](/sql-statements-structure/sql-statements/account-management-sql-commands/set-password/)
 - [SHOW CREATE USER](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-user/)
-- [mysql.user table](/kb/en/mysqluser-table/)
+- [mysql.user table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqluser-table/)
 - [Password Validation Plugins](/columns-storage-engines-and-plugins/plugins/password-validation-plugins/) - permits the setting of basic criteria for passwords
 - [Authentication Plugins](/columns-storage-engines-and-plugins/plugins/authentication-plugins/) - allow various authentication methods to be used, and new ones to be developed.

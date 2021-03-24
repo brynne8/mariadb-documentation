@@ -782,7 +782,7 @@ or replication domains to use in parallel. See [Parallel Replication](/kb/en/par
 
 #### `slave_load_tmpdir`
 
-- <strong>Description:</strong> Directory where the replica stores temporary files for [replicating](/replication/) [LOAD DATA INFILE](/kb/en/load-data-infile/) statements. If not set, the replica will use [tmpdir](/kb/en/server-system-variables/#tmpdir). Should be set to a disk-based directory that will survive restarts, or else replication may fail.
+- <strong>Description:</strong> Directory where the replica stores temporary files for [replicating](/replication/) [LOAD DATA INFILE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile/) statements. If not set, the replica will use [tmpdir](/kb/en/server-system-variables/#tmpdir). Should be set to a disk-based directory that will survive restarts, or else replication may fail.
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--slave-load-tmpdir=path</code>
 - <strong>Scope:</strong> Global
 - <strong>Dynamic:</strong> No

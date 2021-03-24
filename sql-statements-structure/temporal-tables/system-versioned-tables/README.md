@@ -360,7 +360,7 @@ CREATE TABLE t (
 Changes in other sections:
 [https://mariadb.com/kb/en/create-table/](/sql-statements-structure/sql-statements/data-definition/create/create-table/)
 [https://mariadb.com/kb/en/alter-table/](/sql-statements-structure/sql-statements/data-definition/alter/alter-table/)
-[https://mariadb.com/kb/en/join-syntax/](https://mariadb.com/kb/en/join-syntax/)
+[https://mariadb.com/kb/en/join-syntax/](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax/)
 [https://mariadb.com/kb/en/partitioning-types-overview/](/mariadb-administration/partitioning-tables/partitioning-types/partitioning-types-overview/)
 [https://mariadb.com/kb/en/date-and-time-units/](/built-in-functions/date-time-functions/date-and-time-units/)
 [https://mariadb.com/kb/en/delete/](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/)
@@ -423,5 +423,5 @@ There are a number of system variables related to system-versioned tables:
 
 - [Application-Time Periods](/sql-statements-structure/temporal-tables/application-time-periods/)
 - [Bitemporal Tables](/sql-statements-structure/temporal-tables/bitemporal-tables/)
-- [mysql.transaction_registry Table](/kb/en/mysqltransaction_registry-table/)
+- [mysql.transaction_registry Table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqltransaction_registry-table/)
 - [MariaDB Temporal Tables](https://youtu.be/uBoUlTsU1Tk) (video)

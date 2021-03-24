@@ -50,7 +50,7 @@ SELECT * FROM (select * from t1 ORDER BY a) WHERE ROWNUM() <= 10;
 - [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/)
 - [UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/)
 - [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/)
-- [LOAD DATA INFILE](/kb/en/load-data-infile/)
+- [LOAD DATA INFILE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile/)
 
 Used in other contexts, <code class="fixed" style="white-space:pre-wrap">ROWNUM()</code> will return 0.
 

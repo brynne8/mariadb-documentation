@@ -8,7 +8,7 @@ In [MariaDB 10.2](/kb/en/what-is-mariadb-102/) and before, the default file form
 
 In [MariaDB 10.2.1](/kb/en/mariadb-1021-release-notes/) and before, the default file format is`Antelope`. In [MariaDB 10.2.2](/kb/en/mariadb-1022-release-notes/) and later, the default file format is `Barracuda` and `Antelope` is deprecated.
 
-A table's tablespace is tagged with the lowest InnoDB file format that supports the table's [row format](/kb/en/xtradbinnodb-storage-formats/). So, even if the `Barracuda` file format is enabled, tables that use the `COMPACT` or `REDUNDANT` row formats will be tagged with the `Antelope` file format in the [information_schema.INNODB_SYS_TABLES](/kb/en/information-schema-innodb_sys_tables-table/) table.
+A table's tablespace is tagged with the lowest InnoDB file format that supports the table's [row format](/kb/en/xtradbinnodb-storage-formats/). So, even if the `Barracuda` file format is enabled, tables that use the `COMPACT` or `REDUNDANT` row formats will be tagged with the `Antelope` file format in the [information_schema.INNODB_SYS_TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table/) table.
 
 ## Supported File Formats
 
@@ -35,9 +35,9 @@ InnoDB might use new file formats in the future. Each format will have an identi
 
 ## Checking a Table's File Format.
 
-In [MariaDB 10.0](/kb/en/what-is-mariadb-100/) and later, the [information_schema.INNODB_SYS_TABLES](/kb/en/information-schema-innodb_sys_tables-table/) table can be queried to see the file format used by a table.
+In [MariaDB 10.0](/kb/en/what-is-mariadb-100/) and later, the [information_schema.INNODB_SYS_TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table/) table can be queried to see the file format used by a table.
 
-A table's tablespace is tagged with the lowest InnoDB file format that supports the table's [row format](/kb/en/xtradbinnodb-storage-formats/). So, even if the `Barracuda` file format is enabled, tables that use the `COMPACT` or `REDUNDANT` row formats will be tagged with the `Antelope` file format in the [information_schema.INNODB_SYS_TABLES](/kb/en/information-schema-innodb_sys_tables-table/) table.
+A table's tablespace is tagged with the lowest InnoDB file format that supports the table's [row format](/kb/en/xtradbinnodb-storage-formats/). So, even if the `Barracuda` file format is enabled, tables that use the `COMPACT` or `REDUNDANT` row formats will be tagged with the `Antelope` file format in the [information_schema.INNODB_SYS_TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table/) table.
 
 ## Compatibility
 

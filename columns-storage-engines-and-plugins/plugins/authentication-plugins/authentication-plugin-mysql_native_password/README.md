@@ -88,7 +88,7 @@ The `mysql_native_password` authentication plugin is one of the conventional aut
 
 ### Mismatches Between Password and authentication_string Columns
 
-For compatibility reasons,the `mysql_native_password` authentication plugin tries to read the password hash from both the `Password` and `authentication_string` columns in the [mysql.user](/kb/en/mysqluser-table/) table. This has caused issues in the past if one of the columns had a different value than the other.
+For compatibility reasons,the `mysql_native_password` authentication plugin tries to read the password hash from both the `Password` and `authentication_string` columns in the [mysql.user](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqluser-table/) table. This has caused issues in the past if one of the columns had a different value than the other.
 
 Starting with [MariaDB 10.2.19](/kb/en/mariadb-10219-release-notes/) and [MariaDB 10.3.11](/kb/en/mariadb-10311-release-notes/), [CREATE USER](/sql-statements-structure/sql-statements/account-management-sql-commands/create-user/), [ALTER USER](/sql-statements-structure/sql-statements/account-management-sql-commands/alter-user/), [GRANT](/sql-statements-structure/sql-statements/account-management-sql-commands/grant/), and [SET PASSWORD](/sql-statements-structure/sql-statements/account-management-sql-commands/set-password/) will set both columns whenever an account's password is changed.
 

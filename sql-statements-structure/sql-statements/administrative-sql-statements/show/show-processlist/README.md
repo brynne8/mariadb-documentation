@@ -31,7 +31,7 @@ The columns shown in `SHOW PROCESSLIST` are:
 <tr><td><strong><code>PROGRESS</code></strong></td><td>The total progress of the process (0-100%) (see <a href="/kb/en/progress-reporting/">Progress Reporting</a>).</td></tr>
 </tbody></table>
 
-See `TIME_MS` column in [information_schema.PROCESSLIST](/kb/en/time_ms-column-in-information_schemaprocesslist/) for differences in the `TIME` column between MariaDB and MySQL.
+See `TIME_MS` column in [information_schema.PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist/) for differences in the `TIME` column between MariaDB and MySQL.
 
 The [information_schema.PROCESSLIST](/kb/en/information-schema-processlist-table/)  table contains the following additional columns:
 

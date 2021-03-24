@@ -158,7 +158,7 @@ The stopword list is determined as follows:
 
 - If the [innodb_ft_user_stopword_table](/kb/en/xtradbinnodb-server-system-variables/#innodb_ft_user_stopword_table) system variable is set, that table is used as a stopword list.
 - If `innodb_ft_user_stopword_table` is not set, the table set by [innodb_ft_server_stopword_table](/kb/en/xtradbinnodb-server-system-variables/#innodb_ft_server_stopword_table) is used.
-- If neither variable is set, the built-in list is used, which can be viewed by querying the [INNODB_FT_DEFAULT_STOPWORD table](/kb/en/information-schema-innodb_ft_default_stopword-table/) in the [Information Schema](/kb/en/information_schema/).
+- If neither variable is set, the built-in list is used, which can be viewed by querying the [INNODB_FT_DEFAULT_STOPWORD table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_ft_default_stopword-table/) in the [Information Schema](/kb/en/information_schema/).
 
 In the first two cases, the specified table must exist at the time the system variable is set and the full-text index created. It must be an InnoDB table with a single column, a [VARCHAR](/columns-storage-engines-and-plugins/data-types/string-data-types/varchar/) named VALUE.
 

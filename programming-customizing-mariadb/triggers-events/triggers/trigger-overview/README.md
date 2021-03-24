@@ -6,7 +6,7 @@ A trigger, as its name suggests, is a set of statements that run, or are trigger
 
 The event can be an INSERT, an UPDATE or a DELETE. The trigger can be executed BEFORE or AFTER the event. Until [MariaDB 10.2.3](/kb/en/mariadb-1023-release-notes/), a table could have only one trigger defined for each event/timing combination: for example, a table could only have one BEFORE INSERT trigger.
 
-The [LOAD DATA INFILE](/kb/en/load-data-infile/) and [LOAD XML](/kb/en/load-xml/) statements invoke INSERT triggers for each row that is being inserted.
+The [LOAD DATA INFILE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile/) and [LOAD XML](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-xml/) statements invoke INSERT triggers for each row that is being inserted.
 
 The [REPLACE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/replace/) statement is executed with the following workflow:
 

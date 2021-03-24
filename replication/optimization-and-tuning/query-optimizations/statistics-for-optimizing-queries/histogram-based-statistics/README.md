@@ -6,7 +6,7 @@ Histograms were introduced in [MariaDB 10.0.2](/kb/en/mariadb-1002-release-notes
 
 Histogram-based statistics were introduced in [MariaDB 10.0.2](/kb/en/mariadb-1002-release-notes/) as a mechanism to improve the query plan chosen by the optimizer in certain situations. Until then, all conditions on non-indexed columns were ignored when searching for the best execution plan. Histograms can be collected for both indexed and non-indexed columns, and are made available to the optimizer.
 
-Histogram statistics are stored in the [mysql.column_stats](/kb/en/mysqlcolumn_stats-table/) table, which stores data for [engine-independent table statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics/), and so are essentially a subset of engine-independent table statistics.
+Histogram statistics are stored in the [mysql.column_stats](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlcolumn_stats-table/) table, which stores data for [engine-independent table statistics](/replication/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics/), and so are essentially a subset of engine-independent table statistics.
 
 Consider this example, using the following query:
 

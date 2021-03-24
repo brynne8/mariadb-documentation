@@ -14,7 +14,7 @@ Concurrent inserts are not used by replicas with the row based [replication](/re
 
 If an [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/) statement contain the [HIGH_PRIORITY](/kb/en/high_priority-and-low_priority-clauses/) clause, concurrent inserts cannot be used. [INSERT ... DELAYED](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed/) is usually unneeded if concurrent inserts are enabled.
 
-[LOAD DATA INFILE](/kb/en/load-data-infile/) uses concurrent inserts if the `CONCURRENT` keyword is specified and  [concurrent_insert](/kb/en/server-system-variables/#concurrent_insert) is not `NEVER`. This makes the statement slower (even if no other sessions access the table) but reduces contention.
+[LOAD DATA INFILE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile/) uses concurrent inserts if the `CONCURRENT` keyword is specified and  [concurrent_insert](/kb/en/server-system-variables/#concurrent_insert) is not `NEVER`. This makes the statement slower (even if no other sessions access the table) but reduces contention.
 
 [LOCK TABLES](/kb/en/transactions-lock/) allows non-conflicting concurrent inserts if a `READ LOCAL` lock is used. Concurrent inserts are not allowed if the `LOCAL` keyword is omitted.
 

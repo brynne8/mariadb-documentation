@@ -8,7 +8,7 @@ For encryption with the InnoDB and XtraDB storage engines, see [Encrypting Data 
 
 In order to enable encryption for tables using the [Aria storage engine](/columns-storage-engines-and-plugins/storage-engines/aria/), there are a couple server system variables that you need to set and configure. Most users will want to set <a undefined>aria_encrypt_tables</a> and <a undefined>encrypt_tmp_disk_tables</a>.
 
-Users of data-at-rest encryption will also need to have a [key management and encryption plugin](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management/) configured. Some examples are [File Key Management Plugin](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin/) and [AWS Key Management Plugin](/kb/en/aws-key-management-encryption-plugin/).
+Users of data-at-rest encryption will also need to have a [key management and encryption plugin](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/key-management-and-encryption-plugins/encryption-key-management/) configured. Some examples are [File Key Management Plugin](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin/) and [AWS Key Management Plugin](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin/).
 
 ```sql
 [mariadb]
@@ -27,7 +27,7 @@ encrypt_tmp_disk_tables=ON
 
 ## Determining Whether a Table is Encrypted
 
-The [InnoDB storage engine](/kb/en/xtradb-and-innodb/) has the [information_schema.INNODB_TABLESPACES_ENCRYPTION table](/kb/en/information-schema-innodb_tablespaces_encryption-table/) that can be used to get information about which tables are encrypted. Aria does not currently have anything like that (see [MDEV-17324](https://jira.mariadb.org/browse/MDEV-17324) about that).
+The [InnoDB storage engine](/kb/en/xtradb-and-innodb/) has the [information_schema.INNODB_TABLESPACES_ENCRYPTION table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_tablespaces_encryption-table/) that can be used to get information about which tables are encrypted. Aria does not currently have anything like that (see [MDEV-17324](https://jira.mariadb.org/browse/MDEV-17324) about that).
 
 To determine whether an Aria table is encrypted, you currently have to search the data file for some plain text that you know is in the data.
 

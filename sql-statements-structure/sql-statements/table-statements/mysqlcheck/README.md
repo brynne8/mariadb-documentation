@@ -157,7 +157,7 @@ check.
 
 ### mysqlcheck and all-databases
 
-`mysqlcheck --all-databases` will ignore the internal log tables [general_log](/kb/en/mysqlgeneral_log-table/) and [slow_log](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlslow_log-table/) as these can't be checked, repaired or optimized.
+`mysqlcheck --all-databases` will ignore the internal log tables [general_log](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table/) and [slow_log](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlslow_log-table/) as these can't be checked, repaired or optimized.
 
 ### mysqlcheck and verbose
 

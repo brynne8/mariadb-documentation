@@ -125,7 +125,7 @@ Then perform bulk summarization using
 ## Summarizing when using a staging table
 
 Load the data (via INSERTs or [LOAD DATA) en masse into a "staging table". Then perform batch summarization from the Staging table. And batch copy from the Staging table to the Fact table. Note that the Staging table is handy for batching "normalization" during ingestion.
-See also [[data-warehousing-high-speed-ingestion|High Speed Ingestion](/kb/en/load-data-infile/)
+See also [[data-warehousing-high-speed-ingestion|High Speed Ingestion](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile/)
 
 ## Summary table: PK or not?
 

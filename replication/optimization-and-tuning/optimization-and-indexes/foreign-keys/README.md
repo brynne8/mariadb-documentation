@@ -65,7 +65,7 @@ Foreign key constraints can be disabled by setting the [foreign_key_checks](/kb/
 
 The [Information Schema](/kb/en/information_schema/) <a undefined>REFERENTIAL_CONSTRAINTS</a> table contains information about foreign keys. The individual columns are listed in the <a undefined>KEY_COLUMN_USAGE</a> table.
 
-The InnoDB-specific Information Schema tables also contain information about the InnoDB foreign keys. The foreign key information is stored in the <a undefined>INNODB_SYS_FOREIGN</a>. Data about the individual columns are stored in <a undefined>INNODB_SYS_FOREIGN_COLS</a>.
+The InnoDB-specific Information Schema tables also contain information about the InnoDB foreign keys. The foreign key information is stored in the [INNODB_SYS_FOREIGN](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_foreign-table/). Data about the individual columns are stored in [INNODB_SYS_FOREIGN_COLS](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_foreign_cols-table/).
 
 The most human-readable way to get information about a table's foreign keys sometimes is the [SHOW CREATE TABLE](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-table/) statement.
 

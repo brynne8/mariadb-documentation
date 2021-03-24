@@ -16,7 +16,7 @@ In Unions, Views, and sub-queries, a Table Value Constructor (TVC) allows you to
 
 ## Examples
 
-Using TVC's with <a undefined>UNION</a> operations:
+Using TVC's with [UNION](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/union/) operations:
 
 ```sql
 CREATE TABLE test.t1 (val1 INT, val2 INT);

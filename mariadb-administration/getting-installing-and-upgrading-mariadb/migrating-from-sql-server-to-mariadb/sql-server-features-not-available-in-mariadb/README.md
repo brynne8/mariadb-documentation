@@ -13,7 +13,7 @@ This page has a list of SQL Server features that are not supported in MariaDB. T
 <ul start="1"><li>For single-column indexes, the performance difference between an `ORDER BY ... ASC` and `DESC` is negligible.
 </li><li>For multiple-column indexes, an index may be unusable for certain queries because `DESC` is not supported. In some cases, a [generated column](/sql-statements-structure/sql-statements/data-definition/create/generated-columns/) can be used to invert the order of an index (for example, the expression `0 - price` can be indexed to index the prices in a descending order).
 </li></ul>
-- The [WITH](/kb/en/with/) syntax is currently only supported for the `SELECT` statement.
+- The [WITH](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/common-table-expressions/with/) syntax is currently only supported for the `SELECT` statement.
 - Filtered indexes (`CREATE INDEX ... WHERE`).
 - Autonomous transactions.
 - User-defined types.

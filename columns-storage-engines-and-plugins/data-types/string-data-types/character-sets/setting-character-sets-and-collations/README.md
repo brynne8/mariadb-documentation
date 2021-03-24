@@ -198,8 +198,8 @@ Since [MariaDB 5.1](/kb/en/what-is-mariadb-51/), the [character_set_filesystem](
 
 - [SELECT INTO DUMPFILE](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/select-into-dumpfile/)
 - SELECT INTO OUTFILE
-- [LOAD DATA INFILE](/kb/en/load-data-infile/)
-- [LOAD XML](/kb/en/load-xml/)
+- [LOAD DATA INFILE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile/)
+- [LOAD XML](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-xml/)
 - [LOAD_FILE()](/built-in-functions/string-functions/load_file/)
 
 ## Literals

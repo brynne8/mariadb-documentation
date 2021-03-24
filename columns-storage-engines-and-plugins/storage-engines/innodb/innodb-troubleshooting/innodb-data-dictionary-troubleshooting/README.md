@@ -23,7 +23,7 @@ If this is the case, as the text describes, delete the orphan `.frm` file on the
 
 An orphan intermediate table may prevent you from dropping the tablespace even if it is otherwise empty, and generally takes up unnecessary space.
 
-It may come about if MariaDB exits in the middle of an [ALTER TABLE ... ALGORITHM=INPLACE](/kb/en/alter-table/#algorithm) operation. They will be listed in the [INFORMATION_SCHEMA.INNODB_SYS_TABLES](/kb/en/information-schema-innodb_sys_tables-table/) table, and always start with an `#sql-ib` prefix. The accompanying `.frm` file also begins with `#sql-`, but has a different name.
+It may come about if MariaDB exits in the middle of an [ALTER TABLE ... ALGORITHM=INPLACE](/kb/en/alter-table/#algorithm) operation. They will be listed in the [INFORMATION_SCHEMA.INNODB_SYS_TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table/) table, and always start with an `#sql-ib` prefix. The accompanying `.frm` file also begins with `#sql-`, but has a different name.
 
 To identify orphan tables, run:
 

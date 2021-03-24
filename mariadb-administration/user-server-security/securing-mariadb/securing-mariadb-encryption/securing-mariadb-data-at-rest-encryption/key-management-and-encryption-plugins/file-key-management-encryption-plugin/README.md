@@ -207,7 +207,7 @@ The File Key Management Plugin supports [using multiple encryption keys](/kb/en/
 
 When [encrypting InnoDB tables](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/innodb-encryption/), the key that is used to encrypt tables [can be changed](/kb/en/innodb-xtradb-encryption-keys/).
 
-When [encrypting Aria tables](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/aria-encryption/), the key that is used to encrypt tables [cannot currently be changed](/kb/en/aria-encryption-keys/).
+When [encrypting Aria tables](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/aria-encryption/), the key that is used to encrypt tables [cannot currently be changed](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/aria-encryption/aria-encryption-keys/).
 
 ## Key Rotation
 
@@ -270,7 +270,7 @@ The File Key Management plugin does not currently support [key rotation](/kb/en/
 
 - <strong>Description:</strong> Controls how the server should treat the plugin when the server starts up.
 <ul start="1"><li>Valid values are:
-<ul start="1"><li>`OFF` - Disables the plugin without removing it from the <a undefined>mysql.plugins</a> table.
+<ul start="1"><li>`OFF` - Disables the plugin without removing it from the [mysql.plugins](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlplugin-table/) table.
 </li><li>`ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
 </li><li>`FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
 </li><li>`FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname/) or [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin/) while the server is running.

@@ -60,7 +60,7 @@ Issuing a [FLUSH STATUS](/sql-statements-structure/sql-statements/administrative
 
 #### `Acl_column_grants`
 
-- <strong>Description:</strong> Number of column permissions granted (rows in the [mysql.columns_priv table](/kb/en/mysqlcolumns_priv-table/)).
+- <strong>Description:</strong> Number of column permissions granted (rows in the [mysql.columns_priv table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlcolumns_priv-table/)).
 - <strong>Scope:</strong> Global
 - <strong>Data Type:</strong> `numeric`
 - <strong>Introduced:</strong>[MariaDB 10.1.4](/kb/en/mariadb-1014-release-notes/)
@@ -69,7 +69,7 @@ Issuing a [FLUSH STATUS](/sql-statements-structure/sql-statements/administrative
 
 #### `Acl_database_grants`
 
-- <strong>Description:</strong> Number of database permissions granted (rows in the [mysql.db table](/kb/en/mysqldb-table/)).
+- <strong>Description:</strong> Number of database permissions granted (rows in the [mysql.db table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqldb-table/)).
 - <strong>Scope:</strong> Global
 - <strong>Data Type:</strong> `numeric`
 - <strong>Introduced:</strong> [MariaDB 10.1.4](/kb/en/mariadb-1014-release-notes/)
@@ -78,7 +78,7 @@ Issuing a [FLUSH STATUS](/sql-statements-structure/sql-statements/administrative
 
 #### `Acl_function_grants`
 
-- <strong>Description:</strong> Number of function permissions granted (rows in the [mysql.procs_priv table](/kb/en/mysqlprocs_priv-table/) with a routine type of `FUNCTION`).
+- <strong>Description:</strong> Number of function permissions granted (rows in the [mysql.procs_priv table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlprocs_priv-table/) with a routine type of `FUNCTION`).
 - <strong>Scope:</strong> Global
 - <strong>Data Type:</strong> `numeric`
 - <strong>Introduced:</strong> [MariaDB 10.1.4](/kb/en/mariadb-1014-release-notes/)
@@ -105,7 +105,7 @@ Issuing a [FLUSH STATUS](/sql-statements-structure/sql-statements/administrative
 
 #### `Acl_procedure_grants`
 
-- <strong>Description:</strong> Number of procedure permissions granted (rows in the [mysql.procs_priv table](/kb/en/mysqlprocs_priv-table/) with a routine type of `PROCEDURE`).
+- <strong>Description:</strong> Number of procedure permissions granted (rows in the [mysql.procs_priv table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlprocs_priv-table/) with a routine type of `PROCEDURE`).
 - <strong>Scope:</strong> Global
 - <strong>Data Type:</strong> `numeric`
 - <strong>Introduced:</strong> [MariaDB 10.1.4](/kb/en/mariadb-1014-release-notes/)
@@ -114,7 +114,7 @@ Issuing a [FLUSH STATUS](/sql-statements-structure/sql-statements/administrative
 
 #### `Acl_proxy_users`
 
-- <strong>Description:</strong> Number of proxy permissions granted (rows in the [mysql.proxies_priv table](/kb/en/mysqlproxies_priv-table/)).
+- <strong>Description:</strong> Number of proxy permissions granted (rows in the [mysql.proxies_priv table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlproxies_priv-table/)).
 - <strong>Scope:</strong> Global
 - <strong>Data Type:</strong> `numeric`
 - <strong>Introduced:</strong> [MariaDB 10.1.4](/kb/en/mariadb-1014-release-notes/)
@@ -132,7 +132,7 @@ Issuing a [FLUSH STATUS](/sql-statements-structure/sql-statements/administrative
 
 #### `Acl_roles`
 
-- <strong>Description:</strong> Number of roles (rows in the [mysql.user table](/kb/en/mysqluser-table/) where `is_role='Y'`).
+- <strong>Description:</strong> Number of roles (rows in the [mysql.user table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqluser-table/) where `is_role='Y'`).
 - <strong>Scope:</strong> Global
 - <strong>Data Type:</strong> `numeric`
 - <strong>Introduced:</strong> [MariaDB 10.1.4](/kb/en/mariadb-1014-release-notes/)
@@ -150,7 +150,7 @@ Issuing a [FLUSH STATUS](/sql-statements-structure/sql-statements/administrative
 
 #### `Acl_users`
 
-- <strong>Description:</strong> Number of users (rows in the [mysql.user table](/kb/en/mysqluser-table/) where `is_role='N'`).
+- <strong>Description:</strong> Number of users (rows in the [mysql.user table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqluser-table/) where `is_role='N'`).
 - <strong>Scope:</strong> Global
 - <strong>Data Type:</strong> `numeric`
 - <strong>Introduced:</strong> [MariaDB 10.1.4](/kb/en/mariadb-1014-release-notes/)

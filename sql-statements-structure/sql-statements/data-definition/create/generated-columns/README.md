@@ -152,7 +152,7 @@ DESCRIBE table1;
 ERROR 1901 (HY000): Function or expression 'dayname()' cannot be used in the GENERATED ALWAYS AS clause of `v`
 ```
 
-- [Subqueries](/kb/en/subqueries/) are <strong>not</strong> supported in expressions for generated columns because the underlying data can change.
+- [Subqueries](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/subqueries/) are <strong>not</strong> supported in expressions for generated columns because the underlying data can change.
 
 - Using anything that depends on data outside the row is <strong>not</strong> supported in expressions for generated columns.
 

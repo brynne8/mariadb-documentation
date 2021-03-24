@@ -65,7 +65,7 @@ The <a undefined>log-basename</a> cannot be an absolute path. The log file name 
 
 ## Choosing the General Query Log Output Destination
 
-The general query log can either be written to a file on disk, or it can be written to the <a undefined>general_log</a> table in the [mysql](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database. To choose the general query log output destination, set the <a undefined>log_output</a> system variable.
+The general query log can either be written to a file on disk, or it can be written to the [general_log](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table/) table in the [mysql](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database. To choose the general query log output destination, set the <a undefined>log_output</a> system variable.
 
 ### Writing the General Query Log to a File
 
@@ -87,7 +87,7 @@ general_log_file=queries.log
 
 ### Writing the General Query Log to a Table
 
-The general query log can either be written to the <a undefined>general_log</a> table in the [mysql](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database by setting the <a undefined>log_output</a> system variable to `TABLE`. It can be changed dynamically with <a undefined>SET GLOBAL</a>. For example:
+The general query log can either be written to the [general_log](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table/) table in the [mysql](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database by setting the <a undefined>log_output</a> system variable to `TABLE`. It can be changed dynamically with <a undefined>SET GLOBAL</a>. For example:
 
 ```sql
 SET GLOBAL log_output='TABLE';

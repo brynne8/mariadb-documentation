@@ -20,7 +20,7 @@ Engine-independent table statistics lift these limitations.
 </li></ul>
 - More data is collected/used.
 
-Statistics are stored in three tables, [mysql.table_stats](/kb/en/mysqltable_stats-table/), [mysql.column_stats](/kb/en/mysqlcolumn_stats-table/) and [mysql.index_stats](/kb/en/mysqlindex_stats-table/).
+Statistics are stored in three tables, [mysql.table_stats](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqltable_stats-table/), [mysql.column_stats](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlcolumn_stats-table/) and [mysql.index_stats](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlindex_stats-table/).
 
 Use or update of data from these tables is controlled by [use_stat_tables](/kb/en/server-system-variables/#use_stat_tables) variable. Possible values are listed below:
 
@@ -87,7 +87,7 @@ ANALYZE TABLE tbl;
 
 ## Manual Updates to Statistics Tables
 
-Statistics are stored in three tables, [mysql.table_stats](/kb/en/mysqltable_stats-table/), [mysql.column_stats](/kb/en/mysqlcolumn_stats-table/) and [mysql.index_stats](/kb/en/mysqlindex_stats-table/).
+Statistics are stored in three tables, [mysql.table_stats](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqltable_stats-table/), [mysql.column_stats](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlcolumn_stats-table/) and [mysql.index_stats](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlindex_stats-table/).
 
 It is possible to update statistics tables manually. One should modify the table(s) with regular [INSERT](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/)/[UPDATE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/update/)/[DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/) statements. Statistics data will be re-read when the tables are re-opened. One way to force all tables to be re-opened is to issue [FLUSH TABLES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/) command.
 

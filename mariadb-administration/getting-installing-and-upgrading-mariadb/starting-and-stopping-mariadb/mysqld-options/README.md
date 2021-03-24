@@ -1538,7 +1538,7 @@ Some options and system variables related to [Galera Cluster](/kb/en/galera/) ca
 #### `--safe-user-create`
 
 - <strong>Commandline:</strong> <code class="fixed" style="white-space:pre-wrap">--safe-user-create</code>
-- <strong>Description:</strong> Don't allow new user creation by the user who has no write privileges to the [mysql.user](/kb/en/mysqluser-table/) table.
+- <strong>Description:</strong> Don't allow new user creation by the user who has no write privileges to the [mysql.user](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqluser-table/) table.
 
 ---
 
@@ -1899,9 +1899,9 @@ The options related to the [unix_socket](/columns-storage-engines-and-plugins/pl
 
 ### Encryption Plugin - `aws_key_management`
 
-The system variables related to the <a undefined>aws_key_management</a> encryption plugin can be found [here](/kb/en/aws-key-management-encryption-plugin/#system-variables).
+The system variables related to the [aws_key_management](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin/) encryption plugin can be found [here](/kb/en/aws-key-management-encryption-plugin/#system-variables).
 
-The options elated to the <a undefined>aws_key_management</a> encryption plugin can be found [here](/kb/en/aws-key-management-encryption-plugin/#options).
+The options elated to the [aws_key_management](/mariadb-administration/user-server-security/securing-mariadb/securing-mariadb-encryption/securing-mariadb-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin/) encryption plugin can be found [here](/kb/en/aws-key-management-encryption-plugin/#options).
 
 ### Encryption Plugin - `file_key_management`
 

@@ -70,7 +70,7 @@ Information from this statement can be used to diagnose system problems. For
 example, large values of spin_waits and spin_rounds may indicate scalability
 problems.
 
-The [information_schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/).<a undefined>INNODB_MUTEXES</a> table provides similar information.
+The [information_schema](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/).[INNODB_MUTEXES](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_mutexes-table/) table provides similar information.
 
 ### SHOW ENGINE PERFORMANCE_SCHEMA STATUS
 

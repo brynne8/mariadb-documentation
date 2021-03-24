@@ -18,7 +18,7 @@ To be able to set a role as a default, the role must already have been granted t
 
 To remove a user's default role, use `SET DEFAULT ROLE NONE [ FOR user@host ]`. The record of the default role is not removed if the role is [dropped](/sql-statements-structure/sql-statements/account-management-sql-commands/drop-role/) or [revoked](/kb/en/revoke/#roles), so if the role is subsequently re-created or granted, it will again be the user's default role.
 
-The default role is stored in the `default_role` column in the [mysql.user](/kb/en/mysqluser-table/) table/view, as well as in the [Information Schema APPLICABLE_ROLES table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-applicable_roles-table/), so these can be viewed to see which role has been assigned to a user as the default.
+The default role is stored in the `default_role` column in the [mysql.user](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqluser-table/) table/view, as well as in the [Information Schema APPLICABLE_ROLES table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-applicable_roles-table/), so these can be viewed to see which role has been assigned to a user as the default.
 
 ## Examples
 

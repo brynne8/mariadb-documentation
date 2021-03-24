@@ -22,7 +22,7 @@ option:
 This statement creates the definition of a server for use with the [Spider](/columns-storage-engines-and-plugins/storage-engines/spider/),
 [FEDERATED](/columns-storage-engines-and-plugins/storage-engines/legacy-storage-engines/federated-storage-engine/) or [FederatedX](/kb/en/federatedx/) storage
 engine. The CREATE SERVER statement creates a new row within the
-[servers](/kb/en/mysqlservers-table/) table within the mysql database. This statement
+[servers](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlservers-table/) table within the mysql database. This statement
 requires the [SUPER](/kb/en/grant/#super) privilege or, from [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/), the [FEDERATED ADMIN](/kb/en/grant/#federated-admin) privilege.
 
 The server_name should be a unique reference to the server. Server definitions
@@ -46,7 +46,7 @@ is 0.
 the ownership or operation of the server connection that is created.
 
 The CREATE SERVER statement creates an entry in the
-[mysql.servers](/kb/en/mysqlservers-table/) table that can later be used with the
+[mysql.servers](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlservers-table/) table that can later be used with the
 CREATE TABLE statement when creating a [Spider](/columns-storage-engines-and-plugins/storage-engines/spider/), [FederatedX](/kb/en/federatedx/) or
 [FEDERATED](/columns-storage-engines-and-plugins/storage-engines/legacy-storage-engines/federated-storage-engine/) table. The options that you specify will
 be used to populate the columns in the mysql.servers table. The table columns

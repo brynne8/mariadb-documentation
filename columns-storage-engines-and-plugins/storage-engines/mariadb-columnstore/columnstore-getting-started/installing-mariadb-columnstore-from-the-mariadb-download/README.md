@@ -71,7 +71,7 @@ Follow the instructions for installing MariaDB Columnstore RPMs
 
 Follow the instructions for installing MariaDB Columnstore Tools
 
-[https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/](https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/)
+[https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/mariadb-columnstore-backup-and-restore/backup-and-restore-for-mariadb-columnstore-110-onwards/)
 
 ### MariaDB ColumnStore Connectors
 
@@ -136,7 +136,7 @@ Follow the instructions for installing MariaDB Columnstore binary package
 
 Follow the instructions for installing MariaDB Columnstore Tools
 
-[https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/](https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/)
+[https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/mariadb-columnstore-backup-and-restore/backup-and-restore-for-mariadb-columnstore-110-onwards/)
 
 ### MariaDB ColumnStore Connectors
 
@@ -218,7 +218,7 @@ Follow the instructions for installing MariaDB Columnstore API RPM
 
 Follow the instructions for installing MariaDB Columnstore Tools
 
-[https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/](https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/)
+[https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/mariadb-columnstore-backup-and-restore/backup-and-restore-for-mariadb-columnstore-110-onwards/)
 
 ### MariaDB ColumnStore Connectors
 
@@ -304,7 +304,7 @@ Follow the instructions for installing MariaDB Columnstore API RPM
 
 Follow the instructions for installing MariaDB Columnstore Tools
 
-[https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/](https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/)
+[https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/mariadb-columnstore-backup-and-restore/backup-and-restore-for-mariadb-columnstore-110-onwards/)
 
 ### MariaDB ColumnStore Connectors
 
@@ -378,7 +378,7 @@ Follow the instructions for installing MariaDB Columnstore RPMs
 
 Follow the instructions for installing MariaDB Columnstore Tools
 
-[https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/](https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/)
+[https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/mariadb-columnstore-backup-and-restore/backup-and-restore-for-mariadb-columnstore-110-onwards/)
 
 ### MariaDB ColumnStore Connectors
 
@@ -442,7 +442,7 @@ Follow the instructions for installing MariaDB Columnstore binary package
 
 Follow the instructions for installing MariaDB Columnstore Tools
 
-[https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/](https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/)
+[https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/mariadb-columnstore-backup-and-restore/backup-and-restore-for-mariadb-columnstore-110-onwards/)
 
 ### MariaDB ColumnStore Connectors
 
@@ -524,7 +524,7 @@ Follow the instructions for installing MariaDB Columnstore API DEB
 
 Follow the instructions for installing MariaDB Columnstore Tools
 
-[https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/](https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/)
+[https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/mariadb-columnstore-backup-and-restore/backup-and-restore-for-mariadb-columnstore-110-onwards/)
 
 ### MariaDB ColumnStore Connectors
 
@@ -610,7 +610,7 @@ Follow the instructions for installing MariaDB Columnstore API RPM
 
 Follow the instructions for installing MariaDB Columnstore Tools
 
-[https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/](https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/)
+[https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/mariadb-columnstore-backup-and-restore/backup-and-restore-for-mariadb-columnstore-110-onwards/)
 
 ### MariaDB ColumnStore Connectors
 
@@ -698,7 +698,7 @@ Follow the instructions for installing MariaDB Columnstore API DEB
 
 Follow the instructions for installing MariaDB Columnstore Tools
 
-[https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/](https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/)
+[https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/mariadb-columnstore-backup-and-restore/backup-and-restore-for-mariadb-columnstore-110-onwards/)
 
 ### MariaDB ColumnStore Connectors
 
@@ -784,7 +784,7 @@ Follow the instructions for installing MariaDB Columnstore API RPM
 
 Follow the instructions for installing MariaDB Columnstore Tools
 
-[https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/](https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/)
+[https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/mariadb-columnstore-backup-and-restore/backup-and-restore-for-mariadb-columnstore-110-onwards/)
 
 ### MariaDB ColumnStore Connectors
 
@@ -872,7 +872,7 @@ Follow the instructions for installing MariaDB Columnstore API DEB
 
 Follow the instructions for installing MariaDB Columnstore Tools
 
-[https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/](https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/)
+[https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/mariadb-columnstore-backup-and-restore/backup-and-restore-for-mariadb-columnstore-110-onwards/)
 
 ### MariaDB ColumnStore Connectors
 
@@ -958,7 +958,7 @@ Follow the instructions for installing MariaDB Columnstore API RPM
 
 Follow the instructions for installing MariaDB Columnstore Tools
 
-[https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/](https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/)
+[https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/mariadb-columnstore-backup-and-restore/backup-and-restore-for-mariadb-columnstore-110-onwards/)
 
 ### MariaDB ColumnStore Connectors
 
@@ -1046,7 +1046,7 @@ Follow the instructions for installing MariaDB Columnstore API DEB
 
 Follow the instructions for installing MariaDB Columnstore Tools
 
-[https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/](https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/)
+[https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/mariadb-columnstore-backup-and-restore/backup-and-restore-for-mariadb-columnstore-110-onwards/)
 
 ### MariaDB ColumnStore Connectors
 
@@ -1132,7 +1132,7 @@ Follow the instructions for installing MariaDB Columnstore API RPM
 
 Follow the instructions for installing MariaDB Columnstore Tools
 
-[https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/](https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/)
+[https://mariadb.com/kb/en/library/backup-and-restore-for-mariadb-columnstore-110-onwards/](/columns-storage-engines-and-plugins/storage-engines/mariadb-columnstore/managing-columnstore/managing-columnstore-system/mariadb-columnstore-backup-and-restore/backup-and-restore-for-mariadb-columnstore-110-onwards/)
 
 ### MariaDB ColumnStore Connectors
 

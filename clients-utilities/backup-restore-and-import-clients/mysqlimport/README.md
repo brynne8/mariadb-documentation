@@ -12,7 +12,7 @@ From [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/), `mariadb-import` is t
 of the text file must be the name of the table that should be used.  If one
 uses sockets to connect to the MariaDB server, the server will open and read the
 text file directly. In other cases the client will open the text file. The SQL
-command [LOAD DATA INFILE](/kb/en/load-data-infile/) is used to import the rows.
+command [LOAD DATA INFILE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile/) is used to import the rows.
 
 ## Using mysqlimport
 

@@ -139,7 +139,7 @@ You might consider using the following major new features in [MariaDB 10.2](/kb/
 
 - [Window Functions](/built-in-functions/special-functions/window-functions/)
 - [mysqlbinlog](/clients-utilities/mysqlbinlog/) now supports continuous binary log backups
-- [Recursive Common Table Expressions](/kb/en/recursive-common-table-expressions-overview/)
+- [Recursive Common Table Expressions](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/common-table-expressions/recursive-common-table-expressions-overview/)
 - [JSON functions](/built-in-functions/special-functions/json-functions/)
 - See also [System Variables Added in MariaDB 10.2](/replication/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-102/).
 

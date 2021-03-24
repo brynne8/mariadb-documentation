@@ -246,8 +246,8 @@ Administration and maintenance commands in MariaDB use different syntax to SQL S
 
 MariaDB has no `BULK INSERT` statement. Instead, it supports:
 
-- [LOAD DATA INFILE](/kb/en/load-data-infile/) to load data from files in CSV or similar formats;
-- [LOAD XML INFILE](/kb/en/load-xml/) to load data from XML files.
+- [LOAD DATA INFILE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile/) to load data from files in CSV or similar formats;
+- [LOAD XML INFILE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-xml/) to load data from XML files.
 
 ## See Also
 

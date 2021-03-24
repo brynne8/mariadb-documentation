@@ -130,7 +130,7 @@ end
 
 See the [Puppet Apply provisioner](https://www.vagrantup.com/docs/provisioning/puppet_apply) and the [Puppet Agent Provisioner](https://www.vagrantup.com/docs/provisioning/puppet_agent).
 
-For an introduction to Puppet for MariaDB users, see [Puppet and MariaDB](/kb/en/automated-mariadb-deployment-and-administration-puppet-and-mariadb/).
+For an introduction to Puppet for MariaDB users, see [Puppet and MariaDB](/mariadb-administration/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/automated-mariadb-deployment-and-administration-puppet-and-mariadb/).
 
 ## Sharing Files Between the Host System and a Box
 

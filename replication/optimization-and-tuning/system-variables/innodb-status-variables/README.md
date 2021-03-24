@@ -23,7 +23,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 - <strong>Description:</strong> Hash searches as shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/), this system variable is present in XtraDB.
-</li><li>In [MariaDB 10.1](/kb/en/what-is-mariadb-101/), [MariaDB 10.2](/kb/en/what-is-mariadb-102/), [MariaDB 10.3](/kb/en/what-is-mariadb-103/), and [MariaDB 10.4](/kb/en/what-is-mariadb-104/), this system variable is not present. Use the `adaptive_hash_searches` counter in the <a undefined>information_schema.INNODB_METRICS</a> table instead.
+</li><li>In [MariaDB 10.1](/kb/en/what-is-mariadb-101/), [MariaDB 10.2](/kb/en/what-is-mariadb-102/), [MariaDB 10.3](/kb/en/what-is-mariadb-103/), and [MariaDB 10.4](/kb/en/what-is-mariadb-104/), this system variable is not present. Use the `adaptive_hash_searches` counter in the [information_schema.INNODB_METRICS](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table/) table instead.
 </li><li>In [MariaDB 10.5](/kb/en/what-is-mariadb-105/), this system variable was reintroduced.
 </li></ul>
 - <strong>Scope:</strong> Global
@@ -50,7 +50,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 - <strong>Description:</strong> Non-hash searches as shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status/) output.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/), this system variable is present in XtraDB.
-</li><li>In [MariaDB 10.1](/kb/en/what-is-mariadb-101/), [MariaDB 10.2](/kb/en/what-is-mariadb-102/), [MariaDB 10.3](/kb/en/what-is-mariadb-103/), and [MariaDB 10.4](/kb/en/what-is-mariadb-104/), this system variable is not present. Use the `adaptive_hash_searches_btree` counter in the <a undefined>information_schema.INNODB_METRICS</a> table instead.
+</li><li>In [MariaDB 10.1](/kb/en/what-is-mariadb-101/), [MariaDB 10.2](/kb/en/what-is-mariadb-102/), [MariaDB 10.3](/kb/en/what-is-mariadb-103/), and [MariaDB 10.4](/kb/en/what-is-mariadb-104/), this system variable is not present. Use the `adaptive_hash_searches_btree` counter in the [information_schema.INNODB_METRICS](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table/) table instead.
 </li><li>In [MariaDB 10.5](/kb/en/what-is-mariadb-105/), this system variable was reintroduced.
 </li></ul>
 - <strong>Scope:</strong> Global
@@ -947,7 +947,7 @@ See also the [Full list of MariaDB options, system and status variables](/mariad
 
 - <strong>Description:</strong> As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-engine/) output. XtraDB only.
 <ul start="1"><li>In [MariaDB 5.5](/kb/en/what-is-mariadb-55/), this system variable is present in XtraDB.
-</li><li>In [MariaDB 10.1](/kb/en/what-is-mariadb-101/), [MariaDB 10.2](/kb/en/what-is-mariadb-102/), [MariaDB 10.3](/kb/en/what-is-mariadb-103/), and [MariaDB 10.4](/kb/en/what-is-mariadb-104/), this system variable is not present. Use the `innodb_master_thread_sleeps` counter in the <a undefined>information_schema.INNODB_METRICS</a> table instead.
+</li><li>In [MariaDB 10.1](/kb/en/what-is-mariadb-101/), [MariaDB 10.2](/kb/en/what-is-mariadb-102/), [MariaDB 10.3](/kb/en/what-is-mariadb-103/), and [MariaDB 10.4](/kb/en/what-is-mariadb-104/), this system variable is not present. Use the `innodb_master_thread_sleeps` counter in the [information_schema.INNODB_METRICS](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table/) table instead.
 </li><li>In [MariaDB 10.5](/kb/en/what-is-mariadb-105/), this system variable was reintroduced.
 </li></ul>
 - <strong>Scope:</strong> Global

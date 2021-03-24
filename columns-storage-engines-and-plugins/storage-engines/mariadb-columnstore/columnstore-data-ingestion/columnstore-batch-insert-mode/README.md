@@ -2,7 +2,7 @@
 
 ### Introduction
 
-MariaDB ColumnStore has the ability to utilize the cpimport fast data import tool for non-transactional [LOAD DATA INFILE](/kb/en/load-data-infile/) and [INSERT INTO SELECT FROM](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/) SQL statements. Using this method results in a significant increase in performance in loading data through these two SQL statements. This optimization is independent of the storage engine used for the tables in the select statement.
+MariaDB ColumnStore has the ability to utilize the cpimport fast data import tool for non-transactional [LOAD DATA INFILE](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile/) and [INSERT INTO SELECT FROM](/sql-statements-structure/sql-statements/data-manipulation/inserting-loading-data/insert/) SQL statements. Using this method results in a significant increase in performance in loading data through these two SQL statements. This optimization is independent of the storage engine used for the tables in the select statement.
 
 ### Enable/disable using cpimport for batch insert
 

@@ -44,13 +44,13 @@ A datetime precision can be specified wherever a type name is used. For example:
   expression as an argument (not just `DATETIME` as before).<pre class="fixed"><span class="k">SELECT</span> <span class="kt">TIME</span><span class="p">(</span><span class="s1">'10:10:10'</span><span class="p">)</span> <span class="o">+</span> <span class="k">INTERVAL</span> <span class="mi">100</span> <span class="n">MICROSECOND</span><span class="p">;</span>
 <span class="o">--&gt;</span> <span class="mi">10</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">10</span><span class="p">.</span><span class="mi">000100</span>
 </pre>
-- The `event_time` field in the [mysql.general_log](/kb/en/mysqlgeneral_log-table/) table and the `start_time`, `query_time`, and `lock_time` fields in the [mysql.slow_log](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlslow_log-table/) table now store values with microsecond precision.
+- The `event_time` field in the [mysql.general_log](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table/) table and the `start_time`, `query_time`, and `lock_time` fields in the [mysql.slow_log](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlslow_log-table/) table now store values with microsecond precision.
 - This patch fixed a bug when comparing a temporal value using the `BETWEEN` operator and one of the operands is `NULL`.
 - The old syntax `TIMESTAMP(N)`, where `N` is the display width, is no longer supported. It was deprecated in MySQL 4.1.0 (released on
   2003-04-03).
 - when a `DATETIME` value is compared to a `TIME` value, the latter is treated as a full datetime with a zero date part, similar to comparing `DATE` to a `DATETIME`, or to comparing `DECIMAL` numbers.
   Earlier versions of MariaDB used to compare only the time part of both operands in such a case.
-- In MariaDB, an extra column <a undefined>TIME_MS</a> has been added to the <a undefined>INFORMATION_SCHEMA.PROCESSLIST</a> table, as well as to the output of [SHOW FULL PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist/).
+- In MariaDB, an extra column [TIME_MS](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist/) has been added to the <a undefined>INFORMATION_SCHEMA.PROCESSLIST</a> table, as well as to the output of [SHOW FULL PROCESSLIST](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-processlist/).
 
 <strong>Note:</strong> When you convert a temporal value to a value with a smaller
 precision, it will be truncated, not rounded. This is done to guarantee that the date part is not

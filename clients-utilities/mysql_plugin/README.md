@@ -12,7 +12,7 @@ From [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/), `mysql_plugin` is the
 
 It is a commandline alternative to the [INSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin/) and [UNINSTALL PLUGIN](/sql-statements-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin/) statements, and the `--plugin-load option` to [mysqld](/kb/en/mysqld-options-full-list/).
 
-`mysql_plugin` must be run while the server is offline, and works by adding or removing rows from the [mysql.plugin](/kb/en/mysqlplugin-table/) table.
+`mysql_plugin` must be run while the server is offline, and works by adding or removing rows from the [mysql.plugin](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlplugin-table/) table.
 
 ## Usage
 

@@ -51,7 +51,7 @@ lock_option:
 ## Description
 
 The `CREATE USER` statement creates new MariaDB accounts. To use it, you must have the global [CREATE USER](/kb/en/grant/#create-user) privilege or the [INSERT](/kb/en/grant/#table-privileges) privilege for the [mysql](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database. For each account, `CREATE USER` creates a new row in
-the [mysql.user](/kb/en/mysqluser-table/) table that has no privileges.
+the [mysql.user](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqluser-table/) table that has no privileges.
 
 If any of the specified accounts, or any permissions for the specified accounts, already exist, then the server returns `ERROR 1396 (HY000)`. If an error occurs, `CREATE USER` will still create the accounts that do not result in an error. Only one error is produced for all users which have not been created:
 
@@ -113,7 +113,7 @@ SHOW WARNINGS;
 
 ### IDENTIFIED BY 'password'
 
-The optional `IDENTIFIED BY` clause can be used to provide an account with a password. The password should be specified in plain text. It will be hashed by the [PASSWORD](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password/) function prior to being stored to the <a undefined>mysql.user</a> table.
+The optional `IDENTIFIED BY` clause can be used to provide an account with a password. The password should be specified in plain text. It will be hashed by the [PASSWORD](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password/) function prior to being stored to the [mysql.user](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqluser-table/) table.
 
 For example, if our password is `mariadb`, then we can create the user with:
 
@@ -130,7 +130,7 @@ The only [authentication plugins](/columns-storage-engines-and-plugins/plugins/a
 
 ### IDENTIFIED BY PASSWORD 'password_hash'
 
-The optional `IDENTIFIED BY PASSWORD` clause can be used to provide an account with a password that has already been hashed. The password should be specified as a hash that was provided by the [PASSWORD](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password/) function. It will be stored to the <a undefined>mysql.user</a> table as-is.
+The optional `IDENTIFIED BY PASSWORD` clause can be used to provide an account with a password that has already been hashed. The password should be specified as a hash that was provided by the [PASSWORD](/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password/) function. It will be stored to the [mysql.user](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqluser-table/) table as-is.
 
 For example, if our password is `mariadb`, then we can find the hash with:
 
@@ -255,7 +255,7 @@ The resources are tracked per account, which means `'user'@'server'`; not per us
 
 The count can be reset for all users using [FLUSH USER_RESOURCES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/), [FLUSH PRIVILEGES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/) or [mysqladmin reload](/clients-utilities/mysqladmin/).
 
-Per account resource limits are stored in the <a undefined>user</a> table, in the [mysql](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database. Columns used for resources limits are named `max_questions`, `max_updates`, `max_connections` (for `MAX_CONNECTIONS_PER_HOUR`), and `max_user_connections` (for `MAX_USER_CONNECTIONS`).
+Per account resource limits are stored in the [user](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqluser-table/) table, in the [mysql](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database. Columns used for resources limits are named `max_questions`, `max_updates`, `max_connections` (for `MAX_CONNECTIONS_PER_HOUR`), and `max_user_connections` (for `MAX_USER_CONNECTIONS`).
 
 ## Account Names
 
@@ -380,7 +380,7 @@ CREATE USER ''@'192.168.0.3';
 
 #### Fixing a Legacy Default Anonymous Account
 
-On some systems, the <a undefined>mysql.db</a> table has some entries for the `''@'%'` anonymous account by default. Unfortunately, there is no matching entry in the <a undefined>mysql.user</a> table, which means that this anonymous account doesn't exactly exist, but it does have privileges--usually on the default `test` database created by [mysql_install_db](/clients-utilities/mysql_install_db/). These account-less privileges are a legacy that is leftover from a time when MySQL's privilege system was less advanced.
+On some systems, the [mysql.db](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqldb-table/) table has some entries for the `''@'%'` anonymous account by default. Unfortunately, there is no matching entry in the [mysql.user](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqluser-table/) table, which means that this anonymous account doesn't exactly exist, but it does have privileges--usually on the default `test` database created by [mysql_install_db](/clients-utilities/mysql_install_db/). These account-less privileges are a legacy that is leftover from a time when MySQL's privilege system was less advanced.
 
 This situation means that you will run into errors if you try to create a `''@'%'` account. For example:
 
@@ -389,7 +389,7 @@ CREATE USER ''@'%';
 ERROR 1396 (HY000): Operation CREATE USER failed for ''@'%'
 ```
 
-The fix is to [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/) the row in the <a undefined>mysql.db</a> table and then execute [FLUSH PRIVILEGES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/):
+The fix is to [DELETE](/sql-statements-structure/sql-statements/data-manipulation/changing-deleting-data/delete/) the row in the [mysql.db](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqldb-table/) table and then execute [FLUSH PRIVILEGES](/sql-statements-structure/sql-statements/administrative-sql-statements/flush-commands/flush/):
 
 ```sql
 DELETE FROM mysql.db WHERE User='' AND Host='%';
@@ -441,6 +441,6 @@ From [MariaDB 10.4.7](/kb/en/mariadb-1047-release-notes/) and [MariaDB 10.5.8](/
 - [DROP USER](/sql-statements-structure/sql-statements/account-management-sql-commands/drop-user/)
 - [SET PASSWORD](/sql-statements-structure/sql-statements/account-management-sql-commands/set-password/)
 - [SHOW CREATE USER](/sql-statements-structure/sql-statements/administrative-sql-statements/show/show-create-user/)
-- [mysql.user table](/kb/en/mysqluser-table/)
+- [mysql.user table](/sql-statements-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqluser-table/)
 - [Password Validation Plugins](/columns-storage-engines-and-plugins/plugins/password-validation-plugins/) - permits the setting of basic criteria for passwords
 - [Authentication Plugins](/columns-storage-engines-and-plugins/plugins/authentication-plugins/) - allow various authentication methods to be used, and new ones to be developed.

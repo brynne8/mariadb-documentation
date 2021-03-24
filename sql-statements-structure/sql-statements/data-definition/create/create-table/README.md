@@ -184,7 +184,7 @@ CREATE TABLE t1 (a int DEFAULT (1+1), b int DEFAULT (a+1));
 CREATE TABLE t2 (a bigint primary key DEFAULT UUID_SHORT());
 ```
 
-The `DEFAULT` clause cannot contain any [stored functions](/programming-customizing-mariadb/stored-routines/stored-functions/) or [subqueries](/kb/en/subqueries/), and a column used in the clause must already have been defined earlier in the statement.
+The `DEFAULT` clause cannot contain any [stored functions](/programming-customizing-mariadb/stored-routines/stored-functions/) or [subqueries](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/subqueries/), and a column used in the clause must already have been defined earlier in the statement.
 
 Since [MariaDB 10.2.1](/kb/en/mariadb-1021-release-notes/), it is possible to assign [BLOB](/columns-storage-engines-and-plugins/data-types/string-data-types/blob/) or [TEXT](/columns-storage-engines-and-plugins/data-types/string-data-types/text/) columns a `DEFAULT` value. In earlier versions, assigning a default to these columns was not possible.
 
@@ -208,7 +208,7 @@ most recently used by an [INSERT](/sql-statements-structure/sql-statements/data-
 
 ### ZEROFILL Column Option
 
-If the `ZEROFILL` column option is specified for a column using a [numeric](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/numeric-data-type-overview/) data type, then the column will be set to `UNSIGNED` and the spaces used by default to pad the field are replaced with zeros. `ZEROFILL` is ignored in expressions or as part of a [UNION](/kb/en/union/). `ZEROFILL` is a non-standard MySQL and MariaDB enhancement.
+If the `ZEROFILL` column option is specified for a column using a [numeric](/columns-storage-engines-and-plugins/data-types/data-types-numeric-data-types/numeric-data-type-overview/) data type, then the column will be set to `UNSIGNED` and the spaces used by default to pad the field are replaced with zeros. `ZEROFILL` is ignored in expressions or as part of a [UNION](/sql-statements-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/union/). `ZEROFILL` is a non-standard MySQL and MariaDB enhancement.
 
 ### PRIMARY KEY Column Option
 
