@@ -13,7 +13,8 @@ CREATE [OR REPLACE] [TEMPORARY] SEQUENCE [IF NOT EXISTS] sequence_name
 [ MAXVALUE [=] maxvalue | NO MAXVALUE | NOMAXVALUE ]
 [ START [ WITH | = ] start ] 
 [ CACHE [=] cache | NOCACHE ] [ CYCLE | NOCYCLE] 
-[table_options]```
+[table_options]
+```
 
 The options for `CREATE SEQUENCE` can be given in any order, optionally followed by `table_options`.
 

@@ -330,7 +330,8 @@ sudo apt-get install apt-transport-https
 Add new file with repository information, /etc/apt/sources.list.d/mariab-columnstore-api.list
 
 ```sql
-deb http://18.232.251.159/repos/latest/mariadb-columnstore-api/repo/debian8 jessie main```
+deb http://18.232.251.159/repos/latest/mariadb-columnstore-api/repo/debian8 jessie main
+```
 
 &lt;&lt;/code&gt;&gt;
 
@@ -512,7 +513,8 @@ sudo apt-get install apt-transport-https
 Add new file with repository information, /etc/apt/sources.list.d/mariab-columnstore-tools.list
 
 ```sql
-deb http://18.232.251.159/repos/latest/mariadb-columnstore-tools/repo/debian8 jessie main```
+deb http://18.232.251.159/repos/latest/mariadb-columnstore-tools/repo/debian8 jessie main
+```
 
 &lt;&lt;/code&gt;&gt;
 
@@ -667,7 +669,8 @@ sudo apt-get install apt-transport-https
 Add new file with repository information, /etc/apt/sources.list.d/mariab-columnstore-data-adapters.list
 
 ```sql
-deb http://18.232.251.159/repos/latest/mariadb-columnstore-data-adapters/repo/debian8 jessie main```
+deb http://18.232.251.159/repos/latest/mariadb-columnstore-data-adapters/repo/debian8 jessie main
+```
 
 &lt;&lt;/code&gt;&gt;
 

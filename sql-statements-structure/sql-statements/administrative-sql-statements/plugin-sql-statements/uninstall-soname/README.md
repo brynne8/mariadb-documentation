@@ -3,7 +3,8 @@
 ## Syntax
 
 ```sql
-UNINSTALL SONAME  [IF EXISTS] 'plugin_library'```
+UNINSTALL SONAME  [IF EXISTS] 'plugin_library'
+```
 
 ## Description
 

@@ -8,7 +8,8 @@ DROP SEQUENCE was introduced in [MariaDB 10.3](/kb/en/what-is-mariadb-103/).
 
 ```sql
 DROP [TEMPORARY] SEQUENCE [IF EXISTS] [/*COMMENT TO SAVE*/]
-    sequence_name [, sequence_name] ...```
+    sequence_name [, sequence_name] ...
+```
 
 ## Description
 

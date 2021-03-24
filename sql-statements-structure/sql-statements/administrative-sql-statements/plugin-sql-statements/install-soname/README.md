@@ -3,7 +3,8 @@
 ## Syntax
 
 ```sql
-INSTALL SONAME 'plugin_library'```
+INSTALL SONAME 'plugin_library'
+```
 
 ## Description
 
@@ -22,7 +23,8 @@ its value in a `my.cnf` file:
 
 ```sql
 [mysqld]
-plugin_dir=/path/to/plugin/directory```
+plugin_dir=/path/to/plugin/directory
+```
 
 If the value of [plugin_dir](/kb/en/server-system-variables/#plugin_dir) is a relative path name, it is
 taken to be relative to the MySQL base directory (the value of the `basedir`

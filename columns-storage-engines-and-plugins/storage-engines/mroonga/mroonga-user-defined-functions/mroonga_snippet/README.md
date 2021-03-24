@@ -44,6 +44,7 @@ Returns the snippet string.
 ## Example
 
 ```sql
+
 ```
 
 ## See Also

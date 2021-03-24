@@ -40,4 +40,5 @@ The table contains the following columns:
 | OBJECT_INSTANCE_BEGIN           | bigint(20) unsigned                            | YES  |     | NULL    |       |
 | NESTING_EVENT_ID                | bigint(20) unsigned                            | YES  |     | NULL    |       |
 | NESTING_EVENT_TYPE              | enum('TRANSACTION','STATEMENT','STAGE','WAIT') | YES  |     | NULL    |       |
-+---------------------------------+------------------------------------------------+------+-----+---------+-------+```
++---------------------------------+------------------------------------------------+------+-----+---------+-------+
+```

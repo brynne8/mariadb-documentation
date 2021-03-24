@@ -7,7 +7,8 @@ The `ROW` data type was introduced in [MariaDB 10.3.0](/kb/en/mariadb-1030-relea
 ## Syntax
 
 ```sql
-ROW (<field name> <data type> [{, <field name> <data type>}... ])```
+ROW (<field name> <data type> [{, <field name> <data type>}... ])
+```
 
 ## Description
 
@@ -71,7 +72,8 @@ where `cur` is a `CURSOR` and `rec` is a `ROW` type stored procedure variable.
 Note, currently an attempt to use `FETCH` for a `ROW` type variable returns this error:
 
 ```sql
-ERROR 1328 (HY000): Incorrect number of FETCH variables```
+ERROR 1328 (HY000): Incorrect number of FETCH variables
+```
 
 `FETCH` from a cursor `cur` into a `ROW` variable `rec` works as follows:
 

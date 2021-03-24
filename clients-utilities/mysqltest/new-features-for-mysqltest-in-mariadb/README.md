@@ -5,7 +5,8 @@ Note that not all MariaDB-enhancements are listed on this page. See [mysqltest a
 ## Startup Option --connect-timeout
 
 ```sql
---connect-timeout=N```
+--connect-timeout=N
+```
 
 This can be used to set the MYSQL_OPT_CONNECT_TIMEOUT parameter of
 mysql_options, to change the number of seconds before an unsuccessful
@@ -44,4 +45,5 @@ The `replace_regex` command supports paired delimiters (like in perl, etc). If t
 ```sql
 --replace_regex (/some/path)</another/path>
 --replace_regex !/foo/bar!foobar!
---replace_regex {pat\}tern}/replace\/ment/i```
+--replace_regex {pat\}tern}/replace\/ment/i
+```

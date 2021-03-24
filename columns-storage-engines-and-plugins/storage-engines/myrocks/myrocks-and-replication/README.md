@@ -42,4 +42,5 @@ MyRocks upstream (that is, Facebook's MySQL branch) has a number of unique repli
 "Whether SQL threads update mysql.slave_gtid_info table. If this value "
 "is OPTIMIZED, updating the table is done inside storage engines to "
 "avoid MySQL layer's performance overhead",
-<</quote>>```
+<</quote>>
+```

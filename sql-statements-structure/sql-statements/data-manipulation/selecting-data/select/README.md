@@ -30,7 +30,8 @@ export_options:
     [LINES
         [STARTING BY 'string']
         [TERMINATED BY 'string']
-    ]```
+    ]
+```
 
 ## Description
 

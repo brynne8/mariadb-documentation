@@ -3,7 +3,8 @@
 ## Syntax
 
 ```sql
-UNINSTALL PLUGIN [IF EXISTS] plugin_name```
+UNINSTALL PLUGIN [IF EXISTS] plugin_name
+```
 
 ## Description
 

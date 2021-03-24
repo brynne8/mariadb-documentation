@@ -7,7 +7,8 @@ RESTORE TABLE was removed in [MariaDB 5.5](/kb/en/what-is-mariadb-55/).
 ## Syntax
 
 ```sql
-RESTORE TABLE tbl_name [, tbl_name] ... FROM '/path/to/backup/directory'```
+RESTORE TABLE tbl_name [, tbl_name] ... FROM '/path/to/backup/directory'
+```
 
 ## Description
 

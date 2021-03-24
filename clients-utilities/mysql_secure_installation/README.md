@@ -20,7 +20,8 @@ From [MariaDB 10.5.2](/kb/en/mariadb-1052-release-notes/), `mysql_secure_install
 `mysql_secure_installation` can be invoked without arguments:
 
 ```sql
-shell> mysql_secure_installation```
+shell> mysql_secure_installation
+```
 
 The script will prompt you to determine which actions to perform.
 
@@ -66,7 +67,8 @@ Reload privilege tables now? [Y/n] y
 Cleaning up...
 All done!  If you've completed all of the above steps, your MariaDB
 installation should now be secure.
-Thanks for using MariaDB!```
+Thanks for using MariaDB!
+```
 
 ### Options
 

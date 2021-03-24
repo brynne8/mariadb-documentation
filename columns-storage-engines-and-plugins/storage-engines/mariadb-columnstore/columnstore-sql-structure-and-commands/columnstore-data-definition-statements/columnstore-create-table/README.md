@@ -17,7 +17,8 @@ column_definition:
     data_type
       [NOT NULL | NULL]
       [DEFAULT default_value]
-      [COMMENT '[compression=0|1];```
+      [COMMENT '[compression=0|1];
+```
 
 images here
 

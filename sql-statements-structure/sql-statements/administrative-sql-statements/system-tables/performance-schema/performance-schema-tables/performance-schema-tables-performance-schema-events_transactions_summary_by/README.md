@@ -30,4 +30,5 @@ The table contains the following columns:
 | MIN_TIMER_READ_ONLY  | bigint(20) unsigned | NO   |     | NULL    |       |
 | AVG_TIMER_READ_ONLY  | bigint(20) unsigned | NO   |     | NULL    |       |
 | MAX_TIMER_READ_ONLY  | bigint(20) unsigned | NO   |     | NULL    |       |
-+----------------------+---------------------+------+-----+---------+-------+```
++----------------------+---------------------+------+-----+---------+-------+
+```

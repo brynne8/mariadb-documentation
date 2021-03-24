@@ -76,7 +76,8 @@ index_option:
   | COMMENT 'string'
   | CLUSTERING={YES| NO}
 table_options:
-    table_option [[,] table_option] ...```
+    table_option [[,] table_option] ...
+```
 
 ## Description
 
@@ -168,7 +169,8 @@ DROP FOREIGN KEY [IF EXISTS]
 DROP PARTITION   [IF EXISTS]
 CHANGE COLUMN    [IF EXISTS]
 MODIFY COLUMN    [IF EXISTS]
-DROP INDEX       [IF EXISTS]```
+DROP INDEX       [IF EXISTS]
+```
 
 When `IF EXISTS` and `IF NOT EXISTS` are used in clauses, queries will not
 report errors when the condition is triggered for that clause. A warning with
@@ -196,7 +198,8 @@ The [CREATE INDEX](/sql-statements-structure/sql-statements/data-definition/crea
 ```sql
 CONVERT TO CHARACTER SET charset_name [COLLATE collation_name]
 [DEFAULT] CHARACTER SET [=] charset_name
-[DEFAULT] COLLATE [=] collation_name```
+[DEFAULT] COLLATE [=] collation_name
+```
 
 See [Setting Character Sets and Collations](/columns-storage-engines-and-plugins/data-types/string-data-types/character-sets/setting-character-sets-and-collations/) for details on setting the [character sets and collations](/kb/en/data-types-character-sets-and-collations/).
 
@@ -209,7 +212,8 @@ See [CREATE TABLE: Table Options](/kb/en/create-table/#table-options) for inform
 ### ADD COLUMN
 
 ```sql
-... ADD COLUMN [IF NOT EXISTS]  (col_name column_definition,...)```
+... ADD COLUMN [IF NOT EXISTS]  (col_name column_definition,...)
+```
 
 Adds a column to the table. The syntax is the same as in [CREATE TABLE](/sql-statements-structure/sql-statements/data-definition/create/create-table/).
 If you are using <code class="highlight fixed" style="white-space:pre-wrap">IF NOT_EXISTS</code> the column will not be added if it was not there already. This is very useful when doing scripts to modify tables.
@@ -221,7 +225,8 @@ See also [Instant ADD COLUMN for InnoDB](/columns-storage-engines-and-plugins/st
 ### DROP COLUMN
 
 ```sql
-... DROP COLUMN [IF EXISTS] col_name [CASCADE|RESTRICT]```
+... DROP COLUMN [IF EXISTS] col_name [CASCADE|RESTRICT]
+```
 
 Drops the column from the table.
 If you are using <code class="highlight fixed" style="white-space:pre-wrap">IF EXISTS</code> you will not get an error if the column didn't exist.
@@ -434,7 +439,8 @@ Note: Before [MariaDB 10.2.1](/kb/en/mariadb-1021-release-notes/), constraint ex
 
 ```sql
 ALTER TABLE table_name 
-ADD CONSTRAINT [constraint_name] CHECK(expression);```
+ADD CONSTRAINT [constraint_name] CHECK(expression);
+```
 
 Before a row is inserted or updated, all constraints are evaluated in the order they are defined.  If any constraint fails, then the row will not be updated.  One can use most deterministic functions in a constraint, including [UDF's](/programming-customizing-mariadb/user-defined-functions/).
 

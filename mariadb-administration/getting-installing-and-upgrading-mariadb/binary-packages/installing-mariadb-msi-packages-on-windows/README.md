@@ -221,13 +221,15 @@ in Vista and later)
 To uninstall silently, use the `REMOVE=ALL` property with msiexec:
 
 ```sql
-msiexec /i path-to-package.msi REMOVE=ALL /qn```
+msiexec /i path-to-package.msi REMOVE=ALL /qn
+```
 
 To keep the data directory during an uninstall, you will need to pass an
 additional parameter:
 
 ```sql
-msiexec /i path-to-package.msi REMOVE=ALL CLEANUPDATA="" /qn```
+msiexec /i path-to-package.msi REMOVE=ALL CLEANUPDATA="" /qn
+```
 
 ## Installation Logs
 

@@ -3,7 +3,8 @@
 ## Syntax
 
 ```sql
-SHOW CONTRIBUTORS```
+SHOW CONTRIBUTORS
+```
 
 ## Description
 

@@ -11,7 +11,8 @@ CREATE [OR REPLACE] [TEMPORARY] TABLE [IF NOT EXISTS] tbl_name
 CREATE [OR REPLACE] [TEMPORARY] TABLE [IF NOT EXISTS] tbl_name
    { LIKE old_table_name | (LIKE old_table_name) }
 select_statement:
-    [IGNORE | REPLACE] [AS] SELECT ...   (Some legal select statement)```
+    [IGNORE | REPLACE] [AS] SELECT ...   (Some legal select statement)
+```
 
 ## Description
 
@@ -134,7 +135,8 @@ column_definition:
   AS { { ROW {START|END} } | { (expression) [VIRTUAL | PERSISTENT | STORED] } }
       [UNIQUE [KEY]] [COMMENT 'string']
 constraint_definition:
-   CONSTRAINT [constraint_name] CHECK (expression)```
+   CONSTRAINT [constraint_name] CHECK (expression)
+```
 
 <strong>Note:</strong> MariaDB accepts the `REFERENCES` clause in `ALTER TABLE` and `CREATE TABLE` column definitions, but that syntax does nothing. MariaDB simply parses it without returning any error or warning, for compatibility with other DBMS's. Before [MariaDB 10.2.1](/kb/en/mariadb-1021-release-notes/) this was also true for `CHECK` constraints. Only the syntax for indexes described below creates foreign keys.
 
@@ -297,7 +299,8 @@ reference_definition:
       [ON DELETE reference_option]
       [ON UPDATE reference_option]
 reference_option:
-    RESTRICT | CASCADE | SET NULL | NO ACTION```
+    RESTRICT | CASCADE | SET NULL | NO ACTION
+```
 
 `INDEX` and `KEY` are synonyms.
 
@@ -397,7 +400,8 @@ The `CLUSTERING` index option is only valid for tables using the [Tokudb](/colum
 
 ```sql
 period_definition:
-    PERIOD FOR SYSTEM_TIME (start_column_name, end_column_name)```
+    PERIOD FOR SYSTEM_TIME (start_column_name, end_column_name)
+```
 
 MariaDB supports a subset of the standard syntax for periods. At the moment it's only used for creating [System-versioned tables](/sql-statements-structure/temporal-tables/system-versioned-tables/). Both columns must be created, must be either of a `TIMESTAMP(6)` or `BIGINT UNSIGNED` type, and be generated as `ROW START` and `ROW END` accordingly. See [System-versioned tables](/sql-statements-structure/temporal-tables/system-versioned-tables/) for details.
 
@@ -474,7 +478,8 @@ table_option:
   | TABLESPACE tablespace_name
   | TRANSACTIONAL [=]  {0 | 1}
   | UNION [=] (tbl_name[,tbl_name]...)
-  | WITH SYSTEM VERSIONING```
+  | WITH SYSTEM VERSIONING
+```
 
 ### [STORAGE] ENGINE
 
@@ -704,7 +709,8 @@ subpartition_definition:
         [MAX_ROWS [=] max_number_of_rows]
         [MIN_ROWS [=] min_number_of_rows]
         [TABLESPACE [=] tablespace_name]
-        [NODEGROUP [=] node_group_id]```
+        [NODEGROUP [=] node_group_id]
+```
 
 If the `PARTITION BY` clause is used, the table will be [partitioned](/kb/en/managing-mariadb-partitioning/). A partition method must be explicitly indicated for partitions and subpartitions. Partition methods are:
 

@@ -49,7 +49,8 @@ section of an option file:
 
 ```sql
 [mysqld]
-transaction-isolation = REPEATABLE-READ```
+transaction-isolation = REPEATABLE-READ
+```
 
 To determine the global and session transaction isolation levels at
 runtime, check the value of the <a undefined>tx_isolation</a> system variable:

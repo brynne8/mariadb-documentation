@@ -20,7 +20,8 @@ characteristic:
   | SQL SECURITY { DEFINER | INVOKER }
   | COMMENT 'string'
 func_body:
-    Valid SQL procedure statement```
+    Valid SQL procedure statement
+```
 
 ## Description
 

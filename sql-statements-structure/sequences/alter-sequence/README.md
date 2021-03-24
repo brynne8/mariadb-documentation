@@ -12,7 +12,8 @@ ALTER SEQUENCE [IF EXISTS] sequence_name
 [ MINVALUE [=] minvalue | NO MINVALUE | NOMINVALUE ]
 [ MAXVALUE [=] maxvalue | NO MAXVALUE | NOMAXVALUE ]
 [ START [ WITH | = ] start ] [ CACHE [=] cache ] [ [ NO ] CYCLE ]
-[ RESTART [[WITH | =] restart]```
+[ RESTART [[WITH | =] restart]
+```
 
 `ALTER SEQUENCE` allows one to change any values for a `SEQUENCE` created with [CREATE SEQUENCE](/sql-statements-structure/sequences/create-sequence/).
 

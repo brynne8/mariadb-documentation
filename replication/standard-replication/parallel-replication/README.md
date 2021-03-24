@@ -223,7 +223,8 @@ other transactions to proceed uninterrupted:
 ```sql
 SET SESSION gtid_domain_id=1
 ALTER TABLE t ADD INDEX myidx(b)
-SET SESSION gtid_domain_id=0```
+SET SESSION gtid_domain_id=0
+```
 
 Normally, a long-running ALTER TABLE or other query will stall all following
 transactions, causing the slave to become behind the master as least as long

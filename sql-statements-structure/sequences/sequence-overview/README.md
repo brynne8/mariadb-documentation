@@ -236,7 +236,8 @@ next_not_cached_value: 1
   increment: 1
   cache_size: 1000
   cycle_option: 0
-  cycle_count: 0```
+  cycle_count: 0
+```
 
 The `cycle_count` column is incremented every time the sequence wraps around.
 
